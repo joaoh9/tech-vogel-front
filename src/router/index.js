@@ -13,7 +13,4 @@ routes.push(...baseRoutes);
 routes.push(...companyRoutes);
 routes.push(...jobRoutes);
 
-console.log(jobRoutes);
-console.log(routes);
-
 export default new VueRouter({ routes });

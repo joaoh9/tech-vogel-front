@@ -8,9 +8,6 @@ import router from './router';
 
 import '@babel/polyfill';
 
-console.log(i18n);
-console.log(vuetify);
-
 Vue.config.productionTip = false;
 
 export default new Vue({
