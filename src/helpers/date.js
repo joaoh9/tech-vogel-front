@@ -14,4 +14,4 @@ function formatDate(date, type) {
         .format('L'); // 05/04/2020
 }
 
-export { formatDate };
+export default { formatDate };

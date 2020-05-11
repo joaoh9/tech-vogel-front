@@ -1,5 +1,5 @@
 import Home from '../components/Home/Home.vue';
-import Login from '../components/Login/Login2.vue';
+import Login from '../components/Login/Login.vue';
 import Signup from '../components/Signup/Signup.vue';
 import AboutUs from '../components/AboutUs/AboutUs.vue';
 import Hire from '../components/Hire/Hire.vue';

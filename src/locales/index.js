@@ -1,5 +1,5 @@
-import ptBR from './locale.pt-br.js';
-import enUS from './locale.en-us.js';
+import ptBR from './locale.pt-br';
+import enUS from './locale.en-us';
 
 export default {
   'pt-br': ptBR,
