@@ -1,12 +1,12 @@
 <template>
-  <v-app-bar color="deep-purple darken-1">
-    <v-toolbar-title :collapse-on-scroll="true"
-      >Tech Vogel
-    </v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-btn rouded color="">Apply</v-btn>
-    <v-btn rouded color="blue" text>Hire</v-btn>
-  </v-app-bar>
+  <div>
+    <v-app-bar collapse-on-scroll color="grey darken-3" dark>
+      <v-toolbar-title>Tech Vogel</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn rouded color="primary">Apply</v-btn>
+      <v-btn rouded color="primary" text>Hire</v-btn>
+    </v-app-bar>
+  </div>
 </template>
 
 <script>
