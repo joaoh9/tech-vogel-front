@@ -7,14 +7,22 @@
       <v-btn color="grey lighten-3" text>Content</v-btn>
       <v-spacer></v-spacer>
       <v-btn class="" color="info" elevation="12" rounded>Apply</v-btn>
-      <v-btn class="ml-3" rouded color="info" elevation="12" outlined rounded>Hire</v-btn>
-      <v-btn class="ml-2" color="info" text>Log In</v-btn>
+      <v-btn class="ml-3" color="info" elevation="12" outlined rounded>Hire</v-btn>
+      <Login> </Login>
+      <!-- <v-btn class="ml-2" color="info" text>Log In</v-btn> -->
     </v-app-bar>
   </div>
 </template>
 
 <script>
+import Login from '../Login/Login.vue';
+
 export default {
   name: 'Navbar',
+  components: {
+    Login,
+  },
+  data() {
+  },
 };
 </script>
