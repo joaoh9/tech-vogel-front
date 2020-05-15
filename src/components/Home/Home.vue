@@ -26,16 +26,24 @@
     <JobCard class="mt-5"></JobCard>
     <JobCard class="mt-5"></JobCard>
     <JobCard class="mt-5"></JobCard>
+
+    <section>
+      <div class='container'>
+        <PricingCard></PricingCard>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import JobCard from '../Card/JobCard.vue';
+import PricingCard from '../Card/PricingCard.vue';
 
 export default {
   name: 'Home',
   components: {
     JobCard,
+    PricingCard,
   },
 };
 </script>
