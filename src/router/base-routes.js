@@ -1,8 +1,9 @@
 import Home from '../components/Home/Home.vue';
+import AboutUs from '../components/AboutUs/AboutUs.vue';
+import Pricing from '../components/Pricing/Pricing.vue';
+import Hire from '../components/Hire/Hire.vue';
 import Login from '../components/Login/Login.vue';
 import Signup from '../components/Signup/Signup.vue';
-import AboutUs from '../components/AboutUs/AboutUs.vue';
-import Hire from '../components/Hire/Hire.vue';
 
 const routes = [
   {
@@ -30,10 +31,14 @@ const routes = [
     name: 'Hire',
     component: Hire,
   },
-
   {
     path: '/apply',
     name: 'Apply',
+  },
+  {
+    path: '/pricing',
+    name: 'Pricing',
+    component: Pricing,
   },
 ];
 

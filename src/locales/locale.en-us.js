@@ -57,6 +57,30 @@ export default {
     _4: 'Liberty comes with responsibility, and remote work calls for both.',
     _5: 'Embrace the remote work, and join the new era with Tech Vogel.',
   },
+  Pricing: {
+    _1: {
+      price: '150',
+      credits: '5',
+    },
+    _2: {
+      price: '250',
+      credits: '10',
+    },
+    _3: {
+      price: '500',
+      credits: '30',
+    },
+    _4: {
+      price: '1000',
+      credits: 'Unlimited',
+    },
+  },
+  WhyRemote: {
+    _1:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan mauris libero, id fringilla arcu condimentum eu. Nullam blandit felis vitae dolor fringilla pharetra. Nullam viverra magna eget iaculis commodo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam et aliquet est. Donec nec tristique tortor. Fusce non ultricies tellus. Donec eget lacus et lorem viverra elementum sed sit amet diam. Nam malesuada aliquet semper. Quisque ullamcorper libero porta, bibendum ipsum vitae, cursus augue. Aliquam vulputate orci eu ipsum sagittis fermentum. Suspendisse potenti. Aenean porta auctor mi, ut viverra elit ullamcorper a. Phasellus pellentesque ligula nibh, quis interdum velit elementum quis. Etiam condimentum enim sed lobortis mattis. In sed volutpat orci',
+    _2:
+      'Pellentesque aliquet massa id purus convallis, eget gravida neque sollicitudin. Aenean iaculis ante id dignissim gravida. Pellentesque varius pulvinar ultricies. Sed egestas sed sapien vel consequat. Aenean et porta velit. Nam id nulla at mi sollicitudin semper porta id neque. Donec mi nunc, convallis id lacus vitae, tincidunt fringilla orci. Nunc mattis dapibus dolor non congue. Mauris at magna nec lorem ultricies posuere. Nam at mi a sapien tempor tristique vel vitae massa.',
+  },
   data: {
     companyType: ['', 'Private', 'Public', 'NGO', 'Other'],
     jobType: ['', 'Full-Time', 'Part-time', 'Contract', 'Internship'],

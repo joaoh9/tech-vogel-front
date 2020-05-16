@@ -1,11 +1,11 @@
 <template>
   <div>
-    <v-app-bar collapse-on-scroll color="grey darken-4" dark>
-      <v-toolbar-title class="mr-5">Tech Vogel</v-toolbar-title>
-      <v-btn color="grey lighten-3" text>How It Works</v-btn>
-      <v-btn color="grey lighten-3" text>About Us</v-btn>
-      <v-btn color="grey lighten-3" text>Pricing</v-btn>
-      <v-btn color="grey lighten-3" text>Content</v-btn>
+    <v-app-bar color="grey darken-4" dark>
+      <v-btn to="/" tile color="grey-lighten-2" class="mr-5">Tech Vogel</v-btn>
+      <v-btn to="howitworks" tile color="grey lighten-3" text>How It Works</v-btn>
+      <v-btn to="aboutus" tile color="grey lighten-3" text>About Us</v-btn>
+      <v-btn to="pricing" tile color="grey lighten-3" text>Pricing</v-btn>
+      <v-btn to="content" tile color="grey lighten-3" text>Content</v-btn>
       <v-spacer></v-spacer>
       <v-btn class="" color="info" tile elevation="12">Apply</v-btn>
       <v-btn class="ml-3" color="info" tile elevation="12" outlined>Hire</v-btn>

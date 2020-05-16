@@ -1,5 +1,5 @@
 <template>
-  <v-card shaped class="mx-auto" max-width="800" elevation="6">
+  <v-card class="mx-auto" max-width="800" elevation="6">
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="headline mb-1">{{ jobTitle }}</v-list-item-title>
