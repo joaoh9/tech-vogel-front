@@ -15,14 +15,18 @@
                   <v-form ref="form" v-model="valid" lazy-validation>
                     <v-container>
                       <v-text-field
+                        rounded
+                        outlined
                         name="username"
-                        prepend-icon="fa-user"
+                        prepend-inner-icon="fa-user"
                         label="Username or Email"
                         required
                       ></v-text-field>
                       <v-text-field
+                        rounded
+                        outlined
                         name="password"
-                        prepend-icon="fa-lock"
+                        prepend-inner-icon="fa-lock"
                         label="Password"
                         type="password"
                         required
@@ -45,15 +49,19 @@
                   <v-form ref="form" v-model="valid" lazy-validation>
                     <v-container>
                       <v-text-field
+                        rounded
+                        outlined
                         name="username"
-                        prepend-icon="fa-user"
+                        prepend-inner-icon="fa-user"
                         label="Username"
                         required
                       ></v-text-field>
-                      <v-text-field name="email" prepend-icon="fa-envelope" label="Email" required></v-text-field>
+                      <v-text-field rounded outlined name="email" prepend-inner-icon="fa-envelope" label="Email" required></v-text-field>
                       <v-text-field
+                        rounded
+                        outlined
                         name="password"
-                        prepend-icon="fa-lock"
+                        prepend-inner-icon="fa-lock"
                         label="Password"
                         type="password"
                         required
