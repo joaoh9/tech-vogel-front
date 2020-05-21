@@ -30,15 +30,17 @@
               max-width="40%"
             ></v-img>
           </div>
-            <h2 class="display-2">{{ $t(`Pricing._${n}.credits`) }}</h2>
-            <h2>$ {{$t(`Pricing._${n}.price`)}}</h2>
+          <div class="d-flex flex-column justify-end align-center flex-fill mb-5">
+            <h2 class="display-2 mb-5">{{ $t(`Pricing._${n}.credits`) }}</h2>
+            <h2 class="mb-5">$ {{$t(`Pricing._${n}.price`)}}</h2>
             <v-btn
               max-width="70%"
-              class="align-self-center"
+              class="mb-5"
               elevation="6"
               rounded
               color="primary"
             >Choose Plan</v-btn>
+          </div>
         </v-card>
       </v-col>
     </v-row>

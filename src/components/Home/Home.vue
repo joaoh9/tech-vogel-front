@@ -41,23 +41,16 @@
         <p class="text-center ma-10">{{$t('WhyRemote._2')}}</p>
       </div>
     </div>
-    <section>
-      <div class='container'>
-        <PricingCard></PricingCard>
-      </div>
-    </section>
   </div>
 </template>
 
 <script>
 import JobCard from '../Card/JobCard.vue';
-import PricingCard from '../Card/PricingCard.vue';
 
 export default {
   name: 'Home',
   components: {
     JobCard,
-    PricingCard,
   },
 };
 </script>
