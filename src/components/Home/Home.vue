@@ -2,7 +2,7 @@
   <div class="mt-4">
     <div class="d-flex justify-space-around">
       <div class="align-self-center">
-        <h1 class="text-center display-4">Connect your company with Global talents</h1>
+        <h1 class="text-center display-4 ma-4">Connect your company with Global talents</h1>
         <h1 class="text-center mt-10 display-3">Go remote.</h1>
         <h1 class="text-center mt-10 display-3">Go beyond.</h1>
         <v-row justify="center">
@@ -27,7 +27,7 @@
         </v-row>
       </div>
       <div class="align-end">
-        <v-img class="text-right" max-width="780" src="../../assets/24.png"></v-img>
+        <v-img class="text-right ma-7" max-width="780" src="../../assets/24.png"></v-img>
       </div>
     </div>
     <JobCard v-for="n in 5" :key="n" class="mt-5"></JobCard> <!-- TODO: Pegar esses 5 jobs do banco ordenados por alguma métrica (a definir) -->
