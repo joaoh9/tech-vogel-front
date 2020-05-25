@@ -1,9 +1,10 @@
-import Technologies from '../data/technologies.json';
+// import Technologies from '../data/technologies.json';
 import Languages from '../data/languages.json';
 import Timezones from '../data/timezones.json';
 import MonthCount from '../data/monthCount.json';
 import ContractDurationTimePeriod from '../data/contractDurationTimePeriod.json';
 import CompanySize from '../data/companySize.json';
+import preMadePhrases from '../data/preMadePhrases.json';
 
 export default {
   Common: {
@@ -85,11 +86,13 @@ export default {
     companyType: ['', 'Private', 'Public', 'NGO', 'Other'],
     jobType: ['', 'Full-Time', 'Part-time', 'Contract', 'Internship'],
     experienceLevel: ['', 'Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager'],
-    technologies: Technologies,
+    // technologies: Technologies,
+    technologies: ['vue', 'node', 'js'],
     languages: Languages,
     timezones: Timezones,
     monthCount: [''].concat(MonthCount),
     contractDurationTimePeriod: [''].concat(ContractDurationTimePeriod),
     companySize: [''].concat(CompanySize),
+    preMadePhrases,
   },
 };
