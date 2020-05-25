@@ -109,40 +109,11 @@
                     <v-subheader>Skills</v-subheader>
                   </v-col>
                   <v-col cols=12 md=9>
-                    <v-combobox
-                      v-model="technologiesSelect"
-                      :items="technologies"
-                      label="Technologies"
+                    <Combobox
+                      :items='technologies'
                       multiple
-                      chips
-                    >
-                      <template v-slot:selection="{ attrs, item, parent, selected }">
-                        <v-chip
-                          v-if="item === Object(item)"
-                          :key="JSON.stringify(item)"
-                          v-bind="attrs"
-                          :input-value="selected"
-                          @click:close="parent.selectItem(item)"
-                        >
-                          <v-avatar
-                            class="accent white--text"
-                            left
-                          >
-                            <i :class="item.icon" style="font-size: 18px"></i>
-                          </v-avatar>
-                          <span class="pr-2">
-                            {{ item.name }}
-                          </span>
-                          <v-icon
-                            small
-                            @click="parent.selectItem(item)"
-                          >fa-times</v-icon>
-                        </v-chip>
-                      </template>
-                      <template v-slot:item="{ index, item }">
-                          {{ item.name }}
-                      </template>
-                    </v-combobox>
+                      title='Skills'
+                    ></Combobox>
                   </v-col>
                 </v-row>
               </div>
@@ -172,12 +143,14 @@ import bird2 from '../../assets/bird2.png';
 import bird3 from '../../assets/bird3.png';
 import bird4 from '../../assets/bird4.png';
 import DatePicker from '../Interface/DatePicker.vue';
+import Combobox from '../Interface/Combobox.vue';
 
 export default {
   name: 'AddResume',
   components: {
     DatePicker,
     Editor,
+    Combobox,
   },
   data() {
     return {
@@ -190,7 +163,6 @@ export default {
         'Female',
         'Other',
       ],
-      technologiesSelect: [],
       technologies: [
         {
           name: 'Angular',
