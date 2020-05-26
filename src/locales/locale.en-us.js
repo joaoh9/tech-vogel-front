@@ -82,6 +82,31 @@ export default {
     _2:
       'Pellentesque aliquet massa id purus convallis, eget gravida neque sollicitudin. Aenean iaculis ante id dignissim gravida. Pellentesque varius pulvinar ultricies. Sed egestas sed sapien vel consequat. Aenean et porta velit. Nam id nulla at mi sollicitudin semper porta id neque. Donec mi nunc, convallis id lacus vitae, tincidunt fringilla orci. Nunc mattis dapibus dolor non congue. Mauris at magna nec lorem ultricies posuere. Nam at mi a sapien tempor tristique vel vitae massa.',
   },
+  Resume: {
+    personalInformation: {
+      title: 'Personal Information',
+      fullName: 'Full name',
+      gender: 'Gender',
+      birthDate: 'Birth date',
+      personalBio: 'Personal Bio',
+      businessBio: 'Business Bio',
+      lookingFor: 'What I\'m looking for',
+    },
+    education: {
+      title: 'Education',
+      highSchool: 'High School Education',
+      college: 'College Education',
+      ressearchHistory: 'Ressearch History',
+      courses: 'Courses',
+      certificates: 'Certificates',
+    },
+    workHistory: {
+      title: 'Work History',
+    },
+    skills: {
+      title: 'Skills',
+    },
+  },
   data: {
     companyType: ['', 'Private', 'Public', 'NGO', 'Other'],
     jobType: ['', 'Full-Time', 'Part-time', 'Contract', 'Internship'],
@@ -94,5 +119,8 @@ export default {
     contractDurationTimePeriod: [''].concat(ContractDurationTimePeriod),
     companySize: [''].concat(CompanySize),
     preMadePhrases,
+  },
+  format: {
+    date: 'MM/DD/YYYY',
   },
 };

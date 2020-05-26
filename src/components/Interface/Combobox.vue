@@ -2,12 +2,14 @@
   <v-combobox
     v-model="select"
     :items="items"
-    :label="title"
+    :label="label"
     item-text="name"
     :search-input.sync="search"
     multiple
     chips
     return-object
+    tile
+    outlined
   >
     <template v-slot:selection="{ attrs, item, parent, selected, disabled }">
       <v-chip
@@ -58,7 +60,7 @@ export default {
   name: 'DatePicker',
   props: {
     items: Array,
-    title: String,
+    label: String,
     multiple: Boolean,
   },
   data() {

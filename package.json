@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "moment": "^2.26.0",
     "vue": "^2.6.11",
     "vue-i18n": "^8.16.0",
     "vue-router": "^3.1.6",

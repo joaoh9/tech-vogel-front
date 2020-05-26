@@ -14,28 +14,28 @@
                 <v-list-item :href="'#personal-information'">
                   <v-list-item-content>
                     <v-list-item-title>
-                      Personal Information
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item href="#about-me">
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      About me
+                      {{ $t('Resume.personalInformation.title') }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
                 <v-list-item href="#education">
                   <v-list-item-content>
                     <v-list-item-title>
-                      Education
+                      {{ $t('Resume.education.title') }}
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item href="#work-history">
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      {{ $t('Resume.workHistory.title') }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
                 <v-list-item href="#skills">
                   <v-list-item-content>
                     <v-list-item-title>
-                      Skills
+                      {{ $t('Resume.skills.title') }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
@@ -60,36 +60,40 @@
                     <v-text-field
                         required
                         tile
+                        outlined
                         name="fullName"
-                        label="Full name"
+                        :label="$t('Resume.personalInformation.fullName')"
                     ></v-text-field>
                     <v-combobox
                         required
                         tile
+                        outlined
                         name="gender"
-                        label="Gender"
+                        :label="$t('Resume.personalInformation.gender')"
                         :items="genders"
                     ></v-combobox>
                     <DatePicker
-                      name="Birth date"
+                      name="birthDate"
+                      :label="$t('Resume.personalInformation.birthDate')"
                     />
-                  </v-col>
-                </v-row>
-              </div>
-              <div id="about-me" v-intersect.quiet="onIntersect">
-                <v-row>
-                  <v-col cols=12 md=3>
-                    <v-subheader>About me</v-subheader>
-                  </v-col>
-                  <v-col cols=12 md=9>
-                    <Editor
-                      mode="preview"
-                      ref="editor"
-                      hint="Hint"
-                      :outline="false"
-                      :render-config="renderConfig"
-                      v-model="text"
-                    />
+                    <v-textarea
+                      tile
+                      outlined
+                      name="personalBio"
+                      :label="$t('Resume.personalInformation.personalBio')"
+                    ></v-textarea>
+                    <v-textarea
+                      tile
+                      outlined
+                      name="businessBio"
+                      :label="$t('Resume.personalInformation.businessBio')"
+                    ></v-textarea>
+                    <v-textarea
+                      tile
+                      outlined
+                      name="lookingFor"
+                      :label="$t('Resume.personalInformation.lookingFor')"
+                    ></v-textarea>
                   </v-col>
                 </v-row>
               </div>
@@ -136,8 +140,6 @@
 </template>
 
 <script>
-import { Editor } from 'vuetify-markdown-editor';
-
 import bird1 from '../../assets/bird1.png';
 import bird2 from '../../assets/bird2.png';
 import bird3 from '../../assets/bird3.png';
@@ -149,7 +151,6 @@ export default {
   name: 'AddResume',
   components: {
     DatePicker,
-    Editor,
     Combobox,
   },
   data() {
