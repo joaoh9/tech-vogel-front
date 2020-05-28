@@ -1,4 +1,4 @@
-import JobDescription from '@/components/Job/JobDescription.vue';
+import JobDetails from '@/components/Job/JobDetails.vue';
 import JobForm from '@/components/Job/JobForm.vue';
 import JobDashboard from '@/components/Job/JobDashboard.vue';
 
@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/job/:id',
     name: 'Job Description',
-    component: JobDescription,
+    component: JobDetails,
     props: true,
   },
 ];

@@ -1,44 +1,36 @@
 <template>
   <v-row class="justify-content-center text-center mt-6">
-    <v-col lg="2" sm="0"></v-col>
-    <v-col lg="2" sm="4">
+    <v-col lg="2" md="2">
       <job-dashboard />
     </v-col>
-    <v-col lg="6" sm="6" class="text-center">
+    <v-col lg="6" md="8" class="text-center">
       <v-form class="mt-3">
-        <v-row @mouseenter="tooltips.title = true" @mouseleave="tooltips.title = false">
+        <v-row>
           <v-col class="text-left">
             <h3>Job Title</h3>
           </v-col>
         </v-row>
         <v-row>
-          <v-col @mouseenter="tooltips.title = true" @mouseleave="tooltips.title = false">
-            <v-text-field label="Title" counter="100" outlined v-model="title"></v-text-field>
+          <v-col>
+            <v-text-field label="Title" counter="100" outlined v-model="job.title"></v-text-field>
           </v-col>
         </v-row>
 
-        <v-row @mouseenter="tooltips.description = true" @mouseleave="tooltips.description = false">
+        <v-row>
           <v-col class="text-left">
             <h3>Job Description</h3>
           </v-col>
         </v-row>
         <v-row>
           <v-col>
-            <v-textarea
-              @mouseenter="tooltips.description = true"
-              @mouseleave="tooltips.description = false"
-              label="Description"
-              counter="1000"
-              outlined
-              v-model="description"
-            ></v-textarea>
+            <v-textarea label="Description" counter="1000" outlined v-model="job.description"></v-textarea>
           </v-col>
         </v-row>
 
         <v-row>
           <v-col>
             <v-autocomplete
-              v-model="jobType"
+              v-model="job.type"
               label="Job Type"
               title="Job Type"
               outlined
@@ -48,7 +40,7 @@
 
           <v-col>
             <v-autocomplete
-              v-model="category"
+              v-model="job.category"
               label="Category"
               title="Category"
               outlined
@@ -57,15 +49,11 @@
           </v-col>
         </v-row>
 
-        <v-row
-          @mouseenter="tooltips.requirements = true"
-          @mouseleave="tooltips.requirements = false"
-          class="mt-n4"
-        >
+        <v-row class="mt-n4">
           <v-col class="text-left">
             <h3>{{this.requiredSkillsTitle}}</h3>
           </v-col>
-          <v-col>
+          <v-col v-if="changeSectionTitle">
             <v-autocomplete
               v-model="requiredSkillsTitle"
               label="Change section title"
@@ -75,37 +63,9 @@
             ></v-autocomplete>
           </v-col>
         </v-row>
-        <v-row
-          @mouseenter="tooltips.requiredSkills = true"
-          @mouseleave="tooltips.requiredSkills = false"
-        >
+        <v-row>
           <v-col>
-            <v-combobox
-              v-model="technologies"
-              :items="$t('data.technologies')"
-              label="Technologies"
-              multiple
-              outlined
-              chips
-            >
-              <template v-slot:selection="data">
-                {{data}}
-                <v-chip
-                  :key="JSON.stringify(data.item)"
-                  v-bind="data.attrs"
-                  :input-value="data.selected"
-                  :disabled="data.disabled"
-                  @click:close="data.parent.selectItem(data.item)"
-                >
-                  <v-avatar
-                    class="accent white--text"
-                    left
-                    v-text="data.item.slice(0, 1).toUpperCase()"
-                  ></v-avatar>
-                  {{ data.item }}
-                </v-chip>
-              </template>
-            </v-combobox>
+            <v-textarea label="Required Skills" v-model="job.requirements" counter="800" outlined></v-textarea>
           </v-col>
         </v-row>
 
@@ -113,7 +73,7 @@
           <v-col class="text-left">
             <h3>{{this.desiredSkillsTitle}}</h3>
           </v-col>
-          <v-col>
+          <v-col v-if="changeSectionTitle">
             <v-autocomplete
               v-model="desiredSkillsTitle"
               label="Change section title"
@@ -125,7 +85,12 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-textarea label="Desired Skills" v-model="desiredSkills" counter="800" outlined></v-textarea>
+            <v-textarea
+              label="Desired Skills"
+              v-model="job.responsabilities"
+              counter="800"
+              outlined
+            ></v-textarea>
           </v-col>
         </v-row>
 
@@ -133,7 +98,7 @@
           <v-col class="text-left">
             <h3>{{this.responsabilitiesTitle}}</h3>
           </v-col>
-          <v-col>
+          <v-col v-if="changeSectionTitle">
             <v-autocomplete
               v-model="responsabilitiesTitle"
               label="Change section title"
@@ -147,21 +112,21 @@
           <v-col>
             <v-textarea
               label="Job Responsabilities"
-              v-model="responsabilities"
+              v-model="job.responsabilities"
               counter="800"
               outlined
             ></v-textarea>
           </v-col>
         </v-row>
 
-        <div :key="index" v-for="(customField, index) of customFields">
+        <div :key="index" v-for="(customField, index) of job.customFields">
           <v-row>
             <v-col class="text-left">
               <v-text-field
                 label="Field Title"
                 counter="100"
                 outlined
-                v-model="customFields[index].title"
+                v-model="job.customFields[index].title"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -171,7 +136,7 @@
                 label="Field Description"
                 counter="1000"
                 outlined
-                v-model="customFields[index].description"
+                v-model="job.customFields[index].description"
               ></v-textarea>
             </v-col>
           </v-row>
@@ -191,7 +156,7 @@
         <v-row>
           <v-col>
             <v-autocomplete
-              v-model="salary.currency"
+              v-model="job.salary.currency"
               label="Curency"
               title="Payment Curency"
               outlined
@@ -200,7 +165,7 @@
           </v-col>
           <v-col>
             <v-autocomplete
-              v-model="salary.timeFrame"
+              v-model="job.salary.timeFrame"
               label="Time Frame"
               title="Time Frame"
               outlined
@@ -209,7 +174,7 @@
           </v-col>
           <v-col>
             <v-text-field
-              v-model="salary.min"
+              v-model="job.salary.min"
               :label="range ? 'From' : 'Price'"
               :title="range ? 'From' : 'Price'"
               outlined
@@ -217,7 +182,7 @@
           </v-col>
           <v-col v-if="range">
             <v-text-field
-              v-model="salary.max"
+              v-model="job.salary.max"
               :label="range ? 'To' : 'Price'"
               :title="range ? 'To' : 'Price'"
               outlined
@@ -226,36 +191,47 @@
         </v-row>
         <v-row class="mt-n12">
           <v-col class="text-left">
-            <v-checkbox v-model="range" label="Set salary range"></v-checkbox>
+            <v-checkbox v-model="job.range" label="Set salary range"></v-checkbox>
           </v-col>
         </v-row>
         <v-row>
           <v-col>
-            <v-combobox
-              v-model="technologies"
-              :items="$t('data.technologies')"
-              label="Technologies"
-              multiple
-              outlined
-              chips
-            >
-              <template v-slot:selection="data">
-                <v-chip
-                  :key="JSON.stringify(data.item)"
-                  v-bind="data.attrs"
-                  :input-value="data.selected"
-                  :disabled="data.disabled"
-                  @click:close="data.parent.selectItem(data.item)"
-                >
-                  <v-avatar
-                    class="accent white--text"
-                    left
-                    v-text="data.item.slice(0, 1).toUpperCase()"
-                  ></v-avatar>
-                  {{ data.item }}
-                </v-chip>
-              </template>
-            </v-combobox>
+            <Combobox2
+              label="Knowledge Areas"
+              items="data.knowledgeAreas"
+              v-model="job.skills.knowledgeAreas"
+            ></Combobox2>
+            {{job.skills.knowledgeAreas}}
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <Combobox2
+              label="Pogramming Languages"
+              items="data.programmingLanguages"
+              v-model="job.skills.programmingLanguages"
+            ></Combobox2>
+            {{job.skills.programmingLanguages}}
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <Combobox2
+              label="Frameworks"
+              items="data.frameworks"
+              v-model="job.skills.frameworks"
+            ></Combobox2>
+            {{job.skills.frameworks}}
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+              <Combobox2
+              label="Soft Skills"
+              items="data.softSkills"
+              v-model="job.skills.softSkills"
+            ></Combobox2>
+            {{job.skills.softSkills}}
           </v-col>
         </v-row>
         <v-row>
@@ -265,38 +241,48 @@
         </v-row>
       </v-form>
     </v-col>
+    <v-col lg="2" md="1"></v-col>
   </v-row>
 </template>
 
 <script>
 import JobDashboard from './JobDashboard.vue';
+import Combobox2 from '../Interface/Combobox-2.vue';
 
 export default {
   name: 'New Job',
   components: {
     JobDashboard,
+    Combobox2,
   },
   data() {
     return {
-      title: '',
-      description: '',
-      jobType: '',
-      category: '',
-      requirements: '',
-      responsabilities: '',
-      salary: {
-        currency: '',
-        min: '',
-        max: '',
-        timeFrame: '',
+      job: {
+        title: '',
+        description: '',
+        type: '',
+        category: '',
+        requirements: '',
+        responsabilities: '',
+        salary: {
+          currency: '',
+          min: '',
+          max: '',
+          timeFrame: '',
+        },
+        range: false,
+        customFields: [],
+        technologies: [],
+        skills: {
+          knowledgeAreas: [],
+          programmingLanguages: [],
+          frameworks: [],
+        },
       },
-      range: false,
-      customFields: [],
-      technologies: [],
       tooltips: {
         title: false,
         description: false,
-        jobType: false,
+        type: false,
         category: false,
         requirements: false,
         responsabilities: false,
@@ -304,6 +290,8 @@ export default {
       responsabilitiesTitle: 'Responsabilities',
       requiredSkillsTitle: 'Required Skills',
       desiredSkillsTitle: 'Desired Skills',
+      items: ['js', 'vue'],
+      changeSectionTitle: false,
     };
   },
   methods: {
@@ -320,7 +308,7 @@ export default {
       return (
         this.title.length < 100
         && this.description.length < 1000
-        && this.jobType
+        && this.type
         && this.requirements
         && this.responsabilities
         && this.salary.currency

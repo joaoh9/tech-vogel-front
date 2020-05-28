@@ -4,12 +4,12 @@
       <v-list shaped>
         <v-subheader>Dashboard</v-subheader>
         <v-list-item-group v-model="item" color="primary">
-          <v-list-item v-for="(item, i) in items" :key="i">
+          <v-list-item v-for="(item, i) in items" :key="i" :to="`${item.route}`">
             <v-list-item-icon>
               <v-icon v-text="item.icon"></v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title v-text="item.text"></v-list-item-title>
+              <v-list-item-title class="text-left" v-text="item.text"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -27,10 +27,12 @@ export default {
         {
           text: 'New Job',
           icon: 'mdi-plus',
+          route: 'new',
         },
         {
           text: 'Managers',
           icon: 'mdi-account-multiple',
+          route: 'manage',
         },
         {
           text: 'My plan',

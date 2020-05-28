@@ -119,6 +119,10 @@ export default {
     contractDurationTimePeriod: [''].concat(ContractDurationTimePeriod),
     companySize: [''].concat(CompanySize),
     preMadePhrases,
+    knowledgeAreas: [],
+    programmingLanguages: [],
+    frameworks: [],
+    softSkills: [],
   },
   format: {
     date: 'MM/DD/YYYY',
