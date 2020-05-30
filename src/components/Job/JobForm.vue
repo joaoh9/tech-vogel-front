@@ -1,6 +1,6 @@
 <template>
   <v-row class="justify-content-center text-center mt-6">
-    <v-col lg="2" md="2">
+    <v-col class="ml-6" lg="2" md="2">
       <job-dashboard />
     </v-col>
     <v-col lg="6" md="8" class="text-center">
@@ -37,16 +37,6 @@
               :items="['full time', 'part time', 'hourly']"
             ></v-autocomplete>
           </v-col>
-
-          <v-col>
-            <v-autocomplete
-              v-model="job.category"
-              label="Category"
-              title="Category"
-              outlined
-              :items="['Blockchain', 'Data Mining', 'Web Development']"
-            ></v-autocomplete>
-          </v-col>
         </v-row>
 
         <v-row class="mt-n4">
@@ -65,7 +55,7 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-textarea label="Required Skills" v-model="job.requirements" counter="800" outlined></v-textarea>
+            <v-textarea label="Required Skills" v-model="job.requiredSkills" counter="800" outlined></v-textarea>
           </v-col>
         </v-row>
 
@@ -85,12 +75,7 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-textarea
-              label="Desired Skills"
-              v-model="job.responsabilities"
-              counter="800"
-              outlined
-            ></v-textarea>
+            <v-textarea label="Desired Skills" v-model="job.desiredSkills" counter="800" outlined></v-textarea>
           </v-col>
         </v-row>
 
@@ -194,6 +179,19 @@
             <v-checkbox v-model="job.range" label="Set salary range"></v-checkbox>
           </v-col>
         </v-row>
+
+        <v-row>
+          <v-col>
+            <v-autocomplete
+              v-model="job.category"
+              label="Category"
+              title="Category"
+              outlined
+              :items="['Blockchain', 'Data Mining', 'Web Development']"
+            ></v-autocomplete>
+          </v-col>
+        </v-row>
+
         <v-row>
           <v-col>
             <Combobox2
@@ -201,7 +199,6 @@
               items="data.knowledgeAreas"
               v-model="job.skills.knowledgeAreas"
             ></Combobox2>
-            {{job.skills.knowledgeAreas}}
           </v-col>
         </v-row>
         <v-row>
@@ -211,32 +208,21 @@
               items="data.programmingLanguages"
               v-model="job.skills.programmingLanguages"
             ></Combobox2>
-            {{job.skills.programmingLanguages}}
           </v-col>
         </v-row>
         <v-row>
           <v-col>
-            <Combobox2
-              label="Frameworks"
-              items="data.frameworks"
-              v-model="job.skills.frameworks"
-            ></Combobox2>
-            {{job.skills.frameworks}}
+            <Combobox2 label="Frameworks" items="data.frameworks" v-model="job.skills.frameworks"></Combobox2>
           </v-col>
         </v-row>
         <v-row>
           <v-col>
-              <Combobox2
-              label="Soft Skills"
-              items="data.softSkills"
-              v-model="job.skills.softSkills"
-            ></Combobox2>
-            {{job.skills.softSkills}}
+            <Combobox2 label="Soft Skills" items="data.softSkills" v-model="job.skills.softSkills"></Combobox2>
           </v-col>
         </v-row>
         <v-row>
           <v-col class="text-left">
-            <v-btn color="success">Preview</v-btn>
+            <v-btn @click="send" color="success">Preview</v-btn>
           </v-col>
         </v-row>
       </v-form>
@@ -262,7 +248,8 @@ export default {
         description: '',
         type: '',
         category: '',
-        requirements: '',
+        requiredSkills: '',
+        desiredSkills: '',
         responsabilities: '',
         salary: {
           currency: '',
@@ -272,7 +259,6 @@ export default {
         },
         range: false,
         customFields: [],
-        technologies: [],
         skills: {
           knowledgeAreas: [],
           programmingLanguages: [],
@@ -304,17 +290,39 @@ export default {
       this.customFields.push({ title: '', description: '' });
     },
 
+    send() {
+      if (this.validateForm()) {
+        this.$router.push({
+          name: 'Job Description',
+          params: { job: this.job },
+        });
+      }
+    },
+
     validateForm() {
       return (
-        this.title.length < 100
-        && this.description.length < 1000
-        && this.type
-        && this.requirements
-        && this.responsabilities
-        && this.salary.currency
-        && this.salary.min
-        && this.salary.timeFrame
-        && this.min
+        this.job.title
+        && this.job.title.length < 100
+        && this.job.description
+        && this.job.description.length < 1000
+        && this.job.type
+        && this.job.requiredSkills
+        && this.job.requiredSkills.length < 1000
+        && this.job.desiredSkills
+        && this.job.desiredSkills.length < 1000
+        && this.job.responsabilities
+        && this.job.responsabilities.length < 1000
+        && this.job.salary.currency
+        && this.job.salary.min
+        && (this.job.range ? this.job.salary.max : true)
+        && this.job.salary.timeFrame
+        && this.job.category
+        && this.job.skills.knowledgeAreas.length >= 1
+        && this.job.skills.knowledgeAreas.length < 5
+        && this.job.skills.programmingLanguages.length >= 1
+        && this.job.skills.programmingLanguages.length < 5
+        && this.job.skills.frameworks.length >= 1
+        && this.job.skills.frameworks.length < 5
       );
     },
   },

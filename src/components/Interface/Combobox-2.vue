@@ -6,7 +6,6 @@
     hide-selected
     :hint="hint"
     :label="label"
-    outlined
     multiple
     persistent-hint
     chips
@@ -41,6 +40,11 @@ export default {
     return {
       model: [],
     };
+  },
+  watch: {
+    model(value) {
+      this.$emit('input', value);
+    },
   },
 };
 </script>
