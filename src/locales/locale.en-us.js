@@ -84,27 +84,44 @@ export default {
   },
   Resume: {
     personalInformation: {
-      title: 'Personal Information',
+      _title: 'Personal information',
       fullName: 'Full name',
       gender: 'Gender',
       birthDate: 'Birth date',
-      personalBio: 'Personal Bio',
-      businessBio: 'Business Bio',
+      personalBio: 'Personal bio',
+      businessBio: 'Business bio',
       lookingFor: 'What I\'m looking for',
     },
     education: {
-      title: 'Education',
-      highSchool: 'High School Education',
-      college: 'College Education',
-      ressearchHistory: 'Ressearch History',
+      _title: 'Education',
+      location: {
+        _title: 'Location',
+        city: 'City',
+        state: 'State',
+        country: 'Country',
+      },
+      highSchool: {
+        _title: 'High school education',
+        name: 'High school name',
+      },
+      college: {
+        _title: 'College education',
+        name: 'College name',
+      },
+      ressearchHistory: 'Ressearch history',
       courses: 'Courses',
       certificates: 'Certificates',
     },
     workHistory: {
-      title: 'Work History',
+      _title: 'Work History',
     },
     skills: {
-      title: 'Skills',
+      _title: 'Skills',
+      softSkills: 'Soft skills',
+      knowledgeAreas: 'Knowledge Areas',
+      frameworks: 'Frameworks',
+      programmingLanguages: 'Programming languages',
+      customSkills: 'Custom skills',
     },
   },
   data: {

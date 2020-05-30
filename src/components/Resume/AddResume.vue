@@ -14,35 +14,28 @@
                 <v-list-item :href="'#personal-information'">
                   <v-list-item-content>
                     <v-list-item-title>
-                      {{ $t('Resume.personalInformation.title') }}
+                      {{ $t('Resume.personalInformation._title') }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
                 <v-list-item href="#education">
                   <v-list-item-content>
                     <v-list-item-title>
-                      {{ $t('Resume.education.title') }}
+                      {{ $t('Resume.education._title') }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
                 <v-list-item href="#work-history">
                   <v-list-item-content>
                     <v-list-item-title>
-                      {{ $t('Resume.workHistory.title') }}
+                      {{ $t('Resume.workHistory._title') }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
                 <v-list-item href="#skills">
                   <v-list-item-content>
                     <v-list-item-title>
-                      {{ $t('Resume.skills.title') }}
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item href="#contact-info">
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      Contact Info
+                      {{ $t('Resume.skills._title') }}
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
@@ -54,7 +47,7 @@
               <div id="personal-information" v-intersect.quiet="onIntersect">
                 <v-row>
                   <v-col cols=12 md=3>
-                    <v-subheader>Personal Information</v-subheader>
+                    <v-subheader>{{ $t('Resume.personalInformation._title') }}</v-subheader>
                   </v-col>
                   <v-col cols=12 md=9>
                     <v-text-field
@@ -100,34 +93,111 @@
               <div id="education" v-intersect.quiet="onIntersect">
                 <v-row>
                   <v-col cols=12 md=3>
-                    <v-subheader>Education</v-subheader>
+                    <v-subheader>{{ $t('Resume.education._title') }}</v-subheader>
                   </v-col>
                   <v-col cols=12 md=9>
-                    <v-text-field></v-text-field>
+                    <div class="outline-border p-1 mb-5">
+                      <h1><span>{{ $t('Resume.education.highSchool._title') }}</span></h1>
+                      <div class="my-1 p-1">
+                        <v-text-field
+                          tile
+                          outlined
+                          name="highSchoolName"
+                          :label="$t('Resume.education.highSchool.name')"
+                        ></v-text-field>
+                        <div class="outline-border p-1">
+                          <h1><span>{{ $t('Resume.education.location._title') }}</span></h1>
+                          <div class="my-1 p-1">
+                            <v-text-field
+                              tile
+                              outlined
+                              name="highSchoolCity"
+                              :label="$t('Resume.education.location.city')"
+                            ></v-text-field>
+                            <v-text-field
+                              tile
+                              outlined
+                              name="highSchoolState"
+                              :label="$t('Resume.education.location.state')"
+                            ></v-text-field>
+                            <v-text-field
+                              tile
+                              outlined
+                              name="highSchoolCountry"
+                              :label="$t('Resume.education.location.country')"
+                            ></v-text-field>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="outline-border p-1 mb-5">
+                      <h1><span>{{ $t('Resume.education.college._title') }}</span></h1>
+                      <div class="my-1 p-1">
+                        <v-text-field
+                          tile
+                          outlined
+                          name="collegeName"
+                          :label="$t('Resume.education.college.name')"
+                        ></v-text-field>
+                        <div class="outline-border p-1">
+                          <h1><span>{{ $t('Resume.education.location._title') }}</span></h1>
+                          <div class="my-1 p-1">
+                            <v-text-field
+                              tile
+                              outlined
+                              name="collegeCity"
+                              :label="$t('Resume.education.location.city')"
+                            ></v-text-field>
+                            <v-text-field
+                              tile
+                              outlined
+                              name="collegeState"
+                              :label="$t('Resume.education.location.state')"
+                            ></v-text-field>
+                            <v-text-field
+                              tile
+                              outlined
+                              name="collegeCountry"
+                              :label="$t('Resume.education.location.country')"
+                            ></v-text-field>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </v-col>
                 </v-row>
               </div>
               <div id="skills" v-intersect.quiet="onIntersect">
                 <v-row>
                   <v-col cols=12 md=3>
-                    <v-subheader>Skills</v-subheader>
+                    <v-subheader>{{ $t('Resume.skills._title') }}</v-subheader>
                   </v-col>
                   <v-col cols=12 md=9>
                     <Combobox
                       :items='technologies'
                       multiple
-                      title='Skills'
+                      :label="$t('Resume.skills.softSkills')"
                     ></Combobox>
-                  </v-col>
-                </v-row>
-              </div>
-              <div id="contact-info" v-intersect.quiet="onIntersect">
-                <v-row>
-                  <v-col cols=12 md=3>
-                    <v-subheader>Contact Info</v-subheader>
-                  </v-col>
-                  <v-col cols=12 md=9>
-                    <v-text-field></v-text-field>
+                    <Combobox
+                      :items='technologies'
+                      multiple
+                      :label="$t('Resume.skills.knowledgeAreas')"
+                    ></Combobox>
+                    <Combobox
+                      :items='technologies'
+                      multiple
+                      :label="$t('Resume.skills.frameworks')"
+                    ></Combobox>
+                    <Combobox
+                      :items='technologies'
+                      multiple
+                      :label="$t('Resume.skills.programmingLanguages')"
+                    ></Combobox>
+                    <Combobox
+                      :items='technologies'
+                      multiple
+                      :label="$t('Resume.skills.customSkills')"
+                    ></Combobox>
                   </v-col>
                 </v-row>
               </div>
@@ -208,4 +278,24 @@ export default {
 </script>
 
 <style>
+.outline-border{
+  border: 1px solid #B8C2CC;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 4px;
+}
+
+.outline-border span {
+  background-color: white;
+  font-weight:normal;
+}
+.outline-border h1 {
+  text-align: left;
+  margin-top: -10px;
+  margin-left: 5px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 15px;
+  font-family: inherit;
+}
 </style>
