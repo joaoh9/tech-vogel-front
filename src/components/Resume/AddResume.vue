@@ -164,6 +164,56 @@
                         </div>
                       </div>
                     </div>
+                    <h4>Ressearches</h4>
+                    <CardList
+                      items="[]"
+                    >
+                      <v-card-text>
+                        <v-text-field
+                        required
+                        tile
+                        outlined
+                        label="Paper"
+                        ></v-text-field>
+                        <v-textarea
+                        required
+                        tile
+                        outlined
+                        label="Abstract"
+                        ></v-textarea>
+                        <v-text-field
+                        required
+                        tile
+                        outlined
+                        label="Link"
+                        ></v-text-field>
+                      </v-card-text>
+                    </CardList>
+                    <h4>Courses</h4>
+                    <CardList
+                      items="[]"
+                    >
+                      <v-card-text>
+                        <v-text-field
+                        required
+                        tile
+                        outlined
+                        label="Title"
+                        ></v-text-field>
+                        <v-textarea
+                        required
+                        tile
+                        outlined
+                        label="Description"
+                        ></v-textarea>
+                        <v-text-field
+                        required
+                        tile
+                        outlined
+                        label="Platform"
+                        ></v-text-field>
+                      </v-card-text>
+                    </CardList>
                   </v-col>
                 </v-row>
               </div>
@@ -216,12 +266,14 @@ import bird3 from '../../assets/bird3.png';
 import bird4 from '../../assets/bird4.png';
 import DatePicker from '../Interface/DatePicker.vue';
 import Combobox from '../Interface/Combobox.vue';
+import CardList from '../Card/CardList.vue';
 
 export default {
   name: 'AddResume',
   components: {
     DatePicker,
     Combobox,
+    CardList,
   },
   data() {
     return {
