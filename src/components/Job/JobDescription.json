@@ -3,29 +3,30 @@
   "logo": "https://i.pinimg.com/originals/a7/e2/05/a7e205a3804dccf0d5dfec776b6e98b7.png",
   "companyName": "Hotmart",
   "officeLocation": "Belo Horizonte, Brazil",
-  "companySize": "11–50 people",
-  "companyType": "Private",
+  "company": {
+    "size": "11–50 people",
+    "type": "Private",
+    "description": [
+      "En Hotmart, queremos mejorar la forma en que millones de personas cuidan su salud.",
+      "Somos una empresa de salud y tecnología. Estamos aquí para cambiar la forma en que la gente interactua con el cuidado de su salud. Creemos que las cosas se pueden hacer mejor y nos interesa empujar hacía el futuro con una visión humana y de innovación.",
+      "Estamos comprometidos a mejorar la manera en que millones de personas cuidan su salud en Latinoamérica, empezando por un seguro de salud simple de usar."
+    ]
+  },
   "preferredTimezone": "(GMT-05:00) Eastern Time +/- 2 hours",
-  "jobType": "Full-time",
+  "type": "Full-time",
   "xpLevel": ["Senior", " Lead", " Manager"],
   "role": "Backend Developer",
   "remoteDetails": "Although we are primarily onsite, a few of our team members are full timeremote. We do encourage them to visit HQ from time to time!",
   "technologies": ["vue", "javascript", "node", "frontend"],
-  "requiredSkills": [
+  "required": [
     "Tienes 3+ años como desarrollador full stack/backend, preferentemente usando Python (Django), PostgreSQL.",
     "Aprecias cuando una pieza de software resulta en una gran experiencia de usuario.",
     "Te sientes cómod@ trabajando en inglés."
   ],
-  "desiredSkills": ["GraphQL.", "ReactJS / VueJS para frontend", "React Native"],
-  "companyDescription": [
-    "En Hotmart, queremos mejorar la forma en que millones de personas cuidan su salud.",
-    "Somos una empresa de salud y tecnología. Estamos aquí para cambiar la forma en que la gente interactua con el cuidado de su salud. Creemos que las cosas se pueden hacer mejor y nos interesa empujar hacía el futuro con una visión humana y de innovación.",
-    "Estamos comprometidos a mejorar la manera en que millones de personas cuidan su salud en Latinoamérica, empezando por un seguro de salud simple de usar."
-  ],
+  "desired": ["GraphQL.", "ReactJS / VueJS para frontend", "React Native"],
   "startDate": "ASAP",
   "expectedContractDuration": "This project will last anywhere from 2-4 months.",
   "notes": "The client plans on hiring two frontend developers, so if you do not have experience with all the tools, you still may be selected for the project if your skills are complementary with the second developer's.",
-  "preferredLocations": ["US", "Mexico"],
   "benefits": [
     "Flexible Work Arrangements",
     "Competitive Equity",
