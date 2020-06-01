@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'Job Dashboard',
+  name: 'JobDashboard',
   data() {
     return {
       items: [

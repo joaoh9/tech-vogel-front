@@ -165,7 +165,7 @@
               outlined
             ></v-text-field>
           </v-col>
-          <v-col v-if="range">
+          <v-col v-if="job.range">
             <v-text-field
               v-model="job.salary.max"
               :label="range ? 'To' : 'Price'"
@@ -257,13 +257,14 @@ export default {
           max: '',
           timeFrame: '',
         },
-        range: false,
         customFields: [],
         skills: {
           knowledgeAreas: [],
           programmingLanguages: [],
           frameworks: [],
+          softSkills: [],
         },
+        range: false,
       },
       tooltips: {
         title: false,
