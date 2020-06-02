@@ -95,26 +95,45 @@ export default {
     },
     education: {
       _title: 'Education',
-      location: {
-        _title: 'Location',
-        city: 'City',
-        state: 'State',
-        country: 'Country',
+      academicFormation: {
+        _title: 'Academic formation',
+        institution: 'Institution',
+        typeOfFormation: 'Formation',
+        studyArea: 'Study area',
+        period: {
+          _title: 'Period',
+          startDate: 'Start date',
+          endDate: 'End date',
+        },
+        grade: 'Grade',
+        description: 'Description',
+        activities: 'Activities and groups',
       },
-      highSchool: {
-        _title: 'High school education',
-        name: 'High school name',
+      ressearches: {
+        _title: 'Ressearches',
+        paperTitle: 'Paper title',
+        abstract: 'Abstract',
+        link: 'Link',
       },
-      college: {
-        _title: 'College education',
-        name: 'College name',
+      courses: {
+        _title: 'Courses',
+        courseTitle: 'Course title',
+        courseDescription: 'Description',
+        platform: 'Platform',
       },
-      ressearchHistory: 'Ressearch history',
-      courses: 'Courses',
       certificates: 'Certificates',
     },
     workHistory: {
       _title: 'Work History',
+      companyName: 'Company name',
+      role: 'Role',
+      description: 'Description',
+      location: 'Location',
+      period: {
+        _title: 'Period',
+        startDate: 'Start date',
+        endDate: 'End date',
+      },
     },
     skills: {
       _title: 'Skills',

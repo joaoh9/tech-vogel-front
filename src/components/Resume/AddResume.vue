@@ -1,259 +1,262 @@
 <template>
   <div class="container">
-    <v-card
-      tile
-    >
-      <v-card-title>
-        Resumé
-      </v-card-title>
+    <v-card tile>
       <v-card-text>
-        <v-row>
-          <v-col cols=12 md=3>
-            <v-list flat dense>
-              <v-list-item-group v-model="item" color="primary">
-                <v-list-item :href="'#personal-information'">
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      {{ $t('Resume.personalInformation._title') }}
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item href="#education">
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      {{ $t('Resume.education._title') }}
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item href="#work-history">
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      {{ $t('Resume.workHistory._title') }}
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item href="#skills">
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      {{ $t('Resume.skills._title') }}
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list-item-group>
-            </v-list>
-          </v-col>
-          <v-col cols=12 md=9>
-            <v-form>
-              <div id="personal-information" v-intersect.quiet="onIntersect">
-                <v-row>
-                  <v-col cols=12 md=3>
-                    <v-subheader>{{ $t('Resume.personalInformation._title') }}</v-subheader>
-                  </v-col>
-                  <v-col cols=12 md=9>
+        <v-form>
+          <div id="personal-information" v-intersect.quiet="onIntersect">
+            <v-card flat>
+              <v-card-title>
+                <h4>{{ $t('Resume.personalInformation._title') }}</h4>
+              </v-card-title>
+              <v-card-text>
+                <v-text-field
+                    required
+                    tile
+                    outlined
+                    name="fullName"
+                    :label="$t('Resume.personalInformation.fullName')"
+                ></v-text-field>
+                <v-combobox
+                    required
+                    tile
+                    outlined
+                    name="gender"
+                    :label="$t('Resume.personalInformation.gender')"
+                    :items="genders"
+                ></v-combobox>
+                <DatePicker
+                  name="birthDate"
+                  :label="$t('Resume.personalInformation.birthDate')"
+                />
+                <v-textarea
+                  tile
+                  outlined
+                  name="personalBio"
+                  :label="$t('Resume.personalInformation.personalBio')"
+                ></v-textarea>
+                <v-textarea
+                  tile
+                  outlined
+                  name="businessBio"
+                  :label="$t('Resume.personalInformation.businessBio')"
+                ></v-textarea>
+                <v-textarea
+                  tile
+                  outlined
+                  name="lookingFor"
+                  :label="$t('Resume.personalInformation.lookingFor')"
+                ></v-textarea>
+              </v-card-text>
+            </v-card>
+          </div>
+          <div id="education" v-intersect.quiet="onIntersect">
+            <v-card flat>
+              <v-card-title>
+                <h4>{{ $t('Resume.education._title') }}</h4>
+              </v-card-title>
+              <v-card-text>
+                <h3>{{ $t('Resume.education.academicFormation._title') }}</h3>
+                <CardList
+                  items="[]"
+                >
+                <v-card-text>
+
+                  <v-text-field
+                    tile
+                    outlined
+                    name="institution"
+                    :label="$t('Resume.education.academicFormation.institution')"
+                  ></v-text-field>
+                  <v-text-field
+                    tile
+                    outlined
+                    name="typeOfFormation"
+                    :label="$t('Resume.education.academicFormation.typeOfFormation')"
+                  ></v-text-field>
+                  <v-text-field
+                    tile
+                    outlined
+                    name="studyArea"
+                    :label="$t('Resume.education.academicFormation.studyArea')"
+                  ></v-text-field>
+                  <h4>{{ $t('Resume.education.academicFormation.period._title') }}</h4>
+                  <v-row>
+                    <v-col cols=12 md=6>
+                      <DatePicker
+                        name="startDate"
+                        :label="$t('Resume.education.academicFormation.period.startDate')"
+                      />
+                    </v-col>
+                    <v-col cols=12 md=6>
+                      <DatePicker
+                        name="endDate"
+                        :label="$t('Resume.education.academicFormation.period.endDate')"
+                      />
+                    </v-col>
+                  </v-row>
+                  <v-text-field
+                    tile
+                    outlined
+                    name="grade"
+                    :label="$t('Resume.education.academicFormation.grade')"
+                  ></v-text-field>
+                  <v-textarea
+                    tile
+                    outlined
+                    name="description"
+                    :label="$t('Resume.education.academicFormation.description')"
+                  ></v-textarea>
+                  <v-textarea
+                    tile
+                    outlined
+                    name="activities"
+                    :label="$t('Resume.education.academicFormation.activities')"
+                  ></v-textarea>
+                </v-card-text>
+                </CardList>
+                <h3>{{ $t('Resume.education.ressearches._title') }}</h3>
+                <CardList
+                  items="[]"
+                >
+                  <v-card-text>
                     <v-text-field
-                        required
-                        tile
-                        outlined
-                        name="fullName"
-                        :label="$t('Resume.personalInformation.fullName')"
+                    required
+                    tile
+                    outlined
+                    :label="$t('Resume.education.ressearches.paperTitle')"
                     ></v-text-field>
-                    <v-combobox
-                        required
-                        tile
-                        outlined
-                        name="gender"
-                        :label="$t('Resume.personalInformation.gender')"
-                        :items="genders"
-                    ></v-combobox>
-                    <DatePicker
-                      name="birthDate"
-                      :label="$t('Resume.personalInformation.birthDate')"
-                    />
                     <v-textarea
-                      tile
-                      outlined
-                      name="personalBio"
-                      :label="$t('Resume.personalInformation.personalBio')"
+                    required
+                    tile
+                    outlined
+                    :label="$t('Resume.education.ressearches.abstract')"
                     ></v-textarea>
+                    <v-text-field
+                    required
+                    tile
+                    outlined
+                    :label="$t('Resume.education.ressearches.link')"
+                    ></v-text-field>
+                  </v-card-text>
+                </CardList>
+                <h3>{{ $t('Resume.education.courses._title') }}</h3>
+                <CardList
+                  items="[]"
+                >
+                  <v-card-text>
+                    <v-text-field
+                    required
+                    tile
+                    outlined
+                    :label="$t('Resume.education.courses.courseTitle')"
+                    ></v-text-field>
                     <v-textarea
-                      tile
-                      outlined
-                      name="businessBio"
-                      :label="$t('Resume.personalInformation.businessBio')"
+                    required
+                    tile
+                    outlined
+                    :label="$t('Resume.education.courses.courseDescription')"
                     ></v-textarea>
-                    <v-textarea
-                      tile
-                      outlined
-                      name="lookingFor"
-                      :label="$t('Resume.personalInformation.lookingFor')"
-                    ></v-textarea>
-                  </v-col>
-                </v-row>
-              </div>
-              <div id="education" v-intersect.quiet="onIntersect">
-                <v-row>
-                  <v-col cols=12 md=3>
-                    <v-subheader>{{ $t('Resume.education._title') }}</v-subheader>
-                  </v-col>
-                  <v-col cols=12 md=9>
-                    <div class="outline-border p-1 mb-5">
-                      <h1><span>{{ $t('Resume.education.highSchool._title') }}</span></h1>
-                      <div class="my-1 p-1">
-                        <v-text-field
-                          tile
-                          outlined
-                          name="highSchoolName"
-                          :label="$t('Resume.education.highSchool.name')"
-                        ></v-text-field>
-                        <div class="outline-border p-1">
-                          <h1><span>{{ $t('Resume.education.location._title') }}</span></h1>
-                          <div class="my-1 p-1">
-                            <v-text-field
-                              tile
-                              outlined
-                              name="highSchoolCity"
-                              :label="$t('Resume.education.location.city')"
-                            ></v-text-field>
-                            <v-text-field
-                              tile
-                              outlined
-                              name="highSchoolState"
-                              :label="$t('Resume.education.location.state')"
-                            ></v-text-field>
-                            <v-text-field
-                              tile
-                              outlined
-                              name="highSchoolCountry"
-                              :label="$t('Resume.education.location.country')"
-                            ></v-text-field>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="outline-border p-1 mb-5">
-                      <h1><span>{{ $t('Resume.education.college._title') }}</span></h1>
-                      <div class="my-1 p-1">
-                        <v-text-field
-                          tile
-                          outlined
-                          name="collegeName"
-                          :label="$t('Resume.education.college.name')"
-                        ></v-text-field>
-                        <div class="outline-border p-1">
-                          <h1><span>{{ $t('Resume.education.location._title') }}</span></h1>
-                          <div class="my-1 p-1">
-                            <v-text-field
-                              tile
-                              outlined
-                              name="collegeCity"
-                              :label="$t('Resume.education.location.city')"
-                            ></v-text-field>
-                            <v-text-field
-                              tile
-                              outlined
-                              name="collegeState"
-                              :label="$t('Resume.education.location.state')"
-                            ></v-text-field>
-                            <v-text-field
-                              tile
-                              outlined
-                              name="collegeCountry"
-                              :label="$t('Resume.education.location.country')"
-                            ></v-text-field>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <h4>Ressearches</h4>
-                    <CardList
-                      items="[]"
-                    >
-                      <v-card-text>
-                        <v-text-field
-                        required
-                        tile
-                        outlined
-                        label="Paper"
-                        ></v-text-field>
-                        <v-textarea
-                        required
-                        tile
-                        outlined
-                        label="Abstract"
-                        ></v-textarea>
-                        <v-text-field
-                        required
-                        tile
-                        outlined
-                        label="Link"
-                        ></v-text-field>
-                      </v-card-text>
-                    </CardList>
-                    <h4>Courses</h4>
-                    <CardList
-                      items="[]"
-                    >
-                      <v-card-text>
-                        <v-text-field
-                        required
-                        tile
-                        outlined
-                        label="Title"
-                        ></v-text-field>
-                        <v-textarea
-                        required
-                        tile
-                        outlined
-                        label="Description"
-                        ></v-textarea>
-                        <v-text-field
-                        required
-                        tile
-                        outlined
-                        label="Platform"
-                        ></v-text-field>
-                      </v-card-text>
-                    </CardList>
-                  </v-col>
-                </v-row>
-              </div>
-              <div id="skills" v-intersect.quiet="onIntersect">
-                <v-row>
-                  <v-col cols=12 md=3>
-                    <v-subheader>{{ $t('Resume.skills._title') }}</v-subheader>
-                  </v-col>
-                  <v-col cols=12 md=9>
-                    <Combobox
-                      :items='technologies'
-                      multiple
-                      :label="$t('Resume.skills.softSkills')"
-                    ></Combobox>
-                    <Combobox
-                      :items='technologies'
-                      multiple
-                      :label="$t('Resume.skills.knowledgeAreas')"
-                    ></Combobox>
-                    <Combobox
-                      :items='technologies'
-                      multiple
-                      :label="$t('Resume.skills.frameworks')"
-                    ></Combobox>
-                    <Combobox
-                      :items='technologies'
-                      multiple
-                      :label="$t('Resume.skills.programmingLanguages')"
-                    ></Combobox>
-                    <Combobox
-                      :items='technologies'
-                      multiple
-                      :label="$t('Resume.skills.customSkills')"
-                    ></Combobox>
-                  </v-col>
-                </v-row>
-              </div>
-            </v-form>
-          </v-col>
-        </v-row>
+                    <v-text-field
+                    required
+                    tile
+                    outlined
+                    :label="$t('Resume.education.courses.platform')"
+                    ></v-text-field>
+                  </v-card-text>
+                </CardList>
+              </v-card-text>
+            </v-card>
+          </div>
+          <div id="workHistory" v-intersect.quiet="onIntersect">
+            <v-card flat>
+              <v-card-title>
+                <h4>{{ $t('Resume.workHistory._title') }}</h4>
+              </v-card-title>
+              <v-card-text>
+                <CardList
+                  items="[]"
+                >
+                <v-card-text>
+
+                  <v-text-field
+                    tile
+                    outlined
+                    name="companyName"
+                    :label="$t('Resume.workHistory.companyName')"
+                  ></v-text-field>
+                  <v-text-field
+                    tile
+                    outlined
+                    name="role"
+                    :label="$t('Resume.workHistory.role')"
+                  ></v-text-field>
+                  <v-text-field
+                    tile
+                    outlined
+                    name="location"
+                    :label="$t('Resume.workHistory.location')"
+                  ></v-text-field>
+                  <v-textarea
+                    tile
+                    outlined
+                    name="description"
+                    :label="$t('Resume.workHistory.description')"
+                  ></v-textarea>
+                  <h4>{{ $t('Resume.workHistory.period._title') }}</h4>
+                  <v-row>
+                    <v-col cols=12 md=6>
+                      <DatePicker
+                        name="startDate"
+                        :label="$t('Resume.workHistory.period.startDate')"
+                      />
+                    </v-col>
+                    <v-col cols=12 md=6>
+                      <DatePicker
+                        name="endDate"
+                        :label="$t('Resume.workHistory.period.endDate')"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+                </CardList>
+              </v-card-text>
+            </v-card>
+          </div>
+          <div id="skills" v-intersect.quiet="onIntersect">
+            <v-card flat>
+              <v-card-title>
+                <h4>{{ $t('Resume.skills._title') }}</h4>
+              </v-card-title>
+              <v-card-text cols=12 md=9>
+                <Combobox
+                  :items='technologies'
+                  multiple
+                  :label="$t('Resume.skills.softSkills')"
+                ></Combobox>
+                <Combobox
+                  :items='technologies'
+                  multiple
+                  :label="$t('Resume.skills.knowledgeAreas')"
+                ></Combobox>
+                <Combobox
+                  :items='technologies'
+                  multiple
+                  :label="$t('Resume.skills.frameworks')"
+                ></Combobox>
+                <Combobox
+                  :items='technologies'
+                  multiple
+                  :label="$t('Resume.skills.programmingLanguages')"
+                ></Combobox>
+                <Combobox
+                  :items='technologies'
+                  multiple
+                  :label="$t('Resume.skills.customSkills')"
+                ></Combobox>
+              </v-card-text>
+            </v-card>
+          </div>
+        </v-form>
       </v-card-text>
     </v-card>
   </div>
@@ -330,24 +333,4 @@ export default {
 </script>
 
 <style>
-.outline-border{
-  border: 1px solid #B8C2CC;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 4px;
-}
-
-.outline-border span {
-  background-color: white;
-  font-weight:normal;
-}
-.outline-border h1 {
-  text-align: left;
-  margin-top: -10px;
-  margin-left: 5px;
-  height: 20px;
-  line-height: 20px;
-  font-size: 15px;
-  font-family: inherit;
-}
 </style>
