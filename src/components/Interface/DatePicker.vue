@@ -13,6 +13,7 @@
       <template v-slot:activator="{ on }">
         <v-text-field
           :label="label"
+          :dense="dense"
           v-model="formattedDate"
           :color="'primary' || color"
           tile
@@ -41,6 +42,7 @@ export default {
   name: 'DatePicker',
   props: {
     label: String,
+    dense: Boolean,
     icon: String,
     color: String,
   },

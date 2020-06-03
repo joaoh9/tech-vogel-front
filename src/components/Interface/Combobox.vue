@@ -3,16 +3,19 @@
     v-model="select"
     :items="items"
     :label="label"
+    :dense="dense"
     item-text="name"
     :search-input.sync="search"
     multiple
-    chips
+    :chips="!dense"
+    :small-chips="dense"
     return-object
     tile
     outlined
   >
     <template v-slot:selection="{ attrs, item, parent, selected, disabled }">
       <v-chip
+        :small="dense"
         v-if="item === Object(item)"
         :key="JSON.stringify(item)"
         v-bind="attrs"
@@ -62,6 +65,7 @@ export default {
     items: Array,
     label: String,
     multiple: Boolean,
+    dense: Boolean,
   },
   data() {
     return {

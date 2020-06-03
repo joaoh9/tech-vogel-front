@@ -1,9 +1,13 @@
 <template>
-  <v-app-bar
-    scroll-target="scroll-body"
+  <div>
+    <!-- scroll-target="scroll-body"
     :hide-on-scroll="false"
-    elevate-on-scroll
+    shrink-on-scroll
+    elevate-on-scroll -->
+  <v-app-bar
+    app
     color="white darken-4"
+    elevate-on-scroll
   >
     <v-btn text color="white darken-4" height="60" tile elevation="0" to="/">
       <v-avatar size="150">
@@ -19,10 +23,8 @@
     <v-btn class color="info" elevation="12">Apply</v-btn>
     <v-btn class="ml-3" color="info" elevation="12" outlined>Hire</v-btn>
     <Login></Login>
-    <v-sheet id="scroll-body" class="overflow-y-auto" max-height="600">
-      <v-container style="height: 1000px;"></v-container>
-    </v-sheet>
   </v-app-bar>
+  </div>
 </template>
 
 <script>
