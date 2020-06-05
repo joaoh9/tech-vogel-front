@@ -7,6 +7,10 @@ import ContractDurationTimePeriod from '../data/contractDurationTimePeriod.json'
 import CompanySize from '../data/companySize.json';
 import preMadePhrases from '../data/preMadePhrases.json';
 
+import ProgrammingLanguages from '../data/Skills/ProgrammingLanguages.json';
+import Frameworks from '../data/Skills/Frameworks.json';
+import SoftSkills from '../data/Skills/SoftSkills.json';
+
 export default {
   Common: {
     HowItWorks: 'How It Works',
@@ -148,19 +152,17 @@ export default {
     companyType: ['Private', 'Public', 'NGO', 'Other'],
     jobType: ['Full-Time', 'Part-time', 'Contract', 'Internship'],
     experienceLevel: ['Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager'],
-    // technologies: Technologies,
-    technologies: ['vue', 'node', 'js'],
     languages: Languages,
     differentLanguages: DifferentLanguages,
     timezones: Timezones,
-    monthCount: [''].concat(MonthCount),
-    contractDurationTimePeriod: [''].concat(ContractDurationTimePeriod),
-    companySize: [''].concat(CompanySize),
+    monthCount: MonthCount,
+    contractDurationTimePeriod: ContractDurationTimePeriod,
+    companySize: CompanySize,
     preMadePhrases,
-    knowledgeAreas: [],
-    programmingLanguages: [],
-    frameworks: [],
-    softSkills: [],
+    knowledgeAreas: [''],
+    programmingLanguages: ProgrammingLanguages,
+    frameworks: Object.values(Frameworks).reduce((acc, cur) => acc.concat(cur), []),
+    softSkills: Object.values(SoftSkills).reduce((acc, cur) => acc.concat(cur.data), []),
   },
   format: {
     date: 'MM/DD/YYYY',
