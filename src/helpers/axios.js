@@ -13,7 +13,7 @@ export default class Axios {
     }
 
     return axios.create({
-      baseURL: '/api',
+      baseURL: 'localhost:5000',
       timeout: 30000,
       headers,
       maxContentLength: 20 * 1000000,

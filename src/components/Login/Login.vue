@@ -12,14 +12,14 @@
             <v-tab-item key="0">
               <v-card flat>
                 <v-card-text>
-                  <v-form ref="form" v-model="valid" lazy-validation>
+                  <v-form ref="form" lazy-validation>
                     <v-container>
                       <v-text-field
                         tile
                         style="opacity: 80%"
                         outlined
+                        dense
                         name="username"
-                        prepend-inner-icon="fa-user"
                         label="Username or Email"
                         required
                       ></v-text-field>
@@ -27,20 +27,25 @@
                         tile
                         style="opacity: 80%"
                         outlined
+                        dense
                         name="password"
-                        prepend-inner-icon="fa-lock"
                         label="Password"
                         type="password"
                         required
                       ></v-text-field>
-                      <v-btn
-                        tile
-                        style="opacity: 80%"
-                        large
-                        color="primary"
-                        class="mt-2"
-                        @click="saveUser; dialog = false"
-                      >Log In</v-btn>
+                      <v-row class="mb-n3 mt-n2">
+                        <v-col>
+                        <v-btn
+                          tile
+                          style="opacity: 80%"
+                          color="primary"
+                          @click="saveUser; dialog = false"
+                        >Log In</v-btn>
+                        </v-col>
+                        <v-col>
+                        <v-btn class="align-items-right" tile text>Don't have an account? <b>Sign Up</b></v-btn>
+                        </v-col>
+                      </v-row>
                     </v-container>
                   </v-form>
                 </v-card-text>
@@ -49,66 +54,41 @@
             <v-tab-item key="1">
               <v-card flat>
                 <v-card-text>
-                  <v-form ref="form" v-model="valid" lazy-validation>
+                  <v-form ref="form" lazy-validation>
                     <v-container>
                       <v-text-field
                         tile
-                        style="opacity: 80%"
-                        outlined
-                        name="Name"
-                        prepend-inner-icon="fa-user"
-                        label="Name"
-                        required
-                        v-model="name"
-                      ></v-text-field>
-                      {{name}}
-                      <v-text-field
-                        tile
-                        style="opacity: 80%"
-                        outlined
-                        name="username"
-                        prepend-inner-icon="fa-user"
-                        label="Username"
-                        required
-                        v-model="username"
-                      ></v-text-field>
-                      {{username}}
-                      <v-text-field
-                        tile
+                        dense
                         style="opacity: 80%"
                         outlined
                         name="email"
-                        prepend-inner-icon="fa-envelope"
                         label="Email"
                         required
                         v-model="email"
                       ></v-text-field>
-                      {{email}}
                       <v-text-field
                         tile
+                        dense
                         style="opacity: 80%"
                         outlined
                         name="password"
-                        prepend-inner-icon="fa-lock"
                         label="Password"
                         type="password"
                         required
                         v-model="password"
                       ></v-text-field>
-                      {{password}}
                       <v-text-field
                         tile
+                        dense
                         style="opacity: 80%"
                         outlined
                         name="Confirm Password"
-                        prepend-inner-icon="fa-lock"
                         label="Confirm Password"
                         type="password"
                         required
                         v-model="confirmPassword"
                       ></v-text-field>
-                      {{confirmPassword}}
-                      <v-checkbox v-model="checkbox">
+                      <v-checkbox class="mt-n1" v-model="checkbox">
                         <small slot="label">
                           By signing up, you agree with our
                           <a>Terms and Conditions</a>
@@ -119,7 +99,6 @@
                       <v-btn
                         tile
                         style="opacity: 80%"
-                        large
                         color="primary"
                         class="mt-2"
                         @click="saveUser()"
@@ -159,8 +138,6 @@ export default {
       if (this.validateForm()) {
         userController
           .saveUser({
-            name: this.name,
-            username: this.username,
             email: this.email,
             password: this.password,
           })
@@ -174,8 +151,15 @@ export default {
       }
     },
     validateForm() {
-      return this.name && this.username && this.email && this.password === this.confirmPassword;
+      return this.email && this.password === this.confirmPassword;
     },
   },
 };
 </script>
+
+<style>
+.v-icon.v-icon .v-input__icon {
+  font-size: 16px !important;
+  height: 16px !important;
+}
+</style>

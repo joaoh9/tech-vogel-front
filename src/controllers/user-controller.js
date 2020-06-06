@@ -10,7 +10,7 @@ export default class UserController {
   }) {
     return new Promise((resolve, reject) => {
       this.axios
-        .post('users', {
+        .post('/users', {
           name,
           userId: username,
           email,
