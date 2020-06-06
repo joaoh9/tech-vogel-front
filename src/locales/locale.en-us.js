@@ -161,8 +161,13 @@ export default {
     preMadePhrases,
     knowledgeAreas: [''],
     programmingLanguages: ProgrammingLanguages,
-    frameworks: Object.values(Frameworks).reduce((acc, cur) => acc.concat(cur), []),
-    softSkills: Object.values(SoftSkills).reduce((acc, cur) => acc.concat(cur.data), []),
+    frameworks: Frameworks,
+    softSkills: Object.keys(SoftSkills).reduce((acc, key) => {
+      acc.push({ header: key });
+      SoftSkills[key].data.forEach((d) => acc.push({ name: d, group: key }));
+      acc.push({ divider: true });
+      return acc;
+    }, []),
   },
   format: {
     date: 'MM/DD/YYYY',

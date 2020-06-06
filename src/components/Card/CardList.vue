@@ -3,6 +3,7 @@
     <v-card
       v-for="(item, index) in items"
       v-bind:key="item.id"
+      elevation="4"
       tile
       outlined class="my-2"
     >

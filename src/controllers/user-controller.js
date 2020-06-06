@@ -1,23 +1,23 @@
 import Axios from '../helpers/axios';
 
-export default class UserController {
-  constructor() {
-    this.axios = new Axios.GetInstance();
-  }
-
-  saveUser({
-    name, username, email, password,
-  }) {
-    return new Promise((resolve, reject) => {
-      this.axios
-        .post('/users', {
-          name,
-          userId: username,
-          email,
-          password,
-        })
-        .then(resolve)
-        .catch(reject);
-    });
-  }
+export default function UserController() {
+  return {
+    saveUser: async ({
+      name, username, email, password,
+    }) => {
+      const axios = await Axios.GetInstance();
+      return new Promise((resolve, reject) => {
+        axios
+          .post('/users', {
+            name: name || 'name',
+            username: username || `user-${new Date().getTime().toString()}`,
+            birthDate: '1996-10-10',
+            email: email || 'email@email.com',
+            password: password || '1234567',
+          })
+          .then(resolve)
+          .catch(reject);
+      });
+    },
+  };
 }

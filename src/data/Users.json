@@ -1,0 +1,30 @@
+[
+  {
+    "birthDate": "1996-10-10",
+    "email": "joao@email.com",
+    "name": "João Henrique",
+    "password": "123456",
+    "username": "joaoh9"
+  },
+  {
+    "birthDate": "1997-10-10",
+    "email": "evandro@gmail.com",
+    "name": "Evandro Lucas",
+    "password": "abcde",
+    "username": "evandrovsky"
+  },
+  {
+    "birthDate": "1998-10-10",
+    "email": "breno@outlook.com",
+    "name": "Brenão",
+    "password": "@@@###123ABcc",
+    "username": "brenoam"
+  },
+  {
+    "birthDate": "1996-10-10",
+    "email": "henrique@pm.me",
+    "name": "Henrique",
+    "password": "Abcdef@",
+    "username": "henriquecb"
+  }
+]

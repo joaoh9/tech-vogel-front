@@ -15,6 +15,7 @@ export default new Vuetify({
         error: colors.red.darken1,
         success: colors.teal.darken1,
         lightText: colors.red.lighten3,
+        bg: colors.deepPurple.lighten5,
       },
     },
   },

@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Senior Web Engineer, Fullstack",
+    "description": "HOMER has a newly created opportunity for a Senior Web Engineer to join our growing team! This role will report into our New York office, or can be based remotely in select global locations.\n\nHOMER, a BEGiN brand, is the proven early learning program that provides the best educational start possible. We offer personalized, fun, and proven learning products for kids ages 2-8 to help build confidence, mastery, and a love of learning. We are deeply committed to our members and to their children, and we are building a creative and strategic team to develop a portfolio of early learning products that support learning everywhere.\n\nReporting to our Engineering Manager, Web, the Senior Web Engineer will play a major role in building and maintaining our websites and several critical web applications.",
+    "type": "Full-time",
+    "category": "Data Mining",
+    "requiredSkills": "Demonstrable expertise designing and building websites and/or web apps and other systems using Javascript, React, and Node.\nSound Computer Science fundamentals (Bachelor’s degree in CS or related field preferred).\nStrong interpersonal and communication skills.\nAt least 5 years of relevant work experience  (or undergraduate degree in Computer Science and 3 years of relevant work experience).",
+    "desiredSkills": "Knowledge of full stack engineering, especially how scalable frontend and backend systems interoperate.\nKnowledge of deployment technologies in cloud hosted environments like AWS.\nExperience in using GraphQL effectively.",
+    "responsabilities": "Collaborate effectively with stakeholders and other team members (product managers, UI/UX designers, engineers, animators, illustrators, data scientists and others) to define and refine requirements and then execute on them.\nHave the ability and openness to switch programming languages as necessary.\nHave an entrepreneurial mindset and know how to balance speed to market and elegance in technical design.",
+    "salary": {
+      "currency": "USD",
+      "min": "10000",
+      "max": "20000",
+      "timeFrame": "Yearly"
+    },
+    "range": false,
+    "customFields": [],
+    "skills": {
+      "knowledgeAreas": ["Front-end programming", "Back-end programming"],
+      "programmingLanguages": ["JavaScript"],
+      "frameworks": ["Node.js", "React.js", "Amazon-web-services", "graphql"],
+      "softSkills": ["Communicative"]
+    }
+  }
+]

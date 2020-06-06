@@ -8,7 +8,7 @@
         expand-on-hover
       >
       <v-list shaped>
-        <v-list-item-group v-model="item" color="primary">
+        <v-list-item-group v-model="item">
           <v-list-item v-for="(item, i) in items" :key="i" :to="`${item.route}`">
             <v-list-item-icon>
               <v-icon v-text="item.icon"></v-icon>

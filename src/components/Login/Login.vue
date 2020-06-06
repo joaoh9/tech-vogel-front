@@ -61,8 +61,20 @@
                         dense
                         style="opacity: 80%"
                         outlined
+                        name="Username"
+                        label="Username"
+                        hint="Pick a username!"
+                        required
+                        v-model="username"
+                      ></v-text-field>
+                      <v-text-field
+                        tile
+                        dense
+                        style="opacity: 80%"
+                        outlined
                         name="email"
                         label="Email"
+                        hint="Enter your best email!"
                         required
                         v-model="email"
                       ></v-text-field>
@@ -134,12 +146,13 @@ export default {
   },
   methods: {
     saveUser() {
-      const userController = new UserController();
+      const userController = UserController();
       if (this.validateForm()) {
         userController
           .saveUser({
             email: this.email,
             password: this.password,
+            username: this.username,
           })
           .then((res) => {
             console.log(res);
