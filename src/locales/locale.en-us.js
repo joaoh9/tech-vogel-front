@@ -95,7 +95,7 @@ export default {
       birthDate: 'Birth date',
       personalBio: 'Personal bio',
       businessBio: 'Business bio',
-      lookingFor: "What I'm looking for",
+      lookingFor: 'What I\'m looking for',
     },
     education: {
       _title: 'Education',
@@ -149,9 +149,9 @@ export default {
     },
   },
   data: {
-    companyType: ['Private', 'Public', 'NGO', 'Other'],
-    jobType: ['Full-Time', 'Part-time', 'Contract', 'Internship'],
-    experienceLevel: ['Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager'],
+    companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
+    jobType: [ 'Full-Time', 'Part-time', 'Contract', 'Internship' ],
+    experienceLevel: [ 'Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager' ],
     languages: Languages,
     differentLanguages: DifferentLanguages,
     timezones: Timezones,

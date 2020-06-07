@@ -62,7 +62,7 @@ export default {
           type: 'salary',
           min: 10000,
           max: 1000000,
-          data: [10000, 500000],
+          data: [ 10000, 500000 ],
         },
         {
           header: 'Industry',

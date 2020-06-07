@@ -277,7 +277,7 @@ export default {
       responsabilitiesTitle: 'Responsabilities',
       requiredSkillsTitle: 'Required Skills',
       desiredSkillsTitle: 'Desired Skills',
-      items: ['js', 'vue'],
+      items: [ 'js', 'vue' ],
       changeSectionTitle: false,
     };
   },

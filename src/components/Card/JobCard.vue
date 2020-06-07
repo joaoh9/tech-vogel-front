@@ -45,9 +45,9 @@ export default {
       jobTest: {
         title: 'Full Stack Developer',
         skills: {
-          knowledgeAreas: ['Front-end programming', 'Back-end programming'],
+          knowledgeAreas: [ 'Front-end programming', 'Back-end programming' ],
           programmingLanguages: ['JavaScript'],
-          frameworks: ['Node.js', 'React.js', 'Amazon-web-services', 'graphql'],
+          frameworks: [ 'Node.js', 'React.js', 'Amazon-web-services', 'graphql' ],
           softSkills: ['Communicative'],
         },
       },

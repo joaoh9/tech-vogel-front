@@ -30,7 +30,8 @@
         <v-img class="text-right ma-7" max-width="780" src="../../assets/24.png"></v-img>
       </div>
     </div>
-    <JobCard v-for="n in 5" :key="n" class="mt-5"></JobCard> <!-- TODO: Pegar esses 5 jobs do banco ordenados por alguma métrica (a definir) -->
+    <JobCard v-for="n in 5" :key="n" class="mt-5"></JobCard>
+    <!-- TODO: Pegar esses 5 jobs do banco ordenados por alguma métrica (a definir) -->
     <div class="d-flex justify-space-between mt-10">
       <div class="align-self-center ma-6">
         <v-img class="text-left" max-width="780" src="../../assets/31.png"></v-img>
