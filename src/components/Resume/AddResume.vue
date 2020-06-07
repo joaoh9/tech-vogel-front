@@ -297,10 +297,10 @@
 </template>
 
 <script>
-import DatePicker from '../Interface/DatePicker';
-import Combobox from '../Interface/Combobox';
-import CardList from '../Card/CardList';
-import ResumeDashboard from '../LeftPannel/NavigationDrawer';
+import DatePicker from 'Interface/DatePicker';
+import Combobox from 'Interface/Combobox';
+import CardList from 'Components/Card/CardList';
+import ResumeDashboard from 'Components/LeftPannel/NavigationDrawer';
 
 export default {
   name: 'AddResume',

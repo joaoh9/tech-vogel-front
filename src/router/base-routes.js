@@ -1,9 +1,9 @@
-import Home from '../components/Home/Home';
-import AboutUs from '../components/AboutUs/AboutUs';
-import Pricing from '../components/Pricing/Pricing';
-import Hire from '../components/Hire/Hire';
-import Login from '../components/Login/Login';
-import Signup from '../components/Signup/Signup';
+import Home from 'Components/Home/Home';
+import AboutUs from 'Components/AboutUs/AboutUs';
+import Pricing from 'Components/Pricing/Pricing';
+import Hire from 'Components/Hire/Hire';
+import Login from 'Components/Login/Login';
+import Signup from 'Components/Signup/Signup';
 
 const routes = [
   {

@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import bird1 from '../../assets/bird1.png';
-import bird2 from '../../assets/bird2.png';
-import bird3 from '../../assets/bird3.png';
-import bird4 from '../../assets/bird4.png';
+import bird1 from 'Assets/bird1.png';
+import bird2 from 'Assets/bird2.png';
+import bird3 from 'Assets/bird3.png';
+import bird4 from 'Assets/bird4.png';
 
 export default {
   name: 'Pricing',

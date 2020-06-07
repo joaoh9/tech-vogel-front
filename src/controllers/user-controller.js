@@ -1,4 +1,4 @@
-import Axios from '../helpers/axios';
+import Axios from 'Helpers/axios';
 
 export default function UserController() {
   return {

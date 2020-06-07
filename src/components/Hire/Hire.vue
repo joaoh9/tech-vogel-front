@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import Card from '../Card/Card';
-import CardsSwiper from '../Card/CardSwiper';
-import PageSection from '../Interface/PageSection';
+import Card from 'Components/Card/Card';
+import CardsSwiper from 'Components/Card/CardSwiper';
+import PageSection from 'Interface/PageSection';
 
 export default {
   name: 'Hire',

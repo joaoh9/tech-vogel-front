@@ -128,7 +128,7 @@
 </template>
 
 <script>
-import UserController from '../../controllers/user-controller';
+import UserController from 'Controllers/user-controller';
 
 export default {
   name: 'Login',

@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import Login from '../Login/Login';
-import Logo from '../../assets/tv-new-logo-squared-blue.png';
+import Login from 'Components/Login/Login';
+import Logo from 'Assets/tv-new-logo-squared-blue.png';
 
 export default {
   name: 'Navbar',

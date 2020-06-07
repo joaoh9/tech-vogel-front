@@ -1,15 +1,14 @@
-// import Technologies from '../data/technologies.json';
-import Languages from '../data/languages.json';
-import DifferentLanguages from '../data/differentLanguages.json';
-import Timezones from '../data/timezones.json';
-import MonthCount from '../data/monthCount.json';
-import ContractDurationTimePeriod from '../data/contractDurationTimePeriod.json';
-import CompanySize from '../data/companySize.json';
-import preMadePhrases from '../data/preMadePhrases.json';
+import Languages from 'Data/languages.json';
+import DifferentLanguages from 'Data/differentLanguages.json';
+import Timezones from 'Data/timezones.json';
+import MonthCount from 'Data/monthCount.json';
+import ContractDurationTimePeriod from 'Data/contractDurationTimePeriod.json';
+import CompanySize from 'Data/companySize.json';
+import preMadePhrases from 'Data/preMadePhrases.json';
 
-import ProgrammingLanguages from '../data/Skills/ProgrammingLanguages.json';
-import Frameworks from '../data/Skills/Frameworks.json';
-import SoftSkills from '../data/Skills/SoftSkills.json';
+import ProgrammingLanguages from 'Data/Skills/ProgrammingLanguages.json';
+import Frameworks from 'Data/Skills/Frameworks.json';
+import SoftSkills from 'Data/Skills/SoftSkills.json';
 
 export default {
   Common: {

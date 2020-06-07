@@ -233,8 +233,8 @@
 
 <script>
 import JobDashboard from './JobDashboard';
-import Combobox2 from '../Interface/Combobox-2';
-import JobController from '../../controllers/job-controller'
+import Combobox2 from 'Interface/Combobox-2';
+import JobController from 'Controllers/job-controller'
 
 export default {
   name: 'New Job',

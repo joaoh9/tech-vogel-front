@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import JobCard from '../Card/JobCard';
+import JobCard from 'Components/Card/JobCard';
 
 export default {
   name: 'Home',

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import JobCard from '../Card/JobCard';
+import JobCard from 'Components/Card/JobCard';
 import FiltersCard from './FiltersCard';
 
 export default {
