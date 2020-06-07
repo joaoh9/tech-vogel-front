@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import JobCard from '../Card/JobCard.vue';
+import JobCard from '../Card/JobCard';
 
 export default {
   name: 'Home',

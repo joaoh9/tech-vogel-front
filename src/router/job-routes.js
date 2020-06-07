@@ -1,7 +1,7 @@
-import JobDetails from '@/components/Job/JobDetails.vue';
-import JobForm from '@/components/Job/JobForm.vue';
-import JobDashboard from '@/components/Job/JobDashboard.vue';
-import JobListing from '@/components/Job/JobListing.vue';
+import JobDetails from '@/components/Job/JobDetails';
+import JobForm from '@/components/Job/JobForm';
+import JobDashboard from '@/components/Job/JobDashboard';
+import JobListing from '@/components/Job/JobListing';
 
 const routes = [
   {

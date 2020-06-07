@@ -66,9 +66,9 @@
 </template>
 
 <script>
-import Input from '../Interface/Input.vue';
-import Button from '../Interface/Button.vue';
-import Checkbox from '../Interface/Checkbox.vue';
+import Input from '../Interface/Input';
+import Button from '../Interface/Button';
+import Checkbox from '../Interface/Checkbox';
 
 export default {
   name: 'Login',

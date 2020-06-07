@@ -12,7 +12,7 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-text-field label="Title" counter="100" outlined v-model="job.title"></v-text-field>
+            <v-text-field label="Title" dense counter="100" flat v-model="job.title"></v-text-field>
           </v-col>
         </v-row>
 
@@ -232,8 +232,9 @@
 </template>
 
 <script>
-import JobDashboard from './JobDashboard.vue';
-import Combobox2 from '../Interface/Combobox-2.vue';
+import JobDashboard from './JobDashboard';
+import Combobox2 from '../Interface/Combobox-2';
+import JobController from '../../controllers/job-controller'
 
 export default {
   name: 'New Job',
@@ -293,6 +294,9 @@ export default {
 
     send() {
       if (this.validateForm()) {
+        const jobController = JobController()
+        jobController.registerJob(this.job)
+
         this.$router.push({
           name: 'Job Description',
           params: { job: this.job },

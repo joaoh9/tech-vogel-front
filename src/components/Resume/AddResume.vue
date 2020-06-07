@@ -2,7 +2,7 @@
   <div class="container mb-8 mt-4">
     <!-- <v-row>
     <v-col cols=3>-->
-    <ResumeDashboard></ResumeDashboard>
+    <ResumeDashboard :items="$t('Resume.sidePannel')"></ResumeDashboard>
     <!-- </v-col>
     <v-col cols=9>-->
     <v-card tile elevation="16">
@@ -17,7 +17,6 @@
                 <v-text-field
                   dense
                   required
-                  tile
                   outlined
                   name="fullName"
                   :label="$t('Resume.personalInformation.fullName')"
@@ -298,10 +297,10 @@
 </template>
 
 <script>
-import DatePicker from '../Interface/DatePicker.vue';
-import Combobox from '../Interface/Combobox.vue';
-import CardList from '../Card/CardList.vue';
-import ResumeDashboard from './ResumeDashboard.vue';
+import DatePicker from '../Interface/DatePicker';
+import Combobox from '../Interface/Combobox';
+import CardList from '../Card/CardList';
+import ResumeDashboard from '../LeftPannel/NavigationDrawer';
 
 export default {
   name: 'AddResume',

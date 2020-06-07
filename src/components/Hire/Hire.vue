@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import Card from '../Card/Card.vue';
-import CardsSwiper from '../Card/CardSwiper.vue';
-import PageSection from '../Interface/PageSection.vue';
+import Card from '../Card/Card';
+import CardsSwiper from '../Card/CardSwiper';
+import PageSection from '../Interface/PageSection';
 
 export default {
   name: 'Hire',

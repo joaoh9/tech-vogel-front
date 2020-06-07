@@ -1,4 +1,4 @@
-import AddResume from '@/components/Resume/AddResume.vue';
+import AddResume from '@/components/Resume/AddResume';
 
 const routes = [
   {

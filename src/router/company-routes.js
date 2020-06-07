@@ -1,5 +1,5 @@
-import CompanyProfile from '@/components/Company/CompanyProfile.vue';
-import CompanySettings from '@/components/Company/CompanySettings.vue';
+import CompanyProfile from '@/components/Company/CompanyProfile';
+import CompanySettings from '@/components/Company/CompanySettings';
 
 const routes = [
   {

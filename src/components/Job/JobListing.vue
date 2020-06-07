@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import JobCard from '../Card/JobCard.vue';
-import FiltersCard from './FiltersCard.vue';
+import JobCard from '../Card/JobCard';
+import FiltersCard from './FiltersCard';
 
 export default {
   name: 'JobListing',

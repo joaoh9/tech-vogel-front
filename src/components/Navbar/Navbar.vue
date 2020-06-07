@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Login from '../Login/Login.vue';
+import Login from '../Login/Login';
 import Logo from '../../assets/tv-new-logo-squared-blue.png';
 
 export default {

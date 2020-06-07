@@ -88,6 +88,30 @@ export default {
       'Pellentesque aliquet massa id purus convallis, eget gravida neque sollicitudin. Aenean iaculis ante id dignissim gravida. Pellentesque varius pulvinar ultricies. Sed egestas sed sapien vel consequat. Aenean et porta velit. Nam id nulla at mi sollicitudin semper porta id neque. Donec mi nunc, convallis id lacus vitae, tincidunt fringilla orci. Nunc mattis dapibus dolor non congue. Mauris at magna nec lorem ultricies posuere. Nam at mi a sapien tempor tristique vel vitae massa.',
   },
   Resume: {
+    sidePannel: [
+      {
+        text: 'New resume',
+        icon: 'mdi-plus',
+      //   route: 'new',
+      },
+      {
+        text: 'Managers',
+        icon: 'mdi-account-multiple',
+      //   route: 'manage',
+      },
+      {
+        text: 'My plan',
+        icon: 'mdi-currency-usd',
+      },
+      {
+        text: 'Upgrade',
+        icon: 'mdi-briefcase-outline',
+      },
+      {
+        text: 'Buy Credits',
+        icon: 'mdi-credit-card-outline',
+      },
+    ],
     personalInformation: {
       _title: 'Personal information',
       fullName: 'Full name',
