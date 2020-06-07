@@ -171,6 +171,32 @@ export default {
       customSkills: 'Custom skills',
     },
   },
+  Job: {
+    sidePannel: [
+      {
+        text: 'New Job',
+        icon: 'mdi-plus',
+        route: 'new',
+      },
+      {
+        text: 'Managers',
+        icon: 'mdi-account-multiple',
+        route: 'manage',
+      },
+      {
+        text: 'My plan',
+        icon: 'mdi-currency-usd',
+      },
+      {
+        text: 'Upgrade',
+        icon: 'mdi-briefcase-outline',
+      },
+      {
+        text: 'Buy Credits',
+        icon: 'mdi-credit-card-outline',
+      },
+    ],
+  },
   data: {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
     jobType: [ 'Full-Time', 'Part-time', 'Contract', 'Internship' ],
