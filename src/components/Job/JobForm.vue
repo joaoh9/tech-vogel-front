@@ -2,7 +2,7 @@
   <div class="container mb-8 mt-4">
     <NavigationDrawer :items="$t('Job.sidePannel')" />
     <v-card tile elevation="16">
-      <v-card-text >
+      <v-card-text>
         <v-form class="container">
           <v-row>
             <v-col class="text-left">
@@ -44,7 +44,7 @@
                 label="Job Type"
                 title="Job Type"
                 outlined
-                :items="['full time', 'part time', 'hourly']"
+                :items="$t('data.jobType')"
               ></v-autocomplete>
             </v-col>
           </v-row>
@@ -363,4 +363,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)
+  > .v-input__control
+  > .v-input__slot
+  fieldset {
+  color: rgba(0, 0, 0, 0.2);
+}
+</style>

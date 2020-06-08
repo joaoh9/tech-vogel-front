@@ -199,7 +199,7 @@ export default {
   },
   data: {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
-    jobType: [ 'Full-Time', 'Part-time', 'Contract', 'Internship' ],
+    jobType: [ 'Full-Time', 'Part-time', 'Hourly', 'Contract', 'Internship' ],
     experienceLevel: [ 'Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager' ],
     languages: Languages,
     differentLanguages: DifferentLanguages,
@@ -217,6 +217,7 @@ export default {
       acc.push({ divider: true });
       return acc;
     }, []),
+    timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   format: {
     date: 'MM/DD/YYYY',
