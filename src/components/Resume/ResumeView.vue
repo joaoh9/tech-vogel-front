@@ -46,6 +46,14 @@
                       {{item.role}}
                     </v-card-text>
                   </template>
+                  <template v-slot:dialog="{ item }">
+                    <v-card-title>{{item.companyName}}</v-card-title>
+                    <v-card-subtitle>{{item.role}}</v-card-subtitle>
+                    <v-card-text>
+                      {{item.description}} <br>
+                      {{item.location}}
+                    </v-card-text>
+                  </template>
                 </Timeline>
               </v-card-text>
             </v-card>
