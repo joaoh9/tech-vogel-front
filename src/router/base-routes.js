@@ -2,8 +2,8 @@ import Home from 'Components/Home/Home';
 import AboutUs from 'Components/AboutUs/AboutUs';
 import Pricing from 'Components/Pricing/Pricing';
 import Hire from 'Components/Hire/Hire';
-import Login from 'Components/Login/Login';
-import Signup from 'Components/Signup/Signup';
+import Login from 'Components/Login/Login-2'
+import Signup from 'Components/Login/Signup';
 
 const routes = [
   {

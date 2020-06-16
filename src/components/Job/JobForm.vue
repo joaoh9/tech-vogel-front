@@ -2,259 +2,288 @@
   <div class="container mb-8 mt-4">
     <NavigationDrawer :items="$t('Job.sidePannel')" />
     <v-card tile elevation="16">
-      <v-card-text>
-        <v-form class="container">
-          <v-row>
-            <v-col class="text-left">
-              <h3>Job Title</h3>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-text-field
-                label="Title"
-                dense
-                counter="100"
-                flat
-                v-model="job.title"
-              ></v-text-field>
-            </v-col>
-          </v-row>
+      <v-tabs vertical>
+        <v-tab>
+          <v-icon left>mdi-account</v-icon>
+          <span style="font-size: 0.78rem">Option 1</span>
+        </v-tab>
+        <v-tab>
+          <v-icon left>mdi-lock</v-icon>
+          <span style="font-size: 0.78rem">Option 2</span>
+        </v-tab>
+        <v-tab>
+          <v-icon left>mdi-access-point</v-icon>
+          <span style="font-size: 0.78rem">Option 3</span>
+        </v-tab>
+        <v-tab>
+          <v-icon left>mdi-account-outline</v-icon>
+          <span style="font-size: 0.78rem">Option 4</span>
+        </v-tab>
+        <v-tab-item>
+          <v-card class="ml-6" tile>
+            <v-card-text>
+              <v-form class="container">
+                <v-row>
+                  <v-col class="text-left">
+                    <h3>Job Title</h3>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      label="Title"
+                      dense
+                      counter="100"
+                      flat
+                      v-model="job.title"
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
 
-          <v-row>
-            <v-col class="text-left">
-              <h3>Job Description</h3>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-textarea
-                label="Description"
-                counter="1000"
-                outlined
-                v-model="job.description"
-              ></v-textarea>
-            </v-col>
-          </v-row>
+                <v-row>
+                  <v-col class="text-left">
+                    <h3>Job Description</h3>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-textarea
+                      label="Description"
+                      counter="1000"
+                      outlined
+                      v-model="job.description"
+                    ></v-textarea>
+                  </v-col>
+                </v-row>
 
-          <v-row>
-            <v-col>
-              <v-autocomplete
-                v-model="job.type"
-                label="Job Type"
-                title="Job Type"
-                outlined
-                :items="$t('data.jobType')"
-              ></v-autocomplete>
-            </v-col>
-          </v-row>
+                <v-row>
+                  <v-col>
+                    <v-autocomplete
+                      v-model="job.type"
+                      label="Job Type"
+                      title="Job Type"
+                      outlined
+                      :items="$t('data.jobType')"
+                    ></v-autocomplete>
+                  </v-col>
+                </v-row>
+              </v-form>
+              <v-btn color="primary" @click="progress = 2">Avançar</v-btn>
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card class="ml-6" tile>
+            <v-card-text>
+              <v-form>
+                <v-row class="mt-n4">
+                  <v-col class="text-left">
+                    <h3>{{ this.requiredSkillsTitle }}</h3>
+                  </v-col>
+                  <v-col v-if="changeSectionTitle">
+                    <v-autocomplete
+                      v-model="requiredSkillsTitle"
+                      label="Change section title"
+                      title="Change section title"
+                      outlined
+                      :items="$t('data.preMadePhrases.requiredSkills')"
+                    ></v-autocomplete>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-textarea
+                      label="Required Skills"
+                      v-model="job.requiredSkills"
+                      counter="800"
+                      outlined
+                    ></v-textarea>
+                  </v-col>
+                </v-row>
 
-          <v-row class="mt-n4">
-            <v-col class="text-left">
-              <h3>{{ this.requiredSkillsTitle }}</h3>
-            </v-col>
-            <v-col v-if="changeSectionTitle">
-              <v-autocomplete
-                v-model="requiredSkillsTitle"
-                label="Change section title"
-                title="Change section title"
-                outlined
-                :items="$t('data.preMadePhrases.requiredSkills')"
-              ></v-autocomplete>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-textarea
-                label="Required Skills"
-                v-model="job.requiredSkills"
-                counter="800"
-                outlined
-              ></v-textarea>
-            </v-col>
-          </v-row>
+                <v-row class="mt-n4">
+                  <v-col class="text-left">
+                    <h3>{{ this.desiredSkillsTitle }}</h3>
+                  </v-col>
+                  <v-col v-if="changeSectionTitle">
+                    <v-autocomplete
+                      v-model="desiredSkillsTitle"
+                      label="Change section title"
+                      title="Change section title"
+                      outlined
+                      :items="$t('data.preMadePhrases.desiredSkills')"
+                    ></v-autocomplete>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-textarea
+                      label="Desired Skills"
+                      v-model="job.desiredSkills"
+                      counter="800"
+                      outlined
+                    ></v-textarea>
+                  </v-col>
+                </v-row>
 
-          <v-row class="mt-n4">
-            <v-col class="text-left">
-              <h3>{{ this.desiredSkillsTitle }}</h3>
-            </v-col>
-            <v-col v-if="changeSectionTitle">
-              <v-autocomplete
-                v-model="desiredSkillsTitle"
-                label="Change section title"
-                title="Change section title"
-                outlined
-                :items="$t('data.preMadePhrases.desiredSkills')"
-              ></v-autocomplete>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-textarea
-                label="Desired Skills"
-                v-model="job.desiredSkills"
-                counter="800"
-                outlined
-              ></v-textarea>
-            </v-col>
-          </v-row>
+                <v-row class="mt-n4">
+                  <v-col class="text-left">
+                    <h3>{{ this.responsabilitiesTitle }}</h3>
+                  </v-col>
+                  <v-col v-if="changeSectionTitle">
+                    <v-autocomplete
+                      v-model="responsabilitiesTitle"
+                      label="Change section title"
+                      title="Change section title"
+                      outlined
+                      :items="$t('data.preMadePhrases.responsabilities')"
+                    ></v-autocomplete>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-textarea
+                      label="Job Responsabilities"
+                      v-model="job.responsabilities"
+                      counter="800"
+                      outlined
+                    ></v-textarea>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-btn class="mr-4" color="primary" @click="progress = 3">Avançar </v-btn>
+                    <v-btn color="grey" @click="progress = 1">Voltar </v-btn>
+                  </v-col>
+                </v-row>
+              </v-form>
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
 
-          <v-row class="mt-n4">
-            <v-col class="text-left">
-              <h3>{{ this.responsabilitiesTitle }}</h3>
-            </v-col>
-            <v-col v-if="changeSectionTitle">
-              <v-autocomplete
-                v-model="responsabilitiesTitle"
-                label="Change section title"
-                title="Change section title"
-                outlined
-                :items="$t('data.preMadePhrases.responsabilities')"
-              ></v-autocomplete>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-textarea
-                label="Job Responsabilities"
-                v-model="job.responsabilities"
-                counter="800"
-                outlined
-              ></v-textarea>
-            </v-col>
-          </v-row>
+        <v-tab-item>
+          <v-card class="ml-6" tile>
+            <v-card-text>
+              <v-form>
+                <v-row>
+                  <v-col class="text-left">
+                    <h3>Salary</h3>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-autocomplete
+                      v-model="job.salary.currency"
+                      label="Curency"
+                      title="Payment Curency"
+                      outlined
+                      :items="['USD', 'GBP', 'EUR']"
+                    ></v-autocomplete>
+                  </v-col>
+                  <v-col>
+                    <v-autocomplete
+                      v-model="job.salary.timeFrame"
+                      label="Time Frame"
+                      title="Time Frame"
+                      outlined
+                      :items="['Monthly', 'Yearly', 'Hourly']"
+                    ></v-autocomplete>
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model="job.salary.min"
+                      :label="job.range ? 'From' : 'Price'"
+                      :title="job.range ? 'From' : 'Price'"
+                      outlined
+                    ></v-text-field>
+                  </v-col>
+                  <v-col v-if="job.range">
+                    <v-text-field
+                      v-model="job.salary.max"
+                      :label="job.range ? 'To' : 'Price'"
+                      :title="job.range ? 'To' : 'Price'"
+                      outlined
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+                <v-row class="mt-n12">
+                  <v-col class="text-left">
+                    <v-checkbox v-model="job.range" label="Set salary range"></v-checkbox>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-btn class="mr-4" color="primary" @click="progress = 4">Avançar </v-btn>
+                    <v-btn color="grey" @click="progress = 2">Voltar </v-btn>
+                  </v-col>
+                </v-row>
+              </v-form>
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card class="ml-6" tile>
+            <v-card-text>
+              <v-form>
+                <v-row>
+                  <v-col>
+                    <v-autocomplete
+                      v-model="job.category"
+                      label="Category"
+                      title="Category"
+                      outlined
+                      :items="['Blockchain', 'Data Mining', 'Web Development']"
+                    ></v-autocomplete>
+                  </v-col>
+                </v-row>
 
-          <div :key="index" v-for="(customField, index) of job.customFields">
-            <v-row>
-              <v-col class="text-left">
-                <v-text-field
-                  label="Field Title"
-                  counter="100"
-                  outlined
-                  v-model="job.customFields[index].title"
-                ></v-text-field>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <v-textarea
-                  label="Field Description"
-                  counter="1000"
-                  outlined
-                  v-model="job.customFields[index].description"
-                ></v-textarea>
-              </v-col>
-            </v-row>
-          </div>
+                <v-row>
+                  <v-col>
+                    <Combobox2
+                      label="Knowledge Areas"
+                      :items="$t('data.knowledgeAreas')"
+                      v-model="job.skills.knowledgeAreas"
+                    ></Combobox2>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <Combobox2
+                      label="Pogramming Languages"
+                      :items="$t('data.programmingLanguages')"
+                      v-model="job.skills.programmingLanguages"
+                    ></Combobox2>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <Combobox2
+                      label="Frameworks"
+                      :items="$t('data.frameworks')"
+                      v-model="job.skills.frameworks"
+                    ></Combobox2>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <Combobox2
+                      label="Soft Skills"
+                      :items="$t('data.softSkills')"
+                      v-model="job.skills.softSkills"
+                    ></Combobox2>
+                  </v-col>
+                </v-row>
 
-          <v-row class="mt-n4">
-            <v-col class="text-left">
-              <v-btn class="primary" @click="addField">Add field</v-btn>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col class="text-left">
-              <h3>Salary</h3>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-autocomplete
-                v-model="job.salary.currency"
-                label="Curency"
-                title="Payment Curency"
-                outlined
-                :items="['USD', 'GBP', 'EUR']"
-              ></v-autocomplete>
-            </v-col>
-            <v-col>
-              <v-autocomplete
-                v-model="job.salary.timeFrame"
-                label="Time Frame"
-                title="Time Frame"
-                outlined
-                :items="['Monthly', 'Yearly', 'Hourly']"
-              ></v-autocomplete>
-            </v-col>
-            <v-col>
-              <v-text-field
-                v-model="job.salary.min"
-                :label="range ? 'From' : 'Price'"
-                :title="range ? 'From' : 'Price'"
-                outlined
-              ></v-text-field>
-            </v-col>
-            <v-col v-if="job.range">
-              <v-text-field
-                v-model="job.salary.max"
-                :label="range ? 'To' : 'Price'"
-                :title="range ? 'To' : 'Price'"
-                outlined
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row class="mt-n12">
-            <v-col class="text-left">
-              <v-checkbox v-model="job.range" label="Set salary range"></v-checkbox>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col>
-              <v-autocomplete
-                v-model="job.category"
-                label="Category"
-                title="Category"
-                outlined
-                :items="['Blockchain', 'Data Mining', 'Web Development']"
-              ></v-autocomplete>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col>
-              <Combobox2
-                label="Knowledge Areas"
-                items="data.knowledgeAreas"
-                v-model="job.skills.knowledgeAreas"
-              ></Combobox2>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <Combobox2
-                label="Pogramming Languages"
-                items="data.programmingLanguages"
-                v-model="job.skills.programmingLanguages"
-              ></Combobox2>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <Combobox2
-                label="Frameworks"
-                items="data.frameworks"
-                v-model="job.skills.frameworks"
-              ></Combobox2>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <Combobox2
-                label="Soft Skills"
-                items="data.softSkills"
-                v-model="job.skills.softSkills"
-              ></Combobox2>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col class="text-left">
-              <v-btn @click="send" color="success">Preview</v-btn>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-card-text>
+                <v-row>
+                  <v-col class="text-left">
+                    <v-btn @click="send" color="success">Preview</v-btn>
+                  </v-col>
+                </v-row>
+              </v-form>
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs>
     </v-card>
     <v-col lg="2" md="1"></v-col>
   </div>
@@ -266,7 +295,7 @@ import Combobox2 from 'Interface/Combobox-2';
 import JobController from 'Controllers/job-controller';
 
 export default {
-  name: 'New Job',
+  name: 'NewJob',
   components: {
     NavigationDrawer,
     Combobox2,
@@ -309,6 +338,7 @@ export default {
       desiredSkillsTitle: 'Desired Skills',
       items: [ 'js', 'vue' ],
       changeSectionTitle: false,
+      progress: 1,
     };
   },
   methods: {

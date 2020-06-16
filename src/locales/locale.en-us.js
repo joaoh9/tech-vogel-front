@@ -7,8 +7,19 @@ import CompanySize from 'Data/companySize.json';
 import preMadePhrases from 'Data/preMadePhrases.json';
 
 import ProgrammingLanguages from 'Data/Skills/ProgrammingLanguages.json';
-import Frameworks from 'Data/Skills/Frameworks.json';
+import Frameworks from 'Data/Skills/Frameworks2.json';
 import SoftSkills from 'Data/Skills/SoftSkills.json';
+
+function dataFormat(data){
+  const arr = []
+  Object.keys(data).forEach(key => {
+    arr.push({ header: key });
+    data[key].data.forEach((d) => arr.push({ name: d, group: key }));
+    arr.push({ divider: true });
+    return arr;
+  }, [])
+  return arr;
+}
 
 export default {
   Common: {
@@ -211,15 +222,12 @@ export default {
     knowledgeAreas: [''],
     programmingLanguages: ProgrammingLanguages,
     frameworks: Frameworks,
-    softSkills: Object.keys(SoftSkills).reduce((acc, key) => {
-      acc.push({ header: key });
-      SoftSkills[key].data.forEach((d) => acc.push({ name: d, group: key }));
-      acc.push({ divider: true });
-      return acc;
-    }, []),
+    softSkills: dataFormat(SoftSkills),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   format: {
     date: 'MM/DD/YYYY',
   },
 };
+
+

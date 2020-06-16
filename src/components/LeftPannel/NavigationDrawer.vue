@@ -8,7 +8,7 @@
         expand-on-hover
       >
       <v-list shaped>
-        <v-list-item-group v-model="item">
+        <v-list-item-group v-model="items">
           <v-list-item v-for="(item, i) in items" :key="i" :to="`${item.route}`">
             <v-list-item-icon>
               <v-icon v-text="item.icon"></v-icon>
@@ -27,7 +27,7 @@
 export default {
   name: 'ResumeDashboard',
   props: {
-    items: Object,
+    items: Array,
   },
 };
 </script>

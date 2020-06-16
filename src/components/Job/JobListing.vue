@@ -7,7 +7,7 @@
       <job-card class="mt-4"></job-card>
       <job-card class="mt-4"></job-card>
     </div>
-    <div>div</div>
+    <div></div>
   </div>
 </template>
 

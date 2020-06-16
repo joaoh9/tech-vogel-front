@@ -1,7 +1,7 @@
 <template>
   <v-combobox
     v-model="model"
-    :items="$t(`${items}`)"
+    :items="items"
     :search-input.sync="search"
     hide-selected
     :hint="hint"
