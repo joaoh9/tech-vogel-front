@@ -6,18 +6,25 @@ import ContractDurationTimePeriod from 'Data/contractDurationTimePeriod.json';
 import CompanySize from 'Data/companySize.json';
 import preMadePhrases from 'Data/preMadePhrases.json';
 
-import ProgrammingLanguages from 'Data/Skills/ProgrammingLanguages.json';
-import Frameworks from 'Data/Skills/Frameworks2.json';
-import SoftSkills from 'Data/Skills/SoftSkills.json';
+import Skills from 'Data/Skills'
+
+function groupFormat(data){
+  const arr = []
+  Object.keys(data).forEach(key => {
+    arr.push({ header: key });
+    data[key].forEach(d => arr.push({ name: d, group: key }));
+    arr.push({ divider: true });
+  })
+  return arr;
+}
 
 function dataFormat(data){
   const arr = []
   Object.keys(data).forEach(key => {
     arr.push({ header: key });
-    data[key].data.forEach((d) => arr.push({ name: d, group: key }));
+    data[key].data.forEach(d => arr.push({ name: d, group: key }));
     arr.push({ divider: true });
-    return arr;
-  }, [])
+  })
   return arr;
 }
 
@@ -219,10 +226,10 @@ export default {
     contractDurationTimePeriod: ContractDurationTimePeriod,
     companySize: CompanySize,
     preMadePhrases,
-    knowledgeAreas: [''],
-    programmingLanguages: ProgrammingLanguages,
-    frameworks: Frameworks,
-    softSkills: dataFormat(SoftSkills),
+    knowledgeAreas: Skills.KnowledgeAreas,
+    programmingLanguages: Skills.ProgrammingLanguages,
+    frameworks: groupFormat(Skills.FrameWorks2),
+    softSkills: dataFormat(Skills.SoftSkills),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   format: {

@@ -2,10 +2,11 @@
   <v-combobox
     v-model="model"
     :items="items"
-    :search-input.sync="search"
     hide-selected
     :hint="hint"
     :label="label"
+    item-text="name"
+    item-value="name"
     multiple
     persistent-hint
     chips
@@ -15,8 +16,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title>
-            No results matching "
-            <strong>{{ search }}</strong>". Press
+            No results matching. Press
             <kbd>enter</kbd> to create a new one
           </v-list-item-title>
         </v-list-item-content>
@@ -30,7 +30,7 @@ export default {
   name: 'Combobox2',
   props: {
     label: String,
-    items: String,
+    items: Array,
     hint: {
       type: String,
       default: 'Maximum of 5 tags',
