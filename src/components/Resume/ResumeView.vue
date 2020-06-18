@@ -30,7 +30,7 @@
             <v-divider vertical></v-divider>
           </v-col>
           <v-col cols=12 md=8>
-             <v-card
+            <v-card
               flat
             >
               <v-card-text>
@@ -57,6 +57,39 @@
                 </Timeline>
               </v-card-text>
             </v-card>
+            <v-card
+              flat
+            >
+              <v-card-text>
+                <h4 class="font-weight-normal">Education</h4>
+                <v-divider class="mb-2"></v-divider>
+                <CardList
+                  v-model="resume.education.academicFormation"
+                  flat
+                  outlined
+                  elevation=0
+                >
+                <template v-slot="slotProps">
+                  <DialogCard v-model="slotProps.item">
+                    <template v-slot:card="{ item }">
+                      <v-card-text>
+                        <b>{{item.institution}}</b><br/>
+                        {{item.typeOfFormation}}
+                      </v-card-text>
+                    </template>
+                    <template v-slot:dialog="{ item }">
+                      <v-card-title>{{item.institution}}</v-card-title>
+                      <v-card-subtitle>{{item.typeOfFormation}}</v-card-subtitle>
+                      <v-card-text>
+                        {{item.studyArea}} <br/>
+                        {{item.description}}
+                      </v-card-text>
+                    </template>
+                  </DialogCard>
+                </template>
+                </CardList>
+              </v-card-text>
+            </v-card>
           </v-col>
         </v-row>
       </v-card-text>
@@ -66,11 +99,15 @@
 
 <script>
 import Timeline from '../Interface/Timeline';
+import CardList from '../Card/CardList';
+import DialogCard from '../Card/DialogCard';
 
 export default {
   name: 'ResumeView',
   components: {
     Timeline,
+    CardList,
+    DialogCard,
   },
   data() {
     return {
@@ -112,6 +149,19 @@ export default {
               },
               grade: 'Grade',
               description: 'Description',
+              activities: 'Activities and groups',
+            },
+            {
+              institution: 'UFMG',
+              typeOfFormation: 'Undergraduate',
+              studyArea: 'Computer Science',
+              period: {
+                _title: 'Period',
+                startDate: 'Start date',
+                endDate: 'End date',
+              },
+              grade: 'Grade',
+              description: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
               activities: 'Activities and groups',
             },
           ],
