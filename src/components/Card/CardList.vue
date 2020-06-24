@@ -2,21 +2,25 @@
   <div class="my-2 py-1">
     <v-card
       v-for="(item, index) in items"
-      v-bind:key="item.id"
-      elevation="4"
+      v-bind:key="index"
+      :elevation="elevation || 4"
       tile
-      outlined class="my-2"
+      :outlined="outlined"
+      :flat="flat"
+      class="my-2"
     >
       <v-btn
+        v-if="editMode"
         class="p-0 float-right"
         icon
         @click="remove(index)"
       >
         <i class="fas fa-times"></i>
       </v-btn>
-      <slot :item="item" :index="index" />
+      <slot v-bind:item="item"/>
     </v-card>
     <v-btn
+      v-if="editMode"
       class="p-0"
       color="primary"
       rounded
@@ -32,18 +36,22 @@
 // console.log(this.items);
 export default {
   name: 'CardList',
-  // props: [
-  //   'items',
-  // ],
+  props: {
+    value: Array,
+    editMode: Boolean,
+    flat: Boolean,
+    outlined: Boolean,
+    elevation: String,
+  },
   data() {
+    console.log(this.items);
     return {
-      items: [],
+      items: this.value || [],
       counter: 0,
     };
   },
   methods: {
     add() {
-      this.items = this.items || [];
       this.items.push({
         id: this.counter,
       });

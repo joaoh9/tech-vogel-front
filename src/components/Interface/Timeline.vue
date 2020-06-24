@@ -35,11 +35,7 @@ export default {
   },
   data() {
     return {
-      display: this.items.map(() => {
-        return {
-          on: false,
-        }
-      }),
+      display: this.items.map(() => false),
     };
   },
 }
