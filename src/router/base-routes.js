@@ -4,12 +4,18 @@ import Pricing from 'Components/Pricing/Pricing';
 import Hire from 'Components/Hire/Hire';
 import Login from 'Components/Login/Login-2'
 import Signup from 'Components/Login/Signup';
+import LandingPage from 'Components/LP/LandingPage.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/lp',
+    name: 'LandingPage',
+    component: LandingPage,
   },
   {
     path: '/login',

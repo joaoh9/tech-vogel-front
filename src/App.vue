@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
-    <Navbar v-else></Navbar>
-    <v-content style="background-color: #f4f6fc">
+    <Navbar v-if="notLP()"></Navbar>
+    <v-content style="background-color: white">
       <router-view class="view"></router-view>
     </v-content>
   </v-app>
@@ -32,6 +32,9 @@ export default {
       }
       this.user = user;
       return true
+    },
+    notLP(){
+      this.$router.history.current.name !== 'LandingPage'
     },
   },
 };

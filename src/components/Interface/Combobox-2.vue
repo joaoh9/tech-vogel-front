@@ -9,7 +9,10 @@
     item-value="name"
     multiple
     persistent-hint
-    chips
+    outlined
+    height="48"
+    rounded
+    small-chips
     @input="value => this.emit('input', value)"
   >
     <template v-slot:no-data>
@@ -21,6 +24,19 @@
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
+    </template>
+    <template v-slot:selection="{ attrs, item, parent, selected }">
+      <v-chip
+        v-if="item === Object(item)"
+        v-bind="attrs"
+        :color="`blue lighten-5`"
+        :input-value="selected"
+      >
+        <span class="pr-2">
+          {{ item.name }}
+        </span>
+        <v-icon small @click="parent.selectItem(item)">mdi-close</v-icon>
+      </v-chip>
     </template>
   </v-combobox>
 </template>
@@ -49,5 +65,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
