@@ -105,7 +105,7 @@ export default {
             this.step++;
           break;
         case 3:
-          if(this.emailConfirmationToken == '123')
+          if(this.emailConfirmationToken === '123')
             this.saveUser()
           break;
         default:

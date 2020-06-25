@@ -73,13 +73,8 @@ export default {
   },
   filters: {
     currency(value) {
-      console.log(value);
       const f = parseFloat(value / 1000);
-      console.log('f', f);
       const g = f.toFixed(1);
-      console.log('g', g);
-      const h = g.toString();
-      console.log('h', h);
 
       return g;
     },

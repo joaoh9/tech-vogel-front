@@ -44,7 +44,6 @@ export default {
     elevation: String,
   },
   data() {
-    console.log(this.items);
     return {
       items: this.value || [],
       counter: 0,
@@ -56,7 +55,6 @@ export default {
         id: this.counter,
       });
       this.counter += 1;
-      console.log(this.items);
     },
     remove(index) {
       const items = this.items.splice(index, 1);
