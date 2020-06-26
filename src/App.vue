@@ -39,3 +39,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-application {
+   font-family: 'Nunito Sans'  !important;
+ }
+</style>
