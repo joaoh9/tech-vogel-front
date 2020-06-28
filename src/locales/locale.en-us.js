@@ -5,26 +5,27 @@ import MonthCount from 'Data/monthCount.json';
 import ContractDurationTimePeriod from 'Data/contractDurationTimePeriod.json';
 import CompanySize from 'Data/companySize.json';
 import preMadePhrases from 'Data/preMadePhrases.json';
+import FlagIcons from 'Data/flagIcons'
 
-import Skills from 'Data/Skills'
+import Skills from 'Data/Skills';
 
-function groupFormat(data){
-  const arr = []
+function groupFormat(data) {
+  const arr = [];
   Object.keys(data).forEach(key => {
     arr.push({ header: key });
     data[key].forEach(d => arr.push({ name: d, group: key }));
     arr.push({ divider: true });
-  })
+  });
   return arr;
 }
 
-function dataFormat(data){
-  const arr = []
+function dataFormat(data) {
+  const arr = [];
   Object.keys(data).forEach(key => {
     arr.push({ header: key });
     data[key].data.forEach(d => arr.push({ name: d, group: key }));
     arr.push({ divider: true });
-  })
+  });
   return arr;
 }
 
@@ -109,12 +110,12 @@ export default {
       {
         text: 'New resume',
         icon: 'mdi-plus',
-      //   route: 'new',
+        //   route: 'new',
       },
       {
         text: 'Managers',
         icon: 'mdi-account-multiple',
-      //   route: 'manage',
+        //   route: 'manage',
       },
       {
         text: 'My plan',
@@ -215,6 +216,42 @@ export default {
       },
     ],
   },
+  LandingPage: {
+    title: 'Connecting companies with developers for remote Work',
+    subTitle: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups',
+    CTATittle: 'Sign Up Now',
+    inputs: {
+      email: {
+        title: 'Email',
+        errorMessage: 'Invalid e-mail.',
+      },
+      name: {
+        title: 'Name',
+        hint: 'Please write at least 5 characters',
+        errorMessage: 'Your name must have at least have 5 characters',
+      },
+      skills: {
+        title: 'Pick your professionals skills (programming languages, frameworks, work areas etc)',
+        hint: 'Please choose at least 3 tags',
+      },
+    },
+    buttons: {
+      goBack: 'Go back',
+      next: 'Next',
+      confirm: 'Confirm',
+    },
+    footer: {
+      socialMedia: {
+        title: 'Connect with us on our social networks!',
+      },
+      icons: [
+        { icon: 'mdi-facebook', link: 'https://facebook.com/techvogel' },
+        { icon: 'mdi-twitter', link: 'https://twitter.com/techvogel' },
+        { icon: 'mdi-linkedin', link: 'https://linkedin.com/company/techvogel' },
+        { icon: 'mdi-instagram', link: 'https://instagram.com/tech_vogel' },
+      ],
+    },
+  },
   data: {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
     jobType: [ 'Full-Time', 'Part-time', 'Hourly', 'Contract', 'Internship' ],
@@ -230,11 +267,20 @@ export default {
     programmingLanguages: Skills.ProgrammingLanguages,
     frameworks: groupFormat(Skills.FrameWorks2),
     softSkills: dataFormat(Skills.SoftSkills),
+    everySkill: groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas })
+      .concat(groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages }))
+      .concat(groupFormat(Skills.FrameWorks2)),
+    // .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   format: {
     date: 'MM/DD/YYYY',
   },
+  languages: {
+    data: [
+      { i18n: 'pt-br', language: 'Português', country: 'brazil' },
+      { i18n: 'en-us', language: 'English', country: 'usa' },
+    ],
+    icons: FlagIcons,
+  },
 };
-
-

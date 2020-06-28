@@ -1,10 +1,11 @@
 <template>
   <v-app>
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
-    <Navbar v-if="notLP()"></Navbar>
+    <Navbar v-else-if="notLP()"></Navbar>
     <v-content style="background-color: white">
       <router-view class="view"></router-view>
     </v-content>
+    <LPFooter> </LPFooter>
   </v-app>
 </template>
 
@@ -12,6 +13,7 @@
 import Navbar from 'Components/Navbar/Navbar';
 import UserNavbar from 'Components/Navbar/UserNavbar';
 import Storage from 'Helpers/storage';
+import LPFooter from 'Components/LP/LPFooter'
 
 export default {
   name: 'app',
@@ -23,6 +25,7 @@ export default {
   components: {
     Navbar,
     UserNavbar,
+    LPFooter,
   },
   methods: {
     userIsLoggedIn() {

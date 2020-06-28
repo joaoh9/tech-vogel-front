@@ -292,7 +292,7 @@
 <script>
 import NavigationDrawer from 'Components/LeftPannel/NavigationDrawer';
 import Combobox2 from 'Interface/Combobox-2';
-import JobController from 'Controllers/job-controller';
+import JobController from 'Controllers/job';
 
 export default {
   name: 'NewJob',

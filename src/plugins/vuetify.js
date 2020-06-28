@@ -11,9 +11,11 @@ export default new Vuetify({
       light: {
         primary: '#FF9200',
         secondary: '#FFD500',
+        middleYellow: '#FFDD75',
         primaryYellow: '#FFD500',
         secondaryYellow: '#FF9200',
         darkBlue: '#1A193C',
+        darkBlue2: '#312e5f',
         lightBlue: '#3AA3FF',
         primaryBlue: '#433693',
         error: colors.red.darken1,
@@ -25,5 +27,6 @@ export default new Vuetify({
   },
   icons: {
     iconfont: 'fa',
+
   },
 });
