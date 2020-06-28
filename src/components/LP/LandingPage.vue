@@ -14,7 +14,7 @@
             </div>
             <div class="d-flex">
               <img
-                class="align-self-center mb-6 mr-4"
+                class="align-self-center mb-8 mr-4"
                 height="40"
                 :src="$t(`languages.icons.${country}`)"
               />
@@ -71,12 +71,11 @@
               <Combobox2
                 v-if="step === 3"
                 color="yellow lighten-4"
-                :hint="$t('LandingPage.inputs.skill.hint')"
+                :hint="$t('LandingPage.inputs.skills.hint')"
                 :label="$t('LandingPage.inputs.skills.title')"
                 :items="$t('data.everySkill')"
                 v-model="skills"
               ></Combobox2>
-              {{skills}}
             </v-row>
             <v-row class="float-right">
               <v-btn
@@ -100,8 +99,6 @@
               >
                 {{ text }}
               </v-btn>
-              <!-- <div class="d-flex flex-row-reverse"> -->
-              <!-- </div> -->
             </v-row>
           </v-col>
         </v-row>
@@ -116,8 +113,6 @@
 <script>
 import img31 from 'Assets/31.png';
 import logo from 'Assets/logo-amarelo-grad.svg';
-// import logo from 'Assets/logo-azul-grad.svg';
-// import logo from 'Assets/logo-azul.svg';
 import Combobox2 from 'Interface/Combobox-2';
 import Validators from 'Helpers/validators';
 
@@ -175,7 +170,7 @@ export default {
           }
           break;
         case 3:
-          if (this.skills.length > 3) {
+          if (this.skills.length >= 3) {
             this.saveUser();
           }
           break;
@@ -189,11 +184,10 @@ export default {
       const userController = new UserController();
       console.log(this.skills);
       userController
-        .saveUser({
+        .saveLPUser({
           name: this.name,
           email: this.email,
-          username: this.name.replace(' ', '-'),
-          // skills: this.skills,
+          skills: this.skills,
         })
         .then(res => {
           console.log(res);

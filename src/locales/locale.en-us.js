@@ -5,7 +5,7 @@ import MonthCount from 'Data/monthCount.json';
 import ContractDurationTimePeriod from 'Data/contractDurationTimePeriod.json';
 import CompanySize from 'Data/companySize.json';
 import preMadePhrases from 'Data/preMadePhrases.json';
-import FlagIcons from 'Data/flagIcons'
+import FlagIcons from 'Data/flagIcons';
 
 import Skills from 'Data/Skills';
 
@@ -218,7 +218,8 @@ export default {
   },
   LandingPage: {
     title: 'Connecting companies with developers for remote Work',
-    subTitle: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups',
+    subTitle:
+      'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups',
     CTATittle: 'Sign Up Now',
     inputs: {
       email: {
@@ -267,8 +268,8 @@ export default {
     programmingLanguages: Skills.ProgrammingLanguages,
     frameworks: groupFormat(Skills.FrameWorks2),
     softSkills: dataFormat(Skills.SoftSkills),
-    everySkill: groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas })
-      .concat(groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages }))
+    everySkill: groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages })
+      .concat(groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas }))
       .concat(groupFormat(Skills.FrameWorks2)),
     // .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],

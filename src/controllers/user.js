@@ -22,7 +22,7 @@ export default function UserController() {
       const axios = await Axios.GetInstance();
       return new Promise((resolve, reject) => {
         axios
-          .post('/users', {
+          .post('/v1/users/', {
             name,
             email,
             skills,

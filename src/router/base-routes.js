@@ -1,4 +1,4 @@
-import Home from 'Components/Home/Home';
+// import Home from 'Components/Home/Home';
 import AboutUs from 'Components/AboutUs/AboutUs';
 import Pricing from 'Components/Pricing/Pricing';
 import Hire from 'Components/Hire/Hire';
@@ -7,13 +7,13 @@ import Signup from 'Components/Login/Signup';
 import LandingPage from 'Components/LP/LandingPage.vue';
 
 const routes = [
+  // {
+  // path: '/',
+  // name: 'Home',
+  // component: Home,
+  // },
   {
     path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/lp',
     name: 'LandingPage',
     component: LandingPage,
   },
