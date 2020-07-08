@@ -1,5 +1,6 @@
 // import Home from 'Components/Home/Home';
 import AboutUs from 'Components/AboutUs/AboutUs';
+import Welcome from 'Components/Welcome/Welcome.vue';
 import Pricing from 'Components/Pricing/Pricing';
 import Hire from 'Components/Hire/Hire';
 import Login from 'Components/Login/Login-2'
@@ -16,6 +17,11 @@ const routes = [
     path: '/',
     name: 'LandingPage',
     component: LandingPage,
+  },
+  {
+    path: '/welcome',
+    name: 'Welcome',
+    component: Welcome,
   },
   {
     path: '/login',
