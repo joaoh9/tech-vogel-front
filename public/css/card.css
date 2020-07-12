@@ -1,0 +1,9 @@
+.primary-card {
+
+  /* cinza4 */
+
+  border: 1px solid #ebebee;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 15px rgba(26, 25, 60, 0.05);
+  border-radius: 6px;
+}

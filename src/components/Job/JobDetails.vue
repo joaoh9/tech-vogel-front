@@ -4,68 +4,73 @@
       height="250"
       src="https://suzanadeoliveira.com/wp-content/uploads/2017/06/Google-Office-HD-Wallpapers-Backgrounds-Wallpaper-Abyss-scaled.jpg"
     ></v-parallax>
-    <div class="ma-12 container">
-      <div class="d-flex align-center mb-5">
-        <v-img
-          max-height="60px"
-          max-width="60px"
-          src="https://s2.glbimg.com/z_gIOSUdsxyNGClgVLYVBHBziyw=/0x0:400x400/400x400/s.glbimg.com/po/tt2/f/original/2016/05/20/new-google-favicon-logo.png"
-        ></v-img>
-        <p class="mb-0 ml-3">Google</p>
-      </div>
-      <div class="d-flex justify-start">
-        <p class="mr-8">Remote</p>
-        <p class="mr-8">{{ this.jobTest.workday }}</p>
-        <p class="mr-8">{{ this.jobTest.skills.knowledgeAreas[0] }}</p>
-      </div>
-      <div>
-        <v-chip
-          class="mr-2 mb-1 mt-1"
-          color="cyan lighten-5"
-          v-for="(k, i) in this.jobTest.skills.knowledgeAreas"
-          :key="`ss-${i}`"
-          >{{ k }}</v-chip
-        >
-        <v-chip
-          class="mr-2 mb-1 mt-1"
-          color="blue lighten-5"
-          v-for="(p, i) in this.jobTest.skills.programmingLanguages"
-          :key="`programmingLanguages-${i}`"
-          >{{ p }}</v-chip
-        >
-        <v-chip
-          class="mr-2 mb-1 mt-1"
-          color="purple lighten-5"
-          v-for="(f, i) in this.jobTest.skills.frameworks"
-          :key="`frameworks-${i}`"
-          >{{ f }}</v-chip
-        >
-      </div>
-      <p class="mb-n2 mt-6">We are looking for a...</p>
-      <h2>{{ this.jobTest.title }}</h2>
-      <p>{{ this.jobTest.description }}</p>
-      <h2>Required Skills</h2>
-      <p v-for="(reqSkill, index) in this.jobTest.requiredSkills.split('\n')" :key="index">
-        {{ reqSkill }}
-      </p>
-      <h2>Desired Skills</h2>
-      <p>{{ this.jobTest.desiredSkills }}</p>
-      <h2>Responsabilities</h2>
-      <p>{{ this.jobTest.responsabilities }}</p>
-      <div class="d-flex justify-start mb-0">
-        <p>{{ this.jobTest.salary.currency }}</p>
-        <p class="ml-2">{{ this.jobTest.salary.min | currency(this.jobTest.salary.currency) }}</p>
-        <p class="ml-2" v-if="this.jobTest.salary.max">-</p>
-        <p class="ml-2" v-if="this.jobTest.salary.max">
-          {{ this.jobTest.salary.max | currency(this.jobTest.salary.currency) }}
-        </p>
-        <p class="ml-2">/</p>
-        <p class="ml-2">{{ this.jobTest.salary.timeFrame }}</p>
-      </div>
-      <div class="d-flex justify-start mt-4">
-        <v-btn color="primary" class="mr-4">Confirmar</v-btn>
-        <v-btn color="secondary">Voltar e Editar</v-btn>
-      </div>
+    <div class="container">
+      <v-row>
+        <v-col cols="7">
+          <div class="d-flex align-center mb-5">
+            <v-img
+              max-height="60px"
+              max-width="60px"
+              src="https://s2.glbimg.com/z_gIOSUdsxyNGClgVLYVBHBziyw=/0x0:400x400/400x400/s.glbimg.com/po/tt2/f/original/2016/05/20/new-google-favicon-logo.png"
+            ></v-img>
+            <p class="mb-0 ml-3">Google</p>
+          </div>
+          <div class="d-flex justify-start">
+            <p class="mr-8">Remote</p>
+            <p class="mr-8">{{ this.jobTest.workday }}</p>
+            <p class="mr-8">{{ this.jobTest.skills.knowledgeAreas[0] }}</p>
+          </div>
+          <div>
+            <v-chip
+              class="mr-2 mb-1 mt-1"
+              color="cyan lighten-5"
+              v-for="(k, i) in this.jobTest.skills.knowledgeAreas"
+              :key="`ss-${i}`"
+            >{{ k }}</v-chip>
+            <v-chip
+              class="mr-2 mb-1 mt-1"
+              color="blue lighten-5"
+              v-for="(p, i) in this.jobTest.skills.programmingLanguages"
+              :key="`programmingLanguages-${i}`"
+            >{{ p }}</v-chip>
+            <v-chip
+              class="mr-2 mb-1 mt-1"
+              color="purple lighten-5"
+              v-for="(f, i) in this.jobTest.skills.frameworks"
+              :key="`frameworks-${i}`"
+            >{{ f }}</v-chip>
+          </div>
+          <p class="mb-n2 mt-6">We are looking for a...</p>
+          <h2>{{ this.jobTest.title }}</h2>
+          <p>{{ this.jobTest.description }}</p>
+          <h2>Required Skills</h2>
+          <p
+            v-for="(reqSkill, index) in this.jobTest.requiredSkills.split('\n')"
+            :key="index"
+          >{{ reqSkill }}</p>
+          <h2>Desired Skills</h2>
+          <p>{{ this.jobTest.desiredSkills }}</p>
+          <h2>Responsabilities</h2>
+          <p>{{ this.jobTest.responsabilities }}</p>
+          <div class="d-flex justify-start mb-0">
+            <p>{{ this.jobTest.salary.currency }}</p>
+            <p class="ml-2">{{ this.jobTest.salary.min | currency(this.jobTest.salary.currency) }}</p>
+            <p class="ml-2" v-if="this.jobTest.salary.max">-</p>
+            <p
+              class="ml-2"
+              v-if="this.jobTest.salary.max"
+            >{{ this.jobTest.salary.max | currency(this.jobTest.salary.currency) }}</p>
+            <p class="ml-2">/</p>
+            <p class="ml-2">{{ this.jobTest.salary.timeFrame }}</p>
+          </div>
+          <div class="d-flex justify-start mt-4">
+            <v-btn large color="primary-lighten-1" class="mr-4">Confirmar</v-btn>
+            <v-btn large color="secondary-lighten-1">Voltar e Editar</v-btn>
+          </div>
+        </v-col>
+        <v-col cols="1"></v-col>
+        <v-col cols="4">teste</v-col>
+      </v-row>
     </div>
   </div>
 </template>
@@ -112,9 +117,7 @@ export default {
   },
   filters: {
     currency(value, cur) {
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: cur })
-        .format(parseFloat(value))
-        .toString();
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: cur }).format(parseFloat(value)).toString();
     },
   },
   components: {},

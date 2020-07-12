@@ -2,7 +2,7 @@
   <v-app>
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
     <Navbar v-if="notLP()"></Navbar>
-    <v-content style="background-color: white">
+    <v-content style="background-color: #FCFCFF">
       <router-view class="view"></router-view>
     </v-content>
     <LPFooter> </LPFooter>

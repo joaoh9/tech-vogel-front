@@ -7,7 +7,7 @@
           <i class="vs-icon feather icon-check"></i>
         </span>
       </span>
-      <span class="">{{ title }}</span>
+      <span >{{ title }}</span>
     </div>
   </fieldset>
 </template>

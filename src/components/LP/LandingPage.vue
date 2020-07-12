@@ -2,9 +2,9 @@
   <div class="container">
     <v-row class="ma-2">
       <v-col md="6" cols="12">
-        <v-row class="">
+        <v-row >
           <v-col md="7" cols="12">
-            <v-img class="" width="275" contain :src="logo"></v-img>
+            <v-img  width="275" contain :src="logo"></v-img>
           </v-col>
           <v-col md="5" cols="12">
             <div style="display: none">

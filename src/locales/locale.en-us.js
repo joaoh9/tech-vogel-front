@@ -38,6 +38,8 @@ export default {
     Hiring: 'Hiring',
     AboutUs: 'About Us',
     Content: 'Content',
+    next: 'Next',
+    back: 'Go Back',
   },
   Home: {
     title: 'Tech Vogel',
@@ -101,9 +103,9 @@ export default {
   },
   WhyRemote: {
     _1:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan mauris libero, id fringilla arcu condimentum eu. Nullam blandit felis vitae dolor fringilla pharetra. Nullam viverra magna eget iaculis commodo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam et aliquet est. Donec nec tristique tortor. Fusce non ultricies tellus. Donec eget lacus et lorem viverra elementum sed sit amet diam. Nam malesuada aliquet semper. Quisque ullamcorper libero porta, bibendum ipsum vitae, cursus augue. Aliquam vulputate orci eu ipsum sagittis fermentum. Suspendisse potenti. Aenean porta auctor mi, ut viverra elit ullamcorper a. Phasellus pellentesque ligula nibh, quis interdum velit elementum quis. Etiam condimentum enim sed lobortis mattis. In sed volutpat orci',
+      '',
     _2:
-      'Pellentesque aliquet massa id purus convallis, eget gravida neque sollicitudin. Aenean iaculis ante id dignissim gravida. Pellentesque varius pulvinar ultricies. Sed egestas sed sapien vel consequat. Aenean et porta velit. Nam id nulla at mi sollicitudin semper porta id neque. Donec mi nunc, convallis id lacus vitae, tincidunt fringilla orci. Nunc mattis dapibus dolor non congue. Mauris at magna nec lorem ultricies posuere. Nam at mi a sapien tempor tristique vel vitae massa.',
+      '',
   },
   Resume: {
     sidePannel: [
@@ -215,6 +217,25 @@ export default {
         icon: 'mdi-credit-card-outline',
       },
     ],
+    new: {
+      _1: {
+        pageTitle: 'Basic Information',
+        jobTitle: 'Job Title',
+        category: 'Category',
+        contractType: 'Contract Type',
+      },
+      _2: {
+        pageTitle: 'Tell us more',
+        about: 'About the role',
+        languages: 'Required Language(s)',
+      },
+      _3: {
+        pageTitle: '',
+      },
+      _4: {
+        pageTitle: '',
+      },
+    },
   },
   LandingPage: {
     title: 'Connecting companies with developers for remote Work',
@@ -255,7 +276,7 @@ export default {
   },
   data: {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
-    jobType: [ 'Full-Time', 'Part-time', 'Hourly', 'Contract', 'Internship' ],
+    contractType: [ 'Full-Time', 'Part-time', 'Hourly', 'Contract', 'Internship' ],
     experienceLevel: [ 'Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager' ],
     languages: Languages,
     differentLanguages: DifferentLanguages,
