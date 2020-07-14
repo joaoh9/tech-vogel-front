@@ -32,7 +32,7 @@
     </v-combobox>
     <v-row>
       <v-col>
-        <v-btn elevation="0" @click="$emit('back')" large color="secondary-lighten-2">{{$t('Common.back')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('back')" large color="secondary-lighten-1">{{$t('Common.back')}}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">

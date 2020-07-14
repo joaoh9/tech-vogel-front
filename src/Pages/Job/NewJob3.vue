@@ -3,8 +3,6 @@
     <h2 class="mb-12">Select Desired Skills</h2>
 
     <h6>Knowlege Areas</h6>
-    {{knowledgeAreas}}
-    teste
     <v-combobox
       v-model="knowledgeAreas"
       @input="$emit('knowlegeAreas', knowlegeAreas)"
