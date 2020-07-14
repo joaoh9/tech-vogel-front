@@ -1,23 +1,23 @@
-// import Home from 'Components/Home/Home';
+import Home from 'Components/Home/Home';
 import AboutUs from 'Components/AboutUs/AboutUs';
 import Welcome from 'Components/Welcome/Welcome.vue';
 import Pricing from 'Components/Pricing/Pricing';
 import Hire from 'Components/Hire/Hire';
 import Login from 'Components/Login/Login-2'
 import Signup from 'Components/Login/Signup';
-import LandingPage from 'Components/LP/LandingPage.vue';
+// import LandingPage from 'Components/LP/LandingPage.vue';
 
 const routes = [
-  // {
-  // path: '/',
-  // name: 'Home',
-  // component: Home,
-  // },
   {
     path: '/',
-    name: 'LandingPage',
-    component: LandingPage,
+    name: 'Home',
+    component: Home,
   },
+  // {
+  // path: '/',
+  // name: 'LandingPage',
+  // component: LandingPage,
+  // },
   {
     path: '/welcome',
     name: 'Welcome',

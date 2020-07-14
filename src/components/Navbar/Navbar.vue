@@ -3,24 +3,23 @@
     <v-app-bar app color="white darken-4" elevate-on-scroll>
       <v-btn text color="white darken-4" height="60" tile elevation="0" to="/">
         <v-avatar size="150">
-          <v-img height="100" width="1" :src="logo"></v-img>
+          <v-img contain height="100" width="1" :src="logo"></v-img>
         </v-avatar>
       </v-btn>
-      <v-btn to="howitworks" color="grey darken-3" text>How It Works</v-btn>
-      <v-btn to="aboutus" color="grey darken-3" text>About Us</v-btn>
-      <v-btn to="pricing" color="grey darken-3" text>Pricing</v-btn>
-      <v-btn to="content" color="grey darken-3" text>Content</v-btn>
       <v-spacer></v-spacer>
-      <v-btn class color="info" elevation="12">Apply</v-btn>
-      <v-btn class="ml-3" color="info" elevation="12" outlined>Hire</v-btn>
-      <v-btn to="login" color="info" text>Login</v-btn>
-      <v-btn to="signup" outlined color="secondary" text>SignUp</v-btn>
+      <v-btn to="jobList" color="grey darken-3" text>Jobs</v-btn>
+      <v-btn to="pricing" color="grey darken-3" text>Pricing</v-btn>
+      <v-btn to="howItWorks" color="grey darken-3" text>How It Works</v-btn>
+      <v-spacer></v-spacer>
+      <!-- <v-btn to="content" color="grey darken-3" text>Sign Up</v-btn> -->
+      <v-btn to="signup" text>Sign Up</v-btn>
+      <v-btn to="login" tile large color="primary" class="mx-4">Login</v-btn>
     </v-app-bar>
   </div>
 </template>
 
 <script>
-import Logo from 'Assets/tv-new-logo-squared-blue.png';
+import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
 
 export default {
   name: 'Navbar',
