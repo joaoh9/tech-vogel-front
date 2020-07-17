@@ -1,6 +1,6 @@
 import CompanyProfile from '@/components/Company/CompanyProfile';
 import CompanySettings from '@/components/Company/CompanySettings';
-import CompanyRegister from '@/components/Company/Register';
+import NewCompany from 'Pages/Company/New';
 import FirstSteps from '@/components/Company/FirstSteps';
 
 const routes = [
@@ -15,9 +15,9 @@ const routes = [
     component: CompanySettings,
   },
   {
-    path: '/company/register',
-    name: 'Register',
-    component: CompanyRegister,
+    path: '/company/new',
+    name: 'New',
+    component: NewCompany,
   },
   {
     path: '/company/first-steps',

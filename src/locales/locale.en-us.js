@@ -274,6 +274,30 @@ export default {
       ],
     },
   },
+  Company: {
+    new: {
+      _1: {
+        pageTitle: 'Register as a company',
+        companyName: 'Company name',
+        representativeName: 'Representative name',
+        representativeEmail: 'Representative email',
+        password: 'Password',
+        confirmPassword: 'Confirm password',
+      },
+      _2: {
+        pageTitle: 'Build your company page',
+        location: 'Location',
+        aboutYourCompany: 'About your company',
+      },
+      _3: {
+        pageTitle: 'Add your links',
+        webpage: 'Webpage',
+        linkedin: 'LinkedIn',
+        twitter: 'Twitter',
+        instagram: 'Instagram',
+      },
+    },
+  },
   data: {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
     contractType: [ 'Full-Time', 'Part-time', 'Hourly', 'Contract', 'Internship' ],
