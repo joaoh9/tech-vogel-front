@@ -2,15 +2,20 @@
   <div>
     <h2 class="mb-12">{{$t('Job.new._1.pageTitle')}}</h2>
 
-    <h6>{{$t('Job.new._1.jobTitle')}}</h6>
-    <v-text-field v-model="title" @input="$emit('title', title)" outlined></v-text-field>
+    <v-row>
+      <h1 class="body-1 ml-3">{{$t('Job.new._1.jobTitle')}}</h1>
+      <v-icon v-bind="attrs" class="ml-2" v-on="on">mdi-information-outline</v-icon>
+      <v-col cols="12">
+      <v-text-field v-model="title" @input="$emit('title', title)" outlined></v-text-field>
+      </v-col>
+    </v-row>
     <v-row>
       <v-col>
-        <h6>{{$t('Job.new._1.category')}}</h6>
+        <p class="body-1">{{$t('Job.new._1.category')}}</p>
         <v-text-field v-model="category" @input="$emit('category', category)" outlined></v-text-field>
       </v-col>
       <v-col>
-        <h6>{{$t('Job.new._1.contractType')}}</h6>
+        <p class="body-1">{{$t('Job.new._1.contractType')}}</p>
         <v-combobox
           :items="$t('data.contractType')"
           v-model="contractType"
@@ -23,7 +28,13 @@
       <v-col></v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
-        <v-btn elevation="0" @click="$emit('advance')" large color="primary" class="ml-2">{{$t('Common.next')}}</v-btn>
+        <v-btn
+          elevation="0"
+          @click="$emit('advance')"
+          large
+          color="primary"
+          class="ml-2"
+        >{{$t('Common.next')}}</v-btn>
       </v-col>
     </v-row>
   </div>
