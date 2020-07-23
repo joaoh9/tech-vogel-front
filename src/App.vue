@@ -14,7 +14,7 @@ import Navbar from 'Components/Navbar/Navbar';
 import UserNavbar from 'Components/Navbar/UserNavbar';
 import Storage from 'Helpers/storage';
 import LPFooter from 'Components/LP/LPFooter';
-import '../public/css/reset_style.css';
+import '../public/css/typography.css';
 
 export default {
   name: 'app',
