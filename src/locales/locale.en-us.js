@@ -74,12 +74,9 @@ export default {
     },
   },
   AboutUs: {
-    _1:
-      'Tech Vogel came into life to give another option for companies and professionals to achieve better results at work and live a better life. We truly believe that with remote work companies can find the best professionals that fit perfectly for the job, choosing to look outside their comfort zone and finding qualified workforce around the globe, with less time and money expended.',
-    _2:
-      'The future of work comes with new visions and a chase for a better quality of life. We stand for work done with professionalism, in time, with excellency and liberty.',
-    _3:
-      'More time spent doing what you love and learning new things, giving your best at the job and choosing where you want to work the next day. This is what we aim for.',
+    _1: 'Tech Vogel came into life to give another option for companies and professionals to achieve better results at work and live a better life. We truly believe that with remote work companies can find the best professionals that fit perfectly for the job, choosing to look outside their comfort zone and finding qualified workforce around the globe, with less time and money expended.',
+    _2: 'The future of work comes with new visions and a chase for a better quality of life. We stand for work done with professionalism, in time, with excellency and liberty.',
+    _3: 'More time spent doing what you love and learning new things, giving your best at the job and choosing where you want to work the next day. This is what we aim for.',
     _4: 'Liberty comes with responsibility, and remote work calls for both.',
     _5: 'Embrace the remote work, and join the new era with Tech Vogel.',
   },
@@ -102,35 +99,32 @@ export default {
     },
   },
   WhyRemote: {
-    _1:
-      '',
-    _2:
-      '',
+    _1: '',
+    _2: '',
   },
   Resume: {
-    sidePannel: [
-      {
-        text: 'New resume',
-        icon: 'mdi-plus',
-        //   route: 'new',
-      },
-      {
-        text: 'Managers',
-        icon: 'mdi-account-multiple',
-        //   route: 'manage',
-      },
-      {
-        text: 'My plan',
-        icon: 'mdi-currency-usd',
-      },
-      {
-        text: 'Upgrade',
-        icon: 'mdi-briefcase-outline',
-      },
-      {
-        text: 'Buy Credits',
-        icon: 'mdi-credit-card-outline',
-      },
+    sidePannel: [ {
+      text: 'New resume',
+      icon: 'mdi-plus',
+      //   route: 'new',
+    },
+    {
+      text: 'Managers',
+      icon: 'mdi-account-multiple',
+      //   route: 'manage',
+    },
+    {
+      text: 'My plan',
+      icon: 'mdi-currency-usd',
+    },
+    {
+      text: 'Upgrade',
+      icon: 'mdi-briefcase-outline',
+    },
+    {
+      text: 'Buy Credits',
+      icon: 'mdi-credit-card-outline',
+    },
     ],
     personalInformation: {
       _title: 'Personal information',
@@ -193,29 +187,28 @@ export default {
     },
   },
   Job: {
-    sidePannel: [
-      {
-        text: 'New Job',
-        icon: 'mdi-plus',
-        route: 'new',
-      },
-      {
-        text: 'Managers',
-        icon: 'mdi-account-multiple',
-        route: 'manage',
-      },
-      {
-        text: 'My plan',
-        icon: 'mdi-currency-usd',
-      },
-      {
-        text: 'Upgrade',
-        icon: 'mdi-briefcase-outline',
-      },
-      {
-        text: 'Buy Credits',
-        icon: 'mdi-credit-card-outline',
-      },
+    sidePannel: [ {
+      text: 'New Job',
+      icon: 'mdi-plus',
+      route: 'new',
+    },
+    {
+      text: 'Managers',
+      icon: 'mdi-account-multiple',
+      route: 'manage',
+    },
+    {
+      text: 'My plan',
+      icon: 'mdi-currency-usd',
+    },
+    {
+      text: 'Upgrade',
+      icon: 'mdi-briefcase-outline',
+    },
+    {
+      text: 'Buy Credits',
+      icon: 'mdi-credit-card-outline',
+    },
     ],
     new: {
       _1: {
@@ -239,8 +232,7 @@ export default {
   },
   LandingPage: {
     title: 'Connecting companies with developers for remote Work',
-    subTitle:
-      'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups',
+    subTitle: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups',
     CTATittle: 'Sign Up Now',
     inputs: {
       email: {
