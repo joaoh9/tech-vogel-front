@@ -70,12 +70,8 @@ export default {
   color: #000000aa;
 }
 
-.v-text-field {
-  border-radius: 6px;
-}
-
-.v-textarea {
-  border-radius: 6px;
+.v-text-field .v-textarea .v-card .v-card:not() {
+  border-radius: 6px !important;
 }
 
 h6 {
