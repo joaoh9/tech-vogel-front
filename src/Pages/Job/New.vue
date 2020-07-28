@@ -2,24 +2,40 @@
   <v-row class="mt-12">
     <v-col cols="2"></v-col>
     <v-col cols="8">
-    <v-system-bar color="bg" style="margin-left: -50px; margin-right: -50px">
-      <p class="overline" :style="getPageTitle(1)" :key="step">aaaaaaaaaaaaaaaaa</p>
-      <v-spacer></v-spacer>
-      <p class="overline" :style="getPageTitle(2)" :key="step">aaaaaaaaaaaaaaaaa</p>
-      <v-spacer></v-spacer>
-      <p class="overline" :style="getPageTitle(3)" :key="step">aaaaaaaaaaaaaaaaa</p>
-      <v-spacer></v-spacer>
-      <p class="overline" :style="getPageTitle(4)" :key="step">aaaaaaaaaaaaaaaaa</p>
-    </v-system-bar>
+      <v-system-bar color="bg" style="margin-left: -50px; margin-right: -50px">
+        <p class="overline" :style="getPageTitle(1)" :key="step">aaaaaaaaaaaaaaaaa</p>
+        <v-spacer></v-spacer>
+        <p class="overline" :style="getPageTitle(2)" :key="step">aaaaaaaaaaaaaaaaa</p>
+        <v-spacer></v-spacer>
+        <p class="overline" :style="getPageTitle(3)" :key="step">aaaaaaaaaaaaaaaaa</p>
+        <v-spacer></v-spacer>
+        <p class="overline" :style="getPageTitle(4)" :key="step">aaaaaaaaaaaaaaaaa</p>
+      </v-system-bar>
       <v-card class="primary-card" elevation="6">
         <v-system-bar color="cinza4" style="border-radius: 6px; margin: -1px">
-          <v-icon size="28px" style="margin: -10px" :color="step === 1 ? 'primary' : 'cinza3'">mdi-checkbox-blank-circle</v-icon>
+          <v-icon
+            size="28px"
+            style="margin: -10px"
+            :color="step === 1 ? 'primary' : 'cinza3'"
+          >mdi-checkbox-blank-circle</v-icon>
           <v-spacer></v-spacer>
-          <v-icon size="28px" style="margin: -10px" :color="step === 2 ? 'primary' : 'cinza3'">mdi-checkbox-blank-circle</v-icon>
+          <v-icon
+            size="28px"
+            style="margin: -10px"
+            :color="step === 2 ? 'primary' : 'cinza3'"
+          >mdi-checkbox-blank-circle</v-icon>
           <v-spacer></v-spacer>
-          <v-icon size="28px" style="margin: -10px" :color="step === 3 ? 'primary' : 'cinza3'">mdi-checkbox-blank-circle</v-icon>
+          <v-icon
+            size="28px"
+            style="margin: -10px"
+            :color="step === 3 ? 'primary' : 'cinza3'"
+          >mdi-checkbox-blank-circle</v-icon>
           <v-spacer></v-spacer>
-          <v-icon size="28px" style="margin: -10px" :color="step === 4 ? 'primary' : 'cinza3'">mdi-checkbox-blank-circle</v-icon>
+          <v-icon
+            size="28px"
+            style="margin: -10px"
+            :color="step === 4 ? 'primary' : 'cinza3'"
+          >mdi-checkbox-blank-circle</v-icon>
         </v-system-bar>
         <v-row class="mt-12 mb-9">
           <v-col cols="1"></v-col>
@@ -114,26 +130,25 @@ export default {
     preview() {
       this.$router.push({
         name: 'Job Description',
-      })
+      });
     },
-    getPageTitle(page){
-      switch (page){
+    getPageTitle(page) {
+      switch (page) {
         case 1:
-          if (this.step === 1) return 'color: #FF9200'
-          return 'color: #A1A1AC'
+          if (this.step === 1) return 'color: #FF9200';
+          return 'color: #A1A1AC';
 
         case 2:
-          if (this.step === 2) return 'color: #FF9200'
-          return 'color: #A1A1AC'
+          if (this.step === 2) return 'color: #FF9200';
+          return 'color: #A1A1AC';
 
         case 3:
-          if (this.step === 3) return 'color: #FF9200'
-          return 'color: #A1A1AC'
+          if (this.step === 3) return 'color: #FF9200';
+          return 'color: #A1A1AC';
 
         case 4:
-          if (this.step === 4) return 'color: #FF9200'
-          return 'color: #A1A1AC'
-
+          if (this.step === 4) return 'color: #FF9200';
+          return 'color: #A1A1AC';
       }
     },
   },
