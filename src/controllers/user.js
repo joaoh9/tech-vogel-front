@@ -2,34 +2,37 @@ import Axios from 'Helpers/axios';
 
 export default function UserController() {
   return {
-    saveUser: async ({ name, username, email }) => {
-      const axios = await Axios.GetInstance();
+    saveUser: async ({ name, username, email, password }) => {
+      const axios = Axios.GetInstance();
       return new Promise((resolve, reject) => {
         axios
           .post('/user', {
-            name: name || 'name',
-            username: username || `user-${new Date().getTime().toString()}`,
-            // birthDate: '1996-10-10',
-            email: email || 'email@email.com',
-            // password: password || '1234567',
+            name,
+            username,
+            email,
+            password,
           })
           .then(resolve)
           .catch(reject);
       });
     },
 
-    saveLPUser: async ({ name, email, skills }) => {
-      const axios = await Axios.GetInstance();
+    getByEmail: async(email) => {
+      const axios = Axios.GetInstance();
       return new Promise((resolve, reject) => {
-        axios
-          .post('/v1/users/', {
-            name,
-            email,
-            skills,
-          })
+        axios.get(`/users/byEmail/${email}`)
           .then(resolve)
-          .catch(reject);
-      });
+          .catch(reject)
+      })
+    },
+
+    getByUsername: async(username) => {
+      const axios = Axios.GetInstance();
+      return new Promise((resolve, reject) => {
+        axios.get(`/users/${username}`)
+          .then(resolve)
+          .catch(reject)
+      })
     },
   };
 }
