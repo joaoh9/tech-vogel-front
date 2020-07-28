@@ -3,13 +3,13 @@
     <v-col cols="2"></v-col>
     <v-col cols="8">
       <v-system-bar color="bg" style="margin-left: -50px; margin-right: -50px">
-        <p class="overline" :style="getPageTitle(1)" :key="step">aaaaaaaaaaaaaaaaa</p>
+        <div v-html="getPageTitle(1)" class="overline" :style="getTitleColor(1)" :key="step + 1"></div>
         <v-spacer></v-spacer>
-        <p class="overline" :style="getPageTitle(2)" :key="step">aaaaaaaaaaaaaaaaa</p>
+        <div v-html="getPageTitle(2)" class="overline" :style="getTitleColor(2)" :key="step + 2"></div>
         <v-spacer></v-spacer>
-        <p class="overline" :style="getPageTitle(3)" :key="step">aaaaaaaaaaaaaaaaa</p>
+        <div v-html="getPageTitle(3)" class="overline" :style="getTitleColor(3)" :key="step + 3"></div>
         <v-spacer></v-spacer>
-        <p class="overline" :style="getPageTitle(4)" :key="step">aaaaaaaaaaaaaaaaa</p>
+        <div v-html="getPageTitle(4)" class="overline" :style="getTitleColor(4)" :key="step + 4"></div>
       </v-system-bar>
       <v-card class="primary-card" elevation="6">
         <v-system-bar color="cinza4" style="border-radius: 6px; margin: -1px">
@@ -93,6 +93,7 @@ import NewJob3 from './NewJob3';
 import NewJob4 from './NewJob4';
 import NewJob5 from './NewJob5';
 import JobDetails from 'Components/Job/JobDetails';
+import LocaleHelper from 'Helpers/locale';
 
 export default {
   name: 'NewJob',
@@ -132,7 +133,7 @@ export default {
         name: 'Job Description',
       });
     },
-    getPageTitle(page) {
+    getTitleColor(page) {
       switch (page) {
         case 1:
           if (this.step === 1) return 'color: #FF9200';
@@ -150,6 +151,23 @@ export default {
           if (this.step === 4) return 'color: #FF9200';
           return 'color: #A1A1AC';
       }
+    },
+    getPageTitle(page) {
+      const maxNewJobPageTitleLength = LocaleHelper(this.$t('Job.new'));
+      console.log(maxNewJobPageTitleLength);
+      const space = '&nbsp;';
+
+      let pageTitle = this.$t(`Job.new._${page.toString()}.pageTitle`);
+      console.log(pageTitle + '|');
+      console.log(maxNewJobPageTitleLength - pageTitle.length);
+      const ptLength = pageTitle.length;
+      for (let i = 0; i < maxNewJobPageTitleLength - ptLength; i++) {
+        i % 2 === 0 ? (pageTitle = pageTitle + space) : (pageTitle = space + pageTitle);
+      }
+
+      console.log(pageTitle + '|');
+
+      return '<p>' + pageTitle + '</p>';
     },
   },
 };

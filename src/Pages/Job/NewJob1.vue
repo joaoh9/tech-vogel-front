@@ -4,7 +4,7 @@
 
     <v-row>
       <h1 class="body-1 ml-3">{{$t('Job.new._1.jobTitle')}}</h1>
-      <v-icon v-bind="attrs" class="ml-2" v-on="on">mdi-information-outline</v-icon>
+      <v-icon class="ml-2">mdi-information-outline</v-icon>
       <v-col cols="12">
       <v-text-field v-model="title" @input="$emit('title', title)" outlined></v-text-field>
       </v-col>
