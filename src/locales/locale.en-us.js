@@ -29,7 +29,7 @@ function dataFormat(data) {
   return arr;
 }
 
-export default {
+const localeEnUs = {
   Common: {
     HowItWorks: 'How It Works',
     Apply: 'Apply',
@@ -223,10 +223,10 @@ export default {
         languages: 'Required Language(s)',
       },
       _3: {
-        pageTitle: '',
+        pageTitle: 'Keep!',
       },
       _4: {
-        pageTitle: '',
+        pageTitle: 'Specific Info!',
       },
     },
   },
@@ -322,3 +322,6 @@ export default {
     icons: FlagIcons,
   },
 };
+
+
+export default localeEnUs;
