@@ -2,8 +2,9 @@ import axios from 'axios';
 
 export default class Axios {
   static GetInstance(token = null) {
+    const contentType = 'application/json;charset=UTF-8';
     const headers = {
-      'Content-Type': 'application/json;charset=UTF-8',
+      'Content-Type': contentType,
       'Access-Control-Allow-Origin': '*',
       'access-control-allow-origin': '*',
       'Access-Control-Allow-Headers': '*',

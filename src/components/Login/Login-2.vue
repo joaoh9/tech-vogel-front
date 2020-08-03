@@ -9,9 +9,9 @@
         <v-card-text>
           <v-text-field label="Email or username" v-model="email"></v-text-field>
           <v-text-field label="Password" type="password" v-model="password"></v-text-field>
-          <span class="caption grey--text text--darken-1">
-            You will be abble to log with either of these.
-          </span>
+          <span
+            class="caption grey--text text--darken-1"
+          >You will be abble to log with either of these.</span>
         </v-card-text>
       </v-window-item>
     </v-window>
@@ -19,25 +19,21 @@
     <v-divider></v-divider>
 
     <v-card-actions>
-      <v-btn text to="/signup">
-        Sign Up
-      </v-btn>
+      <v-btn text to="/signup">Sign Up</v-btn>
       <v-spacer></v-spacer>
-      <v-btn color="primary" depressed @click="login">
-        Log In
-      </v-btn>
+      <v-btn color="primary" depressed @click="login">Log In</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
 import Logo from 'Assets/tv-new-logo-blue.png';
-import Storage from 'Helpers/storage'
+import Storage from 'Helpers/storage';
+import UserController from 'Controllers/user';
 
 export default {
   name: 'Login2',
-  components: {
-  },
+  components: {},
   data() {
     return {
       logo: Logo,
@@ -47,25 +43,36 @@ export default {
     };
   },
   methods: {
-    login(){
-      if((this.username || this.email) && this.password) {
-        this.saveUser()
+    login() {
+      if ((this.username || this.email) && this.password) {
+        this.saveUser();
       }
     },
-    saveUser(){
+    saveUser() {
+      const userController = UserController();
+
       const user = {
         email: this.email,
         username: this.username,
-      }
-      Storage.saveState('user', user)
-      this.$router.push({
-        name: 'User Dashboard',
-      })
+      };
+
+      userController
+        .login(user)
+        .then((res) => {
+          console.log('login successfull', res);
+          Storage.saveState('user', user);
+          this.$router.push({
+            name: 'User Dashboard',
+          });
+        })
+        .catch((err) => {
+          console.log('There was an error on login', err);
+        });
     },
-    goToSignUp(){
+    goToSignUp() {
       this.$router.push({
         name: 'Signup',
-      })
+      });
     },
   },
 };

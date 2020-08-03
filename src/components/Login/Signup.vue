@@ -18,9 +18,21 @@
           <v-window v-model="step">
             <v-window-item :value="1">
               <v-card-text>
-                <v-text-field label="Your Name" v-model="name"></v-text-field>
-                <v-text-field label="Pick a Username" v-model="username"></v-text-field>
-                <v-text-field label="Your Email" v-model="email"></v-text-field>
+                <v-text-field class="mb-3" :rules="[rule.name]" label="Your Name" v-model="name"></v-text-field>
+                <v-text-field
+                  class="mb-3"
+                  :error-messages="alerts.usernameUnavaliable"
+                  label="Pick a Username"
+                  :rules="[rule.min]"
+                  v-model="username"
+                ></v-text-field>
+                <v-text-field
+                  class="mb-3"
+                  :error-messages="alerts.emailRegistered"
+                  :rules="[rule.email]"
+                  label="Your Email"
+                  v-model="email"
+                ></v-text-field>
                 <span
                   class="caption grey--text text--darken-1"
                 >You will be abble to log with either of these.</span>
@@ -30,6 +42,7 @@
             <v-window-item :value="2">
               <v-card-text>
                 <v-text-field
+                  :error-messages="alerts.weakPassword"
                   @click:append="showPassword = !showPassword"
                   :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   v-model="password"
@@ -37,6 +50,7 @@
                   :type="showPassword ? 'text': 'password'"
                 ></v-text-field>
                 <v-text-field
+                  :error-messages="alerts.passwordUnmached"
                   @click:append="showPassword2 = !showPassword2"
                   :append-icon="showPassword2 ? 'mdi-eye' : 'mdi-eye-off'"
                   v-model="confirmPassword"
@@ -69,36 +83,7 @@
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col cols="4" class="mt-12">
-        <v-alert
-          class="ml-4"
-          :key="alerts.emailRegistered"
-          v-if="alerts.emailRegistered"
-          width="60%"
-          type="warning"
-        >Email already registered!</v-alert>
-        <v-alert
-          class="ml-4"
-          :key="alerts.usernameUnavaliable"
-          v-if="alerts.usernameUnavaliable"
-          width="60%"
-          type="warning"
-        >Username not avaliable!</v-alert>
-        <v-alert
-          class="ml-4"
-          :key="alerts.weakPassword"
-          v-if="alerts.weakPassword"
-          width="60%"
-          type="warning"
-        >Password too weak!</v-alert>
-        <v-alert
-          class="ml-4"
-          :key="alerts.passwordUnmached"
-          v-if="alerts.passwordUnmached"
-          width="60%"
-          type="warning"
-        >Passwords do not match!</v-alert>
-      </v-col>
+      <v-col cols="4" class="mt-12"></v-col>
     </v-row>
   </div>
 </template>
@@ -124,10 +109,20 @@ export default {
       showPassword: false,
       showPassword2: false,
       alerts: {
-        emailRegistered: false,
-        usernameUnavaliable: false,
-        weakPassword: false,
-        passwordUnmached: false,
+        wrongFormattedEmail: '',
+        emailRegistered: '', // 'Email already registered!',
+        usernameUnavaliable: '', // 'Username not avaliable!',
+        weakPassword: '', // 'Password too weak!',
+        passwordUnmached: '', // 'Passwords do not match!',
+      },
+      rule: {
+        name: (v) => v.length > 3 || 'Please write your full name',
+        email: (em) => {
+          const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/;
+
+          return re.test(em) || 'Email with wrong format';
+        },
+        min: (v) => (v ? v.length > 3 : 'Please write at least 3') || 'Please write at least 3',
       },
     };
   },
@@ -157,18 +152,24 @@ export default {
     async verifyUsers() {
       const userController = new UserController();
       if (this.email.length > 1 && this.username) {
-        this.alerts.emailRegistered = false;
-        this.alerts.usernameUnavaliable = false;
+        this.alerts.emailRegistered = '';
+        this.alerts.usernameUnavaliable = '';
         try {
-          await userController.getByEmail(this.email);
-          this.alerts.emailRegistered = true;
+          const res = await userController.getByEmail(this.email);
+          console.log(res);
+          if (res) {
+            this.alerts.emailRegistered = 'Email already registered!';
+          }
         } catch (e) {
           console.log(e);
         }
 
         try {
-          await userController.getByUsername(this.username);
-          this.alerts.usernameUnavaliable = true;
+          const res = await userController.getByUsername(this.username);
+          console.log(res);
+          if (res) {
+            this.alerts.usernameUnavaliable = 'Username not avaliable!';
+          }
         } catch (e) {
           console.log(e);
         }
@@ -182,14 +183,14 @@ export default {
     },
     async verifyPassword() {
       const userController = new UserController();
-      this.alerts.weakPassword = false;
-      this.alerts.passwordUnmached = false;
+      this.alerts.weakPassword = '';
+      this.alerts.passwordUnmached = '';
       if (this.password.length < 6) {
-        this.alerts.weakPassword = true;
+        this.alerts.weakPassword = 'Password too weak!';
         return;
       }
       if (this.password !== this.confirmPassword) {
-        this.alerts.passwordUnmached = true;
+        this.alerts.passwordUnmached = 'Passwords do not match!';
         return;
       }
 
@@ -198,6 +199,7 @@ export default {
         username: this.username,
         email: this.email,
         password: this.password,
+        birthDate: '1990-12-12',
       });
       this.step++;
     },

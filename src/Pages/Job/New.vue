@@ -21,13 +21,13 @@
           <v-spacer></v-spacer>
           <v-icon
             size="28px"
-            style="margin: -10px"
+            style="margin: 0px"
             :color="step === 2 ? 'primary' : 'cinza3'"
           >mdi-checkbox-blank-circle</v-icon>
           <v-spacer></v-spacer>
           <v-icon
             size="28px"
-            style="margin: -10px"
+            style="margin: 0px"
             :color="step === 3 ? 'primary' : 'cinza3'"
           >mdi-checkbox-blank-circle</v-icon>
           <v-spacer></v-spacer>
@@ -161,7 +161,7 @@ export default {
       console.log(pageTitle + '|');
       console.log(maxNewJobPageTitleLength - pageTitle.length);
       const ptLength = pageTitle.length;
-      for (let i = 0; i < maxNewJobPageTitleLength - ptLength; i++) {
+      for (let i = 0; i <= maxNewJobPageTitleLength - ptLength; i++) {
         i % 2 === 0 ? (pageTitle = pageTitle + space) : (pageTitle = space + pageTitle);
       }
 
