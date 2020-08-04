@@ -1,4 +1,4 @@
-import Home from 'Components/Home/Home';
+import Home from 'Pages/Home/Home';
 import AboutUs from 'Components/AboutUs/AboutUs';
 import Welcome from 'Components/Welcome/Welcome.vue';
 import Pricing from 'Components/Pricing/Pricing';

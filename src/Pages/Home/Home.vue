@@ -1,0 +1,64 @@
+<template>
+  <div style="background: linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693; height:100%;"
+      class="container-fluid d-flex flex-column align-center justify-center">
+          <h1 class="mb-3">Register for Tech Vogel</h1>
+          <h6 class="mx-5 mb-5">
+            We connect I.T. professionals from around the globe to companies looking for remote employees.
+          </h6>
+        <div>
+          <v-row class="">
+              <v-col cols=12 md=6>
+                <v-btn
+                  color='primary'
+                  large
+                  block
+                >
+                  I want to hire
+                </v-btn>
+              </v-col>
+              <v-col cols=12 md=6>
+                <v-btn
+                  color='primary'
+                  large
+                  block
+                >
+                  I'm looking for a job
+                </v-btn>
+              </v-col>
+          </v-row>
+        </div>
+        <div class="">
+          <v-btn
+            outlined
+            color="white"
+          >
+          Learn more
+          </v-btn>
+        </div>
+      </div>
+</template>
+
+<script>
+import backgroudCompanies from 'Assets/office-wp-1.jpg';
+import backgroudProfessionals from 'Assets/office-wp-2.jpg';
+
+export default {
+  name: 'Home',
+  data() {
+    return {
+      backgroudCompanies,
+      backgroudProfessionals,
+    };
+  },
+};
+</script>
+
+<style>
+h1 {
+  color: white;
+  font-weight: bold;
+}
+h6 {
+  color: white;
+}
+</style>
