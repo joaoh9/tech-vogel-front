@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   transpileDependencies: ['vuetify'],
+  publicPath: '/',
   devServer: {
     proxy: {
       '^/api': {

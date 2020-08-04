@@ -7,11 +7,11 @@
     <v-window>
       <v-window-item :value="1">
         <v-card-text>
-          <v-text-field label="Email or username" v-model="email"></v-text-field>
+          <v-text-field label="Username" v-model="username"></v-text-field>
           <v-text-field label="Password" type="password" v-model="password"></v-text-field>
-          <span
-            class="caption grey--text text--darken-1"
-          >You will be abble to log with either of these.</span>
+          <!-- <span -->
+          <!-- class="caption grey--text text--darken-1" -->
+          <!-- >You will be abble to log with either of these.</span> -->
         </v-card-text>
       </v-window-item>
     </v-window>
@@ -44,30 +44,22 @@ export default {
   },
   methods: {
     login() {
-      if ((this.username || this.email) && this.password) {
-        this.saveUser();
-      }
-    },
-    saveUser() {
       const userController = UserController();
-
-      const user = {
-        email: this.email,
-        username: this.username,
-      };
-
-      userController
-        .login(user)
-        .then((res) => {
-          console.log('login successfull', res);
-          Storage.saveState('user', user);
-          this.$router.push({
-            name: 'User Dashboard',
+      if ((this.username || this.email) && this.password) {
+        userController
+          .login({
+            username: this.username,
+            password: this.password,
+          })
+          .then((res) => {
+            console.log('res');
+            console.log(res);
+          })
+          .catch((e) => {
+            console.log('e');
+            console.log(e);
           });
-        })
-        .catch((err) => {
-          console.log('There was an error on login', err);
-        });
+      }
     },
     goToSignUp() {
       this.$router.push({

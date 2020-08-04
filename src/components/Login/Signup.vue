@@ -150,14 +150,14 @@ export default {
       }
     },
     async verifyUsers() {
-      const userController = new UserController();
+      const userController = UserController();
       if (this.email.length > 1 && this.username) {
         this.alerts.emailRegistered = '';
         this.alerts.usernameUnavaliable = '';
         try {
           const res = await userController.getByEmail(this.email);
           console.log(res);
-          if (res) {
+          if (res.length) {
             this.alerts.emailRegistered = 'Email already registered!';
           }
         } catch (e) {
@@ -182,7 +182,7 @@ export default {
       }
     },
     async verifyPassword() {
-      const userController = new UserController();
+      const userController = UserController();
       this.alerts.weakPassword = '';
       this.alerts.passwordUnmached = '';
       if (this.password.length < 6) {

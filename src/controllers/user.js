@@ -2,12 +2,12 @@ import Axios from 'Helpers/axios';
 
 export default function UserController() {
   return {
-    saveUser: ({ name, username, email, password, birthDate }) => {
+    saveUser: ({ name, username, email, password, birthDate = '1990-12-12' }) => {
       const axios = Axios.GetInstance();
       return new Promise((resolve, reject) => {
         axios.post('/users', {
-          name,
           username,
+          name,
           email,
           password,
           birthDate,
@@ -30,7 +30,7 @@ export default function UserController() {
     getByUsername: async (username) => {
       const axios = Axios.GetInstance();
       return new Promise((resolve, reject) => {
-        axios.get(`/users/byUsername/${username}`)
+        axios.get(`/users/${username}`)
           .then(res => res.data)
           .then(resolve)
           .catch(reject)
@@ -44,7 +44,6 @@ export default function UserController() {
           username,
           password,
         })
-          .then(res => res.data)
           .then(resolve)
           .catch(reject)
       })
