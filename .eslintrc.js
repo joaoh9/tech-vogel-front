@@ -8,13 +8,13 @@ module.exports = {
     parser: 'babel-eslint',
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': process.env.VUE_APP_NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.VUE_APP_NODE_ENV === 'production' ? 'warn' : 'off',
     'max-len': [ 'warn', { code: 120, tabWidth: 2, ignoreStrings: true ,  ignoreComments: true , ignoreUrls: true, ignoreRegExpLiterals: true  ,  ignoreTemplateLiterals: true } ],
-    'eqeqeq': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'max-classes-per-file': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-multi-spaces': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'array-bracket-spacing': [ process.env.NODE_ENV === 'production' ? 'warn' : 'error', 'always' , {'singleValue': false} ],
+    'eqeqeq': process.env.VUE_APP_NODE_ENV === 'production' ? 'warn' : 'off',
+    'max-classes-per-file': process.env.VUE_APP_NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-multi-spaces': process.env.VUE_APP_NODE_ENV === 'production' ? 'warn' : 'off',
+    'array-bracket-spacing': [ process.env.VUE_APP_NODE_ENV === 'production' ? 'warn' : 'error', 'always' , {'singleValue': false} ],
     'comma-dangle': [ 'error' , 'always-multiline' ],
     'comma-style': [ 'error', 'last' ],
     'eol-last': [ 'error', 'always' ],
@@ -28,5 +28,6 @@ module.exports = {
     'no-var': 'error',
     'prefer-const': 'error',
     'indent': [ 'error', 2, { 'SwitchCase': 1, 'VariableDeclarator': 1 , 'MemberExpression': 1, 'ArrayExpression': 1, 'ObjectExpression': 1, 'ImportDeclaration': 1, 'flatTernaryExpressions': true,  'ignoreComments': false } ],
+    'no-unused-vars': process.env.VUE_APP_NODE_ENV === 'production' ? 'error' : 'warn'
   },
 };
