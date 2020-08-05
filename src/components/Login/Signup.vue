@@ -1,11 +1,11 @@
-    <template>
+<template>
   <div class="d-flex">
     <v-row>
       <v-col cols="4"></v-col>
       <v-col cols="4">
         <v-card class="align-content-center mt-12" min-width="500" max-width="500">
           <v-card-title class="title font-weight-regular justify-space-between">
-            <span>{{ currentTitle }}</span>
+            <span>{{ $t(`Signup._${step}.title`) }}</span>
             <v-avatar
               color="primary lighten-2"
               class="subheading white--text"
@@ -18,56 +18,58 @@
           <v-window v-model="step">
             <v-window-item :value="1">
               <v-card-text>
-                <v-text-field class="mb-3" :rules="[rule.name]" label="Your Name" v-model="name"></v-text-field>
+                <v-text-field
+                  class="mb-3"
+                  :rules="[rule.name]"
+                  :label="$t('Common.name.label')"
+                  v-model="name"
+                ></v-text-field>
                 <v-text-field
                   class="mb-3"
                   :error-messages="alerts.usernameUnavaliable"
-                  label="Pick a Username"
-                  :rules="[rule.min]"
+                  :label="$t('Common.username.label')"
+                  :rules="[rule.min(3, username), rule.lettersAndNumbers]"
                   v-model="username"
                 ></v-text-field>
                 <v-text-field
                   class="mb-3"
                   :error-messages="alerts.emailRegistered"
                   :rules="[rule.email]"
-                  label="Your Email"
+                  :label="$t('Common.email.label')"
                   v-model="email"
                 ></v-text-field>
-                <span
-                  class="caption grey--text text--darken-1"
-                >You will be abble to log with either of these.</span>
+                <!-- <span -->
+                <!-- class="caption grey--text text--darken-1" -->
+                <!-- >You will be abble to log with either of these.</span> -->
               </v-card-text>
             </v-window-item>
 
             <v-window-item :value="2">
               <v-card-text>
                 <v-text-field
-                  :error-messages="alerts.weakPassword"
+                  :rules="[rule.min(6, password)]"
                   @click:append="showPassword = !showPassword"
                   :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   v-model="password"
-                  label="Password"
+                  :label="$t('Common.password.label')"
                   :type="showPassword ? 'text': 'password'"
                 ></v-text-field>
                 <v-text-field
-                  :error-messages="alerts.passwordUnmached"
-                  @click:append="showPassword2 = !showPassword2"
-                  :append-icon="showPassword2 ? 'mdi-eye' : 'mdi-eye-off'"
+                  :rules="[rule.equal(password, confirmPassword)]"
+                  @click:append="showConfirmPassword = !showConfirmPassword"
+                  :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   v-model="confirmPassword"
-                  label="Confirm Password"
-                  :type="showPassword2 ? 'text': 'password'"
+                  :label="$t('Common.confirmPassword.label')"
+                  :type="showConfirmPassword ? 'text': 'password'"
                 ></v-text-field>
-                <span
-                  class="caption grey--text text--darken-1"
-                >Please enter a password for your account</span>
+                <span class="caption grey--text text--darken-1">{{$t('Signup._2.description')}}</span>
               </v-card-text>
             </v-window-item>
 
             <v-window-item :value="3">
               <div class="pa-4 text-center">
-                <p>A confirmation token was sent to your email.</p>
-                <p>Please insert it bellow.</p>
-                <!-- <v-img class="mb-4" contain height="128" :src="logo"></v-img> -->
+                <p>{{$t('Signup._3.description').replace('X', email)}}</p>
+                <!-- <v-img class="mb-4" contain height="128" :ssrc="logo"></v-img> -->
                 <v-text-field label="Confirmation Token" v-model="emailConfirmationToken"></v-text-field>
               </div>
             </v-window-item>
@@ -76,14 +78,17 @@
           <v-divider></v-divider>
 
           <v-card-actions class="pa-4">
-            <v-btn v-if="step === 1" text to="/login">Log In</v-btn>
-            <v-btn v-else @click="step--">Back</v-btn>
+            <v-btn large v-if="step === 1" text to="/login">Log In</v-btn>
+            <v-btn large v-else @click="step--">Back</v-btn>
             <v-spacer></v-spacer>
-            <v-btn color="primary" depressed @click="nextStep">Next</v-btn>
+            <v-btn large color="primary" depressed @click="nextStep">Next</v-btn>
+          </v-card-actions>
+          <v-card-actions v-if="alerts.errorSavingUser">
+            <v-messages class="error--text">test</v-messages>
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col cols="4" class="mt-12"></v-col>
+      <v-col cols="4"></v-col>
     </v-row>
   </div>
 </template>
@@ -107,22 +112,31 @@ export default {
       confirmPassword: '',
       emailConfirmationToken: '',
       showPassword: false,
-      showPassword2: false,
+      showConfirmPassword: false,
       alerts: {
         wrongFormattedEmail: '',
         emailRegistered: '', // 'Email already registered!',
         usernameUnavaliable: '', // 'Username not avaliable!',
         weakPassword: '', // 'Password too weak!',
         passwordUnmached: '', // 'Passwords do not match!',
+        errorSavingUser: '',
       },
       rule: {
-        name: (v) => v.length > 3 || 'Please write your full name',
+        name: (v) => v.length > 3 || this.$t('Rules.nameTooShort'),
         email: (em) => {
           const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/;
 
-          return re.test(em) || 'Email with wrong format';
+          return re.test(em) || this.$t('Rules.wrongFormatEmail');
         },
-        min: (v) => (v ? v.length > 3 : 'Please write at least 3') || 'Please write at least 3',
+        min: (min, v) =>
+          (v
+            ? v.length > min
+            : this.$t('Rules.lessThanXCharacters').replace('X', min)) ||
+          this.$t('Rules.lessThanXCharacters').replace('X', min),
+        lettersAndNumbers: (t) =>
+          t.split('').filter((letter) => !this.validateLetterOrNumber(letter))
+            .length == 0 || this.$t('Rules.letterOrNumber'),
+        equal: (x, y) => x === y || this.$t('Rules.passwordsDontMatch'),
       },
     };
   },
@@ -139,6 +153,12 @@ export default {
     },
   },
   methods: {
+    validateLetterOrNumber(letter) {
+      const c = letter.charCodeAt(0);
+      return (
+        (c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122)
+      );
+    },
     async nextStep() {
       switch (this.step) {
         case 1:
@@ -151,7 +171,11 @@ export default {
     },
     async verifyUsers() {
       const userController = UserController();
-      if (this.email.length > 1 && this.username) {
+      if (
+        this.rule.email(this.email) === true &&
+        this.rule.min(3, this.username) === true &&
+        this.rule.lettersAndNumbers(this.username) === true
+      ) {
         this.alerts.emailRegistered = '';
         this.alerts.usernameUnavaliable = '';
         try {

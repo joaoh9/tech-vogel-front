@@ -38,8 +38,41 @@ const localeEnUs = {
     Hiring: 'Hiring',
     AboutUs: 'About Us',
     Content: 'Content',
+    Signup: 'Sign-up',
     next: 'Next',
     back: 'Go Back',
+    name: {
+      placeholder: 'Name',
+      label: 'Name',
+    },
+    email: {
+      placeholder: 'Email',
+      label: 'Email',
+    },
+    password: {
+      placeholder: 'Password',
+      label: 'Password',
+    },
+    username: {
+      placeholder: 'Username',
+      label: 'Username',
+    },
+    confirmPassword: {
+      placeholder: 'Confirm Password',
+      label: 'Confirm Password',
+    },
+    termsAndConditions: {
+      text: 'I accept the terms and conditions',
+      link: '',
+    },
+  },
+  Rules: {
+    nameTooShort: 'Please write your full name',
+    wrongFormatEmail: 'Email with wrong format',
+    lessThanXCharacters: 'Please write at least X characters',
+    letterOrNumber: 'Please write only letters or numbers',
+    equal: 'X must be equal to Y',
+    passwordsDontMatch: 'Passwords do not match',
   },
   Home: {
     title: 'Tech Vogel',
@@ -79,24 +112,6 @@ const localeEnUs = {
     _3: 'More time spent doing what you love and learning new things, giving your best at the job and choosing where you want to work the next day. This is what we aim for.',
     _4: 'Liberty comes with responsibility, and remote work calls for both.',
     _5: 'Embrace the remote work, and join the new era with Tech Vogel.',
-  },
-  Pricing: {
-    _1: {
-      price: '150',
-      credits: '5',
-    },
-    _2: {
-      price: '250',
-      credits: '10',
-    },
-    _3: {
-      price: '500',
-      credits: '30',
-    },
-    _4: {
-      price: '1000',
-      credits: 'Unlimited',
-    },
   },
   WhyRemote: {
     _1: '',
@@ -311,6 +326,23 @@ const localeEnUs = {
     // .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
+  Signup: {
+    _1: {
+      title: 'Sign Up',
+    },
+    _2: {
+      title: 'Create a password',
+      description: 'Please enter a password for your account',
+    },
+    _3: {
+      title: 'Please confirm your email with a link sent to it',
+      description: 'Please confirm your email clicking on a link sent to X',
+    },
+    error: {
+      errorSavingUser: 'There was an error when saving the user',
+    },
+  },
+
   format: {
     date: 'MM/DD/YYYY',
   },
