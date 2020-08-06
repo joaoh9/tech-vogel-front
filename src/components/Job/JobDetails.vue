@@ -64,12 +64,11 @@
             <p class="ml-2">{{ this.jobTest.salary.timeFrame }}</p>
           </div>
           <div class="d-flex justify-start mt-4">
-            <v-btn large color="primary-lighten-1" class="mr-4">Confirmar</v-btn>
+            <v-btn large color="primary-lighten-2" class="mr-4">Confirmar</v-btn>
             <v-btn large color="secondary-lighten-1">Voltar e Editar</v-btn>
           </div>
         </v-col>
         <v-col cols="1"></v-col>
-        <v-col cols="4">teste</v-col>
       </v-row>
     </div>
   </div>

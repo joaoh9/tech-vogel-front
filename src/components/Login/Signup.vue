@@ -70,7 +70,7 @@
               <div class="pa-4 text-center">
                 <p>{{$t('Signup._3.description').replace('X', email)}}</p>
                 <!-- <v-img class="mb-4" contain height="128" :ssrc="logo"></v-img> -->
-                <v-text-field label="Confirmation Token" v-model="emailConfirmationToken"></v-text-field>
+                <!-- <v-text-field label="Confirmation Token" v-model="emailConfirmationToken"></v-text-field> -->
               </div>
             </v-window-item>
           </v-window>
@@ -79,9 +79,9 @@
 
           <v-card-actions class="pa-4">
             <v-btn large v-if="step === 1" text to="/login">Log In</v-btn>
-            <v-btn large v-else @click="step--">Back</v-btn>
+            <v-btn large v-if-else="step !== 3" @click="step--">Back</v-btn>
             <v-spacer></v-spacer>
-            <v-btn large color="primary" depressed @click="nextStep">Next</v-btn>
+            <v-btn large color="primary" depressed @click="nextStep">{{step === 3 ? 'OK' : 'NEXT'}}</v-btn>
           </v-card-actions>
           <v-card-actions v-if="alerts.errorSavingUser">
             <v-messages class="error--text">test</v-messages>

@@ -69,7 +69,7 @@
               v-on:salaryTimeFrame="r => (salary.timeFrame = r)"
               v-on:salaryMin="r => (salary.min = r)"
               v-on:salaryMax="r => (salary.max = r)"
-              v-on:salaryRange="r => (salary.range = r)"
+              v-on:salaryRange="r => (salary.range = !salary.range)"
               v-on:back="step--"
               v-on:advance="step++"
               v-if="step === 4"

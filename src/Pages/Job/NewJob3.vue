@@ -2,7 +2,7 @@
   <div>
     <h2 class="mb-12">Select Desired Skills</h2>
 
-    <h6>Knowlege Areas</h6>
+    <p class="body-1">Knowlege Areas</p>
     <v-combobox
       v-model="knowledgeAreas"
       @input="$emit('knowlegeAreas', knowlegeAreas)"
@@ -12,7 +12,7 @@
       chips
       deletable-chips
     ></v-combobox>
-    <h6>Programming Languages</h6>
+    <p class="body-1">Programming Languages</p>
     <v-combobox
       v-model="programmingLanguages"
       @input="$emit('programmingLanguages', programmingLanguages)"
@@ -22,7 +22,7 @@
       chips
       deletable-chips
     ></v-combobox>
-    <h6>Frameworks</h6>
+    <p class="body-1">Frameworks</p>
     <v-combobox
       v-model="frameworks"
       @input="$emit('frameworks', frameworks)"
@@ -34,7 +34,7 @@
       chips
       deletable-chips
     ></v-combobox>
-    <h6>Soft Skills</h6>
+    <p class="body-1">Soft Skills</p>
     <v-combobox
       v-model="softSkills"
       @input="$emit('softSkills', softSkills)"

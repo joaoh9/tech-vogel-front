@@ -2,7 +2,7 @@
   <div>
     <h2 class="mb-12">The Specifics</h2>
 
-    <h6>Salary</h6>
+    <p class="body-1">Salary</p>
     <v-row>
       <v-col>
         <v-autocomplete
@@ -46,14 +46,14 @@
     <v-row class="mt-n12">
       <v-col class="text-left">
         <v-checkbox
-          @click="$emit('salaryRange', salary.range)"
+          @click="$emit('salaryRange', salary.range); salary.range = !salary.range"
           v-model="salary.range"
           label="Set salary range"
         ></v-checkbox>
       </v-col>
     </v-row>
 
-    <h6>Perks and Benefits</h6>
+    <p class="body-1">Perks and Benefits</p>
     <v-textarea v-model="perks" @input="$emit('perks', perks)" outlined></v-textarea>
     <v-row>
       <v-col>

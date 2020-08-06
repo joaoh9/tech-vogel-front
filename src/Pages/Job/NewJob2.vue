@@ -2,13 +2,13 @@
   <div>
     <h2 class="mb-12">{{$t('Job.new._2.pageTitle')}}</h2>
 
-    <h6>{{$t('Job.new._2.about')}}</h6>
+    <p class="body-1">{{$t('Job.new._2.about')}}</p>
     <v-textarea
       v-model="about"
       @input="$emit('about', about)"
       outlined
     ></v-textarea>
-    <h6>{{$t('Job.new._2.languages')}}</h6>
+    <p class="body-1">{{$t('Job.new._2.languages')}}</p>
     <v-combobox
       v-model="languages"
       :items="$t('data.languages')"
@@ -32,7 +32,7 @@
     </v-combobox>
     <v-row>
       <v-col>
-        <v-btn elevation="0" @click="$emit('back')" large color="secondary-lighten-1">{{$t('Common.back')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('back')" large color="secondary-lighten-2">{{$t('Common.back')}}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
@@ -58,5 +58,9 @@ export default {
 <style>
 .v-icon.v-icon {
   margin-right: 0px;
+}
+
+h6 {
+  color: black
 }
 </style>
