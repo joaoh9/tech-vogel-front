@@ -67,7 +67,7 @@ export default {
   letter-spacing: 0.035em;
   font-feature-settings: 'liga' off;
 
-  color: #000000aa;
+  /* color: #000000aa; */
 }
 
 .v-text-field .v-textarea .v-card .v-card:not() {
