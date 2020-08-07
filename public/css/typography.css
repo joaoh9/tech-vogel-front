@@ -3,7 +3,7 @@ h1 {
   font-family: Open Sans;
   font-style: normal;
   font-weight: 300;
-  font-size: 95px;
+  font-size: 5em;
   line-height: 120%;
   /* or 114px */
   display: flex;
@@ -17,7 +17,7 @@ h2 {
   font-family: Open Sans;
   font-style: normal;
   font-weight: 300;
-  font-size: 59px;
+  font-size: 4em;
   line-height: 120%;
   /* or 71px */
   display: flex;
@@ -31,7 +31,7 @@ h3 {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 48px;
+  font-size: 3em;
   line-height: 120%;
   /* or 58px */
   display: flex;
@@ -44,7 +44,7 @@ h4 {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 34px;
+  font-size: 2em;
   line-height: 150%;
   /* or 51px */
   display: flex;
@@ -58,7 +58,7 @@ h5 {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 150%;
   /* or 36px */
   display: flex;
@@ -71,11 +71,11 @@ h6 {
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 150%;
   /* or 30px */
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   letter-spacing: 0.15px;
   font-feature-settings: 'liga' off;
   color: #000000;

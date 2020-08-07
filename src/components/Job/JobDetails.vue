@@ -50,7 +50,7 @@
           >{{ reqSkill }}</p>
           <h2>Desired Skills</h2>
           <p>{{ this.jobTest.desiredSkills }}</p>
-          <h2>Responsabilities</h2>
+          <h2>Responsibilities</h2>
           <p>{{ this.jobTest.responsabilities }}</p>
           <div class="d-flex justify-start mb-0">
             <p>{{ this.jobTest.salary.currency }}</p>
