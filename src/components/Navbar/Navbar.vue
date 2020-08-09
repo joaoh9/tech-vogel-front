@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app color="white darken-4" elevate-on-scroll>
+    <v-app-bar app color="transparent" hide-on-scroll elevation="0">
       <v-btn text color="white darken-4" height="60" tile elevation="0" to="/">
         <v-avatar size="150">
           <v-img contain height="100" width="1" :src="logo"></v-img>
