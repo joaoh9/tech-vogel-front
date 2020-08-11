@@ -1,7 +1,7 @@
 <template>
-  <v-footer padless>
-    <v-card class="flex" flat tile>
-      <v-card-title class="middleYellow">
+  <v-footer padless app absolute style="background: rgba(0,0,0,0)">
+    <v-card class="flex" style="background: rgba(0,0,0,0)" flat tile>
+      <v-card-title class="middleYellow" style="background-color: rgba(0,0,0,0)">
         <strong class="subheading" style="color: #1A193C">
           {{$t('LandingPage.footer.socialMedia.title')}}
         </strong>

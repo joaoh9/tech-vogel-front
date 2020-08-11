@@ -1,8 +1,9 @@
 <template>
   <v-app>
+
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
     <Navbar v-if="notLP()"></Navbar>
-    <v-content style="background-color: #FCFCFF">
+    <v-content v-bind:style="getPageStyle()">
       <router-view class="view"></router-view>
     </v-content>
     <LPFooter> </LPFooter>
@@ -39,6 +40,20 @@ export default {
     },
     notLP() {
       return this.$router.history.current.name !== 'LandingPage';
+    },
+    getPageStyle() {
+      console.log(this.$router.currentRoute.name === 'Home');
+      console.log({
+        'background-color': this.$router.currentRoute.name === 'Home' ? 'linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693' : '#FCFCFF',
+      })
+      const pageStyle = {
+        backgroundColor: '#FCFCFF',
+      };
+
+      if (this.$router.currentRoute.name === 'Home') {
+        pageStyle.background = 'linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693';
+      }
+      return pageStyle;
     },
   },
 };
