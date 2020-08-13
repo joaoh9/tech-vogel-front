@@ -8,8 +8,8 @@
         <v-autocomplete
           v-model="salary.currency"
           @click="$emit('salaryCurrency',  salary.currency)"
-          label="Curency"
-          title="Payment Curency"
+          label="Currency"
+          title="Payment Currency"
           outlined
           :items="['USD', 'GBP', 'EUR']"
         ></v-autocomplete>
