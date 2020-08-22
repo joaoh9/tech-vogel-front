@@ -19,7 +19,7 @@
         <v-combobox
           :items="$t('data.contractType')"
           v-model="contractType"
-          @input="$emit('contractType', contractType)"
+          @input="$emit('contract-type', contractType)"
           outlined
         ></v-combobox>
       </v-col>

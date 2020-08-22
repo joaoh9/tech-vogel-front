@@ -7,7 +7,7 @@
       <v-col>
         <v-autocomplete
           v-model="salary.currency"
-          @click="$emit('salaryCurrency',  salary.currency)"
+          @click="$emit('salary-currency',  salary.currency)"
           label="Currency"
           title="Payment Currency"
           outlined
@@ -17,7 +17,7 @@
       <v-col>
         <v-autocomplete
           v-model="salary.timeFrame"
-          @click="$emit('salaryTimeFrame', salary.timeFrame)"
+          @click="$emit('salary-time-frame', salary.timeFrame)"
           label="Time Frame"
           title="Time Frame"
           outlined
@@ -27,7 +27,7 @@
       <v-col>
         <v-text-field
           v-model="salary.min"
-          @click="$emit('salaryMin', salary.min)"
+          @click="$emit('salary-min', salary.min)"
           :label="salary.range ? 'From' : 'Price'"
           :title="salary.range ? 'From' : 'Price'"
           outlined
@@ -36,7 +36,7 @@
       <v-col v-if="salary.range">
         <v-text-field
           v-model="salary.max"
-          @click="$emit('salaryMax', salary.max)"
+          @click="$emit('salary-max', salary.max)"
           :label="salary.range ? 'To' : 'Price'"
           :title="salary.range ? 'To' : 'Price'"
           outlined
@@ -46,7 +46,7 @@
     <v-row class="mt-n12">
       <v-col class="text-left">
         <v-checkbox
-          @click="$emit('salaryRange', salary.range); salary.range = !salary.range"
+          @click="$emit('salary-range', salary.range); salary.range = !salary.range"
           v-model="salary.range"
           label="Set salary range"
         ></v-checkbox>
@@ -60,8 +60,8 @@
         <v-btn
           elevation="0"
           @click="$emit('back')"
+          :class="getABTestClass('btn-back')"
           large
-          color="secondary-lighten-2"
         >{{$t('Common.back')}}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
@@ -86,6 +86,26 @@ export default {
         range: false,
       },
     };
+  },
+  methods: {
+    getABTestClass(test) {
+      const random = Math.random()
+      switch (test) {
+        case 'back-btn':
+          if(random < 1 / 6 ){
+            return 'secondary-ligten-2 v-btn--outlined'
+          }
+          else if(random < 2 / 6){
+            return 'secondary-ligten-2'
+          }
+          else if (random < 2 / 3){
+            return 'cinza-lighten-1 v-btn--outlined'
+          }
+          else {
+            return 'v-btn--outlined primary'
+          }
+      }
+    },
   },
 };
 </script>

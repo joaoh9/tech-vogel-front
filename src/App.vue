@@ -42,10 +42,6 @@ export default {
       return this.$router.history.current.name !== 'LandingPage';
     },
     getPageStyle() {
-      console.log(this.$router.currentRoute.name === 'Home');
-      console.log({
-        'background-color': this.$router.currentRoute.name === 'Home' ? 'linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693' : '#FCFCFF',
-      })
       const pageStyle = {
         backgroundColor: '#FCFCFF',
       };

@@ -22,7 +22,7 @@
           elevation="0"
           @click="$emit('back')"
           large
-          color="secondary-lighten-2"
+          :class="getABTestClass('btn-back')"
         >{{$t('Common.back')}}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
@@ -44,6 +44,26 @@ export default {
       images: [ Header1, Header2, Header3 ],
       select: false,
     };
+  },
+  methods: {
+    getABTestClass(test) {
+      const random = Math.random()
+      switch (test) {
+        case 'back-btn':
+          if(random < 1 / 6 ){
+            return 'secondary-ligten-2 v-btn--outlined'
+          }
+          else if(random < 2 / 6){
+            return 'secondary-ligten-2'
+          }
+          else if (random < 2 / 3){
+            return 'cinza-lighten-1 v-btn--outlined'
+          }
+          else {
+            return 'v-btn--outlined primary'
+          }
+      }
+    },
   },
 };
 </script>

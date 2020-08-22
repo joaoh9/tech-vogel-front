@@ -32,7 +32,7 @@
     </v-combobox>
     <v-row>
       <v-col>
-        <v-btn elevation="0" @click="$emit('back')" large color="secondary-lighten-2">{{$t('Common.back')}}</v-btn>
+        <v-btn :class="getABTestClass('btn-back')" elevation="0" @click="$emit('back')" large>{{$t('Common.back')}}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
@@ -51,7 +51,26 @@ export default {
       languages: '',
     };
   },
-  methods: {},
+  methods: {
+    getABTestClass(test) {
+      const random = Math.random()
+      switch (test) {
+        case 'back-btn':
+          if(random < 1 / 6 ){
+            return 'secondary-ligten-2 v-btn--outlined'
+          }
+          else if(random < 2 / 6){
+            return 'secondary-ligten-2'
+          }
+          else if (random < 2 / 3){
+            return 'cinza-lighten-1 v-btn--outlined'
+          }
+          else {
+            return 'v-btn--outlined primary'
+          }
+      }
+    },
+  },
 };
 </script>
 
