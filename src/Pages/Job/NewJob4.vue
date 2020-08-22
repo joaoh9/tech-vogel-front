@@ -2,12 +2,17 @@
   <div>
     <h2 class="mb-12">The Specifics</h2>
 
-    <p class="body-1">Salary</p>
+    <v-tooltip left>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._4.salary') }}</p>
+      </template>
+      <span>{{ $t('Job.new._4.tooltips.salary') }}</span>
+    </v-tooltip>
     <v-row>
       <v-col>
         <v-autocomplete
           v-model="salary.currency"
-          @click="$emit('salary-currency',  salary.currency)"
+          @click="$emit('salary-currency', salary.currency)"
           label="Currency"
           title="Payment Currency"
           outlined
@@ -46,27 +51,33 @@
     <v-row class="mt-n12">
       <v-col class="text-left">
         <v-checkbox
-          @click="$emit('salary-range', salary.range); salary.range = !salary.range"
+          @click="
+            $emit('salary-range', salary.range);
+            salary.range = !salary.range;
+          "
           v-model="salary.range"
           label="Set salary range"
         ></v-checkbox>
       </v-col>
     </v-row>
-
-    <p class="body-1">Perks and Benefits</p>
+    <v-tooltip left>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._4.perks') }}</p>
+      </template>
+      <span>{{ $t('Job.new._4.tooltips.perks') }}</span>
+    </v-tooltip>
     <v-textarea v-model="perks" @input="$emit('perks', perks)" outlined></v-textarea>
     <v-row>
       <v-col>
-        <v-btn
-          elevation="0"
-          @click="$emit('back')"
-          :class="getABTestClass('btn-back')"
-          large
-        >{{$t('Common.back')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('back')" :class="getABTestClass('btn-back')" large>{{
+          $t('Common.back')
+        }}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
-        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{$t('Common.next')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('advance')" large color="primary">
+          {{ $t('Common.next') }}
+        </v-btn>
       </v-col>
     </v-row>
   </div>
@@ -89,20 +100,17 @@ export default {
   },
   methods: {
     getABTestClass(test) {
-      const random = Math.random()
+      const random = Math.random();
       switch (test) {
         case 'back-btn':
-          if(random < 1 / 6 ){
-            return 'secondary-ligten-2 v-btn--outlined'
-          }
-          else if(random < 2 / 6){
-            return 'secondary-ligten-2'
-          }
-          else if (random < 2 / 3){
-            return 'cinza-lighten-1 v-btn--outlined'
-          }
-          else {
-            return 'v-btn--outlined primary'
+          if (random < 1 / 6) {
+            return 'secondary-ligten-2 v-btn--outlined';
+          } else if (random < 2 / 6) {
+            return 'secondary-ligten-2';
+          } else if (random < 2 / 3) {
+            return 'cinza-lighten-1 v-btn--outlined';
+          } else {
+            return 'v-btn--outlined primary';
           }
       }
     },

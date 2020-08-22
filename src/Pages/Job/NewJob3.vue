@@ -1,8 +1,12 @@
 <template>
   <div>
     <h2 class="mb-12">Select Desired Skills</h2>
-
-    <p class="body-1">Knowlege Areas</p>
+    <v-tooltip left>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.knowledgeAreas') }}</p>
+      </template>
+      <span>{{ $t('Job.new._3.tooltips.knowledgeAreas') }}</span>
+    </v-tooltip>
     <v-combobox
       v-model="knowledgeAreas"
       @input="$emit('knowlege-areas', knowlegeAreas)"
@@ -12,7 +16,12 @@
       chips
       deletable-chips
     ></v-combobox>
-    <p class="body-1">Programming Languages</p>
+    <v-tooltip left>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.programmingLanguages') }}</p>
+      </template>
+      <span>{{ $t('Job.new._3.tooltips.programmingLanguages') }}</span>
+    </v-tooltip>
     <v-combobox
       v-model="programmingLanguages"
       @input="$emit('programming-languages', programmingLanguages)"
@@ -22,7 +31,12 @@
       chips
       deletable-chips
     ></v-combobox>
-    <p class="body-1">Frameworks</p>
+    <v-tooltip left>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.frameworks') }}</p>
+      </template>
+      <span>{{ $t('Job.new._3.tooltips.frameworks') }}</span>
+    </v-tooltip>
     <v-combobox
       v-model="frameworks"
       @input="$emit('frameworks', frameworks)"
@@ -34,7 +48,12 @@
       chips
       deletable-chips
     ></v-combobox>
-    <p class="body-1">Soft Skills</p>
+    <v-tooltip left>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.softSkills') }}</p>
+      </template>
+      <span>{{ $t('Job.new._3.tooltips.softSkills') }}</span>
+    </v-tooltip>
     <v-combobox
       v-model="softSkills"
       @input="$emit('soft-skills', softSkills)"
@@ -48,16 +67,15 @@
     ></v-combobox>
     <v-row>
       <v-col>
-        <v-btn
-          elevation="0"
-          @click="$emit('back')"
-          :class="getABTestClass('back-btn')"
-          large
-        >{{$t('Common.back')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('back')" :class="getABTestClass('back-btn')" large>
+          {{ $t('Common.back') }}
+        </v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
-        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{$t('Common.next')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{
+          $t('Common.next')
+        }}</v-btn>
       </v-col>
     </v-row>
   </div>
@@ -87,20 +105,17 @@ export default {
   },
   methods: {
     getABTestClass(test) {
-      const random = Math.random()
+      const random = Math.random();
       switch (test) {
         case 'back-btn':
-          if(random < 1 / 6 ){
-            return 'secondary-ligten-2 v-btn--outlined'
-          }
-          else if(random < 2 / 6){
-            return 'secondary-ligten-2'
-          }
-          else if (random < 2 / 3){
-            return 'cinza-lighten-1 v-btn--outlined'
-          }
-          else {
-            return 'v-btn--outlined primary'
+          if (random < 1 / 6) {
+            return 'secondary-ligten-2 v-btn--outlined';
+          } else if (random < 2 / 6) {
+            return 'secondary-ligten-2';
+          } else if (random < 2 / 3) {
+            return 'cinza-lighten-1 v-btn--outlined';
+          } else {
+            return 'v-btn--outlined primary';
           }
       }
     },
@@ -109,7 +124,6 @@ export default {
   // cinza 1 outlined
   // secondary -2
   // secondary -2 outlined
-
 };
 </script>
 
@@ -118,4 +132,3 @@ export default {
   background: #ffe8cb;
 }
 </style>
-

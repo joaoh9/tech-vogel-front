@@ -2,13 +2,20 @@
   <div>
     <h2 class="mb-12">{{$t('Job.new._2.pageTitle')}}</h2>
 
-    <p class="body-1">{{$t('Job.new._2.about')}}</p>
-    <v-textarea
-      v-model="about"
-      @input="$emit('about', about)"
-      outlined
-    ></v-textarea>
-    <p class="body-1">{{$t('Job.new._2.languages')}}</p>
+    <v-tooltip left>
+      <template v-slot:activator="{on, attrs}">
+        <p v-on="on" v-bind="attrs" class="body-1">{{$t('Job.new._2.about')}}</p>
+      </template>
+      <span>{{$t('Job.new._2.tooltips.about')}}</span>
+    </v-tooltip>
+    <v-textarea v-model="about" @input="$emit('about', about)" outlined></v-textarea>
+
+    <v-tooltip left>
+      <template v-slot:activator="{on, attrs}">
+        <p v-on="on" v-bind="attrs" class="body-1">{{$t('Job.new._2.languages')}}</p>
+      </template>
+      <span>{{$t('Job.new._2.tooltips.about')}}</span>
+    </v-tooltip>
     <v-combobox
       v-model="languages"
       :items="$t('data.languages')"
@@ -32,7 +39,12 @@
     </v-combobox>
     <v-row>
       <v-col>
-        <v-btn :class="getABTestClass('btn-back')" elevation="0" @click="$emit('back')" large>{{$t('Common.back')}}</v-btn>
+        <v-btn
+          :class="getABTestClass('btn-back')"
+          elevation="0"
+          @click="$emit('back')"
+          large
+        >{{$t('Common.back')}}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
@@ -53,20 +65,17 @@ export default {
   },
   methods: {
     getABTestClass(test) {
-      const random = Math.random()
+      const random = Math.random();
       switch (test) {
         case 'back-btn':
-          if(random < 1 / 6 ){
-            return 'secondary-ligten-2 v-btn--outlined'
-          }
-          else if(random < 2 / 6){
-            return 'secondary-ligten-2'
-          }
-          else if (random < 2 / 3){
-            return 'cinza-lighten-1 v-btn--outlined'
-          }
-          else {
-            return 'v-btn--outlined primary'
+          if (random < 1 / 6) {
+            return 'secondary-ligten-2 v-btn--outlined';
+          } else if (random < 2 / 6) {
+            return 'secondary-ligten-2';
+          } else if (random < 2 / 3) {
+            return 'cinza-lighten-1 v-btn--outlined';
+          } else {
+            return 'v-btn--outlined primary';
           }
       }
     },
@@ -80,6 +89,6 @@ export default {
 }
 
 h6 {
-  color: black
+  color: black;
 }
 </style>

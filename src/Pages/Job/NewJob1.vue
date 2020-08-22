@@ -3,19 +3,33 @@
     <h2 class="mb-12">{{$t('Job.new._1.pageTitle')}}</h2>
 
     <v-row>
-      <h1 class="body-1 ml-3">{{$t('Job.new._1.jobTitle')}}</h1>
-      <v-icon class="ml-2">mdi-information-outline</v-icon>
+      <v-tooltip left>
+        <template v-slot:activator="{on, attrs}">
+          <h1 v-on="on" v-bind="attrs" class="body-1 ml-3">{{$t('Job.new._1.jobTitle')}}</h1>
+        </template>
+        <span>{{$t('Job.new._1.tooltips.jobTitle')}}</span>
+      </v-tooltip>
       <v-col cols="12">
-      <v-text-field v-model="title" @input="$emit('title', title)" outlined></v-text-field>
+        <v-text-field v-model="title" @input="$emit('title', title)" outlined></v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col>
-        <p class="body-1">{{$t('Job.new._1.category')}}</p>
+        <v-tooltip left>
+          <template v-slot:activator="{on, attrs}">
+            <p v-on="on" v-bind="attrs" class="body-1 d-flex">{{$t('Job.new._1.category')}}</p>
+          </template>
+          <span>{{$t('Job.new._1.tooltips.category')}}</span>
+        </v-tooltip>
         <v-text-field v-model="category" @input="$emit('category', category)" outlined></v-text-field>
       </v-col>
       <v-col>
-        <p class="body-1">{{$t('Job.new._1.contractType')}}</p>
+        <v-tooltip left>
+          <template v-slot:activator="{on, attrs}">
+            <p v-on="on" v-bind="attrs" class="body-1">{{$t('Job.new._1.contractType')}}</p>
+          </template>
+          <span>{{$t('Job.new._1.tooltips.contractType')}}</span>
+        </v-tooltip>
         <v-combobox
           :items="$t('data.contractType')"
           v-model="contractType"
@@ -43,6 +57,7 @@
 <script>
 export default {
   name: 'NewJob1',
+  components: {},
   data() {
     return {
       title: '',
