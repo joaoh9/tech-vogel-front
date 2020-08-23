@@ -71,10 +71,10 @@
               v-on:salary-max="r => (salary.max = r)"
               v-on:salary-range="r => (salary.range = !salary.range)"
               v-on:back="step--"
-              v-on:advance="step++"
+              v-on:advance="preview"
               v-if="step === 4"
             />
-            <NewJob5 v-on:back="step--" v-on:advance="preview" v-if="step === 5" />
+            <!-- <NewJob5 v-on:back="step--" v-on:advance="preview" v-if="step === 5" /> -->
             <JobDetails v-if="step === 6" />
           </v-col>
           <v-col cols="1"></v-col>
@@ -91,7 +91,7 @@ import NewJob1 from './NewJob1';
 import NewJob2 from './NewJob2';
 import NewJob3 from './NewJob3';
 import NewJob4 from './NewJob4';
-import NewJob5 from './NewJob5';
+// // import NewJob5 from './NewJob5';
 import JobDetails from 'Components/Job/JobDetails';
 import LocaleHelper from 'Helpers/locale';
 
@@ -102,7 +102,7 @@ export default {
     NewJob2,
     NewJob3,
     NewJob4,
-    NewJob5,
+    // NewJob5,
     JobDetails,
   },
   data() {

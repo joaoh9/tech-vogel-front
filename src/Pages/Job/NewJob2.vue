@@ -1,20 +1,24 @@
 <template>
   <div>
-    <h2 class="mb-12">{{$t('Job.new._2.pageTitle')}}</h2>
+    <h2 class="mb-12">{{ $t('Job.new._2.pageTitle') }}</h2>
 
     <v-tooltip left>
-      <template v-slot:activator="{on, attrs}">
-        <p v-on="on" v-bind="attrs" class="body-1">{{$t('Job.new._2.about')}}</p>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._2.about') }}</p>
       </template>
-      <span>{{$t('Job.new._2.tooltips.about')}}</span>
+      <span>{{ $t('Job.new._2.tooltips.about') }}</span>
     </v-tooltip>
-    <v-textarea v-model="about" @input="$emit('about', about)" outlined></v-textarea>
-
+    <vue-editor
+      placeholder="Descreva melhor a sua vaga"
+      :editorToolbar="$t('Quill.defaultToolbar')"
+      v-model="about"
+    >
+    </vue-editor>
     <v-tooltip left>
-      <template v-slot:activator="{on, attrs}">
-        <p v-on="on" v-bind="attrs" class="body-1">{{$t('Job.new._2.languages')}}</p>
+      <template v-slot:activator="{ on, attrs }">
+        <p v-on="on" v-bind="attrs" class="body-1 mt-3">{{ $t('Job.new._2.languages') }}</p>
       </template>
-      <span>{{$t('Job.new._2.tooltips.about')}}</span>
+      <span>{{ $t('Job.new._2.tooltips.about') }}</span>
     </v-tooltip>
     <v-combobox
       v-model="languages"
@@ -39,32 +43,41 @@
     </v-combobox>
     <v-row>
       <v-col>
-        <v-btn
-          :class="getABTestClass('btn-back')"
-          elevation="0"
-          @click="$emit('back')"
-          large
-        >{{$t('Common.back')}}</v-btn>
+        <v-btn :class="getABTestClass('btn-back')" elevation="0" @click="$emit('back')" large>{{
+          $t('Common.back')
+        }}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
-        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{$t('Common.next')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{
+          $t('Common.next')
+        }}</v-btn>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
+import { VueEditor } from 'vue2-editor';
+
 export default {
   name: 'NewJob2',
+  components: {
+    VueEditor,
+  },
   data() {
     return {
       about: '',
       languages: '',
+      content: '',
     };
   },
+  mounted() {},
   methods: {
     getABTestClass(test) {
+      return 'secondary-ligten-2 v-btn--outlined';
+
+      /*
       const random = Math.random();
       switch (test) {
         case 'back-btn':
@@ -78,6 +91,7 @@ export default {
             return 'v-btn--outlined primary';
           }
       }
+      */
     },
   },
 };

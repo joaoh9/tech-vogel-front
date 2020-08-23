@@ -41,6 +41,7 @@ export default new Vuetify({
         'cinza-lighten-3': '#D0D0D8',
         'cinza-lighten-4': '#EBEBEE',
         bg: '#FCFCFF',
+        'cinza-border': '#9c9c9e',
       },
     },
   },

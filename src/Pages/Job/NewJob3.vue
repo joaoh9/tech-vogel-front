@@ -105,7 +105,9 @@ export default {
   },
   methods: {
     getABTestClass(test) {
-      const random = Math.random();
+      // const random = Math.random();
+      return 'secondary-ligten-2 v-btn--outlined';
+      /*
       switch (test) {
         case 'back-btn':
           if (random < 1 / 6) {
@@ -118,6 +120,7 @@ export default {
             return 'v-btn--outlined primary';
           }
       }
+      */
     },
   },
   // primary outlined

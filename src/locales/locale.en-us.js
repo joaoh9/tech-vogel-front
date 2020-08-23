@@ -234,7 +234,7 @@ const localeEnUs = {
       _1: {
         pageTitle: 'Basic Information',
         jobTitle: 'Job Title',
-        category: 'Category',
+        experienceLevel: 'Experience Level',
         contractType: 'Contract Type',
         tooltips: {
           pageTitle: 'teste pageTitle',
@@ -377,7 +377,15 @@ const localeEnUs = {
       errorSavingUser: 'There was an error when saving the user',
     },
   },
-
+  Quill: {
+    defaultToolbar: [
+      // [{ size: [ 'small', false, 'large', 'huge' ] }],
+      [ 'bold', 'italic', 'underline' ],
+      [ { list: 'ordered' }, { list: 'bullet' }, { list: 'check' } ],
+      [ { align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' } ],
+      ['code-block'],
+    ],
+  },
   format: {
     date: 'MM/DD/YYYY',
   },

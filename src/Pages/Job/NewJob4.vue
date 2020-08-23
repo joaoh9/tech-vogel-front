@@ -66,8 +66,12 @@
       </template>
       <span>{{ $t('Job.new._4.tooltips.perks') }}</span>
     </v-tooltip>
-    <v-textarea v-model="perks" @input="$emit('perks', perks)" outlined></v-textarea>
-    <v-row>
+    <vue-editor
+      placeholder="Descreva melhor a sua vaga"
+      :editorToolbar="$t('Quill.defaultToolbar')"
+      v-model="perks"
+    ></vue-editor>
+    <v-row class="mt-7">
       <v-col>
         <v-btn elevation="0" @click="$emit('back')" :class="getABTestClass('btn-back')" large>{{
           $t('Common.back')
@@ -84,8 +88,12 @@
 </template>
 
 <script>
+import { VueEditor } from 'vue2-editor';
 export default {
   name: 'NewJob4',
+  components: {
+    VueEditor,
+  },
   data() {
     return {
       perks: '',
@@ -100,6 +108,8 @@ export default {
   },
   methods: {
     getABTestClass(test) {
+      return 'secondary-ligten-2 v-btn--outlined';
+      /*
       const random = Math.random();
       switch (test) {
         case 'back-btn':
@@ -113,9 +123,12 @@ export default {
             return 'v-btn--outlined primary';
           }
       }
+      */
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
