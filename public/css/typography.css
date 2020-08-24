@@ -1,166 +1,166 @@
 h1 {
   /* H1 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
-  font-size: 5em;
+  font-size: 5.9375rem;
   line-height: 120%;
   /* or 114px */
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 h2 {
   /* H2 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
-  font-size: 4em;
+  font-size: 3.6875rem;
   line-height: 120%;
   /* or 71px */
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 h3 {
   /* H3 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 3em;
+  font-size: 3rem;
   line-height: 120%;
   /* or 58px */
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #29292f;
 }
 
 h4 {
   /* H4 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 2em;
+  font-size: 2.125rem;
   line-height: 150%;
   /* or 51px */
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #000000;
+  color: #29292f;
 }
 
 h5 {
   /* H5 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 150%;
   /* or 36px */
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #29292f;
 }
 
 h6 {
   /* H6 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 150%;
   /* or 30px */
   /* display: flex;
   align-items: center; */
   letter-spacing: 0.15px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .subtitle-1 {
   /* Subtitle 1 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   /* or 24px */
   display: flex;
   align-items: center;
   letter-spacing: 0.15px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .subtitle-2 {
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   /* or 21px */
   display: flex;
   align-items: center;
   letter-spacing: 0.1px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .body-1 {
   /* Body 1 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   /* or 24px */
   display: flex;
   align-items: center;
   letter-spacing: 0.5px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .body-2 {
   /* Body 2 */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   /* or 21px */
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .caption {
   /* Caption */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 150%;
   /* or 18px */
   display: flex;
   align-items: center;
   letter-spacing: 0.4px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .overline {
   /* Overline */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 150%;
   /* or 15px */
   display: flex;
@@ -168,210 +168,211 @@ h6 {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .button-text {
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   /* identical to box height, or 21px */
   display: flex;
   align-items: center;
   letter-spacing: 0.5px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .h1-bold {
   /* H1 Bold */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
-  font-size: 95px;
+  font-size: 0.9375rem;
   line-height: 120%;
   /* or 114px */
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h2-bold {
   /* H2 Bold */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  font-size: 59px;
+  font-size: 3.6875rem;
   line-height: 120%;
   /* or 71px */
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h3-bold {
   /* H3 Bold */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 120%;
   /* or 58px */
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #29292f;
 }
 
 .h4-bold {
   /* H4 Bold */
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 2.125rem;
   line-height: 150%;
   /* or 51px */
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h1-alternative {
   /* H1 alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: 300;
-  font-size: 95px;
+  font-size: 5.9375rem;
   line-height: 120%;
   /* or 114px */
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h2-alternative {
   /* H2 alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: 300;
-  font-size: 59px;
+  font-size: 3.6875rem;
   line-height: 120%;
   /* or 71px */
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h3-alternative {
   /* H3 alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: normal;
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 120%;
   /* or 58px */
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #29292f;
 }
 
 .h4-alternative {
   /* H4 alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: normal;
-  font-size: 34px;
+  font-size: 2.125rem;
   line-height: 150%;
   /* or 51px */
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h5-alternative {
   /* H5 alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 150%;
   /* or 36px */
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #29292f;
 }
 
 .h6-alternative {
   /* H6 alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 150%;
   /* or 30px */
   display: flex;
   align-items: center;
   letter-spacing: 0.15px;
   font-feature-settings: 'liga' off;
-  color: #000000;
+  color: #29292f;
 }
 
 .h1-bold-alternative {
   /* H1 Bold alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: bold;
-  font-size: 88px;
+  font-size: 5.5rem;
   line-height: 120%;
   /* or 106px */
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h2-bold-alternative {
   /* H2 Bold alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: 600;
-  font-size: 59px;
+  font-size: 3.6875rem;
   line-height: 120%;
   /* or 71px */
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #000000;
+  color: #29292f;
 }
 
 .h3-bold-alternative {
   /* H3 Bold alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 120%;
   /* or 58px */
   display: flex;
   align-items: center;
-  color: #000000;
+
+  color: #29292f;
 }
 
 .h4-bold-alternative {
   /* H4 Bold alternativo */
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono';
   font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
+  font-weight: bold;
+  font-size: 1.5rem;
   line-height: 150%;
-  /* or 36px */
+
   display: flex;
   align-items: center;
   color: #000000;

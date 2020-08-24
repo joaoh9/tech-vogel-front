@@ -15,7 +15,8 @@ import Navbar from 'Components/Navbar/Navbar';
 import UserNavbar from 'Components/Navbar/UserNavbar';
 import Storage from 'Helpers/storage';
 import LPFooter from 'Components/LP/LPFooter';
-import '../public/css/typography.css';
+import 'Public/css/typography.css';
+import 'Public/css/fonts.css'
 
 export default {
   name: 'app',
@@ -113,6 +114,10 @@ h6 {
 pre {
   border-radius: 6px !important;
   background-color: #6c6c77 !important;
+}
+
+.ql-editor {
+  margin: 16px !important;
 }
 
 /* QUILL EDITOR DEFAULT STYLE FINISH */

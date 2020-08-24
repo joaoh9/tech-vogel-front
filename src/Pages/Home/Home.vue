@@ -54,9 +54,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h1 {
-  color: white;
+  color: white !important;
   font-weight: bold;
 }
 h6 {
