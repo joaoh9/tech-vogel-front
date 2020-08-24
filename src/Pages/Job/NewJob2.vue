@@ -1,24 +1,24 @@
 <template>
   <div>
-    <h2 class="mb-12">{{ $t('Job.new._2.pageTitle') }}</h2>
+    <h2 class="mb-12">{{ $t('Job.new.page2.title') }}</h2>
 
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._2.about') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.about.title') }}</p>
       </template>
-      <span>{{ $t('Job.new._2.tooltips.about') }}</span>
+      <span>{{ $t('Job.new.about.title') }}</span>
     </v-tooltip>
     <vue-editor
-      placeholder="Descreva melhor a sua vaga"
+      :placeholder="$t('Job.new.about.placeholder')"
       :editorToolbar="$t('Quill.defaultToolbar')"
       v-model="about"
     >
     </vue-editor>
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1 mt-3">{{ $t('Job.new._2.languages') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1 mt-3">{{ $t('Job.new.languages.title') }}</p>
       </template>
-      <span>{{ $t('Job.new._2.tooltips.about') }}</span>
+      <span>{{ $t('Job.new.about.tooltip') }}</span>
     </v-tooltip>
     <v-combobox
       v-model="languages"
@@ -33,7 +33,7 @@
         <v-chip
           v-if="item === Object(item)"
           v-bind="attrs"
-          :color="color || `primary-lighten-2`"
+          :color="color || `tag2`"
           :input-value="selected"
         >
           <span class="pr-2">{{ item.label }}</span>
@@ -43,15 +43,15 @@
     </v-combobox>
     <v-row>
       <v-col>
-        <v-btn :class="getABTestClass('btn-back')" elevation="0" @click="$emit('back')" large>{{
-          $t('Common.back')
-        }}</v-btn>
+        <v-btn :class="getABTestClass('btn-back')" elevation="0" @click="$emit('back')" large>
+          {{ $t('Common.back') }}
+        </v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
-        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{
-          $t('Common.next')
-        }}</v-btn>
+        <v-btn elevation="0" @click="$emit('advance')" large color="primary">
+          {{ $t('Common.next') }}
+        </v-btn>
       </v-col>
     </v-row>
   </div>

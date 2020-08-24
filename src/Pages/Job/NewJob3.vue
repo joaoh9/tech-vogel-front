@@ -3,9 +3,9 @@
     <h2 class="mb-12">Select Desired Skills</h2>
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.knowledgeAreas') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.knowledgeAreas.title') }}</p>
       </template>
-      <span>{{ $t('Job.new._3.tooltips.knowledgeAreas') }}</span>
+      <span>{{ $t('Job.new.knowledgeAreas.tooltip') }}</span>
     </v-tooltip>
     <v-combobox
       v-model="knowledgeAreas"
@@ -18,9 +18,11 @@
     ></v-combobox>
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.programmingLanguages') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1">
+          {{ $t('Job.new.programmingLanguages.title') }}
+        </p>
       </template>
-      <span>{{ $t('Job.new._3.tooltips.programmingLanguages') }}</span>
+      <span>{{ $t('Job.new.programmingLanguages.tooltip') }}</span>
     </v-tooltip>
     <v-combobox
       v-model="programmingLanguages"
@@ -33,9 +35,9 @@
     ></v-combobox>
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.frameworks') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.frameworks.title') }}</p>
       </template>
-      <span>{{ $t('Job.new._3.tooltips.frameworks') }}</span>
+      <span>{{ $t('Job.new.frameworks.tooltip') }}</span>
     </v-tooltip>
     <v-combobox
       v-model="frameworks"
@@ -50,9 +52,9 @@
     ></v-combobox>
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._3.softSkills') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.softSkills') }}</p>
       </template>
-      <span>{{ $t('Job.new._3.tooltips.softSkills') }}</span>
+      <span>{{ $t('Job.new.softSkills.tooltip') }}</span>
     </v-tooltip>
     <v-combobox
       v-model="softSkills"
@@ -73,9 +75,9 @@
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
-        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{
-          $t('Common.next')
-        }}</v-btn>
+        <v-btn elevation="0" @click="$emit('advance')" large color="primary">
+          {{ $t('Common.next') }}
+        </v-btn>
       </v-col>
     </v-row>
   </div>
@@ -84,16 +86,6 @@
 <script>
 export default {
   name: 'NewJob3',
-  props: {
-    title: { type: String },
-    category: { type: String },
-    contractType: { type: String },
-
-    about: { type: String },
-    languages: { type: Array },
-
-    perks: { type: String },
-  },
   data() {
     return {
       knowledgeAreas: [],

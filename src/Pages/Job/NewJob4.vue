@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2 class="mb-12">The Specifics</h2>
+    <h2 class="mb-12">{{ $t('Job.new.page4.title') }}</h2>
 
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._4.salary') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.salary.title') }}</p>
       </template>
-      <span>{{ $t('Job.new._4.tooltips.salary') }}</span>
+      <span>{{ $t('Job.new.salary.tooltip') }}</span>
     </v-tooltip>
     <v-row>
       <v-col>
@@ -26,45 +26,38 @@
           label="Time Frame"
           title="Time Frame"
           outlined
-          :items="['Monthly', 'Yearly', 'Hourly']"
+          :items="['Yearly', 'Monthly', 'Hourly']"
         ></v-autocomplete>
       </v-col>
       <v-col>
         <v-text-field
           v-model="salary.min"
           @click="$emit('salary-min', salary.min)"
-          :label="salary.range ? 'From' : 'Price'"
-          :title="salary.range ? 'From' : 'Price'"
+          :label="range ? 'From' : 'Price'"
+          :title="range ? 'From' : 'Price'"
           outlined
         ></v-text-field>
       </v-col>
-      <v-col v-if="salary.range">
+      <v-col v-if="range">
         <v-text-field
           v-model="salary.max"
           @click="$emit('salary-max', salary.max)"
-          :label="salary.range ? 'To' : 'Price'"
-          :title="salary.range ? 'To' : 'Price'"
+          :label="range ? 'To' : 'Price'"
+          :title="range ? 'To' : 'Price'"
           outlined
         ></v-text-field>
       </v-col>
     </v-row>
     <v-row class="mt-n12">
       <v-col class="text-left">
-        <v-checkbox
-          @click="
-            $emit('salary-range', salary.range);
-            salary.range = !salary.range;
-          "
-          v-model="salary.range"
-          label="Set salary range"
-        ></v-checkbox>
+        <v-checkbox v-model="range" label="Set salary range"></v-checkbox>
       </v-col>
     </v-row>
     <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new._4.perks') }}</p>
+        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.perks.title') }}</p>
       </template>
-      <span>{{ $t('Job.new._4.tooltips.perks') }}</span>
+      <span>{{ $t('Job.new.perks.tooltip') }}</span>
     </v-tooltip>
     <vue-editor
       placeholder="Descreva melhor a sua vaga"
@@ -73,9 +66,9 @@
     ></vue-editor>
     <v-row class="mt-7">
       <v-col>
-        <v-btn elevation="0" @click="$emit('back')" :class="getABTestClass('btn-back')" large>{{
-          $t('Common.back')
-        }}</v-btn>
+        <v-btn elevation="0" @click="$emit('back')" :class="getABTestClass('btn-back')" large>
+          {{ $t('Common.back') }}
+        </v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
@@ -104,6 +97,7 @@ export default {
         timeFrame: '',
         range: false,
       },
+      range: false,
     };
   },
   methods: {
@@ -126,9 +120,12 @@ export default {
       */
     },
   },
+  watch: {
+    range() {
+      this.$emit('salary-range', this.range);
+    },
+  },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
