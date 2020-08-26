@@ -315,6 +315,27 @@ const localeEnUs = {
       },
     },
   },
+  User: {
+    register: {
+      _1: {
+        pageTitle: 'Register to apply for jobs',
+        fullName: 'Full name',
+        email: 'Email',
+        username: 'Username',
+        password: 'Password',
+        confirmPassword: 'Confirm password',
+      },
+      _2: {
+        pageTitle: 'Confirmation',
+        pageSubtitle: 'An access code was sent to your registered email',
+        accessCode: 'Access code',
+        accessCodeHelper: 'Didn\'t get your access code? Click here',
+      },
+      _3: {
+        pageTitle: 'Welcome to Tech Voguel',
+      },
+    },
+  },
   data: {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
     contractType: [ 'Full-Time', 'Part-time', 'Hourly', 'Contract', 'Internship' ],
