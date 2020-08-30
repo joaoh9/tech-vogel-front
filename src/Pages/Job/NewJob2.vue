@@ -2,24 +2,23 @@
   <div>
     <h2 class="mb-12">{{ $t('Job.new.page2.title') }}</h2>
 
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.about.title') }}</p>
-      </template>
-      <span>{{ $t('Job.new.about.title') }}</span>
-    </v-tooltip>
+    <form-input
+      position="left"
+      :title="$t('Job.new.about.title')"
+      :tooltip="$t('Job.new.about.title')"
+    />
     <vue-editor
       :placeholder="$t('Job.new.about.placeholder')"
       :editorToolbar="$t('Quill.defaultToolbar')"
       v-model="about"
     >
     </vue-editor>
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1 mt-3">{{ $t('Job.new.languages.title') }}</p>
-      </template>
-      <span>{{ $t('Job.new.about.tooltip') }}</span>
-    </v-tooltip>
+    <form-input
+      class="mt-4"
+      position="left"
+      :title="$t('Job.new.languages.title')"
+      :tooltip="$t('Job.new.languages.tooltip')"
+    />
     <v-combobox
       v-model="languages"
       :items="$t('data.languages')"
@@ -59,11 +58,13 @@
 
 <script>
 import { VueEditor } from 'vue2-editor';
+import FormInput from 'Components/FormInput.vue';
 
 export default {
   name: 'NewJob2',
   components: {
     VueEditor,
+    FormInput,
   },
   data() {
     return {

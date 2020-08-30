@@ -1,13 +1,11 @@
 <template>
   <div>
     <h2 class="mb-12">{{ $t('Job.new.page4.title') }}</h2>
-
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.salary.title') }}</p>
-      </template>
-      <span>{{ $t('Job.new.salary.tooltip') }}</span>
-    </v-tooltip>
+    <form-input
+      position="left"
+      :title="$t('Job.new.salary.title')"
+      :tooltip="$t('Job.new.salary.tooltip')"
+    />
     <v-row>
       <v-col>
         <v-autocomplete
@@ -53,12 +51,11 @@
         <v-checkbox v-model="range" label="Set salary range"></v-checkbox>
       </v-col>
     </v-row>
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.perks.title') }}</p>
-      </template>
-      <span>{{ $t('Job.new.perks.tooltip') }}</span>
-    </v-tooltip>
+    <form-input
+      position="left"
+      :title="$t('Job.new.perks.title')"
+      :tooltip="$t('Job.new.perks.tooltip')"
+    />
     <vue-editor
       placeholder="Descreva melhor a sua vaga"
       :editorToolbar="$t('Quill.defaultToolbar')"
@@ -82,10 +79,12 @@
 
 <script>
 import { VueEditor } from 'vue2-editor';
+import FormInput from 'Components/FormInput.vue';
 export default {
   name: 'NewJob4',
   components: {
     VueEditor,
+    FormInput,
   },
   data() {
     return {

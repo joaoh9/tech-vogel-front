@@ -1,12 +1,11 @@
 <template>
   <div>
     <h2 class="mb-12">Select Desired Skills</h2>
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.knowledgeAreas.title') }}</p>
-      </template>
-      <span>{{ $t('Job.new.knowledgeAreas.tooltip') }}</span>
-    </v-tooltip>
+    <form-input
+      position="left"
+      :title="$t('Job.new.knowledgeAreas.title')"
+      :tooltip="$t('Job.new.knowledgeAreas.tooltip')"
+    />
     <v-combobox
       v-model="knowledgeAreas"
       @input="$emit('knowlege-areas', knowlegeAreas)"
@@ -16,14 +15,11 @@
       chips
       deletable-chips
     ></v-combobox>
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">
-          {{ $t('Job.new.programmingLanguages.title') }}
-        </p>
-      </template>
-      <span>{{ $t('Job.new.programmingLanguages.tooltip') }}</span>
-    </v-tooltip>
+    <form-input
+      position="left"
+      :title="$t('Job.new.programmingLanguages.title')"
+      :tooltip="$t('Job.new.programmingLanguages.tooltip')"
+    />
     <v-combobox
       v-model="programmingLanguages"
       @input="$emit('programming-languages', programmingLanguages)"
@@ -33,12 +29,11 @@
       chips
       deletable-chips
     ></v-combobox>
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.frameworks.title') }}</p>
-      </template>
-      <span>{{ $t('Job.new.frameworks.tooltip') }}</span>
-    </v-tooltip>
+    <form-input
+      position="left"
+      :title="$t('Job.new.frameworks.title')"
+      :tooltip="$t('Job.new.frameworks.tooltip')"
+    />
     <v-combobox
       v-model="frameworks"
       @input="$emit('frameworks', frameworks)"
@@ -50,12 +45,11 @@
       chips
       deletable-chips
     ></v-combobox>
-    <v-tooltip left>
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1">{{ $t('Job.new.softSkills') }}</p>
-      </template>
-      <span>{{ $t('Job.new.softSkills.tooltip') }}</span>
-    </v-tooltip>
+    <form-input
+      position="left"
+      :title="$t('Job.new.softSkills.title')"
+      :tooltip="$t('Job.new.softSkills.tooltip')"
+    />
     <v-combobox
       v-model="softSkills"
       @input="$emit('soft-skills', softSkills)"
@@ -84,8 +78,13 @@
 </template>
 
 <script>
+import FormInput from 'Components/FormInput.vue';
+
 export default {
   name: 'NewJob3',
+  components: {
+    FormInput,
+  },
   data() {
     return {
       knowledgeAreas: [],
