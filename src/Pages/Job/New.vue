@@ -35,7 +35,7 @@
             />
             <NewJob2
               v-on:about="r => (job.about = r)"
-              v-on:languages="r => (job.languages = r)"
+              v-on:languages="r => (job.languages = r.map(l => l.code))"
               v-on:back="step--"
               v-on:advance="step++"
               v-if="step === 2"

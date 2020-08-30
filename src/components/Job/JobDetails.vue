@@ -8,70 +8,75 @@
     <div class="container mt-6 px-10 px-md-5">
       <v-row justify="center">
         <v-col cols="12" lg="8" xl="9" style="max-width: 1000px">
-          <p class="overline">Posted x days ago</p>
-          <h3 class="h3-bold">Front-end Senior</h3>
-          <h6 class="h6">At Tech Vogel</h6>
-          {{ jobTest.description }}
+          <p class="overline">Posted 5 days ago</p>
+          <h4 class="h4-bold">{{ job.title }}</h4>
+          <h6 class="h6">At {{ company.name }}</h6>
           <div>
             <v-chip
               class="mr-2 mb-1 mt-1"
-              color="tag2"
-              v-for="(k, i) in this.jobTest.skills.knowledgeAreas"
+              color="tag1"
+              v-for="(k, i) in job.skills.knowledgeAreas"
               :key="`ss-${i}`"
               >{{ k }}</v-chip
             >
             <v-chip
               class="mr-2 mb-1 mt-1"
               color="tag2"
-              v-for="(p, i) in this.jobTest.skills.programmingLanguages"
+              v-for="(p, i) in this.job.skills.programmingLanguages"
               :key="`programmingLanguages-${i}`"
               >{{ p }}</v-chip
             >
             <v-chip
               class="mr-2 mb-1 mt-1"
-              color="tag2"
-              v-for="(f, i) in this.jobTest.skills.frameworks"
+              color="tag3"
+              v-for="(f, i) in this.job.skills.frameworks"
               :key="`frameworks-${i}`"
               >{{ f }}</v-chip
             >
+            <v-chip
+              class="mr-2 mb-1 mt-1"
+              color="tag4"
+              v-for="(o, i) in this.job.skills.otherSkills"
+              :key="`other-skills-${i}`"
+              >{{ o }}</v-chip
+            >
           </div>
-          <div class="d-flex justify-start mt-4">
-            <v-btn large color="secondary-ligten-2" outlined>Voltar e Editar</v-btn>
-            <v-btn large color="primary" class="ml-4">Confirmar</v-btn>
-          </div>
+          <div class="body-1 d-block mt-4" v-html="job.description"></div>
         </v-col>
-        <v-col cols="8" lg="4" xl="3" class="mt-6">
+        <v-col cols="12" lg="4" xl="3" class="mt-6">
           <v-card max-width="620px" width="100%" class="px-4" elevation="6" color="ligth">
             <v-card-text>
               <v-row>
                 <v-icon>fa fa-briefcase</v-icon>
-                <v-card-subtitle>Junior</v-card-subtitle>
+                <v-card-subtitle>{{ job.experienceLevel }}</v-card-subtitle>
               </v-row>
               <v-row>
                 <v-icon>far fa-clock</v-icon>
-                <v-card-subtitle>Full Time</v-card-subtitle>
+                <v-card-subtitle>{{ job.contractType }}</v-card-subtitle>
               </v-row>
               <v-row>
                 <v-icon>fas fa-globe-americas</v-icon>
-                <v-card-subtitle>Espanhol, Português</v-card-subtitle>
+                <v-card-subtitle v-for="lan of job.languages" :key="lan">{{ lan }}</v-card-subtitle>
               </v-row>
-              <v-row>
+              <v-row v-if="job.salary">
                 <v-icon class="ml-1">fas fa-dollar-sign</v-icon>
-                <v-card-subtitle class="ml-2">50,000 - 100,000</v-card-subtitle>
+                <v-card-subtitle class="ml-2">{{ job.salary.price }}</v-card-subtitle>
               </v-row>
               <v-row justify="center" class="mt-3">
-                <v-btn large color="primary" width="100%">
+                <v-btn large color="primary" width="98%">
                   Apply For this position
                 </v-btn>
               </v-row>
               <v-divider class="mt-4"></v-divider>
               <v-row class="mt-5">
                 <div class="d-flex">
-                  <v-avatar height="100" width="100" color="cinza-lighten-2" class="ml-1">
+                  <v-avatar height="80" width="80" color="cinza-lighten-2" class="ml-1">
                   </v-avatar>
                   <div class="d-flex justify-center ml-4" style="flex-direction: column">
-                    <h6>Tech Vogel</h6>
-                    <v-card-subtitle class="body-2 ma-n3 ">Job managed by Fulano</v-card-subtitle>
+                    <h6>{{ company.name }}</h6>
+                    <v-card-subtitle class="body-2 ma-n3 "
+                      >Job managed by {{ company.manager }}</v-card-subtitle
+                    >
                   </div>
                 </div>
               </v-row>
@@ -79,10 +84,12 @@
                 <v-col cols="12">
                   <h6>About the company</h6>
                 </v-col>
-                <v-card-subtitle class="mt-n4 body-1">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti rem a
-                  praesentium est ut. Tenetur veniam voluptatibus, error unde quam ipsam quaerat id
-                  earum numquam dolorem hic harum laboriosam amet!
+                <v-card-subtitle
+                  class="mt-n4 body-1 d-block"
+                  v-for="ab of company.about.split('\n')"
+                  :key="ab"
+                >
+                  {{ ab }}
                 </v-card-subtitle>
               </v-row>
             </v-card-text>

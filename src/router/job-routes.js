@@ -4,6 +4,7 @@ import JobDashboard from '@/components/Job/JobDashboard';
 import JobListing from '@/components/Job/JobListing';
 // // import NewJob1 from 'Pages/Job/NewJob1';
 import NewJob from 'Pages/Job/New'
+import UseMobileAndroidPleno from 'Pages/Job/UseMobileAndroidPleno'
 
 const routes = [
   {
@@ -26,6 +27,12 @@ const routes = [
     name: 'Job Description',
     component: JobDetails,
     props: true,
+  },
+  {
+    path: '/job/android-pleno-usemobile',
+    name: 'Android Pleno Use Mobile',
+    component: UseMobileAndroidPleno,
+    propos: true,
   },
 ];
 

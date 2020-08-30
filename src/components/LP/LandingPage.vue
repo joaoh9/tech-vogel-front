@@ -127,7 +127,6 @@ export default {
     Combobox2,
   },
   mounted() {
-    console.log(this.$i18n.locale);
     const random = Math.random();
     this.pic = random < 0.33 ? pic4 : random < 0.66 ? pic2 : pic3;
     this.text = this.$t('LandingPage.buttons.next');
