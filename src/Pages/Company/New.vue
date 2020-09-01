@@ -8,83 +8,46 @@
             <v-stepper v-model="currentStep">
               <v-stepper-items>
                 <v-stepper-content step="1">
-                  <div>
-                    <h2 class="mb-12">{{$t('Company.new._1.pageTitle')}}</h2>
-                    <FormInput :label="$t('Company.new._1.companyName')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                    <FormInput :label="$t('Company.new._1.representativeName')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                    <FormInput :label="$t('Company.new._1.representativeEmail')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                    <v-row>
-                      <v-col cols="12" md="6">
-                        <FormInput :label="$t('Company.new._1.password')">
-                          <v-text-field
-                            tile
-                            outlined
-                            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                            :type="showPassword ? 'text' : 'password'"
-                            @click:append="showPassword = !showPassword"
-                          ></v-text-field>
-                        </FormInput>
-                      </v-col>
-                      <v-col cols="12" md="6">
-                        <FormInput :label="$t('Company.new._1.confirmPassword')">
-                          <v-text-field
-                            tile
-                            outlined
-                            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                            :type="showPassword ? 'text' : 'password'"
-                            @click:append="showPassword = !showPassword"
-                          ></v-text-field>
-                        </FormInput>
-                      </v-col>
-                    </v-row>
-                  </div>
+                  <New1
+                    v-on:company-name="e => (company.name = e)"
+                    v-on:representative-name="e => (company.representativeName = e)"
+                    v-on:representative-email="e => (company.representativeEmail = e)"
+                    v-on:password="e => (company.password = e)"
+                  ></New1>
                   <div class="d-flex justify-end flex-fill m-3">
                     <v-btn large color="primary" @click="currentStep += 1">Next</v-btn>
                   </div>
                 </v-stepper-content>
                 <v-stepper-content step="2">
-                  <div>
-                    <h2 class="mb-12">{{$t('Company.new._2.pageTitle')}}</h2>
-                    <v-avatar color="light-gray" size="96">
-                      <img src alt="Company" />
-                    </v-avatar>
-                    <FormInput :label="$t('Company.new._2.location')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                    <FormInput :label="$t('Company.new._2.aboutYourCompany')">
-                      <v-textarea auto-grow rows="3" tile outlined></v-textarea>
-                    </FormInput>
-                  </div>
+                  <New2
+                    v-on:location="e => (company.location = e)"
+                    v-on:about="e => (company.about = e)"
+                  ></New2>
                   <div class="d-flex justify-space-between">
                     <v-btn large color="secondary" @click="currentStep -= 1">Back</v-btn>
-                    <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
+                    <v-btn
+                      large
+                      color="primary"
+                      @click="currentStep += 1"
+                      class="align-self-end"
+                    >Next</v-btn>
                   </div>
                 </v-stepper-content>
                 <v-stepper-content step="3">
-                  <div>
-                    <h2 class="mb-12">{{$t('Company.new._3.pageTitle')}}</h2>
-                    <FormInput :label="$t('Company.new._3.webpage')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                    <FormInput :label="$t('Company.new._3.linkedin')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                    <FormInput :label="$t('Company.new._3.instagram')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                    <FormInput :label="$t('Company.new._3.twitter')">
-                      <v-text-field tile outlined></v-text-field>
-                    </FormInput>
-                  </div>
+                  <New3
+                    v-on:webpage="e => (company.links.webpage = e)"
+                    v-on:linkedin="e => (company.links.linkedin = e)"
+                    v-on:instagram="e => (company.links.instagram = e)"
+                    v-on:twitter="e => (company.links.twitter = e)"
+                  ></New3>
                   <div class="d-flex justify-space-between">
                     <v-btn large color="secondary" @click="currentStep -= 1">Back</v-btn>
-                    <v-btn large color="success" @click="currentStep = 1" class="align-self-end">Finish</v-btn>
+                    <v-btn
+                      large
+                      color="success"
+                      @click="register()"
+                      class="align-self-end"
+                    >Finish</v-btn>
                   </div>
                 </v-stepper-content>
               </v-stepper-items>
@@ -98,19 +61,51 @@
 </template>
 
 <script>
-import FormInput from 'Components/Interface/FormInput';
+import New1 from 'Pages/Company/New1';
+import New2 from 'Pages/Company/New2';
+import New3 from 'Pages/Company/New3';
+import CompanyController from 'Controllers/company';
 
 export default {
   name: 'New',
   props: {},
   components: {
-    FormInput,
+    New1,
+    New2,
+    New3,
   },
   data() {
     return {
       currentStep: 1,
-      showPassword: false,
+      company: {
+        name: '',
+        representativeName: '',
+        representativeEmail: '',
+        password: '',
+        location: '',
+        about: '',
+        links: { webpage: '', linkedin: '', instagram: '', twitter: '' },
+      },
     };
+  },
+  methods: {
+    register() {
+      const companyController = CompanyController();
+      if (this.company) {
+        companyController
+          .registerCompany({
+            company: this.company,
+          })
+          .then((res) => {
+            console.log('res');
+            console.log(res);
+          })
+          .catch((e) => {
+            console.log('e');
+            console.log(e);
+          });
+      }
+    },
   },
 };
 </script>
