@@ -1,5 +1,6 @@
 import AddResume from '@/components/Resume/AddResume';
 import ResumeView from '@/components/Resume/ResumeView';
+import NewResume from 'Pages/Resume/New';
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
     path: '/resume',
     name: 'Resumé',
     component: ResumeView,
+  },
+  {
+    path: '/resume/new',
+    name: 'New Resumé',
+    component: NewResume,
   },
 ];
 
