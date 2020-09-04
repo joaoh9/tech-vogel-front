@@ -4,8 +4,8 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family: 'Open Sans', 'Montserrat' Helvetica, Arial, serif;
-  --font-family-sans-serif: 'Montserrat', Helvetica, Arial, serif;
-  --font-family-monospace: 'Montserrat', Helvetica, Arial, serif;
+  --font-family: Helvetica, Arial, serif;
+  --font-family-sans-serif: Helvetica, Arial, serif;
+  --font-family-monospace: Helvetica, Arial, serif;
   --font-size: 16px;
 }

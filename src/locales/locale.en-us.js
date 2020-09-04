@@ -259,6 +259,7 @@ const localeEnUs = {
       page4: { title: 'Specifica!' + '' },
       salary: { title: 'Salary', tooltip: 'salary test' },
       perks: { title: 'Perks and Benefits', tooltip: 'perks test' },
+      steppers: [ 'Basic', 'Tell us more', 'Keep', 'Specifica' ],
     },
   },
   LandingPage: {
@@ -331,9 +332,15 @@ const localeEnUs = {
       password: { title: 'Password', tooltip: 'password test' },
       confirmPassword: { title: 'Confirm password', tooltip: 'confirmPassword test' },
       page2: { title: 'Confirmation', tooltip: 'page2 test' },
-      pageSubtitle: { title: 'An access code was sent to your registered email', tooltip: 'pageSubtitle test' },
+      pageSubtitle: {
+        title: 'An access code was sent to your registered email',
+        tooltip: 'pageSubtitle test',
+      },
       accessCode: { title: 'Access code', tooltip: 'accessCode test' },
-      accessCodeHelper: { title: 'Didn\'t get your access code? Click here', tooltip: 'accessCodeHelper test' },
+      accessCodeHelper: {
+        title: 'Didn\'t get your access code? Click here',
+        tooltip: 'accessCodeHelper test',
+      },
       page3: { title: 'Welcome to Tech Voguel', tooltip: 'page3 test' },
     },
   },

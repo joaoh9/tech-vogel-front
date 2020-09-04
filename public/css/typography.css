@@ -1,6 +1,7 @@
 h1 {
+  overflow-wrap: break-word;
   /* H1 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: 300;
   font-size: 5.9375rem;
@@ -13,8 +14,9 @@ h1 {
 }
 
 h2 {
+  overflow-wrap: break-word;
   /* H2 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: 300;
   font-size: 3.6875rem;
@@ -27,8 +29,9 @@ h2 {
 }
 
 h3 {
+  overflow-wrap: break-word;
   /* H3 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 3rem;
@@ -40,8 +43,9 @@ h3 {
 }
 
 h4 {
+  overflow-wrap: break-word;
   /* H4 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 2.125rem;
@@ -54,8 +58,9 @@ h4 {
 }
 
 h5 {
+  overflow-wrap: break-word;
   /* H5 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 1.5rem;
@@ -67,8 +72,9 @@ h5 {
 }
 
 h6 {
+  overflow-wrap: break-word;
   /* H6 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 1.25rem;
@@ -82,8 +88,9 @@ h6 {
 }
 
 .subtitle-1 {
+  overflow-wrap: break-word;
   /* Subtitle 1 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 1rem;
@@ -97,7 +104,8 @@ h6 {
 }
 
 .subtitle-2 {
-  font-family: 'Open Sans';
+  overflow-wrap: break-word;
+  font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 0.875rem;
@@ -111,6 +119,7 @@ h6 {
 }
 
 .body-1 {
+  overflow-wrap: break-word;
   /* Body 1 */
   font-family: 'Open Sans';
   font-style: normal;
@@ -126,6 +135,7 @@ h6 {
 }
 
 .body-2 {
+  overflow-wrap: break-word;
   /* Body 2 */
   font-family: 'Open Sans';
   font-style: normal;
@@ -141,8 +151,9 @@ h6 {
 }
 
 .caption {
+  overflow-wrap: break-word;
   /* Caption */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 0.75rem;
@@ -156,8 +167,9 @@ h6 {
 }
 
 .overline {
+  overflow-wrap: break-word;
   /* Overline */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 0.625rem;
@@ -172,7 +184,8 @@ h6 {
 }
 
 .button-text {
-  font-family: 'Open Sans';
+  overflow-wrap: break-word;
+  font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 0.875rem;
@@ -186,8 +199,9 @@ h6 {
 }
 
 .h1-bold {
+  overflow-wrap: break-word;
   /* H1 Bold */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 0.9375rem;
@@ -200,8 +214,9 @@ h6 {
 }
 
 .h2-bold {
+  overflow-wrap: break-word;
   /* H2 Bold */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 3.6875rem;
@@ -214,8 +229,9 @@ h6 {
 }
 
 .h3-bold {
+  overflow-wrap: break-word;
   /* H3 Bold */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 3rem;
@@ -227,8 +243,9 @@ h6 {
 }
 
 .h4-bold {
+  overflow-wrap: break-word;
   /* H4 Bold */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 2.125rem;
@@ -241,8 +258,9 @@ h6 {
 }
 
 .h1-alternative {
+  overflow-wrap: break-word;
   /* H1 alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: 300;
   font-size: 5.9375rem;
@@ -255,8 +273,9 @@ h6 {
 }
 
 .h2-alternative {
+  overflow-wrap: break-word;
   /* H2 alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: 300;
   font-size: 3.6875rem;
@@ -269,8 +288,9 @@ h6 {
 }
 
 .h3-alternative {
+  overflow-wrap: break-word;
   /* H3 alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: normal;
   font-size: 3rem;
@@ -282,8 +302,9 @@ h6 {
 }
 
 .h4-alternative {
+  overflow-wrap: break-word;
   /* H4 alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: normal;
   font-size: 2.125rem;
@@ -296,8 +317,9 @@ h6 {
 }
 
 .h5-alternative {
+  overflow-wrap: break-word;
   /* H5 alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: normal;
   font-size: 1.5rem;
@@ -309,8 +331,9 @@ h6 {
 }
 
 .h6-alternative {
+  overflow-wrap: break-word;
   /* H6 alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: 600;
   font-size: 1.25rem;
@@ -324,8 +347,9 @@ h6 {
 }
 
 .h1-bold-alternative {
+  overflow-wrap: break-word;
   /* H1 Bold alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: bold;
   font-size: 5.5rem;
@@ -338,8 +362,9 @@ h6 {
 }
 
 .h2-bold-alternative {
+  overflow-wrap: break-word;
   /* H2 Bold alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: 600;
   font-size: 3.6875rem;
@@ -352,8 +377,9 @@ h6 {
 }
 
 .h3-bold-alternative {
+  overflow-wrap: break-word;
   /* H3 Bold alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: bold;
   font-size: 3rem;
@@ -366,8 +392,9 @@ h6 {
 }
 
 .h4-bold-alternative {
+  overflow-wrap: break-word;
   /* H4 Bold alternativo */
-  font-family: 'IBM Plex Mono';
+  font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: bold;
   font-size: 1.5rem;
@@ -376,4 +403,8 @@ h6 {
   display: flex;
   align-items: center;
   color: #000000;
+}
+
+div {
+  word-wrap: break-word;
 }

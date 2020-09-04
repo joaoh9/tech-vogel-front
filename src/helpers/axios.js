@@ -14,10 +14,6 @@ export default class Axios {
       headers.Authorization = `Bearer ${token}`;
     }
 
-    // const baseURL = `${process.env.VUE_APP_URL_PREFIX}://${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_BACK_END_PORT}`;
-
-    // console.log('base url' + baseURL)
-
     return axios.create({
       baseURL: '/api',
       timeout: 30000,

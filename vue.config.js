@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  runtimeCompiler: true,
   transpileDependencies: ['vuetify'],
   publicPath: '/',
   devServer: {

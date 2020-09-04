@@ -58,7 +58,7 @@ export default {
 
 <style>
 .v-application {
-  font-family: 'Nunito Sans' !important;
+  font-family: 'Open Sans' !important;
 }
 
 .v-btn {
@@ -66,7 +66,7 @@ export default {
 }
 
 .v-btn__content {
-  font-family: Nunito Sans;
+  font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
