@@ -9,12 +9,12 @@ const routes = [
     component: JobListing,
   },
   {
-    path: '/user1',
+    path: '/user/profile/:id',
     name: 'User Profile',
     component: UserProfile,
   },
   {
-    path: '/user/register',
+    path: '/signup',
     name: 'Register',
     component: UserRegister,
   },
