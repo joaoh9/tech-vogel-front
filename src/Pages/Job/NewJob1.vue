@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2 class="mb-12">{{ $t('Job.new.page1.title') }}</h2>
+  <div style="word-wrap: break-word;">
+    <h2 class="mb-12" style="word-wrap: break-word">{{ $t('Job.new.page1.title') }}</h2>
 
     <v-row>
       <v-col>
@@ -18,7 +18,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col>
+      <v-col cols="12" md="6" style="max-width: 70%">
         <form-input
           position="left"
           :title="$t('Job.new.experienceLevel.title')"
@@ -32,7 +32,7 @@
           outlined
         ></v-combobox>
       </v-col>
-      <v-col>
+      <v-col cols="12" md="6">
         <form-input
           position="right"
           :title="$t('Job.new.contractType.title')"

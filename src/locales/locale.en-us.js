@@ -237,7 +237,7 @@ const localeEnUs = {
       },
     ],
     new: {
-      page1: { title: 'Basic Informationaaa' },
+      page1: { title: 'Basic Information' },
       jobTitle: { title: 'Job Title', tooltip: 'teste pageTitle' },
       experienceLevel: { title: 'Experience Level', tooltip: 'teste jobTitle' },
       contractType: { title: 'Contract Type', tooltip: 'teste experienceLevel' },
@@ -259,7 +259,7 @@ const localeEnUs = {
       page4: { title: 'Specifica!' + '' },
       salary: { title: 'Salary', tooltip: 'salary test' },
       perks: { title: 'Perks and Benefits', tooltip: 'perks test' },
-      steppers: [ 'Basic', 'Tell us more', 'Keep', 'Specifica' ],
+      steppers: [ 'Basic Info', 'Tell us more', 'Keep', 'Specifica' ],
     },
   },
   LandingPage: {

@@ -1,74 +1,61 @@
 <template>
-  <v-row class="mt-12">
-    <v-col cols="2"></v-col>
-    <v-col cols="8">
-      <v-card class="primary-card" elevation="6" color="bg" :key="step">
-        <v-system-bar
-          class="d-flex justify-space-between"
-          :style="`${getSystemBarColor()}; `"
-          :key="step"
-        >
-          <div
-            class="d-flex justify-center mb-9"
-            style="flex-direction: column; "
-            v-for="i of [1, 2, 3, 4]"
-            :key="i"
-          >
-            <p>{{ getPageTitle(i) }}</p>
-            <v-icon
-              :key="i"
-              size="28px"
-              :color="step >= i ? 'primary' : 'cinza-lighten-3'"
-              >mdi-checkbox-blank-circle
-            </v-icon>
-          </div>
-        </v-system-bar>
-        <v-row class="mt-12 mb-9">
-          <v-col cols="1"></v-col>
-          <v-col cols="10">
-            <NewJob1
-              v-on:title="r => (job.title = r)"
-              v-on:experience-level="r => (job.experienceLevel = r)"
-              v-on:contract-type="r => (job.contractType = r)"
-              v-on:advance="step++"
-              v-if="step === 1"
-            />
-            <NewJob2
-              v-on:about="r => (job.about = r)"
-              v-on:languages="r => (job.languages = r.map(l => l.code))"
-              v-on:back="step--"
-              v-on:advance="step++"
-              v-if="step === 2"
-            />
-            <NewJob3
-              v-on:knowlege-areas="r => (job.knowlegeAreas = r)"
-              v-on:programming-languages="r => (job.programmingLanguages = r)"
-              v-on:frameworks="r => (job.frameworks = r)"
-              v-on:soft-skills="r => (job.softSkills = r)"
-              v-on:back="step--"
-              v-on:advance="step++"
-              v-if="step === 3"
-            />
-            <NewJob4
-              v-on:perks="r => (job.perks = r)"
-              v-on:salary-currency="r => (job.salary.currency = r)"
-              v-on:salary-time-frame="r => (job.salary.timeFrame = r)"
-              v-on:salary-min="r => (job.salary.min = r)"
-              v-on:salary-max="r => (job.salary.max = r)"
-              v-on:salary-range="r => (job.salary.range = r)"
-              v-on:back="step--"
-              v-on:advance="preview"
-              v-if="step === 4"
-            />
-            <!-- <NewJob5 v-on:back="step--" v-on:advance="preview" v-if="step === 5" /> -->
-            <JobDetails :confirm="true" :job="job" v-if="step === 6" />
-          </v-col>
-          <v-col cols="1"></v-col>
-        </v-row>
-      </v-card>
-    </v-col>
-    <v-col cols="2"></v-col>
-  </v-row>
+  <div class="d-flex justify-center mt-12">
+    <v-card class="ma-3" elevation="6" color="bg" :key="step" min-width="300" max-width="600">
+      <v-system-bar
+        class="d-flex justify-space-between"
+        style="margin: -1px"
+        color="cinza-2"
+        :key="step"
+      >
+      </v-system-bar>
+      <v-stepper alt-labels style="background-color: rgba(0,0,0,0)">
+        <v-stepper-header>
+          <template v-for="(step, index) in $t('Job.new.steppers')">
+            <v-stepper-step :key="index" editable :step="index + 1">{{ step }} </v-stepper-step>
+            <v-divider :key="index" v-if="index + 1 !== $t('Job.new.steppers').length" />
+          </template>
+        </v-stepper-header>
+      </v-stepper>
+      <div class="d-flex justify-center ma-6 ma-sm-12">
+        <NewJob1
+          v-on:title="r => (job.title = r)"
+          v-on:experience-level="r => (job.experienceLevel = r)"
+          v-on:contract-type="r => (job.contractType = r)"
+          v-on:advance="step++"
+          v-if="step === 1"
+        />
+        <NewJob2
+          v-on:about="r => (job.about = r)"
+          v-on:languages="r => (job.languages = r.map(l => l.code))"
+          v-on:back="step--"
+          v-on:advance="step++"
+          v-if="step === 2"
+        />
+        <NewJob3
+          v-on:knowlege-areas="r => (job.knowlegeAreas = r)"
+          v-on:programming-languages="r => (job.programmingLanguages = r)"
+          v-on:frameworks="r => (job.frameworks = r)"
+          v-on:soft-skills="r => (job.softSkills = r)"
+          v-on:back="step--"
+          v-on:advance="step++"
+          v-if="step === 3"
+        />
+        <NewJob4
+          v-on:perks="r => (job.perks = r)"
+          v-on:salary-currency="r => (job.salary.currency = r)"
+          v-on:salary-time-frame="r => (job.salary.timeFrame = r)"
+          v-on:salary-min="r => (job.salary.min = r)"
+          v-on:salary-max="r => (job.salary.max = r)"
+          v-on:salary-range="r => (job.salary.range = r)"
+          v-on:back="step--"
+          v-on:advance="preview"
+          v-if="step === 4"
+        />
+        <!-- <NewJob5 v-on:back="step--" v-on:advance="preview" v-if="step === 5" /> -->
+        <JobDetails :confirm="true" :job="job" v-if="step === 6" />
+      </div>
+    </v-card>
+  </div>
 </template>
 
 <script>
