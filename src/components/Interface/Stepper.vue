@@ -1,30 +1,23 @@
 <template>
   <div>
-    <v-system-bar
-      class="d-flex justify-space-around"
-      :style="`${getSystemBarColor()}; `"
-    >
-      <div
-        class="d-flex justify-center mb-9"
-        style="flex-direction: column; "
-        v-for="(_, i) in Array(Number(steps))"
-        :key="i"
-      >
-        <p>Title</p>
-        <v-icon
-          :key="i"
-          size="28px"
-          :color="step > i ? 'primary' : 'cinza-lighten-3'"
-        >mdi-checkbox-blank-circle</v-icon>
-      </div>
-    </v-system-bar>
-    <v-row class="mt-12 mb-9">
-      <v-col cols="1"></v-col>
-      <v-col cols="10">
-        <slot name='default' v-bind:step="step"/>
-      </v-col>
-      <v-col cols="1"></v-col>
-    </v-row>
+    <div class="sidebar">
+      <v-row class="nowrap">
+        <v-col v-for="(item, key) in stepsExibition" :key="key" :cols="item.type === 'NAME' ? 10 : 1">
+            <p
+              v-if="item.type === 'NAME'"
+              v-bind:style="getTitleStyle(item.step)"
+              class="mx-1 text-right"
+            >{{item.name}}</p>
+          <div v-if="item.type === 'SPACER'" class="text-left">
+            <v-icon  v-if="item.active" size=12 class="text-left" color="primary"
+            >fa-circle</v-icon>
+          </div>
+        </v-col>
+      </v-row>
+    </div>
+    <div class="page-wrap">
+      <slot name="default"/>
+    </div>
   </div>
 </template>
 
@@ -33,10 +26,11 @@ import 'Public/css/card.css';
 
 export default {
   name: 'NewJob',
-  components: {
-  },
+  components: {},
   props: {
-    steps: Number,
+    steps: Number || String,
+    currentStep: Number  || String,
+    stepsNames: Array,
   },
   data() {
     return {
@@ -44,36 +38,30 @@ export default {
       numSteps: Number(this.steps),
     };
   },
+  computed: {
+    stepsExibition() {
+      const stepsExibition = [];
+      Array.from({length: this.steps}, (_, i) => {
+        stepsExibition.push({
+          type: 'NAME',
+          name: this.stepsNames[i],
+          step: i + 1,
+        });
+        stepsExibition.push({
+          type: 'SPACER',
+          active: this.currentStep == (i + 1),
+          step: -1,
+        });
+      });
+      return stepsExibition;
+    },
+  },
   methods: {
-    getTitleColor(page) {
-      switch (page) {
-        case 1:
-          if (this.step === 1) return 'color: #FF9200';
-          return 'color: #A1A1AC';
-
-        case 2:
-          if (this.step === 2) return 'color: #FF9200';
-          return 'color: #A1A1AC';
-
-        case 3:
-          if (this.step === 3) return 'color: #FF9200';
-          return 'color: #A1A1AC';
-
-        case 4:
-          if (this.step === 4) return 'color: #FF9200';
-          return 'color: #A1A1AC';
+    getTitleStyle(step) {
+      return {
+        'flex-basis': '100%',
+        'color': this.currentStep === step ? '#ff9200' : '',
       }
-    },
-    getPageTitle(page) {
-      return this.$t('Job.new.page' + page.toString() + '.title');
-    },
-    getSystemBarColor() {
-      const DECIMAL_PLACES = 2;
-      const previousPercentage = ((this.step - 1 || 0) * 100 / (Number(this.steps) + 1)).toFixed(DECIMAL_PLACES);
-      const percentage = ((this.step || 1) * 100 / (Number(this.steps) + 1)).toFixed(DECIMAL_PLACES);
-      const remainingPercentage = (100 - percentage).toFixed(DECIMAL_PLACES);
-      console.log('border-radius: 6px; margin: -1px; background: linear-gradient(to right, #FCFCFF ' + percentage + '%, #FCFCFF ' + remainingPercentage + '%)')
-      return 'border-radius: 6px; margin: -1px; background: linear-gradient(to right, #F1D6B2 ' + previousPercentage + '%, #FCFCFF ' + percentage + '%)';
     },
   },
 };
@@ -86,5 +74,17 @@ export default {
 
 .ql-container {
   font-family: Open Sans !important;
+}
+
+.page-wrap {
+  margin-left: 200px;
+}
+
+.sidebar {
+  width: 200px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 75px;
+  float: left;
 }
 </style>

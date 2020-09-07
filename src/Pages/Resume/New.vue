@@ -5,11 +5,22 @@
       <v-card class="primary-card" elevation="6" color="bg">
         <Stepper
           ref="stepper"
-          steps=5
+          steps=3
+          :stepsNames="stepsNames"
+          v-bind:currentStep="currentStep"
         >
-        <template v-slot:default=" { step } ">
-          <v-btn
-           v-on:click="nextStep">{{step}}</v-btn>
+        <template v-slot:default=" { } ">
+          <div v-if="currentStep == 1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae neque quod sequi cum. Nulla quas, eveniet minus provident, praesentium adipisci fugiat corporis, velit atque dolore maiores aliquid. Asperiores, sequi.
+          </div>
+          <div v-if="currentStep == 2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae neque quod sequi cum. Nulla quas, eveniet minus provident, praesentium adipisci fugiat corporis, velit atque dolore maiores aliquid. Asperiores, sequi.
+          </div>
+          <div v-if="currentStep == 3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae neque quod sequi cum. Nulla quas, eveniet minus provident, praesentium adipisci fugiat corporis, velit atque dolore maiores aliquid. Asperiores, sequi.
+          </div>
+            <v-btn
+            v-on:click="nextStep">{{currentStep}}</v-btn>
 
         </template>
         </Stepper>
@@ -30,11 +41,19 @@ export default {
   },
   data() {
     return {
+      currentStep: 1,
+      stepsNames: [
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum',
+      ],
     };
   },
   methods: {
     nextStep() {
-      this.$refs.stepper.step += 1;
+      this.currentStep += 1;
     },
   },
 };
