@@ -1,23 +1,27 @@
 <template>
   <div>
-    <div class="sidebar">
-      <v-row class="nowrap">
-        <v-col v-for="(item, key) in stepsExibition" :key="key" :cols="item.type === 'NAME' ? 10 : 1">
-            <p
-              v-if="item.type === 'NAME'"
-              v-bind:style="getTitleStyle(item.step)"
-              class="mx-1 text-right"
-            >{{item.name}}</p>
-          <div v-if="item.type === 'SPACER'" class="text-left">
-            <v-icon  v-if="item.active" size=12 class="text-left" color="primary"
-            >fa-circle</v-icon>
+    <v-row>
+      <v-col cols=12 md=2 v-if="$vuetify.breakpoint.lgAndUp">
+        <div class="sidebar">
+          <div v-for="(item, key) in stepsExibition" :key="key">
+            <div class="d-flex">
+                <p
+                  v-bind:style="getTitleStyle(item.step)"
+                  class="mx-1 text-right flex-fill"
+                >{{item.name}}</p>
+                <div v-bind:style="getStepIndicatorStyle(item.step)"></div>
+            </div>
           </div>
-        </v-col>
-      </v-row>
-    </div>
-    <div class="page-wrap">
+        </div>
+
+      </v-col>
+      <v-col cols=12 md=10>
+
+    <div class="page-wrap mx-5 my-2">
       <slot name="default"/>
     </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -25,7 +29,7 @@
 import 'Public/css/card.css';
 
 export default {
-  name: 'NewJob',
+  name: 'Stepper',
   components: {},
   props: {
     steps: Number || String,
@@ -47,11 +51,6 @@ export default {
           name: this.stepsNames[i],
           step: i + 1,
         });
-        stepsExibition.push({
-          type: 'SPACER',
-          active: this.currentStep == (i + 1),
-          step: -1,
-        });
       });
       return stepsExibition;
     },
@@ -59,8 +58,14 @@ export default {
   methods: {
     getTitleStyle(step) {
       return {
-        'flex-basis': '100%',
         'color': this.currentStep === step ? '#ff9200' : '',
+      }
+    },
+    getStepIndicatorStyle(step) {
+      return {
+        'background-color': this.currentStep === step ? '#ff9200' : 'rgba(123,23,23,0)',
+        'width': '2px',
+        'height': '25px',
       }
     },
   },
@@ -76,15 +81,14 @@ export default {
   font-family: Open Sans !important;
 }
 
-.page-wrap {
-  margin-left: 200px;
-}
 
 .sidebar {
-  width: 200px;
+  width: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 75px;
   float: left;
 }
+
+
 </style>
