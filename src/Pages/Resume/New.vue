@@ -1,54 +1,53 @@
 <template>
-  <v-row class="mt-12">
-    <v-col cols="2"></v-col>
-    <v-col cols="8">
-      <v-card class="primary-card" elevation="6" color="bg">
-        <Stepper
-          ref="stepper"
-          steps=3
-          :stepsNames="stepsNames"
-          v-bind:currentStep="currentStep"
+  <div class="mt-2" style="background-color: #FCFCFF">
+    <v-tabs>
+      <v-tab v-for="(item, key) in $t('CV.register.tabs')" :key="key" vertical>
+        {{ item }}
+      </v-tab>
+      <v-tab-item class="d-flex justify-center mt-12" style="background-color: #FCFCFF">
+        <card-template :title="$t('CV.register.start.title')">
+          <template v-slot:content="{}">
+            <Start />
+          </template>
+        </card-template>
+      </v-tab-item>
+      <v-tab-item class="d-flex justify-center mt-12" style="background-color: #FCFCFF">
+        <card-template
+          :title="$t('CV.register.preferences.title')"
+          :description="$t('CV.register.preferences.description')"
         >
-        <template v-slot:default=" { } ">
-          <div v-if="currentStep == 1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae neque quod sequi cum. Nulla quas, eveniet minus provident, praesentium adipisci fugiat corporis, velit atque dolore maiores aliquid. Asperiores, sequi.
-          </div>
-          <div v-if="currentStep == 2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae neque quod sequi cum. Nulla quas, eveniet minus provident, praesentium adipisci fugiat corporis, velit atque dolore maiores aliquid. Asperiores, sequi.
-          </div>
-          <div v-if="currentStep == 3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae neque quod sequi cum. Nulla quas, eveniet minus provident, praesentium adipisci fugiat corporis, velit atque dolore maiores aliquid. Asperiores, sequi.
-          </div>
-            <v-btn
-            v-on:click="nextStep">{{currentStep}}</v-btn>
-
-        </template>
-        </Stepper>
-      </v-card>
-    </v-col>
-    <v-col cols="2"></v-col>
-  </v-row>
+          <template v-slot:content="{}">
+            <Preferences />
+          </template>
+        </card-template>
+      </v-tab-item>
+      <v-tab-item class="d-flex justify-center mt-12" style="background-color: #FCFCFF">
+        <v-card elevation="6" color="bg" min-width="600" max-width="1000">
+          <PersonalInfo />
+        </v-card>
+      </v-tab-item>
+    </v-tabs>
+  </div>
 </template>
 
 <script>
+import Start from './_0Start';
+import Preferences from './_1Preferences';
+import PersonalInfo from './_2PersonalInfo';
 import 'Public/css/card.css';
-import Stepper from 'Components/Interface/Stepper';
+import CardTemplate from './CardTemplate';
 
 export default {
   name: 'NewJob',
   components: {
-    Stepper,
+    Start,
+    Preferences,
+    PersonalInfo,
+    CardTemplate,
   },
   data() {
     return {
       currentStep: 1,
-      stepsNames: [
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum',
-      ],
     };
   },
   methods: {

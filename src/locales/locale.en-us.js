@@ -30,7 +30,18 @@ function dataFormat(data) {
 }
 
 const localeEnUs = {
+  tv: 'Tech Vogel',
+  techVogel: 'Tech Vogel',
   Common: {
+    day: 'day',
+    month: 'month',
+    year: 'year',
+    from: 'from',
+    to: 'to',
+    description: 'description',
+    company: 'company',
+    user: 'user',
+    professional: 'professional',
     HowItWorks: 'How It Works',
     Apply: 'Apply',
     Applying: 'Applying',
@@ -79,6 +90,10 @@ const localeEnUs = {
     letterOrNumber: 'Please write only letters or numbers',
     equal: 'X must be equal to Y',
     passwordsDontMatch: 'Passwords do not match',
+    requiredField: 'Field Required',
+    emailAlreadyRegistered: 'Email already registered!',
+    usernameUnavaliable: 'Username not avaliable!',
+    weakPassword: 'Password too weak!',
   },
   Home: {
     title: 'Tech Vogel',
@@ -125,6 +140,14 @@ const localeEnUs = {
   WhyRemote: {
     _1: '',
     _2: '',
+  },
+  skills: {
+    _title: 'Skills',
+    softSkills: 'Soft skills',
+    knowledgeAreas: 'Knowledge Areas',
+    frameworks: 'Frameworks',
+    programmingLanguages: 'Programming languages',
+    customSkills: 'Custom skills',
   },
   Resume: {
     sidePannel: [
@@ -399,6 +422,65 @@ const localeEnUs = {
       { i18n: 'en-us', language: 'English', country: 'usa' },
     ],
     icons: FlagIcons,
+  },
+  CV: {
+    register: {
+      tabs: [
+        'Start',
+        'Preferences',
+        'Personal Information',
+        'Work Experience',
+        'Skills',
+        'Education',
+        'Extras',
+      ],
+      start: {
+        title: 'Register your CV',
+        linkLinkedIn: { title: 'Link your LinkedIn account' },
+        linkGithub: { title: 'Link your GitHub Account' },
+        registerManually: { title: 'Register CV Manually' },
+      },
+      preferences: {
+        title: 'Select your preferences',
+        description: 'You’ll be able to edit these or add more information later on.',
+        jobInterests: {
+          title: 'What category of jobs are you interested in?',
+          placeholder: 'Pick a category',
+        },
+        jobType: {
+          title: 'What job types are you looking for?',
+          options: [ 'Full time', 'Part time', 'Freelance' ],
+        },
+      },
+      personalInfo: {
+        title: 'Let\'s build your profile',
+        description: 'You’ll be able to edit these later on. This information will be visible to everyone.',
+        fullName: {
+          title: 'Your full name',
+        },
+        location: {
+          title: 'Your location',
+          city: 'City',
+          country: 'Country',
+        },
+        profilePicture: {
+          title: 'Add a profile picture',
+          specifics: 'Maximum size: 200 x 200px\nFile format: .jpg or .png',
+        },
+      },
+      workExperience: {
+        title: 'Share your work experience',
+        description: 'You’ll be able to edit this or add more information later on.',
+        company: {
+          title: 'Company',
+        },
+        position: 'Your position',
+      },
+      skills: {
+        title: 'Tell us about your skills',
+        description: 'You’ll be able to edit these later on. They will be displayed on your profile and we’ll use the skills you pick to show you positions that fit your profile!',
+      },
+    },
   },
 };
 

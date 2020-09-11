@@ -37,7 +37,7 @@ export default {
   methods: {
     goToSignup() {
       this.$router.push({
-        name: 'Signup',
+        path: '/signup',
       });
     },
     goToLogin() {
