@@ -6,9 +6,9 @@
       hide-on-scroll
       elevation="0"
     >
-      <v-btn class="body-2" text color="white darken-4" height="60" tile elevation="0" to="/">
+      <v-btn class="body-2" text color="white darken-4" height="10" tile elevation="0" to="/">
         <v-avatar size="150">
-          <v-img contain height="100" width="1" :src="logo"></v-img>
+          <v-img contain height="60" width="1" :src="logo"></v-img>
         </v-avatar>
       </v-btn>
       <v-spacer></v-spacer>

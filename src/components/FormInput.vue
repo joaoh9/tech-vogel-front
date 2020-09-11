@@ -32,6 +32,9 @@
       </template>
       <span>{{ tooltip }}</span>
     </v-tooltip>
+    <p v-else class="body-1 d-flex">
+      {{ title }}
+    </p>
   </div>
 </template>
 
