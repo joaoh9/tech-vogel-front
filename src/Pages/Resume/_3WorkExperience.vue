@@ -37,14 +37,6 @@
     </div>
     <form-input :title="$t('CV.register.workExperience.position')" />
     <v-textarea height="100" outlined />
-    <v-row class="d-flex justify-end">
-      <v-btn max-width="400" class="align-self-center mt-4 mr-4" color="secondary" large outlined>
-        {{ $t('CV.register.workExperience.button.addMore') }}
-      </v-btn>
-      <v-btn max-width="400" class="align-self-center mt-4" color="primary" large>
-        {{ $t('CV.register.workExperience.button.continue') }}
-      </v-btn>
-    </v-row>
   </div>
 </template>
 
