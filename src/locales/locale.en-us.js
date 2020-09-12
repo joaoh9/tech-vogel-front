@@ -454,7 +454,7 @@ const localeEnUs = {
       },
       personalInfo: {
         title: 'Let\'s build your profile',
-        description: 'You’ll be able to edit these later on. This information will be visible to everyone.',
+        description: 'You’ll be able to edit these later on. This information will be\nvisible to everyone.',
         fullName: {
           title: 'Your full name',
         },
@@ -475,10 +475,38 @@ const localeEnUs = {
           title: 'Company',
         },
         position: 'Your position',
+        myJob: {
+          options: ['this is my current job'],
+        },
+        button: {
+          addMore: 'ADDMORE',
+          continue: 'CONTINUE',
+        },
       },
       skills: {
         title: 'Tell us about your skills',
-        description: 'You’ll be able to edit these later on. They will be displayed on your profile and we’ll use the skills you pick to show you positions that fit your profile!',
+        description: 'You’ll be able to edit these later on. They will be displayed on\nyour profile and we’ll use the skills you pick to show you\npositions that fit your profile!',
+        programmingLanguages: 'Programming Languages',
+        frameworks: 'Frameworks',
+        knowledgeAreas: 'Knowledge areas',
+        softSkills: 'Soft skills',
+        button: 'CONTINUE',
+      },
+      education: {
+        title: 'Education',
+        description: 'You’ll be able to edit these or add more information later on.\nThis information will be displayed to recruiters and people\nwho visit your profile.',
+        degree: 'Degree',
+        type: 'Type',
+        institution: 'Institution',
+        from: 'From',
+        to: 'to',
+        addMore: 'ADD MORE',
+        continue: 'CONTINUE',
+      },
+      extras: {
+        title: 'Anything else?',
+        description: 'Here you can add any extra information, like certifications,\n volunteer work or ??? You’ll be able to edit these or add more\n information later on.',
+        button: 'I’M DONE!',
       },
     },
   },

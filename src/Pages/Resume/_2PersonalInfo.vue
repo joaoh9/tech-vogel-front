@@ -1,9 +1,5 @@
 <template>
-  <div class="d-flex justify-center ma-12" style="flex-direction: column">
-    <h4 class="h4-bold align-self-center">{{ $t('CV.register.personalInfo.title') }}</h4>
-    <spam class="caption align-self-center" style="color: #A1A1AC">
-      {{ $t('CV.register.personalInfo.description') }}
-    </spam>
+  <div>
     <form-input class="mt-6" :title="$t('CV.register.personalInfo.fullName.title')" />
     <v-text-field outlined :label="$t('CV.register.personalInfo.fullName.title')" />
     <form-input class="mt-6" :title="$t('CV.register.personalInfo.location.title')" />
