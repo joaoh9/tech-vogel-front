@@ -8,7 +8,7 @@
       </template>
       <span>{{ tooltip }}</span>
     </v-tooltip>
-    <v-tooltip right v-if="position === 'right'">
+    <v-tooltip right v-else-if="position === 'right'">
       <template v-slot:activator="{ on, attrs }">
         <p v-on="on" v-bind="attrs" class="body-1 d-flex">
           {{ title }}
@@ -16,7 +16,7 @@
       </template>
       <span>{{ tooltip }}</span>
     </v-tooltip>
-    <v-tooltip top v-if="position === 'top'">
+    <v-tooltip top v-else-if="position === 'top'">
       <template v-slot:activator="{ on, attrs }">
         <p v-on="on" v-bind="attrs" class="body-1 d-flex">
           {{ title }}
@@ -24,7 +24,7 @@
       </template>
       <span>{{ tooltip }}</span>
     </v-tooltip>
-    <v-tooltip bottom v-if="position === 'bottom'">
+    <v-tooltip bottom v-else-if="position === 'bottom'">
       <template v-slot:activator="{ on, attrs }">
         <p v-on="on" v-bind="attrs" class="body-1 d-flex">
           {{ title }}
