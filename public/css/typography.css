@@ -10,7 +10,6 @@ h1 {
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #29292f;
 }
 
 h2 {
@@ -25,7 +24,6 @@ h2 {
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #29292f;
 }
 
 h3 {
@@ -39,7 +37,6 @@ h3 {
   /* or 58px */
   display: flex;
   align-items: center;
-  color: #29292f;
 }
 
 h4 {
@@ -54,7 +51,6 @@ h4 {
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #29292f;
 }
 
 h5 {
@@ -68,7 +64,6 @@ h5 {
   /* or 36px */
   display: flex;
   align-items: center;
-  color: #29292f;
 }
 
 h6 {
@@ -84,7 +79,6 @@ h6 {
   align-items: center; */
   letter-spacing: 0.15px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .subtitle-1 {
@@ -100,7 +94,6 @@ h6 {
   align-items: center;
   letter-spacing: 0.15px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .subtitle-2 {
@@ -115,7 +108,6 @@ h6 {
   align-items: center;
   letter-spacing: 0.1px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .body-1 {
@@ -131,7 +123,6 @@ h6 {
   align-items: center;
   letter-spacing: 0.5px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .body-2 {
@@ -147,7 +138,6 @@ h6 {
   align-items: center;
   letter-spacing: 0.25px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .caption {
@@ -163,7 +153,6 @@ h6 {
   align-items: center;
   letter-spacing: 0.4px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .overline {
@@ -180,7 +169,6 @@ h6 {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .button-text {
@@ -195,7 +183,6 @@ h6 {
   align-items: center;
   letter-spacing: 0.5px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .h1-bold {
@@ -210,7 +197,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #29292f;
 }
 
 .h2-bold {
@@ -225,7 +211,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #29292f;
 }
 
 .h3-bold {
@@ -239,7 +224,6 @@ h6 {
   /* or 58px */
   display: flex;
   align-items: center;
-  color: #29292f;
 }
 
 .h4-bold {
@@ -254,7 +238,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #29292f;
 }
 
 .h1-alternative {
@@ -269,7 +252,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #29292f;
 }
 
 .h2-alternative {
@@ -284,7 +266,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #29292f;
 }
 
 .h3-alternative {
@@ -298,7 +279,6 @@ h6 {
   /* or 58px */
   display: flex;
   align-items: center;
-  color: #29292f;
 }
 
 .h4-alternative {
@@ -313,7 +293,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
-  color: #29292f;
 }
 
 .h5-alternative {
@@ -327,7 +306,6 @@ h6 {
   /* or 36px */
   display: flex;
   align-items: center;
-  color: #29292f;
 }
 
 .h6-alternative {
@@ -343,7 +321,6 @@ h6 {
   align-items: center;
   letter-spacing: 0.15px;
   font-feature-settings: 'liga' off;
-  color: #29292f;
 }
 
 .h1-bold-alternative {
@@ -358,7 +335,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: -1.5px;
-  color: #29292f;
 }
 
 .h2-bold-alternative {
@@ -373,7 +349,6 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: -0.5px;
-  color: #29292f;
 }
 
 .h3-bold-alternative {
@@ -387,8 +362,6 @@ h6 {
   /* or 58px */
   display: flex;
   align-items: center;
-
-  color: #29292f;
 }
 
 .h4-bold-alternative {
@@ -402,7 +375,6 @@ h6 {
 
   display: flex;
   align-items: center;
-  color: #000000;
 }
 
 div {
