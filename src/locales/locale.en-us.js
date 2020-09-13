@@ -43,13 +43,14 @@ const localeEnUs = {
     user: 'user',
     professional: 'professional',
     howItWorks: 'How It Works',
+    login: 'Login',
+    signup: 'Sign up',
     apply: 'Apply',
     applying: 'Applying',
     hire: 'Hire',
     hiring: 'Hiring',
     aboutUs: 'About Us',
     content: 'Content',
-    signup: 'Sign-up',
     next: 'Next',
     back: 'Go Back',
     copywright: '©2020 Tech Vogel. All rights reserved.',
@@ -73,10 +74,11 @@ const localeEnUs = {
       placeholder: 'Password',
       label: 'Password',
     },
-    username: {
-      placeholder: 'Username',
-      label: 'Username',
-    },
+    username:
+      {
+        placeholder: 'Username',
+        label: 'Username',
+      } || 'Username',
     confirmPassword: {
       placeholder: 'Confirm Password',
       label: 'Confirm Password',
@@ -368,6 +370,12 @@ const localeEnUs = {
         instagram: 'Instagram',
       },
     },
+  },
+  login: {
+    title: 'Login',
+    subtitle: 'Enter Tech Vogel',
+    createAccount: 'Create an account',
+    forgotPassword: 'Forgot your password?',
   },
   User: {
     register: {
