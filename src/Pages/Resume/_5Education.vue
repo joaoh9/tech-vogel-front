@@ -28,12 +28,8 @@
 </template>
 
 <script>
-import FormInput from 'Components/FormInput.vue';
 export default {
   name: 'Education',
-  components: {
-    FormInput,
-  },
 };
 </script>
 

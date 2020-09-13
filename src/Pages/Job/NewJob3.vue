@@ -78,13 +78,8 @@
 </template>
 
 <script>
-import FormInput from 'Components/FormInput.vue';
-
 export default {
   name: 'NewJob3',
-  components: {
-    FormInput,
-  },
   data() {
     return {
       knowledgeAreas: [],

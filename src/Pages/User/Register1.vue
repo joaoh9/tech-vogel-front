@@ -14,7 +14,7 @@
       outlined
       v-model="fullName"
       @input="$emit('full-name', fullName)"
-    ></v-text-field>
+    />
 
     <form-input
       position="left"
@@ -28,7 +28,7 @@
       outlined
       v-model="email"
       @input="$emit('email', email)"
-    ></v-text-field>
+    />
 
     <form-input
       position="left"
@@ -41,7 +41,7 @@
       outlined
       v-model="username"
       @input="$emit('username', username)"
-    ></v-text-field>
+    />
 
     <v-row>
       <v-col cols="12" md="6">
@@ -58,7 +58,7 @@
           @click:append="showPassword = !showPassword"
           v-model="password"
           @input="$emit('password', password)"
-        ></v-text-field>
+        />
       </v-col>
       <v-col cols="12" md="6">
         <form-input
@@ -74,7 +74,7 @@
           @click:append="showConfirmPassword = !showConfirmPassword"
           v-model="confirmPassword"
           @input="$emit('confirm-password', confirmPassword)"
-        ></v-text-field>
+        />
       </v-col>
     </v-row>
   </div>
@@ -82,15 +82,11 @@
 
 <script>
 import Rules from 'Helpers/rules';
-import FormInput from 'Components/FormInput';
 import UserController from 'Controllers/user';
 
 export default {
   name: 'New',
   props: {},
-  components: {
-    FormInput,
-  },
   mounted() {
     this.rules = new Rules(this.$t);
   },

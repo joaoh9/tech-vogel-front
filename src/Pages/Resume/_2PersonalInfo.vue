@@ -23,12 +23,8 @@
 </template>
 
 <script>
-import FormInput from 'Components/FormInput.vue';
 export default {
   name: 'ResumePersonalInfo',
-  components: {
-    FormInput,
-  },
 };
 </script>
 

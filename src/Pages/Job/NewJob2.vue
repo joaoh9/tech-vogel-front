@@ -69,13 +69,10 @@
 
 <script>
 import { VueEditor } from 'vue2-editor';
-import FormInput from 'Components/FormInput.vue';
-
 export default {
   name: 'NewJob2',
   components: {
     VueEditor,
-    FormInput,
   },
   data() {
     return {
