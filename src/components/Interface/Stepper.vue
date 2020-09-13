@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols=12 md=4 v-if="$vuetify.breakpoint.mdAndUp">
         <div class="sidebar">
-          <v-tabs vertical fixed-tabs value="currentStep" @change="updateStep">
+          <v-tabs vertical fixed-tabs :value="this.value" @change="updateStep" background-color="rgba(0,0,0,0)">
             <v-tab  v-for="(item, key) in stepsExibition" :key="key">
               {{item.name}}
             </v-tab>
@@ -22,7 +22,7 @@
       </v-col>
       <v-col cols=12 md=8>
 
-    <div class="page-wrap mx-5 my-2">
+    <div class="mx-5 mb-2">
       <slot name="default"/>
     </div>
       </v-col>
@@ -41,7 +41,7 @@ export default {
       Number,
       String,
     ],
-    currentStep: [
+    value: [
       Number,
       String,
     ],
@@ -82,11 +82,7 @@ export default {
     updateStep(step) {
       console.log(step)
       this.value = step;
-      this.$emit('input', {
-        steps: this.steps,
-        currentStep: step,
-        stepsNames: this.stepsNames,
-      })
+      this.$emit('input', step)
     },
   },
 };
