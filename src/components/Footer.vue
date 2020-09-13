@@ -8,11 +8,11 @@
       flat
       style="border-radius: 0px !important"
     >
-      <v-row align="start" justify="center" class="mx-1">
+      <v-row align="start" justify="center" class="mx-1 mt-2">
         <v-col
           v-if="$vuetify.breakpoint.mdAndUp"
           cols="2"
-          class="align-self-center"
+          class="align-self-start"
         >
           <v-img height="75" contain :src="logo" />
         </v-col>
