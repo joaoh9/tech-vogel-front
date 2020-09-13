@@ -441,8 +441,8 @@ const localeEnUs = {
   },
   languages: {
     data: [
-      { i18n: 'pt-br', language: 'Português', country: 'brazil' },
-      { i18n: 'en-us', language: 'English', country: 'usa' },
+      { i18n: 'pt-br', language: 'Português', country: 'brazil', flag: FlagIcons.brazil },
+      { i18n: 'en-us', language: 'English', country: 'usa', flag: FlagIcons.usa },
     ],
     icons: FlagIcons,
   },
