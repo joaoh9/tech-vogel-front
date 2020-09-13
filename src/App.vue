@@ -1,12 +1,11 @@
 <template>
   <v-app>
-
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
     <Navbar v-if="notLP()"></Navbar>
     <v-content v-bind:style="getPageStyle()">
       <router-view class="view"></router-view>
     </v-content>
-    <LPFooter> </LPFooter>
+    <Footer class="mt-12" />
   </v-app>
 </template>
 
@@ -14,9 +13,11 @@
 import Navbar from 'Components/Navbar/Navbar';
 import UserNavbar from 'Components/Navbar/UserNavbar';
 import Storage from 'Helpers/storage';
-import LPFooter from 'Components/LP/LPFooter';
+import Footer from 'Components/Footer';
 import 'Public/css/typography.css';
-import 'Public/css/fonts.css'
+import 'Public/css/fonts.css';
+import 'Public/css/colors.css';
+import 'Public/css/complementary.css';
 
 export default {
   name: 'app',
@@ -28,7 +29,7 @@ export default {
   components: {
     Navbar,
     UserNavbar,
-    LPFooter,
+    Footer,
   },
   methods: {
     userIsLoggedIn() {
@@ -48,7 +49,8 @@ export default {
       };
 
       if (this.$router.currentRoute.name === 'Home') {
-        pageStyle.background = 'linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693';
+        pageStyle.background =
+          'linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693';
       }
       return pageStyle;
     },

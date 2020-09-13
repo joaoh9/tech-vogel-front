@@ -1,0 +1,169 @@
+.color-white {
+  color: white;
+}
+.color-black {
+  color: black;
+}
+.color-primary {
+  color: #ff9200;
+}
+.color-primary-lighten-1 {
+  color: #f0bd78;
+}
+.color-primary-lighten-2 {
+  color: #f1d6b2;
+}
+.color-primary-darken-1 {
+  color: #e78707;
+}
+.color-primary-darken-2 {
+  color: #c27713;
+}
+.color-secondary {
+  color: #1a193c;
+}
+.color-secondary-lighten-1 {
+  color: #3b3973;
+}
+.color-secondary-lighten-2 {
+  color: #706f98;
+}
+.color-secondary-darken-1 {
+  color: #332a73;
+}
+.color-secondary-darken-2 {
+  color: #282159;
+}
+.color-danger {
+  color: #f86241;
+}
+.color-success {
+  color: #97ca86;
+}
+.color-tag1 {
+  color: #cde4f8;
+}
+.color-tag2 {
+  color: #fff6c9;
+}
+.color-tag3 {
+  color: #e2faf3;
+}
+.color-tag4 {
+  color: #f0e5f9;
+}
+.color-tag5 {
+  color: #fceced;
+}
+.color-dark {
+  color: #29292f;
+}
+.color-ligth {
+  color: #f7f7fb;
+}
+.color-support1 {
+  color: #1e85df;
+}
+.color-support2 {
+  color: #ffd500;
+}
+.color-cinza-lighten-1 {
+  color: #6c6c77;
+}
+.color-cinza-lighten-2 {
+  color: #a1a1ac;
+}
+.color-cinza-lighten-3 {
+  color: #d0d0d8;
+}
+.color-cinza-lighten-4 {
+  color: #ebebee;
+}
+.color-bg {
+  color: #fcfcff;
+}
+.color-cinza-border {
+  color: #9c9c9e;
+}
+
+.bg-color-primary {
+  color: #ff9200;
+}
+.bg-color-primary-lighten-1 {
+  color: #f0bd78;
+}
+.bg-color-primary-lighten-2 {
+  color: #f1d6b2;
+}
+.bg-color-primary-darken-1 {
+  color: #e78707;
+}
+.bg-color-primary-darken-2 {
+  color: #c27713;
+}
+.bg-color-secondary {
+  color: #1a193c;
+}
+.bg-color-secondary-lighten-1 {
+  color: #3b3973;
+}
+.bg-color-secondary-lighten-2 {
+  color: #706f98;
+}
+.bg-color-secondary-darken-1 {
+  color: #332a73;
+}
+.bg-color-secondary-darken-2 {
+  color: #282159;
+}
+.bg-color-danger {
+  color: #f86241;
+}
+.bg-color-success {
+  color: #97ca86;
+}
+.bg-color-tag1 {
+  color: #cde4f8;
+}
+.bg-color-tag2 {
+  color: #fff6c9;
+}
+.bg-color-tag3 {
+  color: #e2faf3;
+}
+.bg-color-tag4 {
+  color: #f0e5f9;
+}
+.bg-color-tag5 {
+  color: #fceced;
+}
+.bg-color-dark {
+  color: #29292f;
+}
+.bg-color-ligth {
+  color: #f7f7fb;
+}
+.bg-color-support1 {
+  color: #1e85df;
+}
+.bg-color-support2 {
+  color: #ffd500;
+}
+.bg-color-cinza-lighten-1 {
+  color: #6c6c77;
+}
+.bg-color-cinza-lighten-2 {
+  color: #a1a1ac;
+}
+.bg-color-cinza-lighten-3 {
+  color: #d0d0d8;
+}
+.bg-color-cinza-lighten-4 {
+  color: #ebebee;
+}
+.bg-color-bg {
+  color: #fcfcff;
+}
+.bg-color-cinza-border {
+  color: #9c9c9e;
+}

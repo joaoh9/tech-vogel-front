@@ -20,7 +20,7 @@ export default new Vuetify({
         'primary-lighten-2': '#F1D6B2',
         'primary-darken-1': '#E78707',
         'primary-darken-2': '#C27713',
-        secondary: '#403691',
+        secondary: '#1A193C',
         'secondary-lighten-1': '#3B3973',
         'secondary-lighten-2': '#706F98',
         // 'secondary-darken-1': '#332A73',

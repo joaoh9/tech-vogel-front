@@ -42,16 +42,25 @@ const localeEnUs = {
     company: 'company',
     user: 'user',
     professional: 'professional',
-    HowItWorks: 'How It Works',
-    Apply: 'Apply',
-    Applying: 'Applying',
-    Hire: 'Hire',
-    Hiring: 'Hiring',
-    AboutUs: 'About Us',
-    Content: 'Content',
-    Signup: 'Sign-up',
+    howItWorks: 'How It Works',
+    apply: 'Apply',
+    applying: 'Applying',
+    hire: 'Hire',
+    hiring: 'Hiring',
+    aboutUs: 'About Us',
+    content: 'Content',
+    signup: 'Sign-up',
     next: 'Next',
     back: 'Go Back',
+    copywright: '©2020 Tech Vogel. All rights reserved.',
+    termsOfService: 'Terms of service',
+    privacyPolicy: 'Privacy policy',
+    cnpj: 'CNPJ',
+    cnpjNumber: '38.216.987/0001-59',
+    phone: '+55 11 95052 7281',
+    contactEmail: 'contact@techvogel.com',
+    jobs: 'Jobs',
+    job: 'Job',
     name: {
       placeholder: 'Name',
       label: 'Name',
@@ -310,17 +319,31 @@ const localeEnUs = {
       next: 'Next',
       confirm: 'Confirm',
     },
-    footer: {
-      socialMedia: {
-        title: 'Connect with us on our social networks!',
-      },
-      icons: [
-        { icon: 'mdi-facebook', link: 'https://facebook.com/techvogel' },
-        { icon: 'mdi-twitter', link: 'https://twitter.com/techvogel' },
-        { icon: 'mdi-linkedin', link: 'https://linkedin.com/company/techvogel' },
-        { icon: 'mdi-instagram', link: 'https://instagram.com/tech_vogel' },
+  },
+  footer: {
+    socialMedia: {
+      title: 'Follow us',
+      links: [
+        { text: 'Facebook', icon: 'mdi-facebook', link: 'https://facebook.com/techvogel' },
+        { text: 'Twitter', icon: 'mdi-twitter', link: 'https://twitter.com/techvogel' },
+        {
+          text: 'Linkedin',
+          icon: 'mdi-linkedin',
+          link: 'https://linkedin.com/company/techvogel',
+        },
+        { text: 'Instagram', icon: 'mdi-instagram', link: 'https://instagram.com/tech_vogel' },
       ],
     },
+    jobsInfo: [
+      { text: 'Find jobs', to: '/jobs' },
+      { text: 'Advertise a position', to: '/job/new' },
+      { text: 'login', to: '/login' },
+    ],
+    aboutUsInfo: [
+      { text: 'Our story', to: '/aboutus' },
+      { text: 'How it works', to: '/howitworks' },
+      { text: 'Pricing', to: '/pricing' },
+    ],
   },
   Company: {
     new: {
@@ -454,7 +477,8 @@ const localeEnUs = {
       },
       personalInfo: {
         title: 'Let\'s build your profile',
-        description: 'You’ll be able to edit these later on. This information will be\nvisible to everyone.',
+        description:
+          'You’ll be able to edit these later on. This information will be\nvisible to everyone.',
         fullName: {
           title: 'Your full name',
         },
@@ -485,7 +509,8 @@ const localeEnUs = {
       },
       skills: {
         title: 'Tell us about your skills',
-        description: 'You’ll be able to edit these later on. They will be displayed on\nyour profile and we’ll use the skills you pick to show you\npositions that fit your profile!',
+        description:
+          'You’ll be able to edit these later on. They will be displayed on\nyour profile and we’ll use the skills you pick to show you\npositions that fit your profile!',
         programmingLanguages: 'Programming Languages',
         frameworks: 'Frameworks',
         knowledgeAreas: 'Knowledge areas',
@@ -494,7 +519,8 @@ const localeEnUs = {
       },
       education: {
         title: 'Education',
-        description: 'You’ll be able to edit these or add more information later on.\nThis information will be displayed to recruiters and people\nwho visit your profile.',
+        description:
+          'You’ll be able to edit these or add more information later on.\nThis information will be displayed to recruiters and people\nwho visit your profile.',
         degree: 'Degree',
         type: 'Type',
         institution: 'Institution',
@@ -505,7 +531,8 @@ const localeEnUs = {
       },
       extras: {
         title: 'Anything else?',
-        description: 'Here you can add any extra information, like certifications,\n volunteer work or ??? You’ll be able to edit these or add more\n information later on.',
+        description:
+          'Here you can add any extra information, like certifications,\n volunteer work or ??? You’ll be able to edit these or add more\n information later on.',
         button: 'I’M DONE!',
       },
     },
