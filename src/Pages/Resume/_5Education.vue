@@ -29,7 +29,7 @@
         <form-input :title="$t('CV.register.education.institution')" />
         <v-text-field
           v-model="education.institution"
-          v-on:input="$emit('education', institution)"
+          v-on:input="$emit('education', education)"
           outlined
           :label="$t('CV.register.education.institution')"
         />

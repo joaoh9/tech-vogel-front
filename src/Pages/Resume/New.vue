@@ -68,7 +68,7 @@
                   <v-btn
                     large
                     color="primary"
-                    @click="currentStep += 1"
+                    @click="register"
                     class="align-self-end"
                   >{{ $t('CV.register.extras.button') }}</v-btn>
                 </div>
@@ -166,6 +166,7 @@ import Skills from './_4Skills';
 import Education from './_5Education';
 import Extras from './_6Extras';
 
+import ResumeController from 'Controllers/resume';
 import 'Public/css/card.css';
 
 export default {
@@ -224,8 +225,22 @@ export default {
     };
   },
   methods: {
-    nextStep() {
-      this.currentStep += 1;
+    register() {
+      const resumeController = ResumeController();
+      if (this.resume) {
+        resumeController
+          .register({
+            company: this.resume,
+          })
+          .then((res) => {
+            console.log('res');
+            console.log(res);
+          })
+          .catch((e) => {
+            console.log('e');
+            console.log(e);
+          });
+      }
     },
   },
 };
