@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Logo from 'Assets/tv-new-logo-squared-blue.png';
+import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
 
 export default {
   name: 'Navbar',

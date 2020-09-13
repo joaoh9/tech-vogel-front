@@ -65,7 +65,7 @@ import NewJob2 from './NewJob2';
 import NewJob3 from './NewJob3';
 import NewJob4 from './NewJob4';
 // // import NewJob5 from './NewJob5';
-import JobDetails from 'Components/Job/JobDetails';
+import JobDetails from './JobDetails';
 
 export default {
   name: 'NewJob',
