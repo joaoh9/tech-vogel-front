@@ -53,7 +53,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-btn :class="getABTestClass('btn-back')" elevation="0" @click="$emit('back')" large>
+        <v-btn class="secondary-ligten-2 v-btn--outlined" elevation="0" @click="$emit('back')" large>
           {{ $t('Common.back') }}
         </v-btn>
       </v-col>
@@ -80,28 +80,6 @@ export default {
       languages: '',
       content: '',
     };
-  },
-  mounted() {},
-  methods: {
-    getABTestClass(test) {
-      return 'secondary-ligten-2 v-btn--outlined';
-
-      /*
-      const random = Math.random();
-      switch (test) {
-        case 'back-btn':
-          if (random < 1 / 6) {
-            return 'secondary-ligten-2 v-btn--outlined';
-          } else if (random < 2 / 6) {
-            return 'secondary-ligten-2';
-          } else if (random < 2 / 3) {
-            return 'cinza-lighten-1 v-btn--outlined';
-          } else {
-            return 'v-btn--outlined primary';
-          }
-      }
-      */
-    },
   },
 };
 </script>

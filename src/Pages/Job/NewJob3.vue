@@ -63,7 +63,7 @@
     ></v-combobox>
     <v-row>
       <v-col>
-        <v-btn elevation="0" @click="$emit('back')" :class="getABTestClass('back-btn')" large>
+        <v-btn elevation="0" @click="$emit('back')" class="secondary-ligten-2 v-btn--outlined" large>
           {{ $t('Common.back') }}
         </v-btn>
       </v-col>
@@ -89,30 +89,6 @@ export default {
       random: 0,
     };
   },
-  methods: {
-    getABTestClass(test) {
-      // const random = Math.random();
-      return 'secondary-ligten-2 v-btn--outlined';
-      /*
-      switch (test) {
-        case 'back-btn':
-          if (random < 1 / 6) {
-            return 'secondary-ligten-2 v-btn--outlined';
-          } else if (random < 2 / 6) {
-            return 'secondary-ligten-2';
-          } else if (random < 2 / 3) {
-            return 'cinza-lighten-1 v-btn--outlined';
-          } else {
-            return 'v-btn--outlined primary';
-          }
-      }
-      */
-    },
-  },
-  // primary outlined
-  // cinza 1 outlined
-  // secondary -2
-  // secondary -2 outlined
 };
 </script>
 
