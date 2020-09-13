@@ -6,10 +6,10 @@
         <v-card class="primary-card" elevation="6" color="bg">
           <Stepper ref="stepper" :stepsNames="$t('CV.register.tabs')" v-model="currentStep">
             <template v-slot:default=" { } ">
-              <div v-if="currentStep == 0">
+              <div v-bind:style="{display: currentStep == 0? 'block': 'none'}">
                 <Start v-on:manual-register="currentStep += 1"></Start>
               </div>
-              <div v-if="currentStep == 1">
+              <div v-bind:style="{display: currentStep == 1? 'block': 'none'}">
                 <Preferences
                   v-on:job-category="e => (resume.jobCategory = e)"
                   v-on:job-type="e => (resume.jobType = e)"
@@ -19,7 +19,7 @@
                   <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
                 </div>
               </div>
-              <div v-if="currentStep == 2">
+              <div v-bind:style="{display: currentStep == 2? 'block': 'none'}">
                 <PersonalInfo
                   v-on:full-name="e => (resume.fullName = e)"
                   v-on:location="e => {resume.location = e}"
@@ -29,39 +29,28 @@
                   <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
                 </div>
               </div>
-              <div v-if="currentStep == 3">
-                <WorkExperience
-                  v-on:company="e => (resume.company = e)"
-                  v-on:position="e => {resume.position = e}"
-                  v-on:from="e => {resume.from = e}"
-                  v-on:to="e => {resume.to = e}"
-                  v-on:jobDescription="e => {resume.jobDescription = e}"
-                  v-on:currentJob="e => {resume.currentJob = e}"
-                ></WorkExperience>
+              <div v-bind:style="{display: currentStep == 3? 'block': 'none'}">
+                <WorkExperience v-on:job="e => {resume.jobDescription = e}"></WorkExperience>
                 <div class="d-flex justify-space-between">
                   <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
                   <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
                 </div>
               </div>
-              <div v-if="currentStep == 4">
-                <Skills
-                  v-on:skills="e => (resume.skills = e)"
-                ></Skills>
+              <div v-bind:style="{display: currentStep == 4? 'block': 'none'}">
+                <Skills v-on:skills="e => (resume.skills = e)"></Skills>
                 <div class="d-flex justify-space-between">
                   <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
                   <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
                 </div>
               </div>
-              <div v-if="currentStep == 5">
-                <Education
-                  v-on:education="e => (resume.education = e)"
-                ></Education>
+              <div v-bind:style="{display: currentStep == 5? 'block': 'none'}">
+                <Education v-on:education="e => (resume.education = e)"></Education>
                 <div class="d-flex justify-space-between">
                   <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
                   <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
                 </div>
               </div>
-              <div v-if="currentStep == 6">
+              <div v-bind:style="{display: currentStep == 6? 'block': 'none'}">
                 <Extras></Extras>
                 <div class="d-flex justify-space-between">
                   <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
@@ -189,20 +178,22 @@ export default {
           city: '',
           country: '',
         },
-        company: {
-          title: '',
+        job: {
+          company: {
+            title: '',
+          },
+          position: '',
+          from: {
+            month: '',
+            year: '',
+          },
+          to: {
+            month: '',
+            year: '',
+          },
+          jobDescription: '',
+          currentJob: '',
         },
-        position: '',
-        from: {
-          month: '',
-          year: '',
-        },
-        to: {
-          month: '',
-          year: '',
-        },
-        jobDescription: '',
-        currentJob: '',
         skills: {
           programmingLanguages: '',
           frameworks: '',
@@ -230,13 +221,13 @@ export default {
       if (this.resume) {
         resumeController
           .register({
-            company: this.resume,
+            resume: this.resume,
           })
-          .then((res) => {
+          .then(res => {
             console.log('res');
             console.log(res);
           })
-          .catch((e) => {
+          .catch(e => {
             console.log('e');
             console.log(e);
           });
