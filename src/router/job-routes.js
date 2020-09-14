@@ -15,7 +15,7 @@ const routes = [
     props: true,
   },
   {
-    path: '/job/android-pleno-usemobile',
+    path: '/job/exemplo',
     name: 'Android Pleno Use Mobile',
     component: UseMobileAndroidPleno,
     propos: true,
