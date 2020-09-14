@@ -1,66 +1,84 @@
 <template>
-  <div class="container">
-    <v-card class="primary-card">
-      <v-row>
-        <v-col cols="1"></v-col>
-        <v-col cols="10">
-          <v-form>
-            <v-stepper v-model="currentStep">
-              <v-stepper-items>
-                <v-stepper-content step="1">
-                  <New1
-                    v-on:company-name="e => (company.name = e)"
-                    v-on:representative-name="e => (company.representativeName = e)"
-                    v-on:representative-email="e => (company.representativeEmail = e)"
-                    v-on:password="e => (company.password = e)"
-                  ></New1>
-                  <div class="d-flex justify-end flex-fill m-3">
-                    <v-btn large color="primary" @click="currentStep += 1">Next</v-btn>
-                  </div>
-                </v-stepper-content>
-                <v-stepper-content step="2">
-                  <New2
-                    v-on:location="e => (company.location = e)"
-                    v-on:about="e => (company.about = e)"
-                  ></New2>
-                  <div class="d-flex justify-space-between">
-                    <v-btn large color="secondary" @click="currentStep -= 1">Back</v-btn>
-                    <v-btn
-                      large
-                      color="primary"
-                      @click="currentStep += 1"
-                      class="align-self-end"
-                    >Next</v-btn>
-                  </div>
-                </v-stepper-content>
-                <v-stepper-content step="3">
-                  <New3
-                    v-on:webpage="e => (company.links.webpage = e)"
-                    v-on:linkedin="e => (company.links.linkedin = e)"
-                    v-on:instagram="e => (company.links.instagram = e)"
-                    v-on:twitter="e => (company.links.twitter = e)"
-                  ></New3>
-                  <div class="d-flex justify-space-between">
-                    <v-btn large color="secondary" @click="currentStep -= 1">Back</v-btn>
-                    <v-btn
-                      large
-                      color="success"
-                      @click="register()"
-                      class="align-self-end"
-                    >Finish</v-btn>
-                  </div>
-                </v-stepper-content>
-              </v-stepper-items>
-            </v-stepper>
-          </v-form>
-        </v-col>
-        <v-col cols="1"></v-col>
-      </v-row>
-    </v-card>
+  <div>
+    <v-row class="mt-12">
+      <v-col cols="2"></v-col>
+      <v-col cols="8">
+        <v-card class="primary-card mb-6" elevation="6" color="bg">
+          <Stepper
+            ref="stepper"
+            :stepsNames="$t('Company.new.steps')"
+            v-model="currentStep"
+            class="mb-6"
+          >
+            <template v-slot:default="{}">
+              <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
+                <New1
+                  v-on:company-name="e => (company.name = e)"
+                  v-on:representative-name="e => (company.representativeName = e)"
+                  v-on:representative-email="e => (company.representativeEmail = e)"
+                  v-on:password="e => (company.password = e)"
+                ></New1>
+                <div class="d-flex justify-end">
+                  <v-btn
+                    large
+                    color="primary"
+                    @click="currentStep += 1"
+                    class="align-self-end mr-12"
+                  >
+                    {{ $t('Common.next') }}
+                  </v-btn>
+                </div>
+              </div>
+              <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
+                <New2
+                  v-on:location="e => (company.location = e)"
+                  v-on:about="e => (company.about = e)"
+                ></New2>
+                <div class="d-flex justify-space-between">
+                  <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
+                    {{ $t('Common.back') }}
+                  </v-btn>
+                  <v-btn
+                    large
+                    color="primary"
+                    @click="currentStep += 1"
+                    class="align-self-end mr-12"
+                  >
+                    {{ $t('Common.next') }}
+                  </v-btn>
+                </div>
+              </div>
+              <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
+                <New3
+                  v-on:webpage="e => (company.links.webpage = e)"
+                  v-on:linkedin="e => (company.links.linkedin = e)"
+                  v-on:instagram="e => (company.links.instagram = e)"
+                  v-on:twitter="e => (company.links.twitter = e)"
+                ></New3>
+                <div class="d-flex justify-space-between">
+                  <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
+                    {{ $t('Common.back') }}
+                  </v-btn>
+                  <v-btn
+                    large
+                    color="primary"
+                    @click="currentStep += 1"
+                    class="align-self-end mr-12"
+                  >
+                    {{ $t('Common.finish') }}
+                  </v-btn>
+                </div>
+              </div>
+            </template>
+          </Stepper>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import Stepper from 'Components/Interface/Stepper';
 import New1 from 'Pages/Company/New1';
 import New2 from 'Pages/Company/New2';
 import New3 from 'Pages/Company/New3';
@@ -73,10 +91,11 @@ export default {
     New1,
     New2,
     New3,
+    Stepper,
   },
   data() {
     return {
-      currentStep: 1,
+      currentStep: 0,
       company: {
         name: '',
         representativeName: '',
@@ -96,11 +115,11 @@ export default {
           .registerCompany({
             company: this.company,
           })
-          .then((res) => {
+          .then(res => {
             console.log('res');
             console.log(res);
           })
-          .catch((e) => {
+          .catch(e => {
             console.log('e');
             console.log(e);
           });
@@ -109,4 +128,3 @@ export default {
   },
 };
 </script>
-
