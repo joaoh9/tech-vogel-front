@@ -63,10 +63,7 @@ const localeEnUs = {
     contactEmail: 'contact@techvogel.com',
     jobs: 'Jobs',
     job: 'Job',
-    name: {
-      placeholder: 'Name',
-      label: 'Name',
-    },
+    name: 'Name',
     email: {
       placeholder: 'Email',
       label: 'Email',
@@ -423,6 +420,9 @@ const localeEnUs = {
   Signup: {
     title: 'Sign Up',
     description: 'Sign up for Tech Vogel',
+    name: {
+      title: 'Your name',
+    },
     username: {
       title: 'Pick a username',
     },
