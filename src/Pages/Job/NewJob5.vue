@@ -18,16 +18,15 @@
     </v-card>
     <v-row>
       <v-col>
-        <v-btn
-          elevation="0"
-          @click="$emit('back')"
-          large
-          :class="getABTestClass('btn-back')"
-        >{{$t('Common.back')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('back')" large :class="getABTestClass('btn-back')">{{
+          $t('Common.back')
+        }}</v-btn>
       </v-col>
       <v-spacer></v-spacer>
       <v-col class="text-right">
-        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{$t('Common.next')}}</v-btn>
+        <v-btn elevation="0" @click="$emit('advance')" large color="primary">{{
+          $t('Common.next')
+        }}</v-btn>
       </v-col>
     </v-row>
   </div>
@@ -47,20 +46,17 @@ export default {
   },
   methods: {
     getABTestClass(test) {
-      const random = Math.random()
+      const random = Math.random();
       switch (test) {
         case 'back-btn':
-          if(random < 1 / 6 ){
-            return 'secondary-ligten-2 v-btn--outlined'
-          }
-          else if(random < 2 / 6){
-            return 'secondary-ligten-2'
-          }
-          else if (random < 2 / 3){
-            return 'cinza-lighten-1 v-btn--outlined'
-          }
-          else {
-            return 'v-btn--outlined primary'
+          if (random < 1 / 6) {
+            return 'secondary-ligten-2 v-btn--outlined';
+          } else if (random < 2 / 6) {
+            return 'secondary-ligten-2';
+          } else if (random < 2 / 3) {
+            return 'cinza-lighten-1 v-btn--outlined';
+          } else {
+            return 'v-btn--outlined primary';
           }
       }
     },
@@ -68,5 +64,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

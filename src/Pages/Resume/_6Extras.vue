@@ -4,8 +4,7 @@
       :title="$t('CV.register.extras.title')"
       :description="$t('CV.register.extras.description')"
     >
-    <template v-slot:content="{}">
-    </template>
+      <template v-slot:content="{}"> </template>
     </CardTemplate>
   </div>
 </template>
