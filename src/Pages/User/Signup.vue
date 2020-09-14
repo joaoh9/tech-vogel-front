@@ -9,7 +9,9 @@
     >
       <card-template :title="$t('Common.signup')" :description="$t('Signup.description')">
         <template v-slot:content="{}">
-          <form-input class="mt-6" :title="$t('Signup.username.title')" />
+          <form-input class="mt-6" :title="$t('Signup.name.title')" />
+          <v-text-field outlined v-model="user.name" />
+          <form-input :title="$t('Signup.username.title')" />
           <v-text-field outlined v-model="user.username" />
           <form-input :title="$t('Signup.email.title')" />
           <v-text-field outlined v-model="user.email" />
@@ -36,7 +38,7 @@
               </v-btn>
             </v-col>
             <v-col cols="6" md="6" class="text-right">
-              <v-btn color="primary" elevation="0" large> {{ $t('Common.signup') }} </v-btn>
+              <v-btn @click="signup" color="primary" elevation="0" large> {{ $t('Common.signup') }} </v-btn>
             </v-col>
           </v-row>
         </template>
@@ -47,6 +49,8 @@
 
 <script>
 import CardTemplate from 'Components/Interface/CardTemplate';
+import UserController from 'Controllers/user';
+
 export default {
   name: 'Login',
   components: {
@@ -57,12 +61,25 @@ export default {
       showPassword: false,
       showConfirmPassword: false,
       user: {
+        name: '',
         email: '',
         username: '',
         password: '',
         confirmPassword: '',
       },
     };
+  },
+  methods: {
+    async signup() {
+      const userController = new UserController();
+      await userController.saveUser({
+        name: this.user.name,
+        username: this.user.username,
+        email: this.user.email,
+        password: this.user.password,
+        birthDate: '1990-12-12',
+      });
+    },
   },
 };
 </script>

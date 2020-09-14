@@ -31,7 +31,9 @@
               </v-btn>
             </v-col>
             <v-col cols="6" md="6" class="text-right">
-              <v-btn color="primary" elevation="0" large> {{ $t('login.title') }} </v-btn>
+              <v-btn color="primary" elevation="0" large @click="login">
+                {{ $t('login.title') }}
+              </v-btn>
             </v-col>
           </v-row>
         </template>
@@ -42,6 +44,8 @@
 
 <script>
 import CardTemplate from 'Components/Interface/CardTemplate';
+import UserController from 'Controllers/user';
+
 export default {
   name: 'Login',
   components: {
@@ -55,6 +59,23 @@ export default {
         password: '',
       },
     };
+  },
+  methods: {
+    async login() {
+      const userController = new UserController();
+
+      if (this.user.username && this.password) {
+        try {
+          await userController.login({
+            username: this.user.username,
+            password: this.user.password,
+          });
+        } catch (e) {
+          console.log('e');
+          console.log(e);
+        }
+      }
+    },
   },
 };
 </script>
