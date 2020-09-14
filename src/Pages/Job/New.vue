@@ -3,8 +3,8 @@
     <v-col cols="2"></v-col>
     <v-col cols="8">
       <v-card class="primary-card" elevation="6" color="bg">
-        <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep">
-          <template v-slot:default="{}">
+        <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep" class="mb-6">
+          <template v-slot:default="{}" class="mb-6">
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
               <NewJob1
                 v-on:title="r => (job.title = r)"
@@ -13,7 +13,7 @@
                 v-on:advance="step++"
               />
               <div class="d-flex justify-end">
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">
+                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
                   {{ $t('Common.next') }}
                 </v-btn>
               </div>
@@ -26,10 +26,10 @@
                 v-on:advance="step++"
               />
               <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1">
+                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
                   {{ $t('Common.back') }}
                 </v-btn>
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">
+                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
                   {{ $t('Common.next') }}
                 </v-btn>
               </div>
@@ -44,10 +44,10 @@
                 v-on:advance="step++"
               />
               <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1">
+                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
                   {{ $t('Common.back') }}
                 </v-btn>
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">
+                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
                   {{ $t('Common.next') }}
                 </v-btn>
               </div>
@@ -64,10 +64,10 @@
                 v-on:advance="preview"
               />
               <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1">
+                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
                   {{ $t('Common.back') }}
                 </v-btn>
-                <v-btn large color="primary" @click="preview()" class="align-self-end">
+                <v-btn large color="primary" @click="preview()" class="align-self-end mr-12">
                   {{ $t('Common.finish') }}
                 </v-btn>
               </div>
