@@ -9,11 +9,7 @@
       style="border-radius: 0px !important"
     >
       <v-row align="start" justify="center" class="mx-1 mt-2">
-        <v-col
-          v-if="$vuetify.breakpoint.mdAndUp"
-          cols="2"
-          class="align-self-start"
-        >
+        <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="2" class="align-self-start">
           <v-img height="75" contain :src="logo" />
         </v-col>
         <v-col :cols="$vuetify.breakpoint.mdAndUp ? 2 : 4">
@@ -60,7 +56,11 @@
       class="d-flex justify-space-around flex-wrap"
       style="border-radius: 0px !important"
     >
-      <p class="text--secondary align-self-center" v-for="(fi, i) in footerInfo" :key="i">
+      <p
+        class="text--secondary align-self-center caption-1 mb-0"
+        v-for="(fi, i) in footerInfo"
+        :key="i"
+      >
         {{ fi }}
       </p>
     </v-card>

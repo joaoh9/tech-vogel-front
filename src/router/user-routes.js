@@ -1,5 +1,6 @@
 import UserProfile from 'Pages/User/Profile';
 import UserRegister from 'Pages/User/Register';
+import UserLogin from 'Pages/User/Login';
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
     path: '/signup',
     name: 'Register',
     component: UserRegister,
+  },
+  {
+    path: '/login',
+    name: 'User Login',
+    component: UserLogin,
   },
 ];
 

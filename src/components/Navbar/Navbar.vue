@@ -2,7 +2,7 @@
   <div>
     <v-app-bar
       app
-      :color="this.$router.currentRoute.name === 'Home' ? 'transparent' : 'white'"
+      :color="this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg'"
       hide-on-scroll
       elevation="0"
     >
