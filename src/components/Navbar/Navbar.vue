@@ -42,7 +42,7 @@ export default {
     },
     goToLogin() {
       this.$router.push({
-        name: 'Login',
+        path: '/login',
       });
     },
     goToJobList() {},
