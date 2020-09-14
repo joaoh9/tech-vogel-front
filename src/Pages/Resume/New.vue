@@ -15,8 +15,18 @@
                   v-on:job-type="e => (resume.jobType = e)"
                 ></Preferences>
                 <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
-                  <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
+                  <v-btn
+                    large
+                    outlined
+                    color="tertiary"
+                    @click="currentStep -= 1"
+                  >{{ $t('Common.back') }}</v-btn>
+                  <v-btn
+                    large
+                    color="primary"
+                    @click="currentStep += 1"
+                    class="align-self-end"
+                  >{{ $t('Common.next') }}</v-btn>
                 </div>
               </div>
               <div v-bind:style="{display: currentStep == 2? 'block': 'none'}">
@@ -25,41 +35,69 @@
                   v-on:location="e => {resume.location = e}"
                 ></PersonalInfo>
                 <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
-                  <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
+                  <v-btn
+                    large
+                    outlined
+                    color="tertiary"
+                    @click="currentStep -= 1"
+                  >{{ $t('Common.back') }}</v-btn>
+                  <v-btn
+                    large
+                    color="primary"
+                    @click="currentStep += 1"
+                    class="align-self-end"
+                  >{{ $t('Common.next') }}</v-btn>
                 </div>
               </div>
               <div v-bind:style="{display: currentStep == 3? 'block': 'none'}">
                 <WorkExperience v-on:job="e => {resume.jobDescription = e}"></WorkExperience>
                 <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
-                  <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
+                  <v-btn
+                    large
+                    outlined
+                    color="tertiary"
+                    @click="currentStep -= 1"
+                  >{{ $t('Common.back') }}</v-btn>
+                  <v-btn
+                    large
+                    color="primary"
+                    @click="currentStep += 1"
+                    class="align-self-end"
+                  >{{ $t('Common.next') }}</v-btn>
                 </div>
               </div>
               <div v-bind:style="{display: currentStep == 4? 'block': 'none'}">
                 <Skills v-on:skills="e => (resume.skills = e)"></Skills>
                 <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
-                  <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
+                  <v-btn
+                    large
+                    outlined
+                    color="tertiary"
+                    @click="currentStep -= 1"
+                  >{{ $t('Common.back') }}</v-btn>
+                  <v-btn
+                    large
+                    color="primary"
+                    @click="currentStep += 1"
+                    class="align-self-end"
+                  >{{ $t('Common.next') }}</v-btn>
                 </div>
               </div>
               <div v-bind:style="{display: currentStep == 5? 'block': 'none'}">
                 <Education v-on:education="e => (resume.education = e)"></Education>
                 <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
-                  <v-btn large color="primary" @click="currentStep += 1" class="align-self-end">Next</v-btn>
-                </div>
-              </div>
-              <div v-bind:style="{display: currentStep == 6? 'block': 'none'}">
-                <Extras></Extras>
-                <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1">Back</v-btn>
+                  <v-btn
+                    large
+                    outlined
+                    color="tertiary"
+                    @click="currentStep -= 1"
+                  >{{ $t('Common.back') }}</v-btn>
                   <v-btn
                     large
                     color="primary"
-                    @click="register"
+                    @click="currentStep += 1"
                     class="align-self-end"
-                  >{{ $t('CV.register.extras.button') }}</v-btn>
+                  >{{ $t('Common.finish') }}</v-btn>
                 </div>
               </div>
             </template>
@@ -153,7 +191,6 @@ import PersonalInfo from './_2PersonalInfo';
 import WorkExperience from './_3WorkExperience';
 import Skills from './_4Skills';
 import Education from './_5Education';
-import Extras from './_6Extras';
 
 import ResumeController from 'Controllers/resume';
 import 'Public/css/card.css';
@@ -168,7 +205,6 @@ export default {
     WorkExperience,
     Skills,
     Education,
-    Extras,
   },
   data() {
     return {

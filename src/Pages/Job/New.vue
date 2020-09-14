@@ -1,71 +1,118 @@
 <template>
-  <div class="d-flex justify-center mt-12">
-    <v-card class="ma-3" elevation="6" color="bg" :key="step" min-width="300" max-width="600">
-      <v-system-bar
-        class="d-flex justify-space-between"
-        style="margin: -1px"
-        color="cinza-2"
-        :key="step"
-      >
-      </v-system-bar>
-      <v-stepper alt-labels style="background-color: rgba(0,0,0,0)">
-        <v-stepper-header>
-          <template v-for="(step, index) in $t('Job.new.steppers')">
-            <v-stepper-step :key="index" editable :step="index + 1">{{ step }} </v-stepper-step>
-            <v-divider :key="index" v-if="index + 1 !== $t('Job.new.steppers').length" />
+  <v-row class="mt-12">
+    <v-col cols="2"></v-col>
+    <v-col cols="8">
+      <v-card class="primary-card" elevation="6" color="bg">
+        <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep">
+          <template v-slot:default=" { } ">
+            <div v-bind:style="{display: currentStep == 0? 'block': 'none'}">
+              <NewJob1
+                v-on:title="r => (job.title = r)"
+                v-on:experience-level="r => (job.experienceLevel = r)"
+                v-on:contract-type="r => (job.contractType = r)"
+                v-on:advance="step++"
+              />
+              <div class="d-flex justify-end">
+                <v-btn
+                  large
+                  color="primary"
+                  @click="currentStep += 1"
+                  class="align-self-end"
+                >{{ $t('Common.next') }}</v-btn>
+              </div>
+            </div>
+            <div v-bind:style="{display: currentStep == 1? 'block': 'none'}">
+              <NewJob2
+                v-on:about="r => (job.about = r)"
+                v-on:languages="r => (job.languages = r.map(l => l.code))"
+                v-on:back="step--"
+                v-on:advance="step++"
+              />
+              <div class="d-flex justify-space-between">
+                <v-btn
+                  large
+                  outlined
+                  color="tertiary"
+                  @click="currentStep -= 1"
+                >{{ $t('Common.back') }}</v-btn>
+                <v-btn
+                  large
+                  color="primary"
+                  @click="currentStep += 1"
+                  class="align-self-end"
+                >{{ $t('Common.next') }}</v-btn>
+              </div>
+            </div>
+            <div v-bind:style="{display: currentStep == 2? 'block': 'none'}">
+              <NewJob3
+                v-on:knowlege-areas="r => (job.knowlegeAreas = r)"
+                v-on:programming-languages="r => (job.programmingLanguages = r)"
+                v-on:frameworks="r => (job.frameworks = r)"
+                v-on:soft-skills="r => (job.softSkills = r)"
+                v-on:back="step--"
+                v-on:advance="step++"
+              />
+              <div class="d-flex justify-space-between">
+                <v-btn
+                  large
+                  outlined
+                  color="tertiary"
+                  @click="currentStep -= 1"
+                >{{ $t('Common.back') }}</v-btn>
+                <v-btn
+                  large
+                  color="primary"
+                  @click="currentStep += 1"
+                  class="align-self-end"
+                >{{ $t('Common.next') }}</v-btn>
+              </div>
+            </div>
+            <div v-bind:style="{display: currentStep == 3? 'block': 'none'}">
+              <NewJob4
+                v-on:perks="r => (job.perks = r)"
+                v-on:salary-currency="r => (job.salary.currency = r)"
+                v-on:salary-time-frame="r => (job.salary.timeFrame = r)"
+                v-on:salary-min="r => (job.salary.min = r)"
+                v-on:salary-max="r => (job.salary.max = r)"
+                v-on:salary-range="r => (job.salary.range = r)"
+                v-on:back="step--"
+                v-on:advance="preview"
+              />
+              <div class="d-flex justify-space-between">
+                <v-btn
+                  large
+                  outlined
+                  color="tertiary"
+                  @click="currentStep -= 1"
+                >{{ $t('Common.back') }}</v-btn>
+                <v-btn
+                  large
+                  color="primary"
+                  @click="preview()"
+                  class="align-self-end"
+                >{{ $t('Common.finish') }}</v-btn>
+              </div>
+            </div>
           </template>
-        </v-stepper-header>
-      </v-stepper>
-      <div class="d-flex justify-center ma-6 ma-sm-12">
-        <NewJob1
-          v-on:title="r => (job.title = r)"
-          v-on:experience-level="r => (job.experienceLevel = r)"
-          v-on:contract-type="r => (job.contractType = r)"
-          v-on:advance="step++"
-          v-if="step === 1"
-        />
-        <NewJob2
-          v-on:about="r => (job.about = r)"
-          v-on:languages="r => (job.languages = r.map(l => l.code))"
-          v-on:back="step--"
-          v-on:advance="step++"
-          v-if="step === 2"
-        />
-        <NewJob3
-          v-on:knowlege-areas="r => (job.knowlegeAreas = r)"
-          v-on:programming-languages="r => (job.programmingLanguages = r)"
-          v-on:frameworks="r => (job.frameworks = r)"
-          v-on:soft-skills="r => (job.softSkills = r)"
-          v-on:back="step--"
-          v-on:advance="step++"
-          v-if="step === 3"
-        />
-        <NewJob4
-          v-on:perks="r => (job.perks = r)"
-          v-on:salary-currency="r => (job.salary.currency = r)"
-          v-on:salary-time-frame="r => (job.salary.timeFrame = r)"
-          v-on:salary-min="r => (job.salary.min = r)"
-          v-on:salary-max="r => (job.salary.max = r)"
-          v-on:salary-range="r => (job.salary.range = r)"
-          v-on:back="step--"
-          v-on:advance="preview"
-          v-if="step === 4"
-        />
-        <!-- <NewJob5 v-on:back="step--" v-on:advance="preview" v-if="step === 5" /> -->
-        <JobDetails :confirm="true" :job="job" v-if="step === 6" />
-      </div>
-    </v-card>
-  </div>
+          <!-- <NewJob5 v-on:back="step--" v-on:advance="preview" v-if="step === 5" /> -->
+          <!-- <JobDetails :confirm="true" :job="job" v-if="step === 6" / -->
+          >
+        </Stepper>
+      </v-card>
+    </v-col>
+    <v-col cols="2"></v-col>
+  </v-row>
 </template>
 
 <script>
 import 'Public/css/card.css';
+import Stepper from 'Components/Interface/Stepper';
 import NewJob1 from './NewJob1';
 import NewJob2 from './NewJob2';
 import NewJob3 from './NewJob3';
 import NewJob4 from './NewJob4';
 // // import NewJob5 from './NewJob5';
-import JobDetails from './JobDetails';
+// import JobDetails from './JobDetails';
 
 export default {
   name: 'NewJob',
@@ -75,10 +122,12 @@ export default {
     NewJob3,
     NewJob4,
     // NewJob5,
-    JobDetails,
+    // JobDetails,
+    Stepper,
   },
   data() {
     return {
+      currentStep: 0,
       step: 1,
       job: {
         title: '',

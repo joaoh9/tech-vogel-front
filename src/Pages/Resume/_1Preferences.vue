@@ -6,7 +6,7 @@
     >
       <template v-slot:content="{}">
         <form-input class="mt-6" :title="$t('CV.register.preferences.jobInterests.title')" />
-        <v-combobox
+        <v-text-field
           v-model="jobInterests"
           v-on:input="$emit('job-interests', jobInterests)"
           :placeholder="$t('CV.register.preferences.jobInterests.placeholder')"
@@ -19,6 +19,7 @@
             v-on:input="$emit('job-type', jobType)"
             v-for="(options, index) in $t('CV.register.preferences.jobType.options')"
             :label="options"
+            :value="options"
             :key="index"
           />
         </div>
@@ -28,7 +29,7 @@
 </template>
 
 <script>
-import CardTemplate from './CardTemplate';
+import CardTemplate from 'Components/Interface/CardTemplate';
 
 export default {
   name: 'Preferences',

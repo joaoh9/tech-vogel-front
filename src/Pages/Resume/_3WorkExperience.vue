@@ -18,15 +18,17 @@
                   v-model="job.from.month"
                   v-on:input="$emit('job', job)"
                   :placeholder="$t('Common.month')"
+                  :items="months"
                   outlined
                 />
               </v-col>
               <v-col cols="12" md="6">
-                <v-combobox
+                <v-text-field
                   v-model="job.from.year"
                   v-on:input="$emit('job', job)"
                   :placeholder="$t('Common.year')"
                   outlined
+                  :rules="[rules.year]"
                 />
               </v-col>
             </v-row>
@@ -39,15 +41,17 @@
                   v-model="job.to.month"
                   v-on:input="$emit('job', job)"
                   :placeholder="$t('Common.month')"
+                  :items="months"
                   outlined
                 />
               </v-col>
               <v-col cols="12" md="6">
-                <v-combobox
+                <v-text-field
                   v-model="job.to.year"
                   v-on:input="$emit('job', job)"
                   :placeholder="$t('Common.year')"
                   outlined
+                  :rules="[rules.year]"
                 />
               </v-col>
             </v-row>
@@ -75,7 +79,7 @@
 </template>
 
 <script>
-import CardTemplate from './CardTemplate';
+import CardTemplate from 'Components/Interface/CardTemplate';
 
 export default {
   name: 'WorkExperience',
@@ -99,6 +103,27 @@ export default {
         },
         jobDescription: '',
         currentJob: '',
+      },
+      months: [
+        '01',
+        '02',
+        '03',
+        '04',
+        '05',
+        '06',
+        '07',
+        '08',
+        '09',
+        '10',
+        '11',
+        '12',
+      ],
+      rules: {
+        year: (value) => {
+          const reg = /[^\d]/g;
+          const s = value.replace(reg, '');
+          return s.length === 4;
+        },
       },
     };
   },
