@@ -52,6 +52,7 @@ const localeEnUs = {
     signup: 'Sign-up',
     next: 'Next',
     back: 'Go Back',
+    finish: 'I\'m done!',
     copywright: '©2020 Tech Vogel. All rights reserved.',
     termsOfService: 'Terms of service',
     privacyPolicy: 'Privacy policy',

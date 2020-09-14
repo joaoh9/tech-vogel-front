@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import CardTemplate from './CardTemplate';
+import CardTemplate from 'Components/Interface/CardTemplate';
 
 export default {
   name: 'Education',
