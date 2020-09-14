@@ -1,42 +1,32 @@
 <template>
-  <div style="background: rgba(0,0,0,0); min-height:100vh;"
-      class="container-fluid d-flex flex-column align-center justify-center">
-          <h1 class="mb-3">Register for Tech Vogel</h1>
-          <h6 class="mx-5 mb-5">
-            We connect I.T. professionals from around the globe to companies looking for remote employees.
-          </h6>
-        <div>
-          <v-row class="">
-              <v-col cols=12 md=6>
-                <v-btn
-                  color='primary'
-                  large
-                  block
-                  to='/job/new'
-                >
-                  I want to hire
-                </v-btn>
-              </v-col>
-              <v-col cols=12 md=6>
-                <v-btn
-                  color='primary'
-                  large
-                  block
-                >
-                  I'm looking for a job
-                </v-btn>
-              </v-col>
-          </v-row>
-        </div>
-        <div class="mb-5">
-          <v-btn
-            outlined
-            color="white"
-          >
-          Learn more
+  <div
+    style="background: rgba(0,0,0,0); min-height:100vh;"
+    class="container-fluid d-flex flex-column align-center justify-center"
+  >
+    <h1 class="mb-3">Register for Tech Vogel</h1>
+    <h6 class="mx-5 mb-5">
+      We connect I.T. professionals from around the globe to companies looking for remote employees.
+    </h6>
+    <div>
+      <v-row class="">
+        <v-col cols="12" md="6">
+          <v-btn color="primary" large block to="/job/new">
+            I want to hire
           </v-btn>
-        </div>
-      </div>
+        </v-col>
+        <v-col cols="12" md="6">
+          <v-btn color="primary" large block>
+            I'm looking for a job
+          </v-btn>
+        </v-col>
+      </v-row>
+    </div>
+    <div class="mb-5">
+      <v-btn color="white" tile outlined text dark large>
+        Learn more
+      </v-btn>
+    </div>
+  </div>
 </template>
 
 <script>
