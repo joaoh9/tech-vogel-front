@@ -1,5 +1,5 @@
 <template>
-  <div style="background: rgba(0,0,0,0); height:100%;"
+  <div style="background: rgba(0,0,0,0); min-height:100vh;"
       class="container-fluid d-flex flex-column align-center justify-center">
           <h1 class="mb-3">Register for Tech Vogel</h1>
           <h6 class="mx-5 mb-5">
@@ -28,7 +28,7 @@
               </v-col>
           </v-row>
         </div>
-        <div class="">
+        <div class="mb-5">
           <v-btn
             outlined
             color="white"

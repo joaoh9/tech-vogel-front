@@ -10,12 +10,11 @@
           v-model="fullName"
           v-on:input="$emit('full-name', fullName)"
           outlined
-          :label="$t('CV.register.personalInfo.fullName.title')"
         />
         <form-input class="mt-6" :title="$t('CV.register.personalInfo.location.title')" />
         <v-row>
           <v-col cols="12" md="8">
-            <v-combobox
+            <v-text-field
               v-model="location.city"
               v-on:input="$emit('location', location)"
               class="mt-n3"
@@ -24,7 +23,7 @@
             />
           </v-col>
           <v-col cols="12" md="4">
-            <v-combobox
+            <v-text-field
               v-model="location.country"
               v-on:input="$emit('location', location)"
               class="mt-n3"

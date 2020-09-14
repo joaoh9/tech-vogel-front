@@ -33,11 +33,11 @@ const localeEnUs = {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
   Common: {
-    day: 'day',
-    month: 'month',
-    year: 'year',
-    from: 'from',
-    to: 'to',
+    day: 'Day',
+    month: 'Month',
+    year: 'Year',
+    from: 'From',
+    to: 'To',
     description: 'description',
     company: 'company',
     user: 'user',
@@ -455,7 +455,6 @@ const localeEnUs = {
         'Work Experience',
         'Skills',
         'Education',
-        'Extras',
       ],
       start: {
         title: 'Register your CV',
@@ -500,7 +499,7 @@ const localeEnUs = {
         },
         position: 'Your position',
         myJob: {
-          options: ['this is my current job'],
+          options: ['This is my current job'],
         },
         jobDescription: 'Description',
         button: {
@@ -526,7 +525,7 @@ const localeEnUs = {
         type: 'Type',
         institution: 'Institution',
         from: 'From',
-        to: 'to',
+        to: 'To',
         addMore: 'ADD MORE',
         continue: 'CONTINUE',
       },

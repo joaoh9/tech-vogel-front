@@ -3,20 +3,11 @@
     <v-row>
       <v-col cols=12 md=4 v-if="$vuetify.breakpoint.mdAndUp">
         <div class="sidebar">
-          <v-tabs vertical fixed-tabs :value="this.value" @change="updateStep" background-color="rgba(0,0,0,0)">
+          <v-tabs vertical :value="this.value" @change="updateStep" background-color="rgba(0,0,0,0)">
             <v-tab  v-for="(item, key) in stepsExibition" :key="key">
               {{item.name}}
             </v-tab>
           </v-tabs>
-          <!-- <div v-for="(item, key) in stepsExibition" :key="key">
-            <div class="d-flex">
-                <p
-                  v-bind:style="getTitleStyle(item.step)"
-                  class="mx-1 text-right flex-fill"
-                >{{item.name}}</p>
-                <div v-bind:style="getStepIndicatorStyle(item.step)"></div>
-            </div>
-          </div> -->
         </div>
 
       </v-col>
