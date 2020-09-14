@@ -81,7 +81,7 @@ export default {
         },
       },
       rules: {
-        year: (value) => {
+        year: value => {
           const reg = /[^\d]/g;
           const s = value.replace(reg, '');
           return s.length === 4;

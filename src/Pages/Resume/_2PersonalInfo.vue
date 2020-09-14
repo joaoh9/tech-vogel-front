@@ -6,11 +6,7 @@
     >
       <template v-slot:content="{}">
         <form-input class="mt-6" :title="$t('CV.register.personalInfo.fullName.title')" />
-        <v-text-field
-          v-model="fullName"
-          v-on:input="$emit('full-name', fullName)"
-          outlined
-        />
+        <v-text-field v-model="fullName" v-on:input="$emit('full-name', fullName)" outlined />
         <form-input class="mt-6" :title="$t('CV.register.personalInfo.location.title')" />
         <v-row>
           <v-col cols="12" md="8">

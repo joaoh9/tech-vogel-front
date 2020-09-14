@@ -18,7 +18,7 @@
                   v-model="job.from.month"
                   v-on:input="$emit('job', job)"
                   :placeholder="$t('Common.month')"
-                  :items="months"
+                  :items="$t('Data.monthCount')"
                   outlined
                 />
               </v-col>
@@ -104,22 +104,8 @@ export default {
         jobDescription: '',
         currentJob: '',
       },
-      months: [
-        '01',
-        '02',
-        '03',
-        '04',
-        '05',
-        '06',
-        '07',
-        '08',
-        '09',
-        '10',
-        '11',
-        '12',
-      ],
       rules: {
-        year: (value) => {
+        year: value => {
           const reg = /[^\d]/g;
           const s = value.replace(reg, '');
           return s.length === 4;
