@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import CardTemplate from 'Pages/Resume/CardTemplate';
+import CardTemplate from 'Components/Interface/CardTemplate';
 export default {
   name: 'Login',
   components: {
