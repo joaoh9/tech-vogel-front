@@ -421,19 +421,28 @@ const localeEnUs = {
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   Signup: {
-    _1: {
-      title: 'Sign Up',
+    title: 'Sign Up',
+    description: 'Sign up for Tech Vogel',
+    username: {
+      title: 'Pick a username',
     },
-    _2: {
+    email: {
+      title: 'Your Email',
+    },
+    password: {
       title: 'Create a password',
       description: 'Please enter a password for your account',
     },
-    _3: {
+    confirmPassword: {
       title: 'Please confirm your email with a link sent to it',
       description: 'Please confirm your email clicking on a link sent to X',
     },
     error: {
       errorSavingUser: 'There was an error when saving the user',
+    },
+    confirmEmail: {
+      title: 'A confirmation link was sent to your email!',
+      description: 'Click on it to confirm your registration',
     },
   },
   Quill: {

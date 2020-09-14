@@ -7,10 +7,12 @@
       max-width="600"
       :min-width="$vuetify.breakpoint.mdAndUp ? 500 : 320"
     >
-      <card-template :title="$t('Common.login')" :description="$t('login.subtitle')">
+      <card-template :title="$t('Common.signup')" :description="$t('Signup.description')">
         <template v-slot:content="{}">
-          <form-input class="mt-6" :title="$t('Common.username.label')" />
+          <form-input class="mt-6" :title="$t('Signup.username.title')" />
           <v-text-field outlined v-model="user.username" />
+          <form-input :title="$t('Signup.email.title')" />
+          <v-text-field outlined v-model="user.email" />
           <form-input :title="$t('Common.password.label')" />
           <v-text-field
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -19,19 +21,22 @@
             outlined
             v-model="user.password"
           />
-          <div class="d-flex justify-start mt-n6">
-            <p color="secondary" class="button-text align-self-center font-weight-bold">
-              Forgot password?
-            </p>
-          </div>
+          <form-input :title="$t('Common.confirmPassword.label')" />
+          <v-text-field
+            :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="showConfirmPassword = !showConfirmPassword"
+            :type="showConfirmPassword ? 'text' : 'password'"
+            outlined
+            v-model="user.confirmPassword"
+          />
           <v-row class="mt-6">
             <v-col cols="6" md="6" class="text-left">
               <v-btn color="secondary" tile outlined text large>
-                {{ $t('Common.signup') }}
+                {{ $t('Common.login') }}
               </v-btn>
             </v-col>
             <v-col cols="6" md="6" class="text-right">
-              <v-btn color="primary" elevation="0" large> {{ $t('login.title') }} </v-btn>
+              <v-btn color="primary" elevation="0" large> {{ $t('Common.signup') }} </v-btn>
             </v-col>
           </v-row>
         </template>
@@ -50,9 +55,12 @@ export default {
   data() {
     return {
       showPassword: false,
+      showConfirmPassword: false,
       user: {
+        email: '',
         username: '',
         password: '',
+        confirmPassword: '',
       },
     };
   },
