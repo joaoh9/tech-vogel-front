@@ -121,3 +121,15 @@ export default {
 - Não commitar console.log
 - Rodar `npm run lint` antes de commitar
 - Se atentar para as regras de escrita de código documentadas acima
+
+# Checklist para novas features
+
+- [ ] Esboço da tela no figma
+- [ ] Esboço da tela no front
+- [ ] Tornar tela responsiva
+- [ ] Adicionar binds para variáveis e botões (caso necessário)
+- [ ] Modularizar textos para internacionalização
+- [ ] Levantamento de rotas para o back
+- [ ] Testes de rotas pelo Postman
+- [ ] Integração com o backend
+- [ ] Loaders onde for necessário
