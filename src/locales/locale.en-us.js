@@ -350,6 +350,11 @@ const localeEnUs = {
   },
   Company: {
     new: {
+      steps: [
+        'Basic Info',
+        'Additional Info',
+        'Contact',
+      ],
       _1: {
         pageTitle: 'Register as a company',
         companyName: 'Company name',

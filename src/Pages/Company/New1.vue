@@ -1,57 +1,65 @@
 <template>
   <div>
-    <h2 class="mb-12">{{ $t('Company.new._1.pageTitle') }}</h2>
-    <form-input :title="$t('Company.new._1.companyName')" />
-    <v-text-field
-      tile
-      outlined
-      v-model="companyName"
-      @input="$emit('company-name', companyName)"
-    />
-    <form-input :title="$t('Company.new._1.representativeName')" />
-    <v-text-field
-      tile
-      outlined
-      v-model="representativeName"
-      @input="$emit('representative-name', representativeName)"
-    />
-    <form-input :title="$t('Company.new._1.representativeEmail')" />
-    <v-text-field
-      tile
-      outlined
-      v-model="representativeEmail"
-      @input="$emit('representative-email', representativeEmail)"
-    />
-    <v-row>
-      <v-col cols="12" md="6">
-        <form-input :title="$t('Company.new._1.password')" />
+    <CardTemplate :title="$t('Company.new._1.pageTitle')">
+      <template v-slot:content="{}">
+        <form-input :title="$t('Company.new._1.companyName')" />
         <v-text-field
           tile
           outlined
-          v-model="password"
-          @input="$emit('password', password)"
-          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          :type="showPassword ? 'text' : 'password'"
-          @click:append="showPassword = !showPassword"
+          v-model="companyName"
+          @input="$emit('company-name', companyName)"
         />
-      </v-col>
-      <v-col cols="12" md="6">
-        <form-input :title="$t('Company.new._1.confirmPassword')" />
+        <form-input :title="$t('Company.new._1.representativeName')" />
         <v-text-field
           tile
           outlined
-          :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          :type="showConfirmPassword ? 'text' : 'password'"
-          @click:append="showConfirmPassword = !showConfirmPassword"
+          v-model="representativeName"
+          @input="$emit('representative-name', representativeName)"
         />
-      </v-col>
-    </v-row>
+        <form-input :title="$t('Company.new._1.representativeEmail')" />
+        <v-text-field
+          tile
+          outlined
+          v-model="representativeEmail"
+          @input="$emit('representative-email', representativeEmail)"
+        />
+        <v-row>
+          <v-col cols="12" md="6">
+            <form-input :title="$t('Company.new._1.password')" />
+            <v-text-field
+              tile
+              outlined
+              v-model="password"
+              @input="$emit('password', password)"
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="showPassword ? 'text' : 'password'"
+              @click:append="showPassword = !showPassword"
+            />
+          </v-col>
+          <v-col cols="12" md="6">
+            <form-input :title="$t('Company.new._1.confirmPassword')" />
+            <v-text-field
+              tile
+              outlined
+              :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="showConfirmPassword ? 'text' : 'password'"
+              @click:append="showConfirmPassword = !showConfirmPassword"
+            />
+          </v-col>
+        </v-row>
+      </template>
+    </CardTemplate>
   </div>
 </template>
 
 <script>
+import CardTemplate from 'Components/Interface/CardTemplate';
+
 export default {
   name: 'New',
+  components: {
+    CardTemplate,
+  },
   data() {
     return {
       showPassword: false,
