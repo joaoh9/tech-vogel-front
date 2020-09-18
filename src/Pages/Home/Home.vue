@@ -3,10 +3,10 @@
     style="background: rgba(0,0,0,0); min-height:100vh;"
     class="container-fluid d-flex flex-column align-center justify-center"
   >
-    <h1 class="mb-3">Register for Tech Vogel</h1>
-    <h6 class="mx-5 mb-5">
+    <h1 class="mb-3">Tech Vogel</h1>
+    <h4 class="mx-5 mb-5 color-white">
       We connect I.T. professionals from around the globe to companies looking for remote employees.
-    </h6>
+    </h4>
     <div>
       <v-row class="">
         <v-col cols="12" md="6">
