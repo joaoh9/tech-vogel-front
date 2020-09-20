@@ -20,8 +20,8 @@ const routes = [
     component: UserSignup,
   },
   {
-    path: '/signup/confirm',
-    name: 'User Confirm Registration',
+    path: '/confirm-registration',
+    name: 'Confirm User Registration',
     component: UserConfirmRegistration,
   },
 ];

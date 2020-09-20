@@ -2,10 +2,10 @@
   <div class="d-flex justify-center mt-12">
     <v-card
       class="primary-card"
-      :elevation="$vuetify.breakpoint.mdAndUp ? 6 : 0"
+      :elevation="$vuetify.breakpoint.smAndUp ? 6 : 0"
       color="bg"
       max-width="600"
-      :min-width="$vuetify.breakpoint.mdAndUp ? 500 : 320"
+      :min-width="$vuetify.breakpoint.smAndUp ? 500 : 320"
     >
       <card-template :title="$t('Common.login')" :description="$t('login.subtitle')">
         <template v-slot:content="{}">
@@ -26,7 +26,7 @@
           </div>
           <v-row class="mt-6">
             <v-col cols="6" md="6" class="text-left">
-              <v-btn color="secondary" tile outlined text large>
+              <v-btn to="/signup" color="secondary" tile outlined text large>
                 {{ $t('Common.signup') }}
               </v-btn>
             </v-col>

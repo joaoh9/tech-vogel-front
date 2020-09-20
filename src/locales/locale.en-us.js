@@ -33,6 +33,8 @@ const localeEnUs = {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
   Common: {
+    tv: 'Tech Vogel',
+    techVogel: 'Tech Vogel',
     day: 'Day',
     month: 'Month',
     year: 'Year',
@@ -53,6 +55,9 @@ const localeEnUs = {
     content: 'Content',
     next: 'Next',
     back: 'Go Back',
+    maximum: 'Maximum',
+    minimum: 'Minimum',
+    characters: 'Characters',
     finish: 'I\'m done!',
     copywright: '©2020 Tech Vogel. All rights reserved.',
     termsOfService: 'Terms of service',
@@ -94,15 +99,16 @@ const localeEnUs = {
   },
   Rules: {
     nameTooShort: 'Please write your full name',
-    wrongFormatEmail: 'Email with wrong format',
+    wrongFormatEmail: 'Email with wrong format!',
     lessThanXCharacters: 'Please write at least X characters',
     letterOrNumber: 'Please write only letters or numbers',
     equal: 'X must be equal to Y',
-    passwordsDontMatch: 'Passwords do not match',
     requiredField: 'Field Required',
     emailAlreadyRegistered: 'Email already registered!',
     usernameUnavaliable: 'Username not avaliable!',
     weakPassword: 'Password too weak!',
+    passwordsDontMatch: 'Passwords do not match',
+    termsAndConditions: 'Your must accept our Terms and Conditions',
   },
   Home: {
     title: 'Tech Vogel',
@@ -347,11 +353,7 @@ const localeEnUs = {
   },
   Company: {
     new: {
-      steps: [
-        'Basic Info',
-        'Additional Info',
-        'Contact',
-      ],
+      steps: [ 'Basic Info', 'Additional Info', 'Contact' ],
       _1: {
         pageTitle: 'Register as a company',
         companyName: 'Company name',
@@ -448,6 +450,15 @@ const localeEnUs = {
     confirmEmail: {
       title: 'A confirmation link was sent to your email!',
       description: 'Click on it to confirm your registration',
+    },
+    termsAndConditions: {
+      text: 'I have read and agree to the',
+      termsAndConditions: 'Terms and Conditions',
+    },
+    resendConfirmationCode: {
+      title: 'Didn’t get the access code? Click here to resend.',
+      success: 'The code was sent to your email!',
+      error: 'There was an error sending the email :(. Please try again later.',
     },
   },
   Quill: {

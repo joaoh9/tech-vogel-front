@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default class Axios {
-  static GetInstance(token = null) {
+  static GetInstance({ api = '/api' }) {
     const contentType = 'application/json;charset=UTF-8';
     const headers = {
       'Content-Type': contentType,
@@ -10,12 +10,8 @@ export default class Axios {
       'Access-Control-Allow-Headers': '*',
     };
 
-    if (token) {
-      headers.Authorization = `Bearer ${token}`;
-    }
-
     return axios.create({
-      baseURL: '/api',
+      baseURL: api,
       timeout: 30000,
       headers,
       maxContentLength: 20 * 1000000,

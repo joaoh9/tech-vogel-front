@@ -2,9 +2,9 @@
   <v-app>
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
     <Navbar v-if="notLP()"></Navbar>
-    <v-content v-bind:style="getPageStyle()">
+    <v-main v-bind:style="getPageStyle()">
       <router-view class="view"></router-view>
-    </v-content>
+    </v-main>
     <Footer class="mt-12" />
   </v-app>
 </template>
