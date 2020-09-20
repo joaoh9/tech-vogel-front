@@ -27,32 +27,14 @@
         </div>
       </v-card>
     </div>
-    <div class="d-flex justify-center mt-6">
-      <v-alert
-        :elevation="$vuetify.breakpoint.smAndUp ? 0 : 0"
-        color="success"
-        max-width="600"
-        dark
-        :min-width="$vuetify.breakpoint.smAndUp ? 500 : 320"
-        v-model="requestSuccess"
-        close-label="xs"
-        dismissible
-      >
-        {{ $t('Signup.resendConfirmationCode.success') }}
-      </v-alert>
-      <v-alert
-        :elevation="$vuetify.breakpoint.smAndUp ? 0 : 0"
-        color="error"
-        max-width="600"
-        dark
-        :min-width="$vuetify.breakpoint.smAndUp ? 500 : 320"
-        v-model="requestError"
-        close-label="xs"
-        dismissible
-      >
-        {{ $t('Signup.resendConfirmationCode.error') }}
-      </v-alert>
-    </div>
+    <g-alert
+      :succesMessage="$t('Signup.resendConfirmationCode.success')"
+      :errorMessage="$t('Signup.resendConfirmationCode.error')"
+      v-on:success="s => (requestSuccess = s)"
+      v-on:error="s => (requestError = s)"
+      :successVar="requestSuccess"
+      :errorVar="requestError"
+    />
   </div>
 </template>
 

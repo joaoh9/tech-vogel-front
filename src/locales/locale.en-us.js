@@ -381,6 +381,7 @@ const localeEnUs = {
     subtitle: 'Enter Tech Vogel',
     createAccount: 'Create an account',
     forgotPassword: 'Forgot your password?',
+    error: 'Wrong credentials',
   },
   User: {
     register: {
