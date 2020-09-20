@@ -68,7 +68,6 @@ export default {
       };
     },
     updateStep(step) {
-      console.log(step);
       this.value = step;
       this.$emit('input', step);
     },

@@ -3,7 +3,6 @@ import Axios from 'Helpers/axios';
 export default function ResumeController() {
   return {
     register: async (details) => {
-      console.log(details);
       const inpResume = details.resume;
       const resume = {
         education: {
@@ -30,7 +29,6 @@ export default function ResumeController() {
           },
         ],
       };
-      console.log(resume);
       const axios = await Axios.GetInstance();
       return new Promise((resolve, reject) => {
         axios

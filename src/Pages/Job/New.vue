@@ -124,9 +124,6 @@ export default {
     };
   },
   methods: {
-    log(m) {
-      console.log(m);
-    },
     preview() {
       this.$router.push({
         name: 'Job Description',

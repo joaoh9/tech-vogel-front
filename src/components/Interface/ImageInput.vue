@@ -27,7 +27,6 @@ export default {
   },
   methods: {
     atFileChange(){
-      console.log(this.image)
       if (this.image) {
         const fr = new FileReader()
         fr.onload = function(){
