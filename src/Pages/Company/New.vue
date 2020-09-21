@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-center mt-12">
     <g-card>
-      <template v-slot:card-content="{}">
+      <template v-slot:card-content>
         <Stepper
           ref="stepper"
           :stepsNames="$t('Company.new.steps')"

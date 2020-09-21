@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-center mt-12">
     <g-card :lg="600" :md="500">
-      <template v-slot:card-content="{}">
+      <template v-slot:card-content>
         <g-card-header :title="$t('Common.signup')" :description="$t('Signup.description')">
           <template v-slot:content="{}">
             <form-input class="mt-6" :title="$t('Signup.name.title')" />

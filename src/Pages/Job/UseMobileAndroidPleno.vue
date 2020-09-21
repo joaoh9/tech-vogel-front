@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import JobDescription from 'Components/Job/JobDetails';
+import JobDescription from 'Pages/Job/JobDetails';
 export default {
   name: 'UseMobileAndroidPleno',
   components: {

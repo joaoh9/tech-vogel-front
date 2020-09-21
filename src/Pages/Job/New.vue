@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-center mt-12">
     <g-card>
-      <template v-slot:card-content="{}">
+      <template v-slot:card-content>
         <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep" class="mb-6">
           <template v-slot:default="{}" class="mb-6">
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
