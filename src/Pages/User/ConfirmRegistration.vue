@@ -1,31 +1,27 @@
 <template>
   <div>
     <div class="d-flex justify-center mt-12">
-      <v-card
-        class="primary-card"
-        :elevation="$vuetify.breakpoint.smAndUp ? 6 : 0"
-        color="bg"
-        max-width="600"
-        :min-width="$vuetify.breakpoint.smAndUp ? 500 : 320"
-      >
-        <div class="d-flex justify-center ma-12" style="flex-direction: column">
-          <h4 class="h4-bold align-self-center">{{ $t('Signup.confirmEmail.title') }}</h4>
-          <span class="body-1 align-self-center color-cinza-lighten-1 mt-4">
-            {{ $t('Signup.confirmEmail.description') }}
-          </span>
-          <div class="d-flex justify-space-around align-center mt-12 flex-wrap">
-            <span
-              @click="resendConfirmationCode()"
-              class="body-1 cursor-pointer color-cinza-lighten-1"
-            >
-              {{ $t('Signup.resendConfirmationCode.title') }}
+      <g-card :md="500" :lg="500">
+        <template v-slot:card-content="{}">
+          <div class="d-flex justify-center ma-12" style="flex-direction: column">
+            <h4 class="h4-bold align-self-center">{{ $t('Signup.confirmEmail.title') }}</h4>
+            <span class="body-1 align-self-center color-cinza-lighten-1 mt-4">
+              {{ $t('Signup.confirmEmail.description') }}
             </span>
-            <v-btn to="/login" large color="primary" elevation="0" max-width="100">
-              {{ $t('Common.login') }}
-            </v-btn>
+            <div class="d-flex justify-space-around align-center mt-12 flex-wrap">
+              <span
+                @click="resendConfirmationCode()"
+                class="body-1 cursor-pointer color-cinza-lighten-1"
+              >
+                {{ $t('Signup.resendConfirmationCode.title') }}
+              </span>
+              <v-btn to="/login" large color="primary" elevation="0" max-width="100">
+                {{ $t('Common.login') }}
+              </v-btn>
+            </div>
           </div>
-        </div>
-      </v-card>
+        </template>s
+      </g-card>
     </div>
     <g-alert
       :succesMessage="$t('Signup.resendConfirmationCode.success')"

@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex flex-wrap justify-center mt-6">
     <v-alert
+      transition="scroll-y-transition"
       :elevation="$vuetify.breakpoint.smAndUp ? 0 : 0"
       color="success"
       max-width="600"
@@ -12,6 +13,7 @@
       {{ succesMess }}
     </v-alert>
     <v-alert
+      transition="scroll-y-transition"
       :elevation="$vuetify.breakpoint.smAndUp ? 0 : 0"
       color="error"
       max-width="600"
@@ -34,6 +36,12 @@ export default {
     successVar: Boolean,
     errorVar: Boolean,
   },
+  mounted() {
+    this.succesMess = this.succesMessage;
+    this.errorMess = this.errorMessage;
+    this.success = this.successVar;
+    this.error = this.errorVar;
+  },
   data() {
     return {
       success: false,
@@ -51,9 +59,19 @@ export default {
     },
     successVar() {
       this.success = this.successVar;
+      if (this.success) {
+        setTimeout(() => {
+          this.success = !this.success;
+        }, 2 * 1000);
+      }
     },
     errorVar() {
       this.error = this.errorVar;
+      if (this.error) {
+        setTimeout(() => {
+          this.error = !this.error;
+        }, 2 * 1000);
+      }
     },
     succesMessage() {
       this.succesMess = this.succesMessage;

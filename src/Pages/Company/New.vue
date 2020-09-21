@@ -1,79 +1,61 @@
 <template>
-  <div>
-    <v-row class="mt-12">
-      <v-col cols="2"></v-col>
-      <v-col cols="8">
-        <v-card class="primary-card mb-6" elevation="6" color="bg">
-          <Stepper
-            ref="stepper"
-            :stepsNames="$t('Company.new.steps')"
-            v-model="currentStep"
-            class="mb-6"
-          >
-            <template v-slot:default="{}">
-              <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-                <New1
-                  v-on:company-name="e => (company.name = e)"
-                  v-on:representative-name="e => (company.representativeName = e)"
-                  v-on:representative-email="e => (company.representativeEmail = e)"
-                  v-on:password="e => (company.password = e)"
-                ></New1>
-                <div class="d-flex justify-end">
-                  <v-btn
-                    large
-                    color="primary"
-                    @click="currentStep += 1"
-                    class="align-self-end mr-12"
-                  >
-                    {{ $t('Common.next') }}
-                  </v-btn>
-                </div>
+  <div class="d-flex justify-center mt-12">
+    <g-card>
+      <template v-slot:card-content="{}">
+        <Stepper
+          ref="stepper"
+          :stepsNames="$t('Company.new.steps')"
+          v-model="currentStep"
+          class="mb-6"
+        >
+          <template v-slot:default="{}">
+            <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
+              <New1
+                v-on:company-name="e => (company.name = e)"
+                v-on:representative-name="e => (company.representativeName = e)"
+                v-on:representative-email="e => (company.representativeEmail = e)"
+                v-on:password="e => (company.password = e)"
+              ></New1>
+              <div class="d-flex justify-end">
+                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
+                  {{ $t('Common.next') }}
+                </v-btn>
               </div>
-              <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-                <New2
-                  v-on:location="e => (company.location = e)"
-                  v-on:about="e => (company.about = e)"
-                ></New2>
-                <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
-                    {{ $t('Common.back') }}
-                  </v-btn>
-                  <v-btn
-                    large
-                    color="primary"
-                    @click="currentStep += 1"
-                    class="align-self-end mr-12"
-                  >
-                    {{ $t('Common.next') }}
-                  </v-btn>
-                </div>
+            </div>
+            <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
+              <New2
+                v-on:location="e => (company.location = e)"
+                v-on:about="e => (company.about = e)"
+              ></New2>
+              <div class="d-flex justify-space-between">
+                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
+                  {{ $t('Common.back') }}
+                </v-btn>
+                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
+                  {{ $t('Common.next') }}
+                </v-btn>
               </div>
-              <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
-                <New3
-                  v-on:webpage="e => (company.links.webpage = e)"
-                  v-on:linkedin="e => (company.links.linkedin = e)"
-                  v-on:instagram="e => (company.links.instagram = e)"
-                  v-on:twitter="e => (company.links.twitter = e)"
-                ></New3>
-                <div class="d-flex justify-space-between">
-                  <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
-                    {{ $t('Common.back') }}
-                  </v-btn>
-                  <v-btn
-                    large
-                    color="primary"
-                    @click="currentStep += 1"
-                    class="align-self-end mr-12"
-                  >
-                    {{ $t('Common.finish') }}
-                  </v-btn>
-                </div>
+            </div>
+            <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
+              <New3
+                v-on:webpage="e => (company.links.webpage = e)"
+                v-on:linkedin="e => (company.links.linkedin = e)"
+                v-on:instagram="e => (company.links.instagram = e)"
+                v-on:twitter="e => (company.links.twitter = e)"
+              ></New3>
+              <div class="d-flex justify-space-between">
+                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
+                  {{ $t('Common.back') }}
+                </v-btn>
+                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
+                  {{ $t('Common.finish') }}
+                </v-btn>
               </div>
-            </template>
-          </Stepper>
-        </v-card>
-      </v-col>
-    </v-row>
+            </div>
+          </template>
+        </Stepper>
+      </template>
+    </g-card>
   </div>
 </template>
 

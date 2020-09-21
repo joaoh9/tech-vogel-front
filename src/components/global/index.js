@@ -1,8 +1,9 @@
 import Vue from 'vue';
 
 import FormInput from './FormInput';
-import Alerts from './Alerts';
+import GAlerts from './GAlerts';
+import GCard from './GCard';
 
-[ FormInput, Alerts ].forEach(component => {
+[ FormInput, GAlerts, GCard ].forEach(component => {
   Vue.component(component.name, component);
 });
