@@ -16,7 +16,7 @@
         </div>
       </v-col>
       <v-col cols="12" md="8">
-        <div class="mx-5 mb-2">
+        <div class="mx-sm-5 mx-0 mb-2">
           <slot name="default" />
         </div>
       </v-col>

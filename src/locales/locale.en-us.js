@@ -275,7 +275,7 @@ const localeEnUs = {
       },
     ],
     new: {
-      page1: { title: 'Basic Information' },
+      page1: { title: 'Basic Info' },
       jobTitle: { title: 'Job Title', tooltip: 'teste pageTitle' },
       experienceLevel: { title: 'Experience Level', tooltip: 'teste jobTitle' },
       contractType: { title: 'Contract Type', tooltip: 'teste experienceLevel' },

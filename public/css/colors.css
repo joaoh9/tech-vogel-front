@@ -87,83 +87,83 @@
 }
 
 .bg-color-primary {
-  color: #ff9200;
+  background-color: #ff9200;
 }
 .bg-color-primary-lighten-1 {
-  color: #f0bd78;
+  background-color: #f0bd78;
 }
 .bg-color-primary-lighten-2 {
-  color: #f1d6b2;
+  background-color: #f1d6b2;
 }
 .bg-color-primary-darken-1 {
-  color: #e78707;
+  background-color: #e78707;
 }
 .bg-color-primary-darken-2 {
-  color: #c27713;
+  background-color: #c27713;
 }
 .bg-color-secondary {
-  color: #1a193c;
+  background-color: #1a193c;
 }
 .bg-color-secondary-lighten-1 {
-  color: #3b3973;
+  background-color: #3b3973;
 }
 .bg-color-secondary-lighten-2 {
-  color: #706f98;
+  background-color: #706f98;
 }
 .bg-color-secondary-darken-1 {
-  color: #332a73;
+  background-color: #332a73;
 }
 .bg-color-secondary-darken-2 {
-  color: #282159;
+  background-color: #282159;
 }
 .bg-color-danger {
-  color: #f86241;
+  background-color: #f86241;
 }
 .bg-color-success {
-  color: #97ca86;
+  background-color: #97ca86;
 }
 .bg-color-tag1 {
-  color: #cde4f8;
+  background-color: #cde4f8;
 }
 .bg-color-tag2 {
-  color: #fff6c9;
+  background-color: #fff6c9;
 }
 .bg-color-tag3 {
-  color: #e2faf3;
+  background-color: #e2faf3;
 }
 .bg-color-tag4 {
-  color: #f0e5f9;
+  background-color: #f0e5f9;
 }
 .bg-color-tag5 {
-  color: #fceced;
+  background-color: #fceced;
 }
 .bg-color-dark {
-  color: #29292f;
+  background-color: #29292f;
 }
 .bg-color-ligth {
-  color: #f7f7fb;
+  background-color: #f7f7fb;
 }
 .bg-color-support1 {
-  color: #1e85df;
+  background-color: #1e85df;
 }
 .bg-color-support2 {
-  color: #ffd500;
+  background-color: #ffd500;
 }
 .bg-color-cinza-lighten-1 {
-  color: #6c6c77;
+  background-color: #6c6c77;
 }
 .bg-color-cinza-lighten-2 {
-  color: #a1a1ac;
+  background-color: #a1a1ac;
 }
 .bg-color-cinza-lighten-3 {
-  color: #d0d0d8;
+  background-color: #d0d0d8;
 }
 .bg-color-cinza-lighten-4 {
-  color: #ebebee;
+  background-color: #ebebee;
 }
 .bg-color-bg {
-  color: #fcfcff;
+  background-color: #fcfcff;
 }
 .bg-color-cinza-border {
-  color: #9c9c9e;
+  background-color: #9c9c9e;
 }
