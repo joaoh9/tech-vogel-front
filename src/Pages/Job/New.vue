@@ -1,12 +1,11 @@
 <template>
-  <v-row class="mt-12">
-    <v-col cols="2"></v-col>
-    <v-col cols="8">
-      <v-card class="primary-card" elevation="6" color="bg">
+  <div class="d-flex justify-center mt-12">
+    <g-card>
+      <template v-slot:card-content="{}">
         <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep" class="mb-6">
           <template v-slot:default="{}" class="mb-6">
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-              <NewJob1
+              <BasicInfo
                 v-on:title="r => (job.title = r)"
                 v-on:experience-level="r => (job.experienceLevel = r)"
                 v-on:contract-type="r => (job.contractType = r)"
@@ -19,7 +18,7 @@
               </div>
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-              <NewJob2
+              <About
                 v-on:about="r => (job.about = r)"
                 v-on:languages="r => (job.languages = r.map(l => l.code))"
                 v-on:back="step--"
@@ -35,7 +34,7 @@
               </div>
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
-              <NewJob3
+              <Skills
                 v-on:knowlege-areas="r => (job.knowlegeAreas = r)"
                 v-on:programming-languages="r => (job.programmingLanguages = r)"
                 v-on:frameworks="r => (job.frameworks = r)"
@@ -53,7 +52,7 @@
               </div>
             </div>
             <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-              <NewJob4
+              <Benefits
                 v-on:perks="r => (job.perks = r)"
                 v-on:salary-currency="r => (job.salary.currency = r)"
                 v-on:salary-time-frame="r => (job.salary.timeFrame = r)"
@@ -75,27 +74,25 @@
           </template>
           >
         </Stepper>
-      </v-card>
-    </v-col>
-    <v-col cols="2"></v-col>
-  </v-row>
+      </template>
+    </g-card>
+  </div>
 </template>
 
 <script>
-import 'Public/css/card.css';
 import Stepper from 'Components/Interface/Stepper';
-import NewJob1 from './NewJob1';
-import NewJob2 from './NewJob2';
-import NewJob3 from './NewJob3';
-import NewJob4 from './NewJob4';
+import BasicInfo from './_1BasicInfo';
+import About from './_2About';
+import Skills from './_3Skills';
+import Benefits from './_4Benefits';
 
 export default {
   name: 'NewJob',
   components: {
-    NewJob1,
-    NewJob2,
-    NewJob3,
-    NewJob4,
+    BasicInfo,
+    About,
+    Skills,
+    Benefits,
     Stepper,
   },
   data() {

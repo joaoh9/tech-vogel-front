@@ -18,9 +18,9 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col cols="12" md="6" style="max-width: 70%">
+          <v-col cols="12">
             <form-input
-              position="left"
+              position="right"
               :title="$t('Job.new.experienceLevel.title')"
               :tooltip="$t('Job.new.experienceLevel.tooltip')"
             ></form-input>
@@ -32,7 +32,7 @@
               outlined
             ></v-combobox>
           </v-col>
-          <v-col cols="12" md="6">
+          <v-col cols="12">
             <form-input
               position="right"
               :title="$t('Job.new.contractType.title')"
