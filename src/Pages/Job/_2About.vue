@@ -1,5 +1,5 @@
 <template>
-  <CardTemplate :title="$t('Job.new.page2.title')">
+ <g-card-header :title="$t('Job.new.page2.title')">
     <template v-slot:content="{}">
       <div>
         <v-row>
@@ -53,18 +53,16 @@
         </v-row>
       </div>
     </template>
-  </CardTemplate>
+  </g-card-header>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
 import { VueEditor } from 'vue2-editor';
 
 export default {
   name: 'NewJob2',
   components: {
     VueEditor,
-    CardTemplate,
   },
   data() {
     return {

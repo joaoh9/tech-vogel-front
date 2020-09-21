@@ -2,7 +2,7 @@
   <div class="d-flex justify-center mt-12">
     <g-card :lg="600" :md="500">
       <template v-slot:card-content="{}">
-        <card-template :title="$t('Common.signup')" :description="$t('Signup.description')">
+        <g-card-header :title="$t('Common.signup')" :description="$t('Signup.description')">
           <template v-slot:content="{}">
             <form-input class="mt-6" :title="$t('Signup.name.title')" />
             <v-text-field outlined :rules="[rules.min(3, user.name)]" v-model="user.name" />
@@ -71,22 +71,18 @@
               </v-col>
             </v-row>
           </template>
-        </card-template>
+        </g-card-header>
       </template>
     </g-card>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
 import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'Login',
-  components: {
-    CardTemplate,
-  },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.rulesLoaded = true;

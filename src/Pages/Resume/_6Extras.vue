@@ -1,22 +1,18 @@
 <template>
   <div>
-    <CardTemplate
+   <g-card-header
       :title="$t('CV.register.extras.title')"
       :description="$t('CV.register.extras.description')"
     >
       <template v-slot:content="{}"> </template>
-    </CardTemplate>
+    </g-card-header>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
 
 export default {
   name: 'Extras',
-  components: {
-    CardTemplate,
-  },
 };
 </script>
 

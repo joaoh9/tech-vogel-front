@@ -1,5 +1,5 @@
 <template>
-  <CardTemplate :title="$t('Job.new.page1.title')">
+ <g-card-header :title="$t('Job.new.page1.title')">
     <template v-slot:content="{}">
       <div style="word-wrap: break-word;">
         <v-row>
@@ -48,17 +48,12 @@
         </v-row>
       </div>
     </template>
-  </CardTemplate>
+  </g-card-header>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'NewJob1',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       title: '',

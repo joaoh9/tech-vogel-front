@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardTemplate
+   <g-card-header
       :title="$t('CV.register.preferences.title')"
       :description="$t('CV.register.preferences.description')"
     >
@@ -24,18 +24,13 @@
           />
         </div>
       </template>
-    </CardTemplate>
+    </g-card-header>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'Preferences',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       jobInterests: '',

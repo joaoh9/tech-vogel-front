@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardTemplate
+   <g-card-header
       :title="$t('CV.register.workExperience.title')"
       :description="$t('CV.register.workExperience.description')"
     >
@@ -74,18 +74,13 @@
           outlined
         />
       </template>
-    </CardTemplate>
+    </g-card-header>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'WorkExperience',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       job: {

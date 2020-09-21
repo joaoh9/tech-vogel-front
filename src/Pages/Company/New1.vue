@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardTemplate :title="$t('Company.new._1.pageTitle')">
+   <g-card-header :title="$t('Company.new._1.pageTitle')">
       <template v-slot:content="{}">
         <form-input :title="$t('Company.new._1.companyName')" />
         <v-text-field
@@ -48,18 +48,13 @@
           </v-col>
         </v-row>
       </template>
-    </CardTemplate>
+    </g-card-header>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'New',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       showPassword: false,

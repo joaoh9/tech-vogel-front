@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardTemplate
+   <g-card-header
       :title="$t('CV.register.education.title')"
       :description="$t('CV.register.education.description')"
     >
@@ -54,18 +54,13 @@
           </v-col>
         </v-row>
       </template>
-    </CardTemplate>
+    </g-card-header>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'Education',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       education: {

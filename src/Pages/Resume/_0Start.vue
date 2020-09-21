@@ -1,5 +1,5 @@
 <template>
-  <CardTemplate :title="$t('CV.register.start.title')">
+ <g-card-header :title="$t('CV.register.start.title')">
     <template v-slot:content="{}">
       <div class="d-flex justify-center ma-12" style="flex-direction: column">
         <v-btn max-width="400" class="align-self-center mt-4" color="primary" large disabled>
@@ -19,17 +19,12 @@
         </v-btn>
       </div>
     </template>
-  </CardTemplate>
+  </g-card-header>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'Start',
-  components: {
-    CardTemplate,
-  },
 };
 </script>
 

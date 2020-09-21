@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'tab-item-card-template',
+  name: 'g-card-header',
   props: {
     title: String,
     description: String,

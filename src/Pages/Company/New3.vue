@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardTemplate :title="$t('Company.new._3.pageTitle')">
+   <g-card-header :title="$t('Company.new._3.pageTitle')">
       <template v-slot:content="{}">
         <div>
           <form-input :title="$t('Company.new._3.webpage')" />
@@ -13,18 +13,13 @@
           <v-text-field tile outlined v-model="twitter" @input="$emit('twitter', twitter)" />
         </div>
       </template>
-    </CardTemplate>
+    </g-card-header>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'New3',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       webpage: '',

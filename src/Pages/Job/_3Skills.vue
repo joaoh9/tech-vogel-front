@@ -1,5 +1,5 @@
 <template>
-  <CardTemplate :title="$t('Job.new.page3.title')">
+ <g-card-header :title="$t('Job.new.page3.title')">
     <template v-slot:content="{}">
       <div>
         <form-input
@@ -64,17 +64,12 @@
         ></v-combobox>
       </div>
     </template>
-  </CardTemplate>
+  </g-card-header>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'NewJob3',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       knowledgeAreas: [],

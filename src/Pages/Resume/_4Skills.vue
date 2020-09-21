@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardTemplate
+   <g-card-header
       :title="$t('CV.register.skills.title')"
       :description="$t('CV.register.skills.description')"
     >
@@ -22,18 +22,13 @@
         <form-input :title="$t('CV.register.skills.softSkills')" />
         <v-text-field v-model="skills.softSkills" v-on:input="$emit('skills', skills)" outlined />
       </template>
-    </CardTemplate>
+    </g-card-header>
   </div>
 </template>
 
 <script>
-import CardTemplate from 'Components/Interface/CardTemplate';
-
 export default {
   name: 'Skills',
-  components: {
-    CardTemplate,
-  },
   data() {
     return {
       skills: {
