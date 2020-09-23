@@ -62,7 +62,7 @@ export default {
       if (this.success) {
         setTimeout(() => {
           this.success = !this.success;
-        }, 2 * 1000);
+        }, 10 * 1000);
       }
     },
     errorVar() {
@@ -70,7 +70,7 @@ export default {
       if (this.error) {
         setTimeout(() => {
           this.error = !this.error;
-        }, 2 * 1000);
+        }, 10 * 1000);
       }
     },
     succesMessage() {

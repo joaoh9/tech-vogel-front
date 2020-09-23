@@ -1,17 +1,22 @@
 <template>
   <div>
-   <g-card-header
+    <g-card-header
       :title="$t('CV.register.preferences.title')"
       :description="$t('CV.register.preferences.description')"
     >
       <template v-slot:content="{}">
         <form-input class="mt-6" :title="$t('CV.register.preferences.jobInterests.title')" />
-        <v-text-field
-          v-model="jobInterests"
-          v-on:input="$emit('job-interests', jobInterests)"
-          :placeholder="$t('CV.register.preferences.jobInterests.placeholder')"
-          outlined
-        />
+        <div class="d-flex justify-space-between">
+          <v-checkbox
+            v-model="jobInterests"
+            v-on:input="$emit('job-interests', jobInterests)"
+            v-for="(options, index) in $t('CV.register.preferences.jobInterests.options')"
+            :key="index"
+            :label="options"
+            :value="options"
+            outlined
+          />
+        </div>
         <form-input class="mt-6" :title="$t('CV.register.preferences.jobType.title')" />
         <div class="d-flex justify-space-between">
           <v-checkbox

@@ -1,5 +1,5 @@
 <template>
- <g-card-header :title="$t('Job.new.page1.title')">
+  <g-card-header :title="$t('Job.new.page1.title')">
     <template v-slot:content="{}">
       <div style="word-wrap: break-word;">
         <v-row>
@@ -25,6 +25,8 @@
               :tooltip="$t('Job.new.experienceLevel.tooltip')"
             ></form-input>
             <v-combobox
+              class="border-lg"
+              multiple
               :rules="[rules.required]"
               :items="$t('data.experienceLevel')"
               v-model="experienceLevel"

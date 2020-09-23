@@ -282,7 +282,7 @@ const localeEnUs = {
       page2: { title: 'Tell us more' },
       about: {
         title: 'About the role',
-        placeholder: 'Describe better the role',
+        placeholder: 'Describe in one',
         tooltip: 'about test',
       },
       languages: { title: 'Required Language(s)', tooltip: 'languages teste' },
@@ -406,7 +406,7 @@ const localeEnUs = {
   },
   data: {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
-    contractType: [ 'Full-Time', 'Part-time', 'Hourly', 'Contract', 'Internship' ],
+    contractType: [ 'Full-Time', 'Part-time', 'Hourly' ],
     experienceLevel: [ 'Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager' ],
     languages: Languages,
     differentLanguages: DifferentLanguages,
@@ -501,7 +501,8 @@ const localeEnUs = {
         title: 'Select your preferences',
         description: 'You’ll be able to edit these or add more information later on.',
         jobInterests: {
-          title: 'What category of jobs are you interested in?',
+          title: 'What company size fits you best?',
+          options: [ 'Startups', 'Small and medium', 'Large' ],
           placeholder: 'Pick a category',
         },
         jobType: {
@@ -556,7 +557,12 @@ const localeEnUs = {
         title: 'Education',
         description:
           'You’ll be able to edit these or add more information later on.\nThis information will be displayed to recruiters and people\nwho visit your profile.',
-        degree: 'Degree',
+        school: 'School',
+        degree: {
+          title: 'Degree',
+          options: [ 'Bachelor', 'Undergraduate Degree' ],
+        },
+        fieldOfStudy: 'Field of study',
         type: 'Type',
         institution: 'Institution',
         from: 'From',

@@ -74,14 +74,16 @@ export default {
   data() {
     return {
       logo: Logo,
-      footerInfo: [
-        this.$t('Common.copywright'),
-        this.$t('Common.termsOfService'),
-        this.$t('Common.privacyPolicy'),
-        this.$t('Common.cnpj') + ': ' + this.$t('Common.cnpjNumber'),
-        this.$t('Common.phone'),
-        this.$t('Common.contactEmail'),
-      ],
+      footerInfo: {
+        teste: [
+          this.$t('Common.copywright'),
+          this.$t('Common.termsOfService'),
+          this.$t('Common.privacyPolicy'),
+          this.$t('Common.cnpj') + ': ' + this.$t('Common.cnpjNumber'),
+          this.$t('Common.phone'),
+          this.$t('Common.contactEmail'),
+        ],
+      },
     };
   },
   methods: {

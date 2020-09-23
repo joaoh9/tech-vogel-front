@@ -4,6 +4,7 @@
     <Navbar v-if="notLP()"></Navbar>
     <v-main v-bind:style="getPageStyle()">
       <router-view class="view"></router-view>
+      <v-btn class="float-right mr-6" @click="giveUsFeedback()" text>Feedback</v-btn>
     </v-main>
     <Footer class="mt-12" />
   </v-app>
@@ -54,6 +55,9 @@ export default {
           'linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693';
       }
       return pageStyle;
+    },
+    giveUsFeedback() {
+      return; // TODO
     },
   },
 };

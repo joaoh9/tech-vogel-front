@@ -7,7 +7,7 @@
       <template v-slot:content="{}">
         <v-row>
           <v-col cols="12" md="8">
-            <form-input class="mt-6" :title="$t('CV.register.education.degree')" />
+            <form-input class="mt-6" :title="$t('CV.register.education.degree.title')" />
             <v-text-field
               v-model="education.degree"
               v-on:input="$emit('education', education)"

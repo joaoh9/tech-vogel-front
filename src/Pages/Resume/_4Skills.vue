@@ -14,10 +14,11 @@
         <form-input :title="$t('CV.register.skills.frameworks')" />
         <v-text-field v-model="skills.frameworks" v-on:input="$emit('skills', skills)" outlined />
         <form-input :title="$t('CV.register.skills.knowledgeAreas')" />
-        <v-text-field
+        <v-combobox
           v-model="skills.knowledgeAreas"
           v-on:input="$emit('skills', skills)"
           outlined
+          :items="$t('data.softSkills')"
         />
         <form-input :title="$t('CV.register.skills.softSkills')" />
         <v-text-field v-model="skills.softSkills" v-on:input="$emit('skills', skills)" outlined />
