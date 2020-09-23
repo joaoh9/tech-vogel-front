@@ -113,7 +113,7 @@ h6 {
 .body-1 {
   overflow-wrap: break-word;
   /* Body 1 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 1rem;
@@ -128,7 +128,7 @@ h6 {
 .body-2 {
   overflow-wrap: break-word;
   /* Body 2 */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 0.875rem;
