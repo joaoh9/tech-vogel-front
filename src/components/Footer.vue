@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="d-flex justify-end">
-      <v-btn class="mr-6" @click="giveUsFeedback()" text>Feedback</v-btn>
+    <div class="d-flex justify-end mb-4">
+      <v-btn dark class="mr-6" @click="giveUsFeedback()" text>Feedback</v-btn>
     </div>
-    <v-footer class="px-0">
+    <v-footer class="px-0 mt-0 pt-0">
       <v-card
         height="250"
         width="100%"

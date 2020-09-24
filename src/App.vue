@@ -1,10 +1,9 @@
 <template>
-  <v-app>
+  <v-app v-bind:style="getPageStyle()">
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
     <Navbar v-if="notLP()"></Navbar>
-    <v-main v-bind:style="getPageStyle()">
+    <v-main>
       <router-view class="view"></router-view>
-      <v-btn class="float-right mr-6" @click="giveUsFeedback()" text>Feedback</v-btn>
     </v-main>
     <Footer class="mt-12" />
   </v-app>
