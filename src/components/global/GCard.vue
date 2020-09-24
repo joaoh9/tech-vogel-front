@@ -59,7 +59,7 @@ export default {
       if (this.$vuetify.breakpoint.smAndUp) {
         return this.maxsm || 320;
       }
-      return this.maxbase || 250;
+      return this.maxbase;
     },
     minHeight() {
       if (this.$vuetify.breakpoint.lgAndUp) {
