@@ -22,6 +22,7 @@
         />
         <form-input :title="$t('CV.register.skills.softSkills')" />
         <v-text-field v-model="skills.softSkills" v-on:input="$emit('skills', skills)" outlined />
+        <slot/>
       </template>
     </g-card-header>
   </div>

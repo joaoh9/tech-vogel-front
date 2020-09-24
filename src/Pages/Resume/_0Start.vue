@@ -8,6 +8,7 @@
           color="primary"
           large
           tile
+          block
           elevation="0"
           v-on:click="$emit('manual-register', 'manual-register')"
         >
@@ -21,6 +22,7 @@
           {{ $t('CV.register.start.linkGithub.title') }}
         </v-btn>
       </div>
+      <slot/>
     </template>
   </g-card-header>
 </template>

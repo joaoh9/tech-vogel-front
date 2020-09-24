@@ -73,6 +73,7 @@
           height="100"
           outlined
         />
+        <slot/>
       </template>
     </g-card-header>
   </div>

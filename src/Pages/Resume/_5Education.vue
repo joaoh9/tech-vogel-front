@@ -53,6 +53,7 @@
             />
           </v-col>
         </v-row>
+        <slot/>
       </template>
     </g-card-header>
   </div>

@@ -1,17 +1,38 @@
 <template>
-  <div class="d-flex justify-center">
-    <v-tabs
-      vertical
-      :value="this.value"
-      @change="updateStep"
-      background-color="rgba(0,0,0,0)"
-      class="mr-4"
-    >
-      <v-tab v-for="(item, key) in stepsExibition" :key="key">
-        {{ item.name }}
-      </v-tab>
-    </v-tabs>
-    <slot name="default" />
+  <div>
+    <v-row>
+      <v-col cols="12" md="4" v-if="$vuetify.breakpoint.mdAndUp">
+        <div class="sidebar">
+          <v-tabs
+            vertical
+            :value="this.value"
+            @change="updateStep"
+            background-color="rgba(0,0,0,0)"
+          >
+            <v-tab v-for="(item, key) in stepsExibition" :key="key">
+              {{ item.name }}
+            </v-tab>
+          </v-tabs>
+        </div>
+      </v-col>
+      <v-col cols="12" md="8">
+        <div class="mx-sm-5 mx-0 mb-2">
+          <slot name="default" />
+        </div>
+      </v-col>
+    </v-row>
+    <div class="d-flex justify-center my-2" v-if="$vuetify.breakpoint.smAndDown">
+      <v-rating
+        :value="this.stepBottomNav"
+        :length="stepsNames.length"
+        small
+        empty-icon="mdi-circle"
+        full-icon="mdi-circle"
+        color="primary"
+        background-color="tertiary"
+        @input="updateStepBottomNav"
+      ></v-rating>
+    </div>
   </div>
 </template>
 
@@ -44,6 +65,9 @@ export default {
       });
       return stepsExibition;
     },
+    stepBottomNav() {
+      return this.value + 1;
+    },
   },
   methods: {
     getTitleStyle(step) {
@@ -60,7 +84,11 @@ export default {
     },
     updateStep(step) {
       this.value = step;
-      this.$emit('input', step);
+      this.$emit('input', this.value);
+    },
+    updateStepBottomNav(step) {
+      this.value = step - 1;
+      this.$emit('input', this.value);
     },
   },
 };
@@ -82,3 +110,5 @@ export default {
   top: 75px;
 }
 </style>
+
+

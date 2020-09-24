@@ -28,6 +28,7 @@
             :key="index"
           />
         </div>
+        <slot/>
       </template>
     </g-card-header>
   </div>

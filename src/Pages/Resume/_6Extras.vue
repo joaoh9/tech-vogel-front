@@ -5,6 +5,7 @@
       :description="$t('CV.register.extras.description')"
     >
       <template v-slot:content="{}"> </template>
+      <slot/>
     </g-card-header>
   </div>
 </template>
