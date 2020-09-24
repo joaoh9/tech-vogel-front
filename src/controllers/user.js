@@ -45,4 +45,10 @@ export default class UserController {
 
     return { ...res, email };
   }
+
+  async confirmAccount(confirmationId){
+    const axios = Axios.GetInstance()
+
+    return await axios.get(`/users/confirmAccount/${confirmationId}`)
+  }
 }

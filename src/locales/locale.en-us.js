@@ -461,6 +461,11 @@ const localeEnUs = {
       success: 'The code was sent to your email!',
       error: 'There was an error sending the email :(. Please try again later.',
     },
+    registrationConfirmed: {
+      title: 'Your email has been confirmed!',
+      description: 'Proceed to dashboard',
+      error: 'Your code is invalid or has expired!',
+    },
   },
   Quill: {
     defaultToolbar: [
