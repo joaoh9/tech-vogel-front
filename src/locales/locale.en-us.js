@@ -33,6 +33,7 @@ const localeEnUs = {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
   Common: {
+    feedback: 'Feedback',
     tv: 'Tech Vogel',
     techVogel: 'Tech Vogel',
     day: 'Day',
@@ -582,6 +583,11 @@ const localeEnUs = {
         button: 'I’M DONE!',
       },
     },
+  },
+  Feedback: {
+    title: 'Leave your Feedback, bug encounter or suggestion!',
+    topic: 'Topic',
+    description: 'Description',
   },
 };
 

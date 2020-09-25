@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="primary-card"
+    class="primary-card mx-1"
     :elevation="$vuetify.breakpoint.smAndUp ? 6 : 0"
     color="bg"
     :min-width="minWidth()"

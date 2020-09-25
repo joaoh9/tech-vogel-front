@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="d-flex justify-end mb-4">
-      <v-btn dark class="mr-6" @click="giveUsFeedback()" text>Feedback</v-btn>
-    </div>
+    <feedback />
     <v-footer class="px-0 mt-0 pt-0">
       <v-card
         height="250"
@@ -74,21 +72,24 @@
 
 <script>
 import Logo from 'Assets/logo-redondo-amarelo-grad.png';
+import Feedback from 'Components/Dialogs/Feedback';
+
 export default {
   name: 'Footer',
+  components: {
+    Feedback,
+  },
   data() {
     return {
       logo: Logo,
-      footerInfo: {
-        teste: [
-          this.$t('Common.copywright'),
-          this.$t('Common.termsOfService'),
-          this.$t('Common.privacyPolicy'),
-          this.$t('Common.cnpj') + ': ' + this.$t('Common.cnpjNumber'),
-          this.$t('Common.phone'),
-          this.$t('Common.contactEmail'),
-        ],
-      },
+      footerInfo: [
+        this.$t('Common.copywright'),
+        this.$t('Common.termsOfService'),
+        this.$t('Common.privacyPolicy'),
+        this.$t('Common.cnpj') + ': ' + this.$t('Common.cnpjNumber'),
+        this.$t('Common.phone'),
+        this.$t('Common.contactEmail'),
+      ],
     };
   },
   methods: {
