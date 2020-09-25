@@ -8,23 +8,17 @@
       We connect I.T. professionals from around the globe to companies looking for remote employees.
     </h4>
     <div>
-      <v-row class="">
+      <v-row claess="">
         <v-col cols="12" md="6">
-          <v-btn color="primary" large block to="/job/new">
-            I want to hire
-          </v-btn>
+          <g-btn-primary label="I want to hire" to="/job/new" />
         </v-col>
         <v-col cols="12" md="6">
-          <v-btn color="primary" large block>
-            I'm looking for a job
-          </v-btn>
+          <g-btn-primary label="I'm looking for a job" to="/signup" />
         </v-col>
       </v-row>
     </div>
     <div class="mb-5">
-      <v-btn color="white" tile outlined text dark large>
-        Learn more
-      </v-btn>
+      <g-btn-secondary label="Learn more" />
     </div>
   </div>
 </template>

@@ -51,7 +51,7 @@ export default {
 
       if (this.$router.currentRoute.name === 'Home') {
         pageStyle.background =
-          'linear-gradient(156deg, #3AA3FF 8.83%, rgba(67, 54, 147, 0.5) 62.18%), #433693';
+          'linear-gradient(156deg, rgba(67, 54, 147, 0.5) 8.83%,  #3AA3FF 62.18%), #433693';
       }
       return pageStyle;
     },

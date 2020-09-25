@@ -17,8 +17,8 @@
       <v-btn class="body-2" @click="goToHowItWorks" color="grey darken-3" text>How It Works</v-btn>
       <v-spacer></v-spacer>
       <!-- <v-btn to="content" color="grey darken-3" text>Sign Up</v-btn> -->
-      <v-btn @click="goToSignup" color="secondary" tile outlined text large>Sign Up</v-btn>
-      <v-btn @click="goToLogin" tile elevation="0" large color="primary" class="mx-4">Login</v-btn>
+      <g-btn-primary @click="goToSignup()" :label="$t('Common.signup')" />
+      <g-btn-secondary @click="goToLogin()" class="mx-4" :label="$t('Common.login')" />
     </v-app-bar>
   </div>
 </template>
