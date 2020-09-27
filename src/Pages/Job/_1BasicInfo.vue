@@ -10,7 +10,7 @@
       v-model="title"
       @input="$emit('title', title)"
       outlined
-    ></v-text-field>
+    />
     <form-input
       position="right"
       :title="$t('Job.new.experienceLevel.title')"

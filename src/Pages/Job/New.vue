@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-center mt-12">
+  <div class="d-flex justify-center mt-4 mt-md-12">
     <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep" class="mb-6">
       <template v-slot:default="{}" class="mb-6">
         <g-card>

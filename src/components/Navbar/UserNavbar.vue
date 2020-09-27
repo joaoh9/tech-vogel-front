@@ -3,21 +3,21 @@
     <v-app-bar app color="white darken-4" elevate-on-scroll>
       <v-btn text color="white darken-4" height="60" tile elevation="0" to="/">
         <v-avatar size="150">
-          <v-img height="100" width="1" :src="logo"></v-img>
+          <v-img height="100" width="1" :src="logo" />
         </v-avatar>
       </v-btn>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-text-field
         class="align-self-center mt-7 mr-8"
         dense
         label="Land a Job"
         outlined
         append-icon="mdi-magnify"
-      ></v-text-field>
+      />
       <v-btn class="align-self-center" to="content" color="grey darken-3" outlined>
         I'm feeling Lucky
       </v-btn>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-btn rounded outlined small fab color="info" class="mr-6">
         <v-icon style="font-size: 24px" class="rotate">mdi-send-outline</v-icon>
       </v-btn>

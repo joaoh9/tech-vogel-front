@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex justify-center mt-12">
+  <div class="d-flex justify-center mt-4 mt-md-12">
     <g-card>
       <template v-slot:card-content>
         <Stepper :stepsNames="$t('CV.register.tabs')" v-model="currentStep">
           <template v-slot:default="{}" class="mb-6">
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-              <Start v-on:manual-register="currentStep += 1"></Start>
+              <Start v-on:manual-register="currentStep += 1" />
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
               <Preferences

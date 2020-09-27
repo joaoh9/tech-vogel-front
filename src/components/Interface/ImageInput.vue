@@ -7,7 +7,7 @@
       v-model="image"
       hide-input
       @change="atFileChange"
-    ></v-file-input>
+    />
   </div>
 </template>
 

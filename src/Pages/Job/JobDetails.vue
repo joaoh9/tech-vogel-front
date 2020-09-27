@@ -4,7 +4,7 @@
       style="opacity: 60%; background-color: black"
       height="250"
       src="https://suzanadeoliveira.com/wp-content/uploads/2017/06/Google-Office-HD-Wallpapers-Backgrounds-Wallpaper-Abyss-scaled.jpg"
-    ></v-parallax>
+    />
     <div class="container mt-6 px-10 px-md-5">
       <v-row justify="center">
         <v-col cols="12" lg="8" xl="9" style="max-width: 1000px">
@@ -67,7 +67,7 @@
                   Apply For this position
                 </v-btn>
               </v-row>
-              <v-divider class="mt-4"></v-divider>
+              <v-divider class="mt-4" />
               <v-row class="mt-5">
                 <div class="d-flex">
                   <v-avatar height="80" width="80" color="cinza-lighten-2" class="ml-1">

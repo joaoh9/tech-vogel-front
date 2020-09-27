@@ -9,7 +9,7 @@
       :placeholder="$t('Job.new.about.placeholder')"
       :editorToolbar="$t('Quill.defaultToolbar')"
       v-model="about"
-    ></vue-editor>
+    />
     <form-input
       class="mt-4"
       position="left"
