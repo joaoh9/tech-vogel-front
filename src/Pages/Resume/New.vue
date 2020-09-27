@@ -159,22 +159,22 @@ export default {
     };
   },
   methods: {
-    register() {
-      const resumeController = ResumeController();
-      if (this.resume) {
-        resumeController
-          .register({
+    async register() {
+      const resumeController = new ResumeController();
+      const validResume = this.validateResume();
+      if (validResume) {
+        try {
+          await resumeController.register({
             resume: this.resume,
-          })
-          .then(res => {
-            console.log('res');
-            console.log(res);
-          })
-          .catch(e => {
-            console.log('e');
-            console.log(e);
           });
+        } catch (e) {
+          alert(e);
+        }
       }
+    },
+
+    validateResume() {
+
     },
   },
 };

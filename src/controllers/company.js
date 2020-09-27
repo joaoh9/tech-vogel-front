@@ -1,15 +1,15 @@
 import Axios from 'Helpers/axios';
 
-export default function CompanyController() {
-  return {
-    registerCompany: async (details) => {
-      const axios = await Axios.GetInstance();
-      return new Promise((resolve, reject) => {
-        axios
-          .post('/company', details)
-          .then(resolve)
-          .catch(reject);
-      });
-    },
-  };
+export default class CompanyController {
+  async registerCompany(details) {
+    const axios = await Axios.GetInstance();
+    const res = await axios.post('/company', details);
+    return res;
+  }
+
+  async getCompanyById(companyId){
+    const axios = await Axios.GetInstance();
+    const res = await axios.get(`/company/${companyId}`);
+    return res;
+  }
 }

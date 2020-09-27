@@ -81,21 +81,16 @@ export default {
     };
   },
   methods: {
-    register() {
-      const companyController = CompanyController();
+    async register() {
+      const companyController = new CompanyController();
       if (this.company) {
-        companyController
-          .registerCompany({
+        try {
+          await companyController.registerCompany({
             company: this.company,
-          })
-          .then(res => {
-            console.log('res');
-            console.log(res);
-          })
-          .catch(e => {
-            console.log('e');
-            console.log(e);
           });
+        } catch (e) {
+          alert(e);
+        }
       }
     },
   },
