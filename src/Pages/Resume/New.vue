@@ -45,7 +45,7 @@
               <WorkExperience
                 v-on:job="
                   e => {
-                    resume.jobDescription = e;
+                    resume.job = e;
                   }
                 "
               >
@@ -115,6 +115,7 @@ export default {
   },
   data() {
     return {
+      educationComponent: Education,
       currentStep: 0,
       resume: {
         location: {
