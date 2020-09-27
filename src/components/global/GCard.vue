@@ -8,7 +8,9 @@
     :min-height="minHeight()"
     :max-height="maxHeight()"
   >
-    <slot name="card-content" />
+    <div class="d-flex justify-center mx-4 mx-md-12 mt-6 mb-6">
+      <slot name="card-content" />
+    </div>
     <v-divider />
     <slot name="buttons" />
   </v-card>
