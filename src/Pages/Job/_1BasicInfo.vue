@@ -20,7 +20,7 @@
       class="border-lg"
       multiple
       :rules="[rules.required]"
-      :items="$t('data.experienceLevel')"
+      :items="$t('Data.experienceLevel')"
       v-model="experienceLevel"
       @input="$emit('experience-level', experienceLevel)"
       outlined
@@ -31,7 +31,7 @@
       :tooltip="$t('Job.new.contractType.tooltip')"
     />
     <v-combobox
-      :items="$t('data.contractType')"
+      :items="$t('Data.contractType')"
       v-model="contractType"
       @input="$emit('contract-type', contractType)"
       outlined

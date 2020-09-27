@@ -18,7 +18,7 @@
     />
     <v-combobox
       v-model="languages"
-      :items="$t('data.languages')"
+      :items="$t('Data.languages')"
       item-text="label"
       item-value="code"
       multiple

@@ -8,7 +8,7 @@
     <v-combobox
       v-model="knowledgeAreas"
       @input="$emit('knowlege-areas', knowlegeAreas)"
-      :items="$t('data.knowledgeAreas')"
+      :items="$t('Data.knowledgeAreas')"
       multiple
       outlined
       chips
@@ -22,7 +22,7 @@
     <v-combobox
       v-model="programmingLanguages"
       @input="$emit('programming-languages', programmingLanguages)"
-      :items="$t('data.programmingLanguages')"
+      :items="$t('Data.programmingLanguages')"
       multiple
       outlined
       chips
@@ -36,7 +36,7 @@
     <v-combobox
       v-model="frameworks"
       @input="$emit('frameworks', frameworks)"
-      :items="$t('data.frameworks')"
+      :items="$t('Data.frameworks')"
       item-text="name"
       item-value="name"
       multiple
@@ -52,7 +52,7 @@
     <v-combobox
       v-model="softSkills"
       @input="$emit('soft-skills', softSkills)"
-      :items="$t('data.softSkills')"
+      :items="$t('Data.softSkills')"
       item-text="name"
       item-value="name"
       multiple
