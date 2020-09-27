@@ -1,40 +1,22 @@
 <template>
   <div class="d-flex justify-center mt-12">
-    <g-card>
-      <template v-slot:card-content>
-        <Stepper
-          ref="stepper"
-          :stepsNames="$t('Company.new.steps')"
-          v-model="currentStep"
-          class="mb-6"
-        >
-          <template v-slot:default="{}">
+    <Stepper ref="stepper" :stepsNames="$t('Company.new.steps')" v-model="currentStep" class="mb-6">
+      <template v-slot:default="{}">
+        <g-card>
+          <template v-slot:card-content>
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
               <New1
                 v-on:company-name="e => (company.name = e)"
                 v-on:representative-name="e => (company.representativeName = e)"
                 v-on:representative-email="e => (company.representativeEmail = e)"
                 v-on:password="e => (company.password = e)"
-              ></New1>
-              <div class="d-flex justify-end">
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
-                  {{ $t('Common.next') }}
-                </v-btn>
-              </div>
+              />
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
               <New2
                 v-on:location="e => (company.location = e)"
                 v-on:about="e => (company.about = e)"
-              ></New2>
-              <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
-                  {{ $t('Common.back') }}
-                </v-btn>
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
-                  {{ $t('Common.next') }}
-                </v-btn>
-              </div>
+              />
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
               <New3
@@ -42,20 +24,26 @@
                 v-on:linkedin="e => (company.links.linkedin = e)"
                 v-on:instagram="e => (company.links.instagram = e)"
                 v-on:twitter="e => (company.links.twitter = e)"
-              ></New3>
-              <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
-                  {{ $t('Common.back') }}
-                </v-btn>
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
-                  {{ $t('Common.finish') }}
-                </v-btn>
-              </div>
+              />
             </div>
           </template>
-        </Stepper>
+          <template v-slot:buttons>
+            <div
+              :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  ma-6`"
+              style="z-index: -1"
+            >
+              <g-btn
+                :label="$t('Common.back')"
+                v-if="currentStep > 0"
+                type="secondary"
+                @click="currentStep--"
+              />
+              <g-btn :label="$t('Common.next')" type="primary" @click="currentStep++" />
+            </div>
+          </template>
+        </g-card>
       </template>
-    </g-card>
+    </Stepper>
   </div>
 </template>
 

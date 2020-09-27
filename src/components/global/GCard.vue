@@ -8,7 +8,9 @@
     :min-height="minHeight()"
     :max-height="maxHeight()"
   >
-    <slot name="card-content"> </slot>
+    <slot name="card-content" />
+    <v-divider />
+    <slot name="buttons" />
   </v-card>
 </template>
 
