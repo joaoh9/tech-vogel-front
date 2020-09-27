@@ -9,12 +9,12 @@
     :max-height="maxHeight()"
   >
     <slot name="card-header" />
-    <v-row>
-      <v-col cols="2" />
-      <v-col cols="8">
+    <v-row justify="center">
+      <v-col cols="1" md="2" />
+      <v-col cols="10" md="8">
         <slot name="card-content" />
       </v-col>
-      <v-col cols="2" />
+      <v-col cols="1" md="2" />
     </v-row>
     <v-divider class="mt-4" />
     <slot name="buttons" />

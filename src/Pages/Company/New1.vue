@@ -1,16 +1,15 @@
 <template>
   <div>
-    <g-card-header :title="$t('Company.new._1.pageTitle')" />
-    <form-input :title="$t('Company.new._1.companyName')" />
+    <form-input :title="$t('Company.new.companyName')" />
     <v-text-field tile outlined v-model="companyName" @input="$emit('company-name', companyName)" />
-    <form-input :title="$t('Company.new._1.representativeName')" />
+    <form-input :title="$t('Company.new.representativeName')" />
     <v-text-field
       tile
       outlined
       v-model="representativeName"
       @input="$emit('representative-name', representativeName)"
     />
-    <form-input :title="$t('Company.new._1.representativeEmail')" />
+    <form-input :title="$t('Company.new.representativeEmail')" />
     <v-text-field
       tile
       outlined
@@ -19,7 +18,7 @@
     />
     <v-row>
       <v-col cols="12" md="6">
-        <form-input :title="$t('Company.new._1.password')" />
+        <form-input :title="$t('Company.new.password')" />
         <v-text-field
           tile
           outlined
@@ -31,7 +30,7 @@
         />
       </v-col>
       <v-col cols="12" md="6">
-        <form-input :title="$t('Company.new._1.confirmPassword')" />
+        <form-input :title="$t('Company.new.confirmPassword')" />
         <v-text-field
           tile
           outlined

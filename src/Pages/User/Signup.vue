@@ -2,76 +2,65 @@
   <div class="d-flex justify-center mt-12">
     <g-card :lg="600" :md="500">
       <template v-slot:card-content>
-        <g-card-header :title="$t('Common.signup')" :description="$t('Signup.description')">
-          <template v-slot:content="{}">
-            <form-input class="mt-6" :title="$t('Signup.name.title')" />
-            <v-text-field outlined :rules="[rules.min(3, user.name)]" v-model="user.name" />
-            <form-input :title="$t('Signup.username.title')" />
-            <v-text-field
-              outlined
-              :rules="[rules.min(3, user.username)]"
-              :error-messages="localRules.usernameUnavaliable"
-              v-model="user.username"
-            />
-            <form-input :title="$t('Signup.email.title')" />
-            <v-text-field
-              outlined
-              v-model="user.email"
-              :rules="[rules.email(user.email)]"
-              :error-messages="localRules.emailAlreadyRegistered"
-            />
-            <form-input :title="$t('Common.password.label')" />
-            <v-text-field
-              :rules="[rules.min(8, user.password)]"
-              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="showPassword = !showPassword"
-              :type="showPassword ? 'text' : 'password'"
-              outlined
-              v-model="user.password"
-            />
-            <form-input :title="$t('Common.confirmPassword.label')" />
-            <v-text-field
-              :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
-              :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="showConfirmPassword = !showConfirmPassword"
-              :type="showConfirmPassword ? 'text' : 'password'"
-              outlined
-              v-model="user.confirmPassword"
-            />
-            <v-checkbox
-              v-model="termsAndConditions"
-              :rules="[v => !!v || $t('Rules.termsAndConditions')]"
-              :error-messages="localRules.termsAndConditions"
-            >
-              <template v-slot:label>
-                <div>
-                  {{ $t('Signup.termsAndConditions.text') }}
-                  <strong @click="$router.push('/terms-and-conditions')" class="primary--text">
-                    {{ $t('Signup.termsAndConditions.termsAndConditions') }}
-                  </strong>
-                </div>
-              </template>
-            </v-checkbox>
-            <v-row class="mt-6">
-              <v-col cols="6" md="6" class="text-left">
-                <v-btn to="/login" color="secondary" tile outlined text large>
-                  {{ $t('Common.login') }}
-                </v-btn>
-              </v-col>
-              <v-col cols="6" md="6" class="text-right">
-                <v-btn
-                  :loading="loading.register"
-                  @click="signup"
-                  color="primary"
-                  elevation="0"
-                  large
-                >
-                  {{ $t('Common.signup') }}
-                </v-btn>
-              </v-col>
-            </v-row>
+        <g-card-header :title="$t('Common.signup')" :description="$t('Signup.description')" />
+        <form-input class="mt-6" :title="$t('Signup.name.title')" />
+        <v-text-field outlined :rules="[rules.min(3, user.name)]" v-model="user.name" />
+        <form-input :title="$t('Signup.username.title')" />
+        <v-text-field
+          outlined
+          :rules="[rules.min(3, user.username)]"
+          :error-messages="localRules.usernameUnavaliable"
+          v-model="user.username"
+        />
+        <form-input :title="$t('Signup.email.title')" />
+        <v-text-field
+          outlined
+          v-model="user.email"
+          :rules="[rules.email(user.email)]"
+          :error-messages="localRules.emailAlreadyRegistered"
+        />
+        <form-input :title="$t('Common.password.label')" />
+        <v-text-field
+          :rules="[rules.min(8, user.password)]"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword = !showPassword"
+          :type="showPassword ? 'text' : 'password'"
+          outlined
+          v-model="user.password"
+        />
+        <form-input :title="$t('Common.confirmPassword.label')" />
+        <v-text-field
+          :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
+          :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showConfirmPassword = !showConfirmPassword"
+          :type="showConfirmPassword ? 'text' : 'password'"
+          outlined
+          v-model="user.confirmPassword"
+        />
+        <v-checkbox
+          v-model="termsAndConditions"
+          :rules="[v => !!v || $t('Rules.termsAndConditions')]"
+          :error-messages="localRules.termsAndConditions"
+        >
+          <template v-slot:label>
+            <div>
+              {{ $t('Signup.termsAndConditions.text') }}
+              <strong @click="$router.push('/terms-and-conditions')" class="primary--text">
+                {{ $t('Signup.termsAndConditions.termsAndConditions') }}
+              </strong>
+            </div>
           </template>
-        </g-card-header>
+        </v-checkbox>
+      </template>
+      <template v-slot:buttons>
+        <div class="d-flex justify-space-between ma-6">
+          <v-btn to="/login" color="secondary" tile outlined text large>
+            {{ $t('Common.login') }}
+          </v-btn>
+          <v-btn :loading="loading.register" @click="signup" color="primary" elevation="0" large>
+            {{ $t('Common.signup') }}
+          </v-btn>
+        </div>
       </template>
     </g-card>
   </div>
