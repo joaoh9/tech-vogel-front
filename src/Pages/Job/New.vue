@@ -1,9 +1,12 @@
 <template>
   <div class="d-flex justify-center mt-12">
-    <g-card>
-      <template v-slot:card-content>
-        <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep" class="mb-6">
-          <template v-slot:default="{}" class="mb-6">
+    <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep" class="mb-6">
+      <template v-slot:default="{}" class="mb-6">
+        <g-card>
+          <template v-slot:card-header>
+            <g-card-header :title="$t(`Job.new.page${currentStep + 1}.title`)" />
+          </template>
+          <template v-slot:card-content>
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
               <BasicInfo
                 v-on:title="r => (job.title = r)"
@@ -11,11 +14,6 @@
                 v-on:contract-type="r => (job.contractType = r)"
                 v-on:advance="step++"
               />
-              <div class="d-flex justify-end">
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
-                  {{ $t('Common.next') }}
-                </v-btn>
-              </div>
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
               <About
@@ -24,14 +22,6 @@
                 v-on:back="step--"
                 v-on:advance="step++"
               />
-              <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
-                  {{ $t('Common.back') }}
-                </v-btn>
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
-                  {{ $t('Common.next') }}
-                </v-btn>
-              </div>
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
               <Skills
@@ -42,14 +32,6 @@
                 v-on:back="step--"
                 v-on:advance="step++"
               />
-              <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
-                  {{ $t('Common.back') }}
-                </v-btn>
-                <v-btn large color="primary" @click="currentStep += 1" class="align-self-end mr-12">
-                  {{ $t('Common.next') }}
-                </v-btn>
-              </div>
             </div>
             <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
               <Benefits
@@ -62,20 +44,25 @@
                 v-on:back="step--"
                 v-on:advance="preview"
               />
-              <div class="d-flex justify-space-between">
-                <v-btn large outlined color="tertiary" @click="currentStep -= 1" class="ml-12">
-                  {{ $t('Common.back') }}
-                </v-btn>
-                <v-btn large color="primary" @click="preview()" class="align-self-end mr-12">
-                  {{ $t('Common.finish') }}
-                </v-btn>
-              </div>
             </div>
           </template>
-          >
-        </Stepper>
+          <template v-slot:buttons>
+            <div
+              :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  ma-6`"
+              style="z-index: -1"
+            >
+              <g-btn
+                :label="$t('Common.back')"
+                v-if="currentStep > 0"
+                type="secondary"
+                @click="currentStep--"
+              />
+              <g-btn :label="$t('Common.next')" type="primary" @click="currentStep++" />
+            </div>
+          </template>
+        </g-card>
       </template>
-    </g-card>
+    </Stepper>
   </div>
 </template>
 
