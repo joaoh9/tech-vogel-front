@@ -1,22 +1,15 @@
 <template>
   <div>
-    <g-card-header
-      :title="$t('CV.register.workExperience.title')"
-      :description="$t('CV.register.workExperience.description')"
-    >
-      <template v-slot:content="{}">
-        <Wrapper
-          :component="workComponent"
-          v-on:update-items="
-            e => {
-              job = e;
-              $emit('job', job);
-            }
-          "
-        ></Wrapper>
-        <slot />
-      </template>
-    </g-card-header>
+    <Wrapper
+      :component="workComponent"
+      v-on:update-items="
+        e => {
+          job = e;
+          $emit('job', job);
+        }
+      "
+    ></Wrapper>
+    <slot />
   </div>
 </template>
 

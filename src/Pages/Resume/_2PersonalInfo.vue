@@ -1,41 +1,39 @@
 <template>
   <div>
-    <g-card-header
-      :title="$t('CV.register.personalInfo.title')"
-      :description="$t('CV.register.personalInfo.description')"
-    >
-      <template v-slot:content="{}">
-        <form-input
-          class="mt-6"
-          tooltip="teste"
-          position="left"
-          :title="$t('CV.register.personalInfo.fullName.title')"
+    <form-input
+      class="mt-6"
+      tooltip="teste"
+      position="left"
+      :title="$t('CV.register.personalInfo.fullName.title')"
+    />
+    <v-text-field
+      placeholder="Ex: João"
+      v-model="fullName"
+      v-on:input="$emit('full-name', fullName)"
+      outlined
+    />
+    <form-input class="mt-6" :title="$t('CV.register.personalInfo.location.title')" />
+    <v-row>
+      <v-col cols="12" md="8">
+        <v-text-field
+          v-model="location.city"
+          v-on:input="$emit('location', location)"
+          class="mt-n3"
+          outlined
+          :placeholder="$t('CV.register.personalInfo.location.city')"
         />
-        <v-text-field placeholder="Ex: João" v-model="fullName" v-on:input="$emit('full-name', fullName)" outlined />
-        <form-input class="mt-6" :title="$t('CV.register.personalInfo.location.title')" />
-        <v-row>
-          <v-col cols="12" md="8">
-            <v-text-field
-              v-model="location.city"
-              v-on:input="$emit('location', location)"
-              class="mt-n3"
-              outlined
-              :placeholder="$t('CV.register.personalInfo.location.city')"
-            />
-          </v-col>
-          <v-col cols="12" md="4">
-            <v-text-field
-              v-model="location.country"
-              v-on:input="$emit('location', location)"
-              class="mt-n3"
-              outlined
-              :placeholder="$t('CV.register.personalInfo.location.country')"
-            />
-          </v-col>
-        </v-row>
-        <slot/>
-      </template>
-    </g-card-header>
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-text-field
+          v-model="location.country"
+          v-on:input="$emit('location', location)"
+          class="mt-n3"
+          outlined
+          :placeholder="$t('CV.register.personalInfo.location.country')"
+        />
+      </v-col>
+    </v-row>
+    <slot />
   </div>
 </template>
 
