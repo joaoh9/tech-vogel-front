@@ -2,17 +2,17 @@
   <v-dialog v-model="dialog" :min-width="minWidth()">
     <template v-slot:activator="{ on, attrs }">
       <div class="d-flex justify-end mb-4">
-        <v-btn v-on="on" v-bind="attrs" class="mr-6" @click="giveUsFeedback()" text>
+        <v-btn large v-on="on" v-bind="attrs" class="mr-6" @click="giveUsFeedback()" text>
           {{ $t('Common.feedback') }}
         </v-btn>
       </div>
     </template>
     <div class="d-flex justify-center mt-12 ma-0">
-      <g-card :minsm="'100%'">
+      <g-card :minsm="'100'">
         <template v-slot:card-content>
-          <div class="mx-sm-12 mx-4 my-4">
-            <g-card-header title="Deixe seu feedback" />
-            <form-input :title="$t('Feedback.title')" />
+          <g-card-header :title="$t('Feedback.title')" />
+          <div class="mx-sm-12 mx-4 mt-4">
+            <form-input :title="$t('Feedback.topic')" />
             <v-text-field v-model="topic" outlined />
             <form-input :title="$t('Feedback.description')" />
             <v-textarea outlined v-model="description" />
