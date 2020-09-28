@@ -1,6 +1,10 @@
 <template>
   <div>
-    <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0">
+    <v-app-bar
+      :color="this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg'"
+      hide-on-scroll
+      elevation="0"
+    >
       <v-btn class="body-2" text color="white darken-4" tile elevation="0" to="/">
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="logo" />

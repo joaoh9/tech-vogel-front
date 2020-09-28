@@ -1,7 +1,7 @@
 <template>
   <div>
     <form-input class="mt-6" :title="$t('CV.register.preferences.jobInterests.title')" />
-    <div class="d-flex justify-space-between">
+    <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
         v-model="jobInterests"
         v-on:input="$emit('job-interests', jobInterests)"
@@ -13,7 +13,7 @@
       />
     </div>
     <form-input class="mt-6" :title="$t('CV.register.preferences.jobType.title')" />
-    <div class="d-flex justify-space-between">
+    <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
         v-model="jobType"
         v-on:input="$emit('job-type', jobType)"

@@ -505,12 +505,12 @@ const localeEnUs = {
         title: 'Select your preferences',
         description: 'You’ll be able to edit these or add more information later on.',
         jobInterests: {
-          title: 'What company size fits you best?',
+          title: 'Which company size fits you best?',
           options: [ 'Startups', 'Small and medium', 'Large' ],
           placeholder: 'Pick a category',
         },
         jobType: {
-          title: 'What job types are you looking for?',
+          title: 'Which job types are you looking for?',
           options: [ 'Full time', 'Part time', 'Freelance' ],
         },
       },
@@ -546,6 +546,12 @@ const localeEnUs = {
           addMore: 'ADDMORE',
           continue: 'CONTINUE',
         },
+        placeholders: {
+          company: {
+            title: 'Company name',
+          },
+          position: 'Ex: DevOps',
+        },
       },
       skills: {
         title: 'Tell us about your skills',
@@ -573,6 +579,13 @@ const localeEnUs = {
         to: 'To',
         addMore: 'ADD MORE',
         continue: 'CONTINUE',
+        placeholders: {
+          degree: 'Name of the course',
+          type: 'Ex: Bachelor',
+          institution: 'Name of the Institution',
+          from: 'From',
+          to: 'To',
+        },
       },
       extras: {
         title: 'Anything else?',

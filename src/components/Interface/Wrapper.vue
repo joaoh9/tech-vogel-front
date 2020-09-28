@@ -17,31 +17,37 @@
         ></component>
       </div>
     </div>
-    <div class="d-flex justify-space-between">
-      <v-btn
-        icon
-        color="secondary"
-        v-on:click="currentItem -= 1"
-        v-bind:style="{ display: currentItem == 0 ? 'none' : 'block' }"
-      >
-        <v-icon>mdi-arrow-left</v-icon>
-      </v-btn>
-      <v-spacer></v-spacer>
-      <v-btn
-        icon
-        color="secondary"
-        v-on:click="currentItem += 1"
-        v-bind:style="{ display: currentItem + 1 == itemsLen ? 'none' : 'block' }"
-      >
-        <v-icon>mdi-arrow-right</v-icon>
-      </v-btn>
-    </div>
-    <div class="d-flex justify-center">
-
-    <v-btn outlined color="secondary" v-on:click="newItem">
-      Add new
-    </v-btn>
-    </div>
+    <v-row align="center">
+      <v-col cols="3">
+        <div class="d-flex justify-start">
+          <v-btn
+            icon
+            color="secondary"
+            v-on:click="currentItem -= 1"
+            v-bind:style="{ display: currentItem == 0 ? 'none' : 'block' }"
+          >
+            <v-icon color="dark" large>fa-arrow-alt-circle-left</v-icon>
+          </v-btn>
+        </div>
+      </v-col>
+      <v-col cols="6">
+        <div class="d-flex justify-center">
+          <g-btn :label="$t('Common.addNewInput')" type="secondary" outlined @click="newItem" />
+        </div>
+      </v-col>
+      <v-col cols="3">
+        <div class="d-flex justify-end">
+          <v-btn
+            icon
+            color="secondary"
+            v-on:click="currentItem += 1"
+            v-bind:style="{ display: currentItem + 1 == itemsLen ? 'none' : 'block' }"
+          >
+            <v-icon large>fa-arrow-alt-circle-right</v-icon>
+          </v-btn>
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
