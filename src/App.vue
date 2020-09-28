@@ -1,7 +1,7 @@
 <template>
   <v-app v-bind:style="getPageStyle()">
     <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
-    <Navbar v-if="notLP()"></Navbar>
+    <Navbar :key="$router.currentRoute.name" v-if="notLP()"></Navbar>
     <v-main>
       <router-view class="view"></router-view>
     </v-main>

@@ -1,11 +1,6 @@
 <template>
   <div>
-    <v-app-bar
-      app
-      :color="this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg'"
-      hide-on-scroll
-      elevation="0"
-    >
+    <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0">
       <v-btn class="body-2" text color="white darken-4" tile elevation="0" to="/">
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="logo" />
@@ -16,9 +11,15 @@
       <v-btn class="body-2" @click="goToPricing" color="grey darken-3" text>Pricing</v-btn>
       <v-btn class="body-2" @click="goToHowItWorks" color="grey darken-3" text>How It Works</v-btn>
       <v-spacer />
-      <!-- <v-btn to="content" color="grey darken-3" text>Sign Up</v-btn> -->
-      <g-btn-primary @click="goToSignup()" :label="$t('Common.signup')" />
-      <g-btn-secondary @click="goToLogin()" class="mx-4" :label="$t('Common.login')" />
+      <g-btn type="filled" text="primary" color="bg" to="/signup" :label="$t('Common.findAJob')" />
+      <g-btn type="primary" class="ml-4" to="/company/new" :label="$t('Common.postAJob')" />
+      <g-btn
+        type="outlined"
+        :color="getBgColor() === 'bg' ? 'dark' : 'bg'"
+        to="/login"
+        class="mx-4"
+        :label="$t('Common.login')"
+      />
     </v-app-bar>
   </div>
 </template>
@@ -48,6 +49,9 @@ export default {
     goToJobList() {},
     goToPricing() {},
     goToHowItWorks() {},
+    getBgColor() {
+      return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
+    },
   },
 };
 </script>
