@@ -70,6 +70,10 @@ const localeEnUs = {
     jobs: 'Jobs',
     job: 'Job',
     name: 'Name',
+    addNew: 'Add new',
+    addNewInput: 'Add new input',
+    findAJob: 'Find a Job',
+    postAJob: 'Post a Job',
     email: {
       placeholder: 'Email',
       label: 'Email',
