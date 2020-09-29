@@ -15,7 +15,13 @@
       <v-btn class="body-2" @click="goToPricing" color="grey darken-3" text>Pricing</v-btn>
       <v-btn class="body-2" @click="goToHowItWorks" color="grey darken-3" text>How It Works</v-btn>
       <v-spacer />
-      <g-btn type="filled" text="primary" color="bg" to="/signup" :label="$t('Common.findAJob')" />
+      <g-btn
+        type="filled"
+        :color="getBgColor() === 'bg' ? 'primary' : 'bg'"
+        textColor="black"
+        to="/signup"
+        :label="$t('Common.findAJob')"
+      />
       <g-btn type="primary" class="ml-4" to="/company/new" :label="$t('Common.postAJob')" />
       <g-btn
         type="outlined"

@@ -59,7 +59,12 @@
                 type="secondary"
                 @click="currentStep--"
               />
-              <g-btn v-if="currentStep > 0" :label="$t('Common.next')" type="primary" @click="currentStep++" />
+              <g-btn
+                v-if="currentStep > 0"
+                :label="$t('Common.next')"
+                type="primary"
+                @click="currentStep++"
+              />
             </div>
           </template>
         </g-card>
@@ -152,7 +157,9 @@ export default {
       }
     },
 
-    validateResume() {},
+    validateResume() {
+      return true; // TODO
+    },
   },
 };
 </script>

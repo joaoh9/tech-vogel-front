@@ -1,64 +1,17 @@
 <template>
   <v-btn
-    v-if="type === 'primary'"
     @click="$emit('click')"
-    color="primary"
-    class="px-4"
     large
-    elevation="0"
+    :color="getColor()"
+    :outlined="getOutline()"
+    :elevation="getElevation()"
+    :text="getText()"
+    :class="`px-4 ${textColor ? `${textColor}--text` : ''} ${buttonClass}`"
     :to="to"
+    :block="block"
     :dark="dark"
-  >
-    {{ label }}
-  </v-btn>
-  <v-btn
-    v-else-if="type === 'secondary'"
-    @click="$emit('click')"
-    color="secondary"
-    outlined
-    class="px-4"
-    large
-    elevation="0"
-    :to="to"
-    :dark="dark"
-  >
-    {{ label }}
-  </v-btn>
-  <v-btn
-    v-else-if="type === 'outlined'"
-    @click="$emit('click')"
-    :color="color"
-    :class="`px-4 ${text ? `${text}--text` : ''}`"
-    outlined
-    class="px-4"
-    large
-    elevation="0"
-    :to="to"
-    :dark="dark"
-  >
-    {{ label }}
-  </v-btn>
-  <v-btn
-    v-else-if="type === 'filled'"
-    @click="$emit('click')"
-    :color="color"
-    :class="`px-4 ${text ? `${text}--text` : ''}`"
-    large
-    elevation="0"
-    :to="to"
-    :dark="dark"
-  >
-    {{ label }}
-  </v-btn>
-  <v-btn
-    v-else-if="type === 'shadow'"
-    @click="$emit('click')"
-    :color="color"
-    :class="`px-4 ${text ? `${text}--text` : ''}`"
-    large
-    elevation="6"
-    :to="to"
-    :dark="dark"
+    :href="href"
+    max-width="maxwidth"
   >
     {{ label }}
   </v-btn>
@@ -78,6 +31,53 @@ export default {
     },
     color: String,
     text: String,
+    block: Boolean,
+    href: String,
+    textColor: {
+      type: String,
+      default: undefined,
+    },
+    maxwidth: [ String, Number ],
+  },
+  methods: {
+    getElevation() {
+      switch (this.type) {
+        case 'primary':
+        case 'secondary':
+        case 'filled':
+        case 'outlined':
+          return 0;
+        case 'shadow':
+          return 6;
+      }
+    },
+    getColor() {
+      switch (this.type) {
+        case 'primary':
+          return 'primary';
+        case 'secondary':
+          return 'secondary';
+        default:
+          return this.color;
+      }
+    },
+    getOutline() {
+      switch (this.type) {
+        case 'primary':
+        case 'secondary':
+          return false;
+        default:
+          return true;
+      }
+    },
+    getText() {
+      switch (this.type) {
+        case 'text':
+          return true;
+        default:
+          return false;
+      }
+    },
   },
 };
 </script>
