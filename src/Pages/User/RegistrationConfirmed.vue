@@ -12,16 +12,6 @@
               }}
             </h4>
             <div class="d-flex flex-column justify-space-around align-center mt-12">
-              <span @click="resendCode = true" class="body-1 cursor-pointer color-cinza-lighten-1">
-                {{ $t('Signup.resendConfirmationCode.title') }}
-              </span>
-
-              <div v-if="!confirmationId && resendCode" style="min-width: 60%" class="mt-6">
-                <form-input class="mt-6" title="Your email" />
-                <v-text-field outlined v-model="email" />
-                <v-btn class="float-right" @click="resendConfirmationCode" large color="primary">Resend</v-btn>
-              </div>
-
               <v-btn
                 v-if="confirmationId"
                 to="/login"
@@ -78,18 +68,6 @@ export default {
         this.confirmationId = true;
       } catch (e) {
         this.confirmationId = false;
-      }
-    },
-    async resendConfirmationCode() {
-      const userController = new UserController();
-
-      try {
-        const success = await userController.resendConfirmationEmail({ email: this.email });
-        if (success.success) {
-          this.requestSuccess = true;
-        }
-      } catch (e) {
-        this.requestError = true;
       }
     },
   },

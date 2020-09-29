@@ -8,19 +8,36 @@
             <span class="body-1 align-self-center color-cinza-lighten-1 mt-4">
               {{ $t('Signup.confirmEmail.description') }}
             </span>
-            <div class="d-flex justify-space-around align-center mt-12 flex-wrap">
-              <span
-                @click="resendConfirmationCode()"
+            <div class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap">
+              <g-btn
+                type="text"
+                textColor="black"
+                @click="resendCode = !resendCode"
                 class="body-1 cursor-pointer color-cinza-lighten-1"
-              >
-                {{ $t('Signup.resendConfirmationCode.title') }}
-              </span>
-              <v-btn to="/login" large color="primary" elevation="0" max-width="100">
-                {{ $t('Common.login') }}
-              </v-btn>
+                :label="$t('Signup.resendConfirmationCode.title')"
+              />
+
+              <div v-if="resendCode" style="min-width: 60%" class="mt-6">
+                <form-input class="mt-6" title="Your email" />
+                <v-text-field outlined v-model="email" />
+                <g-btn
+                  class="float-right"
+                  @click="resendConfirmationCode()"
+                  type="primary"
+                  :label="$t('Signup.resendConfirmationCode.resend')"
+                />
+              </div>
+              <g-btn
+                class="mt-4"
+                type="primary"
+                v-else
+                to="/login"
+                maxwidth="100"
+                :label="$t('Common.login')"
+              />
             </div>
-          </div>
-        </template>s
+          </div> </template
+        >s
       </g-card>
     </div>
     <g-alert
@@ -46,6 +63,8 @@ export default {
     return {
       requestSuccess: false,
       requestError: false,
+      resendCode: false,
+      email: '',
     };
   },
   methods: {
@@ -53,7 +72,7 @@ export default {
       const userController = new UserController();
 
       try {
-        const success = await userController.resendConfirmationEmail({ email: this.user.email });
+        const success = await userController.resendConfirmationEmail({ email: this.email });
         if (success.success) {
           this.requestSuccess = true;
         }

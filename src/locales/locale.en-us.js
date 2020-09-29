@@ -55,6 +55,7 @@ const localeEnUs = {
     aboutUs: 'About Us',
     content: 'Content',
     next: 'Next',
+    confirm: 'Confirm',
     back: 'Go Back',
     maximum: 'Maximum',
     minimum: 'Minimum',
@@ -459,6 +460,7 @@ const localeEnUs = {
       title: 'Didn’t get the access code? Click here to resend.',
       success: 'The code was sent to your email!',
       error: 'There was an error sending the email :(. Please try again later.',
+      resend: 'Resend',
     },
     registrationConfirmed: {
       title: 'Your email has been confirmed!',
@@ -593,6 +595,13 @@ const localeEnUs = {
           'Here you can add any extra information, like certifications,\n volunteer work or ??? You’ll be able to edit these or add more\n information later on.',
         button: 'I’M DONE!',
       },
+    },
+  },
+  OAuth: {
+    github: {
+      confirm: 'Confirm GitHub acces to Tech Vogel?',
+      accessSucces: 'Github account successfully linked to Tech Vogel',
+      accessError: 'An error occurred when authorizing the application. Please try again later.',
     },
   },
   Feedback: {
