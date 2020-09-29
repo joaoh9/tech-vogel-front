@@ -408,6 +408,7 @@ const localeEnUs = {
     companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
     contractType: [ 'Full-Time', 'Part-time', 'Hourly' ],
     experienceLevel: [ 'Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager' ],
+    jobInterests: [ 'Startups', 'Small and medium', 'Large' ],
     languages: Languages,
     differentLanguages: DifferentLanguages,
     timezones: Timezones,

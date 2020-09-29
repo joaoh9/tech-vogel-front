@@ -12,4 +12,8 @@ export default {
   defaultLocale: defaultLanguage,
   client_id: process.env.VUE_APP_CLIENT_ID,
   client_secret: process.env.VUE_APP_CLIENT_SECRET,
+  jwt: {
+    secret: process.env.VUE_APP_JWT_SECRET || 'secret',
+    expiresIn: process.env.VUE_APP_JWT_EXPIRESIN || '1h',
+  },
 };

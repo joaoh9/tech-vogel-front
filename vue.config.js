@@ -13,9 +13,18 @@ module.exports = {
         changeOrigin: true,
       },
       '^/resend-confirmation-link': {
-        target: 'https://run.mocky.io/v3/67948d36-0279-479c-9d06-02c4ea79ad37',
+        target: 'https://run.mocky.io/v3/67948d36-0279-479c-9d06-02c4ea79ad37', // TODO
         pathRewrite: { '^/api': '' },
-        ws: true,
+        changeOrigin: true,
+      },
+      '^/api-github': {
+        target: 'https://github.com/login/oauth',
+        pathRewrite: { '^/api-github': '' },
+        changeOrigin: true,
+      },
+      '/api-github': {
+        target: 'https://github.com/login/oauth',
+        pathRewrite: { '^/api-github': '' },
         changeOrigin: true,
       },
     },
@@ -33,6 +42,7 @@ module.exports = {
         Data: path.resolve(__dirname, 'src/data/'),
         Oficiona: path.resolve(__dirname, 'oficiona'),
         '@': path.resolve(__dirname, 'src'),
+        '@config': path.resolve(__dirname, 'src/config'),
         Public: path.resolve(__dirname, 'public'),
       },
     },
