@@ -1,10 +1,10 @@
 <template>
-  <v-app v-bind:style="getPageStyle()">
+  <v-app :style="getPageStyle()">
     <Navbar :key="$router.currentRoute.name" v-if="notLP()"></Navbar>
-    <v-main>
+    <v-main :style="getPageStyle()">
       <router-view class="view"></router-view>
     </v-main>
-    <Footer class="mt-12" />
+    <Footer :style="getPageStyle(true)" />
   </v-app>
 </template>
 
@@ -41,15 +41,20 @@ export default {
     notLP() {
       return this.$router.history.current.name !== 'LandingPage';
     },
-    getPageStyle() {
+    getPageStyle(footer = false) {
       const pageStyle = {
-        backgroundColor: '#FCFCFF',
+        'background-color': '#FCFCFF',
+        background: '#FCFCFF',
       };
 
       if (this.$router.currentRoute.name === 'Home') {
-        pageStyle.background =
-          'linear-gradient(156deg, rgba(67, 54, 147, 0.5) 8.83%,  #3AA3FF 62.18%), #433693';
+        pageStyle.background = 'linear-gradient(180deg, #1A193C 2.83%,  #3AA3FF 62.18%), #433693';
       }
+      if (footer && this.$router.currentRoute.name === 'Home') {
+        pageStyle.background = 'transparent';
+        pageStyle['background-color'] = 'transparent';
+      }
+
       return pageStyle;
     },
     giveUsFeedback() {

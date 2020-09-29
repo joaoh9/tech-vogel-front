@@ -46,12 +46,15 @@ export default {
       default: false,
     },
     color: String,
-    text: String,
     block: Boolean,
     href: String,
     textColor: {
       type: String,
       default: undefined,
+    },
+    text: {
+      type: Boolean,
+      default: false,
     },
     maxwidth: [ String, Number ],
     minwidth: [ String, Number ],
@@ -84,6 +87,9 @@ export default {
           return false;
         case 'secondary':
           return true;
+        case 'outlined':
+        case 'outline':
+          return true;
         default:
           return false;
       }
@@ -93,7 +99,7 @@ export default {
         case 'text':
           return true;
         default:
-          return false;
+          return this.text || false;
       }
     },
   },

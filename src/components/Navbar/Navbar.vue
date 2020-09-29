@@ -1,37 +1,32 @@
 <template>
-  <div>
-    <v-app-bar
-      :color="this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg'"
-      hide-on-scroll
-      elevation="0"
-    >
-      <v-btn class="body-2" text color="white darken-4" tile elevation="0" to="/">
-        <v-avatar width="150" tile>
-          <v-img contain height="60" width="1" :src="logo" />
-        </v-avatar>
-      </v-btn>
-      <v-spacer />
-      <v-btn class="body-2" @click="goToJobList" color="grey darken-3" text>Jobs</v-btn>
-      <v-btn class="body-2" @click="goToPricing" color="grey darken-3" text>Pricing</v-btn>
-      <v-btn class="body-2" @click="goToHowItWorks" color="grey darken-3" text>How It Works</v-btn>
-      <v-spacer />
-      <g-btn
-        type="filled"
-        :color="getBgColor() === 'bg' ? 'primary' : 'bg'"
-        textColor="black"
-        to="/signup"
-        :label="$t('Common.findAJob')"
-      />
-      <g-btn type="primary" class="ml-4" to="/company/new" :label="$t('Common.postAJob')" />
-      <g-btn
-        type="outlined"
-        :color="getBgColor() === 'bg' ? 'dark' : 'bg'"
-        to="/login"
-        class="mx-4"
-        :label="$t('Common.login')"
-      />
-    </v-app-bar>
-  </div>
+  <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
+    <v-btn class="body-2" text color="white darken-4" tile elevation="0" to="/">
+      <v-avatar width="150" tile>
+        <v-img contain height="60" width="1" :src="logo" />
+      </v-avatar>
+    </v-btn>
+    <v-spacer />
+    <v-btn class="body-2" @click="goToJobList" color="bg" text>Jobs</v-btn>
+    <v-btn class="body-2" @click="goToPricing" color="bg" text>Pricing</v-btn>
+    <v-btn class="body-2" @click="goToHowItWorks" color="bg" text>How It Works</v-btn>
+    <v-spacer />
+    <g-btn
+      :type="isHome() ? 'text' : 'text'"
+      :text="isHome() ? true : false"
+      :color="isHome() ? 'primary' : 'dark'"
+      :textColor="isHome() ? 'primary' : 'dark'"
+      to="/signup"
+      :label="$t('Common.findAJob')"
+    />
+    <g-btn type="primary" class="ml-4" to="/company/new" :label="$t('Common.postAJob')" />
+    <g-btn
+      type="outlined"
+      :color="isHome() ? 'bg' : 'dark'"
+      to="/login"
+      class="mx-4"
+      :label="$t('Common.login')"
+    />
+  </v-app-bar>
 </template>
 
 <script>
@@ -56,11 +51,21 @@ export default {
         path: '/login',
       });
     },
-    goToJobList() {},
-    goToPricing() {},
-    goToHowItWorks() {},
+    goToJobList() {
+      // TODO
+    },
+    goToPricing() {
+      // TODO
+    },
+    goToHowItWorks() {
+      // TODO
+    },
     getBgColor() {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
+    },
+    isHome() {
+      console.log(this.$router.currentRoute.name === 'Home');
+      return this.$router.currentRoute.name === 'Home';
     },
   },
 };
