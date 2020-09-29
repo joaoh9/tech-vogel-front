@@ -15,7 +15,7 @@
       </v-tabs>
       <slot name="default" />
     </div>
-    <v-divider class="mb-4" />
+    <v-divider v-if="$vuetify.breakpoint.smAndDown" class="mb-4" />
     <div class="d-flex justify-center my-2" v-if="$vuetify.breakpoint.smAndDown">
       <v-rating
         :value="this.stepBottomNav"
@@ -42,6 +42,9 @@ export default {
     value: [ Number, String ],
     stepsNames: Array,
   },
+  mounted() {
+    this._value = this.value
+  },
   data() {
     return {
       step: 1,
@@ -61,29 +64,29 @@ export default {
       return stepsExibition;
     },
     stepBottomNav() {
-      return this.value + 1;
+      return this._value + 1;
     },
   },
   methods: {
     getTitleStyle(step) {
       return {
-        color: this.value === step ? '#ff9200' : '',
+        color: this._value === step ? '#ff9200' : '',
       };
     },
     getStepIndicatorStyle(step) {
       return {
-        'background-color': this.value === step ? '#ff9200' : 'rgba(123,23,23,0)',
+        'background-color': this._value === step ? '#ff9200' : 'rgba(123,23,23,0)',
         width: '2px',
         height: '25px',
       };
     },
     updateStep(step) {
-      this.value = step;
-      this.$emit('input', this.value);
+      this._value = step;
+      this.$emit('input', this._value);
     },
     updateStepBottomNav(step) {
-      this.value = step - 1;
-      this.$emit('input', this.value);
+      this._value = step - 1;
+      this.$emit('input', this._value);
     },
   },
 };

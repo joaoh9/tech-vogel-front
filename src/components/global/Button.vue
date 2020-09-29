@@ -1,5 +1,16 @@
 <template>
   <v-btn
+    v-if="type === 'disabled'"
+    disabled
+    @click="$emit('click')"
+    large
+    :min-width="minwidth"
+    :max-width="maxwidth"
+  >
+    {{ label }}
+  </v-btn>
+  <v-btn
+    v-else
     @click="$emit('click')"
     large
     :color="getColor()"
@@ -11,8 +22,8 @@
     :block="block"
     :dark="dark"
     :href="href"
-    :disabled="disabled"
-    max-width="maxwidth"
+    :min-width="minwidth"
+    :max-width="maxwidth"
   >
     {{ label }}
   </v-btn>
@@ -43,6 +54,7 @@ export default {
       default: undefined,
     },
     maxwidth: [ String, Number ],
+    minwidth: [ String, Number ],
   },
   methods: {
     getElevation() {
@@ -69,10 +81,11 @@ export default {
     getOutline() {
       switch (this.type) {
         case 'primary':
-        case 'secondary':
           return false;
-        default:
+        case 'secondary':
           return true;
+        default:
+          return false;
       }
     },
     getText() {

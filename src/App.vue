@@ -1,6 +1,5 @@
 <template>
   <v-app v-bind:style="getPageStyle()">
-    <UserNavbar v-if="userIsLoggedIn()"></UserNavbar>
     <Navbar :key="$router.currentRoute.name" v-if="notLP()"></Navbar>
     <v-main>
       <router-view class="view"></router-view>
@@ -11,7 +10,6 @@
 
 <script>
 import Navbar from 'Components/Navbar/Navbar';
-import UserNavbar from 'Components/Navbar/UserNavbar';
 import Storage from 'Helpers/storage';
 import Footer from 'Components/Footer';
 import 'Public/css/typography.css';
@@ -29,7 +27,6 @@ export default {
   },
   components: {
     Navbar,
-    UserNavbar,
     Footer,
   },
   methods: {

@@ -32,7 +32,13 @@
       </v-col>
       <v-col cols="6">
         <div class="d-flex justify-center">
-          <g-btn :label="$t('Common.addNewInput')" type="secondary" outlined @click="newItem" />
+          <g-btn
+            :label="$t('Common.addNewInput')"
+            type="filled"
+            color="dark"
+            outlined
+            @click="newItem"
+          />
         </div>
       </v-col>
       <v-col cols="3">
