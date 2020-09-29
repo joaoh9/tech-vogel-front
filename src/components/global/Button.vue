@@ -11,6 +11,7 @@
     :block="block"
     :dark="dark"
     :href="href"
+    :disabled="disabled"
     max-width="maxwidth"
   >
     {{ label }}
@@ -28,6 +29,10 @@ export default {
     dark: {
       type: Boolean,
       default: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     color: String,
     text: String,

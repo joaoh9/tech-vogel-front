@@ -10,4 +10,6 @@ if (language.toLowerCase() === 'pt-br') {
 
 export default {
   defaultLocale: defaultLanguage,
+  client_id: process.env.VUE_APP_CLIENT_ID,
+  client_secret: process.env.VUE_APP_CLIENT_SECRET,
 };
