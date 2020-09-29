@@ -15,10 +15,9 @@
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
               <Preferences
-                v-on:job-category="e => (resume.jobCategory = e)"
-                v-on:job-type="e => (resume.jobType = e)"
-              >
-              </Preferences>
+                v-on:job-category="e => (resume.jobInterests = e)"
+                v-on:contract-type="e => (resume.contractType = e)"
+              />
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
               <PersonalInfo
@@ -101,6 +100,8 @@ export default {
       educationComponent: Education,
       currentStep: 0,
       resume: {
+        contractType: [],
+        jobInterests: [],
         location: {
           city: '',
           country: '',

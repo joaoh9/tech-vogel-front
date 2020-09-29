@@ -1,3 +1,5 @@
+import JwtHelper from './jwt'
+
 const loadState = key => {
   try {
     const serializedState = sessionStorage.getItem(key);

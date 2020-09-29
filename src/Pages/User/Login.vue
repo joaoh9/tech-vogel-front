@@ -48,6 +48,8 @@
 <script>
 import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
+import StorageHelper from 'Helpers/storage';
+import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'Login',
@@ -76,22 +78,35 @@ export default {
       }
       this.loading.login = true;
       try {
-        await userController.login({
+        const statusCode = await userController.login({
           username: this.user.username,
           password: this.user.password,
         });
-
+        if (statusCode === 200) {
+          this.saveUserCredentials();
+        } else {
+          this.requestError = true;
+        }
         this.loading.login = false;
 
         this.$router.push({
           path: '/resume/new',
         });
       } catch (e) {
-        alert(e);
         this.loading.login = false;
         this.requestError = true;
       }
       this.loading.login = false;
+    },
+    async saveUserCredentials() {
+      const userController = new UserController();
+      const jwtHelper = new JwtHelper();
+
+      const userInfo = await userController.getByUsername(this.user.username);
+
+      const userToken = jwtHelper.createToken(userInfo);
+
+      StorageHelper.saveOnSession('user', userToken);
     },
   },
 };
