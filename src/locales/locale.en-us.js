@@ -418,16 +418,6 @@ const localeEnUs = {
     preMadePhrases,
     knowledgeAreas: Skills.KnowledgeAreas,
     programmingLanguages: Skills.ProgrammingLanguages,
-    frameworks: groupFormat(Skills.FrameWorks),
-    softSkills: dataFormat(Skills.SoftSkills),
-    everySkill: groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages })
-      .concat(groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas }))
-      .concat(groupFormat(Skills.FrameWorks)),
-    // .concat(dataFormat(Skills.SoftSkills)),
-    everySkillButSoft: groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages })
-      .concat(groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas }))
-      .concat(Skills.FrameWorks)
-      .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   Signup: {

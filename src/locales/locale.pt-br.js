@@ -265,12 +265,6 @@ export default {
     preMadePhrases,
     knowledgeAreas: Skills.KnowledgeAreas,
     programmingLanguages: Skills.ProgrammingLanguages,
-    frameworks: groupFormat(Skills.FrameWorks2),
-    softSkills: dataFormat(Skills.SoftSkills),
-    everySkill: groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas })
-      .concat(groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages }))
-      .concat(groupFormat(Skills.FrameWorks2)),
-    // .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   format: {
