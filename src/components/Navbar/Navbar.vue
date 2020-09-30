@@ -2,7 +2,7 @@
   <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
     <v-btn class="body-2" text color="white darken-4" tile elevation="0" to="/">
       <v-avatar width="150" tile>
-        <v-img contain height="60" width="1" :src="logo" />
+        <v-img contain height="60" width="1" :src="isHome() ? LogoBranco : LogoPreto" />
       </v-avatar>
     </v-btn>
     <v-spacer />
@@ -30,14 +30,16 @@
 </template>
 
 <script>
-import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
+import LogoPreto from 'Assets/logo-escrita-preto-amarelo.svg';
+import LogoBranco from 'Assets/logo-escrita-branco-amarelo.svg';
 
 export default {
   name: 'Navbar',
   components: {},
   data() {
     return {
-      logo: Logo,
+      LogoPreto,
+      LogoBranco,
     };
   },
   methods: {
@@ -64,7 +66,6 @@ export default {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
     },
     isHome() {
-      console.log(this.$router.currentRoute.name === 'Home');
       return this.$router.currentRoute.name === 'Home';
     },
   },
