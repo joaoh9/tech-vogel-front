@@ -418,6 +418,7 @@ const localeEnUs = {
     preMadePhrases,
     knowledgeAreas: Skills.KnowledgeAreas,
     programmingLanguages: Skills.ProgrammingLanguages,
+    // .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   Signup: {
