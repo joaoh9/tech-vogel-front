@@ -5,7 +5,7 @@
         <form-input class="mt-6" :title="$t('CV.register.education.degree.title')" />
         <v-text-field
           v-model="education.degree"
-          :label="$t('CV.register.education.placeholders.degree')"
+          :placeholder="$t('CV.register.education.placeholders.degree')"
           v-on:input="$emit('update-item', education)"
           outlined
         />
@@ -14,7 +14,7 @@
         <form-input class="mt-6" :title="$t('CV.register.education.type')" />
         <v-text-field
           v-model="education.type"
-          :label="$t('CV.register.education.placeholders.type')"
+          :placeholder="$t('CV.register.education.placeholders.type')"
           v-on:input="$emit('update-item', education)"
           outlined
         />
@@ -24,7 +24,7 @@
     <form-input :title="$t('CV.register.education.institution')" />
     <v-text-field
       v-model="education.institution"
-      :label="$t('CV.register.education.placeholders.institution')"
+      :placeholder="$t('CV.register.education.placeholders.institution')"
       v-on:input="$emit('update-item', education)"
       outlined
     />

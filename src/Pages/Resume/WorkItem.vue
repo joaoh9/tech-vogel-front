@@ -4,14 +4,14 @@
     <v-text-field
       v-model="job.company.title"
       v-on:input="$emit('update-item', job)"
-      :label="$t('CV.register.workExperience.placeholders.company.title')"
+      :placeholder="$t('CV.register.workExperience.placeholders.company.title')"
       outlined
     />
     <form-input class="mt-6" :title="$t('CV.register.workExperience.position')" />
     <v-text-field
       v-model="job.position"
       v-on:input="$emit('update-item', job)"
-      :label="$t('CV.register.workExperience.placeholders.position')"
+      :placeholder="$t('CV.register.workExperience.placeholders.position')"
       outlined
     />
     <v-row>
