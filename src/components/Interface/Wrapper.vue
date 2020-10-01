@@ -3,18 +3,24 @@
     <div>
       <div
         v-for="(item, index) in items"
-        v-bind:key="index"
+        v-bind:key="item._id"
         v-bind:style="{ display: currentItem == index ? 'block' : 'none' }"
       >
         <component
           v-bind:is="component"
           v-on:update-item="
             e => {
+              const wrapperId = items[index]._id;
               items[index] = e;
-              $emit('update-items', items);
+              items[index]._id = wrapperId;
             }
           "
-        ></component>
+        />
+        <div class="d-flex justify-end flex-grow-1">
+          <v-btn icon color="secondary" v-on:click="removeItem(index)">
+            <v-icon>fa-trash</v-icon>
+          </v-btn>
+        </div>
       </div>
     </div>
     <v-row align="center">
@@ -24,7 +30,7 @@
             icon
             color="secondary"
             v-on:click="currentItem -= 1"
-            v-bind:style="{ display: currentItem == 0 ? 'none' : 'block' }"
+            v-bind:style="{ display: itemsLen && currentItem !== 0 ? 'block' : 'none' }"
           >
             <v-icon color="dark" large>fa-arrow-alt-circle-left</v-icon>
           </v-btn>
@@ -47,7 +53,7 @@
             icon
             color="secondary"
             v-on:click="currentItem += 1"
-            v-bind:style="{ display: currentItem + 1 == itemsLen ? 'none' : 'block' }"
+            v-bind:style="{ display: itemsLen && currentItem + 1 !== itemsLen ? 'block' : 'none' }"
           >
             <v-icon large>fa-arrow-alt-circle-right</v-icon>
           </v-btn>
@@ -66,22 +72,27 @@ export default {
   props: ['component'],
   data() {
     return {
-      items: [{}],
+      items: [{ _id: 0 }],
       currentItem: 0,
+      sequence: 1,
     };
   },
   computed: {
     itemsLen() {
-      return this.items.length;
+      return (this.items || []).length;
     },
   },
   methods: {
     newItem() {
-      this.items.push({});
+      this.items.push({ _id: this.sequence++ });
       this.currentItem = this.itemsLen - 1;
     },
     updateCurrentItem(step) {
       this.currentItem = step - 1;
+    },
+    removeItem(index) {
+      this.items.splice(index, 1);
+      if (index) this.currentItem -= 1;
     },
   },
 };
@@ -96,10 +107,4 @@ export default {
   font-family: Open Sans !important;
 }
 
-.sidebar {
-  width: 100%;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 75px;
-}
 </style>
