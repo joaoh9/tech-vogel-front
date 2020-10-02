@@ -8,17 +8,16 @@
         :items="$t('Data.knowledgeAreas')"
       />
     </div>
-    <v-btn-toggle v-model="skill.experience" v-on:change="updateItem" color="primary" class="d-inline-flex justify-center flex-wrap">
-      <v-btn v-for="(xp, index) in xpOptions" v-bind:key="index" outlined :value="xp">{{xp}}</v-btn>
+    <v-btn-toggle
+      v-model="skill.experience"
+      v-on:change="updateItem"
+      color="primary"
+      class="d-inline-flex justify-center flex-wrap"
+    >
+      <v-btn v-for="(xp, index) in xpOptions" v-bind:key="index" outlined :value="xp">{{
+        xp
+      }}</v-btn>
     </v-btn-toggle>
-    <!-- <div>
-      <v-combobox
-        placeholder="Experience"
-        v-model="skill.experience"
-        v-on:input="$emit('skills', skills)"
-        :items="xpOptions"
-      />
-    </div> -->
   </div>
 </template>
 
@@ -39,14 +38,13 @@ export default {
   },
   methods: {
     updateItem() {
-      this.$emit('update-item', this.skill)
+      this.$emit('update-item', this.skill);
     },
   },
-  mounted () {
+  mounted() {
     this.$forceUpdate();
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>

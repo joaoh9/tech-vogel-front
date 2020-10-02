@@ -59,10 +59,16 @@
                 @click="currentStep--"
               />
               <g-btn
-                v-if="currentStep > 0"
+                v-if="currentStep > 0 && currentStep < lastStep"
                 :label="$t('Common.next')"
                 type="primary"
                 @click="currentStep++"
+              />
+              <g-btn
+                v-if="currentStep === lastStep"
+                :label="$t('Common.finish')"
+                type="primary"
+                @click="register"
               />
             </div>
           </template>
@@ -142,6 +148,11 @@ export default {
         },
       },
     };
+  },
+  computed: {
+    lastStep: function _() {
+      return (this.$t('CV.register.pages') || []).length - 1;
+    },
   },
   methods: {
     async register() {

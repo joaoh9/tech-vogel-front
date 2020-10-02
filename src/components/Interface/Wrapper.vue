@@ -13,6 +13,7 @@
               const wrapperId = items[index]._id;
               items[index] = e;
               items[index]._id = wrapperId;
+              $emit('update-items', items);
             }
           "
         />
