@@ -9,26 +9,6 @@ import FlagIcons from 'Data/flagIcons';
 
 import Skills from 'Data/Skills';
 
-function groupFormat(data) {
-  const arr = [];
-  Object.keys(data).forEach(key => {
-    arr.push({ header: key });
-    data[key].forEach(d => arr.push({ name: d, group: key }));
-    arr.push({ divider: true });
-  });
-  return arr;
-}
-
-function dataFormat(data) {
-  const arr = [];
-  Object.keys(data).forEach(key => {
-    arr.push({ header: key });
-    data[key].data.forEach(d => arr.push({ name: d, group: key }));
-    arr.push({ divider: true });
-  });
-  return arr;
-}
-
 const localeEnUs = {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
@@ -75,6 +55,9 @@ const localeEnUs = {
     addNewInput: 'Add new input',
     findAJob: 'Find a Job',
     postAJob: 'Post a Job',
+    language: 'Language',
+    languages: 'Languages',
+    fluency: 'Fluency',
     email: {
       placeholder: 'Email',
       label: 'Email',
@@ -120,81 +103,9 @@ const localeEnUs = {
     title: 'Tech Vogel',
     subtitle: 'Connecting I.T professionals with companies around the world for remote work',
   },
-  Hiring: {
-    _1: {
-      text: 'Sign up, and choose the plan that fits your company needs.',
-      photo: '',
-    },
-    _2: {
-      text: 'Start posting JOB proposals and receiving candidates.',
-      photo: '',
-    },
-    _3: {
-      text: 'Select your Top choices and embrace the remote work for great results!',
-      photo: '',
-    },
-  },
-  Applying: {
-    _1: {
-      text: 'Sign Up, and get your credits',
-      photo: '',
-    },
-    _2: {
-      text: 'Apply for  Jobs you are most likely to suceed.',
-      photo: '',
-    },
-    _3: {
-      text: 'Apply for  Jobs you are most likely to suceed.',
-      photo: '',
-    },
-  },
-  AboutUs: {
-    _1:
-      'Tech Vogel came into life to give another option for companies and professionals to achieve better results at work and live a better life. We truly believe that with remote work companies can find the best professionals that fit perfectly for the job, choosing to look outside their comfort zone and finding qualified workforce around the globe, with less time and money expended.',
-    _2:
-      'The future of work comes with new visions and a chase for a better quality of life. We stand for work done with professionalism, in time, with excellency and liberty.',
-    _3:
-      'More time spent doing what you love and learning new things, giving your best at the job and choosing where you want to work the next day. This is what we aim for.',
-    _4: 'Liberty comes with responsibility, and remote work calls for both.',
-    _5: 'Embrace the remote work, and join the new era with Tech Vogel.',
-  },
-  WhyRemote: {
-    _1: '',
-    _2: '',
-  },
-  skills: {
-    _title: 'Skills',
-    softSkills: 'Soft skills',
-    knowledgeAreas: 'Knowledge Areas',
-    frameworks: 'Frameworks',
-    programmingLanguages: 'Programming languages',
-    customSkills: 'Custom skills',
-  },
+  AboutUs:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget posuere odio varius aliquet massa aliquam iaculis malesuada. Sapien ut pharetra libero a dictum sit. Egestas vitae quisque purus interdum arcu. Hendrerit erat sed ut tincidunt. Amet luctus vestibulum vel sit tellus id arcu gravida. Augue non eu, urna augue varius. Sapien ut pharetra libero a dictum sit. Egestas vitae quisque purus interdum arcu. Hendrerit erat sed ut tincidunt. Amet luctus vestibulum vel sit tellus id arcu gravida. Augue non eu, urna augue varius',
   Resume: {
-    sidePannel: [
-      {
-        text: 'New resume',
-        icon: 'mdi-plus',
-        //   route: 'new',
-      },
-      {
-        text: 'Managers',
-        icon: 'mdi-account-multiple',
-        //   route: 'manage',
-      },
-      {
-        text: 'My plan',
-        icon: 'mdi-currency-usd',
-      },
-      {
-        text: 'Upgrade',
-        icon: 'mdi-briefcase-outline',
-      },
-      {
-        text: 'Buy Credits',
-        icon: 'mdi-credit-card-outline',
-      },
-    ],
     personalInformation: {
       _title: 'Personal information',
       fullName: 'Full name',
@@ -246,110 +157,147 @@ const localeEnUs = {
         endDate: 'End date',
       },
     },
-    skills: {
-      _title: 'Skills',
-      softSkills: 'Soft skills',
-      knowledgeAreas: 'Knowledge Areas',
-      frameworks: 'Frameworks',
-      programmingLanguages: 'Programming languages',
-      customSkills: 'Custom skills',
+  },
+  skills: {
+    priorities: [
+      { text: 'Essencial', value: 5 },
+      { text: 'Important', value: 3 },
+      { text: 'Bonus', value: 1 },
+    ],
+    yearsOfExperience: [
+      { text: '0-1', value: 0 },
+      { text: '1-2', value: 1 },
+      { text: '2-3', value: 2 },
+      { text: '3-4', value: 3 },
+      { text: '4-5', value: 4 },
+      { text: '5+', value: 5 },
+    ],
+    languages: {
+      fluency: [
+        { text: 'Begginer', value: 0 },
+        { text: 'Intermediaire', value: 1 },
+        { text: 'Advanced', value: 2 },
+        { text: 'Expert', value: 3 },
+        { text: 'Fluent', value: 4 },
+        { text: 'Native', value: 5 },
+      ],
     },
   },
   Job: {
-    sidePannel: [
-      {
-        text: 'New Job',
-        icon: 'mdi-plus',
-        route: 'new',
-      },
-      {
-        text: 'Managers',
-        icon: 'mdi-account-multiple',
-        route: 'manage',
-      },
-      {
-        text: 'My plan',
-        icon: 'mdi-currency-usd',
-      },
-      {
-        text: 'Upgrade',
-        icon: 'mdi-briefcase-outline',
-      },
-      {
-        text: 'Buy Credits',
-        icon: 'mdi-credit-card-outline',
-      },
-    ],
     new: {
-      page1: { title: 'Basic Info' },
-      jobTitle: { title: 'Job Title', tooltip: 'teste pageTitle' },
-      experienceLevel: { title: 'Experience Level', tooltip: 'teste jobTitle' },
-      contractType: { title: 'Contract Type', tooltip: 'teste experienceLevel' },
-      page2: { title: 'Tell us more' },
-      about: {
+      basicInfo: {
+        title: 'Basic information',
+        description:
+          'These are the basics about the position you are advertising. This information will be visible to everyone on Tech Vogel.',
+      },
+      jobTitle: {
+        title: 'Job Title',
+        inputHint: 'This should be concise and clear.',
+        tooltip: 'teste pageTitle',
+      },
+      experienceLevel: {
+        title: 'Experience Level',
+        inputHint: 'TODO',
+        tooltip: 'teste jobTitle',
+      },
+      contractType: {
+        title: 'Contract Type',
+        inputHint: 'This should let applicants know how they will potentially be hired.',
+        tooltip: 'TODO',
+      },
+      aboutTheRole: {
         title: 'About the role',
-        placeholder: 'Describe in one',
-        tooltip: 'about test',
+        description:
+          'Describe the role in terms of daily activities, responsibilities and ????? (TODO). This information will be visible to everyone on Tech Vogel.',
+        tooltip: 'TODO',
+        placeholder: 'TODO',
       },
-      languages: { title: 'Required Language(s)', tooltip: 'languages teste' },
-      page3: { title: 'Keep!' },
-      knowledgeAreas: { title: 'Knowledge Areas', tooltip: 'knowledge areas test' },
-      programmingLanguages: {
-        title: 'Programming Languages',
-        tooltip: 'programming languages test',
+      languages: {
+        title: 'Required Language(s)',
+        tooltip: 'languages teste',
       },
-      frameworks: { title: 'Frameworks', tooltip: 'Frameworks test' },
-      softSkills: { title: 'Soft Skills', tooltip: 'soft Skills test' },
-      page4: { title: 'Specifica!' + '' },
-      salary: { title: 'Salary', tooltip: 'salary test' },
-      perks: { title: 'Perks and Benefits', tooltip: 'perks test' },
-      steppers: [ 'Basic Info', 'Tell us more', 'Keep', 'Specifica' ],
-    },
-  },
-  LandingPage: {
-    title: 'Connecting companies with developers for remote Work',
-    subTitle:
-      'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups',
-    CTATittle: 'Sign Up Now',
-    inputs: {
-      email: {
-        title: 'Email',
-        errorMessage: 'Invalid e-mail.',
+      skillRequirements: {
+        title: 'Skill requirements',
+        description:
+          'Select the skills you’re looking for in your new employee. This information will be visible to everyone on Tech Vogel.',
       },
-      name: {
-        title: 'Name',
-        hint: 'Please write at least 5 characters',
-        errorMessage: 'Your name must have at least have 5 characters',
+      techSkills: {
+        title: 'Tech skills',
+        description:
+          'You can select programming languages, frameworks and knowledge areas. We will match this selection to applicant CVs and include the top matches in your Candidate Report.',
+        inputHint: 'Type the skill you wish to include above.',
       },
-      skills: {
-        title: 'Pick your professionals skills (programming languages, frameworks, work areas etc)',
-        hint: 'Please choose at least 3 tags',
+      otherSkills: {
+        title: 'Other skills',
+        description:
+          'You can select soft skills and languages. We will also match this selection to applicant CVs and include the top matches in your Candidate Report.',
+        inputHint: 'Type the skill you wish to include above.',
       },
-    },
-    buttons: {
-      goBack: 'Go back',
-      next: 'Next',
-      confirm: 'Confirm',
+      softSkills: {
+        title: 'Soft Skills',
+        tooltip: 'TODO',
+        inputHint: 'Type the skill you wish to include above and select from the list.',
+      },
+      language: {
+        title: 'Language',
+        tooltip: 'TODO',
+        inputHint: 'Select the language and fluency level.',
+      },
+      salaryAndPerks: {
+        title: 'Salary and perks',
+        description:
+          'Potential applicants want to know the compensation offered for the jobs they are applying to. If you do not wish to disclose this information, this requirement can be waived by paying a $49 fee. This information will be visible to everyone on Tech Vogel.',
+      },
+      salary: {
+        title: 'Salary',
+        tooltip: 'TODO',
+      },
+      perks: {
+        title: 'Perks and Benefits',
+        tooltip: 'TODO',
+      },
+      steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
     },
   },
   footer: {
     socialMedia: {
       title: 'Follow us',
       links: [
-        { text: 'Facebook', icon: 'mdi-facebook', link: 'https://facebook.com/techvogel' },
-        { text: 'Twitter', icon: 'mdi-twitter', link: 'https://twitter.com/techvogel' },
+        {
+          text: 'Facebook',
+          icon: 'mdi-facebook',
+          link: 'https://facebook.com/techvogel',
+        },
+        {
+          text: 'Twitter',
+          icon: 'mdi-twitter',
+          link: 'https://twitter.com/techvogel',
+        },
         {
           text: 'Linkedin',
           icon: 'mdi-linkedin',
           link: 'https://linkedin.com/company/techvogel',
         },
-        { text: 'Instagram', icon: 'mdi-instagram', link: 'https://instagram.com/tech_vogel' },
+        {
+          text: 'Instagram',
+          icon: 'mdi-instagram',
+          link: 'https://instagram.com/tech_vogel',
+        },
       ],
     },
     jobsInfo: [
-      { text: 'Find jobs', to: '/jobs' },
-      { text: 'Advertise a position', to: '/job/new' },
-      { text: 'login', to: '/login' },
+      {
+        text: 'Find jobs',
+        to: '/jobs',
+      },
+      {
+        text: 'Advertise a position',
+        to: '/job/new',
+      },
+      {
+        text: 'login',
+        to: '/login',
+      },
     ],
     aboutUsInfo: [
       { text: 'Our story', to: '/aboutus' },
@@ -385,23 +333,50 @@ const localeEnUs = {
   },
   User: {
     register: {
-      page1: { title: 'Register to apply for jobs', tooltip: 'page1 test' },
-      fullName: { title: 'Full name', tooltip: 'fullName test' },
-      email: { title: 'Email', tooltip: 'email test' },
-      username: { title: 'Username', tooltip: 'username test' },
-      password: { title: 'Password', tooltip: 'password test' },
-      confirmPassword: { title: 'Confirm password', tooltip: 'confirmPassword test' },
-      page2: { title: 'Confirmation', tooltip: 'page2 test' },
+      page1: {
+        title: 'Register to apply for jobs',
+        tooltip: 'page1 test',
+      },
+      fullName: {
+        title: 'Full name',
+        tooltip: 'fullName test',
+      },
+      email: {
+        title: 'Email',
+        tooltip: 'email test',
+      },
+      username: {
+        title: 'Username',
+        tooltip: 'username test',
+      },
+      password: {
+        title: 'Password',
+        tooltip: 'password test',
+      },
+      confirmPassword: {
+        title: 'Confirm password',
+        tooltip: 'confirmPassword test',
+      },
+      page2: {
+        title: 'Confirmation',
+        tooltip: 'page2 test',
+      },
       pageSubtitle: {
         title: 'An access code was sent to your registered email',
         tooltip: 'pageSubtitle test',
       },
-      accessCode: { title: 'Access code', tooltip: 'accessCode test' },
+      accessCode: {
+        title: 'Access code',
+        tooltip: 'accessCode test',
+      },
       accessCodeHelper: {
         title: 'Didn\'t get your access code? Click here',
         tooltip: 'accessCodeHelper test',
       },
-      page3: { title: 'Welcome to Tech Voguel', tooltip: 'page3 test' },
+      page3: {
+        title: 'Welcome to Tech Voguel',
+        tooltip: 'page3 test',
+      },
     },
   },
   data: {
@@ -416,9 +391,10 @@ const localeEnUs = {
     contractDurationTimePeriod: ContractDurationTimePeriod,
     companySize: CompanySize,
     preMadePhrases,
-    knowledgeAreas: Skills.KnowledgeAreas,
-    programmingLanguages: Skills.ProgrammingLanguages,
-    // .concat(dataFormat(Skills.SoftSkills)),
+    softSkills: Skills.SoftSkills,
+    softSkillsFlat: Skills.SoftSkillsFlat,
+    allSkills: Skills.ProgrammingLanguages.concat(Skills.Databases).concat(Skills.SoftSkillsFlat),
+    techSkills: Skills.ProgrammingLanguages.concat(Skills.Databases),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   Signup: {
@@ -495,9 +471,16 @@ const localeEnUs = {
       ],
       start: {
         title: 'Register your CV',
-        linkLinkedIn: { title: 'Link your LinkedIn account' },
-        linkGithub: { title: 'Link your GitHub Account' },
-        registerManually: { title: 'Register CV Manually' },
+        description: 'Change description',
+        linkLinkedIn: {
+          title: 'Link your LinkedIn account',
+        },
+        linkGithub: {
+          title: 'Link your GitHub Account',
+        },
+        registerManually: {
+          title: 'Register CV Manually',
+        },
       },
       preferences: {
         title: 'Select your preferences',
@@ -555,11 +538,6 @@ const localeEnUs = {
         title: 'Tell us about your skills',
         description:
           'You’ll be able to edit these later on. They will be displayed on\nyour profile and we’ll use the skills you pick to show you\npositions that fit your profile!',
-        programmingLanguages: 'Programming Languages',
-        frameworks: 'Frameworks',
-        knowledgeAreas: 'Knowledge areas',
-        softSkills: 'Soft skills',
-        button: 'CONTINUE',
       },
       education: {
         title: 'Education',
