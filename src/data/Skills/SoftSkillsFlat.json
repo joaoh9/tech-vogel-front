@@ -1,0 +1,614 @@
+[
+  {
+    "text": "Listening",
+    "value": "listening"
+  },
+  {
+    "text": "Negotiation",
+    "value": "negotiation"
+  },
+  {
+    "text": "Nonverbal communication",
+    "value": "nonverbalCommunication"
+  },
+  {
+    "text": "Persuasion",
+    "value": "persuasion"
+  },
+  {
+    "text": "Presentation",
+    "value": "presentation"
+  },
+  {
+    "text": "Public speaking",
+    "value": "publicSpeaking"
+  },
+  {
+    "text": "Reading body language",
+    "value": "readingBodyLanguage"
+  },
+  {
+    "text": "Storytelling",
+    "value": "storytelling"
+  },
+  {
+    "text": "Verbal communication",
+    "value": "verbalCommunication"
+  },
+  {
+    "text": "Visual communication",
+    "value": "visualCommunication"
+  },
+  {
+    "text": "Writing reports and proposals",
+    "value": "writingReportsAndProposals"
+  },
+  {
+    "text": "Writing skills",
+    "value": "writingSkills"
+  },
+  {
+    "text": "Adaptability",
+    "value": "adaptability"
+  },
+  {
+    "text": "Artistic aptitude",
+    "value": "artisticAptitude"
+  },
+  {
+    "text": "Creativity",
+    "value": "creativity"
+  },
+  {
+    "text": "Critical observation",
+    "value": "criticalObservation"
+  },
+  {
+    "text": "Critical thinking",
+    "value": "criticalThinking"
+  },
+  {
+    "text": "Design aptitude",
+    "value": "designAptitude"
+  },
+  {
+    "text": "Desire to learn",
+    "value": "desireToLearn"
+  },
+  {
+    "text": "Flexibility",
+    "value": "flexibility"
+  },
+  {
+    "text": "Innovation",
+    "value": "innovation"
+  },
+  {
+    "text": "Logical thinking",
+    "value": "logicalThinking"
+  },
+  {
+    "text": "Problem solving",
+    "value": "problemSolving"
+  },
+  {
+    "text": "Research",
+    "value": "research"
+  },
+  {
+    "text": "Resourcefulness",
+    "value": "resourcefulness"
+  },
+  {
+    "text": "Thinking outside the box",
+    "value": "thinkingOutsideTheBox"
+  },
+  {
+    "text": "Tolerance of change and uncertainty",
+    "value": "toleranceOfChangeAndUncertainty"
+  },
+  {
+    "text": "Troubleshooting",
+    "value": "troubleshooting"
+  },
+  {
+    "text": "Value education",
+    "value": "valueEducation"
+  },
+  {
+    "text": "Willingness to learn",
+    "value": "willingnessToLearn"
+  },
+  {
+    "text": "Conflict management",
+    "value": "conflictManagement"
+  },
+  {
+    "text": "Conflict resolution",
+    "value": "conflictResolution"
+  },
+  {
+    "text": "Deal making",
+    "value": "dealMaking"
+  },
+  {
+    "text": "Decision making",
+    "value": "decisionMaking"
+  },
+  {
+    "text": "Delegation",
+    "value": "delegation"
+  },
+  {
+    "text": "Dispute resolution",
+    "value": "disputeResolution"
+  },
+  {
+    "text": "Facilitation",
+    "value": "facilitation"
+  },
+  {
+    "text": "Giving clear feedback",
+    "value": "givingClearFeedback"
+  },
+  {
+    "text": "Inspiringpeople",
+    "value": "inspiringpeople"
+  },
+  {
+    "text": "Leadership",
+    "value": "leadership"
+  },
+  {
+    "text": "Management",
+    "value": "management"
+  },
+  {
+    "text": "Managing difficult conversations",
+    "value": "managingDifficultConversations"
+  },
+  {
+    "text": "Managing remote/virtual teams",
+    "value": "managingRemotevirtualTeams"
+  },
+  {
+    "text": "Meeting management",
+    "value": "meetingManagement"
+  },
+  {
+    "text": "Mentoring",
+    "value": "mentoring"
+  },
+  {
+    "text": "Motivating",
+    "value": "motivating"
+  },
+  {
+    "text": "Project management",
+    "value": "projectManagement"
+  },
+  {
+    "text": "Resolving issues",
+    "value": "resolvingIssues"
+  },
+  {
+    "text": "Successful coaching",
+    "value": "successfulCoaching"
+  },
+  {
+    "text": "Supervising",
+    "value": "supervising"
+  },
+  {
+    "text": "Talent management",
+    "value": "talentManagement"
+  },
+  {
+    "text": "Confidence",
+    "value": "confidence"
+  },
+  {
+    "text": "Cooperation",
+    "value": "cooperation"
+  },
+  {
+    "text": "Courtesy",
+    "value": "courtesy"
+  },
+  {
+    "text": "Energy",
+    "value": "energy"
+  },
+  {
+    "text": "Enthusiasm",
+    "value": "enthusiasm"
+  },
+  {
+    "text": "Friendliness",
+    "value": "friendliness"
+  },
+  {
+    "text": "Honesty",
+    "value": "honesty"
+  },
+  {
+    "text": "Humorous",
+    "value": "humorous"
+  },
+  {
+    "text": "Patience",
+    "value": "patience"
+  },
+  {
+    "text": "Respectability",
+    "value": "respectability"
+  },
+  {
+    "text": "Respectfulness",
+    "value": "respectfulness"
+  },
+  {
+    "text": "Accepting feedback",
+    "value": "acceptingFeedback"
+  },
+  {
+    "text": "Collaboration",
+    "value": "collaboration"
+  },
+  {
+    "text": "Customer service",
+    "value": "customerService"
+  },
+  {
+    "text": "Dealing with difficult situations",
+    "value": "dealingWithDifficultSituations"
+  },
+  {
+    "text": "Dealing with office politics",
+    "value": "dealingWithOfficePolitics"
+  },
+  {
+    "text": "Disability awareness",
+    "value": "disabilityAwareness"
+  },
+  {
+    "text": "Diversity awareness",
+    "value": "diversityAwareness"
+  },
+  {
+    "text": "Emotional intelligence",
+    "value": "emotionalIntelligence"
+  },
+  {
+    "text": "Empathy",
+    "value": "empathy"
+  },
+  {
+    "text": "Establishing interpersonal relationships",
+    "value": "establishingInterpersonalRelationships"
+  },
+  {
+    "text": "Dealing with difficult personalities",
+    "value": "dealingWithDifficultPersonalities"
+  },
+  {
+    "text": "Intercultural competence",
+    "value": "interculturalCompetence"
+  },
+  {
+    "text": "Interpersonal skills",
+    "value": "interpersonalSkills"
+  },
+  {
+    "text": "Influence",
+    "value": "influence"
+  },
+  {
+    "text": "Networking",
+    "value": "networking"
+  },
+  {
+    "text": "Persuasion",
+    "value": "persuasion"
+  },
+  {
+    "text": "Self-awareness",
+    "value": "selfawareness"
+  },
+  {
+    "text": "Selling skills",
+    "value": "sellingSkills"
+  },
+  {
+    "text": "Social skills",
+    "value": "socialSkills"
+  },
+  {
+    "text": "Team building",
+    "value": "teamBuilding"
+  },
+  {
+    "text": "Teamwork",
+    "value": "teamwork"
+  },
+  {
+    "text": "Attentiveness",
+    "value": "attentiveness"
+  },
+  {
+    "text": "Business ethics",
+    "value": "businessEthics"
+  },
+  {
+    "text": "Competitiveness",
+    "value": "competitiveness"
+  },
+  {
+    "text": "Dedication",
+    "value": "dedication"
+  },
+  {
+    "text": "Dependability",
+    "value": "dependability"
+  },
+  {
+    "text": "Following direction",
+    "value": "followingDirection"
+  },
+  {
+    "text": "Independence",
+    "value": "independence"
+  },
+  {
+    "text": "Meeting deadlines",
+    "value": "meetingDeadlines"
+  },
+  {
+    "text": "Motivation",
+    "value": "motivation"
+  },
+  {
+    "text": "Multitasking",
+    "value": "multitasking"
+  },
+  {
+    "text": "Organization",
+    "value": "organization"
+  },
+  {
+    "text": "Perseverance",
+    "value": "perseverance"
+  },
+  {
+    "text": "Persistence",
+    "value": "persistence"
+  },
+  {
+    "text": "Planning",
+    "value": "planning"
+  },
+  {
+    "text": "Proper business etiquette",
+    "value": "properBusinessEtiquette"
+  },
+  {
+    "text": "Punctuality",
+    "value": "punctuality"
+  },
+  {
+    "text": "Reliability",
+    "value": "reliability"
+  },
+  {
+    "text": "Resilience",
+    "value": "resilience"
+  },
+  {
+    "text": "Results-orientation",
+    "value": "resultsorientation"
+  },
+  {
+    "text": "Scheduling",
+    "value": "scheduling"
+  },
+  {
+    "text": "Self-direction",
+    "value": "selfdirection"
+  },
+  {
+    "text": "Self-monitoring",
+    "value": "selfmonitoring"
+  },
+  {
+    "text": "Self-supervising",
+    "value": "selfsupervising"
+  },
+  {
+    "text": "Staying on task",
+    "value": "stayingOnTask"
+  },
+  {
+    "text": "Strategic planning",
+    "value": "strategicPlanning"
+  },
+  {
+    "text": "Time management",
+    "value": "timeManagement"
+  },
+  {
+    "text": "Trainability",
+    "value": "trainability"
+  },
+  {
+    "text": "Working well under pressure",
+    "value": "workingWellUnderPressure"
+  },
+  {
+    "text": "Assertiveness",
+    "value": "assertiveness"
+  },
+  {
+    "text": "Business ethics",
+    "value": "businessEthics"
+  },
+  {
+    "text": "Business storytelling",
+    "value": "businessStorytelling"
+  },
+  {
+    "text": "Business trend awareness",
+    "value": "businessTrendAwareness"
+  },
+  {
+    "text": "Customer Service",
+    "value": "customerService"
+  },
+  {
+    "text": "Effective communicator",
+    "value": "effectiveCommunicator"
+  },
+  {
+    "text": "Emotion management",
+    "value": "emotionManagement"
+  },
+  {
+    "text": "Ergonomic sensitivity",
+    "value": "ergonomicSensitivity"
+  },
+  {
+    "text": "Follow instructions",
+    "value": "followInstructions"
+  },
+  {
+    "text": "Follow regulations",
+    "value": "followRegulations"
+  },
+  {
+    "text": "Follow rules",
+    "value": "followRules"
+  },
+  {
+    "text": "Functions well under pressure",
+    "value": "functionsWellUnderPressure"
+  },
+  {
+    "text": "Good attitude",
+    "value": "goodAttitude"
+  },
+  {
+    "text": "Highly recommended",
+    "value": "highlyRecommended"
+  },
+  {
+    "text": "Independent",
+    "value": "independent"
+  },
+  {
+    "text": "Interviewing",
+    "value": "interviewing"
+  },
+  {
+    "text": "Knowledge management",
+    "value": "knowledgeManagement"
+  },
+  {
+    "text": "Meets deadlines",
+    "value": "meetsDeadlines"
+  },
+  {
+    "text": "Motivating",
+    "value": "motivating"
+  },
+  {
+    "text": "Perform effectively in a deadline environment",
+    "value": "performEffectivelyInADeadlineEnvironment"
+  },
+  {
+    "text": "Performance management",
+    "value": "performanceManagement"
+  },
+  {
+    "text": "Positive work ethic",
+    "value": "positiveWorkEthic"
+  },
+  {
+    "text": "Problem solving",
+    "value": "problemSolving"
+  },
+  {
+    "text": "Process improvement",
+    "value": "processImprovement"
+  },
+  {
+    "text": "Quick-witted",
+    "value": "quickwitted"
+  },
+  {
+    "text": "Results oriented",
+    "value": "resultsOriented"
+  },
+  {
+    "text": "Safety conscious",
+    "value": "safetyConscious"
+  },
+  {
+    "text": "Scheduling",
+    "value": "scheduling"
+  },
+  {
+    "text": "Self-awareness",
+    "value": "selfawareness"
+  },
+  {
+    "text": "Self-supervising",
+    "value": "selfsupervising"
+  },
+  {
+    "text": "Stress management",
+    "value": "stressManagement"
+  },
+  {
+    "text": "Team player",
+    "value": "teamPlayer"
+  },
+  {
+    "text": "Technology savvy",
+    "value": "technologySavvy"
+  },
+  {
+    "text": "Technology trend awareness",
+    "value": "technologyTrendAwareness"
+  },
+  {
+    "text": "Tolerant",
+    "value": "tolerant"
+  },
+  {
+    "text": "Trainable",
+    "value": "trainable"
+  },
+  {
+    "text": "Training",
+    "value": "training"
+  },
+  {
+    "text": "Troubleshooting",
+    "value": "troubleshooting"
+  },
+  {
+    "text": "Willing to accept feedback",
+    "value": "willingToAcceptFeedback"
+  },
+  {
+    "text": "Willingness to learn",
+    "value": "willingnessToLearn"
+  },
+  {
+    "text": "Work-life balance",
+    "value": "worklifeBalance"
+  },
+  {
+    "text": "Works well under pressure",
+    "value": "worksWellUnderPressure"
+  }
+]

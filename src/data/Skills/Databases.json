@@ -1,43 +1,166 @@
 [
-  "MySQL",
-  "PostgreSQL",
-  "MS SQL Server",
-  "SQLite",
-  "MongoDB",
-  "Redis",
-  "MariaDB",
-  "Oracle",
-  "Elasticsearch",
-  "Firebase",
-  "DynamoDB",
-  "Cassandra",
-  "Couchbase",
-  "Microsoft SQL Server",
-  "Teradata",
-  "Microsoft Azure SQL Database",
-  "SAP HANA",
-  "Microsoft Azure Cosmos DB",
-  "Datastax Enterprise",
-  "Amazon Neptune",
-  "Graph Engine",
-  "InfiniteGraph",
-  "Nebula Graph",
-  "Fluree",
-  "FlockDB",
-  "HyperGraphDB",
-  "GraphBase",
-  "TinkerGraph",
-  "AnzoGraph DB",
-  "Memgraph",
-  "Sparksee",
-  "VelocityDB",
-  "HugeGraph",
-  "TerminusDB",
-  "AgensGraph",
-  "HGraphDB",
-  "GlobalsDB",
-  "InfoGrid",
-  "Sqrrl",
-  "Titan",
-  "VelocityGraphg"
+  {
+    "text": "MySQL",
+    "value": "mySQL"
+  },
+  {
+    "text": "PostgreSQL",
+    "value": "postgreSQL"
+  },
+  {
+    "text": "MS SQL Server",
+    "value": "mSSQLServer"
+  },
+  {
+    "text": "SQLite",
+    "value": "sQLite"
+  },
+  {
+    "text": "MongoDB",
+    "value": "mongoDB"
+  },
+  {
+    "text": "Redis",
+    "value": "redis"
+  },
+  {
+    "text": "MariaDB",
+    "value": "mariaDB"
+  },
+  {
+    "text": "Oracle",
+    "value": "oracle"
+  },
+  {
+    "text": "Elasticsearch",
+    "value": "elasticsearch"
+  },
+  {
+    "text": "Firebase",
+    "value": "firebase"
+  },
+  {
+    "text": "DynamoDB",
+    "value": "dynamoDB"
+  },
+  {
+    "text": "Cassandra",
+    "value": "cassandra"
+  },
+  {
+    "text": "Couchbase",
+    "value": "couchbase"
+  },
+  {
+    "text": "Microsoft SQL Server",
+    "value": "microsoftSQLServer"
+  },
+  {
+    "text": "Teradata",
+    "value": "teradata"
+  },
+  {
+    "text": "Microsoft Azure SQL Database",
+    "value": "microsoftAzureSQLDatabase"
+  },
+  {
+    "text": "SAP HANA",
+    "value": "sAPHANA"
+  },
+  {
+    "text": "Microsoft Azure Cosmos DB",
+    "value": "microsoftAzureCosmosDB"
+  },
+  {
+    "text": "Datastax Enterprise",
+    "value": "datastaxEnterprise"
+  },
+  {
+    "text": "Amazon Neptune",
+    "value": "amazonNeptune"
+  },
+  {
+    "text": "Graph Engine",
+    "value": "graphEngine"
+  },
+  {
+    "text": "InfiniteGraph",
+    "value": "infiniteGraph"
+  },
+  {
+    "text": "Nebula Graph",
+    "value": "nebulaGraph"
+  },
+  {
+    "text": "Fluree",
+    "value": "fluree"
+  },
+  {
+    "text": "FlockDB",
+    "value": "flockDB"
+  },
+  {
+    "text": "HyperGraphDB",
+    "value": "hyperGraphDB"
+  },
+  {
+    "text": "GraphBase",
+    "value": "graphBase"
+  },
+  {
+    "text": "TinkerGraph",
+    "value": "tinkerGraph"
+  },
+  {
+    "text": "AnzoGraph DB",
+    "value": "anzoGraphDB"
+  },
+  {
+    "text": "Memgraph",
+    "value": "memgraph"
+  },
+  {
+    "text": "Sparksee",
+    "value": "sparksee"
+  },
+  {
+    "text": "VelocityDB",
+    "value": "velocityDB"
+  },
+  {
+    "text": "HugeGraph",
+    "value": "hugeGraph"
+  },
+  {
+    "text": "TerminusDB",
+    "value": "terminusDB"
+  },
+  {
+    "text": "AgensGraph",
+    "value": "agensGraph"
+  },
+  {
+    "text": "HGraphDB",
+    "value": "hGraphDB"
+  },
+  {
+    "text": "GlobalsDB",
+    "value": "globalsDB"
+  },
+  {
+    "text": "InfoGrid",
+    "value": "infoGrid"
+  },
+  {
+    "text": "Sqrrl",
+    "value": "sqrrl"
+  },
+  {
+    "text": "Titan",
+    "value": "titan"
+  },
+  {
+    "text": "VelocityGraphg",
+    "value": "velocityGraphg"
+  }
 ]

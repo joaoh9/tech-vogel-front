@@ -1,686 +1,2742 @@
 [
-  "A.NET",
-  "A-0 System",
-  "A+",
-  "ABAP",
-  "ABC",
-  "ABC ALGOL",
-  "ACC",
-  "Accent",
-  "Ace DASL (Distributed Application Specification Language)",
-  "Action!",
-  "ActionScript",
-  "Actor",
-  "Ada",
-  "Adenine",
-  "Agda",
-  "Agilent VEE",
-  "Agora",
-  "AIMMS",
-  "Aldor",
-  "Alef",
-  "ALF",
-  "ALGOL 58",
-  "ALGOL 60",
-  "ALGOL 68",
-  "ALGOL W",
-  "Alice",
-  "Alma-0",
-  "AmbientTalk",
-  "Amiga E",
-  "AMOS",
-  "AMPL",
-  "AngelScript",
-  "Apache Pig latin",
-  "Apex",
-  "APL",
-  "App Inventor for Android's visual block language",
-  "AppleScript",
-  "APT",
-  "Arc",
-  "ARexx",
-  "Argus",
-  "Assembly language",
-  "AutoHotkey",
-  "AutoIt",
-  "AutoLISP / Visual LISP",
-  "Averest",
-  "AWK",
-  "Axum",
-  "B",
-  "Babbage",
-  "Ballerina",
-  "Bash",
-  "BASIC",
-  "Batch file (Windows/MS-DOS)",
-  "bc",
-  "BCPL",
-  "BeanShell",
-  "Bertrand",
-  "BETA",
-  "BLISS",
-  "Blockly",
-  "BlooP",
-  "Boo",
-  "Boomerang",
-  "Bosque",
-  "C",
-  "C--",
-  "C++",
-  "C*",
-  "C#",
-  "C/AL",
-  "Caché ObjectScript",
-  "C Shell (csh)",
-  "Caml",
-  "Cayenne",
-  "CDuce",
-  "Cecil",
-  "Cesil",
-  "Céu",
-  "Ceylon",
-  "CFEngine",
-  "Cg",
-  "Ch",
-  "Chapel",
-  "Charm",
-  "CHILL",
-  "CHIP-8",
-  "chomski",
-  "ChucK",
-  "Cilk",
-  "CL (IBM)",
-  "Claire",
-  "Clarion",
-  "Clean",
-  "Clipper",
-  "CLIPS",
-  "CLIST",
-  "Clojure",
-  "CLU",
-  "CMS-2",
-  "COBOL",
-  "CobolScript – COBOL Scripting language",
-  "Cobra",
-  "CoffeeScript",
-  "ColdFusion",
-  "COMAL",
-  "Combined Programming Language (CPL)",
-  "COMIT",
-  "Common Intermediate Language (CIL)",
-  "Common Lisp (also known as CL)",
-  "COMPASS",
-  "Component Pascal",
-  "Constraint Handling Rules (CHR)",
-  "COMTRAN",
-  "Cool",
-  "Coq",
-  "Coral 66",
-  "CorVision",
-  "COWSEL",
-  "CPL",
-  "Cryptol",
-  "Crystal",
-  "Csound",
-  "Cuneiform",
-  "Curl",
-  "Curry",
-  "Cybil",
-  "Cyclone",
-  "Cypher Query Language",
-  "Cython",
-  "CEEMAC",
-  "D",
-  "Dart",
-  "Darwin",
-  "DataFlex",
-  "Datalog",
-  "DATATRIEVE",
-  "dBase",
-  "dc",
-  "DCL",
-  "DinkC",
-  "DIBOL",
-  "Dog",
-  "Draco",
-  "DRAKON",
-  "Dylan",
-  "DYNAMO",
-  "DAX (Data Analysis Expressions)",
-  "E",
-  "Ease",
-  "Easy PL/I",
-  "EASYTRIEVE PLUS",
-  "eC",
-  "ECMAScript",
-  "Edinburgh IMP",
-  "EGL",
-  "Eiffel",
-  "ELAN",
-  "Elixir",
-  "Elm",
-  "Emacs Lisp",
-  "Emerald",
-  "Epigram",
-  "EPL (Easy Programming Language)",
-  "EPL (Eltron Programming Language)",
-  "Erlang",
-  "es",
-  "Escher",
-  "ESPOL",
-  "Esterel",
-  "Etoys",
-  "Euclid",
-  "Euler",
-  "Euphoria",
-  "EusLisp Robot Programming Language",
-  "CMS EXEC (EXEC)",
-  "EXEC 2",
-  "Executable UML",
-  "Ezhil",
-  "F",
-  "F#",
-  "F*",
-  "Factor",
-  "Fantom",
-  "FAUST",
-  "FFP",
-  "fish",
-  "Fjölnir",
-  "FL",
-  "Flavors",
-  "Flex",
-  "FlooP",
-  "FLOW-MATIC",
-  "FOCAL",
-  "FOCUS",
-  "FOIL",
-  "FORMAC",
-  "@Formula",
-  "Forth",
-  "Fortran",
-  "Fortress",
-  "FP",
-  "Franz Lisp",
-  "FreeBasic",
-  "Futhark",
-  "F-Script",
-  "Game Maker Language (Scripting language)",
-  "GameMonkey Script",
-  "GAMS",
-  "GAP",
-  "G-code",
-  "GDScript",
-  "Genie",
-  "GDL",
-  "GEORGE",
-  "GLSL",
-  "GNU E",
-  "GNU Guile",
-  "Go",
-  "Go!",
-  "GOAL",
-  "Gödel",
-  "Golo",
-  "GOM (Good Old Mad)",
-  "Google Apps Script",
-  "Gosu",
-  "GOTRAN",
-  "GPSS",
-  "GraphTalk",
-  "GRASS",
-  "Grasshopper",
-  "Groovy",
-  "Hack",
-  "HAGGIS",
-  "HAL/S",
-  "Halide (programming language)",
-  "Hamilton C shell",
-  "Harbour",
-  "Hartmann pipelines",
-  "Haskell",
-  "Haxe",
-  "Hermes",
-  "High Level Assembly",
-  "HLSL",
-  "Hollywood",
-  "HolyC",
-  "Hop",
-  "Hopscotch",
-  "Hope",
-  "Hugo",
-  "Hume",
-  "HyperTalk",
-  "Io",
-  "Icon",
-  "IBM Basic assembly language",
-  "IBM HAScript",
-  "IBM Informix-4GL",
-  "IBM RPG",
-  "IDL",
-  "Idris",
-  "Inform",
-  "J",
-  "J#",
-  "J++",
-  "JADE",
-  "JAL",
-  "Janus (concurrent constraint programming language)",
-  "Janus (time-reversible computing programming language)",
-  "JASS",
-  "Java",
-  "JavaFX Script",
-  "JavaScript(Scripting language)",
-  "Jess (programming language)",
-  "JCL",
-  "JEAN",
-  "Join Java",
-  "JOSS",
-  "Joule",
-  "JOVIAL",
-  "Joy",
-  "JScript",
-  "JScript .NET",
-  "Julia",
-  "Jython",
-  "K",
-  "Kaleidoscope",
-  "Karel",
-  "KEE",
-  "Kixtart",
-  "Klerer-May System",
-  "KIF",
-  "Kojo",
-  "Kotlin",
-  "KRC",
-  "KRL",
-  "KRL (KUKA Robot Language)",
-  "KRYPTON",
-  "Korn shell (ksh)",
-  "Kodu",
-  "Kv",
-  "LabVIEW",
-  "Ladder",
-  "LANSA",
-  "Lasso",
-  "Lava",
-  "LC-3",
-  "Legoscript",
-  "LIL",
-  "LilyPond",
-  "Limbo",
-  "Limnor",
-  "LINC",
-  "Lingo",
-  "LINQ",
-  "LIS",
-  "LISA",
-  "Language H",
-  "Lisp",
-  "Lite-C",
-  "Lithe",
-  "Little b",
-  "LLL",
-  "Logo",
-  "Logtalk",
-  "LotusScript",
-  "LPC",
-  "LSE",
-  "LSL",
-  "LiveCode",
-  "LiveScript",
-  "Lua",
-  "Lucid",
-  "Lustre",
-  "LYaPAS",
-  "Lynx",
-  "M2001",
-  "M4",
-  "M#",
-  "Machine code",
-  "MAD (Michigan Algorithm Decoder)",
-  "MAD/I",
-  "Magik",
-  "Magma",
-  "Máni",
-  "Maple",
-  "MAPPER (now part of BIS)",
-  "MARK-IV (now VISION:BUILDER)",
-  "Mary",
-  "MATLAB",
-  "MASM Microsoft Assembly x86",
-  "MATH-MATIC",
-  "Maude system",
-  "Maxima (see also Macsyma)",
-  "Max (Max Msp – Graphical Programming Environment)",
-  "MaxScript internal language 3D Studio Max",
-  "Maya (MEL)",
-  "MDL",
-  "Mercury",
-  "Mesa",
-  "MHEG-5 (Interactive TV programming language)",
-  "Microcode",
-  "MicroScript",
-  "MIIS",
-  "Milk (programming language)",
-  "MIMIC",
-  "Mirah",
-  "Miranda",
-  "MIVA Script",
-  "ML",
-  "Model 204",
-  "Modelica",
-  "Modula",
-  "Modula-2",
-  "Modula-3",
-  "Mohol",
-  "MOO",
-  "Mortran",
-  "Mouse",
-  "MPD",
-  "MSL",
-  "MUMPS",
-  "MuPAD",
-  "Mutan",
-  "Mystic Programming Language (MPL)",
-  "N",
-  "NASM",
-  "Napier88",
-  "Neko",
-  "Nemerle",
-  "NESL",
-  "Net.Data",
-  "NetLogo",
-  "NetRexx",
-  "NewLISP",
-  "NEWP",
-  "Newspeak",
-  "NewtonScript",
-  "Nial",
-  "Nickle (NITIN)",
-  "Nim",
-  "Nix (Systems configuration language)",
-  "NPL",
-  "Not eXactly C (NXC)",
-  "Not Quite C (NQC)",
-  "NSIS",
-  "Nu",
-  "NWScript",
-  "NXT-G",
-  "o:XML",
-  "Oak",
-  "Oberon",
-  "OBJ2",
-  "Object Lisp",
-  "ObjectLOGO",
-  "Object REXX",
-  "Object Pascal",
-  "Objective-C",
-  "Objective-J",
-  "Obliq",
-  "OCaml",
-  "occam",
-  "occam-π",
-  "Octave",
-  "OmniMark",
-  "Opa",
-  "Opal",
-  "OpenCL",
-  "OpenEdge ABL",
-  "OPL",
-  "OpenVera",
-  "OPS5",
-  "OptimJ",
-  "Orc",
-  "ORCA/Modula-2",
-  "Oriel",
-  "Orwell",
-  "Oxygene",
-  "Oz",
-  "P",
-  "P4",
-  "P′′",
-  "ParaSail (programming language)",
-  "PARI/GP",
-  "Pascal",
-  "Pascal Script",
-  "PCASTL",
-  "PCF",
-  "PEARL",
-  "PeopleCode",
-  "Perl",
-  "PDL",
-  "Pharo",
-  "PHP",
-  "Pico",
-  "Picolisp",
-  "Pict",
-  "Pike",
-  "PILOT",
-  "Pipelines",
-  "Pizza",
-  "PL-11",
-  "PL/0",
-  "PL/B",
-  "PL/C",
-  "PL/I",
-  "PL/M",
-  "PL/P",
-  "PL/SQL",
-  "PL360",
-  "PLANC",
-  "Plankalkül",
-  "Planner",
-  "PLEX",
-  "PLEXIL",
-  "Plus",
-  "POP-11",
-  "POP-2",
-  "PostScript",
-  "PortablE",
-  "POV-Ray SDL",
-  "Powerhouse",
-  "PowerBuilder – 4GL GUI application generator from Sybase",
-  "PowerShell",
-  "PPL",
-  "Processing",
-  "Processing.js",
-  "Prograph",
-  "PROIV",
-  "Prolog",
-  "PROMAL",
-  "Promela",
-  "PROSE modeling language",
-  "PROTEL",
-  "ProvideX",
-  "Pro*C",
-  "Pure",
-  "Pure Data",
-  "PureScript",
-  "Python",
-  "Q (programming language from Kx Systems)",
-  "Q# (Microsoft programming language)",
-  "Qalb",
-  "Quantum Computation Language",
-  "QtScript",
-  "QuakeC",
-  "QPL",
-  ".QL",
-  "R",
-  "R++",
-  "Racket",
-  "Raku",
-  "RAPID",
-  "Rapira",
-  "Ratfiv",
-  "Ratfor",
-  "rc",
-  "Reason",
-  "REBOL",
-  "Red",
-  "Redcode",
-  "REFAL",
-  "REXX",
-  "Rlab",
-  "ROOP",
-  "RPG",
-  "RPL",
-  "RSL",
-  "RTL/2",
-  "Ruby",
-  "Rust",
-  "S",
-  "S2",
-  "S3",
-  "S-Lang",
-  "S-PLUS",
-  "SA-C",
-  "SabreTalk",
-  "SAIL",
-  "SAS",
-  "SASL",
-  "Sather",
-  "Sawzall",
-  "Scala",
-  "Scheme",
-  "Scilab",
-  "Scratch",
-  "Script.NET",
-  "Sed",
-  "Seed7",
-  "Self",
-  "SenseTalk",
-  "SequenceL",
-  "Serpent",
-  "SETL",
-  "SIMPOL",
-  "SIGNAL",
-  "SiMPLE",
-  "SIMSCRIPT",
-  "Simula",
-  "Simulink",
-  "Singularity",
-  "SISAL",
-  "SLIP",
-  "SMALL",
-  "Smalltalk",
-  "SML",
-  "Strongtalk",
-  "Snap!",
-  "SNOBOL (SPITBOL)",
-  "Snowball",
-  "SOL",
-  "Solidity",
-  "SOPHAEROS",
-  "Source",
-  "SPARK",
-  "Speakeasy",
-  "Speedcode",
-  "SPIN",
-  "SP/k",
-  "SPS",
-  "SQL",
-  "SQR",
-  "Squeak",
-  "Squirrel",
-  "SR",
-  "S/SL",
-  "Starlogo",
-  "Strand",
-  "Stata",
-  "Stateflow",
-  "Subtext",
-  "SBL",
-  "SuperCollider",
-  "SuperTalk",
-  "Swift (Apple programming language)",
-  "Swift (parallel scripting language)",
-  "SYMPL",
-  "SystemVerilog",
-  "T",
-  "TACL",
-  "TACPOL",
-  "TADS",
-  "TAL",
-  "Tcl",
-  "Tea",
-  "TECO",
-  "TELCOMP",
-  "TeX",
-  "TEX",
-  "TIE",
-  "TMG, compiler-compiler",
-  "Tom",
-  "Toi",
-  "Topspeed",
-  "TPU",
-  "Trac",
-  "TTM",
-  "T-SQL",
-  "Transcript",
-  "TTCN",
-  "Turing",
-  "TUTOR",
-  "TXL",
-  "TypeScript",
-  "Tynker",
-  "Ubercode",
-  "UCSD Pascal",
-  "Umple",
-  "Unicon",
-  "Uniface",
-  "UNITY",
-  "Unix shell",
-  "UnrealScript",
-  "Vala",
-  "Verilog",
-  "VHDL",
-  "Vim script",
-  "Viper",
-  "Visual DataFlex",
-  "Visual DialogScript",
-  "Visual FoxPro",
-  "Visual J++",
-  "Visual LISP",
-  "Visual Objects",
-  "Visual Prolog",
-  "WATFIV, WATFOR",
-  "WebAssembly",
-  "WebDNA",
-  "Whiley",
-  "Winbatch",
-  "Wolfram Language",
-  "Wyvern",
-  "X++",
-  "X10",
-  "xBase",
-  "xBase++",
-  "XBL",
-  "XC (targets XMOS architecture)",
-  "xHarbour",
-  "XL",
-  "Xojo",
-  "XOTcl",
-  "Xod",
-  "XPL",
-  "XPL0",
-  "XQuery",
-  "XSB",
-  "XSharp",
-  "XSLT",
-  "Xtend",
-  "Y",
-  "YAML",
-  "Yorick",
-  "YQL",
-  "Yoix",
-  "YUI",
-  "Z notation",
-  "Zebra, ZPL, ZPL2",
-  "Zeno",
-  "ZetaLisp",
-  "Zig",
-  "ZOPL",
-  "ZPL",
-  "Z++"
+  {
+    "text": "A.NET",
+    "value": "aDotNET"
+  },
+  {
+    "text": "A-0 System",
+    "value": "aMinus0System"
+  },
+  {
+    "text": "A+",
+    "value": "aPlus"
+  },
+  {
+    "text": "ABAP",
+    "value": "ABAP"
+  },
+  {
+    "text": "ABC",
+    "value": "ABC"
+  },
+  {
+    "text": "ABC ALGOL",
+    "value": "aBCALGOL"
+  },
+  {
+    "text": "ACC",
+    "value": "ACC"
+  },
+  {
+    "text": "Accent",
+    "value": "accent"
+  },
+  {
+    "text": "Ace DASL",
+    "value": "aceDASL"
+  },
+  {
+    "text": "Action!",
+    "value": "action"
+  },
+  {
+    "text": "ActionScript",
+    "value": "actionScript"
+  },
+  {
+    "text": "Actor",
+    "value": "actor"
+  },
+  {
+    "text": "Ada",
+    "value": "ada"
+  },
+  {
+    "text": "Adenine",
+    "value": "adenine"
+  },
+  {
+    "text": "Agda",
+    "value": "agda"
+  },
+  {
+    "text": "Agilent VEE",
+    "value": "agilentVEE"
+  },
+  {
+    "text": "Agora",
+    "value": "agora"
+  },
+  {
+    "text": "AIMMS",
+    "value": "AIMMS"
+  },
+  {
+    "text": "Aldor",
+    "value": "aldor"
+  },
+  {
+    "text": "Alef",
+    "value": "alef"
+  },
+  {
+    "text": "ALF",
+    "value": "ALF"
+  },
+  {
+    "text": "ALGOL 58",
+    "value": "aLGOL58"
+  },
+  {
+    "text": "ALGOL 60",
+    "value": "aLGOL60"
+  },
+  {
+    "text": "ALGOL 68",
+    "value": "aLGOL68"
+  },
+  {
+    "text": "ALGOL W",
+    "value": "aLGOLW"
+  },
+  {
+    "text": "Alice",
+    "value": "alice"
+  },
+  {
+    "text": "Alma-0",
+    "value": "almaMinus0"
+  },
+  {
+    "text": "AmbientTalk",
+    "value": "ambientTalk"
+  },
+  {
+    "text": "Amiga E",
+    "value": "amigaE"
+  },
+  {
+    "text": "AMOS",
+    "value": "AMOS"
+  },
+  {
+    "text": "AMPL",
+    "value": "AMPL"
+  },
+  {
+    "text": "AngelScript",
+    "value": "angelScript"
+  },
+  {
+    "text": "Apache Pig latin",
+    "value": "apachePigLatin"
+  },
+  {
+    "text": "Apex",
+    "value": "apex"
+  },
+  {
+    "text": "APL",
+    "value": "APL"
+  },
+  {
+    "text": "AppleScript",
+    "value": "appleScript"
+  },
+  {
+    "text": "APT",
+    "value": "APT"
+  },
+  {
+    "text": "Arc",
+    "value": "arc"
+  },
+  {
+    "text": "ARexx",
+    "value": "aRexx"
+  },
+  {
+    "text": "Argus",
+    "value": "argus"
+  },
+  {
+    "text": "Assembly",
+    "value": "assembly"
+  },
+  {
+    "text": "AutoHotkey",
+    "value": "autoHotkey"
+  },
+  {
+    "text": "AutoIt",
+    "value": "autoIt"
+  },
+  {
+    "text": "AutoLISP / Visual LISP",
+    "value": "autoLISPVisualLISP"
+  },
+  {
+    "text": "Averest",
+    "value": "averest"
+  },
+  {
+    "text": "AWK",
+    "value": "AWK"
+  },
+  {
+    "text": "Axum",
+    "value": "axum"
+  },
+  {
+    "text": "B",
+    "value": "B"
+  },
+  {
+    "text": "Babbage",
+    "value": "babbage"
+  },
+  {
+    "text": "Ballerina",
+    "value": "ballerina"
+  },
+  {
+    "text": "Bash",
+    "value": "bash"
+  },
+  {
+    "text": "BASIC",
+    "value": "BASIC"
+  },
+  {
+    "text": "Batch file (Windows/MS-DOS)",
+    "value": "batchFileWindowsMSMinusDOS"
+  },
+  {
+    "text": "bc",
+    "value": "bc"
+  },
+  {
+    "text": "BCPL",
+    "value": "BCPL"
+  },
+  {
+    "text": "BeanShell",
+    "value": "beanShell"
+  },
+  {
+    "text": "Bertrand",
+    "value": "bertrand"
+  },
+  {
+    "text": "BETA",
+    "value": "BETA"
+  },
+  {
+    "text": "BLISS",
+    "value": "BLISS"
+  },
+  {
+    "text": "Blockly",
+    "value": "blockly"
+  },
+  {
+    "text": "BlooP",
+    "value": "blooP"
+  },
+  {
+    "text": "Boo",
+    "value": "boo"
+  },
+  {
+    "text": "Boomerang",
+    "value": "boomerang"
+  },
+  {
+    "text": "Bosque",
+    "value": "bosque"
+  },
+  {
+    "text": "C",
+    "value": "C"
+  },
+  {
+    "text": "C--",
+    "value": "cMinusMinus"
+  },
+  {
+    "text": "C++",
+    "value": "cPlusPlus"
+  },
+  {
+    "text": "C*",
+    "value": "cStar"
+  },
+  {
+    "text": "C#",
+    "value": "cSharp"
+  },
+  {
+    "text": "C/AL",
+    "value": "cAL"
+  },
+  {
+    "text": "Caché ObjectScript",
+    "value": "cacheObjectScript"
+  },
+  {
+    "text": "C Shell (csh)",
+    "value": "cShellcsh"
+  },
+  {
+    "text": "Caml",
+    "value": "caml"
+  },
+  {
+    "text": "Cayenne",
+    "value": "cayenne"
+  },
+  {
+    "text": "CDuce",
+    "value": "cDuce"
+  },
+  {
+    "text": "Cecil",
+    "value": "cecil"
+  },
+  {
+    "text": "Cesil",
+    "value": "cesil"
+  },
+  {
+    "text": "Céu",
+    "value": "ceu"
+  },
+  {
+    "text": "Ceylon",
+    "value": "ceylon"
+  },
+  {
+    "text": "CFEngine",
+    "value": "cFEngine"
+  },
+  {
+    "text": "Cg",
+    "value": "cg"
+  },
+  {
+    "text": "Ch",
+    "value": "ch"
+  },
+  {
+    "text": "Chapel",
+    "value": "chapel"
+  },
+  {
+    "text": "Charm",
+    "value": "charm"
+  },
+  {
+    "text": "CHILL",
+    "value": "CHILL"
+  },
+  {
+    "text": "CHIP-8",
+    "value": "cHIPMinus8"
+  },
+  {
+    "text": "chomski",
+    "value": "chomski"
+  },
+  {
+    "text": "ChucK",
+    "value": "chucK"
+  },
+  {
+    "text": "Cilk",
+    "value": "cilk"
+  },
+  {
+    "text": "CL (IBM)",
+    "value": "cLIBM"
+  },
+  {
+    "text": "Claire",
+    "value": "claire"
+  },
+  {
+    "text": "Clarion",
+    "value": "clarion"
+  },
+  {
+    "text": "Clean",
+    "value": "clean"
+  },
+  {
+    "text": "Clipper",
+    "value": "clipper"
+  },
+  {
+    "text": "CLIPS",
+    "value": "CLIPS"
+  },
+  {
+    "text": "CLIST",
+    "value": "CLIST"
+  },
+  {
+    "text": "Clojure",
+    "value": "clojure"
+  },
+  {
+    "text": "CLU",
+    "value": "CLU"
+  },
+  {
+    "text": "CMS-2",
+    "value": "cMSMinus2"
+  },
+  {
+    "text": "COBOL",
+    "value": "COBOL"
+  },
+  {
+    "text": "CobolScript",
+    "value": "cobolScript"
+  },
+  {
+    "text": "Cobra",
+    "value": "cobra"
+  },
+  {
+    "text": "CoffeeScript",
+    "value": "coffeeScript"
+  },
+  {
+    "text": "ColdFusion",
+    "value": "coldFusion"
+  },
+  {
+    "text": "COMAL",
+    "value": "COMAL"
+  },
+  {
+    "text": "Combined Programming",
+    "value": "combinedCPL"
+  },
+  {
+    "text": "COMIT",
+    "value": "COMIT"
+  },
+  {
+    "text": "Common Intermediate",
+    "value": "commonIntermediate"
+  },
+  {
+    "text": "Common Lisp (CL)",
+    "value": "commonLisp"
+  },
+  {
+    "text": "COMPASS",
+    "value": "COMPASS"
+  },
+  {
+    "text": "Component Pascal",
+    "value": "componentPascal"
+  },
+  {
+    "text": "Constraint Handling Rules (CHR)",
+    "value": "constraintHandlingRulesCHR"
+  },
+  {
+    "text": "COMTRAN",
+    "value": "COMTRAN"
+  },
+  {
+    "text": "Cool",
+    "value": "cool"
+  },
+  {
+    "text": "Coq",
+    "value": "coq"
+  },
+  {
+    "text": "Coral 66",
+    "value": "coral66"
+  },
+  {
+    "text": "CorVision",
+    "value": "corVision"
+  },
+  {
+    "text": "COWSEL",
+    "value": "COWSEL"
+  },
+  {
+    "text": "CPL",
+    "value": "CPL"
+  },
+  {
+    "text": "Cryptol",
+    "value": "cryptol"
+  },
+  {
+    "text": "Crystal",
+    "value": "crystal"
+  },
+  {
+    "text": "Csound",
+    "value": "csound"
+  },
+  {
+    "text": "Cuneiform",
+    "value": "cuneiform"
+  },
+  {
+    "text": "Curl",
+    "value": "curl"
+  },
+  {
+    "text": "Curry",
+    "value": "curry"
+  },
+  {
+    "text": "Cybil",
+    "value": "cybil"
+  },
+  {
+    "text": "Cyclone",
+    "value": "cyclone"
+  },
+  {
+    "text": "Cypher Query ",
+    "value": "cypherQuery"
+  },
+  {
+    "text": "Cython",
+    "value": "cython"
+  },
+  {
+    "text": "CEEMAC",
+    "value": "CEEMAC"
+  },
+  {
+    "text": "D",
+    "value": "D"
+  },
+  {
+    "text": "Dart",
+    "value": "dart"
+  },
+  {
+    "text": "Darwin",
+    "value": "darwin"
+  },
+  {
+    "text": "DataFlex",
+    "value": "dataFlex"
+  },
+  {
+    "text": "Datalog",
+    "value": "datalog"
+  },
+  {
+    "text": "DATATRIEVE",
+    "value": "DATATRIEVE"
+  },
+  {
+    "text": "dBase",
+    "value": "dBase"
+  },
+  {
+    "text": "dc",
+    "value": "dc"
+  },
+  {
+    "text": "DCL",
+    "value": "DCL"
+  },
+  {
+    "text": "DinkC",
+    "value": "dinkC"
+  },
+  {
+    "text": "DIBOL",
+    "value": "DIBOL"
+  },
+  {
+    "text": "Dog",
+    "value": "dog"
+  },
+  {
+    "text": "Draco",
+    "value": "draco"
+  },
+  {
+    "text": "DRAKON",
+    "value": "DRAKON"
+  },
+  {
+    "text": "Dylan",
+    "value": "dylan"
+  },
+  {
+    "text": "DYNAMO",
+    "value": "DYNAMO"
+  },
+  {
+    "text": "DAX (Data Analysis Expressions)",
+    "value": "dAXDataAnalysisExpressions"
+  },
+  {
+    "text": "E",
+    "value": "E"
+  },
+  {
+    "text": "Ease",
+    "value": "ease"
+  },
+  {
+    "text": "Easy PL/I",
+    "value": "easyPLI"
+  },
+  {
+    "text": "EASYTRIEVE PLUS",
+    "value": "eASYTRIEVEPLUS"
+  },
+  {
+    "text": "eC",
+    "value": "eC"
+  },
+  {
+    "text": "ECMAScript",
+    "value": "eCMAScript"
+  },
+  {
+    "text": "Edinburgh IMP",
+    "value": "edinburghIMP"
+  },
+  {
+    "text": "EGL",
+    "value": "EGL"
+  },
+  {
+    "text": "Eiffel",
+    "value": "eiffel"
+  },
+  {
+    "text": "ELAN",
+    "value": "ELAN"
+  },
+  {
+    "text": "Elixir",
+    "value": "elixir"
+  },
+  {
+    "text": "Elm",
+    "value": "elm"
+  },
+  {
+    "text": "Emacs Lisp",
+    "value": "emacsLisp"
+  },
+  {
+    "text": "Emerald",
+    "value": "emerald"
+  },
+  {
+    "text": "Epigram",
+    "value": "epigram"
+  },
+  {
+    "text": "EPL (Easy ",
+    "value": "ePLEasy"
+  },
+  {
+    "text": "EPL (Eltron ",
+    "value": "ePLEltron"
+  },
+  {
+    "text": "Erlang",
+    "value": "erlang"
+  },
+  {
+    "text": "es",
+    "value": "es"
+  },
+  {
+    "text": "Escher",
+    "value": "escher"
+  },
+  {
+    "text": "ESPOL",
+    "value": "ESPOL"
+  },
+  {
+    "text": "Esterel",
+    "value": "esterel"
+  },
+  {
+    "text": "Etoys",
+    "value": "etoys"
+  },
+  {
+    "text": "Euclid",
+    "value": "euclid"
+  },
+  {
+    "text": "Euler",
+    "value": "euler"
+  },
+  {
+    "text": "Euphoria",
+    "value": "euphoria"
+  },
+  {
+    "text": "EusLisp Robot",
+    "value": "eusLispRobot"
+  },
+  {
+    "text": "CMS EXEC (EXEC)",
+    "value": "cMSEXECEXEC"
+  },
+  {
+    "text": "EXEC 2",
+    "value": "eXEC2"
+  },
+  {
+    "text": "Executable UML",
+    "value": "executableUML"
+  },
+  {
+    "text": "Ezhil",
+    "value": "ezhil"
+  },
+  {
+    "text": "F",
+    "value": "F"
+  },
+  {
+    "text": "F#",
+    "value": "fSharp"
+  },
+  {
+    "text": "F*",
+    "value": "fStar"
+  },
+  {
+    "text": "Factor",
+    "value": "factor"
+  },
+  {
+    "text": "Fantom",
+    "value": "fantom"
+  },
+  {
+    "text": "FAUST",
+    "value": "FAUST"
+  },
+  {
+    "text": "FFP",
+    "value": "FFP"
+  },
+  {
+    "text": "fish",
+    "value": "fish"
+  },
+  {
+    "text": "Fjölnir",
+    "value": "fjolnir"
+  },
+  {
+    "text": "FL",
+    "value": "FL"
+  },
+  {
+    "text": "Flavors",
+    "value": "flavors"
+  },
+  {
+    "text": "Flex",
+    "value": "flex"
+  },
+  {
+    "text": "FlooP",
+    "value": "flooP"
+  },
+  {
+    "text": "FLOW-MATIC",
+    "value": "fLOWMinusMATIC"
+  },
+  {
+    "text": "FOCAL",
+    "value": "FOCAL"
+  },
+  {
+    "text": "FOCUS",
+    "value": "FOCUS"
+  },
+  {
+    "text": "FOIL",
+    "value": "FOIL"
+  },
+  {
+    "text": "FORMAC",
+    "value": "FORMAC"
+  },
+  {
+    "text": "@Formula",
+    "value": "@Formula"
+  },
+  {
+    "text": "Forth",
+    "value": "forth"
+  },
+  {
+    "text": "Fortran",
+    "value": "fortran"
+  },
+  {
+    "text": "Fortress",
+    "value": "fortress"
+  },
+  {
+    "text": "FP",
+    "value": "FP"
+  },
+  {
+    "text": "Franz Lisp",
+    "value": "franzLisp"
+  },
+  {
+    "text": "FreeBasic",
+    "value": "freeBasic"
+  },
+  {
+    "text": "Futhark",
+    "value": "futhark"
+  },
+  {
+    "text": "F-Script",
+    "value": "fMinusScript"
+  },
+  {
+    "text": "Game Maker Language ",
+    "value": "gameMakerLanguage"
+  },
+  {
+    "text": "GameMonkey Script",
+    "value": "gameMonkeyScript"
+  },
+  {
+    "text": "GAMS",
+    "value": "GAMS"
+  },
+  {
+    "text": "GAP",
+    "value": "GAP"
+  },
+  {
+    "text": "G-code",
+    "value": "gMinuscode"
+  },
+  {
+    "text": "GDScript",
+    "value": "gDScript"
+  },
+  {
+    "text": "Genie",
+    "value": "genie"
+  },
+  {
+    "text": "GDL",
+    "value": "GDL"
+  },
+  {
+    "text": "GEORGE",
+    "value": "GEORGE"
+  },
+  {
+    "text": "GLSL",
+    "value": "GLSL"
+  },
+  {
+    "text": "GNU E",
+    "value": "gNUE"
+  },
+  {
+    "text": "GNU Guile",
+    "value": "gNUGuile"
+  },
+  {
+    "text": "Go",
+    "value": "go"
+  },
+  {
+    "text": "Go!",
+    "value": "go"
+  },
+  {
+    "text": "GOAL",
+    "value": "GOAL"
+  },
+  {
+    "text": "Gödel",
+    "value": "godel"
+  },
+  {
+    "text": "Golo",
+    "value": "golo"
+  },
+  {
+    "text": "GOM (Good Old Mad)",
+    "value": "gOMGoodOldMad"
+  },
+  {
+    "text": "Google Apps Script",
+    "value": "googleAppsScript"
+  },
+  {
+    "text": "Gosu",
+    "value": "gosu"
+  },
+  {
+    "text": "GOTRAN",
+    "value": "GOTRAN"
+  },
+  {
+    "text": "GPSS",
+    "value": "GPSS"
+  },
+  {
+    "text": "GraphTalk",
+    "value": "graphTalk"
+  },
+  {
+    "text": "GRASS",
+    "value": "GRASS"
+  },
+  {
+    "text": "Grasshopper",
+    "value": "grasshopper"
+  },
+  {
+    "text": "Groovy",
+    "value": "groovy"
+  },
+  {
+    "text": "Hack",
+    "value": "hack"
+  },
+  {
+    "text": "HAGGIS",
+    "value": "HAGGIS"
+  },
+  {
+    "text": "HAL/S",
+    "value": "hALS"
+  },
+  {
+    "text": "Halide ",
+    "value": "halide"
+  },
+  {
+    "text": "Hamilton C shell",
+    "value": "hamiltonCShell"
+  },
+  {
+    "text": "Harbour",
+    "value": "harbour"
+  },
+  {
+    "text": "Hartmann pipelines",
+    "value": "hartmannPipelines"
+  },
+  {
+    "text": "Haskell",
+    "value": "haskell"
+  },
+  {
+    "text": "Haxe",
+    "value": "haxe"
+  },
+  {
+    "text": "Hermes",
+    "value": "hermes"
+  },
+  {
+    "text": "High Level Assembly",
+    "value": "highLevelAssembly"
+  },
+  {
+    "text": "HLSL",
+    "value": "HLSL"
+  },
+  {
+    "text": "Hollywood",
+    "value": "hollywood"
+  },
+  {
+    "text": "HolyC",
+    "value": "holyC"
+  },
+  {
+    "text": "Hop",
+    "value": "hop"
+  },
+  {
+    "text": "Hopscotch",
+    "value": "hopscotch"
+  },
+  {
+    "text": "Hope",
+    "value": "hope"
+  },
+  {
+    "text": "Hugo",
+    "value": "hugo"
+  },
+  {
+    "text": "Hume",
+    "value": "hume"
+  },
+  {
+    "text": "HyperTalk",
+    "value": "hyperTalk"
+  },
+  {
+    "text": "Io",
+    "value": "io"
+  },
+  {
+    "text": "Icon",
+    "value": "icon"
+  },
+  {
+    "text": "IBM Basic assembly",
+    "value": "IBMBasicAssembly"
+  },
+  {
+    "text": "IBM HAScript",
+    "value": "iBMHAScript"
+  },
+  {
+    "text": "IBM Informix-4GL",
+    "value": "iBMInformixMinus4GL"
+  },
+  {
+    "text": "IBM RPG",
+    "value": "iBMRPG"
+  },
+  {
+    "text": "IDL",
+    "value": "IDL"
+  },
+  {
+    "text": "Idris",
+    "value": "idris"
+  },
+  {
+    "text": "Inform",
+    "value": "inform"
+  },
+  {
+    "text": "J",
+    "value": "J"
+  },
+  {
+    "text": "J#",
+    "value": "jSharp"
+  },
+  {
+    "text": "J++",
+    "value": "jPlusPlus"
+  },
+  {
+    "text": "JADE",
+    "value": "JADE"
+  },
+  {
+    "text": "JAL",
+    "value": "JAL"
+  },
+  {
+    "text": "Janus ",
+    "value": "janus"
+  },
+  {
+    "text": "JASS",
+    "value": "JASS"
+  },
+  {
+    "text": "Java",
+    "value": "java"
+  },
+  {
+    "text": "JavaFX Script",
+    "value": "javaFXScript"
+  },
+  {
+    "text": "JavaScript",
+    "value": "javaScript"
+  },
+  {
+    "text": "Jess ",
+    "value": "jess"
+  },
+  {
+    "text": "JCL",
+    "value": "JCL"
+  },
+  {
+    "text": "JEAN",
+    "value": "JEAN"
+  },
+  {
+    "text": "Join Java",
+    "value": "joinJava"
+  },
+  {
+    "text": "JOSS",
+    "value": "JOSS"
+  },
+  {
+    "text": "Joule",
+    "value": "joule"
+  },
+  {
+    "text": "JOVIAL",
+    "value": "JOVIAL"
+  },
+  {
+    "text": "Joy",
+    "value": "joy"
+  },
+  {
+    "text": "JScript",
+    "value": "jScript"
+  },
+  {
+    "text": "JScript .NET",
+    "value": "jScriptDotNET"
+  },
+  {
+    "text": "Julia",
+    "value": "julia"
+  },
+  {
+    "text": "Jython",
+    "value": "jython"
+  },
+  {
+    "text": "K",
+    "value": "K"
+  },
+  {
+    "text": "Kaleidoscope",
+    "value": "kaleidoscope"
+  },
+  {
+    "text": "Karel",
+    "value": "karel"
+  },
+  {
+    "text": "KEE",
+    "value": "KEE"
+  },
+  {
+    "text": "Kixtart",
+    "value": "kixtart"
+  },
+  {
+    "text": "Klerer-May System",
+    "value": "klererMinusMaySystem"
+  },
+  {
+    "text": "KIF",
+    "value": "KIF"
+  },
+  {
+    "text": "Kojo",
+    "value": "kojo"
+  },
+  {
+    "text": "Kotlin",
+    "value": "kotlin"
+  },
+  {
+    "text": "KRC",
+    "value": "KRC"
+  },
+  {
+    "text": "KRL",
+    "value": "KRL"
+  },
+  {
+    "text": "KRL",
+    "value": "KRL"
+  },
+  {
+    "text": "KRYPTON",
+    "value": "KRYPTON"
+  },
+  {
+    "text": "Korn shell (ksh)",
+    "value": "kornShellksh"
+  },
+  {
+    "text": "Kodu",
+    "value": "kodu"
+  },
+  {
+    "text": "Kv",
+    "value": "kv"
+  },
+  {
+    "text": "LabVIEW",
+    "value": "labVIEW"
+  },
+  {
+    "text": "Ladder",
+    "value": "ladder"
+  },
+  {
+    "text": "LANSA",
+    "value": "LANSA"
+  },
+  {
+    "text": "Lasso",
+    "value": "lasso"
+  },
+  {
+    "text": "Lava",
+    "value": "lava"
+  },
+  {
+    "text": "LC-3",
+    "value": "lCMinus3"
+  },
+  {
+    "text": "Legoscript",
+    "value": "legoscript"
+  },
+  {
+    "text": "LIL",
+    "value": "LIL"
+  },
+  {
+    "text": "LilyPond",
+    "value": "lilyPond"
+  },
+  {
+    "text": "Limbo",
+    "value": "limbo"
+  },
+  {
+    "text": "Limnor",
+    "value": "limnor"
+  },
+  {
+    "text": "LINC",
+    "value": "LINC"
+  },
+  {
+    "text": "Lingo",
+    "value": "lingo"
+  },
+  {
+    "text": "LINQ",
+    "value": "LINQ"
+  },
+  {
+    "text": "LIS",
+    "value": "LIS"
+  },
+  {
+    "text": "LISA",
+    "value": "LISA"
+  },
+  {
+    "text": "Language H",
+    "value": "languageH"
+  },
+  {
+    "text": "Lisp",
+    "value": "lisp"
+  },
+  {
+    "text": "Lite-C",
+    "value": "liteMinusC"
+  },
+  {
+    "text": "Lithe",
+    "value": "lithe"
+  },
+  {
+    "text": "Little b",
+    "value": "littleB"
+  },
+  {
+    "text": "LLL",
+    "value": "LLL"
+  },
+  {
+    "text": "Logo",
+    "value": "logo"
+  },
+  {
+    "text": "Logtalk",
+    "value": "logtalk"
+  },
+  {
+    "text": "LotusScript",
+    "value": "lotusScript"
+  },
+  {
+    "text": "LPC",
+    "value": "LPC"
+  },
+  {
+    "text": "LSE",
+    "value": "LSE"
+  },
+  {
+    "text": "LSL",
+    "value": "LSL"
+  },
+  {
+    "text": "LiveCode",
+    "value": "liveCode"
+  },
+  {
+    "text": "LiveScript",
+    "value": "liveScript"
+  },
+  {
+    "text": "Lua",
+    "value": "lua"
+  },
+  {
+    "text": "Lucid",
+    "value": "lucid"
+  },
+  {
+    "text": "Lustre",
+    "value": "lustre"
+  },
+  {
+    "text": "LYaPAS",
+    "value": "lYaPAS"
+  },
+  {
+    "text": "Lynx",
+    "value": "lynx"
+  },
+  {
+    "text": "M2001",
+    "value": "m2001"
+  },
+  {
+    "text": "M4",
+    "value": "m4"
+  },
+  {
+    "text": "M#",
+    "value": "mSharp"
+  },
+  {
+    "text": "Machine code",
+    "value": "machineCode"
+  },
+  {
+    "text": "MAD (Michigan Algorithm Decoder)",
+    "value": "mADMichiganAlgorithmDecoder"
+  },
+  {
+    "text": "MAD/I",
+    "value": "mADI"
+  },
+  {
+    "text": "Magik",
+    "value": "magik"
+  },
+  {
+    "text": "Magma",
+    "value": "magma"
+  },
+  {
+    "text": "Máni",
+    "value": "mani"
+  },
+  {
+    "text": "Maple",
+    "value": "maple"
+  },
+  {
+    "text": "MAPPER (now part of BIS)",
+    "value": "mAPPERnowPartOfBIS"
+  },
+  {
+    "text": "MARK-IV (now VISION:BUILDER)",
+    "value": "mARKMinusIVnowVISIONBUILDER"
+  },
+  {
+    "text": "Mary",
+    "value": "mary"
+  },
+  {
+    "text": "MATLAB",
+    "value": "MATLAB"
+  },
+  {
+    "text": "MASM Microsoft Assembly x86",
+    "value": "mASMMicrosoftAssemblyX86"
+  },
+  {
+    "text": "MATH-MATIC",
+    "value": "mATHMinusMATIC"
+  },
+  {
+    "text": "Maude system",
+    "value": "maudeSystem"
+  },
+  {
+    "text": "Maxima",
+    "value": "maxima"
+  },
+  {
+    "text": "Max (Max Msp – Graphical Programming Environment)",
+    "value": "maxMaxMspGraphicalProgrammingEnvironment"
+  },
+  {
+    "text": "MaxScript internal language 3D Studio Max",
+    "value": "maxScriptInternalLanguage3DStudioMax"
+  },
+  {
+    "text": "Maya (MEL)",
+    "value": "mayaMEL"
+  },
+  {
+    "text": "MDL",
+    "value": "MDL"
+  },
+  {
+    "text": "Mercury",
+    "value": "mercury"
+  },
+  {
+    "text": "Mesa",
+    "value": "mesa"
+  },
+  {
+    "text": "MHEG-5 (Interactive TV ",
+    "value": "mHEGMinus5InteractiveTV"
+  },
+  {
+    "text": "Microcode",
+    "value": "microcode"
+  },
+  {
+    "text": "MicroScript",
+    "value": "microScript"
+  },
+  {
+    "text": "MIIS",
+    "value": "MIIS"
+  },
+  {
+    "text": "Milk ",
+    "value": "milk"
+  },
+  {
+    "text": "MIMIC",
+    "value": "MIMIC"
+  },
+  {
+    "text": "Mirah",
+    "value": "mirah"
+  },
+  {
+    "text": "Miranda",
+    "value": "miranda"
+  },
+  {
+    "text": "MIVA Script",
+    "value": "mIVAScript"
+  },
+  {
+    "text": "ML",
+    "value": "ML"
+  },
+  {
+    "text": "Model 204",
+    "value": "model204"
+  },
+  {
+    "text": "Modelica",
+    "value": "modelica"
+  },
+  {
+    "text": "Modula",
+    "value": "modula"
+  },
+  {
+    "text": "Modula-2",
+    "value": "modulaMinus2"
+  },
+  {
+    "text": "Modula-3",
+    "value": "modulaMinus3"
+  },
+  {
+    "text": "Mohol",
+    "value": "mohol"
+  },
+  {
+    "text": "MOO",
+    "value": "MOO"
+  },
+  {
+    "text": "Mortran",
+    "value": "mortran"
+  },
+  {
+    "text": "Mouse",
+    "value": "mouse"
+  },
+  {
+    "text": "MPD",
+    "value": "MPD"
+  },
+  {
+    "text": "MSL",
+    "value": "MSL"
+  },
+  {
+    "text": "MUMPS",
+    "value": "MUMPS"
+  },
+  {
+    "text": "MuPAD",
+    "value": "muPAD"
+  },
+  {
+    "text": "Mutan",
+    "value": "mutan"
+  },
+  {
+    "text": "Mystic Programming Language (MPL)",
+    "value": "mysticMPL"
+  },
+  {
+    "text": "N",
+    "value": "N"
+  },
+  {
+    "text": "NASM",
+    "value": "NASM"
+  },
+  {
+    "text": "Napier88",
+    "value": "napier88"
+  },
+  {
+    "text": "Neko",
+    "value": "neko"
+  },
+  {
+    "text": "Nemerle",
+    "value": "nemerle"
+  },
+  {
+    "text": "NESL",
+    "value": "NESL"
+  },
+  {
+    "text": "Net.Data",
+    "value": "netDotData"
+  },
+  {
+    "text": "NetLogo",
+    "value": "netLogo"
+  },
+  {
+    "text": "NetRexx",
+    "value": "netRexx"
+  },
+  {
+    "text": "NewLISP",
+    "value": "newLISP"
+  },
+  {
+    "text": "NEWP",
+    "value": "NEWP"
+  },
+  {
+    "text": "Newspeak",
+    "value": "newspeak"
+  },
+  {
+    "text": "NewtonScript",
+    "value": "newtonScript"
+  },
+  {
+    "text": "Nial",
+    "value": "nial"
+  },
+  {
+    "text": "Nickle (NITIN)",
+    "value": "nickleNITIN"
+  },
+  {
+    "text": "Nim",
+    "value": "nim"
+  },
+  {
+    "text": "Nix",
+    "value": "nix"
+  },
+  {
+    "text": "NPL",
+    "value": "NPL"
+  },
+  {
+    "text": "Not eXactly C (NXC)",
+    "value": "notEXactlyCNXC"
+  },
+  {
+    "text": "Not Quite C (NQC)",
+    "value": "notQuiteCNQC"
+  },
+  {
+    "text": "NSIS",
+    "value": "NSIS"
+  },
+  {
+    "text": "Nu",
+    "value": "nu"
+  },
+  {
+    "text": "NWScript",
+    "value": "nWScript"
+  },
+  {
+    "text": "NXT-G",
+    "value": "nXTMinusG"
+  },
+  {
+    "text": "o:XML",
+    "value": "oXML"
+  },
+  {
+    "text": "Oak",
+    "value": "oak"
+  },
+  {
+    "text": "Oberon",
+    "value": "oberon"
+  },
+  {
+    "text": "OBJ2",
+    "value": "oBJ2"
+  },
+  {
+    "text": "Object Lisp",
+    "value": "objectLisp"
+  },
+  {
+    "text": "ObjectLOGO",
+    "value": "objectLOGO"
+  },
+  {
+    "text": "Object REXX",
+    "value": "objectREXX"
+  },
+  {
+    "text": "Object Pascal",
+    "value": "objectPascal"
+  },
+  {
+    "text": "Objective-C",
+    "value": "objectiveMinusC"
+  },
+  {
+    "text": "Objective-J",
+    "value": "objectiveMinusJ"
+  },
+  {
+    "text": "Obliq",
+    "value": "obliq"
+  },
+  {
+    "text": "OCaml",
+    "value": "oCaml"
+  },
+  {
+    "text": "occam",
+    "value": "occam"
+  },
+  {
+    "text": "occam-π",
+    "value": "occamMinusπ"
+  },
+  {
+    "text": "Octave",
+    "value": "octave"
+  },
+  {
+    "text": "OmniMark",
+    "value": "omniMark"
+  },
+  {
+    "text": "Opa",
+    "value": "opa"
+  },
+  {
+    "text": "Opal",
+    "value": "opal"
+  },
+  {
+    "text": "OpenCL",
+    "value": "openCL"
+  },
+  {
+    "text": "OpenEdge ABL",
+    "value": "openEdgeABL"
+  },
+  {
+    "text": "OPL",
+    "value": "OPL"
+  },
+  {
+    "text": "OpenVera",
+    "value": "openVera"
+  },
+  {
+    "text": "OPS5",
+    "value": "oPS5"
+  },
+  {
+    "text": "OptimJ",
+    "value": "optimJ"
+  },
+  {
+    "text": "Orc",
+    "value": "orc"
+  },
+  {
+    "text": "ORCA/Modula-2",
+    "value": "oRCAModulaMinus2"
+  },
+  {
+    "text": "Oriel",
+    "value": "oriel"
+  },
+  {
+    "text": "Orwell",
+    "value": "orwell"
+  },
+  {
+    "text": "Oxygene",
+    "value": "oxygene"
+  },
+  {
+    "text": "Oz",
+    "value": "oz"
+  },
+  {
+    "text": "P",
+    "value": "P"
+  },
+  {
+    "text": "P4",
+    "value": "p4"
+  },
+  {
+    "text": "P´´",
+    "value": "p′′"
+  },
+  {
+    "text": "ParaSail ",
+    "value": "paraSail"
+  },
+  {
+    "text": "PARI/GP",
+    "value": "pARIGP"
+  },
+  {
+    "text": "Pascal",
+    "value": "pascal"
+  },
+  {
+    "text": "Pascal Script",
+    "value": "pascalScript"
+  },
+  {
+    "text": "PCASTL",
+    "value": "PCASTL"
+  },
+  {
+    "text": "PCF",
+    "value": "PCF"
+  },
+  {
+    "text": "PEARL",
+    "value": "PEARL"
+  },
+  {
+    "text": "PeopleCode",
+    "value": "peopleCode"
+  },
+  {
+    "text": "Perl",
+    "value": "perl"
+  },
+  {
+    "text": "PDL",
+    "value": "PDL"
+  },
+  {
+    "text": "Pharo",
+    "value": "pharo"
+  },
+  {
+    "text": "PHP",
+    "value": "PHP"
+  },
+  {
+    "text": "Pico",
+    "value": "pico"
+  },
+  {
+    "text": "Picolisp",
+    "value": "picolisp"
+  },
+  {
+    "text": "Pict",
+    "value": "pict"
+  },
+  {
+    "text": "Pike",
+    "value": "pike"
+  },
+  {
+    "text": "PILOT",
+    "value": "PILOT"
+  },
+  {
+    "text": "Pipelines",
+    "value": "pipelines"
+  },
+  {
+    "text": "Pizza",
+    "value": "pizza"
+  },
+  {
+    "text": "PL-11",
+    "value": "pLMinus11"
+  },
+  {
+    "text": "PL/0",
+    "value": "pL0"
+  },
+  {
+    "text": "PL/B",
+    "value": "pLB"
+  },
+  {
+    "text": "PL/C",
+    "value": "pLC"
+  },
+  {
+    "text": "PL/I",
+    "value": "pLI"
+  },
+  {
+    "text": "PL/M",
+    "value": "pLM"
+  },
+  {
+    "text": "PL/P",
+    "value": "pLP"
+  },
+  {
+    "text": "PL/SQL",
+    "value": "pLSQL"
+  },
+  {
+    "text": "PL360",
+    "value": "pL360"
+  },
+  {
+    "text": "PLANC",
+    "value": "PLANC"
+  },
+  {
+    "text": "Plankalkül",
+    "value": "plankalkul"
+  },
+  {
+    "text": "Planner",
+    "value": "planner"
+  },
+  {
+    "text": "PLEX",
+    "value": "PLEX"
+  },
+  {
+    "text": "PLEXIL",
+    "value": "PLEXIL"
+  },
+  {
+    "text": "Plus",
+    "value": "plus"
+  },
+  {
+    "text": "POP-11",
+    "value": "pOPMinus11"
+  },
+  {
+    "text": "POP-2",
+    "value": "pOPMinus2"
+  },
+  {
+    "text": "PostScript",
+    "value": "postScript"
+  },
+  {
+    "text": "PortablE",
+    "value": "portablE"
+  },
+  {
+    "text": "POV-Ray SDL",
+    "value": "pOVMinusRaySDL"
+  },
+  {
+    "text": "Powerhouse",
+    "value": "powerhouse"
+  },
+  {
+    "text": "PowerBuilder – 4GL GUI application generator from Sybase",
+    "value": "powerBuilder4GLGUIApplicationGeneratorFromSybase"
+  },
+  {
+    "text": "PowerShell",
+    "value": "powerShell"
+  },
+  {
+    "text": "PPL",
+    "value": "PPL"
+  },
+  {
+    "text": "Processing",
+    "value": "processing"
+  },
+  {
+    "text": "Processing.js",
+    "value": "processingDotjs"
+  },
+  {
+    "text": "Prograph",
+    "value": "prograph"
+  },
+  {
+    "text": "PROIV",
+    "value": "PROIV"
+  },
+  {
+    "text": "Prolog",
+    "value": "prolog"
+  },
+  {
+    "text": "PROMAL",
+    "value": "PROMAL"
+  },
+  {
+    "text": "Promela",
+    "value": "promela"
+  },
+  {
+    "text": "PROSE modeling",
+    "value": "pROSEModeling"
+  },
+  {
+    "text": "PROTEL",
+    "value": "PROTEL"
+  },
+  {
+    "text": "ProvideX",
+    "value": "provideX"
+  },
+  {
+    "text": "Pro*C",
+    "value": "proStarC"
+  },
+  {
+    "text": "Pure",
+    "value": "pure"
+  },
+  {
+    "text": "Pure Data",
+    "value": "pureData"
+  },
+  {
+    "text": "PureScript",
+    "value": "pureScript"
+  },
+  {
+    "text": "Python",
+    "value": "python"
+  },
+  {
+    "text": "Q (programming language from Kx Systems)",
+    "value": "qFromKxSystems"
+  },
+  {
+    "text": "Q# (Microsoft ",
+    "value": "qSharpMicrosoft"
+  },
+  {
+    "text": "Qalb",
+    "value": "qalb"
+  },
+  {
+    "text": "Quantum Computation Language",
+    "value": "quantumComputationLanguage"
+  },
+  {
+    "text": "QtScript",
+    "value": "qtScript"
+  },
+  {
+    "text": "QuakeC",
+    "value": "quakeC"
+  },
+  {
+    "text": "QPL",
+    "value": "QPL"
+  },
+  {
+    "text": ".QL",
+    "value": "dotQL"
+  },
+  {
+    "text": "R",
+    "value": "R"
+  },
+  {
+    "text": "R++",
+    "value": "rPlusPlus"
+  },
+  {
+    "text": "Racket",
+    "value": "racket"
+  },
+  {
+    "text": "Raku",
+    "value": "raku"
+  },
+  {
+    "text": "RAPID",
+    "value": "RAPID"
+  },
+  {
+    "text": "Rapira",
+    "value": "rapira"
+  },
+  {
+    "text": "Ratfiv",
+    "value": "ratfiv"
+  },
+  {
+    "text": "Ratfor",
+    "value": "ratfor"
+  },
+  {
+    "text": "rc",
+    "value": "rc"
+  },
+  {
+    "text": "Reason",
+    "value": "reason"
+  },
+  {
+    "text": "REBOL",
+    "value": "REBOL"
+  },
+  {
+    "text": "Red",
+    "value": "red"
+  },
+  {
+    "text": "Redcode",
+    "value": "redcode"
+  },
+  {
+    "text": "REFAL",
+    "value": "REFAL"
+  },
+  {
+    "text": "REXX",
+    "value": "REXX"
+  },
+  {
+    "text": "Rlab",
+    "value": "rlab"
+  },
+  {
+    "text": "ROOP",
+    "value": "ROOP"
+  },
+  {
+    "text": "RPG",
+    "value": "RPG"
+  },
+  {
+    "text": "RPL",
+    "value": "RPL"
+  },
+  {
+    "text": "RSL",
+    "value": "RSL"
+  },
+  {
+    "text": "RTL/2",
+    "value": "rTL2"
+  },
+  {
+    "text": "Ruby",
+    "value": "ruby"
+  },
+  {
+    "text": "Rust",
+    "value": "rust"
+  },
+  {
+    "text": "S",
+    "value": "S"
+  },
+  {
+    "text": "S2",
+    "value": "s2"
+  },
+  {
+    "text": "S3",
+    "value": "s3"
+  },
+  {
+    "text": "S-Lang",
+    "value": "sMinusLang"
+  },
+  {
+    "text": "S-PLUS",
+    "value": "sMinusPLUS"
+  },
+  {
+    "text": "SA-C",
+    "value": "sAMinusC"
+  },
+  {
+    "text": "SabreTalk",
+    "value": "sabreTalk"
+  },
+  {
+    "text": "SAIL",
+    "value": "SAIL"
+  },
+  {
+    "text": "SAS",
+    "value": "SAS"
+  },
+  {
+    "text": "SASL",
+    "value": "SASL"
+  },
+  {
+    "text": "Sather",
+    "value": "sather"
+  },
+  {
+    "text": "Sawzall",
+    "value": "sawzall"
+  },
+  {
+    "text": "Scala",
+    "value": "scala"
+  },
+  {
+    "text": "Scheme",
+    "value": "scheme"
+  },
+  {
+    "text": "Scilab",
+    "value": "scilab"
+  },
+  {
+    "text": "Scratch",
+    "value": "scratch"
+  },
+  {
+    "text": "Script.NET",
+    "value": "scriptDotNET"
+  },
+  {
+    "text": "Sed",
+    "value": "sed"
+  },
+  {
+    "text": "Seed7",
+    "value": "seed7"
+  },
+  {
+    "text": "Self",
+    "value": "self"
+  },
+  {
+    "text": "SenseTalk",
+    "value": "senseTalk"
+  },
+  {
+    "text": "SequenceL",
+    "value": "sequenceL"
+  },
+  {
+    "text": "Serpent",
+    "value": "serpent"
+  },
+  {
+    "text": "SETL",
+    "value": "SETL"
+  },
+  {
+    "text": "SIMPOL",
+    "value": "SIMPOL"
+  },
+  {
+    "text": "SIGNAL",
+    "value": "SIGNAL"
+  },
+  {
+    "text": "SiMPLE",
+    "value": "siMPLE"
+  },
+  {
+    "text": "SIMSCRIPT",
+    "value": "SIMSCRIPT"
+  },
+  {
+    "text": "Simula",
+    "value": "simula"
+  },
+  {
+    "text": "Simulink",
+    "value": "simulink"
+  },
+  {
+    "text": "Singularity",
+    "value": "singularity"
+  },
+  {
+    "text": "SISAL",
+    "value": "SISAL"
+  },
+  {
+    "text": "SLIP",
+    "value": "SLIP"
+  },
+  {
+    "text": "SMALL",
+    "value": "SMALL"
+  },
+  {
+    "text": "Smalltalk",
+    "value": "smalltalk"
+  },
+  {
+    "text": "SML",
+    "value": "SML"
+  },
+  {
+    "text": "Strongtalk",
+    "value": "strongtalk"
+  },
+  {
+    "text": "Snap!",
+    "value": "snap"
+  },
+  {
+    "text": "SNOBOL (SPITBOL)",
+    "value": "sNOBOLSPITBOL"
+  },
+  {
+    "text": "Snowball",
+    "value": "snowball"
+  },
+  {
+    "text": "SOL",
+    "value": "SOL"
+  },
+  {
+    "text": "Solidity",
+    "value": "solidity"
+  },
+  {
+    "text": "SOPHAEROS",
+    "value": "SOPHAEROS"
+  },
+  {
+    "text": "Source",
+    "value": "source"
+  },
+  {
+    "text": "SPARK",
+    "value": "SPARK"
+  },
+  {
+    "text": "Speakeasy",
+    "value": "speakeasy"
+  },
+  {
+    "text": "Speedcode",
+    "value": "speedcode"
+  },
+  {
+    "text": "SPIN",
+    "value": "SPIN"
+  },
+  {
+    "text": "SP/k",
+    "value": "sPk"
+  },
+  {
+    "text": "SPS",
+    "value": "SPS"
+  },
+  {
+    "text": "SQL",
+    "value": "SQL"
+  },
+  {
+    "text": "SQR",
+    "value": "SQR"
+  },
+  {
+    "text": "Squeak",
+    "value": "squeak"
+  },
+  {
+    "text": "Squirrel",
+    "value": "squirrel"
+  },
+  {
+    "text": "SR",
+    "value": "SR"
+  },
+  {
+    "text": "S/SL",
+    "value": "sSL"
+  },
+  {
+    "text": "Starlogo",
+    "value": "starlogo"
+  },
+  {
+    "text": "Strand",
+    "value": "strand"
+  },
+  {
+    "text": "Stata",
+    "value": "stata"
+  },
+  {
+    "text": "Stateflow",
+    "value": "stateflow"
+  },
+  {
+    "text": "Subtext",
+    "value": "subtext"
+  },
+  {
+    "text": "SBL",
+    "value": "SBL"
+  },
+  {
+    "text": "SuperCollider",
+    "value": "superCollider"
+  },
+  {
+    "text": "SuperTalk",
+    "value": "superTalk"
+  },
+  {
+    "text": "Swift (Apple)",
+    "value": "swiftApple"
+  },
+  {
+    "text": "Swift",
+    "value": "swift"
+  },
+  {
+    "text": "SYMPL",
+    "value": "SYMPL"
+  },
+  {
+    "text": "SystemVerilog",
+    "value": "systemVerilog"
+  },
+  {
+    "text": "T",
+    "value": "T"
+  },
+  {
+    "text": "TACL",
+    "value": "TACL"
+  },
+  {
+    "text": "TACPOL",
+    "value": "TACPOL"
+  },
+  {
+    "text": "TADS",
+    "value": "TADS"
+  },
+  {
+    "text": "TAL",
+    "value": "TAL"
+  },
+  {
+    "text": "Tcl",
+    "value": "tcl"
+  },
+  {
+    "text": "Tea",
+    "value": "tea"
+  },
+  {
+    "text": "TECO",
+    "value": "TECO"
+  },
+  {
+    "text": "TELCOMP",
+    "value": "TELCOMP"
+  },
+  {
+    "text": "TeX",
+    "value": "teX"
+  },
+  {
+    "text": "TEX",
+    "value": "TEX"
+  },
+  {
+    "text": "TIE",
+    "value": "TIE"
+  },
+  {
+    "text": "TMG, compiler-compiler",
+    "value": "tMG,CompilerMinuscompiler"
+  },
+  {
+    "text": "Tom",
+    "value": "tom"
+  },
+  {
+    "text": "Toi",
+    "value": "toi"
+  },
+  {
+    "text": "Topspeed",
+    "value": "topspeed"
+  },
+  {
+    "text": "TPU",
+    "value": "TPU"
+  },
+  {
+    "text": "Trac",
+    "value": "trac"
+  },
+  {
+    "text": "TTM",
+    "value": "TTM"
+  },
+  {
+    "text": "T-SQL",
+    "value": "tMinusSQL"
+  },
+  {
+    "text": "Transcript",
+    "value": "transcript"
+  },
+  {
+    "text": "TTCN",
+    "value": "TTCN"
+  },
+  {
+    "text": "Turing",
+    "value": "turing"
+  },
+  {
+    "text": "TUTOR",
+    "value": "TUTOR"
+  },
+  {
+    "text": "TXL",
+    "value": "TXL"
+  },
+  {
+    "text": "TypeScript",
+    "value": "typeScript"
+  },
+  {
+    "text": "Tynker",
+    "value": "tynker"
+  },
+  {
+    "text": "Ubercode",
+    "value": "ubercode"
+  },
+  {
+    "text": "UCSD Pascal",
+    "value": "uCSDPascal"
+  },
+  {
+    "text": "Umple",
+    "value": "umple"
+  },
+  {
+    "text": "Unicon",
+    "value": "unicon"
+  },
+  {
+    "text": "Uniface",
+    "value": "uniface"
+  },
+  {
+    "text": "UNITY",
+    "value": "UNITY"
+  },
+  {
+    "text": "Unix shell",
+    "value": "unixShell"
+  },
+  {
+    "text": "UnrealScript",
+    "value": "unrealScript"
+  },
+  {
+    "text": "Vala",
+    "value": "vala"
+  },
+  {
+    "text": "Verilog",
+    "value": "verilog"
+  },
+  {
+    "text": "VHDL",
+    "value": "VHDL"
+  },
+  {
+    "text": "Vim script",
+    "value": "vimScript"
+  },
+  {
+    "text": "Viper",
+    "value": "viper"
+  },
+  {
+    "text": "Visual DataFlex",
+    "value": "visualDataFlex"
+  },
+  {
+    "text": "Visual DialogScript",
+    "value": "visualDialogScript"
+  },
+  {
+    "text": "Visual FoxPro",
+    "value": "visualFoxPro"
+  },
+  {
+    "text": "Visual J++",
+    "value": "visualJPlusPlus"
+  },
+  {
+    "text": "Visual LISP",
+    "value": "visualLISP"
+  },
+  {
+    "text": "Visual Objects",
+    "value": "visualObjects"
+  },
+  {
+    "text": "Visual Prolog",
+    "value": "visualProlog"
+  },
+  {
+    "text": "WATFIV",
+    "value": "WATFIV"
+  },
+  {
+    "text": "WATFOR",
+    "value": "WATFOR"
+  },
+  {
+    "text": "WebAssembly",
+    "value": "webAssembly"
+  },
+  {
+    "text": "WebDNA",
+    "value": "webDNA"
+  },
+  {
+    "text": "Whiley",
+    "value": "whiley"
+  },
+  {
+    "text": "Winbatch",
+    "value": "winbatch"
+  },
+  {
+    "text": "Wolfram ",
+    "value": "wolfram"
+  },
+  {
+    "text": "Wyvern",
+    "value": "wyvern"
+  },
+  {
+    "text": "X++",
+    "value": "xPlusPlus"
+  },
+  {
+    "text": "X10",
+    "value": "x10"
+  },
+  {
+    "text": "xBase",
+    "value": "xBase"
+  },
+  {
+    "text": "xBase++",
+    "value": "xBasePlusPlus"
+  },
+  {
+    "text": "XBL",
+    "value": "XBL"
+  },
+  {
+    "text": "XC (targets XMOS architecture)",
+    "value": "xCtargetsXMOSArchitecture"
+  },
+  {
+    "text": "xHarbour",
+    "value": "xHarbour"
+  },
+  {
+    "text": "XL",
+    "value": "XL"
+  },
+  {
+    "text": "Xojo",
+    "value": "xojo"
+  },
+  {
+    "text": "XOTcl",
+    "value": "xOTcl"
+  },
+  {
+    "text": "Xod",
+    "value": "xod"
+  },
+  {
+    "text": "XPL",
+    "value": "XPL"
+  },
+  {
+    "text": "XPL0",
+    "value": "xPL0"
+  },
+  {
+    "text": "XQuery",
+    "value": "xQuery"
+  },
+  {
+    "text": "XSB",
+    "value": "XSB"
+  },
+  {
+    "text": "XSharp",
+    "value": "xSharp"
+  },
+  {
+    "text": "XSLT",
+    "value": "XSLT"
+  },
+  {
+    "text": "Xtend",
+    "value": "xtend"
+  },
+  {
+    "text": "Y",
+    "value": "Y"
+  },
+  {
+    "text": "YAML",
+    "value": "YAML"
+  },
+  {
+    "text": "Yorick",
+    "value": "yorick"
+  },
+  {
+    "text": "YQL",
+    "value": "YQL"
+  },
+  {
+    "text": "Yoix",
+    "value": "yoix"
+  },
+  {
+    "text": "YUI",
+    "value": "YUI"
+  },
+  {
+    "text": "Z notation",
+    "value": "zNotation"
+  },
+  {
+    "text": "Zebra",
+    "value": "zebra"
+  },
+  {
+    "text": "ZPL",
+    "value": "ZPL"
+  },
+  {
+    "text": "ZPL2",
+    "value": "zPL2"
+  },
+  {
+    "text": "Zeno",
+    "value": "zeno"
+  },
+  {
+    "text": "ZetaLisp",
+    "value": "zetaLisp"
+  },
+  {
+    "text": "Zig",
+    "value": "zig"
+  },
+  {
+    "text": "ZOPL",
+    "value": "ZOPL"
+  },
+  {
+    "text": "ZPL",
+    "value": "ZPL"
+  },
+  {
+    "text": "Z++",
+    "value": "zPlusPlus"
+  }
 ]
