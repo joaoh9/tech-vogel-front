@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-center justify-space-around">
+  <div class="bg-color-bg d-flex align-center justify-space-around">
     <div class="mr-1">
       <v-combobox
         placeholder="Skill"
@@ -12,11 +12,17 @@
       v-model="skill.experience"
       v-on:change="updateItem"
       color="primary"
-      class="d-inline-flex justify-center flex-wrap"
+      class=" bg-color-bg d-inline-flex justify-center flex-wrap"
     >
-      <v-btn v-for="(xp, index) in xpOptions" v-bind:key="index" outlined :value="xp">{{
-        xp
-      }}</v-btn>
+      <v-btn
+        class="bg-color-bg"
+        v-for="(xp, index) in xpOptions"
+        :key="index"
+        outlined
+        :value="xp"
+      >
+        {{ xp }}
+      </v-btn>
     </v-btn-toggle>
   </div>
 </template>
