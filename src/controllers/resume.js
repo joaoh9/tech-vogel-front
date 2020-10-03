@@ -5,31 +5,34 @@ export default class {
     const inpResume = details.resume;
     const resume = {
       education: {
-        educationInstitutions: [
-          {
-            institutionType: inpResume.education.type,
+        educationInstitutions: inpResume.education.map(education => {
+          return {
+            institutionType: education.type,
             name: inpResume.education.degree,
-          },
-        ],
+          };
+        }),
       },
       skills: {
-        programmingLanguages: inpResume.skills.programmingLanguages.split(','),
-        frameworks: inpResume.skills.frameworks.split(','),
-        knowledgeAreas: inpResume.skills.knowledgeAreas.split(','),
-        softSkills: inpResume.skills.softSkills.split(','),
+        programmingLanguages: inpResume.skills.map(skill => {
+          return {
+            experienceLevel: skill.experience,
+            skillId: skill.skill,
+          };
+        }),
       },
-      workHistory: [
-        {
-          companyName: inpResume.job.company.title,
-          description: inpResume.job.jobDescription,
-          endDate: inpResume.job.currentJob
+      workHistory: inpResume.job.map(job => {
+        return {
+          companyName: job.company.title,
+          description: job.jobDescription,
+          endDate: job.currentJob
             ? null
-            : '01/' + inpResume.job.to.month + '/' + inpResume.job.to.year,
-          role: inpResume.job.position,
-          startDate: '01/' + inpResume.job.from.month + '/' + inpResume.job.from.year,
-        },
-      ],
+            : '01/' + job.to.month + '/' + job.to.year,
+          role: job.position,
+          startDate: '01/' + job.from.month + '/' + job.from.year,
+        };
+      }),
     };
+    console.log(resume);
     const axios = await Axios.GetInstance();
     const res = await axios.post('/resumes', resume);
     return res;
