@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-center mx-2 mx-md-12 mt-6 mt-md-6 mb-6" style="flex-direction: column">
     <h4 class="h4-bold align-self-center text-center">{{ title }}</h4>
-    <span class="caption align-self-center" style="color: #A1A1AC">{{ description || '' }}</span>
+    <span class="caption align-self-center text-center" style="color: #A1A1AC">{{ description || '' }}</span>
   </div>
 </template>
 

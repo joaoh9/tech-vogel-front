@@ -49,7 +49,7 @@
           </template>
           <template v-slot:buttons>
             <div
-              :class="`d-flex ${currentStep === 1 ? 'justify-end' : 'justify-space-between'}  ma-6`"
+              :class="`d-flex ${currentStep === 1 ? 'justify-end' : 'justify-space-between'}  my-6`"
               style="z-index: -1"
             >
               <g-btn

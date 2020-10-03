@@ -53,7 +53,7 @@
         </v-checkbox>
       </template>
       <template v-slot:buttons>
-        <div class="d-flex justify-space-between ma-6">
+        <div class="d-flex justify-space-between my-6">
           <v-btn to="/login" color="secondary" tile outlined text large>
             {{ $t('Common.login') }}
           </v-btn>

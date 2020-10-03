@@ -8,16 +8,16 @@
     :min-height="minHeight()"
     :max-height="maxHeight()"
   >
-    <slot name="card-header" />
     <v-row justify="center">
       <v-col cols="1" md="2" />
       <v-col cols="10" md="8">
+        <slot name="card-header" />
         <slot name="card-content" />
+        <v-divider class="mt-4" />
+        <slot name="buttons" />
       </v-col>
       <v-col cols="1" md="2" />
     </v-row>
-    <v-divider class="mt-4" />
-    <slot name="buttons" />
   </v-card>
 </template>
 

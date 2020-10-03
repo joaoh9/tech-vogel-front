@@ -1,40 +1,20 @@
 <template>
   <div>
-    <v-tooltip left v-if="position === 'left'">
+    <v-tooltip v-if="tooltip" :left="left" :right="right" :top="top" :bottom="bottom">
       <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1 d-flex">
+        <h6 v-on="on" v-bind="attrs" class="h6 d-flex">
           {{ title }}
-        </p>
+        </h6>
+        <span class="color-cinza-lighten-1 caption">{{ description }}</span>
       </template>
       <span>{{ tooltip }}</span>
     </v-tooltip>
-    <v-tooltip right v-else-if="position === 'right'">
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1 d-flex">
-          {{ title }}
-        </p>
-      </template>
-      <span>{{ tooltip }}</span>
-    </v-tooltip>
-    <v-tooltip top v-else-if="position === 'top'">
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1 d-flex">
-          {{ title }}
-        </p>
-      </template>
-      <span>{{ tooltip }}</span>
-    </v-tooltip>
-    <v-tooltip bottom v-else-if="position === 'bottom'">
-      <template v-slot:activator="{ on, attrs }">
-        <p v-on="on" v-bind="attrs" class="body-1 d-flex">
-          {{ title }}
-        </p>
-      </template>
-      <span>{{ tooltip }}</span>
-    </v-tooltip>
-    <p v-else class="body-1 d-flex">
-      {{ title }}
-    </p>
+    <div v-else class="mb-3">
+      <h6 class="h6 d-flex">
+        {{ title }}
+      </h6>
+      <span class="color-cinza-lighten-1 caption">{{ description }}</span>
+    </div>
   </div>
 </template>
 
@@ -45,6 +25,36 @@ export default {
     position: String,
     title: String,
     tooltip: String,
+    description: String,
+  },
+  mounted() {
+    this.getPosition();
+  },
+  data() {
+    return {
+      left: false,
+      right: false,
+      top: false,
+      bottom: false,
+    };
+  },
+  methods: {
+    getPosition() {
+      switch (this.position) {
+        case 'left':
+          this.left = true;
+          break;
+        case 'right':
+          this.right = true;
+          break;
+        case 'top':
+          this.top = true;
+          break;
+        case 'bottom':
+          this.bottom = true;
+          break;
+      }
+    },
   },
 };
 </script>
