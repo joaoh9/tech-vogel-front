@@ -1,109 +1,430 @@
 [
-  { "label": "English", "code": "ENG" },
-  { "label": "Portuguese", "code": "POR" },
-  { "label": "Spanish", "code": "SPN" },
-  { "label": "French", "code": "FRN" },
-  { "label": "German, Standard", "code": "GER" },
-  { "label": "Akan", "code": "TWS" },
-  { "label": "Amharic", "code": "AMH" },
-  { "label": "Arabic, Algerian", "code": "ARQ" },
-  { "label": "Arabic, Egyptian", "code": "ARZ" },
-  { "label": "Arabic, Mesopotamian", "code": "ACM" },
-  { "label": "Arabic, Moroccan", "code": "ARY" },
-  { "label": "Arabic, Najdi", "code": "ARS" },
-  { "label": "Arabic, North Levantine", "code": "APC" },
-  { "label": "Arabic, Saidi", "code": "AEC" },
-  { "label": "Arabic, Sanaani", "code": "AYN" },
-  { "label": "Arabic, Sudanese", "code": "APD" },
-  { "label": "Arabic, Tunisian", "code": "AEB" },
-  { "label": "Assamese", "code": "ASM" },
-  { "label": "Awadhi", "code": "AWD" },
-  { "label": "Azerbaijani, North", "code": "AZE" },
-  { "label": "Azerbaijani, South", "code": "AZB" },
-  { "label": "Belarusan", "code": "RUW" },
-  { "label": "Bengali", "code": "BNG" },
-  { "label": "Bhojpuri", "code": "BHJ" },
-  { "label": "Bulgarian", "code": "BLG" },
-  { "label": "Burmese", "code": "BMS" },
-  { "label": "Cebuano", "code": "CEB" },
-  { "label": "Chhattisgarhi", "code": "HNE" },
-  { "label": "Chinese, Gan", "code": "KNN" },
-  { "label": "Chinese, Hakka", "code": "HAK" },
-  { "label": "Chinese, Jinyu", "code": "CJY" },
-  { "label": "Chinese, Mandarin", "code": "CHN" },
-  { "label": "Chinese, Min Bei", "code": "MNP" },
-  { "label": "Chinese, Min Nan", "code": "CFR" },
-  { "label": "Chinese, Wu", "code": "WUU" },
-  { "label": "Chinese, Xiang", "code": "HSN" },
-  { "label": "Chinese, Yue", "code": "YUH" },
-  { "label": "Chittagonian", "code": "CIT" },
-  { "label": "Czech", "code": "CZC" },
-  { "label": "Deccan", "code": "DCC" },
-  { "label": "Dutch", "code": "DUT" },
-  { "label": "Farsi, Eastern", "code": "PRS" },
-  { "label": "Farsi, Western", "code": "PES" },
-  { "label": "Fulfulde, Nigerian", "code": "FUV" },
-  { "label": "Greek", "code": "GRK" },
-  { "label": "Gujarati", "code": "GJR" },
-  { "label": "Haitian Creole French", "code": "HAT" },
-  { "label": "Haryanvi", "code": "BGC" },
-  { "label": "Hausa", "code": "HUA" },
-  { "label": "Hiligaynon", "code": "HIL" },
-  { "label": "Hindi", "code": "HND" },
-  { "label": "Hungarian", "code": "HNG" },
-  { "label": "Igbo", "code": "IGR" },
-  { "label": "Ilocano", "code": "ILO" },
-  { "label": "Indonesian", "code": "INZ" },
-  { "label": "Italian", "code": "ITN" },
-  { "label": "Japanese", "code": "JPN" },
-  { "label": "Javanese", "code": "JAN" },
-  { "label": "Kannada", "code": "KJV" },
-  { "label": "Kazakh", "code": "KAZ" },
-  { "label": "Khmer, Central", "code": "KMR" },
-  { "label": "Korean", "code": "KKN" },
-  { "label": "Kurmanji", "code": "KUR" },
-  { "label": "Lombard", "code": "LMO" },
-  { "label": "Madura", "code": "MHJ" },
-  { "label": "Magahi", "code": "MQM" },
-  { "label": "Maithili", "code": "MKP" },
-  { "label": "Malagasy", "code": "MEX" },
-  { "label": "Malay", "code": "MLI" },
-  { "label": "Malayalam", "code": "MJS" },
-  { "label": "Marathi", "code": "MRT" },
-  { "label": "Marwari", "code": "MKD" },
-  { "label": "Napoletano-Calabrese", "code": "NPL" },
-  { "label": "Nepali", "code": "NEP" },
-  { "label": "Oriya", "code": "ORY" },
-  { "label": "Oromo, West-Central", "code": "GAZ" },
-  { "label": "Panjabi, Eastern", "code": "PNJ" },
-  { "label": "Panjabi, Western", "code": "PNB" },
-  { "label": "Pashto, Northern", "code": "PBU" },
-  { "label": "Pashto, Southern", "code": "PBT" },
-  { "label": "Polish", "code": "PQL" },
-  { "label": "Romanian", "code": "RUM" },
-  { "label": "Russian", "code": "RUS" },
-  { "label": "Rwanda", "code": "RUA" },
-  { "label": "Saraiki", "code": "SKR" },
-  { "label": "Serbo-Croatian", "code": "SRC" },
-  { "label": "Shona", "code": "SHD" },
-  { "label": "Sindhi", "code": "SND" },
-  { "label": "Sinhala", "code": "SNH" },
-  { "label": "Somali", "code": "SOM" },
-  { "label": "Sunda", "code": "SUO" },
-  { "label": "Swedish", "code": "SWD" },
-  { "label": "Tagalog", "code": "TGL" },
-  { "label": "Tamil", "code": "TCV" },
-  { "label": "Tatar", "code": "TTR" },
-  { "label": "Telugu", "code": "TCW" },
-  { "label": "Thai, Northeastern", "code": "TTS" },
-  { "label": "Thai", "code": "THJ" },
-  { "label": "Turkish", "code": "TRK" },
-  { "label": "Ukrainian", "code": "UKR" },
-  { "label": "Urdu", "code": "URD" },
-  { "label": "Uyghur", "code": "UIG" },
-  { "label": "Uzbek, Northern", "code": "UZB" },
-  { "label": "Vietnamese", "code": "VIE" },
-  { "label": "Yoruba", "code": "YOR" },
-  { "label": "Zhuang, Northern", "code": "CCX" },
-  { "label": "Zulu", "code": "ZUU" }
+  {
+    "text": "English",
+    "value": "ENG"
+  },
+  {
+    "text": "Portuguese",
+    "value": "POR"
+  },
+  {
+    "text": "Spanish",
+    "value": "SPN"
+  },
+  {
+    "text": "French",
+    "value": "FRN"
+  },
+  {
+    "text": "German, Standard",
+    "value": "GER"
+  },
+  {
+    "text": "Akan",
+    "value": "TWS"
+  },
+  {
+    "text": "Amharic",
+    "value": "AMH"
+  },
+  {
+    "text": "Arabic, Algerian",
+    "value": "ARQ"
+  },
+  {
+    "text": "Arabic, Egyptian",
+    "value": "ARZ"
+  },
+  {
+    "text": "Arabic, Mesopotamian",
+    "value": "ACM"
+  },
+  {
+    "text": "Arabic, Moroccan",
+    "value": "ARY"
+  },
+  {
+    "text": "Arabic, Najdi",
+    "value": "ARS"
+  },
+  {
+    "text": "Arabic, North Levantine",
+    "value": "APC"
+  },
+  {
+    "text": "Arabic, Saidi",
+    "value": "AEC"
+  },
+  {
+    "text": "Arabic, Sanaani",
+    "value": "AYN"
+  },
+  {
+    "text": "Arabic, Sudanese",
+    "value": "APD"
+  },
+  {
+    "text": "Arabic, Tunisian",
+    "value": "AEB"
+  },
+  {
+    "text": "Assamese",
+    "value": "ASM"
+  },
+  {
+    "text": "Awadhi",
+    "value": "AWD"
+  },
+  {
+    "text": "Azerbaijani, North",
+    "value": "AZE"
+  },
+  {
+    "text": "Azerbaijani, South",
+    "value": "AZB"
+  },
+  {
+    "text": "Belarusan",
+    "value": "RUW"
+  },
+  {
+    "text": "Bengali",
+    "value": "BNG"
+  },
+  {
+    "text": "Bhojpuri",
+    "value": "BHJ"
+  },
+  {
+    "text": "Bulgarian",
+    "value": "BLG"
+  },
+  {
+    "text": "Burmese",
+    "value": "BMS"
+  },
+  {
+    "text": "Cebuano",
+    "value": "CEB"
+  },
+  {
+    "text": "Chhattisgarhi",
+    "value": "HNE"
+  },
+  {
+    "text": "Chinese, Gan",
+    "value": "KNN"
+  },
+  {
+    "text": "Chinese, Hakka",
+    "value": "HAK"
+  },
+  {
+    "text": "Chinese, Jinyu",
+    "value": "CJY"
+  },
+  {
+    "text": "Chinese, Mandarin",
+    "value": "CHN"
+  },
+  {
+    "text": "Chinese, Min Bei",
+    "value": "MNP"
+  },
+  {
+    "text": "Chinese, Min Nan",
+    "value": "CFR"
+  },
+  {
+    "text": "Chinese, Wu",
+    "value": "WUU"
+  },
+  {
+    "text": "Chinese, Xiang",
+    "value": "HSN"
+  },
+  {
+    "text": "Chinese, Yue",
+    "value": "YUH"
+  },
+  {
+    "text": "Chittagonian",
+    "value": "CIT"
+  },
+  {
+    "text": "Czech",
+    "value": "CZC"
+  },
+  {
+    "text": "Deccan",
+    "value": "DCC"
+  },
+  {
+    "text": "Dutch",
+    "value": "DUT"
+  },
+  {
+    "text": "Farsi, Eastern",
+    "value": "PRS"
+  },
+  {
+    "text": "Farsi, Western",
+    "value": "PES"
+  },
+  {
+    "text": "Fulfulde, Nigerian",
+    "value": "FUV"
+  },
+  {
+    "text": "Greek",
+    "value": "GRK"
+  },
+  {
+    "text": "Gujarati",
+    "value": "GJR"
+  },
+  {
+    "text": "Haitian Creole French",
+    "value": "HAT"
+  },
+  {
+    "text": "Haryanvi",
+    "value": "BGC"
+  },
+  {
+    "text": "Hausa",
+    "value": "HUA"
+  },
+  {
+    "text": "Hiligaynon",
+    "value": "HIL"
+  },
+  {
+    "text": "Hindi",
+    "value": "HND"
+  },
+  {
+    "text": "Hungarian",
+    "value": "HNG"
+  },
+  {
+    "text": "Igbo",
+    "value": "IGR"
+  },
+  {
+    "text": "Ilocano",
+    "value": "ILO"
+  },
+  {
+    "text": "Indonesian",
+    "value": "INZ"
+  },
+  {
+    "text": "Italian",
+    "value": "ITN"
+  },
+  {
+    "text": "Japanese",
+    "value": "JPN"
+  },
+  {
+    "text": "Javanese",
+    "value": "JAN"
+  },
+  {
+    "text": "Kannada",
+    "value": "KJV"
+  },
+  {
+    "text": "Kazakh",
+    "value": "KAZ"
+  },
+  {
+    "text": "Khmer, Central",
+    "value": "KMR"
+  },
+  {
+    "text": "Korean",
+    "value": "KKN"
+  },
+  {
+    "text": "Kurmanji",
+    "value": "KUR"
+  },
+  {
+    "text": "Lombard",
+    "value": "LMO"
+  },
+  {
+    "text": "Madura",
+    "value": "MHJ"
+  },
+  {
+    "text": "Magahi",
+    "value": "MQM"
+  },
+  {
+    "text": "Maithili",
+    "value": "MKP"
+  },
+  {
+    "text": "Malagasy",
+    "value": "MEX"
+  },
+  {
+    "text": "Malay",
+    "value": "MLI"
+  },
+  {
+    "text": "Malayalam",
+    "value": "MJS"
+  },
+  {
+    "text": "Marathi",
+    "value": "MRT"
+  },
+  {
+    "text": "Marwari",
+    "value": "MKD"
+  },
+  {
+    "text": "Napoletano-Calabrese",
+    "value": "NPL"
+  },
+  {
+    "text": "Nepali",
+    "value": "NEP"
+  },
+  {
+    "text": "Oriya",
+    "value": "ORY"
+  },
+  {
+    "text": "Oromo, West-Central",
+    "value": "GAZ"
+  },
+  {
+    "text": "Panjabi, Eastern",
+    "value": "PNJ"
+  },
+  {
+    "text": "Panjabi, Western",
+    "value": "PNB"
+  },
+  {
+    "text": "Pashto, Northern",
+    "value": "PBU"
+  },
+  {
+    "text": "Pashto, Southern",
+    "value": "PBT"
+  },
+  {
+    "text": "Polish",
+    "value": "PQL"
+  },
+  {
+    "text": "Romanian",
+    "value": "RUM"
+  },
+  {
+    "text": "Russian",
+    "value": "RUS"
+  },
+  {
+    "text": "Rwanda",
+    "value": "RUA"
+  },
+  {
+    "text": "Saraiki",
+    "value": "SKR"
+  },
+  {
+    "text": "Serbo-Croatian",
+    "value": "SRC"
+  },
+  {
+    "text": "Shona",
+    "value": "SHD"
+  },
+  {
+    "text": "Sindhi",
+    "value": "SND"
+  },
+  {
+    "text": "Sinhala",
+    "value": "SNH"
+  },
+  {
+    "text": "Somali",
+    "value": "SOM"
+  },
+  {
+    "text": "Sunda",
+    "value": "SUO"
+  },
+  {
+    "text": "Swedish",
+    "value": "SWD"
+  },
+  {
+    "text": "Tagalog",
+    "value": "TGL"
+  },
+  {
+    "text": "Tamil",
+    "value": "TCV"
+  },
+  {
+    "text": "Tatar",
+    "value": "TTR"
+  },
+  {
+    "text": "Telugu",
+    "value": "TCW"
+  },
+  {
+    "text": "Thai, Northeastern",
+    "value": "TTS"
+  },
+  {
+    "text": "Thai",
+    "value": "THJ"
+  },
+  {
+    "text": "Turkish",
+    "value": "TRK"
+  },
+  {
+    "text": "Ukrainian",
+    "value": "UKR"
+  },
+  {
+    "text": "Urdu",
+    "value": "URD"
+  },
+  {
+    "text": "Uyghur",
+    "value": "UIG"
+  },
+  {
+    "text": "Uzbek, Northern",
+    "value": "UZB"
+  },
+  {
+    "text": "Vietnamese",
+    "value": "VIE"
+  },
+  {
+    "text": "Yoruba",
+    "value": "YOR"
+  },
+  {
+    "text": "Zhuang, Northern",
+    "value": "CCX"
+  },
+  {
+    "text": "Zulu",
+    "value": "ZUU"
+  }
 ]
