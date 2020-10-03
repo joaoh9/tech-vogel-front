@@ -4,7 +4,10 @@
       <template v-slot:default="{}" class="mb-6">
         <g-card>
           <template v-slot:card-header>
-            <g-card-header :title="$t(`Job.new.page${currentStep + 1}.title`)" />
+            <g-card-header
+              :title="getPageTitle(currentStep)"
+              :description="getPageDescripton(currentStep)"
+            />
           </template>
           <template v-slot:card-content>
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
@@ -25,10 +28,7 @@
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
               <Skills
-                v-on:knowlege-areas="r => (job.knowlegeAreas = r)"
-                v-on:programming-languages="r => (job.programmingLanguages = r)"
-                v-on:frameworks="r => (job.frameworks = r)"
-                v-on:soft-skills="r => (job.softSkills = r)"
+                v-on:skills="r => (job.skills = r)"
                 v-on:back="step--"
                 v-on:advance="step++"
               />
@@ -48,7 +48,7 @@
           </template>
           <template v-slot:buttons>
             <div
-              :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  ma-6`"
+              :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`"
               style="z-index: -1"
             >
               <g-btn
@@ -61,6 +61,14 @@
             </div>
           </template>
         </g-card>
+        <g-alert
+          :succesMessage="$t('Signup.resendConfirmationCode.success')"
+          :errorMessage="$t('Signup.resendConfirmationCode.error')"
+          v-on:success="s => (requestSuccess = s)"
+          v-on:error="s => (requestError = s)"
+          :successVar="requestSuccess"
+          :errorVar="requestError"
+        />
       </template>
     </Stepper>
   </div>
@@ -72,6 +80,7 @@ import BasicInfo from './_1BasicInfo';
 import About from './_2About';
 import Skills from './_3Skills';
 import Benefits from './_4Benefits';
+import JobController from 'Controllers/job';
 
 export default {
   name: 'NewJob',
@@ -86,15 +95,15 @@ export default {
     return {
       currentStep: 0,
       step: 1,
+      requestSuccess: false,
+      requestError: false,
       job: {
         title: '',
         experienceLevel: '',
         contractType: '',
         about: '',
         languages: [],
-        knowlegeAreas: [],
-        programmingLanguages: [],
-        frameworks: [],
+        skills: [],
         softSkills: [],
         perks: '',
         salary: {
@@ -111,41 +120,31 @@ export default {
     preview() {
       this.$router.push({
         name: 'Job Description',
+        params: { job: this.job },
       });
     },
-    getTitleColor(page) {
-      switch (page) {
-        case 1:
-          if (this.step === 1) return 'color: #FF9200';
-          return 'color: #A1A1AC';
+    async saveJob() {
+      const jobController = new JobController();
 
-        case 2:
-          if (this.step === 2) return 'color: #FF9200';
-          return 'color: #A1A1AC';
-
-        case 3:
-          if (this.step === 3) return 'color: #FF9200';
-          return 'color: #A1A1AC';
-
-        case 4:
-          if (this.step === 4) return 'color: #FF9200';
-          return 'color: #A1A1AC';
+      try {
+        await jobController.save(this.job);
+      } catch (e) {
+        this.requestError = true;
       }
     },
-    getPageTitle(page) {
-      return this.$t('Job.new.page' + page.toString() + '.title');
+    getPageInfo() {
+      return [
+        this.$t('Job.new.basicInfo'),
+        this.$t('Job.new.aboutTheRole'),
+        this.$t('Job.new.skillRequirements'),
+        this.$t('Job.new.salaryAndPerks'),
+      ];
     },
-    getSystemBarColor() {
-      switch (this.step) {
-        case 1:
-          return 'border-radius: 6px; margin: -1px; background: linear-gradient(to right, #FCFCFF 100%)';
-        case 2:
-          return 'border-radius: 6px; margin: -1px; background: linear-gradient(to right, #F1D6B2 16.665%, #FCFCFF 33.3334%)';
-        case 3:
-          return 'border-radius: 6px; margin: -1px; background: linear-gradient(to right, #F1D6B2 49.995%, #FCFCFF 66.667%)';
-        case 4:
-          return 'border-radius: 6px; margin: -1px; background: linear-gradient(to right, #F1D6B2 100%, #FCFCFF 33%)';
-      }
+    getPageTitle(currentStep) {
+      return this.getPageInfo()[currentStep].title;
+    },
+    getPageDescripton(currentStep) {
+      return this.getPageInfo()[currentStep].description;
     },
   },
 };

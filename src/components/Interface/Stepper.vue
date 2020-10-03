@@ -9,7 +9,11 @@
         background-color="rgba(0,0,0,0)"
         class="mr-4"
       >
-        <v-tab v-for="(item, key) in stepsExibition" :key="key">
+        <v-tab
+          v-for="(item, i) in stepsExibition"
+          :key="i"
+          :class="`color-cinza-lighten-2 text-capitalize ${i === value_ ? 'subtitle-2' : 'body-2'}`"
+        >
           {{ item.name }}
         </v-tab>
       </v-tabs>
@@ -43,12 +47,13 @@ export default {
     stepsNames: Array,
   },
   mounted() {
-    this._value = this.value
+    this.value_ = this.value;
   },
   data() {
     return {
       step: 1,
       numSteps: Number(this.steps),
+      value_: 0,
     };
   },
   computed: {
@@ -64,29 +69,29 @@ export default {
       return stepsExibition;
     },
     stepBottomNav() {
-      return this._value + 1;
+      return this.value_ + 1;
     },
   },
   methods: {
     getTitleStyle(step) {
       return {
-        color: this._value === step ? '#ff9200' : '',
+        color: this.value_ === step ? '#ff9200' : '',
       };
     },
     getStepIndicatorStyle(step) {
       return {
-        'background-color': this._value === step ? '#ff9200' : 'rgba(123,23,23,0)',
+        'background-color': this.value_ === step ? '#ff9200' : 'rgba(123,23,23,0)',
         width: '2px',
         height: '25px',
       };
     },
     updateStep(step) {
-      this._value = step;
-      this.$emit('input', this._value);
+      this.value_ = step;
+      this.$emit('input', this.value_);
     },
     updateStepBottomNav(step) {
-      this._value = step - 1;
-      this.$emit('input', this._value);
+      this.value_ = step - 1;
+      this.$emit('input', this.value_);
     },
   },
 };
