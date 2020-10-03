@@ -17,9 +17,6 @@
         </v-col>
       </v-row>
     </div>
-    <div class="mb-5">
-      <g-btn-secondary label="Learn more" />
-    </div>
   </div>
 </template>
 
