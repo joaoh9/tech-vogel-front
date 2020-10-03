@@ -391,10 +391,18 @@ const localeEnUs = {
     contractDurationTimePeriod: ContractDurationTimePeriod,
     companySize: CompanySize,
     preMadePhrases,
-    softSkills: Skills.SoftSkills,
-    softSkillsFlat: Skills.SoftSkillsFlat,
-    allSkills: Skills.ProgrammingLanguages.concat(Skills.Databases).concat(Skills.SoftSkillsFlat),
-    techSkills: Skills.ProgrammingLanguages.concat(Skills.Databases),
+    knowledgeAreas: Skills.KnowledgeAreas,
+    programmingLanguages: Skills.ProgrammingLanguages,
+    // frameworks: groupFormat(Skills.FrameWorks),
+    // softSkills: dataFormat(Skills.SoftSkills),
+    // everySkill: groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages })
+    //   .concat(groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas }))
+    //   .concat(groupFormat(Skills.FrameWorks)),
+    // // .concat(dataFormat(Skills.SoftSkills)),
+    // everySkillButSoft: groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages })
+    //   .concat(groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas }))
+    //   .concat(Skills.FrameWorks)
+    //   .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
   },
   Signup: {
@@ -582,6 +590,18 @@ const localeEnUs = {
     title: 'Leave your Feedback, bug encounter or suggestion!',
     topic: 'Topic',
     description: 'Description',
+  },
+  ProfessionalDashboard: {
+    greeting: 'Hi,',
+    actions: {
+      title: 'What would you like to do today?',
+      applications: 'Check on my applications',
+      findJobs: 'Search for more jobs',
+      editProfile: 'Edit my profile',
+      manageCredits: 'Manage credits',
+    },
+    registerCV: 'Register my CV',
+    manageAccountInfo: 'Manage my account information',
   },
 };
 
