@@ -19,7 +19,13 @@
       item-value="value"
       :key="skillsUpdated"
     />
-    <v-row justify="center" align="center" v-for="(skill, i) in skills" :key="i" class="mt-n6">
+    <v-row
+      justify="center"
+      align="center"
+      v-for="(skill, i) in skills"
+      :key="i"
+      :class="i !== 0 ? 'mt-n6' : ''"
+    >
       <v-col class="d-flex" cols="12" md="4">
         <v-icon @click="deleteSkills(i)" class="align-self-center mr-2">
           mdi-close
@@ -41,7 +47,7 @@
         </v-radio-group>
       </v-col>
     </v-row>
-    <h5 class="mt-4">{{ $t('Job.new.otherSkills.title') }}</h5>
+    <h5 class="mt-6">{{ $t('Job.new.otherSkills.title') }}</h5>
     <span class="color-cinza-lighten-1 caption">{{ $t('Job.new.otherSkills.description') }}</span>
     <form-input v-if="false" class="mt-4" :title="$t('Job.new.softSkills.title')" />
     <v-autocomplete
