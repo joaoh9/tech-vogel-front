@@ -40,15 +40,20 @@
 </template>
 
 <script>
+import RulesHelper from 'Helpers/rules';
+
 export default {
   name: 'NewJob1',
+  mounted() {
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+  },
   data() {
     return {
       title: '',
       experienceLevel: '',
       contractType: '',
       rules: {
-        required: t => t.length > 3 || 'Please write something',
+        required: () => true;
       },
     };
   },

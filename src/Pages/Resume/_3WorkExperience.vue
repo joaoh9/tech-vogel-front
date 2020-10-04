@@ -26,13 +26,6 @@ export default {
     return {
       workComponent: WorkItem,
       job: [],
-      rules: {
-        year: value => {
-          const reg = /[^\d]/g;
-          const s = value.replace(reg, '');
-          return s.length === 4;
-        },
-      },
     };
   },
 };
