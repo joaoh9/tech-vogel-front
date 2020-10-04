@@ -102,7 +102,7 @@
 </template>
 
 <script>
-import SkillExperienceLevel from './SkillExperienceLevel';
+import SkillExperienceLevel from 'Components/Interface/SkillExperienceLevel';
 
 export default {
   name: 'NewJob3',
