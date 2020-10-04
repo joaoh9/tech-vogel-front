@@ -1,614 +1,1073 @@
 [
   {
     "text": "Listening",
-    "value": "listening"
+    "value": {
+      "id": "listening",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Negotiation",
-    "value": "negotiation"
+    "value": {
+      "id": "negotiation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nonverbal communication",
-    "value": "nonverbalCommunication"
+    "value": {
+      "id": "nonverbalCommunication",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Persuasion",
-    "value": "persuasion"
+    "value": {
+      "id": "persuasion",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Presentation",
-    "value": "presentation"
+    "value": {
+      "id": "presentation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Public speaking",
-    "value": "publicSpeaking"
+    "value": {
+      "id": "publicSpeaking",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Reading body language",
-    "value": "readingBodyLanguage"
+    "value": {
+      "id": "readingBodyLanguage",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Storytelling",
-    "value": "storytelling"
+    "value": {
+      "id": "storytelling",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Verbal communication",
-    "value": "verbalCommunication"
+    "value": {
+      "id": "verbalCommunication",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual communication",
-    "value": "visualCommunication"
+    "value": {
+      "id": "visualCommunication",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Writing reports and proposals",
-    "value": "writingReportsAndProposals"
+    "value": {
+      "id": "writingReportsAndProposals",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Writing skills",
-    "value": "writingSkills"
+    "value": {
+      "id": "writingSkills",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Adaptability",
-    "value": "adaptability"
+    "value": {
+      "id": "adaptability",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Artistic aptitude",
-    "value": "artisticAptitude"
+    "value": {
+      "id": "artisticAptitude",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Creativity",
-    "value": "creativity"
+    "value": {
+      "id": "creativity",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Critical observation",
-    "value": "criticalObservation"
+    "value": {
+      "id": "criticalObservation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Critical thinking",
-    "value": "criticalThinking"
+    "value": {
+      "id": "criticalThinking",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Design aptitude",
-    "value": "designAptitude"
+    "value": {
+      "id": "designAptitude",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Desire to learn",
-    "value": "desireToLearn"
+    "value": {
+      "id": "desireToLearn",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Flexibility",
-    "value": "flexibility"
+    "value": {
+      "id": "flexibility",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Innovation",
-    "value": "innovation"
+    "value": {
+      "id": "innovation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Logical thinking",
-    "value": "logicalThinking"
+    "value": {
+      "id": "logicalThinking",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Problem solving",
-    "value": "problemSolving"
+    "value": {
+      "id": "problemSolving",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Research",
-    "value": "research"
+    "value": {
+      "id": "research",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Resourcefulness",
-    "value": "resourcefulness"
+    "value": {
+      "id": "resourcefulness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Thinking outside the box",
-    "value": "thinkingOutsideTheBox"
+    "value": {
+      "id": "thinkingOutsideTheBox",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Tolerance of change and uncertainty",
-    "value": "toleranceOfChangeAndUncertainty"
+    "value": {
+      "id": "toleranceOfChangeAndUncertainty",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Troubleshooting",
-    "value": "troubleshooting"
+    "value": {
+      "id": "troubleshooting",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Value education",
-    "value": "valueEducation"
+    "value": {
+      "id": "valueEducation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Willingness to learn",
-    "value": "willingnessToLearn"
+    "value": {
+      "id": "willingnessToLearn",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Conflict management",
-    "value": "conflictManagement"
+    "value": {
+      "id": "conflictManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Conflict resolution",
-    "value": "conflictResolution"
+    "value": {
+      "id": "conflictResolution",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Deal making",
-    "value": "dealMaking"
+    "value": {
+      "id": "dealMaking",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Decision making",
-    "value": "decisionMaking"
+    "value": {
+      "id": "decisionMaking",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Delegation",
-    "value": "delegation"
+    "value": {
+      "id": "delegation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dispute resolution",
-    "value": "disputeResolution"
+    "value": {
+      "id": "disputeResolution",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Facilitation",
-    "value": "facilitation"
+    "value": {
+      "id": "facilitation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Giving clear feedback",
-    "value": "givingClearFeedback"
+    "value": {
+      "id": "givingClearFeedback",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Inspiringpeople",
-    "value": "inspiringpeople"
+    "value": {
+      "id": "inspiringpeople",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Leadership",
-    "value": "leadership"
+    "value": {
+      "id": "leadership",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Management",
-    "value": "management"
+    "value": {
+      "id": "management",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Managing difficult conversations",
-    "value": "managingDifficultConversations"
+    "value": {
+      "id": "managingDifficultConversations",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Managing remote/virtual teams",
-    "value": "managingRemotevirtualTeams"
+    "value": {
+      "id": "managingRemotevirtualTeams",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Meeting management",
-    "value": "meetingManagement"
+    "value": {
+      "id": "meetingManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mentoring",
-    "value": "mentoring"
+    "value": {
+      "id": "mentoring",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Motivating",
-    "value": "motivating"
+    "value": {
+      "id": "motivating",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Project management",
-    "value": "projectManagement"
+    "value": {
+      "id": "projectManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Resolving issues",
-    "value": "resolvingIssues"
+    "value": {
+      "id": "resolvingIssues",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Successful coaching",
-    "value": "successfulCoaching"
+    "value": {
+      "id": "successfulCoaching",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Supervising",
-    "value": "supervising"
+    "value": {
+      "id": "supervising",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Talent management",
-    "value": "talentManagement"
+    "value": {
+      "id": "talentManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Confidence",
-    "value": "confidence"
+    "value": {
+      "id": "confidence",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cooperation",
-    "value": "cooperation"
+    "value": {
+      "id": "cooperation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Courtesy",
-    "value": "courtesy"
+    "value": {
+      "id": "courtesy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Energy",
-    "value": "energy"
+    "value": {
+      "id": "energy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Enthusiasm",
-    "value": "enthusiasm"
+    "value": {
+      "id": "enthusiasm",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Friendliness",
-    "value": "friendliness"
+    "value": {
+      "id": "friendliness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Honesty",
-    "value": "honesty"
+    "value": {
+      "id": "honesty",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Humorous",
-    "value": "humorous"
+    "value": {
+      "id": "humorous",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Patience",
-    "value": "patience"
+    "value": {
+      "id": "patience",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Respectability",
-    "value": "respectability"
+    "value": {
+      "id": "respectability",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Respectfulness",
-    "value": "respectfulness"
+    "value": {
+      "id": "respectfulness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Accepting feedback",
-    "value": "acceptingFeedback"
+    "value": {
+      "id": "acceptingFeedback",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Collaboration",
-    "value": "collaboration"
+    "value": {
+      "id": "collaboration",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Customer service",
-    "value": "customerService"
+    "value": {
+      "id": "customerService",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dealing with difficult situations",
-    "value": "dealingWithDifficultSituations"
+    "value": {
+      "id": "dealingWithDifficultSituations",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dealing with office politics",
-    "value": "dealingWithOfficePolitics"
+    "value": {
+      "id": "dealingWithOfficePolitics",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Disability awareness",
-    "value": "disabilityAwareness"
+    "value": {
+      "id": "disabilityAwareness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Diversity awareness",
-    "value": "diversityAwareness"
+    "value": {
+      "id": "diversityAwareness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Emotional intelligence",
-    "value": "emotionalIntelligence"
+    "value": {
+      "id": "emotionalIntelligence",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Empathy",
-    "value": "empathy"
+    "value": {
+      "id": "empathy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Establishing interpersonal relationships",
-    "value": "establishingInterpersonalRelationships"
+    "value": {
+      "id": "establishingInterpersonalRelationships",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dealing with difficult personalities",
-    "value": "dealingWithDifficultPersonalities"
+    "value": {
+      "id": "dealingWithDifficultPersonalities",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Intercultural competence",
-    "value": "interculturalCompetence"
+    "value": {
+      "id": "interculturalCompetence",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Interpersonal skills",
-    "value": "interpersonalSkills"
+    "value": {
+      "id": "interpersonalSkills",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Influence",
-    "value": "influence"
+    "value": {
+      "id": "influence",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Networking",
-    "value": "networking"
+    "value": {
+      "id": "networking",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Persuasion",
-    "value": "persuasion"
+    "value": {
+      "id": "persuasion",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Self-awareness",
-    "value": "selfawareness"
+    "value": {
+      "id": "selfawareness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Selling skills",
-    "value": "sellingSkills"
+    "value": {
+      "id": "sellingSkills",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Social skills",
-    "value": "socialSkills"
+    "value": {
+      "id": "socialSkills",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Team building",
-    "value": "teamBuilding"
+    "value": {
+      "id": "teamBuilding",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Teamwork",
-    "value": "teamwork"
+    "value": {
+      "id": "teamwork",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Attentiveness",
-    "value": "attentiveness"
+    "value": {
+      "id": "attentiveness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Business ethics",
-    "value": "businessEthics"
+    "value": {
+      "id": "businessEthics",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Competitiveness",
-    "value": "competitiveness"
+    "value": {
+      "id": "competitiveness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dedication",
-    "value": "dedication"
+    "value": {
+      "id": "dedication",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dependability",
-    "value": "dependability"
+    "value": {
+      "id": "dependability",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Following direction",
-    "value": "followingDirection"
+    "value": {
+      "id": "followingDirection",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Independence",
-    "value": "independence"
+    "value": {
+      "id": "independence",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Meeting deadlines",
-    "value": "meetingDeadlines"
+    "value": {
+      "id": "meetingDeadlines",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Motivation",
-    "value": "motivation"
+    "value": {
+      "id": "motivation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Multitasking",
-    "value": "multitasking"
+    "value": {
+      "id": "multitasking",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Organization",
-    "value": "organization"
+    "value": {
+      "id": "organization",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Perseverance",
-    "value": "perseverance"
+    "value": {
+      "id": "perseverance",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Persistence",
-    "value": "persistence"
+    "value": {
+      "id": "persistence",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Planning",
-    "value": "planning"
+    "value": {
+      "id": "planning",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Proper business etiquette",
-    "value": "properBusinessEtiquette"
+    "value": {
+      "id": "properBusinessEtiquette",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Punctuality",
-    "value": "punctuality"
+    "value": {
+      "id": "punctuality",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Reliability",
-    "value": "reliability"
+    "value": {
+      "id": "reliability",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Resilience",
-    "value": "resilience"
+    "value": {
+      "id": "resilience",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Results-orientation",
-    "value": "resultsorientation"
+    "value": {
+      "id": "resultsorientation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Scheduling",
-    "value": "scheduling"
+    "value": {
+      "id": "scheduling",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Self-direction",
-    "value": "selfdirection"
+    "value": {
+      "id": "selfdirection",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Self-monitoring",
-    "value": "selfmonitoring"
+    "value": {
+      "id": "selfmonitoring",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Self-supervising",
-    "value": "selfsupervising"
+    "value": {
+      "id": "selfsupervising",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Staying on task",
-    "value": "stayingOnTask"
+    "value": {
+      "id": "stayingOnTask",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Strategic planning",
-    "value": "strategicPlanning"
+    "value": {
+      "id": "strategicPlanning",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Time management",
-    "value": "timeManagement"
+    "value": {
+      "id": "timeManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Trainability",
-    "value": "trainability"
+    "value": {
+      "id": "trainability",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Working well under pressure",
-    "value": "workingWellUnderPressure"
+    "value": {
+      "id": "workingWellUnderPressure",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Assertiveness",
-    "value": "assertiveness"
+    "value": {
+      "id": "assertiveness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Business ethics",
-    "value": "businessEthics"
+    "value": {
+      "id": "businessEthics",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Business storytelling",
-    "value": "businessStorytelling"
+    "value": {
+      "id": "businessStorytelling",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Business trend awareness",
-    "value": "businessTrendAwareness"
+    "value": {
+      "id": "businessTrendAwareness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Customer Service",
-    "value": "customerService"
+    "value": {
+      "id": "customerService",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Effective communicator",
-    "value": "effectiveCommunicator"
+    "value": {
+      "id": "effectiveCommunicator",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Emotion management",
-    "value": "emotionManagement"
+    "value": {
+      "id": "emotionManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ergonomic sensitivity",
-    "value": "ergonomicSensitivity"
+    "value": {
+      "id": "ergonomicSensitivity",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Follow instructions",
-    "value": "followInstructions"
+    "value": {
+      "id": "followInstructions",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Follow regulations",
-    "value": "followRegulations"
+    "value": {
+      "id": "followRegulations",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Follow rules",
-    "value": "followRules"
+    "value": {
+      "id": "followRules",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Functions well under pressure",
-    "value": "functionsWellUnderPressure"
+    "value": {
+      "id": "functionsWellUnderPressure",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Good attitude",
-    "value": "goodAttitude"
+    "value": {
+      "id": "goodAttitude",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Highly recommended",
-    "value": "highlyRecommended"
+    "value": {
+      "id": "highlyRecommended",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Independent",
-    "value": "independent"
+    "value": {
+      "id": "independent",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Interviewing",
-    "value": "interviewing"
+    "value": {
+      "id": "interviewing",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Knowledge management",
-    "value": "knowledgeManagement"
+    "value": {
+      "id": "knowledgeManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Meets deadlines",
-    "value": "meetsDeadlines"
+    "value": {
+      "id": "meetsDeadlines",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Motivating",
-    "value": "motivating"
+    "value": {
+      "id": "motivating",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Perform effectively in a deadline environment",
-    "value": "performEffectivelyInADeadlineEnvironment"
+    "value": {
+      "id": "performEffectivelyInADeadlineEnvironment",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Performance management",
-    "value": "performanceManagement"
+    "value": {
+      "id": "performanceManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Positive work ethic",
-    "value": "positiveWorkEthic"
+    "value": {
+      "id": "positiveWorkEthic",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Problem solving",
-    "value": "problemSolving"
+    "value": {
+      "id": "problemSolving",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Process improvement",
-    "value": "processImprovement"
+    "value": {
+      "id": "processImprovement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Quick-witted",
-    "value": "quickwitted"
+    "value": {
+      "id": "quickwitted",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Results oriented",
-    "value": "resultsOriented"
+    "value": {
+      "id": "resultsOriented",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Safety conscious",
-    "value": "safetyConscious"
+    "value": {
+      "id": "safetyConscious",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Scheduling",
-    "value": "scheduling"
+    "value": {
+      "id": "scheduling",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Self-awareness",
-    "value": "selfawareness"
+    "value": {
+      "id": "selfawareness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Self-supervising",
-    "value": "selfsupervising"
+    "value": {
+      "id": "selfsupervising",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Stress management",
-    "value": "stressManagement"
+    "value": {
+      "id": "stressManagement",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Team player",
-    "value": "teamPlayer"
+    "value": {
+      "id": "teamPlayer",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Technology savvy",
-    "value": "technologySavvy"
+    "value": {
+      "id": "technologySavvy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Technology trend awareness",
-    "value": "technologyTrendAwareness"
+    "value": {
+      "id": "technologyTrendAwareness",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Tolerant",
-    "value": "tolerant"
+    "value": {
+      "id": "tolerant",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Trainable",
-    "value": "trainable"
+    "value": {
+      "id": "trainable",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Training",
-    "value": "training"
+    "value": {
+      "id": "training",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Troubleshooting",
-    "value": "troubleshooting"
+    "value": {
+      "id": "troubleshooting",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Willing to accept feedback",
-    "value": "willingToAcceptFeedback"
+    "value": {
+      "id": "willingToAcceptFeedback",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Willingness to learn",
-    "value": "willingnessToLearn"
+    "value": {
+      "id": "willingnessToLearn",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Work-life balance",
-    "value": "worklifeBalance"
+    "value": {
+      "id": "worklifeBalance",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Works well under pressure",
-    "value": "worksWellUnderPressure"
+    "value": {
+      "id": "worksWellUnderPressure",
+      "experienceLevel": 0
+    }
   }
 ]

@@ -1,2742 +1,4797 @@
 [
   {
     "text": "A.NET",
-    "value": "aDotNET"
+    "value": {
+      "id": "aDotNET",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "A-0 System",
-    "value": "aMinus0System"
+    "value": {
+      "id": "aMinus0System",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "A+",
-    "value": "aPlus"
+    "value": {
+      "id": "aPlus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ABAP",
-    "value": "ABAP"
+    "value": {
+      "id": "ABAP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ABC",
-    "value": "ABC"
+    "value": {
+      "id": "ABC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ABC ALGOL",
-    "value": "aBCALGOL"
+    "value": {
+      "id": "aBCALGOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ACC",
-    "value": "ACC"
+    "value": {
+      "id": "ACC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Accent",
-    "value": "accent"
+    "value": {
+      "id": "accent",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ace DASL",
-    "value": "aceDASL"
+    "value": {
+      "id": "aceDASL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Action!",
-    "value": "action"
+    "value": {
+      "id": "action",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ActionScript",
-    "value": "actionScript"
+    "value": {
+      "id": "actionScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Actor",
-    "value": "actor"
+    "value": {
+      "id": "actor",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ada",
-    "value": "ada"
+    "value": {
+      "id": "ada",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Adenine",
-    "value": "adenine"
+    "value": {
+      "id": "adenine",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Agda",
-    "value": "agda"
+    "value": {
+      "id": "agda",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Agilent VEE",
-    "value": "agilentVEE"
+    "value": {
+      "id": "agilentVEE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Agora",
-    "value": "agora"
+    "value": {
+      "id": "agora",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AIMMS",
-    "value": "AIMMS"
+    "value": {
+      "id": "AIMMS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Aldor",
-    "value": "aldor"
+    "value": {
+      "id": "aldor",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Alef",
-    "value": "alef"
+    "value": {
+      "id": "alef",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ALF",
-    "value": "ALF"
+    "value": {
+      "id": "ALF",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ALGOL 58",
-    "value": "aLGOL58"
+    "value": {
+      "id": "aLGOL58",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ALGOL 60",
-    "value": "aLGOL60"
+    "value": {
+      "id": "aLGOL60",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ALGOL 68",
-    "value": "aLGOL68"
+    "value": {
+      "id": "aLGOL68",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ALGOL W",
-    "value": "aLGOLW"
+    "value": {
+      "id": "aLGOLW",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Alice",
-    "value": "alice"
+    "value": {
+      "id": "alice",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Alma-0",
-    "value": "almaMinus0"
+    "value": {
+      "id": "almaMinus0",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AmbientTalk",
-    "value": "ambientTalk"
+    "value": {
+      "id": "ambientTalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Amiga E",
-    "value": "amigaE"
+    "value": {
+      "id": "amigaE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AMOS",
-    "value": "AMOS"
+    "value": {
+      "id": "AMOS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AMPL",
-    "value": "AMPL"
+    "value": {
+      "id": "AMPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AngelScript",
-    "value": "angelScript"
+    "value": {
+      "id": "angelScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Apache Pig latin",
-    "value": "apachePigLatin"
+    "value": {
+      "id": "apachePigLatin",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Apex",
-    "value": "apex"
+    "value": {
+      "id": "apex",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "APL",
-    "value": "APL"
+    "value": {
+      "id": "APL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AppleScript",
-    "value": "appleScript"
+    "value": {
+      "id": "appleScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "APT",
-    "value": "APT"
+    "value": {
+      "id": "APT",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Arc",
-    "value": "arc"
+    "value": {
+      "id": "arc",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ARexx",
-    "value": "aRexx"
+    "value": {
+      "id": "aRexx",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Argus",
-    "value": "argus"
+    "value": {
+      "id": "argus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Assembly",
-    "value": "assembly"
+    "value": {
+      "id": "assembly",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AutoHotkey",
-    "value": "autoHotkey"
+    "value": {
+      "id": "autoHotkey",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AutoIt",
-    "value": "autoIt"
+    "value": {
+      "id": "autoIt",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AutoLISP / Visual LISP",
-    "value": "autoLISPVisualLISP"
+    "value": {
+      "id": "autoLISPVisualLISP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Averest",
-    "value": "averest"
+    "value": {
+      "id": "averest",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AWK",
-    "value": "AWK"
+    "value": {
+      "id": "AWK",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Axum",
-    "value": "axum"
+    "value": {
+      "id": "axum",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "B",
-    "value": "B"
+    "value": {
+      "id": "B",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Babbage",
-    "value": "babbage"
+    "value": {
+      "id": "babbage",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ballerina",
-    "value": "ballerina"
+    "value": {
+      "id": "ballerina",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Bash",
-    "value": "bash"
+    "value": {
+      "id": "bash",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "BASIC",
-    "value": "BASIC"
+    "value": {
+      "id": "BASIC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Batch file (Windows/MS-DOS)",
-    "value": "batchFileWindowsMSMinusDOS"
+    "value": {
+      "id": "batchFileWindowsMSMinusDOS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "bc",
-    "value": "bc"
+    "value": {
+      "id": "bc",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "BCPL",
-    "value": "BCPL"
+    "value": {
+      "id": "BCPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "BeanShell",
-    "value": "beanShell"
+    "value": {
+      "id": "beanShell",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Bertrand",
-    "value": "bertrand"
+    "value": {
+      "id": "bertrand",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "BETA",
-    "value": "BETA"
+    "value": {
+      "id": "BETA",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "BLISS",
-    "value": "BLISS"
+    "value": {
+      "id": "BLISS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Blockly",
-    "value": "blockly"
+    "value": {
+      "id": "blockly",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "BlooP",
-    "value": "blooP"
+    "value": {
+      "id": "blooP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Boo",
-    "value": "boo"
+    "value": {
+      "id": "boo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Boomerang",
-    "value": "boomerang"
+    "value": {
+      "id": "boomerang",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Bosque",
-    "value": "bosque"
+    "value": {
+      "id": "bosque",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "C",
-    "value": "C"
+    "value": {
+      "id": "C",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "C--",
-    "value": "cMinusMinus"
+    "value": {
+      "id": "cMinusMinus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "C++",
-    "value": "cPlusPlus"
+    "value": {
+      "id": "cPlusPlus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "C*",
-    "value": "cStar"
+    "value": {
+      "id": "cStar",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "C#",
-    "value": "cSharp"
+    "value": {
+      "id": "cSharp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "C/AL",
-    "value": "cAL"
+    "value": {
+      "id": "cAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Caché ObjectScript",
-    "value": "cacheObjectScript"
+    "value": {
+      "id": "cacheObjectScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "C Shell (csh)",
-    "value": "cShellcsh"
+    "value": {
+      "id": "cShellcsh",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Caml",
-    "value": "caml"
+    "value": {
+      "id": "caml",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cayenne",
-    "value": "cayenne"
+    "value": {
+      "id": "cayenne",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CDuce",
-    "value": "cDuce"
+    "value": {
+      "id": "cDuce",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cecil",
-    "value": "cecil"
+    "value": {
+      "id": "cecil",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cesil",
-    "value": "cesil"
+    "value": {
+      "id": "cesil",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Céu",
-    "value": "ceu"
+    "value": {
+      "id": "ceu",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ceylon",
-    "value": "ceylon"
+    "value": {
+      "id": "ceylon",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CFEngine",
-    "value": "cFEngine"
+    "value": {
+      "id": "cFEngine",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cg",
-    "value": "cg"
+    "value": {
+      "id": "cg",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ch",
-    "value": "ch"
+    "value": {
+      "id": "ch",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Chapel",
-    "value": "chapel"
+    "value": {
+      "id": "chapel",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Charm",
-    "value": "charm"
+    "value": {
+      "id": "charm",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CHILL",
-    "value": "CHILL"
+    "value": {
+      "id": "CHILL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CHIP-8",
-    "value": "cHIPMinus8"
+    "value": {
+      "id": "cHIPMinus8",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "chomski",
-    "value": "chomski"
+    "value": {
+      "id": "chomski",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ChucK",
-    "value": "chucK"
+    "value": {
+      "id": "chucK",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cilk",
-    "value": "cilk"
+    "value": {
+      "id": "cilk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CL (IBM)",
-    "value": "cLIBM"
+    "value": {
+      "id": "cLIBM",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Claire",
-    "value": "claire"
+    "value": {
+      "id": "claire",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Clarion",
-    "value": "clarion"
+    "value": {
+      "id": "clarion",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Clean",
-    "value": "clean"
+    "value": {
+      "id": "clean",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Clipper",
-    "value": "clipper"
+    "value": {
+      "id": "clipper",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CLIPS",
-    "value": "CLIPS"
+    "value": {
+      "id": "CLIPS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CLIST",
-    "value": "CLIST"
+    "value": {
+      "id": "CLIST",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Clojure",
-    "value": "clojure"
+    "value": {
+      "id": "clojure",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CLU",
-    "value": "CLU"
+    "value": {
+      "id": "CLU",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CMS-2",
-    "value": "cMSMinus2"
+    "value": {
+      "id": "cMSMinus2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "COBOL",
-    "value": "COBOL"
+    "value": {
+      "id": "COBOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CobolScript",
-    "value": "cobolScript"
+    "value": {
+      "id": "cobolScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cobra",
-    "value": "cobra"
+    "value": {
+      "id": "cobra",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CoffeeScript",
-    "value": "coffeeScript"
+    "value": {
+      "id": "coffeeScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ColdFusion",
-    "value": "coldFusion"
+    "value": {
+      "id": "coldFusion",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "COMAL",
-    "value": "COMAL"
+    "value": {
+      "id": "COMAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Combined Programming",
-    "value": "combinedCPL"
+    "value": {
+      "id": "combinedCPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "COMIT",
-    "value": "COMIT"
+    "value": {
+      "id": "COMIT",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Common Intermediate",
-    "value": "commonIntermediate"
+    "value": {
+      "id": "commonIntermediate",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Common Lisp (CL)",
-    "value": "commonLisp"
+    "value": {
+      "id": "commonLisp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "COMPASS",
-    "value": "COMPASS"
+    "value": {
+      "id": "COMPASS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Component Pascal",
-    "value": "componentPascal"
+    "value": {
+      "id": "componentPascal",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Constraint Handling Rules (CHR)",
-    "value": "constraintHandlingRulesCHR"
+    "value": {
+      "id": "constraintHandlingRulesCHR",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "COMTRAN",
-    "value": "COMTRAN"
+    "value": {
+      "id": "COMTRAN",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cool",
-    "value": "cool"
+    "value": {
+      "id": "cool",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Coq",
-    "value": "coq"
+    "value": {
+      "id": "coq",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Coral 66",
-    "value": "coral66"
+    "value": {
+      "id": "coral66",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CorVision",
-    "value": "corVision"
+    "value": {
+      "id": "corVision",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "COWSEL",
-    "value": "COWSEL"
+    "value": {
+      "id": "COWSEL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CPL",
-    "value": "CPL"
+    "value": {
+      "id": "CPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cryptol",
-    "value": "cryptol"
+    "value": {
+      "id": "cryptol",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Crystal",
-    "value": "crystal"
+    "value": {
+      "id": "crystal",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Csound",
-    "value": "csound"
+    "value": {
+      "id": "csound",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cuneiform",
-    "value": "cuneiform"
+    "value": {
+      "id": "cuneiform",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Curl",
-    "value": "curl"
+    "value": {
+      "id": "curl",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Curry",
-    "value": "curry"
+    "value": {
+      "id": "curry",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cybil",
-    "value": "cybil"
+    "value": {
+      "id": "cybil",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cyclone",
-    "value": "cyclone"
+    "value": {
+      "id": "cyclone",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cypher Query ",
-    "value": "cypherQuery"
+    "value": {
+      "id": "cypherQuery",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cython",
-    "value": "cython"
+    "value": {
+      "id": "cython",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CEEMAC",
-    "value": "CEEMAC"
+    "value": {
+      "id": "CEEMAC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "D",
-    "value": "D"
+    "value": {
+      "id": "D",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dart",
-    "value": "dart"
+    "value": {
+      "id": "dart",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Darwin",
-    "value": "darwin"
+    "value": {
+      "id": "darwin",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DataFlex",
-    "value": "dataFlex"
+    "value": {
+      "id": "dataFlex",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Datalog",
-    "value": "datalog"
+    "value": {
+      "id": "datalog",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DATATRIEVE",
-    "value": "DATATRIEVE"
+    "value": {
+      "id": "DATATRIEVE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "dBase",
-    "value": "dBase"
+    "value": {
+      "id": "dBase",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "dc",
-    "value": "dc"
+    "value": {
+      "id": "dc",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DCL",
-    "value": "DCL"
+    "value": {
+      "id": "DCL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DinkC",
-    "value": "dinkC"
+    "value": {
+      "id": "dinkC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DIBOL",
-    "value": "DIBOL"
+    "value": {
+      "id": "DIBOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dog",
-    "value": "dog"
+    "value": {
+      "id": "dog",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Draco",
-    "value": "draco"
+    "value": {
+      "id": "draco",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DRAKON",
-    "value": "DRAKON"
+    "value": {
+      "id": "DRAKON",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Dylan",
-    "value": "dylan"
+    "value": {
+      "id": "dylan",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DYNAMO",
-    "value": "DYNAMO"
+    "value": {
+      "id": "DYNAMO",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DAX (Data Analysis Expressions)",
-    "value": "dAXDataAnalysisExpressions"
+    "value": {
+      "id": "dAXDataAnalysisExpressions",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "E",
-    "value": "E"
+    "value": {
+      "id": "E",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ease",
-    "value": "ease"
+    "value": {
+      "id": "ease",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Easy PL/I",
-    "value": "easyPLI"
+    "value": {
+      "id": "easyPLI",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "EASYTRIEVE PLUS",
-    "value": "eASYTRIEVEPLUS"
+    "value": {
+      "id": "eASYTRIEVEPLUS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "eC",
-    "value": "eC"
+    "value": {
+      "id": "eC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ECMAScript",
-    "value": "eCMAScript"
+    "value": {
+      "id": "eCMAScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Edinburgh IMP",
-    "value": "edinburghIMP"
+    "value": {
+      "id": "edinburghIMP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "EGL",
-    "value": "EGL"
+    "value": {
+      "id": "EGL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Eiffel",
-    "value": "eiffel"
+    "value": {
+      "id": "eiffel",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ELAN",
-    "value": "ELAN"
+    "value": {
+      "id": "ELAN",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Elixir",
-    "value": "elixir"
+    "value": {
+      "id": "elixir",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Elm",
-    "value": "elm"
+    "value": {
+      "id": "elm",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Emacs Lisp",
-    "value": "emacsLisp"
+    "value": {
+      "id": "emacsLisp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Emerald",
-    "value": "emerald"
+    "value": {
+      "id": "emerald",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Epigram",
-    "value": "epigram"
+    "value": {
+      "id": "epigram",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "EPL (Easy ",
-    "value": "ePLEasy"
+    "value": {
+      "id": "ePLEasy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "EPL (Eltron ",
-    "value": "ePLEltron"
+    "value": {
+      "id": "ePLEltron",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Erlang",
-    "value": "erlang"
+    "value": {
+      "id": "erlang",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "es",
-    "value": "es"
+    "value": {
+      "id": "es",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Escher",
-    "value": "escher"
+    "value": {
+      "id": "escher",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ESPOL",
-    "value": "ESPOL"
+    "value": {
+      "id": "ESPOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Esterel",
-    "value": "esterel"
+    "value": {
+      "id": "esterel",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Etoys",
-    "value": "etoys"
+    "value": {
+      "id": "etoys",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Euclid",
-    "value": "euclid"
+    "value": {
+      "id": "euclid",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Euler",
-    "value": "euler"
+    "value": {
+      "id": "euler",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Euphoria",
-    "value": "euphoria"
+    "value": {
+      "id": "euphoria",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "EusLisp Robot",
-    "value": "eusLispRobot"
+    "value": {
+      "id": "eusLispRobot",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "CMS EXEC (EXEC)",
-    "value": "cMSEXECEXEC"
+    "value": {
+      "id": "cMSEXECEXEC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "EXEC 2",
-    "value": "eXEC2"
+    "value": {
+      "id": "eXEC2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Executable UML",
-    "value": "executableUML"
+    "value": {
+      "id": "executableUML",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ezhil",
-    "value": "ezhil"
+    "value": {
+      "id": "ezhil",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "F",
-    "value": "F"
+    "value": {
+      "id": "F",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "F#",
-    "value": "fSharp"
+    "value": {
+      "id": "fSharp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "F*",
-    "value": "fStar"
+    "value": {
+      "id": "fStar",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Factor",
-    "value": "factor"
+    "value": {
+      "id": "factor",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Fantom",
-    "value": "fantom"
+    "value": {
+      "id": "fantom",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FAUST",
-    "value": "FAUST"
+    "value": {
+      "id": "FAUST",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FFP",
-    "value": "FFP"
+    "value": {
+      "id": "FFP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "fish",
-    "value": "fish"
+    "value": {
+      "id": "fish",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Fjölnir",
-    "value": "fjolnir"
+    "value": {
+      "id": "fjolnir",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FL",
-    "value": "FL"
+    "value": {
+      "id": "FL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Flavors",
-    "value": "flavors"
+    "value": {
+      "id": "flavors",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Flex",
-    "value": "flex"
+    "value": {
+      "id": "flex",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FlooP",
-    "value": "flooP"
+    "value": {
+      "id": "flooP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FLOW-MATIC",
-    "value": "fLOWMinusMATIC"
+    "value": {
+      "id": "fLOWMinusMATIC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FOCAL",
-    "value": "FOCAL"
+    "value": {
+      "id": "FOCAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FOCUS",
-    "value": "FOCUS"
+    "value": {
+      "id": "FOCUS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FOIL",
-    "value": "FOIL"
+    "value": {
+      "id": "FOIL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FORMAC",
-    "value": "FORMAC"
+    "value": {
+      "id": "FORMAC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "@Formula",
-    "value": "@Formula"
+    "value": {
+      "id": "@Formula",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Forth",
-    "value": "forth"
+    "value": {
+      "id": "forth",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Fortran",
-    "value": "fortran"
+    "value": {
+      "id": "fortran",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Fortress",
-    "value": "fortress"
+    "value": {
+      "id": "fortress",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FP",
-    "value": "FP"
+    "value": {
+      "id": "FP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Franz Lisp",
-    "value": "franzLisp"
+    "value": {
+      "id": "franzLisp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FreeBasic",
-    "value": "freeBasic"
+    "value": {
+      "id": "freeBasic",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Futhark",
-    "value": "futhark"
+    "value": {
+      "id": "futhark",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "F-Script",
-    "value": "fMinusScript"
+    "value": {
+      "id": "fMinusScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Game Maker Language ",
-    "value": "gameMakerLanguage"
+    "value": {
+      "id": "gameMakerLanguage",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GameMonkey Script",
-    "value": "gameMonkeyScript"
+    "value": {
+      "id": "gameMonkeyScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GAMS",
-    "value": "GAMS"
+    "value": {
+      "id": "GAMS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GAP",
-    "value": "GAP"
+    "value": {
+      "id": "GAP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "G-code",
-    "value": "gMinuscode"
+    "value": {
+      "id": "gMinuscode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GDScript",
-    "value": "gDScript"
+    "value": {
+      "id": "gDScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Genie",
-    "value": "genie"
+    "value": {
+      "id": "genie",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GDL",
-    "value": "GDL"
+    "value": {
+      "id": "GDL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GEORGE",
-    "value": "GEORGE"
+    "value": {
+      "id": "GEORGE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GLSL",
-    "value": "GLSL"
+    "value": {
+      "id": "GLSL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GNU E",
-    "value": "gNUE"
+    "value": {
+      "id": "gNUE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GNU Guile",
-    "value": "gNUGuile"
+    "value": {
+      "id": "gNUGuile",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Go",
-    "value": "go"
+    "value": {
+      "id": "go",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Go!",
-    "value": "go"
+    "value": {
+      "id": "go",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GOAL",
-    "value": "GOAL"
+    "value": {
+      "id": "GOAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Gödel",
-    "value": "godel"
+    "value": {
+      "id": "godel",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Golo",
-    "value": "golo"
+    "value": {
+      "id": "golo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GOM (Good Old Mad)",
-    "value": "gOMGoodOldMad"
+    "value": {
+      "id": "gOMGoodOldMad",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Google Apps Script",
-    "value": "googleAppsScript"
+    "value": {
+      "id": "googleAppsScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Gosu",
-    "value": "gosu"
+    "value": {
+      "id": "gosu",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GOTRAN",
-    "value": "GOTRAN"
+    "value": {
+      "id": "GOTRAN",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GPSS",
-    "value": "GPSS"
+    "value": {
+      "id": "GPSS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GraphTalk",
-    "value": "graphTalk"
+    "value": {
+      "id": "graphTalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GRASS",
-    "value": "GRASS"
+    "value": {
+      "id": "GRASS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Grasshopper",
-    "value": "grasshopper"
+    "value": {
+      "id": "grasshopper",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Groovy",
-    "value": "groovy"
+    "value": {
+      "id": "groovy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hack",
-    "value": "hack"
+    "value": {
+      "id": "hack",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HAGGIS",
-    "value": "HAGGIS"
+    "value": {
+      "id": "HAGGIS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HAL/S",
-    "value": "hALS"
+    "value": {
+      "id": "hALS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Halide ",
-    "value": "halide"
+    "value": {
+      "id": "halide",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hamilton C shell",
-    "value": "hamiltonCShell"
+    "value": {
+      "id": "hamiltonCShell",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Harbour",
-    "value": "harbour"
+    "value": {
+      "id": "harbour",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hartmann pipelines",
-    "value": "hartmannPipelines"
+    "value": {
+      "id": "hartmannPipelines",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Haskell",
-    "value": "haskell"
+    "value": {
+      "id": "haskell",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Haxe",
-    "value": "haxe"
+    "value": {
+      "id": "haxe",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hermes",
-    "value": "hermes"
+    "value": {
+      "id": "hermes",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "High Level Assembly",
-    "value": "highLevelAssembly"
+    "value": {
+      "id": "highLevelAssembly",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HLSL",
-    "value": "HLSL"
+    "value": {
+      "id": "HLSL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hollywood",
-    "value": "hollywood"
+    "value": {
+      "id": "hollywood",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HolyC",
-    "value": "holyC"
+    "value": {
+      "id": "holyC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hop",
-    "value": "hop"
+    "value": {
+      "id": "hop",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hopscotch",
-    "value": "hopscotch"
+    "value": {
+      "id": "hopscotch",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hope",
-    "value": "hope"
+    "value": {
+      "id": "hope",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hugo",
-    "value": "hugo"
+    "value": {
+      "id": "hugo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Hume",
-    "value": "hume"
+    "value": {
+      "id": "hume",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HyperTalk",
-    "value": "hyperTalk"
+    "value": {
+      "id": "hyperTalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Io",
-    "value": "io"
+    "value": {
+      "id": "io",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Icon",
-    "value": "icon"
+    "value": {
+      "id": "icon",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "IBM Basic assembly",
-    "value": "IBMBasicAssembly"
+    "value": {
+      "id": "IBMBasicAssembly",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "IBM HAScript",
-    "value": "iBMHAScript"
+    "value": {
+      "id": "iBMHAScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "IBM Informix-4GL",
-    "value": "iBMInformixMinus4GL"
+    "value": {
+      "id": "iBMInformixMinus4GL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "IBM RPG",
-    "value": "iBMRPG"
+    "value": {
+      "id": "iBMRPG",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "IDL",
-    "value": "IDL"
+    "value": {
+      "id": "IDL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Idris",
-    "value": "idris"
+    "value": {
+      "id": "idris",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Inform",
-    "value": "inform"
+    "value": {
+      "id": "inform",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "J",
-    "value": "J"
+    "value": {
+      "id": "J",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "J#",
-    "value": "jSharp"
+    "value": {
+      "id": "jSharp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "J++",
-    "value": "jPlusPlus"
+    "value": {
+      "id": "jPlusPlus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JADE",
-    "value": "JADE"
+    "value": {
+      "id": "JADE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JAL",
-    "value": "JAL"
+    "value": {
+      "id": "JAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Janus ",
-    "value": "janus"
+    "value": {
+      "id": "janus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JASS",
-    "value": "JASS"
+    "value": {
+      "id": "JASS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Java",
-    "value": "java"
+    "value": {
+      "id": "java",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JavaFX Script",
-    "value": "javaFXScript"
+    "value": {
+      "id": "javaFXScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JavaScript",
-    "value": "javaScript"
+    "value": {
+      "id": "javaScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Jess ",
-    "value": "jess"
+    "value": {
+      "id": "jess",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JCL",
-    "value": "JCL"
+    "value": {
+      "id": "JCL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JEAN",
-    "value": "JEAN"
+    "value": {
+      "id": "JEAN",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Join Java",
-    "value": "joinJava"
+    "value": {
+      "id": "joinJava",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JOSS",
-    "value": "JOSS"
+    "value": {
+      "id": "JOSS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Joule",
-    "value": "joule"
+    "value": {
+      "id": "joule",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JOVIAL",
-    "value": "JOVIAL"
+    "value": {
+      "id": "JOVIAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Joy",
-    "value": "joy"
+    "value": {
+      "id": "joy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JScript",
-    "value": "jScript"
+    "value": {
+      "id": "jScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "JScript .NET",
-    "value": "jScriptDotNET"
+    "value": {
+      "id": "jScriptDotNET",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Julia",
-    "value": "julia"
+    "value": {
+      "id": "julia",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Jython",
-    "value": "jython"
+    "value": {
+      "id": "jython",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "K",
-    "value": "K"
+    "value": {
+      "id": "K",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Kaleidoscope",
-    "value": "kaleidoscope"
+    "value": {
+      "id": "kaleidoscope",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Karel",
-    "value": "karel"
+    "value": {
+      "id": "karel",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "KEE",
-    "value": "KEE"
+    "value": {
+      "id": "KEE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Kixtart",
-    "value": "kixtart"
+    "value": {
+      "id": "kixtart",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Klerer-May System",
-    "value": "klererMinusMaySystem"
+    "value": {
+      "id": "klererMinusMaySystem",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "KIF",
-    "value": "KIF"
+    "value": {
+      "id": "KIF",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Kojo",
-    "value": "kojo"
+    "value": {
+      "id": "kojo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Kotlin",
-    "value": "kotlin"
+    "value": {
+      "id": "kotlin",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "KRC",
-    "value": "KRC"
+    "value": {
+      "id": "KRC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "KRL",
-    "value": "KRL"
+    "value": {
+      "id": "KRL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "KRL",
-    "value": "KRL"
+    "value": {
+      "id": "KRL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "KRYPTON",
-    "value": "KRYPTON"
+    "value": {
+      "id": "KRYPTON",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Korn shell (ksh)",
-    "value": "kornShellksh"
+    "value": {
+      "id": "kornShellksh",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Kodu",
-    "value": "kodu"
+    "value": {
+      "id": "kodu",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Kv",
-    "value": "kv"
+    "value": {
+      "id": "kv",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LabVIEW",
-    "value": "labVIEW"
+    "value": {
+      "id": "labVIEW",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ladder",
-    "value": "ladder"
+    "value": {
+      "id": "ladder",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LANSA",
-    "value": "LANSA"
+    "value": {
+      "id": "LANSA",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lasso",
-    "value": "lasso"
+    "value": {
+      "id": "lasso",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lava",
-    "value": "lava"
+    "value": {
+      "id": "lava",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LC-3",
-    "value": "lCMinus3"
+    "value": {
+      "id": "lCMinus3",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Legoscript",
-    "value": "legoscript"
+    "value": {
+      "id": "legoscript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LIL",
-    "value": "LIL"
+    "value": {
+      "id": "LIL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LilyPond",
-    "value": "lilyPond"
+    "value": {
+      "id": "lilyPond",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Limbo",
-    "value": "limbo"
+    "value": {
+      "id": "limbo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Limnor",
-    "value": "limnor"
+    "value": {
+      "id": "limnor",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LINC",
-    "value": "LINC"
+    "value": {
+      "id": "LINC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lingo",
-    "value": "lingo"
+    "value": {
+      "id": "lingo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LINQ",
-    "value": "LINQ"
+    "value": {
+      "id": "LINQ",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LIS",
-    "value": "LIS"
+    "value": {
+      "id": "LIS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LISA",
-    "value": "LISA"
+    "value": {
+      "id": "LISA",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Language H",
-    "value": "languageH"
+    "value": {
+      "id": "languageH",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lisp",
-    "value": "lisp"
+    "value": {
+      "id": "lisp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lite-C",
-    "value": "liteMinusC"
+    "value": {
+      "id": "liteMinusC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lithe",
-    "value": "lithe"
+    "value": {
+      "id": "lithe",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Little b",
-    "value": "littleB"
+    "value": {
+      "id": "littleB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LLL",
-    "value": "LLL"
+    "value": {
+      "id": "LLL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Logo",
-    "value": "logo"
+    "value": {
+      "id": "logo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Logtalk",
-    "value": "logtalk"
+    "value": {
+      "id": "logtalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LotusScript",
-    "value": "lotusScript"
+    "value": {
+      "id": "lotusScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LPC",
-    "value": "LPC"
+    "value": {
+      "id": "LPC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LSE",
-    "value": "LSE"
+    "value": {
+      "id": "LSE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LSL",
-    "value": "LSL"
+    "value": {
+      "id": "LSL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LiveCode",
-    "value": "liveCode"
+    "value": {
+      "id": "liveCode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LiveScript",
-    "value": "liveScript"
+    "value": {
+      "id": "liveScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lua",
-    "value": "lua"
+    "value": {
+      "id": "lua",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lucid",
-    "value": "lucid"
+    "value": {
+      "id": "lucid",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lustre",
-    "value": "lustre"
+    "value": {
+      "id": "lustre",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "LYaPAS",
-    "value": "lYaPAS"
+    "value": {
+      "id": "lYaPAS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Lynx",
-    "value": "lynx"
+    "value": {
+      "id": "lynx",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "M2001",
-    "value": "m2001"
+    "value": {
+      "id": "m2001",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "M4",
-    "value": "m4"
+    "value": {
+      "id": "m4",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "M#",
-    "value": "mSharp"
+    "value": {
+      "id": "mSharp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Machine code",
-    "value": "machineCode"
+    "value": {
+      "id": "machineCode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MAD (Michigan Algorithm Decoder)",
-    "value": "mADMichiganAlgorithmDecoder"
+    "value": {
+      "id": "mADMichiganAlgorithmDecoder",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MAD/I",
-    "value": "mADI"
+    "value": {
+      "id": "mADI",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Magik",
-    "value": "magik"
+    "value": {
+      "id": "magik",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Magma",
-    "value": "magma"
+    "value": {
+      "id": "magma",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Máni",
-    "value": "mani"
+    "value": {
+      "id": "mani",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Maple",
-    "value": "maple"
+    "value": {
+      "id": "maple",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MAPPER (now part of BIS)",
-    "value": "mAPPERnowPartOfBIS"
+    "value": {
+      "id": "mAPPERnowPartOfBIS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MARK-IV (now VISION:BUILDER)",
-    "value": "mARKMinusIVnowVISIONBUILDER"
+    "value": {
+      "id": "mARKMinusIVnowVISIONBUILDER",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mary",
-    "value": "mary"
+    "value": {
+      "id": "mary",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MATLAB",
-    "value": "MATLAB"
+    "value": {
+      "id": "MATLAB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MASM Microsoft Assembly x86",
-    "value": "mASMMicrosoftAssemblyX86"
+    "value": {
+      "id": "mASMMicrosoftAssemblyX86",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MATH-MATIC",
-    "value": "mATHMinusMATIC"
+    "value": {
+      "id": "mATHMinusMATIC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Maude system",
-    "value": "maudeSystem"
+    "value": {
+      "id": "maudeSystem",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Maxima",
-    "value": "maxima"
+    "value": {
+      "id": "maxima",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Max (Max Msp – Graphical Programming Environment)",
-    "value": "maxMaxMspGraphicalProgrammingEnvironment"
+    "value": {
+      "id": "maxMaxMspGraphicalProgrammingEnvironment",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MaxScript internal language 3D Studio Max",
-    "value": "maxScriptInternalLanguage3DStudioMax"
+    "value": {
+      "id": "maxScriptInternalLanguage3DStudioMax",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Maya (MEL)",
-    "value": "mayaMEL"
+    "value": {
+      "id": "mayaMEL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MDL",
-    "value": "MDL"
+    "value": {
+      "id": "MDL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mercury",
-    "value": "mercury"
+    "value": {
+      "id": "mercury",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mesa",
-    "value": "mesa"
+    "value": {
+      "id": "mesa",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MHEG-5 (Interactive TV ",
-    "value": "mHEGMinus5InteractiveTV"
+    "value": {
+      "id": "mHEGMinus5InteractiveTV",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Microcode",
-    "value": "microcode"
+    "value": {
+      "id": "microcode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MicroScript",
-    "value": "microScript"
+    "value": {
+      "id": "microScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MIIS",
-    "value": "MIIS"
+    "value": {
+      "id": "MIIS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Milk ",
-    "value": "milk"
+    "value": {
+      "id": "milk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MIMIC",
-    "value": "MIMIC"
+    "value": {
+      "id": "MIMIC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mirah",
-    "value": "mirah"
+    "value": {
+      "id": "mirah",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Miranda",
-    "value": "miranda"
+    "value": {
+      "id": "miranda",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MIVA Script",
-    "value": "mIVAScript"
+    "value": {
+      "id": "mIVAScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ML",
-    "value": "ML"
+    "value": {
+      "id": "ML",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Model 204",
-    "value": "model204"
+    "value": {
+      "id": "model204",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Modelica",
-    "value": "modelica"
+    "value": {
+      "id": "modelica",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Modula",
-    "value": "modula"
+    "value": {
+      "id": "modula",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Modula-2",
-    "value": "modulaMinus2"
+    "value": {
+      "id": "modulaMinus2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Modula-3",
-    "value": "modulaMinus3"
+    "value": {
+      "id": "modulaMinus3",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mohol",
-    "value": "mohol"
+    "value": {
+      "id": "mohol",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MOO",
-    "value": "MOO"
+    "value": {
+      "id": "MOO",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mortran",
-    "value": "mortran"
+    "value": {
+      "id": "mortran",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mouse",
-    "value": "mouse"
+    "value": {
+      "id": "mouse",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MPD",
-    "value": "MPD"
+    "value": {
+      "id": "MPD",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MSL",
-    "value": "MSL"
+    "value": {
+      "id": "MSL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MUMPS",
-    "value": "MUMPS"
+    "value": {
+      "id": "MUMPS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MuPAD",
-    "value": "muPAD"
+    "value": {
+      "id": "muPAD",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mutan",
-    "value": "mutan"
+    "value": {
+      "id": "mutan",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Mystic Programming Language (MPL)",
-    "value": "mysticMPL"
+    "value": {
+      "id": "mysticMPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "N",
-    "value": "N"
+    "value": {
+      "id": "N",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NASM",
-    "value": "NASM"
+    "value": {
+      "id": "NASM",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Napier88",
-    "value": "napier88"
+    "value": {
+      "id": "napier88",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Neko",
-    "value": "neko"
+    "value": {
+      "id": "neko",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nemerle",
-    "value": "nemerle"
+    "value": {
+      "id": "nemerle",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NESL",
-    "value": "NESL"
+    "value": {
+      "id": "NESL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Net.Data",
-    "value": "netDotData"
+    "value": {
+      "id": "netDotData",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NetLogo",
-    "value": "netLogo"
+    "value": {
+      "id": "netLogo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NetRexx",
-    "value": "netRexx"
+    "value": {
+      "id": "netRexx",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NewLISP",
-    "value": "newLISP"
+    "value": {
+      "id": "newLISP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NEWP",
-    "value": "NEWP"
+    "value": {
+      "id": "NEWP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Newspeak",
-    "value": "newspeak"
+    "value": {
+      "id": "newspeak",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NewtonScript",
-    "value": "newtonScript"
+    "value": {
+      "id": "newtonScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nial",
-    "value": "nial"
+    "value": {
+      "id": "nial",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nickle (NITIN)",
-    "value": "nickleNITIN"
+    "value": {
+      "id": "nickleNITIN",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nim",
-    "value": "nim"
+    "value": {
+      "id": "nim",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nix",
-    "value": "nix"
+    "value": {
+      "id": "nix",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NPL",
-    "value": "NPL"
+    "value": {
+      "id": "NPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Not eXactly C (NXC)",
-    "value": "notEXactlyCNXC"
+    "value": {
+      "id": "notEXactlyCNXC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Not Quite C (NQC)",
-    "value": "notQuiteCNQC"
+    "value": {
+      "id": "notQuiteCNQC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NSIS",
-    "value": "NSIS"
+    "value": {
+      "id": "NSIS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nu",
-    "value": "nu"
+    "value": {
+      "id": "nu",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NWScript",
-    "value": "nWScript"
+    "value": {
+      "id": "nWScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "NXT-G",
-    "value": "nXTMinusG"
+    "value": {
+      "id": "nXTMinusG",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "o:XML",
-    "value": "oXML"
+    "value": {
+      "id": "oXML",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Oak",
-    "value": "oak"
+    "value": {
+      "id": "oak",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Oberon",
-    "value": "oberon"
+    "value": {
+      "id": "oberon",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OBJ2",
-    "value": "oBJ2"
+    "value": {
+      "id": "oBJ2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Object Lisp",
-    "value": "objectLisp"
+    "value": {
+      "id": "objectLisp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ObjectLOGO",
-    "value": "objectLOGO"
+    "value": {
+      "id": "objectLOGO",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Object REXX",
-    "value": "objectREXX"
+    "value": {
+      "id": "objectREXX",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Object Pascal",
-    "value": "objectPascal"
+    "value": {
+      "id": "objectPascal",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Objective-C",
-    "value": "objectiveMinusC"
+    "value": {
+      "id": "objectiveMinusC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Objective-J",
-    "value": "objectiveMinusJ"
+    "value": {
+      "id": "objectiveMinusJ",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Obliq",
-    "value": "obliq"
+    "value": {
+      "id": "obliq",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OCaml",
-    "value": "oCaml"
+    "value": {
+      "id": "oCaml",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "occam",
-    "value": "occam"
+    "value": {
+      "id": "occam",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "occam-π",
-    "value": "occamMinusπ"
+    "value": {
+      "id": "occamMinusπ",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Octave",
-    "value": "octave"
+    "value": {
+      "id": "octave",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OmniMark",
-    "value": "omniMark"
+    "value": {
+      "id": "omniMark",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Opa",
-    "value": "opa"
+    "value": {
+      "id": "opa",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Opal",
-    "value": "opal"
+    "value": {
+      "id": "opal",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OpenCL",
-    "value": "openCL"
+    "value": {
+      "id": "openCL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OpenEdge ABL",
-    "value": "openEdgeABL"
+    "value": {
+      "id": "openEdgeABL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OPL",
-    "value": "OPL"
+    "value": {
+      "id": "OPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OpenVera",
-    "value": "openVera"
+    "value": {
+      "id": "openVera",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OPS5",
-    "value": "oPS5"
+    "value": {
+      "id": "oPS5",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "OptimJ",
-    "value": "optimJ"
+    "value": {
+      "id": "optimJ",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Orc",
-    "value": "orc"
+    "value": {
+      "id": "orc",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ORCA/Modula-2",
-    "value": "oRCAModulaMinus2"
+    "value": {
+      "id": "oRCAModulaMinus2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Oriel",
-    "value": "oriel"
+    "value": {
+      "id": "oriel",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Orwell",
-    "value": "orwell"
+    "value": {
+      "id": "orwell",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Oxygene",
-    "value": "oxygene"
+    "value": {
+      "id": "oxygene",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Oz",
-    "value": "oz"
+    "value": {
+      "id": "oz",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "P",
-    "value": "P"
+    "value": {
+      "id": "P",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "P4",
-    "value": "p4"
+    "value": {
+      "id": "p4",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "P´´",
-    "value": "p′′"
+    "value": {
+      "id": "p′′",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ParaSail ",
-    "value": "paraSail"
+    "value": {
+      "id": "paraSail",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PARI/GP",
-    "value": "pARIGP"
+    "value": {
+      "id": "pARIGP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pascal",
-    "value": "pascal"
+    "value": {
+      "id": "pascal",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pascal Script",
-    "value": "pascalScript"
+    "value": {
+      "id": "pascalScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PCASTL",
-    "value": "PCASTL"
+    "value": {
+      "id": "PCASTL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PCF",
-    "value": "PCF"
+    "value": {
+      "id": "PCF",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PEARL",
-    "value": "PEARL"
+    "value": {
+      "id": "PEARL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PeopleCode",
-    "value": "peopleCode"
+    "value": {
+      "id": "peopleCode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Perl",
-    "value": "perl"
+    "value": {
+      "id": "perl",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PDL",
-    "value": "PDL"
+    "value": {
+      "id": "PDL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pharo",
-    "value": "pharo"
+    "value": {
+      "id": "pharo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PHP",
-    "value": "PHP"
+    "value": {
+      "id": "PHP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pico",
-    "value": "pico"
+    "value": {
+      "id": "pico",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Picolisp",
-    "value": "picolisp"
+    "value": {
+      "id": "picolisp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pict",
-    "value": "pict"
+    "value": {
+      "id": "pict",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pike",
-    "value": "pike"
+    "value": {
+      "id": "pike",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PILOT",
-    "value": "PILOT"
+    "value": {
+      "id": "PILOT",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pipelines",
-    "value": "pipelines"
+    "value": {
+      "id": "pipelines",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pizza",
-    "value": "pizza"
+    "value": {
+      "id": "pizza",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL-11",
-    "value": "pLMinus11"
+    "value": {
+      "id": "pLMinus11",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL/0",
-    "value": "pL0"
+    "value": {
+      "id": "pL0",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL/B",
-    "value": "pLB"
+    "value": {
+      "id": "pLB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL/C",
-    "value": "pLC"
+    "value": {
+      "id": "pLC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL/I",
-    "value": "pLI"
+    "value": {
+      "id": "pLI",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL/M",
-    "value": "pLM"
+    "value": {
+      "id": "pLM",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL/P",
-    "value": "pLP"
+    "value": {
+      "id": "pLP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL/SQL",
-    "value": "pLSQL"
+    "value": {
+      "id": "pLSQL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PL360",
-    "value": "pL360"
+    "value": {
+      "id": "pL360",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PLANC",
-    "value": "PLANC"
+    "value": {
+      "id": "PLANC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Plankalkül",
-    "value": "plankalkul"
+    "value": {
+      "id": "plankalkul",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Planner",
-    "value": "planner"
+    "value": {
+      "id": "planner",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PLEX",
-    "value": "PLEX"
+    "value": {
+      "id": "PLEX",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PLEXIL",
-    "value": "PLEXIL"
+    "value": {
+      "id": "PLEXIL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Plus",
-    "value": "plus"
+    "value": {
+      "id": "plus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "POP-11",
-    "value": "pOPMinus11"
+    "value": {
+      "id": "pOPMinus11",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "POP-2",
-    "value": "pOPMinus2"
+    "value": {
+      "id": "pOPMinus2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PostScript",
-    "value": "postScript"
+    "value": {
+      "id": "postScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PortablE",
-    "value": "portablE"
+    "value": {
+      "id": "portablE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "POV-Ray SDL",
-    "value": "pOVMinusRaySDL"
+    "value": {
+      "id": "pOVMinusRaySDL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Powerhouse",
-    "value": "powerhouse"
+    "value": {
+      "id": "powerhouse",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PowerBuilder – 4GL GUI application generator from Sybase",
-    "value": "powerBuilder4GLGUIApplicationGeneratorFromSybase"
+    "value": {
+      "id": "powerBuilder4GLGUIApplicationGeneratorFromSybase",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PowerShell",
-    "value": "powerShell"
+    "value": {
+      "id": "powerShell",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PPL",
-    "value": "PPL"
+    "value": {
+      "id": "PPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Processing",
-    "value": "processing"
+    "value": {
+      "id": "processing",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Processing.js",
-    "value": "processingDotjs"
+    "value": {
+      "id": "processingDotjs",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Prograph",
-    "value": "prograph"
+    "value": {
+      "id": "prograph",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PROIV",
-    "value": "PROIV"
+    "value": {
+      "id": "PROIV",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Prolog",
-    "value": "prolog"
+    "value": {
+      "id": "prolog",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PROMAL",
-    "value": "PROMAL"
+    "value": {
+      "id": "PROMAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Promela",
-    "value": "promela"
+    "value": {
+      "id": "promela",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PROSE modeling",
-    "value": "pROSEModeling"
+    "value": {
+      "id": "pROSEModeling",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PROTEL",
-    "value": "PROTEL"
+    "value": {
+      "id": "PROTEL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ProvideX",
-    "value": "provideX"
+    "value": {
+      "id": "provideX",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pro*C",
-    "value": "proStarC"
+    "value": {
+      "id": "proStarC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pure",
-    "value": "pure"
+    "value": {
+      "id": "pure",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Pure Data",
-    "value": "pureData"
+    "value": {
+      "id": "pureData",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PureScript",
-    "value": "pureScript"
+    "value": {
+      "id": "pureScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Python",
-    "value": "python"
+    "value": {
+      "id": "python",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Q (programming language from Kx Systems)",
-    "value": "qFromKxSystems"
+    "value": {
+      "id": "qFromKxSystems",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Q# (Microsoft ",
-    "value": "qSharpMicrosoft"
+    "value": {
+      "id": "qSharpMicrosoft",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Qalb",
-    "value": "qalb"
+    "value": {
+      "id": "qalb",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Quantum Computation Language",
-    "value": "quantumComputationLanguage"
+    "value": {
+      "id": "quantumComputationLanguage",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "QtScript",
-    "value": "qtScript"
+    "value": {
+      "id": "qtScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "QuakeC",
-    "value": "quakeC"
+    "value": {
+      "id": "quakeC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "QPL",
-    "value": "QPL"
+    "value": {
+      "id": "QPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": ".QL",
-    "value": "dotQL"
+    "value": {
+      "id": "dotQL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "R",
-    "value": "R"
+    "value": {
+      "id": "R",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "R++",
-    "value": "rPlusPlus"
+    "value": {
+      "id": "rPlusPlus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Racket",
-    "value": "racket"
+    "value": {
+      "id": "racket",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Raku",
-    "value": "raku"
+    "value": {
+      "id": "raku",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "RAPID",
-    "value": "RAPID"
+    "value": {
+      "id": "RAPID",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Rapira",
-    "value": "rapira"
+    "value": {
+      "id": "rapira",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ratfiv",
-    "value": "ratfiv"
+    "value": {
+      "id": "ratfiv",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ratfor",
-    "value": "ratfor"
+    "value": {
+      "id": "ratfor",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "rc",
-    "value": "rc"
+    "value": {
+      "id": "rc",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Reason",
-    "value": "reason"
+    "value": {
+      "id": "reason",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "REBOL",
-    "value": "REBOL"
+    "value": {
+      "id": "REBOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Red",
-    "value": "red"
+    "value": {
+      "id": "red",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Redcode",
-    "value": "redcode"
+    "value": {
+      "id": "redcode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "REFAL",
-    "value": "REFAL"
+    "value": {
+      "id": "REFAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "REXX",
-    "value": "REXX"
+    "value": {
+      "id": "REXX",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Rlab",
-    "value": "rlab"
+    "value": {
+      "id": "rlab",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ROOP",
-    "value": "ROOP"
+    "value": {
+      "id": "ROOP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "RPG",
-    "value": "RPG"
+    "value": {
+      "id": "RPG",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "RPL",
-    "value": "RPL"
+    "value": {
+      "id": "RPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "RSL",
-    "value": "RSL"
+    "value": {
+      "id": "RSL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "RTL/2",
-    "value": "rTL2"
+    "value": {
+      "id": "rTL2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ruby",
-    "value": "ruby"
+    "value": {
+      "id": "ruby",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Rust",
-    "value": "rust"
+    "value": {
+      "id": "rust",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "S",
-    "value": "S"
+    "value": {
+      "id": "S",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "S2",
-    "value": "s2"
+    "value": {
+      "id": "s2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "S3",
-    "value": "s3"
+    "value": {
+      "id": "s3",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "S-Lang",
-    "value": "sMinusLang"
+    "value": {
+      "id": "sMinusLang",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "S-PLUS",
-    "value": "sMinusPLUS"
+    "value": {
+      "id": "sMinusPLUS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SA-C",
-    "value": "sAMinusC"
+    "value": {
+      "id": "sAMinusC",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SabreTalk",
-    "value": "sabreTalk"
+    "value": {
+      "id": "sabreTalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SAIL",
-    "value": "SAIL"
+    "value": {
+      "id": "SAIL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SAS",
-    "value": "SAS"
+    "value": {
+      "id": "SAS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SASL",
-    "value": "SASL"
+    "value": {
+      "id": "SASL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Sather",
-    "value": "sather"
+    "value": {
+      "id": "sather",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Sawzall",
-    "value": "sawzall"
+    "value": {
+      "id": "sawzall",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Scala",
-    "value": "scala"
+    "value": {
+      "id": "scala",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Scheme",
-    "value": "scheme"
+    "value": {
+      "id": "scheme",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Scilab",
-    "value": "scilab"
+    "value": {
+      "id": "scilab",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Scratch",
-    "value": "scratch"
+    "value": {
+      "id": "scratch",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Script.NET",
-    "value": "scriptDotNET"
+    "value": {
+      "id": "scriptDotNET",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Sed",
-    "value": "sed"
+    "value": {
+      "id": "sed",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Seed7",
-    "value": "seed7"
+    "value": {
+      "id": "seed7",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Self",
-    "value": "self"
+    "value": {
+      "id": "self",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SenseTalk",
-    "value": "senseTalk"
+    "value": {
+      "id": "senseTalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SequenceL",
-    "value": "sequenceL"
+    "value": {
+      "id": "sequenceL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Serpent",
-    "value": "serpent"
+    "value": {
+      "id": "serpent",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SETL",
-    "value": "SETL"
+    "value": {
+      "id": "SETL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SIMPOL",
-    "value": "SIMPOL"
+    "value": {
+      "id": "SIMPOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SIGNAL",
-    "value": "SIGNAL"
+    "value": {
+      "id": "SIGNAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SiMPLE",
-    "value": "siMPLE"
+    "value": {
+      "id": "siMPLE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SIMSCRIPT",
-    "value": "SIMSCRIPT"
+    "value": {
+      "id": "SIMSCRIPT",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Simula",
-    "value": "simula"
+    "value": {
+      "id": "simula",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Simulink",
-    "value": "simulink"
+    "value": {
+      "id": "simulink",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Singularity",
-    "value": "singularity"
+    "value": {
+      "id": "singularity",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SISAL",
-    "value": "SISAL"
+    "value": {
+      "id": "SISAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SLIP",
-    "value": "SLIP"
+    "value": {
+      "id": "SLIP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SMALL",
-    "value": "SMALL"
+    "value": {
+      "id": "SMALL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Smalltalk",
-    "value": "smalltalk"
+    "value": {
+      "id": "smalltalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SML",
-    "value": "SML"
+    "value": {
+      "id": "SML",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Strongtalk",
-    "value": "strongtalk"
+    "value": {
+      "id": "strongtalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Snap!",
-    "value": "snap"
+    "value": {
+      "id": "snap",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SNOBOL (SPITBOL)",
-    "value": "sNOBOLSPITBOL"
+    "value": {
+      "id": "sNOBOLSPITBOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Snowball",
-    "value": "snowball"
+    "value": {
+      "id": "snowball",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SOL",
-    "value": "SOL"
+    "value": {
+      "id": "SOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Solidity",
-    "value": "solidity"
+    "value": {
+      "id": "solidity",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SOPHAEROS",
-    "value": "SOPHAEROS"
+    "value": {
+      "id": "SOPHAEROS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Source",
-    "value": "source"
+    "value": {
+      "id": "source",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SPARK",
-    "value": "SPARK"
+    "value": {
+      "id": "SPARK",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Speakeasy",
-    "value": "speakeasy"
+    "value": {
+      "id": "speakeasy",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Speedcode",
-    "value": "speedcode"
+    "value": {
+      "id": "speedcode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SPIN",
-    "value": "SPIN"
+    "value": {
+      "id": "SPIN",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SP/k",
-    "value": "sPk"
+    "value": {
+      "id": "sPk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SPS",
-    "value": "SPS"
+    "value": {
+      "id": "SPS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SQL",
-    "value": "SQL"
+    "value": {
+      "id": "SQL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SQR",
-    "value": "SQR"
+    "value": {
+      "id": "SQR",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Squeak",
-    "value": "squeak"
+    "value": {
+      "id": "squeak",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Squirrel",
-    "value": "squirrel"
+    "value": {
+      "id": "squirrel",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SR",
-    "value": "SR"
+    "value": {
+      "id": "SR",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "S/SL",
-    "value": "sSL"
+    "value": {
+      "id": "sSL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Starlogo",
-    "value": "starlogo"
+    "value": {
+      "id": "starlogo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Strand",
-    "value": "strand"
+    "value": {
+      "id": "strand",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Stata",
-    "value": "stata"
+    "value": {
+      "id": "stata",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Stateflow",
-    "value": "stateflow"
+    "value": {
+      "id": "stateflow",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Subtext",
-    "value": "subtext"
+    "value": {
+      "id": "subtext",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SBL",
-    "value": "SBL"
+    "value": {
+      "id": "SBL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SuperCollider",
-    "value": "superCollider"
+    "value": {
+      "id": "superCollider",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SuperTalk",
-    "value": "superTalk"
+    "value": {
+      "id": "superTalk",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Swift (Apple)",
-    "value": "swiftApple"
+    "value": {
+      "id": "swiftApple",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Swift",
-    "value": "swift"
+    "value": {
+      "id": "swift",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SYMPL",
-    "value": "SYMPL"
+    "value": {
+      "id": "SYMPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SystemVerilog",
-    "value": "systemVerilog"
+    "value": {
+      "id": "systemVerilog",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "T",
-    "value": "T"
+    "value": {
+      "id": "T",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TACL",
-    "value": "TACL"
+    "value": {
+      "id": "TACL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TACPOL",
-    "value": "TACPOL"
+    "value": {
+      "id": "TACPOL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TADS",
-    "value": "TADS"
+    "value": {
+      "id": "TADS",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TAL",
-    "value": "TAL"
+    "value": {
+      "id": "TAL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Tcl",
-    "value": "tcl"
+    "value": {
+      "id": "tcl",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Tea",
-    "value": "tea"
+    "value": {
+      "id": "tea",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TECO",
-    "value": "TECO"
+    "value": {
+      "id": "TECO",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TELCOMP",
-    "value": "TELCOMP"
+    "value": {
+      "id": "TELCOMP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TeX",
-    "value": "teX"
+    "value": {
+      "id": "teX",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TEX",
-    "value": "TEX"
+    "value": {
+      "id": "TEX",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TIE",
-    "value": "TIE"
+    "value": {
+      "id": "TIE",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TMG, compiler-compiler",
-    "value": "tMG,CompilerMinuscompiler"
+    "value": {
+      "id": "tMG,CompilerMinuscompiler",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Tom",
-    "value": "tom"
+    "value": {
+      "id": "tom",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Toi",
-    "value": "toi"
+    "value": {
+      "id": "toi",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Topspeed",
-    "value": "topspeed"
+    "value": {
+      "id": "topspeed",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TPU",
-    "value": "TPU"
+    "value": {
+      "id": "TPU",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Trac",
-    "value": "trac"
+    "value": {
+      "id": "trac",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TTM",
-    "value": "TTM"
+    "value": {
+      "id": "TTM",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "T-SQL",
-    "value": "tMinusSQL"
+    "value": {
+      "id": "tMinusSQL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Transcript",
-    "value": "transcript"
+    "value": {
+      "id": "transcript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TTCN",
-    "value": "TTCN"
+    "value": {
+      "id": "TTCN",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Turing",
-    "value": "turing"
+    "value": {
+      "id": "turing",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TUTOR",
-    "value": "TUTOR"
+    "value": {
+      "id": "TUTOR",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TXL",
-    "value": "TXL"
+    "value": {
+      "id": "TXL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TypeScript",
-    "value": "typeScript"
+    "value": {
+      "id": "typeScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Tynker",
-    "value": "tynker"
+    "value": {
+      "id": "tynker",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Ubercode",
-    "value": "ubercode"
+    "value": {
+      "id": "ubercode",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "UCSD Pascal",
-    "value": "uCSDPascal"
+    "value": {
+      "id": "uCSDPascal",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Umple",
-    "value": "umple"
+    "value": {
+      "id": "umple",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Unicon",
-    "value": "unicon"
+    "value": {
+      "id": "unicon",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Uniface",
-    "value": "uniface"
+    "value": {
+      "id": "uniface",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "UNITY",
-    "value": "UNITY"
+    "value": {
+      "id": "UNITY",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Unix shell",
-    "value": "unixShell"
+    "value": {
+      "id": "unixShell",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "UnrealScript",
-    "value": "unrealScript"
+    "value": {
+      "id": "unrealScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Vala",
-    "value": "vala"
+    "value": {
+      "id": "vala",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Verilog",
-    "value": "verilog"
+    "value": {
+      "id": "verilog",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "VHDL",
-    "value": "VHDL"
+    "value": {
+      "id": "VHDL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Vim script",
-    "value": "vimScript"
+    "value": {
+      "id": "vimScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Viper",
-    "value": "viper"
+    "value": {
+      "id": "viper",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual DataFlex",
-    "value": "visualDataFlex"
+    "value": {
+      "id": "visualDataFlex",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual DialogScript",
-    "value": "visualDialogScript"
+    "value": {
+      "id": "visualDialogScript",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual FoxPro",
-    "value": "visualFoxPro"
+    "value": {
+      "id": "visualFoxPro",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual J++",
-    "value": "visualJPlusPlus"
+    "value": {
+      "id": "visualJPlusPlus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual LISP",
-    "value": "visualLISP"
+    "value": {
+      "id": "visualLISP",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual Objects",
-    "value": "visualObjects"
+    "value": {
+      "id": "visualObjects",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Visual Prolog",
-    "value": "visualProlog"
+    "value": {
+      "id": "visualProlog",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "WATFIV",
-    "value": "WATFIV"
+    "value": {
+      "id": "WATFIV",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "WATFOR",
-    "value": "WATFOR"
+    "value": {
+      "id": "WATFOR",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "WebAssembly",
-    "value": "webAssembly"
+    "value": {
+      "id": "webAssembly",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "WebDNA",
-    "value": "webDNA"
+    "value": {
+      "id": "webDNA",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Whiley",
-    "value": "whiley"
+    "value": {
+      "id": "whiley",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Winbatch",
-    "value": "winbatch"
+    "value": {
+      "id": "winbatch",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Wolfram ",
-    "value": "wolfram"
+    "value": {
+      "id": "wolfram",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Wyvern",
-    "value": "wyvern"
+    "value": {
+      "id": "wyvern",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "X++",
-    "value": "xPlusPlus"
+    "value": {
+      "id": "xPlusPlus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "X10",
-    "value": "x10"
+    "value": {
+      "id": "x10",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "xBase",
-    "value": "xBase"
+    "value": {
+      "id": "xBase",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "xBase++",
-    "value": "xBasePlusPlus"
+    "value": {
+      "id": "xBasePlusPlus",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XBL",
-    "value": "XBL"
+    "value": {
+      "id": "XBL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XC (targets XMOS architecture)",
-    "value": "xCtargetsXMOSArchitecture"
+    "value": {
+      "id": "xCtargetsXMOSArchitecture",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "xHarbour",
-    "value": "xHarbour"
+    "value": {
+      "id": "xHarbour",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XL",
-    "value": "XL"
+    "value": {
+      "id": "XL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Xojo",
-    "value": "xojo"
+    "value": {
+      "id": "xojo",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XOTcl",
-    "value": "xOTcl"
+    "value": {
+      "id": "xOTcl",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Xod",
-    "value": "xod"
+    "value": {
+      "id": "xod",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XPL",
-    "value": "XPL"
+    "value": {
+      "id": "XPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XPL0",
-    "value": "xPL0"
+    "value": {
+      "id": "xPL0",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XQuery",
-    "value": "xQuery"
+    "value": {
+      "id": "xQuery",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XSB",
-    "value": "XSB"
+    "value": {
+      "id": "XSB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XSharp",
-    "value": "xSharp"
+    "value": {
+      "id": "xSharp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "XSLT",
-    "value": "XSLT"
+    "value": {
+      "id": "XSLT",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Xtend",
-    "value": "xtend"
+    "value": {
+      "id": "xtend",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Y",
-    "value": "Y"
+    "value": {
+      "id": "Y",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "YAML",
-    "value": "YAML"
+    "value": {
+      "id": "YAML",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Yorick",
-    "value": "yorick"
+    "value": {
+      "id": "yorick",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "YQL",
-    "value": "YQL"
+    "value": {
+      "id": "YQL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Yoix",
-    "value": "yoix"
+    "value": {
+      "id": "yoix",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "YUI",
-    "value": "YUI"
+    "value": {
+      "id": "YUI",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Z notation",
-    "value": "zNotation"
+    "value": {
+      "id": "zNotation",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Zebra",
-    "value": "zebra"
+    "value": {
+      "id": "zebra",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ZPL",
-    "value": "ZPL"
+    "value": {
+      "id": "ZPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ZPL2",
-    "value": "zPL2"
+    "value": {
+      "id": "zPL2",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Zeno",
-    "value": "zeno"
+    "value": {
+      "id": "zeno",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ZetaLisp",
-    "value": "zetaLisp"
+    "value": {
+      "id": "zetaLisp",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Zig",
-    "value": "zig"
+    "value": {
+      "id": "zig",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ZOPL",
-    "value": "ZOPL"
+    "value": {
+      "id": "ZOPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "ZPL",
-    "value": "ZPL"
+    "value": {
+      "id": "ZPL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Z++",
-    "value": "zPlusPlus"
+    "value": {
+      "id": "zPlusPlus",
+      "experienceLevel": 0
+    }
   }
 ]

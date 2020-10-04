@@ -1,166 +1,289 @@
 [
   {
     "text": "MySQL",
-    "value": "mySQL"
+    "value": {
+      "id": "mySQL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "PostgreSQL",
-    "value": "postgreSQL"
+    "value": {
+      "id": "postgreSQL",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MS SQL Server",
-    "value": "mSSQLServer"
+    "value": {
+      "id": "mSSQLServer",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SQLite",
-    "value": "sQLite"
+    "value": {
+      "id": "sQLite",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MongoDB",
-    "value": "mongoDB"
+    "value": {
+      "id": "mongoDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Redis",
-    "value": "redis"
+    "value": {
+      "id": "redis",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "MariaDB",
-    "value": "mariaDB"
+    "value": {
+      "id": "mariaDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Oracle",
-    "value": "oracle"
+    "value": {
+      "id": "oracle",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Elasticsearch",
-    "value": "elasticsearch"
+    "value": {
+      "id": "elasticsearch",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Firebase",
-    "value": "firebase"
+    "value": {
+      "id": "firebase",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "DynamoDB",
-    "value": "dynamoDB"
+    "value": {
+      "id": "dynamoDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Cassandra",
-    "value": "cassandra"
+    "value": {
+      "id": "cassandra",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Couchbase",
-    "value": "couchbase"
+    "value": {
+      "id": "couchbase",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Microsoft SQL Server",
-    "value": "microsoftSQLServer"
+    "value": {
+      "id": "microsoftSQLServer",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Teradata",
-    "value": "teradata"
+    "value": {
+      "id": "teradata",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Microsoft Azure SQL Database",
-    "value": "microsoftAzureSQLDatabase"
+    "value": {
+      "id": "microsoftAzureSQLDatabase",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "SAP HANA",
-    "value": "sAPHANA"
+    "value": {
+      "id": "sAPHANA",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Microsoft Azure Cosmos DB",
-    "value": "microsoftAzureCosmosDB"
+    "value": {
+      "id": "microsoftAzureCosmosDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Datastax Enterprise",
-    "value": "datastaxEnterprise"
+    "value": {
+      "id": "datastaxEnterprise",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Amazon Neptune",
-    "value": "amazonNeptune"
+    "value": {
+      "id": "amazonNeptune",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Graph Engine",
-    "value": "graphEngine"
+    "value": {
+      "id": "graphEngine",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "InfiniteGraph",
-    "value": "infiniteGraph"
+    "value": {
+      "id": "infiniteGraph",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Nebula Graph",
-    "value": "nebulaGraph"
+    "value": {
+      "id": "nebulaGraph",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Fluree",
-    "value": "fluree"
+    "value": {
+      "id": "fluree",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "FlockDB",
-    "value": "flockDB"
+    "value": {
+      "id": "flockDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HyperGraphDB",
-    "value": "hyperGraphDB"
+    "value": {
+      "id": "hyperGraphDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GraphBase",
-    "value": "graphBase"
+    "value": {
+      "id": "graphBase",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TinkerGraph",
-    "value": "tinkerGraph"
+    "value": {
+      "id": "tinkerGraph",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AnzoGraph DB",
-    "value": "anzoGraphDB"
+    "value": {
+      "id": "anzoGraphDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Memgraph",
-    "value": "memgraph"
+    "value": {
+      "id": "memgraph",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Sparksee",
-    "value": "sparksee"
+    "value": {
+      "id": "sparksee",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "VelocityDB",
-    "value": "velocityDB"
+    "value": {
+      "id": "velocityDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HugeGraph",
-    "value": "hugeGraph"
+    "value": {
+      "id": "hugeGraph",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "TerminusDB",
-    "value": "terminusDB"
+    "value": {
+      "id": "terminusDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "AgensGraph",
-    "value": "agensGraph"
+    "value": {
+      "id": "agensGraph",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "HGraphDB",
-    "value": "hGraphDB"
+    "value": {
+      "id": "hGraphDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "GlobalsDB",
-    "value": "globalsDB"
+    "value": {
+      "id": "globalsDB",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "InfoGrid",
-    "value": "infoGrid"
+    "value": {
+      "id": "infoGrid",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Sqrrl",
-    "value": "sqrrl"
+    "value": {
+      "id": "sqrrl",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "Titan",
-    "value": "titan"
+    "value": {
+      "id": "titan",
+      "experienceLevel": 0
+    }
   },
   {
     "text": "VelocityGraphg",
-    "value": "velocityGraphg"
+    "value": {
+      "id": "velocityGraphg",
+      "experienceLevel": 0
+    }
   }
 ]
