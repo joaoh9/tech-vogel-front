@@ -58,6 +58,7 @@ const localeEnUs = {
     language: 'Language',
     languages: 'Languages',
     fluency: 'Fluency',
+    usernameOrEmail: 'Username or Email',
     email: {
       placeholder: 'Email',
       label: 'Email',
@@ -95,6 +96,8 @@ const localeEnUs = {
     wrongFormatEmail: 'Email with wrong format!',
     lessThanXCharacters: 'Please write at least X characters',
     letterOrNumber: 'Please write only letters or numbers',
+    onlyNumber: 'Only numbers allowed',
+    yearValidation: 'Year must contain 4 digits',
     equal: 'X must be equal to Y',
     requiredField: 'Field Required',
     emailAlreadyRegistered: 'Email already registered!',
@@ -384,11 +387,31 @@ const localeEnUs = {
       },
     },
   },
-  data: {
-    companyType: [ 'Private', 'Public', 'NGO', 'Other' ],
-    contractType: [ 'Full-Time', 'Part-time', 'Hourly' ],
-    experienceLevel: [ 'Student', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Manager' ],
-    jobInterests: [ 'Startups', 'Small and medium', 'Large' ],
+  Data: {
+    companyType: [
+      { text: 'Private', value: 'private' },
+      { text: 'Public', value: 'public' },
+      { text: 'NGO', value: 'NGO' },
+      { text: 'Other', value: 'other' },
+    ],
+    contractType: [
+      { text: 'Full-Time', value: 'fullTime' },
+      { text: 'Part-time', value: 'parttime' },
+      { text: 'Hourly', value: 'hourly' },
+    ],
+    experienceLevel: [
+      { text: 'Student', value: 'student' },
+      { text: 'Junior', value: 'junior' },
+      { text: 'Mid-Level', value: 'midMinusLevel' },
+      { text: 'Senior', value: 'senior' },
+      { text: 'Lead', value: 'lead' },
+      { text: 'Manager', value: 'manager' },
+    ],
+    jobInterests: [
+      { text: 'Startups', value: 'startups' },
+      { text: 'Small and medium', value: 'smallAndMedium' },
+      { text: 'Large', value: 'large' },
+    ],
     languages: Languages,
     differentLanguages: DifferentLanguages,
     timezones: Timezones,
@@ -484,7 +507,7 @@ const localeEnUs = {
       ],
       start: {
         title: 'Register your CV',
-        description: 'Change description',
+        description: 'TODO',
         linkLinkedIn: {
           title: 'Link your LinkedIn account',
         },
@@ -494,6 +517,10 @@ const localeEnUs = {
         registerManually: {
           title: 'Register CV Manually',
         },
+      },
+      mainRole: {
+        title: 'Your main role as a developer',
+        placeholder: 'Ex: Junior Full Stack Developer',
       },
       preferences: {
         title: 'Select your preferences',
@@ -529,7 +556,7 @@ const localeEnUs = {
         title: 'Share your work experience',
         description: 'You’ll be able to edit this or add more information later on.',
         company: {
-          title: 'Company',
+          title: 'Company Name',
         },
         position: 'Your position',
         myJob: {
