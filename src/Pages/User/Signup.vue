@@ -5,9 +5,16 @@
         <template v-slot:card-content>
           <g-card-header :title="$t('Common.signup')" :description="$t('Signup.description')" />
           <form-input class="mt-6" :title="$t('Signup.name.title')" />
-          <v-text-field outlined :rules="[rules.min(3, user.name)]" v-model="user.name" />
-          <form-input :title="$t('Signup.username.title')" />
           <v-text-field
+            data-cy="name"
+            outlined
+            :rules="[rules.min(3, user.name)]"
+            v-model="user.name"
+          />
+          <form-input v-if="askForUsername" :title="$t('Signup.username.title')" />
+          <v-text-field
+            data-cy="username"
+            v-if="askForUsername"
             outlined
             :rules="[rules.min(3, user.username)]"
             :error-messages="localRules.usernameUnavaliable"
@@ -15,6 +22,7 @@
           />
           <form-input :title="$t('Signup.email.title')" />
           <v-text-field
+            data-cy="email"
             outlined
             v-model="user.email"
             :rules="[rules.email(user.email)]"
@@ -22,6 +30,7 @@
           />
           <form-input :title="$t('Common.password.label')" />
           <v-text-field
+            data-cy="password"
             :rules="[rules.min(8, user.password)]"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
@@ -31,6 +40,7 @@
           />
           <form-input :title="$t('Common.confirmPassword.label')" />
           <v-text-field
+            data-cy="confirm-password"
             :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
             :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showConfirmPassword = !showConfirmPassword"
@@ -39,6 +49,7 @@
             v-model="user.confirmPassword"
           />
           <v-checkbox
+            data-cy="terms-and-conditions"
             v-model="termsAndConditions"
             :rules="[v => !!v || $t('Rules.termsAndConditions')]"
             :error-messages="localRules.termsAndConditions"
@@ -55,10 +66,17 @@
         </template>
         <template v-slot:buttons>
           <div class="d-flex justify-space-between my-6">
-            <v-btn to="/login" color="secondary" tile outlined text large>
+            <v-btn data-cy="go-to-login" to="/login" color="secondary" tile outlined text large>
               {{ $t('Common.login') }}
             </v-btn>
-            <v-btn :loading="loading.register" @click="signup" color="primary" elevation="0" large>
+            <v-btn
+              data-cy="signup"
+              :loading="loading.register"
+              @click="signup"
+              color="primary"
+              elevation="0"
+              large
+            >
               {{ $t('Common.signup') }}
             </v-btn>
           </div>
@@ -86,6 +104,7 @@ export default {
   },
   data() {
     return {
+      askForUsername: true,
       requestError: false,
       showPassword: false,
       showConfirmPassword: false,
@@ -121,6 +140,14 @@ export default {
         this.localRules.termsAndConditions = this.$t('Rules.termsAndConditions');
         return false;
       }
+      if (!this.askForUsername) {
+        this.user.username =
+          this.user.email.split('@')[0] +
+          Math.random()
+            .toString()
+            .slice(3, 10);
+      }
+
       const validEmail = await this.validEmail();
       const validUsername = await this.validUsername();
       if (!validEmail || !validUsername) {
@@ -148,6 +175,10 @@ export default {
 
       this.$router.push({
         path: '/confirm-registration',
+        params: {
+          _username: this.user.username,
+          _email: this.user.email,
+        },
       });
     },
     async validEmail() {
@@ -163,11 +194,6 @@ export default {
         }
         return true;
       } catch (e) {
-        if (e.response.status === 500) {
-          this.requestErrorMessage = this.$t('DefaultErrors.500');
-        }
-        this.requestError = true;
-        this.loading.register = false;
         return true;
       }
     },
@@ -187,11 +213,6 @@ export default {
         }
         return true;
       } catch (e) {
-        if (e.response.status === 500) {
-          this.requestErrorMessage = this.$t('DefaultErrors.500');
-        }
-        this.requestError = true;
-        this.loading.register = false;
         return true;
       }
     },

@@ -36,8 +36,8 @@
                 :label="$t('Common.login')"
               />
             </div>
-          </div> </template
-        >s
+          </div>
+        </template>
       </g-card>
     </div>
     <g-alert
@@ -57,7 +57,16 @@ import UserController from 'Controllers/user';
 export default {
   name: 'Login',
   props: {
-    user: Object,
+    _username: String,
+    _email: String,
+  },
+  mounted() {
+    if (this._username) {
+      this.username = this._username;
+    }
+    if (this._email) {
+      this.email = this._email;
+    }
   },
   data() {
     return {
@@ -72,7 +81,7 @@ export default {
       const userController = new UserController();
 
       try {
-        const success = await userController.resendConfirmationEmail({ email: this.email });
+        const success = await userController.resendConfirmationEmail(this.email);
         if (success.success) {
           this.requestSuccess = true;
         }

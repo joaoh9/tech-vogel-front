@@ -2,29 +2,56 @@
   <div>
     <div class="d-flex justify-center mt-12">
       <g-card :sm="400" :md="500" :lg="600">
+        <template v-slot:card-header>
+          <g-card-header
+            :title="
+              confirmationId
+                ? $t('Signup.registrationConfirmed.title')
+                : $t('Signup.registrationConfirmed.error')
+            "
+          />
+        </template>
         <template v-slot:card-content>
-          <div class="d-flex justify-center ma-12" style="flex-direction: column">
-            <h4 :key="confirmationId" class="h4-bold align-self-center">
-              {{
-                confirmationId
-                  ? $t('Signup.registrationConfirmed.title')
-                  : $t('Signup.registrationConfirmed.error')
-              }}
-            </h4>
+          <div clas="d-flex justify-center ma-12" style="flex-direction: column">
             <div class="d-flex flex-column justify-space-around align-center mt-12">
               <v-btn
                 v-if="confirmationId"
-                to="/login"
+                to="/resume/new"
                 large
                 color="primary"
                 elevation="0"
-                max-width="100"
+                block
               >
-                {{ $t('Common.login') }}
+                {{ $t('CV.register.start.title') }}
               </v-btn>
             </div>
-          </div> </template
-        >s
+            <v-row justify="center" v-if="!confirmationId">
+              <v-col>
+                <g-btn
+                  type="outlined"
+                  textColor="black"
+                  @click="resendCode = !resendCode"
+                  class="body-1 cursor-pointer color-cinza-lighten-1"
+                  :label="$t('Signup.resendConfirmationCode.title')"
+                />
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col>
+                <div v-if="resendCode" style="min-width: 100%" class="mt-6">
+                  <form-input class="mt-6" title="Your email" />
+                  <v-text-field outlined v-model="email" />
+                  <g-btn
+                    class="float-right"
+                    @click="resendConfirmationCode()"
+                    type="primary"
+                    :label="$t('Signup.resendConfirmationCode.resend')"
+                  />
+                </div>
+              </v-col>
+            </v-row>
+          </div>
+        </template>
       </g-card>
     </div>
     <g-alert
@@ -40,7 +67,8 @@
 
 <script>
 import UserController from 'Controllers/user';
-
+import StorageHelper from 'Helpers/storage';
+import JwtHelper from 'Helpers/jwt';
 export default {
   name: 'Login',
   props: {
@@ -64,10 +92,32 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.confirmAccount(this.confirmationId);
+        /* const user = */ await userController.confirmAccount(this.confirmationId);
+        // TODO: receber algum dado do user e salvá-lo no sessionStorage
+        // this.saveUserCredentials(user)
+
         this.confirmationId = true;
       } catch (e) {
         this.confirmationId = false;
+      }
+    },
+    async saveUserCredentials(user) {
+      const jwtHelper = new JwtHelper();
+
+      const userToken = jwtHelper.createToken(user);
+
+      StorageHelper.saveOnSession('user', userToken);
+    },
+    async resendConfirmationCode() {
+      const userController = new UserController();
+
+      try {
+        const success = await userController.resendConfirmationEmail(this.email);
+        if (success.success) {
+          this.requestSuccess = true;
+        }
+      } catch (e) {
+        this.requestError = true;
       }
     },
   },
