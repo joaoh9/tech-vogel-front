@@ -38,7 +38,7 @@
       </g-card>
     </div>
     <g-alert
-      :errorMessage="$t('login.error')"
+      :errorMessage="requestErrorMessage"
       v-on:error="s => (requestError = s)"
       :errorVar="requestError"
     />
@@ -68,6 +68,7 @@ export default {
         login: false,
       },
       requestError: false,
+      requestErrorMessage: this.$t('login.error'),
     };
   },
   methods: {
@@ -93,6 +94,9 @@ export default {
           path: '/resume/new',
         });
       } catch (e) {
+        if (e.response.status === 500) {
+          this.requestErrorMessage = this.$t('DefaultErrors.500');
+        }
         this.loading.login = false;
         this.requestError = true;
       }

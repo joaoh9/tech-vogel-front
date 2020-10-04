@@ -80,6 +80,10 @@ const localeEnUs = {
       link: '',
     },
   },
+  DefaultErrors: {
+    '500':
+      'An unexpected error has occurred. Please try again later or email contact@techvogel.com',
+  },
   Money: {
     defaultFormat: [
       'en-US',
