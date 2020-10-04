@@ -197,12 +197,12 @@ const localeEnUs = {
       jobTitle: {
         title: 'Job Title',
         inputHint: 'This should be concise and clear.',
-        tooltip: 'teste pageTitle',
+        tooltip: 'TODO',
       },
       experienceLevel: {
         title: 'Experience Level',
         inputHint: 'TODO',
-        tooltip: 'teste jobTitle',
+        tooltip: 'TODO',
       },
       contractType: {
         title: 'Contract Type',
@@ -218,7 +218,8 @@ const localeEnUs = {
       },
       languages: {
         title: 'Required Language(s)',
-        tooltip: 'languages teste',
+        tooltip: 'TODO',
+        inputHint: 'TODO',
       },
       skillRequirements: {
         title: 'Skill requirements',
@@ -339,47 +340,47 @@ const localeEnUs = {
     register: {
       page1: {
         title: 'Register to apply for jobs',
-        tooltip: 'page1 test',
+        tooltip: 'TODO',
       },
       fullName: {
         title: 'Full name',
-        tooltip: 'fullName test',
+        tooltip: 'TODO',
       },
       email: {
         title: 'Email',
-        tooltip: 'email test',
+        tooltip: 'TODO',
       },
       username: {
         title: 'Username',
-        tooltip: 'username test',
+        tooltip: 'TODO',
       },
       password: {
         title: 'Password',
-        tooltip: 'password test',
+        tooltip: 'TODO',
       },
       confirmPassword: {
         title: 'Confirm password',
-        tooltip: 'confirmPassword test',
+        tooltip: 'TODO',
       },
       page2: {
         title: 'Confirmation',
-        tooltip: 'page2 test',
+        tooltip: 'TODO',
       },
       pageSubtitle: {
         title: 'An access code was sent to your registered email',
-        tooltip: 'pageSubtitle test',
+        tooltip: 'TODO',
       },
       accessCode: {
         title: 'Access code',
-        tooltip: 'accessCode test',
+        tooltip: 'TODO',
       },
       accessCodeHelper: {
         title: 'Didn\'t get your access code? Click here',
-        tooltip: 'accessCodeHelper test',
+        tooltip: 'TODO',
       },
       page3: {
         title: 'Welcome to Tech Voguel',
-        tooltip: 'page3 test',
+        tooltip: 'TODO',
       },
     },
   },
