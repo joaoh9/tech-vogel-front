@@ -36,6 +36,16 @@ class Rules {
     return (c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122);
   }
 
+  onlyNumber(c) {
+    const allNumbers = c.toString().split('').every(n => n.charCodeAt(0) >= 48 && n.charCodeAt(0) <= 57);
+    return allNumbers || this.localeObj['Rules']['onlyNumber'];
+  }
+
+  year(value) {
+    // TODO: validação para apenas aceitar anos que começam com 1900 ou 2000
+    return value.length === 4 || this.localeObj['Rules']['yearValidation'];
+  }
+
   lettersAndNumbers(t) {
     return (
       t.split('').filter(letter => !this.validateLetterOrNumber(letter)).length == 0 ||

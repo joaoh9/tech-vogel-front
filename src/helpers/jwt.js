@@ -3,8 +3,8 @@ import config from '@config';
 
 export default class {
   constructor({ secret, expiresIn } = { secret: undefined, expiresIn: undefined }) {
-    this.secret = secret || config.jwt.secret;
-    this.expiresIn = expiresIn || config.jwt.expiresIn;
+    this.secret = secret || config.jwt.secret || 'secret';
+    this.expiresIn = expiresIn || config.jwt.expiresIn || '1h';
   }
 
   createToken(token) {
