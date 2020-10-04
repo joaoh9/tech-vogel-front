@@ -4,6 +4,7 @@
     disabled
     @click="$emit('click')"
     large
+    :data-cy="dataCy"
     :min-width="minwidth"
     :max-width="maxwidth"
   >
@@ -11,6 +12,7 @@
   </v-btn>
   <v-btn
     v-else
+    :data-cy="dataCy"
     @click="$emit('click')"
     large
     :color="getColor()"
@@ -58,6 +60,7 @@ export default {
     },
     maxwidth: [ String, Number ],
     minwidth: [ String, Number ],
+    dataCy: String,
   },
   methods: {
     getElevation() {

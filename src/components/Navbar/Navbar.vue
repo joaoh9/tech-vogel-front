@@ -2,15 +2,20 @@
   <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
     <v-btn class="body-2" text color="white darken-4" tile elevation="0" to="/">
       <v-avatar width="150" tile>
-        <v-img contain height="60" width="1" :src="logo" />
+        <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
       </v-avatar>
     </v-btn>
     <v-spacer />
-    <v-btn class="body-2" @click="goToJobList" color="bg" text>Jobs</v-btn>
-    <v-btn class="body-2" @click="goToPricing" color="bg" text>Pricing</v-btn>
-    <v-btn class="body-2" @click="goToHowItWorks" color="bg" text>How It Works</v-btn>
+    <v-btn class="body-2" @click="goToJobList" :color="isHome() ? 'bg' : 'dark'" text>Jobs</v-btn>
+    <v-btn class="body-2" @click="goToPricing" :color="isHome() ? 'bg' : 'dark'" text>
+      Pricing
+    </v-btn>
+    <v-btn class="body-2" @click="goToHowItWorks" :color="isHome() ? 'bg' : 'dark'" text>
+      How It Works
+    </v-btn>
     <v-spacer />
     <g-btn
+      dataCy="nav-signup"
       :type="isHome() ? 'text' : 'text'"
       :text="isHome() ? true : false"
       :color="isHome() ? 'primary' : 'dark'"
@@ -18,8 +23,16 @@
       to="/signup"
       :label="$t('Common.findAJob')"
     />
-    <g-btn type="primary" class="ml-4" to="/company/new" :label="$t('Common.postAJob')" />
+
     <g-btn
+      dataCy="nav-new-company"
+      type="primary"
+      class="ml-4"
+      to="/company/new"
+      :label="$t('Common.postAJob')"
+    />
+    <g-btn
+      dataCy="nav-login"
       type="outlined"
       :color="isHome() ? 'bg' : 'dark'"
       to="/login"
@@ -64,7 +77,6 @@ export default {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
     },
     isHome() {
-      console.log(this.$router.currentRoute.name === 'Home');
       return this.$router.currentRoute.name === 'Home';
     },
   },
