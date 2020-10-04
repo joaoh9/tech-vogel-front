@@ -3,10 +3,10 @@
     class="primary-card mx-1"
     :elevation="$vuetify.breakpoint.mobile ? 0 : 6"
     color="bg"
-    :min-width="minWidth()"
-    :max-width="maxWidth()"
-    :min-height="minHeight()"
-    :max-height="maxHeight()"
+    :min-width="getMinWidth()"
+    :max-width="getMaxWidth()"
+    :min-height="getMinHeight()"
+    :max-height="getMaxHeight()"
   >
     <v-row justify="center">
       <v-col cols="1" md="2" />
@@ -18,6 +18,9 @@
       </v-col>
       <v-col cols="1" md="2" />
     </v-row>
+    <v-divider class="mt-4" v-if="this.$slots.buttons"/>
+    <slot name="buttons">
+    </slot>
   </v-card>
 </template>
 
@@ -44,9 +47,16 @@ export default {
     maxheightmd: Number,
     maxheightsm: Number,
     maxheightbase: Number,
+
+    minWidth: [ Number, String ],
+    minHeight: [ Number, String ],
+    maxWidth: [ Number, String ],
+    maxHeight: [ Number, String ],
   },
   methods: {
-    minWidth() {
+    getMinWidth() {
+      if (this.minWidth) return this.minWidth;
+
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.lg || 1000;
       }
@@ -58,7 +68,9 @@ export default {
       }
       return this.base || 250;
     },
-    maxWidth() {
+    getMaxWidth() {
+      if (this.maxWidth) return this.maxWidth;
+
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.maxlg || 1000;
       }
@@ -70,7 +82,9 @@ export default {
       }
       return this.maxbase;
     },
-    minHeight() {
+    getMinHeight() {
+      if (this.minHeight) return this.minHeight;
+
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.minheigthlg;
       }
@@ -82,7 +96,9 @@ export default {
       }
       return this.minheigthbase;
     },
-    maxHeight() {
+    getMaxHeight() {
+      if (this.maxHeight) return this.maxHeight;
+
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.maxheightlg;
       }

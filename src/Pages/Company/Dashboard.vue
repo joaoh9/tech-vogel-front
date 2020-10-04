@@ -6,7 +6,7 @@
           <template v-slot:card-content>
             <div class="d-flex justify-space-between">
               <div>
-                <h6>{{ $t('User.dashboard.greeting') }}</h6>
+                <h6>{{ $t('Company.dashboard.greeting') }}</h6>
                 <h4>{{ user.name }}</h4>
               </div>
               <v-avatar size="90">
@@ -26,11 +26,41 @@
       </v-col>
       <v-col md="8" cols="12">
         <div>
-          <div class="mt-5 mb-12">
-            <h4>{{ $t('User.dashboard.actions.title') }}</h4>
+          <g-card minWidth="0" maxWidth="100vw">
+            <template v-slot:card-content>
+              <div class="d-flex justify-space-between">
+                <div class="flex-fill">
+                  <p>{{ $t('Company.dashboard.yourCompany.title') }}</p>
+                  <h4 class="my-5">{{ company.name }}</h4>
+                  <div class="d-flex justify-space-around">
+                    <div>
+                      <p style="font-weight: bold">{{ company.currentAds }}</p>
+                      <p>
+                        {{ $t('Company.dashboard.yourCompany.currentAds') }}
+                      </p>
+                    </div>
+                    <div>
+                      <p style="font-weight: bold">{{ company.remainingCredits }}</p>
+                      <p>
+                        {{ $t('Company.dashboard.yourCompany.remainingCredits') }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <v-avatar size="90">
+                  <v-img v-if="company.profilePhoto" :src="company.profilePhoto" />
+                  <v-icon v-else>
+                    fa-user
+                  </v-icon>
+                </v-avatar>
+              </div>
+            </template>
+          </g-card>
+          <div class="mt-8 mb-12">
+            <h4>{{ $t('Company.dashboard.actions.title') }}</h4>
           </div>
           <div class="my-5">
-            <g-btn block type="primary" :label="$t('User.dashboard.registerCV')" />
+            <g-btn block type="primary" :label="$t('Company.dashboard.registerCV')" />
           </div>
           <v-row>
             <v-col cols="6" v-for="(action, index) in actions" v-bind:key="index">
@@ -48,7 +78,7 @@
                       </v-icon>
                     </v-col>
                     <v-col cols="12" md="8">
-                      <h5>{{ $t('User.dashboard.actions.' + action.name) }}</h5>
+                      <h5>{{ $t('Company.dashboard.actions.' + action.name) }}</h5>
                     </v-col>
                   </v-row>
                 </v-card-title>
@@ -60,7 +90,7 @@
               outlined
               block
               type="secondary"
-              :label="$t('User.dashboard.manageAccountInfo')"
+              :label="$t('Company.dashboard.manageAccountInfo')"
             />
           </div>
         </div>
@@ -79,16 +109,23 @@ export default {
         profilePhoto:
           'https://images.unsplash.com/photo-1601676509804-5dc60b6e86fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=332&q=80',
       },
+      company: {
+        name: 'Guaraná Jesus',
+        currentAds: 25,
+        remainingCredits: 12,
+        profilePhoto:
+          'https://images.unsplash.com/photo-1601676509804-5dc60b6e86fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=332&q=80',
+      },
       actions: [
         {
-          name: 'applications',
-          method: this.goToApplications,
-          icon: 'fa-check',
+          name: 'manageListings',
+          method: this.goToManageListings,
+          icon: 'fa-stream',
         },
         {
-          name: 'findJobs',
-          method: this.goToFindJobs,
-          icon: 'fa-search',
+          name: 'postJob',
+          method: this.goToPostJobs,
+          icon: 'fa-bullhorn',
         },
         {
           name: 'editProfile',
@@ -96,24 +133,28 @@ export default {
           icon: 'fa-edit',
         },
         {
-          name: 'manageCredits',
-          method: this.goToManageCredits,
-          icon: 'fa-file-invoice-dollar',
+          name: 'managePayment',
+          method: this.goToManagePayment,
+          icon: 'fa-dollar-sign',
         },
       ],
     };
   },
   methods: {
-    goToApplications: function() {},
-    goToFindJobs: function() {
+    goToManageListings: function() {},
+    goToPostJobs: function() {
       this.$router.push('/job/new');
     },
     goToEditProfile: function() {
-      this.$router.push('/resume/new');
+      this.$router.push('/company/new');
     },
-    goToManageCredits: function() {},
+    goToManagePayment: function() {},
   },
 };
 </script>
 
-<style></style>
+<style>
+p {
+  display: inline;
+}
+</style>

@@ -338,6 +338,23 @@ const localeEnUs = {
       twitter: 'Twitter',
       instagram: 'Instagram',
     },
+    dashboard: {
+      greeting: 'Hi,',
+      yourCompany: {
+        title: 'Your company',
+        currentAds: 'Current ads',
+        remainingCredits: 'Remaining credits',
+      },
+      actions: {
+        title: 'What would you like to do today?',
+        manageListings: 'Manage active listings',
+        postJob: 'Post a jobs',
+        editProfile: 'Edit company profile',
+        managePayment: 'Manage payment',
+      },
+      registerCV: 'Register my CV',
+      manageAccountInfo: 'Manage my account information',
+    },
   },
   login: {
     title: 'Login',
@@ -392,6 +409,18 @@ const localeEnUs = {
         title: 'Welcome to Tech Voguel',
         tooltip: 'TODO',
       },
+    },
+    dashboard: {
+      greeting: 'Hi,',
+      actions: {
+        title: 'What would you like to do today?',
+        applications: 'Check on my applications',
+        findJobs: 'Search for more jobs',
+        editProfile: 'Edit my profile',
+        manageCredits: 'Manage credits',
+      },
+      registerCV: 'Register my CV',
+      manageAccountInfo: 'Manage my account information',
     },
   },
   Data: {
@@ -598,18 +627,6 @@ const localeEnUs = {
     title: 'Leave your Feedback, bug encounter or suggestion!',
     topic: 'Topic',
     description: 'Description',
-  },
-  ProfessionalDashboard: {
-    greeting: 'Hi,',
-    actions: {
-      title: 'What would you like to do today?',
-      applications: 'Check on my applications',
-      findJobs: 'Search for more jobs',
-      editProfile: 'Edit my profile',
-      manageCredits: 'Manage credits',
-    },
-    registerCV: 'Register my CV',
-    manageAccountInfo: 'Manage my account information',
   },
 };
 
