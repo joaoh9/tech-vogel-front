@@ -17,6 +17,7 @@
 import EducationItem from './EducationItem';
 import Wrapper from 'Components/Interface/Wrapper';
 
+
 export default {
   name: 'Education',
   components: {

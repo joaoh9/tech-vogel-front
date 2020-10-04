@@ -8,6 +8,7 @@
               :title="$t(`CV.register.${$t('CV.register.pages')[currentStep]}.title`)"
               :description="$t(`CV.register.${$t('CV.register.pages')[currentStep]}.description`)"
             />
+            {{ resume }}
           </template>
           <template v-slot:card-content>
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
@@ -15,33 +16,28 @@
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
               <Preferences
-                v-on:job-category="e => (resume.jobInterests = e)"
+                v-on:job-interests="e => (resume.jobInterests = e)"
                 v-on:contract-type="e => (resume.contractType = e)"
               />
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
               <PersonalInfo
                 v-on:full-name="e => (resume.fullName = e)"
-                v-on:location="
-                  e => {
-                    resume.location = e;
-                  }
-                "
+                v-on:main-role="e => (resume.mainRole = e)"
+                v-on:location="e => (resume.location = e)"
               >
               </PersonalInfo>
             </div>
             <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-              <WorkExperience
-                v-on:job="
-                  e => {
-                    resume.job = e;
-                  }
-                "
-              >
-              </WorkExperience>
+              <WorkExperience v-on:job="e => (resume.job = e)"> </WorkExperience>
             </div>
             <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
-              <Skills v-on:skills="e => (resume.skills = e)"> </Skills>
+              <Skills
+                v-on:tech-skills="e => (resume.skills.techSkills = e)"
+                v-on:soft-skills="e => (resume.skills.softSkills = e)"
+                v-on:languages="e => (resume.skills.languages = e)"
+              >
+              </Skills>
             </div>
             <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
               <Education v-on:education="e => (resume.education = e)"> </Education>
@@ -106,45 +102,33 @@ export default {
       educationComponent: Education,
       currentStep: 0,
       resume: {
-        contractType: [],
         jobInterests: [],
+        contractType: [],
+        mainRole: '',
         location: {
           city: '',
           country: '',
         },
         job: {
-          company: {
-            title: '',
-          },
-          position: '',
-          from: {
-            month: '',
-            year: '',
-          },
-          to: {
-            month: '',
-            year: '',
-          },
-          jobDescription: '',
-          currentJob: '',
+          companyName: '',
+          role: '',
+          startDate: 0,
+          endDate: 0,
+          description: '',
+          currentJob: false,
         },
         skills: {
-          programmingLanguages: '',
-          frameworks: '',
-          knowledgeAreas: '',
-          softSkills: '',
+          techSkills: [],
+          softSkills: [],
+          languages: [],
         },
         education: {
           degree: '',
-          type: '',
+          institutionType: '',
           description: '',
           institution: '',
-          from: {
-            year: '',
-          },
-          to: {
-            year: '',
-          },
+          startDate: '',
+          endDate: '',
         },
       },
     };
@@ -155,12 +139,12 @@ export default {
     },
   },
   methods: {
-    async register() {
+    async saveResume() {
       const resumeController = new ResumeController();
       const validResume = this.validateResume();
       if (validResume) {
         try {
-          await resumeController.register({
+          await resumeController.save({
             resume: this.resume,
           });
         } catch (e) {

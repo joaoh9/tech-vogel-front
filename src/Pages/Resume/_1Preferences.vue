@@ -4,21 +4,21 @@
     <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
         v-model="jobInterests"
-        v-on:input="$emit('job-interests', jobInterests)"
+        @change="$emit('job-interests', jobInterests)"
         v-for="(option, index) in $t('Data.jobInterests')"
         :key="index"
-        :label="option"
-        :value="option"
+        :label="option.text"
+        :value="option.value"
       />
     </div>
     <form-input class="mt-6" :title="$t('CV.register.preferences.jobType.title')" />
     <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
         v-model="contractType"
-        v-on:input="$emit('contract-type', contractType)"
+        @change="$emit('contract-type', contractType)"
         v-for="(option, index) in $t('Data.contractType')"
-        :label="option"
-        :value="option"
+        :label="option.text"
+        :value="option.value"
         :key="index"
       />
     </div>
@@ -36,9 +36,6 @@ export default {
     };
   },
 };
-
 </script>
 
 <style></style>
-
-

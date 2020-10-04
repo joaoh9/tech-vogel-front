@@ -1,26 +1,20 @@
 <template>
   <div class="bg-color-bg d-flex align-center justify-space-around">
-    <div class="mr-1">
-      <v-combobox
-        placeholder="Skill"
-        v-model="skill.skill"
-        v-on:input="updateItem"
-        :items="$t('Data.knowledgeAreas')"
-      />
-    </div>
+    <v-combobox
+      outlined
+      small-chips
+      placeholder="Skill"
+      v-model="skill.skill"
+      v-on:input="updateItem"
+      :items="$t('Data.techSkills')"
+    />
     <v-btn-toggle
       v-model="skill.experience"
       v-on:change="updateItem"
       color="primary"
       class=" bg-color-bg d-inline-flex justify-center flex-wrap"
     >
-      <v-btn
-        class="bg-color-bg"
-        v-for="(xp, index) in xpOptions"
-        :key="index"
-        outlined
-        :value="xp"
-      >
+      <v-btn class="bg-color-bg" v-for="(xp, index) in xpOptions" :key="index" outlined :value="xp">
         {{ xp }}
       </v-btn>
     </v-btn-toggle>

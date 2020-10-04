@@ -7,9 +7,20 @@
       :title="$t('CV.register.personalInfo.fullName.title')"
     />
     <v-text-field
-      placeholder="Ex: João"
       v-model="fullName"
       v-on:input="$emit('full-name', fullName)"
+      outlined
+    />
+    <form-input
+      class="mt-6"
+      tooltip="teste"
+      position="left"
+      :title="$t('CV.register.main.title')"
+    />
+    <v-text-field
+      :placeholder="$t('CV.register.main.placeholder')"
+      v-model="mainRole"
+      v-on:input="$emit('main-role', mainRole)"
       outlined
     />
     <form-input class="mt-6" :title="$t('CV.register.personalInfo.location.title')" />
@@ -38,16 +49,35 @@
 </template>
 
 <script>
+import StorageHelper from 'Helpers/storage';
+import JwtHelper from 'Helpers/jwt';
+
 export default {
   name: 'ResumePersonalInfo',
+  mounted() {
+    this.getUserInfo();
+  },
   data() {
     return {
       fullName: '',
+      mainRole: '',
       location: {
         city: '',
         country: '',
       },
     };
+  },
+  methods: {
+    getUserInfo() {
+      try {
+        const userToken = StorageHelper.loadState('user');
+        const jwtHelper = new JwtHelper();
+        const user = jwtHelper.decodeToken(userToken);
+        this.fullName = user.name;
+      } catch (e) {
+        console.log(e);
+      }
+    },
   },
 };
 </script>

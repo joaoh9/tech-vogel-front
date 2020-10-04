@@ -2,14 +2,14 @@
   <div>
     <form-input class="mt-6" :title="$t('CV.register.workExperience.company.title')" />
     <v-text-field
-      v-model="job.company.title"
+      v-model="job.companyName"
       v-on:input="$emit('update-item', job)"
       :placeholder="$t('CV.register.workExperience.placeholders.company.title')"
       outlined
     />
     <form-input class="" :title="$t('CV.register.workExperience.position')" />
     <v-text-field
-      v-model="job.position"
+      v-model="job.role"
       v-on:input="$emit('update-item', job)"
       :placeholder="$t('CV.register.workExperience.placeholders.position')"
       outlined
@@ -18,21 +18,21 @@
       <v-col cols="12" md="3">
         <form-input class="" :title="$t('Common.from')" />
         <v-text-field
-          v-model="job.from.year"
+          v-model="job.startDate"
           v-on:input="$emit('update-item', job)"
           :placeholder="$t('Common.year')"
           outlined
-          :rules="[rules.year]"
+          :rules="[rules.onlyNumber(job.startDate), rules.year(job.startDate)]"
         />
       </v-col>
       <v-col cols="12" md="3">
         <form-input class="" :title="$t('Common.to')" />
         <v-text-field
-          v-model="job.to.year"
+          v-model="job.endDate"
           v-on:input="$emit('update-item', job)"
           :placeholder="$t('Common.year')"
           outlined
-          :rules="[rules.year]"
+          :rules="[rules.onlyNumber(job.endDate), rules.year(job.endDate)]"
           :disabled="job.currentJob"
         />
       </v-col>
@@ -58,32 +58,35 @@
 </template>
 
 <script>
+import RulesHelper from 'Helpers/rules';
+
 export default {
   name: 'WorkItem',
+  mounted() {
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+  },
   data() {
     return {
       job: {
-        company: {
-          title: '',
-        },
-        position: '',
-        from: {
-          year: '',
-        },
-        to: {
-          year: '',
-        },
-        jobDescription: '',
+        companyName: '',
+        role: '',
+        startDate: 0,
+        endDate: 0,
+        description: '',
         currentJob: false,
       },
       rules: {
-        year: value => {
-          const reg = /[^\d]/g;
-          const s = value.replace(reg, '');
-          return s.length === 4;
-        },
+        year: () => true,
+        onlyNumber: () => true,
       },
     };
+  },
+  watch: {
+    'job.currentJob'(e) {
+      if (e === true) {
+        this.job.endDate = new Date().getFullYear();
+      }
+    },
   },
 };
 </script>
