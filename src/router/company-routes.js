@@ -5,6 +5,7 @@ const routes = [
     path: '/company/new',
     name: 'New',
     component: NewCompany,
+    props: true,
   },
 ];
 
