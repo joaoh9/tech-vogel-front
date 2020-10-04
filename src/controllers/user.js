@@ -38,10 +38,22 @@ export default class UserController {
     return status;
   }
 
-  async resendConfirmationEmail({ email }) {
-    const axios = Axios.GetInstance({ api: '/resend-confirmation-link' });
+  async emailLogin({ email, password }) {
+    const axios = Axios.GetInstance({ api: '/api' });
+    const { data } = await axios.post('/emailLogin', {
+      email,
+      password,
+    });
 
-    const { data } = await axios.get('/');
+    return data;
+  }
+
+  async resendConfirmationEmail(email) {
+    const user = await this.getByEmail(email);
+
+    const axios = Axios.GetInstance();
+
+    const { data } = await axios.get(`/users/sendConfirmationEmail/${user.username}`);
 
     return { ...data, email };
   }
@@ -49,6 +61,8 @@ export default class UserController {
   async confirmAccount(confirmationId) {
     const axios = Axios.GetInstance();
 
-    return await axios.get(`/users/confirmAccount/${confirmationId}`);
+    const { data } = await axios.get(`/users/confirmAccount/${confirmationId}`);
+
+    return data;
   }
 }
