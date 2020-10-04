@@ -7,7 +7,7 @@
     />
     <v-autocomplete
       :hint="$t('Job.new.techSkills.inputHint')"
-      v-model="rawSkills"
+      v-model="skills"
       :items="$t('Data.allSkills')"
       hide-details
       hide-selected
@@ -17,67 +17,103 @@
       deletable-chips
       item-text="text"
       item-value="value"
-      :key="skillsUpdated"
     />
-    <v-row
-      justify="center"
-      align="center"
-      v-for="(skill, i) in skills"
-      :key="i"
-      :class="i !== 0 ? 'mt-n6' : ''"
-    >
-      <v-col class="d-flex" cols="12" md="4">
-        <v-icon @click="deleteSkills(i)" class="align-self-center mr-2">
-          mdi-close
-        </v-icon>
-        <div class="body-1 align-self-center" style="line-height: 100% !important">
-          {{ skill.id }}
-        </div>
-      </v-col>
-      <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">
-        <v-radio-group :row="$vuetify.breakpoint.mdAndUp" v-model="skills[i]['priority']">
-          <v-radio
-            color="primary"
-            class="mx-md-6 mx-0 my-2 my-md-0"
-            v-for="(check, j) in getSkillsPriorities()"
-            :key="j"
-            :label="check.text"
-            :value="check.value"
-          />
-        </v-radio-group>
-      </v-col>
-    </v-row>
+    <SkillExperienceLevel
+      :key="`XP-LVL-${skills.length}`"
+      :items="skills"
+      :experienceLevel="$t('skills.priorities')"
+    />
     <h5 class="mt-6">{{ $t('Job.new.otherSkills.title') }}</h5>
     <span class="color-cinza-lighten-1 caption">{{ $t('Job.new.otherSkills.description') }}</span>
-    <form-input v-if="false" class="mt-4" :title="$t('Job.new.softSkills.title')" />
+    <form-input class="mt-4" :title="$t('Job.new.softSkills.title')" />
     <v-autocomplete
-      v-if="false"
       :hint="$t('Job.new.softSkills.inputHint')"
       hide-selected
       v-model="softSkills"
       item-text="text"
       item-value="value"
       :items="$t('Data.softSkillsFlat')"
-      @change="softSkillsChange"
       outlined
       multiple
       small-chips
       deletable-chips
       hide-details
     />
+    <SkillExperienceLevel
+      :key="`Soft-${softSkills.length}`"
+      :items="softSkills"
+      :experienceLevel="$t('skills.priorities')"
+    />
+    <form-input
+      class="mt-6"
+      position="left"
+      :title="$t('Job.new.languages.title')"
+      :tooltip="$t('Job.new.languages.tooltip')"
+    />
+    <v-autocomplete
+      class="mb-10"
+      :hint="$t('Job.new.languages.inputHint')"
+      hide-selected
+      v-model="languages"
+      item-text="text"
+      item-value="value"
+      :items="$t('Data.languages')"
+      outlined
+      multiple
+      small-chips
+      deletable-chips
+      hide-details
+    />
+    <v-row
+      justify="center"
+      align="center"
+      v-for="(language, i) in languages"
+      :key="`Lan-${i}`"
+      :class="i === 0 ? 'mt-4' : 'mt-n0'"
+    >
+      <v-col class="d-flex" cols="12" md="4">
+        <v-icon @click="languages.splice(i, 1)" class="align-self-center mr-2">
+          mdi-close
+        </v-icon>
+        <div class="body-1 align-self-center" style="line-height: 100% !important">
+          {{ language.id }}
+        </div>
+      </v-col>
+      <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">
+        <v-btn-toggle
+          v-model="languages[i]['experienceLevel']"
+          color="primary"
+          class=" bg-color-bg d-inline-flex justify-center flex-wrap "
+        >
+          <v-btn
+            class="bg-color-bg flex-fill ma-1"
+            outlined
+            input-value="value"
+            :value="fluency.value"
+            v-for="(fluency, index) in $t('skills.languages.fluency')"
+            :key="`L-${index}`"
+          >
+            {{ fluency.text }}
+          </v-btn>
+        </v-btn-toggle>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import SkillExperienceLevel from './SkillExperienceLevel';
+
 export default {
   name: 'NewJob3',
+  components: {
+    SkillExperienceLevel,
+  },
   data() {
     return {
-      rawSkills: [],
       skills: [],
-      previousStateRawSkill: [],
       softSkills: [],
-      skillsUpdated: false,
+      languages: [],
     };
   },
   methods: {
@@ -88,28 +124,8 @@ export default {
       alert(e);
       this.skills.push({ id: e, priority: 0 });
     },
-    deleteSkills(index) {
-      this.rawSkills.splice(index, 1);
-    },
   },
   watch: {
-    rawSkills(e) {
-      const stringify = el => `${el}`;
-      const newRawSkills = arr => new Set(arr.map(stringify));
-
-      let result = e.filter(el => !newRawSkills(this.previousStateRawSkill).has(stringify(el)));
-      if (!result.length && !this.skills.length) {
-        this.skills.push({ id: e[0], priority: 0 });
-        return;
-      }
-      if (!result.length) {
-        result = this.previousStateRawSkill.filter(el => !newRawSkills(e).has(stringify(el)));
-        this.skills.splice(this.skills.indexOf(result[0]), 1);
-        return;
-      }
-      this.skills.push({ id: result[0], priority: 0 });
-      this.previousStateRawSkill = e;
-    },
     skills() {
       this.$emit('skills', this.skills);
     },
