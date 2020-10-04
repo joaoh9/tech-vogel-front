@@ -39,9 +39,9 @@
                 :label="$t('Common.back')"
                 v-if="currentStep > 0"
                 type="secondary"
-                @click="currentStep--"
+                @click="manageStepBack"
               />
-              <g-btn :label="$t('Common.next')" type="primary" @click="currentStep++" />
+              <g-btn :label="$t('Common.next')" type="primary" @click="manageNextStep" />
             </div>
           </template>
         </g-card>
@@ -56,10 +56,15 @@ import New1 from 'Pages/Company/New1';
 import New2 from 'Pages/Company/New2';
 import New3 from 'Pages/Company/New3';
 import CompanyController from 'Controllers/company';
+import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'New',
   props: {},
+  mounted() {
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    this.rulesLoaded = true;
+  },
   components: {
     New1,
     New2,
@@ -81,8 +86,22 @@ export default {
     };
   },
   methods: {
+    manageStepBack() {
+      this.currentStep--;
+    },
+    manageNextStep() {
+      switch (this.currentStep) {
+        case 0:
+          this.register();
+          break;
+        case 1:
+        case 2:
+        case 3:
+      }
+    },
     async register() {
       const companyController = new CompanyController();
+
       if (this.company) {
         try {
           await companyController.registerCompany({
