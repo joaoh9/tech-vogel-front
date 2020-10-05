@@ -37,6 +37,7 @@ const localeEnUs = {
     next: 'Next',
     confirm: 'Confirm',
     back: 'Go Back',
+    pricing: 'Pricing',
     maximum: 'Maximum',
     minimum: 'Minimum',
     characters: 'Characters',
@@ -99,6 +100,7 @@ const localeEnUs = {
     onlyNumber: 'Only numbers allowed',
     yearValidation: 'Year must contain 4 digits',
     equal: 'X must be equal to Y',
+    notNumber: 'Not a number',
     requiredField: 'Field Required',
     emailAlreadyRegistered: 'Email already registered!',
     usernameUnavaliable: 'Username not avaliable!',
@@ -244,7 +246,7 @@ const localeEnUs = {
       softSkills: {
         title: 'Soft Skills',
         tooltip: 'TODO',
-        inputHint: 'Type the skill you wish to include above and select from the list.',
+        inputHint: 'Soft skills have a lower weigth on your matches',
       },
       language: {
         title: 'Language',
@@ -263,6 +265,7 @@ const localeEnUs = {
       perks: {
         title: 'Perks and Benefits',
         tooltip: 'TODO',
+        placeholder: 'TODO',
       },
       steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
     },
@@ -402,7 +405,7 @@ const localeEnUs = {
     experienceLevel: [
       { text: 'Student', value: 'student' },
       { text: 'Junior', value: 'junior' },
-      { text: 'Mid-Level', value: 'midMinusLevel' },
+      { text: 'Mid-Level', value: 'midLevel' },
       { text: 'Senior', value: 'senior' },
       { text: 'Lead', value: 'lead' },
       { text: 'Manager', value: 'manager' },
@@ -411,6 +414,17 @@ const localeEnUs = {
       { text: 'Startups', value: 'startups' },
       { text: 'Small and medium', value: 'smallAndMedium' },
       { text: 'Large', value: 'large' },
+    ],
+    payCheckTimeFrame: [
+      { text: 'Yearly', value: 'yearly' },
+      { text: 'Monthly', value: 'monthly' },
+      { text: 'Hourly', value: 'hourly' },
+    ],
+    currencies: [
+      { text: 'Dollar', value: 'USD' },
+      { text: 'Pounds', value: 'GBP' },
+      { text: 'Euro', value: 'EUR' },
+      { text: 'Real', value: 'BRL' },
     ],
     languages: Languages,
     differentLanguages: DifferentLanguages,
