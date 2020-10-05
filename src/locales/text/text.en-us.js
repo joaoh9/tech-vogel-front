@@ -485,9 +485,14 @@ const localeEnUs = {
       resend: 'Resend',
     },
     registrationConfirmed: {
+      clickToConfirm: 'Click the button to confirm your account!',
       title: 'Your email has been confirmed!',
       description: 'Proceed to dashboard',
       error: 'Your code is invalid or has expired!',
+    },
+    buttons: {
+      createCompany: 'I want to post a job',
+      createCV: 'I want to get hired',
     },
   },
   Quill: {
