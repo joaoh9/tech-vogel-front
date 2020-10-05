@@ -100,22 +100,16 @@ export default {
     },
     async register() {
       const companyController = new CompanyController();
-      console.log('this.rules.min(3, this.company.name)');
-      console.log(this.rules.min(3, this.company.name));
-      console.log('this.rules.min(3, this.company.representative)');
-      console.log(this.rules.min(3, this.company.representative));
       if (
         this.rules.min(3, this.company.name) !== true ||
         this.rules.min(3, this.company.representative) !== true
       ) {
-        console.log('rules failed');
+        // TODO colocar g-alert e avisar quando algo der errado
         return;
       }
 
       try {
-        const res = await companyController.registerCompany({
-          company: this.company,
-        });
+        const res = await companyController.registerCompany(this.company);
         console.log('res');
         console.log(res);
       } catch (e) {

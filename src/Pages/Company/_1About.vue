@@ -38,10 +38,8 @@
 <script>
 import { VueEditor } from 'vue2-editor';
 import RulesHelper from 'Helpers/rules';
-import UserController from 'Controllers/user';
 import StorageHelper from 'Helpers/storage';
 import JwtHelper from 'Helpers/jwt';
-
 
 export default {
   name: 'New',
@@ -85,7 +83,6 @@ export default {
       const jwtHelper = new JwtHelper();
 
       const userInfo = jwtHelper.decodeToken(StorageHelper.loadState('user'));
-
       this.ownerId = userInfo.username;
       this.representative = userInfo.name;
       this.representativeEmail = userInfo.email;
@@ -96,7 +93,10 @@ export default {
       this.$emit('owner-id', this.ownerId);
     },
     companyDescription() {
-      this.$emit('owner-id', this.companyDescription);
+      this.$emit('company-description', this.companyDescription);
+    },
+    representative() {
+      this.$emit('representative-name', this.representative);
     },
   },
 };

@@ -26,6 +26,7 @@
     :href="href"
     :min-width="minwidth"
     :max-width="maxwidth"
+    :loading="loading"
   >
     {{ label }}
   </v-btn>
@@ -61,6 +62,7 @@ export default {
     maxwidth: [ String, Number ],
     minwidth: [ String, Number ],
     dataCy: String,
+    loading: Boolean,
   },
   methods: {
     getElevation() {
