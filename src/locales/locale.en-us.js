@@ -324,7 +324,7 @@ const localeEnUs = {
       confirmPassword: 'Confirm password',
       page2: 'Build your company page',
       location: 'Location',
-      aboutYourCompany: 'About your company',
+      aboutYourCompany: { title: 'About your company', placeholder: 'TODO' },
       page3: 'Add your links',
       webpage: 'Webpage',
       linkedin: 'LinkedIn',
