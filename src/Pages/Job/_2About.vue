@@ -24,6 +24,11 @@ export default {
       content: '',
     };
   },
+  watch: {
+    about() {
+      this.$emit('about', this.about);
+    },
+  },
 };
 </script>
 
