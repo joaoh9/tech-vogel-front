@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-6">
     <form-input class="mt-6" :title="$t('CV.register.workExperience.company.title')" />
     <v-text-field
       v-model="job.companyName"
@@ -46,24 +46,27 @@
         :key="index"
       />
     </div>
-    <form-input :title="$t('CV.register.workExperience.jobDescription')" />
-    <v-textarea
+    <form-input :title="$t('CV.register.workExperience.jobDescription.title')" />
+    <!-- TODO: mudar para vue-editor -->
+    <vue-editor
+      :placeholder="$t('CV.register.workEperience.jobDescription')"
+      :editorToolbar="$t('Quill.defaultToolbar')"
       v-model="job.jobDescription"
-      v-on:input="$emit('update-item', job)"
-      height="100"
-      outlined
-      counter="500"
     />
   </div>
 </template>
 
 <script>
+import { VueEditor } from 'vue2-editor';
 import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'WorkItem',
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+  },
+  components: {
+    VueEditor,
   },
   data() {
     return {
@@ -86,6 +89,9 @@ export default {
       if (e === true) {
         this.job.endDate = new Date().getFullYear();
       }
+    },
+    'job.jobDescription'() {
+      this.$emit('update-item', this.job);
     },
   },
 };

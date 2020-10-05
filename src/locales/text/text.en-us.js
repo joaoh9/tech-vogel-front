@@ -576,7 +576,10 @@ const localeEnUs = {
         myJob: {
           options: ['This is my current job'],
         },
-        jobDescription: 'Description',
+        jobDescription: {
+          title: 'Description',
+          placeholder: 'TODO',
+        },
         button: {
           addMore: 'ADDMORE',
           continue: 'CONTINUE',
