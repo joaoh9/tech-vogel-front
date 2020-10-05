@@ -6,12 +6,14 @@
       </v-avatar>
     </v-btn>
     <v-spacer />
-    <v-btn class="body-2" @click="goToJobList" :color="isHome() ? 'bg' : 'dark'" text>Jobs</v-btn>
+    <v-btn class="body-2" @click="goToJobList" :color="isHome() ? 'bg' : 'dark'" text>
+      {{ $t('Common.jobs') }}
+    </v-btn>
     <v-btn class="body-2" @click="goToPricing" :color="isHome() ? 'bg' : 'dark'" text>
-      Pricing
+      {{ $t('Common.pricing') }}
     </v-btn>
     <v-btn class="body-2" @click="goToHowItWorks" :color="isHome() ? 'bg' : 'dark'" text>
-      How It Works
+      {{ $t('Common.howItWorks') }}
     </v-btn>
     <v-spacer />
     <g-btn
@@ -28,7 +30,7 @@
       dataCy="nav-new-company"
       type="primary"
       class="ml-4"
-      to="/company/new"
+      to="/signup"
       :label="$t('Common.postAJob')"
     />
     <g-btn
