@@ -4,6 +4,7 @@ import UserSignup from 'Pages/User/Signup';
 import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
 import RegistrationConfirmed from 'Pages/User/RegistrationConfirmed';
 import UserDashboard from 'Pages/User/Dashboard';
+import UserApplications from 'Pages/User/UserApplications';
 import GitHubOauth from 'Pages/User/GitHubOauth'
 
 const routes = [
@@ -41,6 +42,11 @@ const routes = [
     name: 'User Dashboard',
     component: UserDashboard,
     props: true,
+  },
+  {
+    path: '/applications',
+    name: 'User Applications',
+    component: UserApplications,
   },
   {
     path: '/github/oauth',

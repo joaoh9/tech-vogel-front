@@ -352,7 +352,6 @@ const localeEnUs = {
         editProfile: 'Edit company profile',
         managePayment: 'Manage payment',
       },
-      registerCV: 'Register my CV',
       manageAccountInfo: 'Manage my account information',
     },
   },
@@ -421,6 +420,16 @@ const localeEnUs = {
       },
       registerCV: 'Register my CV',
       manageAccountInfo: 'Manage my account information',
+    },
+    applications: {
+      title: 'Your applications',
+      returnToDashboard: 'Return to dashboard',
+      actions: {
+        findJobs: 'Search for more jobs',
+        editProfile: 'Edit my profile',
+        manageCredits: 'Manage credits',
+        manageAccountInfo: 'Manage my account information',
+      },
     },
   },
   Data: {

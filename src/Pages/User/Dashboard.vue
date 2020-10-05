@@ -104,7 +104,9 @@ export default {
     };
   },
   methods: {
-    goToApplications: function() {},
+    goToApplications: function() {
+      this.$router.push('/applications');
+    },
     goToFindJobs: function() {
       this.$router.push('/job/new');
     },

@@ -59,9 +59,6 @@
           <div class="mt-8 mb-12">
             <h4>{{ $t('Company.dashboard.actions.title') }}</h4>
           </div>
-          <div class="my-5">
-            <g-btn block type="primary" :label="$t('Company.dashboard.registerCV')" />
-          </div>
           <v-row>
             <v-col cols="6" v-for="(action, index) in actions" v-bind:key="index">
               <v-card class="primary-card" @click="action.method">
