@@ -6,13 +6,13 @@
       :tooltip="$t('Job.new.salary.tooltip')"
     />
     <div class="d-flex justify-space-between">
-      <v-autocomplete
+      <v-select
         v-model="salary.currency"
         @click="$emit('salary-currency', salary.currency)"
         label="Currency"
         title="Payment Currency"
         outlined
-        :items="['USD', 'GBP', 'EUR']"
+        :items="$t('Data.currencies')"
         class="mr-2"
       />
       <v-autocomplete
@@ -21,20 +21,24 @@
         label="Time Frame"
         title="Time Frame"
         outlined
-        :items="['Yearly', 'Monthly', 'Hourly']"
+        :items="$t('Data.payCheckTimeFrame')"
         class="mr-2"
       />
       <v-text-field
+        :prefix="getPrefix()"
+        @input="$emit('salary-min', salary.min)"
         v-model="salary.min"
-        @click="$emit('salary-min', salary.min)"
+        :rules="[rules.isNumber(salary.min)]"
         :label="range ? 'From' : 'Price'"
         :title="range ? 'From' : 'Price'"
         outlined
         :class="range ? 'mr-2' : ''"
       />
       <v-text-field
+        @input="$emit('salary-max', salary.max)"
         v-model="salary.max"
-        @click="$emit('salary-max', salary.max)"
+        :prefix="getPrefix()"
+        :rules="[rules.isNumber(salary.max)]"
         :label="range ? 'To' : 'Price'"
         :title="range ? 'To' : 'Price'"
         outlined
@@ -51,7 +55,7 @@
     />
     <vue-editor
       class="mb-6"
-      placeholder="Descreva melhor a sua vaga"
+      :placeholder="$t('Job.new.perks.placeholder')"
       :editorToolbar="$t('Quill.defaultToolbar')"
       v-model="perks"
     />
@@ -60,28 +64,64 @@
 
 <script>
 import { VueEditor } from 'vue2-editor';
+import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'NewJob4',
   components: {
     VueEditor,
   },
+  mounted() {
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+  },
   data() {
     return {
       perks: '',
       salary: {
-        currency: '',
+        currency: 'USD',
         min: '',
         max: '',
         timeFrame: '',
         range: false,
       },
+      rules: {
+        isNumber: () => true,
+      },
       range: false,
     };
+  },
+  methods: {
+    getPriceMask(value) {
+      switch (this.salary.currency) {
+        case 'USD':
+          return this.$n(value, 'currency', 'en-us');
+        case 'GBP':
+          return this.$n(value, 'currency', 'en-gb');
+        case 'EUR':
+          return this.$n(value, 'currency', 'ge');
+        case 'BRL':
+          return this.$n(value, 'currency', 'pt-br');
+      }
+    },
+    getPrefix() {
+      switch (this.salary.currency) {
+        case 'USD':
+          return '$';
+        case 'GBP':
+          return '£';
+        case 'EUR':
+          return '€';
+        case 'BRL':
+          return 'R$';
+      }
+    },
   },
   watch: {
     range() {
       this.$emit('salary-range', this.range);
+    },
+    perks() {
+      this.$emit('perks', this.perks);
     },
   },
 };

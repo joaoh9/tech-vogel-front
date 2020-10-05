@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <form-input
       position="left"
       :title="$t('Job.new.techSkills.title')"
@@ -7,28 +7,30 @@
     />
     <v-autocomplete
       :hint="$t('Job.new.techSkills.inputHint')"
-      v-model="skills"
+      v-model="techSkills"
       :items="$t('Data.allSkills')"
-      hide-details
-      hide-selected
       outlined
       multiple
       small-chips
       deletable-chips
       item-text="text"
       item-value="value"
+      hide-details
+      hide-selected
     />
     <SkillExperienceLevel
-      :key="`XP-LVL-${skills.length}`"
-      :items="skills"
+      :key="`XP-LVL-${techSkills.length}`"
+      :items="techSkills"
       :experienceLevel="$t('skills.priorities')"
     />
     <h5 class="mt-6">{{ $t('Job.new.otherSkills.title') }}</h5>
     <span class="color-cinza-lighten-1 caption">{{ $t('Job.new.otherSkills.description') }}</span>
-    <form-input class="mt-4" :title="$t('Job.new.softSkills.title')" />
+    <form-input
+      class="mt-4"
+      :title="$t('Job.new.softSkills.title')"
+      :description="$t('Job.new.softSkills.inputHint')"
+    />
     <v-autocomplete
-      :hint="$t('Job.new.softSkills.inputHint')"
-      hide-selected
       v-model="softSkills"
       item-text="text"
       item-value="value"
@@ -37,6 +39,7 @@
       multiple
       small-chips
       deletable-chips
+      hide-selected
       hide-details
     />
     <SkillExperienceLevel
@@ -84,6 +87,7 @@
           v-model="languages[i]['experienceLevel']"
           color="primary"
           class=" bg-color-bg d-inline-flex justify-center flex-wrap "
+          mandatory
         >
           <v-btn
             class="bg-color-bg flex-fill ma-1"
@@ -111,22 +115,32 @@ export default {
   },
   data() {
     return {
-      skills: [],
+      techSkills: [],
       softSkills: [],
       languages: [],
+      skills: {
+        techSkills: [],
+        softSkills: [],
+        languages: [],
+      },
     };
   },
   methods: {
     getSkillsPriorities() {
       return this.$t('skills.priorities');
     },
-    treatSkillInput(e) {
-      alert(e);
-      this.skills.push({ id: e, priority: 0 });
-    },
   },
   watch: {
-    skills() {
+    techSkills() {
+      this.skills.techSkills = this.techSkills;
+      this.$emit('skills', this.skills);
+    },
+    softSkills() {
+      this.skills.softSkills = this.softSkills;
+      this.$emit('skills', this.skills);
+    },
+    languages() {
+      this.skills.languages = this.languages;
       this.$emit('skills', this.skills);
     },
   },

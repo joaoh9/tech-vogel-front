@@ -16,9 +16,10 @@
       :title="$t('Job.new.experienceLevel.title')"
       :tooltip="$t('Job.new.experienceLevel.tooltip')"
     ></form-input>
-    <v-combobox
+    <v-autocomplete
+      item-value="value"
+      item-text="text"
       class="border-lg"
-      multiple
       :rules="[rules.required]"
       :items="$t('Data.experienceLevel')"
       v-model="experienceLevel"
@@ -30,7 +31,9 @@
       :title="$t('Job.new.contractType.title')"
       :tooltip="$t('Job.new.contractType.tooltip')"
     />
-    <v-combobox
+    <v-autocomplete
+      item-value="value"
+      item-text="text"
       :items="$t('Data.contractType')"
       v-model="contractType"
       @input="$emit('contract-type', contractType)"

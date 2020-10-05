@@ -4,7 +4,7 @@ class Rules {
   }
 
   required(v) {
-    return v || this.localeObj['Rules']['requiredField'];
+    return v ? true : this.localeObj['Rules']['requiredField'];
   }
 
   maxCounter(v, counter = 5) {
@@ -18,6 +18,19 @@ class Rules {
 
   name(v) {
     return v.length > 3 || this.localeObj['Rules']['nameTooShort'];
+  }
+
+  isNumber(v) {
+    try {
+      const x = parseFloat(v);
+      if (isNaN(x)) {
+        return this.localeObj['Rules']['notNumber'];
+      }
+
+      return true;
+    } catch (e) {
+      return this.localeObj['Rules']['notNumber'];
+    }
   }
 
   email(v) {
@@ -37,7 +50,10 @@ class Rules {
   }
 
   onlyNumber(c) {
-    const allNumbers = c.toString().split('').every(n => n.charCodeAt(0) >= 48 && n.charCodeAt(0) <= 57);
+    const allNumbers = c
+      .toString()
+      .split('')
+      .every(n => n.charCodeAt(0) >= 48 && n.charCodeAt(0) <= 57);
     return allNumbers || this.localeObj['Rules']['onlyNumber'];
   }
 
