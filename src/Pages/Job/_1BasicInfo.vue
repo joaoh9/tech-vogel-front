@@ -53,7 +53,7 @@ export default {
       experienceLevel: '',
       contractType: '',
       rules: {
-        required: () => true;
+        required: () => true,
       },
     };
   },
