@@ -46,6 +46,9 @@ export default {
       }
       return this.base || 250;
     },
+    giveUsFeedback() {
+      // TODO: Post na rota de feedback
+    },
   },
 };
 </script>
