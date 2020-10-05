@@ -53,9 +53,27 @@ import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'Login',
+  props: {
+    nextRoute: {
+      type: String,
+      default: '',
+    },
+    userEmail: {
+      type: String,
+    },
+    username: {
+      type: String,
+    },
+  },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.rulesLoaded = true;
+    console.log(this.nextRoute);
+    console.log(this.userEmail);
+    console.log(this.username);
+    if (this.username) {
+      this.user.username = this.username;
+    }
   },
   data() {
     return {
@@ -91,7 +109,7 @@ export default {
         this.loading.login = false;
 
         this.$router.push({
-          path: '/resume/new',
+          path: this.nextRoute || '/dashboard',
         });
       } catch (e) {
         if (e.response.status === 500) {

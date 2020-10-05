@@ -16,21 +16,27 @@
                 class="body-1 cursor-pointer color-cinza-lighten-1"
                 :label="$t('Signup.resendConfirmationCode.title')"
               />
+            </div>
 
-              <div v-if="resendCode" style="min-width: 60%" class="mt-6">
-                <form-input class="mt-6" title="Your email" />
-                <v-text-field outlined v-model="email" />
-                <g-btn
-                  class="float-right"
-                  @click="resendConfirmationCode()"
-                  type="primary"
-                  :label="$t('Signup.resendConfirmationCode.resend')"
-                />
-              </div>
+            <div
+              v-if="resendCode"
+              class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap"
+            >
+              <form-input title="Your email" />
+              <v-text-field :rules="[rules.email(email)]" outlined v-model="email" />
+              <g-btn
+                class="float-right"
+                @click="resendConfirmationCode()"
+                :loading="resendLoad"
+                type="primary"
+                :label="$t('Signup.resendConfirmationCode.resend')"
+              />
+            </div>
+            <div class="d-flex justify-center">
               <g-btn
                 class="mt-4"
                 type="primary"
-                v-else
+                v-if="!resendCode"
                 to="/login"
                 maxwidth="100"
                 :label="$t('Common.login')"
@@ -53,6 +59,7 @@
 
 <script>
 import UserController from 'Controllers/user';
+import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'Login',
@@ -67,6 +74,7 @@ export default {
     if (this._email) {
       this.email = this._email;
     }
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
   data() {
     return {
@@ -74,18 +82,24 @@ export default {
       requestError: false,
       resendCode: false,
       email: '',
+      rules: {
+        email: () => true,
+      },
+      resendLoad: false,
     };
   },
   methods: {
     async resendConfirmationCode() {
       const userController = new UserController();
-
+      this.resendLoad = true;
       try {
         const success = await userController.resendConfirmationEmail(this.email);
         if (success.success) {
           this.requestSuccess = true;
         }
+        this.resendLoad = false;
       } catch (e) {
+        this.resendLoad = false;
         this.requestError = true;
       }
     },

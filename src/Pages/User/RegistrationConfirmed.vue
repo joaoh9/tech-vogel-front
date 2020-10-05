@@ -3,30 +3,35 @@
     <div class="d-flex justify-center mt-12">
       <g-card :sm="400" :md="500" :lg="600">
         <template v-slot:card-header>
-          <g-card-header
-            :title="
-              confirmationId
-                ? $t('Signup.registrationConfirmed.title')
-                : $t('Signup.registrationConfirmed.error')
-            "
-          />
+          <g-card-header :title="getHeaderTitle()" />
         </template>
         <template v-slot:card-content>
           <div clas="d-flex justify-center ma-12" style="flex-direction: column">
+            <div v-if="confirmationStatus === 0" class="d-flex justify-center">
+              <g-btn type="primary" :label="$t('Common.confirm')" await @click="confirmAccount()" />
+            </div>
+
             <div
-              v-if="confirmationId"
+              v-if="confirmationStatus === 1"
               class="d-flex flex-column justify-space-around align-center mt-12"
             >
               <g-btn
                 type="primary"
                 class="mb-4"
-                label="I want to post a job"
-                to="/company/new"
+                :label="$t('Signup.buttons.createCompany')"
+                @click="crateCompany()"
                 block
               />
-              <g-btn type="primary" to="/resume/new" block label="I want to get hired" />
+
+              <g-btn
+                type="primary"
+                class="mb-4"
+                :label="$t('Signup.buttons.createCV')"
+                @click="crateCV()"
+                block
+              />
             </div>
-            <v-row justify="center" v-if="!confirmationId">
+            <v-row justify="center" v-if="confirmationStatus === 2">
               <v-col>
                 <g-btn
                   type="outlined"
@@ -41,11 +46,12 @@
               <v-col>
                 <div v-if="resendCode" style="min-width: 100%" class="mt-6">
                   <form-input class="mt-6" title="Your email" />
-                  <v-text-field outlined v-model="email" />
+                  <v-text-field :rules="[rules.email(email)]" outlined v-model="email" />
                   <g-btn
                     class="float-right"
                     @click="resendConfirmationCode()"
                     type="primary"
+                    :loading="resendLoad"
                     :label="$t('Signup.resendConfirmationCode.resend')"
                   />
                 </div>
@@ -70,6 +76,7 @@
 import UserController from 'Controllers/user';
 import StorageHelper from 'Helpers/storage';
 import JwtHelper from 'Helpers/jwt';
+import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'Login',
@@ -78,15 +85,21 @@ export default {
   },
   async mounted() {
     this.confirmationId = this.$route.params.id;
-    await this.confirmAccount();
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
   data() {
     return {
       requestSuccess: false,
       requestError: false,
-      confirmationId: null,
+      confirmationStatus: 0,
       resendCode: false,
       email: '',
+      resendLoad: false,
+      userEmail: '',
+      userUsername: '',
+      rules: {
+        email: () => true,
+      },
     };
   },
   methods: {
@@ -96,10 +109,12 @@ export default {
       try {
         const user = await userController.confirmAccount(this.confirmationId);
         this.saveUserCredentials(user);
+        this.userEmail = user.email;
+        this.username = user.username;
 
-        this.confirmationId = true;
+        this.confirmationStatus = 1;
       } catch (e) {
-        this.confirmationId = false;
+        this.confirmationStatus = 2;
       }
     },
     saveUserCredentials(user) {
@@ -110,17 +125,50 @@ export default {
       StorageHelper.saveOnSession('user', userToken);
     },
     async resendConfirmationCode() {
+      this.resendLoad = true;
       const userController = new UserController();
 
       try {
         const success = await userController.resendConfirmationEmail(this.email);
-        console.log(success);
+
         if (success.success) {
           this.requestSuccess = true;
         }
+        this.resendLoad = false;
       } catch (e) {
+        this.resendLoad = false;
         this.requestError = true;
       }
+    },
+    getHeaderTitle() {
+      switch (this.confirmationStatus) {
+        case 0:
+          return this.$t('Signup.registrationConfirmed.clickToConfirm');
+        case 1:
+          return this.$t('Signup.registrationConfirmed.title');
+        case 2:
+          return this.$t('Signup.registrationConfirmed.error');
+      }
+    },
+    crateCompany() {
+      this.$router.push({
+        name: 'User Login',
+        params: {
+          nextRoute: '/company/new',
+          userEmail: this.userEmail,
+          username: this.username,
+        },
+      });
+    },
+    crateCV() {
+      this.$router.push({
+        name: 'User Login',
+        params: {
+          nextRoute: '/resume/new',
+          userEmail: this.userEmail,
+          username: this.username,
+        },
+      });
     },
   },
 };
