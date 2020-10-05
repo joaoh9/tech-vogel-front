@@ -13,17 +13,18 @@
         </template>
         <template v-slot:card-content>
           <div clas="d-flex justify-center ma-12" style="flex-direction: column">
-            <div class="d-flex flex-column justify-space-around align-center mt-12">
-              <v-btn
-                v-if="confirmationId"
-                to="/resume/new"
-                large
-                color="primary"
-                elevation="0"
+            <div
+              v-if="confirmationId"
+              class="d-flex flex-column justify-space-around align-center mt-12"
+            >
+              <g-btn
+                type="primary"
+                class="mb-4"
+                label="I want to post a job"
+                to="/company/new"
                 block
-              >
-                {{ $t('CV.register.start.title') }}
-              </v-btn>
+              />
+              <g-btn type="primary" to="/resume/new" block label="I want to get hired" />
             </div>
             <v-row justify="center" v-if="!confirmationId">
               <v-col>
@@ -69,6 +70,7 @@
 import UserController from 'Controllers/user';
 import StorageHelper from 'Helpers/storage';
 import JwtHelper from 'Helpers/jwt';
+
 export default {
   name: 'Login',
   props: {
@@ -92,16 +94,15 @@ export default {
       const userController = new UserController();
 
       try {
-        /* const user = */ await userController.confirmAccount(this.confirmationId);
-        // TODO: receber algum dado do user e salvá-lo no sessionStorage
-        // this.saveUserCredentials(user)
+        const user = await userController.confirmAccount(this.confirmationId);
+        this.saveUserCredentials(user);
 
         this.confirmationId = true;
       } catch (e) {
         this.confirmationId = false;
       }
     },
-    async saveUserCredentials(user) {
+    saveUserCredentials(user) {
       const jwtHelper = new JwtHelper();
 
       const userToken = jwtHelper.createToken(user);
@@ -113,6 +114,7 @@ export default {
 
       try {
         const success = await userController.resendConfirmationEmail(this.email);
+        console.log(success);
         if (success.success) {
           this.requestSuccess = true;
         }
