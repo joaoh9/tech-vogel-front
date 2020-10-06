@@ -74,11 +74,6 @@ export default {
     };
   },
   methods: {
-    async validEmail() {
-      this.$t('Rules.emailAlreadyRegistered');
-      this.$t('Rules.lessThanXCharacters');
-      this.$t('Rules.usernameUnavaliable');
-    },
     loadUserFromStorage() {
       const jwtHelper = new JwtHelper();
 
