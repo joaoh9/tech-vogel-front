@@ -17,6 +17,7 @@ import 'Public/css/fonts.css';
 import 'Public/css/colors.css';
 import 'Public/css/complementary.css';
 import 'Public/css/card.css';
+import 'Public/css/spacing.css';
 
 export default {
   name: 'app',
