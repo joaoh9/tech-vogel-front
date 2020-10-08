@@ -69,6 +69,10 @@ class Rules {
     );
   }
 
+  equalEmail(x, y) {
+    return x === y || this.localeObj['Rules']['emailsDontMatch'];
+  }
+
   equalPassword(x, y) {
     return x === y || this.localeObj['Rules']['passwordsDontMatch'];
   }

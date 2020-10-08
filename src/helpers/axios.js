@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default class Axios {
-  static GetInstance({ api = '/api' } = { api: '/api' }) {
+  static GetInstance({ api = '/api', token = null } = { api: '/api', token: null }) {
     const contentType = 'application/json;charset=UTF-8';
     const headers = {
       'Content-Type': contentType,
@@ -11,11 +11,16 @@ export default class Axios {
       accept: 'application/json',
     };
 
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
     return axios.create({
       baseURL: api,
       timeout: 30000,
       headers,
       maxContentLength: 20 * 1000000,
+      withCredentials: true,
     });
   }
 }

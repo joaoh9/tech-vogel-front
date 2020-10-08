@@ -105,6 +105,7 @@ const localeEnUs = {
     emailAlreadyRegistered: 'Email already registered!',
     usernameUnavaliable: 'Username not avaliable!',
     weakPassword: 'Password too weak!',
+    emailsDontMatch: 'Emails do not match',
     passwordsDontMatch: 'Passwords do not match',
     termsAndConditions: 'Your must accept our Terms and Conditions',
   },

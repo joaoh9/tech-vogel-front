@@ -28,6 +28,14 @@
             :rules="[rules.email(user.email)]"
             :error-messages="localRules.emailAlreadyRegistered"
           />
+          <form-input :title="$t('Common.confirm') + ' ' + $t('Signup.email.title')" />
+          <v-text-field
+            data-cy="confirm-email"
+            outlined
+            v-model="user.confirmEmail"
+            :rules="[rules.equalEmail(user.email, user.confirmEmail)]"
+            :error-messages="localRules.emailAlreadyRegistered"
+          />
           <form-input :title="$t('Common.password.label')" />
           <v-text-field
             data-cy="password"
@@ -112,6 +120,7 @@ export default {
       rules: {
         min: () => true,
         equalPassword: () => true,
+        equalEmail: () => true,
         email: () => true,
       },
       localRules: {
@@ -122,6 +131,7 @@ export default {
       user: {
         name: '',
         email: '',
+        confirmEmail: '',
         username: '',
         password: '',
         confirmPassword: '',

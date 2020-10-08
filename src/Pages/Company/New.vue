@@ -107,9 +107,8 @@ export default {
         // TODO colocar g-alert e avisar quando algo der errado
         return;
       }
-
       try {
-        const res = await companyController.registerCompany(this.company);
+        const res = await companyController.save(this.company);
         console.log('res');
         console.log(res);
       } catch (e) {

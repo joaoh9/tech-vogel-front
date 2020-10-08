@@ -10,6 +10,9 @@ import '@babel/polyfill';
 
 import './components/global';
 
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
+
 Vue.config.productionTip = false;
 
 export default new Vue({
