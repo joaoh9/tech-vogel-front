@@ -14,12 +14,6 @@ export default class {
   }
 
   decodeToken(token) {
-    try {
-      return jwt.verify(token, this.secret);
-    } catch (err) {
-      console.log(err);
-
-      return null;
-    }
+    return jwt.verify(token, this.secret);
   }
 }
