@@ -4,6 +4,7 @@
       <template v-slot:activator="{ on, attrs }">
         <h6 v-on="on" v-bind="attrs" class="h6 d-flex">
           {{ title }}
+          <span v-if="required" class="color-primary ml-1">*</span>
         </h6>
         <span class="color-cinza-lighten-1 caption">{{ description }}</span>
       </template>
@@ -12,6 +13,7 @@
     <div v-else class="mb-3">
       <h6 class="h6 d-flex">
         {{ title }}
+        <span v-if="required" class="color-primary ml-1">*</span>
       </h6>
       <span class="color-cinza-lighten-1 caption">{{ description }}</span>
     </div>
@@ -26,6 +28,10 @@ export default {
     title: String,
     tooltip: String,
     description: String,
+    required: {
+      type: Boolean,
+      default: false,
+    },
   },
   mounted() {
     this.getPosition();
