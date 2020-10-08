@@ -7,7 +7,7 @@ import GCardHeader from './GCardHeader';
 import GButton from './Button';
 import PrimaryButton from './Buttons/Primary';
 import SecondaryButton from './Buttons/Secondary';
-import GCombobox from './Buttons/GCombobox';
+import GCombobox from './GCombobox';
 
 [
   FormInput,
