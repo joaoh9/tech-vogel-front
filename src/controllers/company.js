@@ -8,6 +8,7 @@ export default class CompanyController {
   async save(details) {
     details.companyId = details.name.replace(/ /g, '-');
     const axios = await Axios.GetInstance();
+
     const { data } = await axios.post('/company', details);
     return data;
   }

@@ -2,9 +2,7 @@
   <g-card :lg="800" :md="800" :sm="700" :maxlg="1000" :maxmd="1000" class="px-5 ma-2 ml-n7">
     <template v-slot:card-content>
       <v-row :justify="$vuetify.breakpoint.mdAndUp ? '' : 'center'">
-        <v-list-item-avatar size="70" class="mx-2">
-          <v-img src="https://cdn.vuetifyjs.com/images/john.jpg"></v-img>
-        </v-list-item-avatar>
+        <v-avatar color="cinza" size="70" class="mx-2"> </v-avatar>
         <v-row>
           <v-col cols="12" lg="9" xl="5">
             <v-list-item-subtitle>
@@ -21,7 +19,6 @@
                     <p class="caption mr-2 mt-1">
                       {{ job.company }}
                     </p>
-
                     <v-icon size="20" color="secondary" class="ml-5">
                       mdi-briefcase-variant-outline
                     </v-icon>
@@ -34,7 +31,7 @@
             </template>
           </v-col>
           <v-col cols="12" lg="3" xl="7" class="align-self-center align-context-end">
-            <v-btn max-width="200" width="140" large color="primary">
+            <v-btn @click="goToJobDetails()" max-width="200" width="140" large color="primary">
               {{ $t('Jobs.viewDetais') }}
             </v-btn>
           </v-col>
@@ -49,6 +46,13 @@ export default {
   name: 'listJobs',
   props: {
     job: {},
+  },
+  methods: {
+    goToJobDetails() {
+      this.$router.push({
+        path: `/jobs/${this.job.id}`,
+      });
+    },
   },
 };
 </script>
