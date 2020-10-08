@@ -4,7 +4,7 @@
     <vue-editor
       :placeholder="$t('Job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('Quill.defaultToolbar')"
-      v-model="about"
+      v-model="description"
     />
   </div>
 </template>
@@ -19,14 +19,12 @@ export default {
   },
   data() {
     return {
-      about: '',
-      languages: [],
-      content: '',
+      description: '',
     };
   },
   watch: {
-    about() {
-      this.$emit('about', this.about);
+    description() {
+      this.$emit('description', this.description);
     },
   },
 };

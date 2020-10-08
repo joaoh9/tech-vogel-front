@@ -4,12 +4,22 @@
       position="left"
       :title="$t('Job.new.jobTitle.title')"
       :tooltip="$t('Job.new.jobTitle.tooltip')"
+      required
     />
     <v-text-field
       :rules="[rules.required]"
       v-model="title"
       @input="$emit('title', title)"
       outlined
+    />
+
+    <form-input position="left" :title="$t('Job.new.id.title')" required />
+    <v-text-field
+      :hint="$t('Job.new.id.inputHint', { id: id })"
+      :rules="[rules.required]"
+      outlined
+      v-model="id"
+      @input="$emit('id', id)"
     />
     <form-input
       position="right"
@@ -55,6 +65,7 @@ export default {
       title: '',
       experienceLevel: '',
       contractType: '',
+      id: '',
       rules: {
         required: () => true,
       },

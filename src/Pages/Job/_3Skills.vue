@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!--
     <form-input
       position="left"
       :title="$t('Job.new.techSkills.title')"
@@ -25,7 +24,6 @@
       :items="techSkills"
       :experienceLevel="$t('skills.priorities')"
     />
-     -->
     <h5 class="mt-6">{{ $t('Job.new.otherSkills.title') }}</h5>
     <span class="color-cinza-lighten-1 caption">{{ $t('Job.new.otherSkills.description') }}</span>
     <form-input
@@ -50,8 +48,6 @@
       :items="softSkills"
       :experienceLevel="$t('skills.priorities')"
     />
-    <!--
-
     <form-input
       class="mt-6"
       position="left"
@@ -72,7 +68,6 @@
       deletable-chips
       hide-details
     />
-     -->
     <v-row
       justify="center"
       align="center"
@@ -85,7 +80,7 @@
           mdi-close
         </v-icon>
         <div class="body-1 align-self-center" style="line-height: 100% !important">
-          {{ language.id }}
+          {{ language.skillId }}
         </div>
       </v-col>
       <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">

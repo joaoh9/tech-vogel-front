@@ -205,6 +205,11 @@ const localeEnUs = {
         inputHint: 'This should be concise and clear.',
         tooltip: 'TODO',
       },
+      id: {
+        title: 'Your custom URL',
+        description: 'this will be the url you use to spread your job opening',
+        inputHint: 'http://techvogel.com/jobs/{id}',
+      },
       experienceLevel: {
         title: 'Experience Level',
         inputHint: 'TODO',
@@ -417,9 +422,9 @@ const localeEnUs = {
       { text: 'Large', value: 'large' },
     ],
     payCheckTimeFrame: [
-      { text: 'Yearly', value: 'yearly' },
-      { text: 'Monthly', value: 'monthly' },
-      { text: 'Hourly', value: 'hourly' },
+      { text: 'Yearly', value: 'YEARS' },
+      { text: 'Monthly', value: 'MONTHS' },
+      { text: 'Hourly', value: 'HOURS' },
     ],
     currencies: [
       { text: 'Dollar', value: 'USD' },

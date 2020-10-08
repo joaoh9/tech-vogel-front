@@ -8,7 +8,7 @@
     <div class="d-flex justify-space-between">
       <v-select
         v-model="salary.currency"
-        @click="$emit('salary-currency', salary.currency)"
+        @change="$emit('salary-currency', salary.currency)"
         label="Currency"
         title="Payment Currency"
         outlined
@@ -17,7 +17,7 @@
       />
       <v-autocomplete
         v-model="salary.timeFrame"
-        @click="$emit('salary-time-frame', salary.timeFrame)"
+        @change="$emit('salary-time-frame', salary.timeFrame)"
         label="Time Frame"
         title="Time Frame"
         outlined
@@ -26,7 +26,7 @@
       />
       <v-text-field
         :prefix="getPrefix()"
-        @input="$emit('salary-min', salary.min)"
+        @input="$emit('salary-min', parseFloat(salary.min))"
         v-model="salary.min"
         :rules="[rules.isNumber(salary.min)]"
         :label="range ? 'From' : 'Price'"
@@ -35,7 +35,7 @@
         :class="range ? 'mr-2' : ''"
       />
       <v-text-field
-        @input="$emit('salary-max', salary.max)"
+        @input="$emit('salary-max', parseFloat(salary.max))"
         v-model="salary.max"
         :prefix="getPrefix()"
         :rules="[rules.isNumber(salary.max)]"
