@@ -2,287 +2,287 @@
   {
     "text": "MySQL",
     "value": {
-      "id": "mySQL",
+      "skillId": "mySQL",
       "experienceLevel": 0
     }
   },
   {
     "text": "PostgreSQL",
     "value": {
-      "id": "postgreSQL",
+      "skillId": "postgreSQL",
       "experienceLevel": 0
     }
   },
   {
     "text": "MS SQL Server",
     "value": {
-      "id": "mSSQLServer",
+      "skillId": "mSSQLServer",
       "experienceLevel": 0
     }
   },
   {
     "text": "SQLite",
     "value": {
-      "id": "sQLite",
+      "skillId": "sQLite",
       "experienceLevel": 0
     }
   },
   {
     "text": "MongoDB",
     "value": {
-      "id": "mongoDB",
+      "skillId": "mongoDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "Redis",
     "value": {
-      "id": "redis",
+      "skillId": "redis",
       "experienceLevel": 0
     }
   },
   {
     "text": "MariaDB",
     "value": {
-      "id": "mariaDB",
+      "skillId": "mariaDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "Oracle",
     "value": {
-      "id": "oracle",
+      "skillId": "oracle",
       "experienceLevel": 0
     }
   },
   {
     "text": "Elasticsearch",
     "value": {
-      "id": "elasticsearch",
+      "skillId": "elasticsearch",
       "experienceLevel": 0
     }
   },
   {
     "text": "Firebase",
     "value": {
-      "id": "firebase",
+      "skillId": "firebase",
       "experienceLevel": 0
     }
   },
   {
     "text": "DynamoDB",
     "value": {
-      "id": "dynamoDB",
+      "skillId": "dynamoDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cassandra",
     "value": {
-      "id": "cassandra",
+      "skillId": "cassandra",
       "experienceLevel": 0
     }
   },
   {
     "text": "Couchbase",
     "value": {
-      "id": "couchbase",
+      "skillId": "couchbase",
       "experienceLevel": 0
     }
   },
   {
     "text": "Microsoft SQL Server",
     "value": {
-      "id": "microsoftSQLServer",
+      "skillId": "microsoftSQLServer",
       "experienceLevel": 0
     }
   },
   {
     "text": "Teradata",
     "value": {
-      "id": "teradata",
+      "skillId": "teradata",
       "experienceLevel": 0
     }
   },
   {
     "text": "Microsoft Azure SQL Database",
     "value": {
-      "id": "microsoftAzureSQLDatabase",
+      "skillId": "microsoftAzureSQLDatabase",
       "experienceLevel": 0
     }
   },
   {
     "text": "SAP HANA",
     "value": {
-      "id": "sAPHANA",
+      "skillId": "sAPHANA",
       "experienceLevel": 0
     }
   },
   {
     "text": "Microsoft Azure Cosmos DB",
     "value": {
-      "id": "microsoftAzureCosmosDB",
+      "skillId": "microsoftAzureCosmosDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "Datastax Enterprise",
     "value": {
-      "id": "datastaxEnterprise",
+      "skillId": "datastaxEnterprise",
       "experienceLevel": 0
     }
   },
   {
     "text": "Amazon Neptune",
     "value": {
-      "id": "amazonNeptune",
+      "skillId": "amazonNeptune",
       "experienceLevel": 0
     }
   },
   {
     "text": "Graph Engine",
     "value": {
-      "id": "graphEngine",
+      "skillId": "graphEngine",
       "experienceLevel": 0
     }
   },
   {
     "text": "InfiniteGraph",
     "value": {
-      "id": "infiniteGraph",
+      "skillId": "infiniteGraph",
       "experienceLevel": 0
     }
   },
   {
     "text": "Nebula Graph",
     "value": {
-      "id": "nebulaGraph",
+      "skillId": "nebulaGraph",
       "experienceLevel": 0
     }
   },
   {
     "text": "Fluree",
     "value": {
-      "id": "fluree",
+      "skillId": "fluree",
       "experienceLevel": 0
     }
   },
   {
     "text": "FlockDB",
     "value": {
-      "id": "flockDB",
+      "skillId": "flockDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "HyperGraphDB",
     "value": {
-      "id": "hyperGraphDB",
+      "skillId": "hyperGraphDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "GraphBase",
     "value": {
-      "id": "graphBase",
+      "skillId": "graphBase",
       "experienceLevel": 0
     }
   },
   {
     "text": "TinkerGraph",
     "value": {
-      "id": "tinkerGraph",
+      "skillId": "tinkerGraph",
       "experienceLevel": 0
     }
   },
   {
     "text": "AnzoGraph DB",
     "value": {
-      "id": "anzoGraphDB",
+      "skillId": "anzoGraphDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "Memgraph",
     "value": {
-      "id": "memgraph",
+      "skillId": "memgraph",
       "experienceLevel": 0
     }
   },
   {
     "text": "Sparksee",
     "value": {
-      "id": "sparksee",
+      "skillId": "sparksee",
       "experienceLevel": 0
     }
   },
   {
     "text": "VelocityDB",
     "value": {
-      "id": "velocityDB",
+      "skillId": "velocityDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "HugeGraph",
     "value": {
-      "id": "hugeGraph",
+      "skillId": "hugeGraph",
       "experienceLevel": 0
     }
   },
   {
     "text": "TerminusDB",
     "value": {
-      "id": "terminusDB",
+      "skillId": "terminusDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "AgensGraph",
     "value": {
-      "id": "agensGraph",
+      "skillId": "agensGraph",
       "experienceLevel": 0
     }
   },
   {
     "text": "HGraphDB",
     "value": {
-      "id": "hGraphDB",
+      "skillId": "hGraphDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "GlobalsDB",
     "value": {
-      "id": "globalsDB",
+      "skillId": "globalsDB",
       "experienceLevel": 0
     }
   },
   {
     "text": "InfoGrid",
     "value": {
-      "id": "infoGrid",
+      "skillId": "infoGrid",
       "experienceLevel": 0
     }
   },
   {
     "text": "Sqrrl",
     "value": {
-      "id": "sqrrl",
+      "skillId": "sqrrl",
       "experienceLevel": 0
     }
   },
   {
     "text": "Titan",
     "value": {
-      "id": "titan",
+      "skillId": "titan",
       "experienceLevel": 0
     }
   },
   {
     "text": "VelocityGraphg",
     "value": {
-      "id": "velocityGraphg",
+      "skillId": "velocityGraphg",
       "experienceLevel": 0
     }
   }

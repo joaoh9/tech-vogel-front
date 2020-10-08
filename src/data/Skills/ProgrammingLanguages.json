@@ -2,4795 +2,4795 @@
   {
     "text": "A.NET",
     "value": {
-      "id": "aDotNET",
+      "skillId": "aDotNET",
       "experienceLevel": 0
     }
   },
   {
     "text": "A-0 System",
     "value": {
-      "id": "aMinus0System",
+      "skillId": "aMinus0System",
       "experienceLevel": 0
     }
   },
   {
     "text": "A+",
     "value": {
-      "id": "aPlus",
+      "skillId": "aPlus",
       "experienceLevel": 0
     }
   },
   {
     "text": "ABAP",
     "value": {
-      "id": "ABAP",
+      "skillId": "ABAP",
       "experienceLevel": 0
     }
   },
   {
     "text": "ABC",
     "value": {
-      "id": "ABC",
+      "skillId": "ABC",
       "experienceLevel": 0
     }
   },
   {
     "text": "ABC ALGOL",
     "value": {
-      "id": "aBCALGOL",
+      "skillId": "aBCALGOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "ACC",
     "value": {
-      "id": "ACC",
+      "skillId": "ACC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Accent",
     "value": {
-      "id": "accent",
+      "skillId": "accent",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ace DASL",
     "value": {
-      "id": "aceDASL",
+      "skillId": "aceDASL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Action!",
     "value": {
-      "id": "action",
+      "skillId": "action",
       "experienceLevel": 0
     }
   },
   {
     "text": "ActionScript",
     "value": {
-      "id": "actionScript",
+      "skillId": "actionScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Actor",
     "value": {
-      "id": "actor",
+      "skillId": "actor",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ada",
     "value": {
-      "id": "ada",
+      "skillId": "ada",
       "experienceLevel": 0
     }
   },
   {
     "text": "Adenine",
     "value": {
-      "id": "adenine",
+      "skillId": "adenine",
       "experienceLevel": 0
     }
   },
   {
     "text": "Agda",
     "value": {
-      "id": "agda",
+      "skillId": "agda",
       "experienceLevel": 0
     }
   },
   {
     "text": "Agilent VEE",
     "value": {
-      "id": "agilentVEE",
+      "skillId": "agilentVEE",
       "experienceLevel": 0
     }
   },
   {
     "text": "Agora",
     "value": {
-      "id": "agora",
+      "skillId": "agora",
       "experienceLevel": 0
     }
   },
   {
     "text": "AIMMS",
     "value": {
-      "id": "AIMMS",
+      "skillId": "AIMMS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Aldor",
     "value": {
-      "id": "aldor",
+      "skillId": "aldor",
       "experienceLevel": 0
     }
   },
   {
     "text": "Alef",
     "value": {
-      "id": "alef",
+      "skillId": "alef",
       "experienceLevel": 0
     }
   },
   {
     "text": "ALF",
     "value": {
-      "id": "ALF",
+      "skillId": "ALF",
       "experienceLevel": 0
     }
   },
   {
     "text": "ALGOL 58",
     "value": {
-      "id": "aLGOL58",
+      "skillId": "aLGOL58",
       "experienceLevel": 0
     }
   },
   {
     "text": "ALGOL 60",
     "value": {
-      "id": "aLGOL60",
+      "skillId": "aLGOL60",
       "experienceLevel": 0
     }
   },
   {
     "text": "ALGOL 68",
     "value": {
-      "id": "aLGOL68",
+      "skillId": "aLGOL68",
       "experienceLevel": 0
     }
   },
   {
     "text": "ALGOL W",
     "value": {
-      "id": "aLGOLW",
+      "skillId": "aLGOLW",
       "experienceLevel": 0
     }
   },
   {
     "text": "Alice",
     "value": {
-      "id": "alice",
+      "skillId": "alice",
       "experienceLevel": 0
     }
   },
   {
     "text": "Alma-0",
     "value": {
-      "id": "almaMinus0",
+      "skillId": "almaMinus0",
       "experienceLevel": 0
     }
   },
   {
     "text": "AmbientTalk",
     "value": {
-      "id": "ambientTalk",
+      "skillId": "ambientTalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "Amiga E",
     "value": {
-      "id": "amigaE",
+      "skillId": "amigaE",
       "experienceLevel": 0
     }
   },
   {
     "text": "AMOS",
     "value": {
-      "id": "AMOS",
+      "skillId": "AMOS",
       "experienceLevel": 0
     }
   },
   {
     "text": "AMPL",
     "value": {
-      "id": "AMPL",
+      "skillId": "AMPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "AngelScript",
     "value": {
-      "id": "angelScript",
+      "skillId": "angelScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Apache Pig latin",
     "value": {
-      "id": "apachePigLatin",
+      "skillId": "apachePigLatin",
       "experienceLevel": 0
     }
   },
   {
     "text": "Apex",
     "value": {
-      "id": "apex",
+      "skillId": "apex",
       "experienceLevel": 0
     }
   },
   {
     "text": "APL",
     "value": {
-      "id": "APL",
+      "skillId": "APL",
       "experienceLevel": 0
     }
   },
   {
     "text": "AppleScript",
     "value": {
-      "id": "appleScript",
+      "skillId": "appleScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "APT",
     "value": {
-      "id": "APT",
+      "skillId": "APT",
       "experienceLevel": 0
     }
   },
   {
     "text": "Arc",
     "value": {
-      "id": "arc",
+      "skillId": "arc",
       "experienceLevel": 0
     }
   },
   {
     "text": "ARexx",
     "value": {
-      "id": "aRexx",
+      "skillId": "aRexx",
       "experienceLevel": 0
     }
   },
   {
     "text": "Argus",
     "value": {
-      "id": "argus",
+      "skillId": "argus",
       "experienceLevel": 0
     }
   },
   {
     "text": "Assembly",
     "value": {
-      "id": "assembly",
+      "skillId": "assembly",
       "experienceLevel": 0
     }
   },
   {
     "text": "AutoHotkey",
     "value": {
-      "id": "autoHotkey",
+      "skillId": "autoHotkey",
       "experienceLevel": 0
     }
   },
   {
     "text": "AutoIt",
     "value": {
-      "id": "autoIt",
+      "skillId": "autoIt",
       "experienceLevel": 0
     }
   },
   {
     "text": "AutoLISP / Visual LISP",
     "value": {
-      "id": "autoLISPVisualLISP",
+      "skillId": "autoLISPVisualLISP",
       "experienceLevel": 0
     }
   },
   {
     "text": "Averest",
     "value": {
-      "id": "averest",
+      "skillId": "averest",
       "experienceLevel": 0
     }
   },
   {
     "text": "AWK",
     "value": {
-      "id": "AWK",
+      "skillId": "AWK",
       "experienceLevel": 0
     }
   },
   {
     "text": "Axum",
     "value": {
-      "id": "axum",
+      "skillId": "axum",
       "experienceLevel": 0
     }
   },
   {
     "text": "B",
     "value": {
-      "id": "B",
+      "skillId": "B",
       "experienceLevel": 0
     }
   },
   {
     "text": "Babbage",
     "value": {
-      "id": "babbage",
+      "skillId": "babbage",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ballerina",
     "value": {
-      "id": "ballerina",
+      "skillId": "ballerina",
       "experienceLevel": 0
     }
   },
   {
     "text": "Bash",
     "value": {
-      "id": "bash",
+      "skillId": "bash",
       "experienceLevel": 0
     }
   },
   {
     "text": "BASIC",
     "value": {
-      "id": "BASIC",
+      "skillId": "BASIC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Batch file (Windows/MS-DOS)",
     "value": {
-      "id": "batchFileWindowsMSMinusDOS",
+      "skillId": "batchFileWindowsMSMinusDOS",
       "experienceLevel": 0
     }
   },
   {
     "text": "bc",
     "value": {
-      "id": "bc",
+      "skillId": "bc",
       "experienceLevel": 0
     }
   },
   {
     "text": "BCPL",
     "value": {
-      "id": "BCPL",
+      "skillId": "BCPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "BeanShell",
     "value": {
-      "id": "beanShell",
+      "skillId": "beanShell",
       "experienceLevel": 0
     }
   },
   {
     "text": "Bertrand",
     "value": {
-      "id": "bertrand",
+      "skillId": "bertrand",
       "experienceLevel": 0
     }
   },
   {
     "text": "BETA",
     "value": {
-      "id": "BETA",
+      "skillId": "BETA",
       "experienceLevel": 0
     }
   },
   {
     "text": "BLISS",
     "value": {
-      "id": "BLISS",
+      "skillId": "BLISS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Blockly",
     "value": {
-      "id": "blockly",
+      "skillId": "blockly",
       "experienceLevel": 0
     }
   },
   {
     "text": "BlooP",
     "value": {
-      "id": "blooP",
+      "skillId": "blooP",
       "experienceLevel": 0
     }
   },
   {
     "text": "Boo",
     "value": {
-      "id": "boo",
+      "skillId": "boo",
       "experienceLevel": 0
     }
   },
   {
     "text": "Boomerang",
     "value": {
-      "id": "boomerang",
+      "skillId": "boomerang",
       "experienceLevel": 0
     }
   },
   {
     "text": "Bosque",
     "value": {
-      "id": "bosque",
+      "skillId": "bosque",
       "experienceLevel": 0
     }
   },
   {
     "text": "C",
     "value": {
-      "id": "C",
+      "skillId": "C",
       "experienceLevel": 0
     }
   },
   {
     "text": "C--",
     "value": {
-      "id": "cMinusMinus",
+      "skillId": "cMinusMinus",
       "experienceLevel": 0
     }
   },
   {
     "text": "C++",
     "value": {
-      "id": "cPlusPlus",
+      "skillId": "cPlusPlus",
       "experienceLevel": 0
     }
   },
   {
     "text": "C*",
     "value": {
-      "id": "cStar",
+      "skillId": "cStar",
       "experienceLevel": 0
     }
   },
   {
     "text": "C#",
     "value": {
-      "id": "cSharp",
+      "skillId": "cSharp",
       "experienceLevel": 0
     }
   },
   {
     "text": "C/AL",
     "value": {
-      "id": "cAL",
+      "skillId": "cAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Caché ObjectScript",
     "value": {
-      "id": "cacheObjectScript",
+      "skillId": "cacheObjectScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "C Shell (csh)",
     "value": {
-      "id": "cShellcsh",
+      "skillId": "cShellcsh",
       "experienceLevel": 0
     }
   },
   {
     "text": "Caml",
     "value": {
-      "id": "caml",
+      "skillId": "caml",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cayenne",
     "value": {
-      "id": "cayenne",
+      "skillId": "cayenne",
       "experienceLevel": 0
     }
   },
   {
     "text": "CDuce",
     "value": {
-      "id": "cDuce",
+      "skillId": "cDuce",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cecil",
     "value": {
-      "id": "cecil",
+      "skillId": "cecil",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cesil",
     "value": {
-      "id": "cesil",
+      "skillId": "cesil",
       "experienceLevel": 0
     }
   },
   {
     "text": "Céu",
     "value": {
-      "id": "ceu",
+      "skillId": "ceu",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ceylon",
     "value": {
-      "id": "ceylon",
+      "skillId": "ceylon",
       "experienceLevel": 0
     }
   },
   {
     "text": "CFEngine",
     "value": {
-      "id": "cFEngine",
+      "skillId": "cFEngine",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cg",
     "value": {
-      "id": "cg",
+      "skillId": "cg",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ch",
     "value": {
-      "id": "ch",
+      "skillId": "ch",
       "experienceLevel": 0
     }
   },
   {
     "text": "Chapel",
     "value": {
-      "id": "chapel",
+      "skillId": "chapel",
       "experienceLevel": 0
     }
   },
   {
     "text": "Charm",
     "value": {
-      "id": "charm",
+      "skillId": "charm",
       "experienceLevel": 0
     }
   },
   {
     "text": "CHILL",
     "value": {
-      "id": "CHILL",
+      "skillId": "CHILL",
       "experienceLevel": 0
     }
   },
   {
     "text": "CHIP-8",
     "value": {
-      "id": "cHIPMinus8",
+      "skillId": "cHIPMinus8",
       "experienceLevel": 0
     }
   },
   {
     "text": "chomski",
     "value": {
-      "id": "chomski",
+      "skillId": "chomski",
       "experienceLevel": 0
     }
   },
   {
     "text": "ChucK",
     "value": {
-      "id": "chucK",
+      "skillId": "chucK",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cilk",
     "value": {
-      "id": "cilk",
+      "skillId": "cilk",
       "experienceLevel": 0
     }
   },
   {
     "text": "CL (IBM)",
     "value": {
-      "id": "cLIBM",
+      "skillId": "cLIBM",
       "experienceLevel": 0
     }
   },
   {
     "text": "Claire",
     "value": {
-      "id": "claire",
+      "skillId": "claire",
       "experienceLevel": 0
     }
   },
   {
     "text": "Clarion",
     "value": {
-      "id": "clarion",
+      "skillId": "clarion",
       "experienceLevel": 0
     }
   },
   {
     "text": "Clean",
     "value": {
-      "id": "clean",
+      "skillId": "clean",
       "experienceLevel": 0
     }
   },
   {
     "text": "Clipper",
     "value": {
-      "id": "clipper",
+      "skillId": "clipper",
       "experienceLevel": 0
     }
   },
   {
     "text": "CLIPS",
     "value": {
-      "id": "CLIPS",
+      "skillId": "CLIPS",
       "experienceLevel": 0
     }
   },
   {
     "text": "CLIST",
     "value": {
-      "id": "CLIST",
+      "skillId": "CLIST",
       "experienceLevel": 0
     }
   },
   {
     "text": "Clojure",
     "value": {
-      "id": "clojure",
+      "skillId": "clojure",
       "experienceLevel": 0
     }
   },
   {
     "text": "CLU",
     "value": {
-      "id": "CLU",
+      "skillId": "CLU",
       "experienceLevel": 0
     }
   },
   {
     "text": "CMS-2",
     "value": {
-      "id": "cMSMinus2",
+      "skillId": "cMSMinus2",
       "experienceLevel": 0
     }
   },
   {
     "text": "COBOL",
     "value": {
-      "id": "COBOL",
+      "skillId": "COBOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "CobolScript",
     "value": {
-      "id": "cobolScript",
+      "skillId": "cobolScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cobra",
     "value": {
-      "id": "cobra",
+      "skillId": "cobra",
       "experienceLevel": 0
     }
   },
   {
     "text": "CoffeeScript",
     "value": {
-      "id": "coffeeScript",
+      "skillId": "coffeeScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "ColdFusion",
     "value": {
-      "id": "coldFusion",
+      "skillId": "coldFusion",
       "experienceLevel": 0
     }
   },
   {
     "text": "COMAL",
     "value": {
-      "id": "COMAL",
+      "skillId": "COMAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Combined Programming",
     "value": {
-      "id": "combinedCPL",
+      "skillId": "combinedCPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "COMIT",
     "value": {
-      "id": "COMIT",
+      "skillId": "COMIT",
       "experienceLevel": 0
     }
   },
   {
     "text": "Common Intermediate",
     "value": {
-      "id": "commonIntermediate",
+      "skillId": "commonIntermediate",
       "experienceLevel": 0
     }
   },
   {
     "text": "Common Lisp (CL)",
     "value": {
-      "id": "commonLisp",
+      "skillId": "commonLisp",
       "experienceLevel": 0
     }
   },
   {
     "text": "COMPASS",
     "value": {
-      "id": "COMPASS",
+      "skillId": "COMPASS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Component Pascal",
     "value": {
-      "id": "componentPascal",
+      "skillId": "componentPascal",
       "experienceLevel": 0
     }
   },
   {
     "text": "Constraint Handling Rules (CHR)",
     "value": {
-      "id": "constraintHandlingRulesCHR",
+      "skillId": "constraintHandlingRulesCHR",
       "experienceLevel": 0
     }
   },
   {
     "text": "COMTRAN",
     "value": {
-      "id": "COMTRAN",
+      "skillId": "COMTRAN",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cool",
     "value": {
-      "id": "cool",
+      "skillId": "cool",
       "experienceLevel": 0
     }
   },
   {
     "text": "Coq",
     "value": {
-      "id": "coq",
+      "skillId": "coq",
       "experienceLevel": 0
     }
   },
   {
     "text": "Coral 66",
     "value": {
-      "id": "coral66",
+      "skillId": "coral66",
       "experienceLevel": 0
     }
   },
   {
     "text": "CorVision",
     "value": {
-      "id": "corVision",
+      "skillId": "corVision",
       "experienceLevel": 0
     }
   },
   {
     "text": "COWSEL",
     "value": {
-      "id": "COWSEL",
+      "skillId": "COWSEL",
       "experienceLevel": 0
     }
   },
   {
     "text": "CPL",
     "value": {
-      "id": "CPL",
+      "skillId": "CPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cryptol",
     "value": {
-      "id": "cryptol",
+      "skillId": "cryptol",
       "experienceLevel": 0
     }
   },
   {
     "text": "Crystal",
     "value": {
-      "id": "crystal",
+      "skillId": "crystal",
       "experienceLevel": 0
     }
   },
   {
     "text": "Csound",
     "value": {
-      "id": "csound",
+      "skillId": "csound",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cuneiform",
     "value": {
-      "id": "cuneiform",
+      "skillId": "cuneiform",
       "experienceLevel": 0
     }
   },
   {
     "text": "Curl",
     "value": {
-      "id": "curl",
+      "skillId": "curl",
       "experienceLevel": 0
     }
   },
   {
     "text": "Curry",
     "value": {
-      "id": "curry",
+      "skillId": "curry",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cybil",
     "value": {
-      "id": "cybil",
+      "skillId": "cybil",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cyclone",
     "value": {
-      "id": "cyclone",
+      "skillId": "cyclone",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cypher Query ",
     "value": {
-      "id": "cypherQuery",
+      "skillId": "cypherQuery",
       "experienceLevel": 0
     }
   },
   {
     "text": "Cython",
     "value": {
-      "id": "cython",
+      "skillId": "cython",
       "experienceLevel": 0
     }
   },
   {
     "text": "CEEMAC",
     "value": {
-      "id": "CEEMAC",
+      "skillId": "CEEMAC",
       "experienceLevel": 0
     }
   },
   {
     "text": "D",
     "value": {
-      "id": "D",
+      "skillId": "D",
       "experienceLevel": 0
     }
   },
   {
     "text": "Dart",
     "value": {
-      "id": "dart",
+      "skillId": "dart",
       "experienceLevel": 0
     }
   },
   {
     "text": "Darwin",
     "value": {
-      "id": "darwin",
+      "skillId": "darwin",
       "experienceLevel": 0
     }
   },
   {
     "text": "DataFlex",
     "value": {
-      "id": "dataFlex",
+      "skillId": "dataFlex",
       "experienceLevel": 0
     }
   },
   {
     "text": "Datalog",
     "value": {
-      "id": "datalog",
+      "skillId": "datalog",
       "experienceLevel": 0
     }
   },
   {
     "text": "DATATRIEVE",
     "value": {
-      "id": "DATATRIEVE",
+      "skillId": "DATATRIEVE",
       "experienceLevel": 0
     }
   },
   {
     "text": "dBase",
     "value": {
-      "id": "dBase",
+      "skillId": "dBase",
       "experienceLevel": 0
     }
   },
   {
     "text": "dc",
     "value": {
-      "id": "dc",
+      "skillId": "dc",
       "experienceLevel": 0
     }
   },
   {
     "text": "DCL",
     "value": {
-      "id": "DCL",
+      "skillId": "DCL",
       "experienceLevel": 0
     }
   },
   {
     "text": "DinkC",
     "value": {
-      "id": "dinkC",
+      "skillId": "dinkC",
       "experienceLevel": 0
     }
   },
   {
     "text": "DIBOL",
     "value": {
-      "id": "DIBOL",
+      "skillId": "DIBOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Dog",
     "value": {
-      "id": "dog",
+      "skillId": "dog",
       "experienceLevel": 0
     }
   },
   {
     "text": "Draco",
     "value": {
-      "id": "draco",
+      "skillId": "draco",
       "experienceLevel": 0
     }
   },
   {
     "text": "DRAKON",
     "value": {
-      "id": "DRAKON",
+      "skillId": "DRAKON",
       "experienceLevel": 0
     }
   },
   {
     "text": "Dylan",
     "value": {
-      "id": "dylan",
+      "skillId": "dylan",
       "experienceLevel": 0
     }
   },
   {
     "text": "DYNAMO",
     "value": {
-      "id": "DYNAMO",
+      "skillId": "DYNAMO",
       "experienceLevel": 0
     }
   },
   {
     "text": "DAX (Data Analysis Expressions)",
     "value": {
-      "id": "dAXDataAnalysisExpressions",
+      "skillId": "dAXDataAnalysisExpressions",
       "experienceLevel": 0
     }
   },
   {
     "text": "E",
     "value": {
-      "id": "E",
+      "skillId": "E",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ease",
     "value": {
-      "id": "ease",
+      "skillId": "ease",
       "experienceLevel": 0
     }
   },
   {
     "text": "Easy PL/I",
     "value": {
-      "id": "easyPLI",
+      "skillId": "easyPLI",
       "experienceLevel": 0
     }
   },
   {
     "text": "EASYTRIEVE PLUS",
     "value": {
-      "id": "eASYTRIEVEPLUS",
+      "skillId": "eASYTRIEVEPLUS",
       "experienceLevel": 0
     }
   },
   {
     "text": "eC",
     "value": {
-      "id": "eC",
+      "skillId": "eC",
       "experienceLevel": 0
     }
   },
   {
     "text": "ECMAScript",
     "value": {
-      "id": "eCMAScript",
+      "skillId": "eCMAScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Edinburgh IMP",
     "value": {
-      "id": "edinburghIMP",
+      "skillId": "edinburghIMP",
       "experienceLevel": 0
     }
   },
   {
     "text": "EGL",
     "value": {
-      "id": "EGL",
+      "skillId": "EGL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Eiffel",
     "value": {
-      "id": "eiffel",
+      "skillId": "eiffel",
       "experienceLevel": 0
     }
   },
   {
     "text": "ELAN",
     "value": {
-      "id": "ELAN",
+      "skillId": "ELAN",
       "experienceLevel": 0
     }
   },
   {
     "text": "Elixir",
     "value": {
-      "id": "elixir",
+      "skillId": "elixir",
       "experienceLevel": 0
     }
   },
   {
     "text": "Elm",
     "value": {
-      "id": "elm",
+      "skillId": "elm",
       "experienceLevel": 0
     }
   },
   {
     "text": "Emacs Lisp",
     "value": {
-      "id": "emacsLisp",
+      "skillId": "emacsLisp",
       "experienceLevel": 0
     }
   },
   {
     "text": "Emerald",
     "value": {
-      "id": "emerald",
+      "skillId": "emerald",
       "experienceLevel": 0
     }
   },
   {
     "text": "Epigram",
     "value": {
-      "id": "epigram",
+      "skillId": "epigram",
       "experienceLevel": 0
     }
   },
   {
     "text": "EPL (Easy ",
     "value": {
-      "id": "ePLEasy",
+      "skillId": "ePLEasy",
       "experienceLevel": 0
     }
   },
   {
     "text": "EPL (Eltron ",
     "value": {
-      "id": "ePLEltron",
+      "skillId": "ePLEltron",
       "experienceLevel": 0
     }
   },
   {
     "text": "Erlang",
     "value": {
-      "id": "erlang",
+      "skillId": "erlang",
       "experienceLevel": 0
     }
   },
   {
     "text": "es",
     "value": {
-      "id": "es",
+      "skillId": "es",
       "experienceLevel": 0
     }
   },
   {
     "text": "Escher",
     "value": {
-      "id": "escher",
+      "skillId": "escher",
       "experienceLevel": 0
     }
   },
   {
     "text": "ESPOL",
     "value": {
-      "id": "ESPOL",
+      "skillId": "ESPOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Esterel",
     "value": {
-      "id": "esterel",
+      "skillId": "esterel",
       "experienceLevel": 0
     }
   },
   {
     "text": "Etoys",
     "value": {
-      "id": "etoys",
+      "skillId": "etoys",
       "experienceLevel": 0
     }
   },
   {
     "text": "Euclid",
     "value": {
-      "id": "euclid",
+      "skillId": "euclid",
       "experienceLevel": 0
     }
   },
   {
     "text": "Euler",
     "value": {
-      "id": "euler",
+      "skillId": "euler",
       "experienceLevel": 0
     }
   },
   {
     "text": "Euphoria",
     "value": {
-      "id": "euphoria",
+      "skillId": "euphoria",
       "experienceLevel": 0
     }
   },
   {
     "text": "EusLisp Robot",
     "value": {
-      "id": "eusLispRobot",
+      "skillId": "eusLispRobot",
       "experienceLevel": 0
     }
   },
   {
     "text": "CMS EXEC (EXEC)",
     "value": {
-      "id": "cMSEXECEXEC",
+      "skillId": "cMSEXECEXEC",
       "experienceLevel": 0
     }
   },
   {
     "text": "EXEC 2",
     "value": {
-      "id": "eXEC2",
+      "skillId": "eXEC2",
       "experienceLevel": 0
     }
   },
   {
     "text": "Executable UML",
     "value": {
-      "id": "executableUML",
+      "skillId": "executableUML",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ezhil",
     "value": {
-      "id": "ezhil",
+      "skillId": "ezhil",
       "experienceLevel": 0
     }
   },
   {
     "text": "F",
     "value": {
-      "id": "F",
+      "skillId": "F",
       "experienceLevel": 0
     }
   },
   {
     "text": "F#",
     "value": {
-      "id": "fSharp",
+      "skillId": "fSharp",
       "experienceLevel": 0
     }
   },
   {
     "text": "F*",
     "value": {
-      "id": "fStar",
+      "skillId": "fStar",
       "experienceLevel": 0
     }
   },
   {
     "text": "Factor",
     "value": {
-      "id": "factor",
+      "skillId": "factor",
       "experienceLevel": 0
     }
   },
   {
     "text": "Fantom",
     "value": {
-      "id": "fantom",
+      "skillId": "fantom",
       "experienceLevel": 0
     }
   },
   {
     "text": "FAUST",
     "value": {
-      "id": "FAUST",
+      "skillId": "FAUST",
       "experienceLevel": 0
     }
   },
   {
     "text": "FFP",
     "value": {
-      "id": "FFP",
+      "skillId": "FFP",
       "experienceLevel": 0
     }
   },
   {
     "text": "fish",
     "value": {
-      "id": "fish",
+      "skillId": "fish",
       "experienceLevel": 0
     }
   },
   {
     "text": "Fjölnir",
     "value": {
-      "id": "fjolnir",
+      "skillId": "fjolnir",
       "experienceLevel": 0
     }
   },
   {
     "text": "FL",
     "value": {
-      "id": "FL",
+      "skillId": "FL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Flavors",
     "value": {
-      "id": "flavors",
+      "skillId": "flavors",
       "experienceLevel": 0
     }
   },
   {
     "text": "Flex",
     "value": {
-      "id": "flex",
+      "skillId": "flex",
       "experienceLevel": 0
     }
   },
   {
     "text": "FlooP",
     "value": {
-      "id": "flooP",
+      "skillId": "flooP",
       "experienceLevel": 0
     }
   },
   {
     "text": "FLOW-MATIC",
     "value": {
-      "id": "fLOWMinusMATIC",
+      "skillId": "fLOWMinusMATIC",
       "experienceLevel": 0
     }
   },
   {
     "text": "FOCAL",
     "value": {
-      "id": "FOCAL",
+      "skillId": "FOCAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "FOCUS",
     "value": {
-      "id": "FOCUS",
+      "skillId": "FOCUS",
       "experienceLevel": 0
     }
   },
   {
     "text": "FOIL",
     "value": {
-      "id": "FOIL",
+      "skillId": "FOIL",
       "experienceLevel": 0
     }
   },
   {
     "text": "FORMAC",
     "value": {
-      "id": "FORMAC",
+      "skillId": "FORMAC",
       "experienceLevel": 0
     }
   },
   {
     "text": "@Formula",
     "value": {
-      "id": "@Formula",
+      "skillId": "@Formula",
       "experienceLevel": 0
     }
   },
   {
     "text": "Forth",
     "value": {
-      "id": "forth",
+      "skillId": "forth",
       "experienceLevel": 0
     }
   },
   {
     "text": "Fortran",
     "value": {
-      "id": "fortran",
+      "skillId": "fortran",
       "experienceLevel": 0
     }
   },
   {
     "text": "Fortress",
     "value": {
-      "id": "fortress",
+      "skillId": "fortress",
       "experienceLevel": 0
     }
   },
   {
     "text": "FP",
     "value": {
-      "id": "FP",
+      "skillId": "FP",
       "experienceLevel": 0
     }
   },
   {
     "text": "Franz Lisp",
     "value": {
-      "id": "franzLisp",
+      "skillId": "franzLisp",
       "experienceLevel": 0
     }
   },
   {
     "text": "FreeBasic",
     "value": {
-      "id": "freeBasic",
+      "skillId": "freeBasic",
       "experienceLevel": 0
     }
   },
   {
     "text": "Futhark",
     "value": {
-      "id": "futhark",
+      "skillId": "futhark",
       "experienceLevel": 0
     }
   },
   {
     "text": "F-Script",
     "value": {
-      "id": "fMinusScript",
+      "skillId": "fMinusScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Game Maker Language ",
     "value": {
-      "id": "gameMakerLanguage",
+      "skillId": "gameMakerLanguage",
       "experienceLevel": 0
     }
   },
   {
     "text": "GameMonkey Script",
     "value": {
-      "id": "gameMonkeyScript",
+      "skillId": "gameMonkeyScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "GAMS",
     "value": {
-      "id": "GAMS",
+      "skillId": "GAMS",
       "experienceLevel": 0
     }
   },
   {
     "text": "GAP",
     "value": {
-      "id": "GAP",
+      "skillId": "GAP",
       "experienceLevel": 0
     }
   },
   {
     "text": "G-code",
     "value": {
-      "id": "gMinuscode",
+      "skillId": "gMinuscode",
       "experienceLevel": 0
     }
   },
   {
     "text": "GDScript",
     "value": {
-      "id": "gDScript",
+      "skillId": "gDScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Genie",
     "value": {
-      "id": "genie",
+      "skillId": "genie",
       "experienceLevel": 0
     }
   },
   {
     "text": "GDL",
     "value": {
-      "id": "GDL",
+      "skillId": "GDL",
       "experienceLevel": 0
     }
   },
   {
     "text": "GEORGE",
     "value": {
-      "id": "GEORGE",
+      "skillId": "GEORGE",
       "experienceLevel": 0
     }
   },
   {
     "text": "GLSL",
     "value": {
-      "id": "GLSL",
+      "skillId": "GLSL",
       "experienceLevel": 0
     }
   },
   {
     "text": "GNU E",
     "value": {
-      "id": "gNUE",
+      "skillId": "gNUE",
       "experienceLevel": 0
     }
   },
   {
     "text": "GNU Guile",
     "value": {
-      "id": "gNUGuile",
+      "skillId": "gNUGuile",
       "experienceLevel": 0
     }
   },
   {
     "text": "Go",
     "value": {
-      "id": "go",
+      "skillId": "go",
       "experienceLevel": 0
     }
   },
   {
     "text": "Go!",
     "value": {
-      "id": "go",
+      "skillId": "go",
       "experienceLevel": 0
     }
   },
   {
     "text": "GOAL",
     "value": {
-      "id": "GOAL",
+      "skillId": "GOAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Gödel",
     "value": {
-      "id": "godel",
+      "skillId": "godel",
       "experienceLevel": 0
     }
   },
   {
     "text": "Golo",
     "value": {
-      "id": "golo",
+      "skillId": "golo",
       "experienceLevel": 0
     }
   },
   {
     "text": "GOM (Good Old Mad)",
     "value": {
-      "id": "gOMGoodOldMad",
+      "skillId": "gOMGoodOldMad",
       "experienceLevel": 0
     }
   },
   {
     "text": "Google Apps Script",
     "value": {
-      "id": "googleAppsScript",
+      "skillId": "googleAppsScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Gosu",
     "value": {
-      "id": "gosu",
+      "skillId": "gosu",
       "experienceLevel": 0
     }
   },
   {
     "text": "GOTRAN",
     "value": {
-      "id": "GOTRAN",
+      "skillId": "GOTRAN",
       "experienceLevel": 0
     }
   },
   {
     "text": "GPSS",
     "value": {
-      "id": "GPSS",
+      "skillId": "GPSS",
       "experienceLevel": 0
     }
   },
   {
     "text": "GraphTalk",
     "value": {
-      "id": "graphTalk",
+      "skillId": "graphTalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "GRASS",
     "value": {
-      "id": "GRASS",
+      "skillId": "GRASS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Grasshopper",
     "value": {
-      "id": "grasshopper",
+      "skillId": "grasshopper",
       "experienceLevel": 0
     }
   },
   {
     "text": "Groovy",
     "value": {
-      "id": "groovy",
+      "skillId": "groovy",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hack",
     "value": {
-      "id": "hack",
+      "skillId": "hack",
       "experienceLevel": 0
     }
   },
   {
     "text": "HAGGIS",
     "value": {
-      "id": "HAGGIS",
+      "skillId": "HAGGIS",
       "experienceLevel": 0
     }
   },
   {
     "text": "HAL/S",
     "value": {
-      "id": "hALS",
+      "skillId": "hALS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Halide ",
     "value": {
-      "id": "halide",
+      "skillId": "halide",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hamilton C shell",
     "value": {
-      "id": "hamiltonCShell",
+      "skillId": "hamiltonCShell",
       "experienceLevel": 0
     }
   },
   {
     "text": "Harbour",
     "value": {
-      "id": "harbour",
+      "skillId": "harbour",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hartmann pipelines",
     "value": {
-      "id": "hartmannPipelines",
+      "skillId": "hartmannPipelines",
       "experienceLevel": 0
     }
   },
   {
     "text": "Haskell",
     "value": {
-      "id": "haskell",
+      "skillId": "haskell",
       "experienceLevel": 0
     }
   },
   {
     "text": "Haxe",
     "value": {
-      "id": "haxe",
+      "skillId": "haxe",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hermes",
     "value": {
-      "id": "hermes",
+      "skillId": "hermes",
       "experienceLevel": 0
     }
   },
   {
     "text": "High Level Assembly",
     "value": {
-      "id": "highLevelAssembly",
+      "skillId": "highLevelAssembly",
       "experienceLevel": 0
     }
   },
   {
     "text": "HLSL",
     "value": {
-      "id": "HLSL",
+      "skillId": "HLSL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hollywood",
     "value": {
-      "id": "hollywood",
+      "skillId": "hollywood",
       "experienceLevel": 0
     }
   },
   {
     "text": "HolyC",
     "value": {
-      "id": "holyC",
+      "skillId": "holyC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hop",
     "value": {
-      "id": "hop",
+      "skillId": "hop",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hopscotch",
     "value": {
-      "id": "hopscotch",
+      "skillId": "hopscotch",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hope",
     "value": {
-      "id": "hope",
+      "skillId": "hope",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hugo",
     "value": {
-      "id": "hugo",
+      "skillId": "hugo",
       "experienceLevel": 0
     }
   },
   {
     "text": "Hume",
     "value": {
-      "id": "hume",
+      "skillId": "hume",
       "experienceLevel": 0
     }
   },
   {
     "text": "HyperTalk",
     "value": {
-      "id": "hyperTalk",
+      "skillId": "hyperTalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "Io",
     "value": {
-      "id": "io",
+      "skillId": "io",
       "experienceLevel": 0
     }
   },
   {
     "text": "Icon",
     "value": {
-      "id": "icon",
+      "skillId": "icon",
       "experienceLevel": 0
     }
   },
   {
     "text": "IBM Basic assembly",
     "value": {
-      "id": "IBMBasicAssembly",
+      "skillId": "IBMBasicAssembly",
       "experienceLevel": 0
     }
   },
   {
     "text": "IBM HAScript",
     "value": {
-      "id": "iBMHAScript",
+      "skillId": "iBMHAScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "IBM Informix-4GL",
     "value": {
-      "id": "iBMInformixMinus4GL",
+      "skillId": "iBMInformixMinus4GL",
       "experienceLevel": 0
     }
   },
   {
     "text": "IBM RPG",
     "value": {
-      "id": "iBMRPG",
+      "skillId": "iBMRPG",
       "experienceLevel": 0
     }
   },
   {
     "text": "IDL",
     "value": {
-      "id": "IDL",
+      "skillId": "IDL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Idris",
     "value": {
-      "id": "idris",
+      "skillId": "idris",
       "experienceLevel": 0
     }
   },
   {
     "text": "Inform",
     "value": {
-      "id": "inform",
+      "skillId": "inform",
       "experienceLevel": 0
     }
   },
   {
     "text": "J",
     "value": {
-      "id": "J",
+      "skillId": "J",
       "experienceLevel": 0
     }
   },
   {
     "text": "J#",
     "value": {
-      "id": "jSharp",
+      "skillId": "jSharp",
       "experienceLevel": 0
     }
   },
   {
     "text": "J++",
     "value": {
-      "id": "jPlusPlus",
+      "skillId": "jPlusPlus",
       "experienceLevel": 0
     }
   },
   {
     "text": "JADE",
     "value": {
-      "id": "JADE",
+      "skillId": "JADE",
       "experienceLevel": 0
     }
   },
   {
     "text": "JAL",
     "value": {
-      "id": "JAL",
+      "skillId": "JAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Janus ",
     "value": {
-      "id": "janus",
+      "skillId": "janus",
       "experienceLevel": 0
     }
   },
   {
     "text": "JASS",
     "value": {
-      "id": "JASS",
+      "skillId": "JASS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Java",
     "value": {
-      "id": "java",
+      "skillId": "java",
       "experienceLevel": 0
     }
   },
   {
     "text": "JavaFX Script",
     "value": {
-      "id": "javaFXScript",
+      "skillId": "javaFXScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "JavaScript",
     "value": {
-      "id": "javaScript",
+      "skillId": "javaScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Jess ",
     "value": {
-      "id": "jess",
+      "skillId": "jess",
       "experienceLevel": 0
     }
   },
   {
     "text": "JCL",
     "value": {
-      "id": "JCL",
+      "skillId": "JCL",
       "experienceLevel": 0
     }
   },
   {
     "text": "JEAN",
     "value": {
-      "id": "JEAN",
+      "skillId": "JEAN",
       "experienceLevel": 0
     }
   },
   {
     "text": "Join Java",
     "value": {
-      "id": "joinJava",
+      "skillId": "joinJava",
       "experienceLevel": 0
     }
   },
   {
     "text": "JOSS",
     "value": {
-      "id": "JOSS",
+      "skillId": "JOSS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Joule",
     "value": {
-      "id": "joule",
+      "skillId": "joule",
       "experienceLevel": 0
     }
   },
   {
     "text": "JOVIAL",
     "value": {
-      "id": "JOVIAL",
+      "skillId": "JOVIAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Joy",
     "value": {
-      "id": "joy",
+      "skillId": "joy",
       "experienceLevel": 0
     }
   },
   {
     "text": "JScript",
     "value": {
-      "id": "jScript",
+      "skillId": "jScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "JScript .NET",
     "value": {
-      "id": "jScriptDotNET",
+      "skillId": "jScriptDotNET",
       "experienceLevel": 0
     }
   },
   {
     "text": "Julia",
     "value": {
-      "id": "julia",
+      "skillId": "julia",
       "experienceLevel": 0
     }
   },
   {
     "text": "Jython",
     "value": {
-      "id": "jython",
+      "skillId": "jython",
       "experienceLevel": 0
     }
   },
   {
     "text": "K",
     "value": {
-      "id": "K",
+      "skillId": "K",
       "experienceLevel": 0
     }
   },
   {
     "text": "Kaleidoscope",
     "value": {
-      "id": "kaleidoscope",
+      "skillId": "kaleidoscope",
       "experienceLevel": 0
     }
   },
   {
     "text": "Karel",
     "value": {
-      "id": "karel",
+      "skillId": "karel",
       "experienceLevel": 0
     }
   },
   {
     "text": "KEE",
     "value": {
-      "id": "KEE",
+      "skillId": "KEE",
       "experienceLevel": 0
     }
   },
   {
     "text": "Kixtart",
     "value": {
-      "id": "kixtart",
+      "skillId": "kixtart",
       "experienceLevel": 0
     }
   },
   {
     "text": "Klerer-May System",
     "value": {
-      "id": "klererMinusMaySystem",
+      "skillId": "klererMinusMaySystem",
       "experienceLevel": 0
     }
   },
   {
     "text": "KIF",
     "value": {
-      "id": "KIF",
+      "skillId": "KIF",
       "experienceLevel": 0
     }
   },
   {
     "text": "Kojo",
     "value": {
-      "id": "kojo",
+      "skillId": "kojo",
       "experienceLevel": 0
     }
   },
   {
     "text": "Kotlin",
     "value": {
-      "id": "kotlin",
+      "skillId": "kotlin",
       "experienceLevel": 0
     }
   },
   {
     "text": "KRC",
     "value": {
-      "id": "KRC",
+      "skillId": "KRC",
       "experienceLevel": 0
     }
   },
   {
     "text": "KRL",
     "value": {
-      "id": "KRL",
+      "skillId": "KRL",
       "experienceLevel": 0
     }
   },
   {
     "text": "KRL",
     "value": {
-      "id": "KRL",
+      "skillId": "KRL",
       "experienceLevel": 0
     }
   },
   {
     "text": "KRYPTON",
     "value": {
-      "id": "KRYPTON",
+      "skillId": "KRYPTON",
       "experienceLevel": 0
     }
   },
   {
     "text": "Korn shell (ksh)",
     "value": {
-      "id": "kornShellksh",
+      "skillId": "kornShellksh",
       "experienceLevel": 0
     }
   },
   {
     "text": "Kodu",
     "value": {
-      "id": "kodu",
+      "skillId": "kodu",
       "experienceLevel": 0
     }
   },
   {
     "text": "Kv",
     "value": {
-      "id": "kv",
+      "skillId": "kv",
       "experienceLevel": 0
     }
   },
   {
     "text": "LabVIEW",
     "value": {
-      "id": "labVIEW",
+      "skillId": "labVIEW",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ladder",
     "value": {
-      "id": "ladder",
+      "skillId": "ladder",
       "experienceLevel": 0
     }
   },
   {
     "text": "LANSA",
     "value": {
-      "id": "LANSA",
+      "skillId": "LANSA",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lasso",
     "value": {
-      "id": "lasso",
+      "skillId": "lasso",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lava",
     "value": {
-      "id": "lava",
+      "skillId": "lava",
       "experienceLevel": 0
     }
   },
   {
     "text": "LC-3",
     "value": {
-      "id": "lCMinus3",
+      "skillId": "lCMinus3",
       "experienceLevel": 0
     }
   },
   {
     "text": "Legoscript",
     "value": {
-      "id": "legoscript",
+      "skillId": "legoscript",
       "experienceLevel": 0
     }
   },
   {
     "text": "LIL",
     "value": {
-      "id": "LIL",
+      "skillId": "LIL",
       "experienceLevel": 0
     }
   },
   {
     "text": "LilyPond",
     "value": {
-      "id": "lilyPond",
+      "skillId": "lilyPond",
       "experienceLevel": 0
     }
   },
   {
     "text": "Limbo",
     "value": {
-      "id": "limbo",
+      "skillId": "limbo",
       "experienceLevel": 0
     }
   },
   {
     "text": "Limnor",
     "value": {
-      "id": "limnor",
+      "skillId": "limnor",
       "experienceLevel": 0
     }
   },
   {
     "text": "LINC",
     "value": {
-      "id": "LINC",
+      "skillId": "LINC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lingo",
     "value": {
-      "id": "lingo",
+      "skillId": "lingo",
       "experienceLevel": 0
     }
   },
   {
     "text": "LINQ",
     "value": {
-      "id": "LINQ",
+      "skillId": "LINQ",
       "experienceLevel": 0
     }
   },
   {
     "text": "LIS",
     "value": {
-      "id": "LIS",
+      "skillId": "LIS",
       "experienceLevel": 0
     }
   },
   {
     "text": "LISA",
     "value": {
-      "id": "LISA",
+      "skillId": "LISA",
       "experienceLevel": 0
     }
   },
   {
     "text": "Language H",
     "value": {
-      "id": "languageH",
+      "skillId": "languageH",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lisp",
     "value": {
-      "id": "lisp",
+      "skillId": "lisp",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lite-C",
     "value": {
-      "id": "liteMinusC",
+      "skillId": "liteMinusC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lithe",
     "value": {
-      "id": "lithe",
+      "skillId": "lithe",
       "experienceLevel": 0
     }
   },
   {
     "text": "Little b",
     "value": {
-      "id": "littleB",
+      "skillId": "littleB",
       "experienceLevel": 0
     }
   },
   {
     "text": "LLL",
     "value": {
-      "id": "LLL",
+      "skillId": "LLL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Logo",
     "value": {
-      "id": "logo",
+      "skillId": "logo",
       "experienceLevel": 0
     }
   },
   {
     "text": "Logtalk",
     "value": {
-      "id": "logtalk",
+      "skillId": "logtalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "LotusScript",
     "value": {
-      "id": "lotusScript",
+      "skillId": "lotusScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "LPC",
     "value": {
-      "id": "LPC",
+      "skillId": "LPC",
       "experienceLevel": 0
     }
   },
   {
     "text": "LSE",
     "value": {
-      "id": "LSE",
+      "skillId": "LSE",
       "experienceLevel": 0
     }
   },
   {
     "text": "LSL",
     "value": {
-      "id": "LSL",
+      "skillId": "LSL",
       "experienceLevel": 0
     }
   },
   {
     "text": "LiveCode",
     "value": {
-      "id": "liveCode",
+      "skillId": "liveCode",
       "experienceLevel": 0
     }
   },
   {
     "text": "LiveScript",
     "value": {
-      "id": "liveScript",
+      "skillId": "liveScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lua",
     "value": {
-      "id": "lua",
+      "skillId": "lua",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lucid",
     "value": {
-      "id": "lucid",
+      "skillId": "lucid",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lustre",
     "value": {
-      "id": "lustre",
+      "skillId": "lustre",
       "experienceLevel": 0
     }
   },
   {
     "text": "LYaPAS",
     "value": {
-      "id": "lYaPAS",
+      "skillId": "lYaPAS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Lynx",
     "value": {
-      "id": "lynx",
+      "skillId": "lynx",
       "experienceLevel": 0
     }
   },
   {
     "text": "M2001",
     "value": {
-      "id": "m2001",
+      "skillId": "m2001",
       "experienceLevel": 0
     }
   },
   {
     "text": "M4",
     "value": {
-      "id": "m4",
+      "skillId": "m4",
       "experienceLevel": 0
     }
   },
   {
     "text": "M#",
     "value": {
-      "id": "mSharp",
+      "skillId": "mSharp",
       "experienceLevel": 0
     }
   },
   {
     "text": "Machine code",
     "value": {
-      "id": "machineCode",
+      "skillId": "machineCode",
       "experienceLevel": 0
     }
   },
   {
     "text": "MAD (Michigan Algorithm Decoder)",
     "value": {
-      "id": "mADMichiganAlgorithmDecoder",
+      "skillId": "mADMichiganAlgorithmDecoder",
       "experienceLevel": 0
     }
   },
   {
     "text": "MAD/I",
     "value": {
-      "id": "mADI",
+      "skillId": "mADI",
       "experienceLevel": 0
     }
   },
   {
     "text": "Magik",
     "value": {
-      "id": "magik",
+      "skillId": "magik",
       "experienceLevel": 0
     }
   },
   {
     "text": "Magma",
     "value": {
-      "id": "magma",
+      "skillId": "magma",
       "experienceLevel": 0
     }
   },
   {
     "text": "Máni",
     "value": {
-      "id": "mani",
+      "skillId": "mani",
       "experienceLevel": 0
     }
   },
   {
     "text": "Maple",
     "value": {
-      "id": "maple",
+      "skillId": "maple",
       "experienceLevel": 0
     }
   },
   {
     "text": "MAPPER (now part of BIS)",
     "value": {
-      "id": "mAPPERnowPartOfBIS",
+      "skillId": "mAPPERnowPartOfBIS",
       "experienceLevel": 0
     }
   },
   {
     "text": "MARK-IV (now VISION:BUILDER)",
     "value": {
-      "id": "mARKMinusIVnowVISIONBUILDER",
+      "skillId": "mARKMinusIVnowVISIONBUILDER",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mary",
     "value": {
-      "id": "mary",
+      "skillId": "mary",
       "experienceLevel": 0
     }
   },
   {
     "text": "MATLAB",
     "value": {
-      "id": "MATLAB",
+      "skillId": "MATLAB",
       "experienceLevel": 0
     }
   },
   {
     "text": "MASM Microsoft Assembly x86",
     "value": {
-      "id": "mASMMicrosoftAssemblyX86",
+      "skillId": "mASMMicrosoftAssemblyX86",
       "experienceLevel": 0
     }
   },
   {
     "text": "MATH-MATIC",
     "value": {
-      "id": "mATHMinusMATIC",
+      "skillId": "mATHMinusMATIC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Maude system",
     "value": {
-      "id": "maudeSystem",
+      "skillId": "maudeSystem",
       "experienceLevel": 0
     }
   },
   {
     "text": "Maxima",
     "value": {
-      "id": "maxima",
+      "skillId": "maxima",
       "experienceLevel": 0
     }
   },
   {
     "text": "Max (Max Msp – Graphical Programming Environment)",
     "value": {
-      "id": "maxMaxMspGraphicalProgrammingEnvironment",
+      "skillId": "maxMaxMspGraphicalProgrammingEnvironment",
       "experienceLevel": 0
     }
   },
   {
     "text": "MaxScript internal language 3D Studio Max",
     "value": {
-      "id": "maxScriptInternalLanguage3DStudioMax",
+      "skillId": "maxScriptInternalLanguage3DStudioMax",
       "experienceLevel": 0
     }
   },
   {
     "text": "Maya (MEL)",
     "value": {
-      "id": "mayaMEL",
+      "skillId": "mayaMEL",
       "experienceLevel": 0
     }
   },
   {
     "text": "MDL",
     "value": {
-      "id": "MDL",
+      "skillId": "MDL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mercury",
     "value": {
-      "id": "mercury",
+      "skillId": "mercury",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mesa",
     "value": {
-      "id": "mesa",
+      "skillId": "mesa",
       "experienceLevel": 0
     }
   },
   {
     "text": "MHEG-5 (Interactive TV ",
     "value": {
-      "id": "mHEGMinus5InteractiveTV",
+      "skillId": "mHEGMinus5InteractiveTV",
       "experienceLevel": 0
     }
   },
   {
     "text": "Microcode",
     "value": {
-      "id": "microcode",
+      "skillId": "microcode",
       "experienceLevel": 0
     }
   },
   {
     "text": "MicroScript",
     "value": {
-      "id": "microScript",
+      "skillId": "microScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "MIIS",
     "value": {
-      "id": "MIIS",
+      "skillId": "MIIS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Milk ",
     "value": {
-      "id": "milk",
+      "skillId": "milk",
       "experienceLevel": 0
     }
   },
   {
     "text": "MIMIC",
     "value": {
-      "id": "MIMIC",
+      "skillId": "MIMIC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mirah",
     "value": {
-      "id": "mirah",
+      "skillId": "mirah",
       "experienceLevel": 0
     }
   },
   {
     "text": "Miranda",
     "value": {
-      "id": "miranda",
+      "skillId": "miranda",
       "experienceLevel": 0
     }
   },
   {
     "text": "MIVA Script",
     "value": {
-      "id": "mIVAScript",
+      "skillId": "mIVAScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "ML",
     "value": {
-      "id": "ML",
+      "skillId": "ML",
       "experienceLevel": 0
     }
   },
   {
     "text": "Model 204",
     "value": {
-      "id": "model204",
+      "skillId": "model204",
       "experienceLevel": 0
     }
   },
   {
     "text": "Modelica",
     "value": {
-      "id": "modelica",
+      "skillId": "modelica",
       "experienceLevel": 0
     }
   },
   {
     "text": "Modula",
     "value": {
-      "id": "modula",
+      "skillId": "modula",
       "experienceLevel": 0
     }
   },
   {
     "text": "Modula-2",
     "value": {
-      "id": "modulaMinus2",
+      "skillId": "modulaMinus2",
       "experienceLevel": 0
     }
   },
   {
     "text": "Modula-3",
     "value": {
-      "id": "modulaMinus3",
+      "skillId": "modulaMinus3",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mohol",
     "value": {
-      "id": "mohol",
+      "skillId": "mohol",
       "experienceLevel": 0
     }
   },
   {
     "text": "MOO",
     "value": {
-      "id": "MOO",
+      "skillId": "MOO",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mortran",
     "value": {
-      "id": "mortran",
+      "skillId": "mortran",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mouse",
     "value": {
-      "id": "mouse",
+      "skillId": "mouse",
       "experienceLevel": 0
     }
   },
   {
     "text": "MPD",
     "value": {
-      "id": "MPD",
+      "skillId": "MPD",
       "experienceLevel": 0
     }
   },
   {
     "text": "MSL",
     "value": {
-      "id": "MSL",
+      "skillId": "MSL",
       "experienceLevel": 0
     }
   },
   {
     "text": "MUMPS",
     "value": {
-      "id": "MUMPS",
+      "skillId": "MUMPS",
       "experienceLevel": 0
     }
   },
   {
     "text": "MuPAD",
     "value": {
-      "id": "muPAD",
+      "skillId": "muPAD",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mutan",
     "value": {
-      "id": "mutan",
+      "skillId": "mutan",
       "experienceLevel": 0
     }
   },
   {
     "text": "Mystic Programming Language (MPL)",
     "value": {
-      "id": "mysticMPL",
+      "skillId": "mysticMPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "N",
     "value": {
-      "id": "N",
+      "skillId": "N",
       "experienceLevel": 0
     }
   },
   {
     "text": "NASM",
     "value": {
-      "id": "NASM",
+      "skillId": "NASM",
       "experienceLevel": 0
     }
   },
   {
     "text": "Napier88",
     "value": {
-      "id": "napier88",
+      "skillId": "napier88",
       "experienceLevel": 0
     }
   },
   {
     "text": "Neko",
     "value": {
-      "id": "neko",
+      "skillId": "neko",
       "experienceLevel": 0
     }
   },
   {
     "text": "Nemerle",
     "value": {
-      "id": "nemerle",
+      "skillId": "nemerle",
       "experienceLevel": 0
     }
   },
   {
     "text": "NESL",
     "value": {
-      "id": "NESL",
+      "skillId": "NESL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Net.Data",
     "value": {
-      "id": "netDotData",
+      "skillId": "netDotData",
       "experienceLevel": 0
     }
   },
   {
     "text": "NetLogo",
     "value": {
-      "id": "netLogo",
+      "skillId": "netLogo",
       "experienceLevel": 0
     }
   },
   {
     "text": "NetRexx",
     "value": {
-      "id": "netRexx",
+      "skillId": "netRexx",
       "experienceLevel": 0
     }
   },
   {
     "text": "NewLISP",
     "value": {
-      "id": "newLISP",
+      "skillId": "newLISP",
       "experienceLevel": 0
     }
   },
   {
     "text": "NEWP",
     "value": {
-      "id": "NEWP",
+      "skillId": "NEWP",
       "experienceLevel": 0
     }
   },
   {
     "text": "Newspeak",
     "value": {
-      "id": "newspeak",
+      "skillId": "newspeak",
       "experienceLevel": 0
     }
   },
   {
     "text": "NewtonScript",
     "value": {
-      "id": "newtonScript",
+      "skillId": "newtonScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Nial",
     "value": {
-      "id": "nial",
+      "skillId": "nial",
       "experienceLevel": 0
     }
   },
   {
     "text": "Nickle (NITIN)",
     "value": {
-      "id": "nickleNITIN",
+      "skillId": "nickleNITIN",
       "experienceLevel": 0
     }
   },
   {
     "text": "Nim",
     "value": {
-      "id": "nim",
+      "skillId": "nim",
       "experienceLevel": 0
     }
   },
   {
     "text": "Nix",
     "value": {
-      "id": "nix",
+      "skillId": "nix",
       "experienceLevel": 0
     }
   },
   {
     "text": "NPL",
     "value": {
-      "id": "NPL",
+      "skillId": "NPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Not eXactly C (NXC)",
     "value": {
-      "id": "notEXactlyCNXC",
+      "skillId": "notEXactlyCNXC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Not Quite C (NQC)",
     "value": {
-      "id": "notQuiteCNQC",
+      "skillId": "notQuiteCNQC",
       "experienceLevel": 0
     }
   },
   {
     "text": "NSIS",
     "value": {
-      "id": "NSIS",
+      "skillId": "NSIS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Nu",
     "value": {
-      "id": "nu",
+      "skillId": "nu",
       "experienceLevel": 0
     }
   },
   {
     "text": "NWScript",
     "value": {
-      "id": "nWScript",
+      "skillId": "nWScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "NXT-G",
     "value": {
-      "id": "nXTMinusG",
+      "skillId": "nXTMinusG",
       "experienceLevel": 0
     }
   },
   {
     "text": "o:XML",
     "value": {
-      "id": "oXML",
+      "skillId": "oXML",
       "experienceLevel": 0
     }
   },
   {
     "text": "Oak",
     "value": {
-      "id": "oak",
+      "skillId": "oak",
       "experienceLevel": 0
     }
   },
   {
     "text": "Oberon",
     "value": {
-      "id": "oberon",
+      "skillId": "oberon",
       "experienceLevel": 0
     }
   },
   {
     "text": "OBJ2",
     "value": {
-      "id": "oBJ2",
+      "skillId": "oBJ2",
       "experienceLevel": 0
     }
   },
   {
     "text": "Object Lisp",
     "value": {
-      "id": "objectLisp",
+      "skillId": "objectLisp",
       "experienceLevel": 0
     }
   },
   {
     "text": "ObjectLOGO",
     "value": {
-      "id": "objectLOGO",
+      "skillId": "objectLOGO",
       "experienceLevel": 0
     }
   },
   {
     "text": "Object REXX",
     "value": {
-      "id": "objectREXX",
+      "skillId": "objectREXX",
       "experienceLevel": 0
     }
   },
   {
     "text": "Object Pascal",
     "value": {
-      "id": "objectPascal",
+      "skillId": "objectPascal",
       "experienceLevel": 0
     }
   },
   {
     "text": "Objective-C",
     "value": {
-      "id": "objectiveMinusC",
+      "skillId": "objectiveMinusC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Objective-J",
     "value": {
-      "id": "objectiveMinusJ",
+      "skillId": "objectiveMinusJ",
       "experienceLevel": 0
     }
   },
   {
     "text": "Obliq",
     "value": {
-      "id": "obliq",
+      "skillId": "obliq",
       "experienceLevel": 0
     }
   },
   {
     "text": "OCaml",
     "value": {
-      "id": "oCaml",
+      "skillId": "oCaml",
       "experienceLevel": 0
     }
   },
   {
     "text": "occam",
     "value": {
-      "id": "occam",
+      "skillId": "occam",
       "experienceLevel": 0
     }
   },
   {
     "text": "occam-π",
     "value": {
-      "id": "occamMinusπ",
+      "skillId": "occamMinusπ",
       "experienceLevel": 0
     }
   },
   {
     "text": "Octave",
     "value": {
-      "id": "octave",
+      "skillId": "octave",
       "experienceLevel": 0
     }
   },
   {
     "text": "OmniMark",
     "value": {
-      "id": "omniMark",
+      "skillId": "omniMark",
       "experienceLevel": 0
     }
   },
   {
     "text": "Opa",
     "value": {
-      "id": "opa",
+      "skillId": "opa",
       "experienceLevel": 0
     }
   },
   {
     "text": "Opal",
     "value": {
-      "id": "opal",
+      "skillId": "opal",
       "experienceLevel": 0
     }
   },
   {
     "text": "OpenCL",
     "value": {
-      "id": "openCL",
+      "skillId": "openCL",
       "experienceLevel": 0
     }
   },
   {
     "text": "OpenEdge ABL",
     "value": {
-      "id": "openEdgeABL",
+      "skillId": "openEdgeABL",
       "experienceLevel": 0
     }
   },
   {
     "text": "OPL",
     "value": {
-      "id": "OPL",
+      "skillId": "OPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "OpenVera",
     "value": {
-      "id": "openVera",
+      "skillId": "openVera",
       "experienceLevel": 0
     }
   },
   {
     "text": "OPS5",
     "value": {
-      "id": "oPS5",
+      "skillId": "oPS5",
       "experienceLevel": 0
     }
   },
   {
     "text": "OptimJ",
     "value": {
-      "id": "optimJ",
+      "skillId": "optimJ",
       "experienceLevel": 0
     }
   },
   {
     "text": "Orc",
     "value": {
-      "id": "orc",
+      "skillId": "orc",
       "experienceLevel": 0
     }
   },
   {
     "text": "ORCA/Modula-2",
     "value": {
-      "id": "oRCAModulaMinus2",
+      "skillId": "oRCAModulaMinus2",
       "experienceLevel": 0
     }
   },
   {
     "text": "Oriel",
     "value": {
-      "id": "oriel",
+      "skillId": "oriel",
       "experienceLevel": 0
     }
   },
   {
     "text": "Orwell",
     "value": {
-      "id": "orwell",
+      "skillId": "orwell",
       "experienceLevel": 0
     }
   },
   {
     "text": "Oxygene",
     "value": {
-      "id": "oxygene",
+      "skillId": "oxygene",
       "experienceLevel": 0
     }
   },
   {
     "text": "Oz",
     "value": {
-      "id": "oz",
+      "skillId": "oz",
       "experienceLevel": 0
     }
   },
   {
     "text": "P",
     "value": {
-      "id": "P",
+      "skillId": "P",
       "experienceLevel": 0
     }
   },
   {
     "text": "P4",
     "value": {
-      "id": "p4",
+      "skillId": "p4",
       "experienceLevel": 0
     }
   },
   {
     "text": "P´´",
     "value": {
-      "id": "p′′",
+      "skillId": "p′′",
       "experienceLevel": 0
     }
   },
   {
     "text": "ParaSail ",
     "value": {
-      "id": "paraSail",
+      "skillId": "paraSail",
       "experienceLevel": 0
     }
   },
   {
     "text": "PARI/GP",
     "value": {
-      "id": "pARIGP",
+      "skillId": "pARIGP",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pascal",
     "value": {
-      "id": "pascal",
+      "skillId": "pascal",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pascal Script",
     "value": {
-      "id": "pascalScript",
+      "skillId": "pascalScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "PCASTL",
     "value": {
-      "id": "PCASTL",
+      "skillId": "PCASTL",
       "experienceLevel": 0
     }
   },
   {
     "text": "PCF",
     "value": {
-      "id": "PCF",
+      "skillId": "PCF",
       "experienceLevel": 0
     }
   },
   {
     "text": "PEARL",
     "value": {
-      "id": "PEARL",
+      "skillId": "PEARL",
       "experienceLevel": 0
     }
   },
   {
     "text": "PeopleCode",
     "value": {
-      "id": "peopleCode",
+      "skillId": "peopleCode",
       "experienceLevel": 0
     }
   },
   {
     "text": "Perl",
     "value": {
-      "id": "perl",
+      "skillId": "perl",
       "experienceLevel": 0
     }
   },
   {
     "text": "PDL",
     "value": {
-      "id": "PDL",
+      "skillId": "PDL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pharo",
     "value": {
-      "id": "pharo",
+      "skillId": "pharo",
       "experienceLevel": 0
     }
   },
   {
     "text": "PHP",
     "value": {
-      "id": "PHP",
+      "skillId": "PHP",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pico",
     "value": {
-      "id": "pico",
+      "skillId": "pico",
       "experienceLevel": 0
     }
   },
   {
     "text": "Picolisp",
     "value": {
-      "id": "picolisp",
+      "skillId": "picolisp",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pict",
     "value": {
-      "id": "pict",
+      "skillId": "pict",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pike",
     "value": {
-      "id": "pike",
+      "skillId": "pike",
       "experienceLevel": 0
     }
   },
   {
     "text": "PILOT",
     "value": {
-      "id": "PILOT",
+      "skillId": "PILOT",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pipelines",
     "value": {
-      "id": "pipelines",
+      "skillId": "pipelines",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pizza",
     "value": {
-      "id": "pizza",
+      "skillId": "pizza",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL-11",
     "value": {
-      "id": "pLMinus11",
+      "skillId": "pLMinus11",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL/0",
     "value": {
-      "id": "pL0",
+      "skillId": "pL0",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL/B",
     "value": {
-      "id": "pLB",
+      "skillId": "pLB",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL/C",
     "value": {
-      "id": "pLC",
+      "skillId": "pLC",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL/I",
     "value": {
-      "id": "pLI",
+      "skillId": "pLI",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL/M",
     "value": {
-      "id": "pLM",
+      "skillId": "pLM",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL/P",
     "value": {
-      "id": "pLP",
+      "skillId": "pLP",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL/SQL",
     "value": {
-      "id": "pLSQL",
+      "skillId": "pLSQL",
       "experienceLevel": 0
     }
   },
   {
     "text": "PL360",
     "value": {
-      "id": "pL360",
+      "skillId": "pL360",
       "experienceLevel": 0
     }
   },
   {
     "text": "PLANC",
     "value": {
-      "id": "PLANC",
+      "skillId": "PLANC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Plankalkül",
     "value": {
-      "id": "plankalkul",
+      "skillId": "plankalkul",
       "experienceLevel": 0
     }
   },
   {
     "text": "Planner",
     "value": {
-      "id": "planner",
+      "skillId": "planner",
       "experienceLevel": 0
     }
   },
   {
     "text": "PLEX",
     "value": {
-      "id": "PLEX",
+      "skillId": "PLEX",
       "experienceLevel": 0
     }
   },
   {
     "text": "PLEXIL",
     "value": {
-      "id": "PLEXIL",
+      "skillId": "PLEXIL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Plus",
     "value": {
-      "id": "plus",
+      "skillId": "plus",
       "experienceLevel": 0
     }
   },
   {
     "text": "POP-11",
     "value": {
-      "id": "pOPMinus11",
+      "skillId": "pOPMinus11",
       "experienceLevel": 0
     }
   },
   {
     "text": "POP-2",
     "value": {
-      "id": "pOPMinus2",
+      "skillId": "pOPMinus2",
       "experienceLevel": 0
     }
   },
   {
     "text": "PostScript",
     "value": {
-      "id": "postScript",
+      "skillId": "postScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "PortablE",
     "value": {
-      "id": "portablE",
+      "skillId": "portablE",
       "experienceLevel": 0
     }
   },
   {
     "text": "POV-Ray SDL",
     "value": {
-      "id": "pOVMinusRaySDL",
+      "skillId": "pOVMinusRaySDL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Powerhouse",
     "value": {
-      "id": "powerhouse",
+      "skillId": "powerhouse",
       "experienceLevel": 0
     }
   },
   {
     "text": "PowerBuilder – 4GL GUI application generator from Sybase",
     "value": {
-      "id": "powerBuilder4GLGUIApplicationGeneratorFromSybase",
+      "skillId": "powerBuilder4GLGUIApplicationGeneratorFromSybase",
       "experienceLevel": 0
     }
   },
   {
     "text": "PowerShell",
     "value": {
-      "id": "powerShell",
+      "skillId": "powerShell",
       "experienceLevel": 0
     }
   },
   {
     "text": "PPL",
     "value": {
-      "id": "PPL",
+      "skillId": "PPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Processing",
     "value": {
-      "id": "processing",
+      "skillId": "processing",
       "experienceLevel": 0
     }
   },
   {
     "text": "Processing.js",
     "value": {
-      "id": "processingDotjs",
+      "skillId": "processingDotjs",
       "experienceLevel": 0
     }
   },
   {
     "text": "Prograph",
     "value": {
-      "id": "prograph",
+      "skillId": "prograph",
       "experienceLevel": 0
     }
   },
   {
     "text": "PROIV",
     "value": {
-      "id": "PROIV",
+      "skillId": "PROIV",
       "experienceLevel": 0
     }
   },
   {
     "text": "Prolog",
     "value": {
-      "id": "prolog",
+      "skillId": "prolog",
       "experienceLevel": 0
     }
   },
   {
     "text": "PROMAL",
     "value": {
-      "id": "PROMAL",
+      "skillId": "PROMAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Promela",
     "value": {
-      "id": "promela",
+      "skillId": "promela",
       "experienceLevel": 0
     }
   },
   {
     "text": "PROSE modeling",
     "value": {
-      "id": "pROSEModeling",
+      "skillId": "pROSEModeling",
       "experienceLevel": 0
     }
   },
   {
     "text": "PROTEL",
     "value": {
-      "id": "PROTEL",
+      "skillId": "PROTEL",
       "experienceLevel": 0
     }
   },
   {
     "text": "ProvideX",
     "value": {
-      "id": "provideX",
+      "skillId": "provideX",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pro*C",
     "value": {
-      "id": "proStarC",
+      "skillId": "proStarC",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pure",
     "value": {
-      "id": "pure",
+      "skillId": "pure",
       "experienceLevel": 0
     }
   },
   {
     "text": "Pure Data",
     "value": {
-      "id": "pureData",
+      "skillId": "pureData",
       "experienceLevel": 0
     }
   },
   {
     "text": "PureScript",
     "value": {
-      "id": "pureScript",
+      "skillId": "pureScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Python",
     "value": {
-      "id": "python",
+      "skillId": "python",
       "experienceLevel": 0
     }
   },
   {
     "text": "Q (programming language from Kx Systems)",
     "value": {
-      "id": "qFromKxSystems",
+      "skillId": "qFromKxSystems",
       "experienceLevel": 0
     }
   },
   {
     "text": "Q# (Microsoft ",
     "value": {
-      "id": "qSharpMicrosoft",
+      "skillId": "qSharpMicrosoft",
       "experienceLevel": 0
     }
   },
   {
     "text": "Qalb",
     "value": {
-      "id": "qalb",
+      "skillId": "qalb",
       "experienceLevel": 0
     }
   },
   {
     "text": "Quantum Computation Language",
     "value": {
-      "id": "quantumComputationLanguage",
+      "skillId": "quantumComputationLanguage",
       "experienceLevel": 0
     }
   },
   {
     "text": "QtScript",
     "value": {
-      "id": "qtScript",
+      "skillId": "qtScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "QuakeC",
     "value": {
-      "id": "quakeC",
+      "skillId": "quakeC",
       "experienceLevel": 0
     }
   },
   {
     "text": "QPL",
     "value": {
-      "id": "QPL",
+      "skillId": "QPL",
       "experienceLevel": 0
     }
   },
   {
     "text": ".QL",
     "value": {
-      "id": "dotQL",
+      "skillId": "dotQL",
       "experienceLevel": 0
     }
   },
   {
     "text": "R",
     "value": {
-      "id": "R",
+      "skillId": "R",
       "experienceLevel": 0
     }
   },
   {
     "text": "R++",
     "value": {
-      "id": "rPlusPlus",
+      "skillId": "rPlusPlus",
       "experienceLevel": 0
     }
   },
   {
     "text": "Racket",
     "value": {
-      "id": "racket",
+      "skillId": "racket",
       "experienceLevel": 0
     }
   },
   {
     "text": "Raku",
     "value": {
-      "id": "raku",
+      "skillId": "raku",
       "experienceLevel": 0
     }
   },
   {
     "text": "RAPID",
     "value": {
-      "id": "RAPID",
+      "skillId": "RAPID",
       "experienceLevel": 0
     }
   },
   {
     "text": "Rapira",
     "value": {
-      "id": "rapira",
+      "skillId": "rapira",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ratfiv",
     "value": {
-      "id": "ratfiv",
+      "skillId": "ratfiv",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ratfor",
     "value": {
-      "id": "ratfor",
+      "skillId": "ratfor",
       "experienceLevel": 0
     }
   },
   {
     "text": "rc",
     "value": {
-      "id": "rc",
+      "skillId": "rc",
       "experienceLevel": 0
     }
   },
   {
     "text": "Reason",
     "value": {
-      "id": "reason",
+      "skillId": "reason",
       "experienceLevel": 0
     }
   },
   {
     "text": "REBOL",
     "value": {
-      "id": "REBOL",
+      "skillId": "REBOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Red",
     "value": {
-      "id": "red",
+      "skillId": "red",
       "experienceLevel": 0
     }
   },
   {
     "text": "Redcode",
     "value": {
-      "id": "redcode",
+      "skillId": "redcode",
       "experienceLevel": 0
     }
   },
   {
     "text": "REFAL",
     "value": {
-      "id": "REFAL",
+      "skillId": "REFAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "REXX",
     "value": {
-      "id": "REXX",
+      "skillId": "REXX",
       "experienceLevel": 0
     }
   },
   {
     "text": "Rlab",
     "value": {
-      "id": "rlab",
+      "skillId": "rlab",
       "experienceLevel": 0
     }
   },
   {
     "text": "ROOP",
     "value": {
-      "id": "ROOP",
+      "skillId": "ROOP",
       "experienceLevel": 0
     }
   },
   {
     "text": "RPG",
     "value": {
-      "id": "RPG",
+      "skillId": "RPG",
       "experienceLevel": 0
     }
   },
   {
     "text": "RPL",
     "value": {
-      "id": "RPL",
+      "skillId": "RPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "RSL",
     "value": {
-      "id": "RSL",
+      "skillId": "RSL",
       "experienceLevel": 0
     }
   },
   {
     "text": "RTL/2",
     "value": {
-      "id": "rTL2",
+      "skillId": "rTL2",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ruby",
     "value": {
-      "id": "ruby",
+      "skillId": "ruby",
       "experienceLevel": 0
     }
   },
   {
     "text": "Rust",
     "value": {
-      "id": "rust",
+      "skillId": "rust",
       "experienceLevel": 0
     }
   },
   {
     "text": "S",
     "value": {
-      "id": "S",
+      "skillId": "S",
       "experienceLevel": 0
     }
   },
   {
     "text": "S2",
     "value": {
-      "id": "s2",
+      "skillId": "s2",
       "experienceLevel": 0
     }
   },
   {
     "text": "S3",
     "value": {
-      "id": "s3",
+      "skillId": "s3",
       "experienceLevel": 0
     }
   },
   {
     "text": "S-Lang",
     "value": {
-      "id": "sMinusLang",
+      "skillId": "sMinusLang",
       "experienceLevel": 0
     }
   },
   {
     "text": "S-PLUS",
     "value": {
-      "id": "sMinusPLUS",
+      "skillId": "sMinusPLUS",
       "experienceLevel": 0
     }
   },
   {
     "text": "SA-C",
     "value": {
-      "id": "sAMinusC",
+      "skillId": "sAMinusC",
       "experienceLevel": 0
     }
   },
   {
     "text": "SabreTalk",
     "value": {
-      "id": "sabreTalk",
+      "skillId": "sabreTalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "SAIL",
     "value": {
-      "id": "SAIL",
+      "skillId": "SAIL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SAS",
     "value": {
-      "id": "SAS",
+      "skillId": "SAS",
       "experienceLevel": 0
     }
   },
   {
     "text": "SASL",
     "value": {
-      "id": "SASL",
+      "skillId": "SASL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Sather",
     "value": {
-      "id": "sather",
+      "skillId": "sather",
       "experienceLevel": 0
     }
   },
   {
     "text": "Sawzall",
     "value": {
-      "id": "sawzall",
+      "skillId": "sawzall",
       "experienceLevel": 0
     }
   },
   {
     "text": "Scala",
     "value": {
-      "id": "scala",
+      "skillId": "scala",
       "experienceLevel": 0
     }
   },
   {
     "text": "Scheme",
     "value": {
-      "id": "scheme",
+      "skillId": "scheme",
       "experienceLevel": 0
     }
   },
   {
     "text": "Scilab",
     "value": {
-      "id": "scilab",
+      "skillId": "scilab",
       "experienceLevel": 0
     }
   },
   {
     "text": "Scratch",
     "value": {
-      "id": "scratch",
+      "skillId": "scratch",
       "experienceLevel": 0
     }
   },
   {
     "text": "Script.NET",
     "value": {
-      "id": "scriptDotNET",
+      "skillId": "scriptDotNET",
       "experienceLevel": 0
     }
   },
   {
     "text": "Sed",
     "value": {
-      "id": "sed",
+      "skillId": "sed",
       "experienceLevel": 0
     }
   },
   {
     "text": "Seed7",
     "value": {
-      "id": "seed7",
+      "skillId": "seed7",
       "experienceLevel": 0
     }
   },
   {
     "text": "Self",
     "value": {
-      "id": "self",
+      "skillId": "self",
       "experienceLevel": 0
     }
   },
   {
     "text": "SenseTalk",
     "value": {
-      "id": "senseTalk",
+      "skillId": "senseTalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "SequenceL",
     "value": {
-      "id": "sequenceL",
+      "skillId": "sequenceL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Serpent",
     "value": {
-      "id": "serpent",
+      "skillId": "serpent",
       "experienceLevel": 0
     }
   },
   {
     "text": "SETL",
     "value": {
-      "id": "SETL",
+      "skillId": "SETL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SIMPOL",
     "value": {
-      "id": "SIMPOL",
+      "skillId": "SIMPOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SIGNAL",
     "value": {
-      "id": "SIGNAL",
+      "skillId": "SIGNAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SiMPLE",
     "value": {
-      "id": "siMPLE",
+      "skillId": "siMPLE",
       "experienceLevel": 0
     }
   },
   {
     "text": "SIMSCRIPT",
     "value": {
-      "id": "SIMSCRIPT",
+      "skillId": "SIMSCRIPT",
       "experienceLevel": 0
     }
   },
   {
     "text": "Simula",
     "value": {
-      "id": "simula",
+      "skillId": "simula",
       "experienceLevel": 0
     }
   },
   {
     "text": "Simulink",
     "value": {
-      "id": "simulink",
+      "skillId": "simulink",
       "experienceLevel": 0
     }
   },
   {
     "text": "Singularity",
     "value": {
-      "id": "singularity",
+      "skillId": "singularity",
       "experienceLevel": 0
     }
   },
   {
     "text": "SISAL",
     "value": {
-      "id": "SISAL",
+      "skillId": "SISAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SLIP",
     "value": {
-      "id": "SLIP",
+      "skillId": "SLIP",
       "experienceLevel": 0
     }
   },
   {
     "text": "SMALL",
     "value": {
-      "id": "SMALL",
+      "skillId": "SMALL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Smalltalk",
     "value": {
-      "id": "smalltalk",
+      "skillId": "smalltalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "SML",
     "value": {
-      "id": "SML",
+      "skillId": "SML",
       "experienceLevel": 0
     }
   },
   {
     "text": "Strongtalk",
     "value": {
-      "id": "strongtalk",
+      "skillId": "strongtalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "Snap!",
     "value": {
-      "id": "snap",
+      "skillId": "snap",
       "experienceLevel": 0
     }
   },
   {
     "text": "SNOBOL (SPITBOL)",
     "value": {
-      "id": "sNOBOLSPITBOL",
+      "skillId": "sNOBOLSPITBOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Snowball",
     "value": {
-      "id": "snowball",
+      "skillId": "snowball",
       "experienceLevel": 0
     }
   },
   {
     "text": "SOL",
     "value": {
-      "id": "SOL",
+      "skillId": "SOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Solidity",
     "value": {
-      "id": "solidity",
+      "skillId": "solidity",
       "experienceLevel": 0
     }
   },
   {
     "text": "SOPHAEROS",
     "value": {
-      "id": "SOPHAEROS",
+      "skillId": "SOPHAEROS",
       "experienceLevel": 0
     }
   },
   {
     "text": "Source",
     "value": {
-      "id": "source",
+      "skillId": "source",
       "experienceLevel": 0
     }
   },
   {
     "text": "SPARK",
     "value": {
-      "id": "SPARK",
+      "skillId": "SPARK",
       "experienceLevel": 0
     }
   },
   {
     "text": "Speakeasy",
     "value": {
-      "id": "speakeasy",
+      "skillId": "speakeasy",
       "experienceLevel": 0
     }
   },
   {
     "text": "Speedcode",
     "value": {
-      "id": "speedcode",
+      "skillId": "speedcode",
       "experienceLevel": 0
     }
   },
   {
     "text": "SPIN",
     "value": {
-      "id": "SPIN",
+      "skillId": "SPIN",
       "experienceLevel": 0
     }
   },
   {
     "text": "SP/k",
     "value": {
-      "id": "sPk",
+      "skillId": "sPk",
       "experienceLevel": 0
     }
   },
   {
     "text": "SPS",
     "value": {
-      "id": "SPS",
+      "skillId": "SPS",
       "experienceLevel": 0
     }
   },
   {
     "text": "SQL",
     "value": {
-      "id": "SQL",
+      "skillId": "SQL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SQR",
     "value": {
-      "id": "SQR",
+      "skillId": "SQR",
       "experienceLevel": 0
     }
   },
   {
     "text": "Squeak",
     "value": {
-      "id": "squeak",
+      "skillId": "squeak",
       "experienceLevel": 0
     }
   },
   {
     "text": "Squirrel",
     "value": {
-      "id": "squirrel",
+      "skillId": "squirrel",
       "experienceLevel": 0
     }
   },
   {
     "text": "SR",
     "value": {
-      "id": "SR",
+      "skillId": "SR",
       "experienceLevel": 0
     }
   },
   {
     "text": "S/SL",
     "value": {
-      "id": "sSL",
+      "skillId": "sSL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Starlogo",
     "value": {
-      "id": "starlogo",
+      "skillId": "starlogo",
       "experienceLevel": 0
     }
   },
   {
     "text": "Strand",
     "value": {
-      "id": "strand",
+      "skillId": "strand",
       "experienceLevel": 0
     }
   },
   {
     "text": "Stata",
     "value": {
-      "id": "stata",
+      "skillId": "stata",
       "experienceLevel": 0
     }
   },
   {
     "text": "Stateflow",
     "value": {
-      "id": "stateflow",
+      "skillId": "stateflow",
       "experienceLevel": 0
     }
   },
   {
     "text": "Subtext",
     "value": {
-      "id": "subtext",
+      "skillId": "subtext",
       "experienceLevel": 0
     }
   },
   {
     "text": "SBL",
     "value": {
-      "id": "SBL",
+      "skillId": "SBL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SuperCollider",
     "value": {
-      "id": "superCollider",
+      "skillId": "superCollider",
       "experienceLevel": 0
     }
   },
   {
     "text": "SuperTalk",
     "value": {
-      "id": "superTalk",
+      "skillId": "superTalk",
       "experienceLevel": 0
     }
   },
   {
     "text": "Swift (Apple)",
     "value": {
-      "id": "swiftApple",
+      "skillId": "swiftApple",
       "experienceLevel": 0
     }
   },
   {
     "text": "Swift",
     "value": {
-      "id": "swift",
+      "skillId": "swift",
       "experienceLevel": 0
     }
   },
   {
     "text": "SYMPL",
     "value": {
-      "id": "SYMPL",
+      "skillId": "SYMPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "SystemVerilog",
     "value": {
-      "id": "systemVerilog",
+      "skillId": "systemVerilog",
       "experienceLevel": 0
     }
   },
   {
     "text": "T",
     "value": {
-      "id": "T",
+      "skillId": "T",
       "experienceLevel": 0
     }
   },
   {
     "text": "TACL",
     "value": {
-      "id": "TACL",
+      "skillId": "TACL",
       "experienceLevel": 0
     }
   },
   {
     "text": "TACPOL",
     "value": {
-      "id": "TACPOL",
+      "skillId": "TACPOL",
       "experienceLevel": 0
     }
   },
   {
     "text": "TADS",
     "value": {
-      "id": "TADS",
+      "skillId": "TADS",
       "experienceLevel": 0
     }
   },
   {
     "text": "TAL",
     "value": {
-      "id": "TAL",
+      "skillId": "TAL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Tcl",
     "value": {
-      "id": "tcl",
+      "skillId": "tcl",
       "experienceLevel": 0
     }
   },
   {
     "text": "Tea",
     "value": {
-      "id": "tea",
+      "skillId": "tea",
       "experienceLevel": 0
     }
   },
   {
     "text": "TECO",
     "value": {
-      "id": "TECO",
+      "skillId": "TECO",
       "experienceLevel": 0
     }
   },
   {
     "text": "TELCOMP",
     "value": {
-      "id": "TELCOMP",
+      "skillId": "TELCOMP",
       "experienceLevel": 0
     }
   },
   {
     "text": "TeX",
     "value": {
-      "id": "teX",
+      "skillId": "teX",
       "experienceLevel": 0
     }
   },
   {
     "text": "TEX",
     "value": {
-      "id": "TEX",
+      "skillId": "TEX",
       "experienceLevel": 0
     }
   },
   {
     "text": "TIE",
     "value": {
-      "id": "TIE",
+      "skillId": "TIE",
       "experienceLevel": 0
     }
   },
   {
     "text": "TMG, compiler-compiler",
     "value": {
-      "id": "tMG,CompilerMinuscompiler",
+      "skillId": "tMG,CompilerMinuscompiler",
       "experienceLevel": 0
     }
   },
   {
     "text": "Tom",
     "value": {
-      "id": "tom",
+      "skillId": "tom",
       "experienceLevel": 0
     }
   },
   {
     "text": "Toi",
     "value": {
-      "id": "toi",
+      "skillId": "toi",
       "experienceLevel": 0
     }
   },
   {
     "text": "Topspeed",
     "value": {
-      "id": "topspeed",
+      "skillId": "topspeed",
       "experienceLevel": 0
     }
   },
   {
     "text": "TPU",
     "value": {
-      "id": "TPU",
+      "skillId": "TPU",
       "experienceLevel": 0
     }
   },
   {
     "text": "Trac",
     "value": {
-      "id": "trac",
+      "skillId": "trac",
       "experienceLevel": 0
     }
   },
   {
     "text": "TTM",
     "value": {
-      "id": "TTM",
+      "skillId": "TTM",
       "experienceLevel": 0
     }
   },
   {
     "text": "T-SQL",
     "value": {
-      "id": "tMinusSQL",
+      "skillId": "tMinusSQL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Transcript",
     "value": {
-      "id": "transcript",
+      "skillId": "transcript",
       "experienceLevel": 0
     }
   },
   {
     "text": "TTCN",
     "value": {
-      "id": "TTCN",
+      "skillId": "TTCN",
       "experienceLevel": 0
     }
   },
   {
     "text": "Turing",
     "value": {
-      "id": "turing",
+      "skillId": "turing",
       "experienceLevel": 0
     }
   },
   {
     "text": "TUTOR",
     "value": {
-      "id": "TUTOR",
+      "skillId": "TUTOR",
       "experienceLevel": 0
     }
   },
   {
     "text": "TXL",
     "value": {
-      "id": "TXL",
+      "skillId": "TXL",
       "experienceLevel": 0
     }
   },
   {
     "text": "TypeScript",
     "value": {
-      "id": "typeScript",
+      "skillId": "typeScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Tynker",
     "value": {
-      "id": "tynker",
+      "skillId": "tynker",
       "experienceLevel": 0
     }
   },
   {
     "text": "Ubercode",
     "value": {
-      "id": "ubercode",
+      "skillId": "ubercode",
       "experienceLevel": 0
     }
   },
   {
     "text": "UCSD Pascal",
     "value": {
-      "id": "uCSDPascal",
+      "skillId": "uCSDPascal",
       "experienceLevel": 0
     }
   },
   {
     "text": "Umple",
     "value": {
-      "id": "umple",
+      "skillId": "umple",
       "experienceLevel": 0
     }
   },
   {
     "text": "Unicon",
     "value": {
-      "id": "unicon",
+      "skillId": "unicon",
       "experienceLevel": 0
     }
   },
   {
     "text": "Uniface",
     "value": {
-      "id": "uniface",
+      "skillId": "uniface",
       "experienceLevel": 0
     }
   },
   {
     "text": "UNITY",
     "value": {
-      "id": "UNITY",
+      "skillId": "UNITY",
       "experienceLevel": 0
     }
   },
   {
     "text": "Unix shell",
     "value": {
-      "id": "unixShell",
+      "skillId": "unixShell",
       "experienceLevel": 0
     }
   },
   {
     "text": "UnrealScript",
     "value": {
-      "id": "unrealScript",
+      "skillId": "unrealScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Vala",
     "value": {
-      "id": "vala",
+      "skillId": "vala",
       "experienceLevel": 0
     }
   },
   {
     "text": "Verilog",
     "value": {
-      "id": "verilog",
+      "skillId": "verilog",
       "experienceLevel": 0
     }
   },
   {
     "text": "VHDL",
     "value": {
-      "id": "VHDL",
+      "skillId": "VHDL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Vim script",
     "value": {
-      "id": "vimScript",
+      "skillId": "vimScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Viper",
     "value": {
-      "id": "viper",
+      "skillId": "viper",
       "experienceLevel": 0
     }
   },
   {
     "text": "Visual DataFlex",
     "value": {
-      "id": "visualDataFlex",
+      "skillId": "visualDataFlex",
       "experienceLevel": 0
     }
   },
   {
     "text": "Visual DialogScript",
     "value": {
-      "id": "visualDialogScript",
+      "skillId": "visualDialogScript",
       "experienceLevel": 0
     }
   },
   {
     "text": "Visual FoxPro",
     "value": {
-      "id": "visualFoxPro",
+      "skillId": "visualFoxPro",
       "experienceLevel": 0
     }
   },
   {
     "text": "Visual J++",
     "value": {
-      "id": "visualJPlusPlus",
+      "skillId": "visualJPlusPlus",
       "experienceLevel": 0
     }
   },
   {
     "text": "Visual LISP",
     "value": {
-      "id": "visualLISP",
+      "skillId": "visualLISP",
       "experienceLevel": 0
     }
   },
   {
     "text": "Visual Objects",
     "value": {
-      "id": "visualObjects",
+      "skillId": "visualObjects",
       "experienceLevel": 0
     }
   },
   {
     "text": "Visual Prolog",
     "value": {
-      "id": "visualProlog",
+      "skillId": "visualProlog",
       "experienceLevel": 0
     }
   },
   {
     "text": "WATFIV",
     "value": {
-      "id": "WATFIV",
+      "skillId": "WATFIV",
       "experienceLevel": 0
     }
   },
   {
     "text": "WATFOR",
     "value": {
-      "id": "WATFOR",
+      "skillId": "WATFOR",
       "experienceLevel": 0
     }
   },
   {
     "text": "WebAssembly",
     "value": {
-      "id": "webAssembly",
+      "skillId": "webAssembly",
       "experienceLevel": 0
     }
   },
   {
     "text": "WebDNA",
     "value": {
-      "id": "webDNA",
+      "skillId": "webDNA",
       "experienceLevel": 0
     }
   },
   {
     "text": "Whiley",
     "value": {
-      "id": "whiley",
+      "skillId": "whiley",
       "experienceLevel": 0
     }
   },
   {
     "text": "Winbatch",
     "value": {
-      "id": "winbatch",
+      "skillId": "winbatch",
       "experienceLevel": 0
     }
   },
   {
     "text": "Wolfram ",
     "value": {
-      "id": "wolfram",
+      "skillId": "wolfram",
       "experienceLevel": 0
     }
   },
   {
     "text": "Wyvern",
     "value": {
-      "id": "wyvern",
+      "skillId": "wyvern",
       "experienceLevel": 0
     }
   },
   {
     "text": "X++",
     "value": {
-      "id": "xPlusPlus",
+      "skillId": "xPlusPlus",
       "experienceLevel": 0
     }
   },
   {
     "text": "X10",
     "value": {
-      "id": "x10",
+      "skillId": "x10",
       "experienceLevel": 0
     }
   },
   {
     "text": "xBase",
     "value": {
-      "id": "xBase",
+      "skillId": "xBase",
       "experienceLevel": 0
     }
   },
   {
     "text": "xBase++",
     "value": {
-      "id": "xBasePlusPlus",
+      "skillId": "xBasePlusPlus",
       "experienceLevel": 0
     }
   },
   {
     "text": "XBL",
     "value": {
-      "id": "XBL",
+      "skillId": "XBL",
       "experienceLevel": 0
     }
   },
   {
     "text": "XC (targets XMOS architecture)",
     "value": {
-      "id": "xCtargetsXMOSArchitecture",
+      "skillId": "xCtargetsXMOSArchitecture",
       "experienceLevel": 0
     }
   },
   {
     "text": "xHarbour",
     "value": {
-      "id": "xHarbour",
+      "skillId": "xHarbour",
       "experienceLevel": 0
     }
   },
   {
     "text": "XL",
     "value": {
-      "id": "XL",
+      "skillId": "XL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Xojo",
     "value": {
-      "id": "xojo",
+      "skillId": "xojo",
       "experienceLevel": 0
     }
   },
   {
     "text": "XOTcl",
     "value": {
-      "id": "xOTcl",
+      "skillId": "xOTcl",
       "experienceLevel": 0
     }
   },
   {
     "text": "Xod",
     "value": {
-      "id": "xod",
+      "skillId": "xod",
       "experienceLevel": 0
     }
   },
   {
     "text": "XPL",
     "value": {
-      "id": "XPL",
+      "skillId": "XPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "XPL0",
     "value": {
-      "id": "xPL0",
+      "skillId": "xPL0",
       "experienceLevel": 0
     }
   },
   {
     "text": "XQuery",
     "value": {
-      "id": "xQuery",
+      "skillId": "xQuery",
       "experienceLevel": 0
     }
   },
   {
     "text": "XSB",
     "value": {
-      "id": "XSB",
+      "skillId": "XSB",
       "experienceLevel": 0
     }
   },
   {
     "text": "XSharp",
     "value": {
-      "id": "xSharp",
+      "skillId": "xSharp",
       "experienceLevel": 0
     }
   },
   {
     "text": "XSLT",
     "value": {
-      "id": "XSLT",
+      "skillId": "XSLT",
       "experienceLevel": 0
     }
   },
   {
     "text": "Xtend",
     "value": {
-      "id": "xtend",
+      "skillId": "xtend",
       "experienceLevel": 0
     }
   },
   {
     "text": "Y",
     "value": {
-      "id": "Y",
+      "skillId": "Y",
       "experienceLevel": 0
     }
   },
   {
     "text": "YAML",
     "value": {
-      "id": "YAML",
+      "skillId": "YAML",
       "experienceLevel": 0
     }
   },
   {
     "text": "Yorick",
     "value": {
-      "id": "yorick",
+      "skillId": "yorick",
       "experienceLevel": 0
     }
   },
   {
     "text": "YQL",
     "value": {
-      "id": "YQL",
+      "skillId": "YQL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Yoix",
     "value": {
-      "id": "yoix",
+      "skillId": "yoix",
       "experienceLevel": 0
     }
   },
   {
     "text": "YUI",
     "value": {
-      "id": "YUI",
+      "skillId": "YUI",
       "experienceLevel": 0
     }
   },
   {
     "text": "Z notation",
     "value": {
-      "id": "zNotation",
+      "skillId": "zNotation",
       "experienceLevel": 0
     }
   },
   {
     "text": "Zebra",
     "value": {
-      "id": "zebra",
+      "skillId": "zebra",
       "experienceLevel": 0
     }
   },
   {
     "text": "ZPL",
     "value": {
-      "id": "ZPL",
+      "skillId": "ZPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "ZPL2",
     "value": {
-      "id": "zPL2",
+      "skillId": "zPL2",
       "experienceLevel": 0
     }
   },
   {
     "text": "Zeno",
     "value": {
-      "id": "zeno",
+      "skillId": "zeno",
       "experienceLevel": 0
     }
   },
   {
     "text": "ZetaLisp",
     "value": {
-      "id": "zetaLisp",
+      "skillId": "zetaLisp",
       "experienceLevel": 0
     }
   },
   {
     "text": "Zig",
     "value": {
-      "id": "zig",
+      "skillId": "zig",
       "experienceLevel": 0
     }
   },
   {
     "text": "ZOPL",
     "value": {
-      "id": "ZOPL",
+      "skillId": "ZOPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "ZPL",
     "value": {
-      "id": "ZPL",
+      "skillId": "ZPL",
       "experienceLevel": 0
     }
   },
   {
     "text": "Z++",
     "value": {
-      "id": "zPlusPlus",
+      "skillId": "zPlusPlus",
       "experienceLevel": 0
     }
   }
