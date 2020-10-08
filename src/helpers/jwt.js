@@ -16,4 +16,8 @@ export default class {
   decodeToken(token) {
     return jwt.verify(token, this.secret);
   }
+
+  getData(token) {
+    return atob(token.split('.')[1]);
+  }
 }

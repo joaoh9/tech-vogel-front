@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default class Axios {
-  static GetInstance({ api = '/api', token = null } = { api: '/api', token: null }) {
+  static GetInstance({ api = '/api', token = null } = {}) {
     const contentType = 'application/json;charset=UTF-8';
     const headers = {
       'Content-Type': contentType,
