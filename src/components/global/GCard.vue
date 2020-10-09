@@ -18,9 +18,6 @@
       </v-col>
       <v-col cols="1" md="2" />
     </v-row>
-    <v-divider class="mt-4" v-if="this.$slots.buttons"/>
-    <slot name="buttons">
-    </slot>
   </v-card>
 </template>
 

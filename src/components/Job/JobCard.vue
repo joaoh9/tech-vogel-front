@@ -6,14 +6,12 @@
           <span class="overline">Posted x days ago</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
           <div class="d-flex justify-space-between">
-            <div class="d-flex">
-              <v-icon class="mr-1">mdi-office-building</v-icon>
-              <span class="body-2"> {{ company.name }}</span>
-            </div>
-            <div class="d-flex">
-              <v-icon class="mr-1">mdi-briefcase-variant-outline</v-icon>
-              <span class="body-2"> {{ job.contractType }}</span>
-            </div>
+            <icon-text
+              v-for="(item, i) in getIconInfo()"
+              :key="i"
+              :icon="item.icon"
+              :text="item.text"
+            />
           </div>
         </div>
       </div>
@@ -25,6 +23,7 @@
 </template>
 
 <script>
+import IconText from 'Components/Interface/IconText';
 export default {
   name: 'listJobs',
   props: {
@@ -35,6 +34,9 @@ export default {
       type: Object,
     },
   },
+  components: {
+    IconText,
+  },
   mounted() {
     console.log('this.job');
     console.log(this.job);
@@ -44,7 +46,7 @@ export default {
   methods: {
     goToJobDetails() {
       this.$router.push({
-        path: `/jobs/${this.job.id}`,
+        path: `/jobs/${this.company.companyId}/${this.job.id}`,
       });
     },
     getMinWidth() {
@@ -58,6 +60,18 @@ export default {
         return 500;
       }
       return 500;
+    },
+    getIconInfo() {
+      return [
+        {
+          icon: 'mdi-office-building',
+          text: this.company.name,
+        },
+        {
+          icon: 'mdi-briefcase-variant-outline',
+          text: this.$t(`Dictionary.contractType.${this.job.contractType}`),
+        },
+      ];
     },
   },
 };
