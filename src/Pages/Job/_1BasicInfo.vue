@@ -15,7 +15,7 @@
 
     <form-input position="left" :title="$t('Job.new.id.title')" required />
     <v-text-field
-      :hint="$t('Job.new.id.inputHint', { id: id })"
+      :hint="$t('Job.new.id.inputHint', { company: company, id: id.replace(/ /g, '-') })"
       :rules="[rules.required]"
       outlined
       v-model="id"
@@ -54,11 +54,16 @@
 
 <script>
 import RulesHelper from 'Helpers/rules';
+import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'NewJob1',
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    const jwtHelper = new JwtHelper();
+    const companyInfo = jwtHelper.getData('company');
+    console.log('companyInfo', companyInfo);
+    this.company = companyInfo.companyId;
   },
   data() {
     return {
@@ -66,10 +71,17 @@ export default {
       experienceLevel: '',
       contractType: '',
       id: '',
+      company: '',
       rules: {
         required: () => true,
       },
     };
+  },
+  watch: {
+    title() {
+      this.id = this.title.replace(/ /g, '-');
+      this.$emit('id', this.id)
+    },
   },
 };
 </script>

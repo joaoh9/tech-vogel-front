@@ -57,7 +57,7 @@
       class="mb-6"
       :placeholder="$t('Job.new.perks.placeholder')"
       :editorToolbar="$t('Quill.defaultToolbar')"
-      v-model="perks"
+      v-model="benefits"
     />
   </div>
 </template>
@@ -76,7 +76,7 @@ export default {
   },
   data() {
     return {
-      perks: '',
+      benefits: '',
       salary: {
         currency: 'USD',
         min: '',
@@ -120,8 +120,8 @@ export default {
     range() {
       this.$emit('salary-range', this.range);
     },
-    perks() {
-      this.$emit('perks', this.perks);
+    benefits() {
+      this.$emit('benefits', this.benefits);
     },
   },
 };

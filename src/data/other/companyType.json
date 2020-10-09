@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Private",
+    "value": "private"
+  },
+  {
+    "text": "Public",
+    "value": "public"
+  },
+  {
+    "text": "NGO",
+    "value": "NGO"
+  },
+  {
+    "text": "Other",
+    "value": "other"
+  }
+]

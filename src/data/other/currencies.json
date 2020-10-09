@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Dollar",
+    "value": "USD"
+  },
+  {
+    "text": "Pounds",
+    "value": "GBP"
+  },
+  {
+    "text": "Euro",
+    "value": "EUR"
+  },
+  {
+    "text": "Real",
+    "value": "BRL"
+  }
+]

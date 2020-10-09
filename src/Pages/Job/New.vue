@@ -42,7 +42,6 @@
                   v-on:salary-time-frame="r => (job.salary.timeFrame = r)"
                   v-on:salary-min="r => (job.salary.min = r)"
                   v-on:salary-max="r => (job.salary.max = r)"
-                  v-on:salary-range="r => (job.salary.range = r)"
                   v-on:back="step--"
                   v-on:advance="preview"
                 />
@@ -126,7 +125,6 @@ export default {
           timeFrame: 'MONTHS',
           min: 0,
           max: 0,
-          range: false,
         },
       },
     };

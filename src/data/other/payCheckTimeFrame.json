@@ -1,0 +1,5 @@
+[
+  { "text": "Yearly", "value": "YEARS" },
+  { "text": "Monthly", "value": "MONTHS" },
+  { "text": "Hourly", "value": "HOURS" }
+]

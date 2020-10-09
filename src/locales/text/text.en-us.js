@@ -1,15 +1,8 @@
-import Languages from 'Data/languages.json';
-import DifferentLanguages from 'Data/differentLanguages.json';
-import Timezones from 'Data/timezones.json';
-import MonthCount from 'Data/monthCount.json';
-import ContractDurationTimePeriod from 'Data/contractDurationTimePeriod.json';
-import CompanySize from 'Data/companySize.json';
-import preMadePhrases from 'Data/preMadePhrases.json';
+import otherData from 'Data/other';
+import skillsData from 'Data/skills';
 import FlagIcons from 'Data/flagIcons';
 
-
 import Dictionary from 'Data/dictionary';
-import Skills from 'Data/Skills';
 
 const localeEnUs = {
   tv: 'Tech Vogel',
@@ -402,61 +395,8 @@ const localeEnUs = {
     },
   },
   Data: {
-    companyType: [
-      { text: 'Private', value: 'private' },
-      { text: 'Public', value: 'public' },
-      { text: 'NGO', value: 'NGO' },
-      { text: 'Other', value: 'other' },
-    ],
-    contractType: [
-      { text: 'Full-Time', value: 'fullTime' },
-      { text: 'Part-time', value: 'parttime' },
-      { text: 'Hourly', value: 'hourly' },
-    ],
-    experienceLevel: [
-      { text: 'Student', value: 'student' },
-      { text: 'Junior', value: 'junior' },
-      { text: 'Mid-Level', value: 'midLevel' },
-      { text: 'Senior', value: 'senior' },
-      { text: 'Lead', value: 'lead' },
-      { text: 'Manager', value: 'manager' },
-    ],
-    jobInterests: [
-      { text: 'Startups', value: 'startups' },
-      { text: 'Small and medium', value: 'smallAndMedium' },
-      { text: 'Large', value: 'large' },
-    ],
-    payCheckTimeFrame: [
-      { text: 'Yearly', value: 'YEARS' },
-      { text: 'Monthly', value: 'MONTHS' },
-      { text: 'Hourly', value: 'HOURS' },
-    ],
-    currencies: [
-      { text: 'Dollar', value: 'USD' },
-      { text: 'Pounds', value: 'GBP' },
-      { text: 'Euro', value: 'EUR' },
-      { text: 'Real', value: 'BRL' },
-    ],
-    languages: Languages,
-    differentLanguages: DifferentLanguages,
-    timezones: Timezones,
-    monthCount: MonthCount,
-    contractDurationTimePeriod: ContractDurationTimePeriod,
-    companySize: CompanySize,
-    preMadePhrases,
-    knowledgeAreas: Skills.KnowledgeAreas,
-    programmingLanguages: Skills.ProgrammingLanguages,
-    // frameworks: groupFormat(Skills.FrameWorks),
-    // softSkills: dataFormat(Skills.SoftSkills),
-    // everySkill: groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages })
-    //   .concat(groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas }))
-    //   .concat(groupFormat(Skills.FrameWorks)),
-    // // .concat(dataFormat(Skills.SoftSkills)),
-    // everySkillButSoft: groupFormat({ 'Programming Languages': Skills.ProgrammingLanguages })
-    //   .concat(groupFormat({ 'Knowledge Areas': Skills.KnowledgeAreas }))
-    //   .concat(Skills.FrameWorks)
-    //   .concat(dataFormat(Skills.SoftSkills)),
-    timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
+    ...otherData,
+    ...skillsData,
   },
   Dictionary: {
     ...Dictionary,
