@@ -1,10 +1,17 @@
-import Database from './Database.json';
-import ProgrammingLanguages from './ProgrammingLanguages.json';
+import database from './Database.json';
+import programmingLanguages from './ProgrammingLanguages.json';
 import SoftSkillsFlat from './SoftSkillsFlat.json';
-import Languages from './Languages.json';
+import languages from './Languages.json';
+import contractType from './contractType.json'
+import skills from './Skills.json'
+import experienceLevel from './experienceLevel.json'
 
 export default {
-  TechSkills: { ...Database, ...ProgrammingLanguages },
+  techSkills: { ...database, ...programmingLanguages },
   SoftSkillsFlat,
-  Languages,
+  softSkills: SoftSkillsFlat,
+  languages,
+  contractType,
+  skills,
+  experienceLevel,
 };

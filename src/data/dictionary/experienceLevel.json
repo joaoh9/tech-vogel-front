@@ -1,0 +1,8 @@
+{
+  "student": "Student",
+  "junior": "Junior",
+  "midLevel": "Mid-Level",
+  "senior": "Senior",
+  "lead": "Lead",
+  "manager": "Manager"
+}
