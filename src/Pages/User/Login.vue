@@ -102,15 +102,10 @@ export default {
           password: this.user.password,
         });
         if (statusCode === 200) {
-          this.saveUserCredentials();
-        } else {
-          this.requestError = true;
+          return this.saveUserCredentials();
         }
+        this.requestError = true;
         this.loading.login = false;
-
-        this.$router.push({
-          path: this.nextRoute || '/dashboard',
-        });
       } catch (e) {
         if (e.response.status === 500) {
           this.requestErrorMessage = this.$t('DefaultErrors.500');
@@ -129,6 +124,27 @@ export default {
       const userToken = jwtHelper.createToken(userInfo);
 
       StorageHelper.saveOnSession('user', userToken);
+
+      this.seeIfUserIsACompanyOwner();
+    },
+    async seeIfUserIsACompanyOwner() {
+      const userController = new UserController();
+      const jwtHelper = new JwtHelper();
+      try {
+        const company = await userController.getCompany(this.user.username);
+        console.log(company);
+        const companyToken = jwtHelper.createToken({ companyId: company[0] }); // WARNING: salvando apenas o primeiro indice do array de companies do user
+        StorageHelper.saveOnSession('company', companyToken);
+
+        this.goToDashboard(true);
+      } catch (e) {
+        alert(e); // TODO: melhorar tratamento de erro
+      }
+    },
+    goToDashboard(company = false) {
+      this.$router.push({
+        path: this.nextRoute || company ? '/dashboard/company' : '/dashboard',
+      });
     },
   },
 };
