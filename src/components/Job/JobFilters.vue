@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="500px" min-width="300" width="90%" class="px-5" elevation="6" color="bg">
+  <v-card max-width="500px" min-width="300" class="px-5" elevation="3" color="bg">
     <v-card-text>
       <h6 class="font-weight-bold text--primary">
         {{ $t('Jobs.filterSearch') }}
@@ -9,7 +9,7 @@
         <v-switch v-model="switch1" color="secondary" />
         <p class="text--primary body-2">{{ $t('Jobs.showJobs') }}</p>
       </v-row>
-      <v-row v-bind:key="n * 2">
+      <v-row>
         <v-combobox
           class="mr-5"
           :items="$t('Data.experienceLevel')"

@@ -12,7 +12,7 @@
           mdi-close
         </v-icon>
         <div class="body-1 align-self-center" style="line-height: 100% !important">
-          {{ skill.skillId }}
+          {{ $t(`Dictionary.${skillTitle}.${skill.skillId}`) }}
         </div>
       </v-col>
       <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">
@@ -37,6 +37,7 @@ export default {
   props: {
     items: Array,
     experienceLevel: Array,
+    skillTitle: String,
   },
   methods: {
     deleteSkills(index) {

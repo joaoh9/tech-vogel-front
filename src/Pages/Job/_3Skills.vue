@@ -22,7 +22,7 @@
     <SkillExperienceLevel
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
-      skillTitle="ProgrammingLanguages"
+      skillTitle="TechSkills"
       :experienceLevel="$t('skills.priorities')"
     />
     <h5 class="mt-6">{{ $t('Job.new.otherSkills.title') }}</h5>

@@ -1,10 +1,21 @@
 import Axios from 'Helpers/axios';
+import JwtHelper from 'Helpers/jwt';
 
 export default class JobController {
   async save(jobDetails) {
     const axios = await Axios.GetInstance();
+    const jwtHelper = new JwtHelper();
 
-    const { data } = await axios.post('/jobs', jobDetails);
+    const company = jwtHelper.getData('company');
+    console.log('company', company);
+
+    const finalObj = {
+      ...jobDetails,
+      companyId: company.companyId,
+    };
+    console.log(JSON.stringify(finalObj));
+
+    const { data } = await axios.post('/jobs', finalObj);
     return data;
   }
 

@@ -123,6 +123,12 @@ export default {
     benefits() {
       this.$emit('benefits', this.benefits);
     },
+    'salary.min'() {
+      if (!this.salary.range) {
+        this.salary.max = this.salary.min;
+        this.$emit('salary-max', this.salary.max);
+      }
+    },
   },
 };
 </script>
