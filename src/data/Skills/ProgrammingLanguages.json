@@ -1528,7 +1528,7 @@
   {
     "text": "Go!",
     "value": {
-      "skillId": "go",
+      "skillId": "goo",
       "experienceLevel": 0
     }
   },
@@ -4777,13 +4777,6 @@
     "text": "ZOPL",
     "value": {
       "skillId": "ZOPL",
-      "experienceLevel": 0
-    }
-  },
-  {
-    "text": "ZPL",
-    "value": {
-      "skillId": "ZPL",
       "experienceLevel": 0
     }
   },

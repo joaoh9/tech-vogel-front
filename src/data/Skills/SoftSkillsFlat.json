@@ -154,13 +154,6 @@
     }
   },
   {
-    "text": "Problem solving",
-    "value": {
-      "skillId": "problemSolving",
-      "experienceLevel": 0
-    }
-  },
-  {
     "text": "Research",
     "value": {
       "skillId": "research",
@@ -199,13 +192,6 @@
     "text": "Value education",
     "value": {
       "skillId": "valueEducation",
-      "experienceLevel": 0
-    }
-  },
-  {
-    "text": "Willingness to learn",
-    "value": {
-      "skillId": "willingnessToLearn",
       "experienceLevel": 0
     }
   },
@@ -311,13 +297,6 @@
     "text": "Mentoring",
     "value": {
       "skillId": "mentoring",
-      "experienceLevel": 0
-    }
-  },
-  {
-    "text": "Motivating",
-    "value": {
-      "skillId": "motivating",
       "experienceLevel": 0
     }
   },
@@ -448,13 +427,6 @@
     }
   },
   {
-    "text": "Customer service",
-    "value": {
-      "skillId": "customerService",
-      "experienceLevel": 0
-    }
-  },
-  {
     "text": "Dealing with difficult situations",
     "value": {
       "skillId": "dealingWithDifficultSituations",
@@ -539,20 +511,6 @@
     }
   },
   {
-    "text": "Persuasion",
-    "value": {
-      "skillId": "persuasion",
-      "experienceLevel": 0
-    }
-  },
-  {
-    "text": "Self-awareness",
-    "value": {
-      "skillId": "selfawareness",
-      "experienceLevel": 0
-    }
-  },
-  {
     "text": "Selling skills",
     "value": {
       "skillId": "sellingSkills",
@@ -584,13 +542,6 @@
     "text": "Attentiveness",
     "value": {
       "skillId": "attentiveness",
-      "experienceLevel": 0
-    }
-  },
-  {
-    "text": "Business ethics",
-    "value": {
-      "skillId": "businessEthics",
       "experienceLevel": 0
     }
   },
@@ -714,13 +665,6 @@
     }
   },
   {
-    "text": "Scheduling",
-    "value": {
-      "skillId": "scheduling",
-      "experienceLevel": 0
-    }
-  },
-  {
     "text": "Self-direction",
     "value": {
       "skillId": "selfdirection",
@@ -731,13 +675,6 @@
     "text": "Self-monitoring",
     "value": {
       "skillId": "selfmonitoring",
-      "experienceLevel": 0
-    }
-  },
-  {
-    "text": "Self-supervising",
-    "value": {
-      "skillId": "selfsupervising",
       "experienceLevel": 0
     }
   },
@@ -1032,13 +969,6 @@
     "text": "Training",
     "value": {
       "skillId": "training",
-      "experienceLevel": 0
-    }
-  },
-  {
-    "text": "Troubleshooting",
-    "value": {
-      "skillId": "troubleshooting",
       "experienceLevel": 0
     }
   },

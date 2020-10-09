@@ -7,6 +7,8 @@ import CompanySize from 'Data/companySize.json';
 import preMadePhrases from 'Data/preMadePhrases.json';
 import FlagIcons from 'Data/flagIcons';
 
+
+import Dictionary from 'Data/dictionary';
 import Skills from 'Data/Skills';
 
 const localeEnUs = {
@@ -208,7 +210,7 @@ const localeEnUs = {
       id: {
         title: 'Your custom URL',
         description: 'this will be the url you use to spread your job opening',
-        inputHint: 'http://techvogel.com/jobs/{id}',
+        inputHint: 'http://techvogel.com/jobs/{company}/{id}',
       },
       experienceLevel: {
         title: 'Experience Level',
@@ -274,6 +276,9 @@ const localeEnUs = {
         placeholder: 'TODO',
       },
       steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
+    },
+    list: {
+      error: 'Something went wrong when retrieving the jobs from the Database',
     },
   },
   footer: {
@@ -452,6 +457,9 @@ const localeEnUs = {
     //   .concat(Skills.FrameWorks)
     //   .concat(dataFormat(Skills.SoftSkills)),
     timeFrame: [ 'YEAR', 'MONTH', 'HOUR' ],
+  },
+  Dictionary: {
+    ...Dictionary,
   },
   Signup: {
     title: 'Sign Up',
