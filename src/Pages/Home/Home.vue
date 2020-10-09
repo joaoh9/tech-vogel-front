@@ -10,7 +10,7 @@
     <div>
       <v-row claess="">
         <v-col cols="12" md="6">
-          <g-btn-primary label="I want to hire" to="/job/new" />
+          <g-btn-primary label="I want to hire" to="/jobs/new" />
         </v-col>
         <v-col cols="12" md="6">
           <g-btn-primary label="I'm looking for a job" to="/signup" />

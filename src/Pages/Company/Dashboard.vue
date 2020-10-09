@@ -140,7 +140,7 @@ export default {
   methods: {
     goToManageListings: function() {},
     goToPostJobs: function() {
-      this.$router.push('/job/new');
+      this.$router.push('/jobs/new');
     },
     goToEditProfile: function() {
       this.$router.push('/company/new');

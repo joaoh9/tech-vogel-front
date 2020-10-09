@@ -120,7 +120,6 @@ export default {
       const jwtHelper = new JwtHelper();
 
       const userInfo = await userController.getByUsername(this.user.username);
-
       const userToken = jwtHelper.createToken(userInfo);
 
       StorageHelper.saveOnSession('user', userToken);
@@ -132,7 +131,6 @@ export default {
       const jwtHelper = new JwtHelper();
       try {
         const company = await userController.getCompany(this.user.username);
-        console.log(company);
         const companyToken = jwtHelper.createToken({ companyId: company[0] }); // WARNING: salvando apenas o primeiro indice do array de companies do user
         StorageHelper.saveOnSession('company', companyToken);
 
@@ -143,7 +141,7 @@ export default {
     },
     goToDashboard(company = false) {
       this.$router.push({
-        path: this.nextRoute || company ? '/dashboard/company' : '/dashboard',
+        path: this.nextRoute || company ? '/company/dashboard' : '/dashboard',
       });
     },
   },

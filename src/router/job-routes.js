@@ -5,19 +5,19 @@ import Jobs from 'Pages/Jobs/JobList'
 
 const routes = [
   {
-    path: '/job/new',
+    path: '/jobs/new',
     name: 'New Job',
     component: NewJob,
     props: true,
   },
   {
-    path: '/job/:companyId/:jobId',
+    path: '/jobs/:companyId/:jobId',
     name: 'Job Description',
     component: JobDetails,
     props: true,
   },
   {
-    path: '/job/exemplo',
+    path: '/jobs/exemplo',
     name: 'Android Pleno Use Mobile',
     component: UseMobileAndroidPleno,
     propos: true,

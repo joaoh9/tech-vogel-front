@@ -110,7 +110,7 @@ export default {
   methods: {
     goToApplications: function() {},
     goToFindJobs: function() {
-      this.$router.push('/job/new');
+      this.$router.push('/jobs/new');
     },
     goToEditProfile: function() {
       this.$router.push('/resume/new');
