@@ -19,9 +19,7 @@ export default class {
   }
 
   getData(token) {
-    console.log('token', token);
     const jwt = StorageHelper.loadState(token);
-    console.log('jwt', jwt);
     const data = jwt.split('.')[1];
     const res = atob(data);
     return JSON.parse(res);
