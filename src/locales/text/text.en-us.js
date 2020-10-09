@@ -430,6 +430,9 @@ const localeEnUs = {
         manageCredits: 'Manage credits',
         manageAccountInfo: 'Manage my account information',
       },
+      job: {
+        period: 'Applied one day ago | Applied %{count} days ago',
+      },
     },
   },
   Data: {

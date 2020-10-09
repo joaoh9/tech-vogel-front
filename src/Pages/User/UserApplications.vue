@@ -29,7 +29,7 @@
             <v-card class="primary-card my-5">
               <v-card-text>
                 <v-row>
-                  <v-col cols="2">
+                  <v-col cols="2" v-if="!$vuetify.breakpoint.mobile">
                     <v-avatar size="90">
                       <v-img
                         v-if="application.job.company.profilePhoto"
@@ -40,28 +40,33 @@
                       </v-icon>
                     </v-avatar>
                   </v-col>
-                  <v-col cols="12" md="7" class="d-flex flex-column justify-space-between">
+                  <v-col cols="12" md="6" class="d-flex flex-column justify-space-between">
                     <h5>{{ application.job.title }}</h5>
                     <div class="d-flex space-between flex-fill align-center">
                       <div class="flex-fill">
-                        <v-icon class="m-5 p-5">
+                        <v-icon class="text-icon" color="secondary">
                           fa-building
                         </v-icon>
-                        <p style="font-weight: bold">{{ application.job.company.name }}</p>
+                        <div class="" style="font-weight: bold">
+                          {{ application.job.company.name }}
+                        </div>
                       </div>
                       <div class="flex-fill">
-                        <v-icon class="m-5 p-5">
+                        <v-icon class="text-icon" color="secondary">
                           fa-briefcase
                         </v-icon>
-                        <p style="font-weight: bold">{{ application.job.type }}</p>
+                        <div style="font-weight: bold">{{ application.job.type }}</div>
                       </div>
                     </div>
                   </v-col>
-                  <v-col cols="12" md="3" class="d-flex flex-column justify-center align-center">
-                    <v-icon size="12" color="error">
-                      fa-circle
-                    </v-icon>
-                    <p style="font-weight: bold">{{ application.job.status }}</p>
+                  <v-col cols="12" md="4" class="d-flex flex-column justify-center align-stretch text-center">
+                    <div>{{$tc('User.applications.job.period', 1)}}</div>
+                    <div class="text-center">
+                      <v-icon size="12" color="error" class="text-icon">
+                        fa-circle
+                      </v-icon>
+                      <div style="font-weight: bold">{{ application.job.status }}</div>
+                    </div>
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -115,4 +120,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.text-icon {
+  padding-right: 0.5em;
+  float: left;
+}
+</style>
