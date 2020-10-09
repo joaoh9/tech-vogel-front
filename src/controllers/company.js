@@ -13,7 +13,7 @@ export default class CompanyController {
     return data;
   }
 
-  async getCompanyById(companyId) {
+  async getById(companyId) {
     const axios = await Axios.GetInstance();
     const { data } = await axios.get(`/company/${companyId}`);
     return data;

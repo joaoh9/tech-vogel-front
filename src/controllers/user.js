@@ -28,6 +28,13 @@ export default class UserController {
     return data;
   }
 
+  async getCompany(username) {
+    const axios = Axios.GetInstance({ api: '/api' });
+    const { data } = await axios.get(`/users/companies/${username}`);
+
+    return data;
+  }
+
   async login({ username, password }) {
     const axios = Axios.GetInstance({ api: '/api' });
     const { status } = await axios.post('login', {
