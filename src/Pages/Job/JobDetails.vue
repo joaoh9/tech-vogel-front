@@ -6,63 +6,92 @@
       src="https://suzanadeoliveira.com/wp-content/uploads/2017/06/Google-Office-HD-Wallpapers-Backgrounds-Wallpaper-Abyss-scaled.jpg"
     />
     <div class="container mt-6 px-10 px-md-5">
+      <!-- {{ job }} -->
       <v-row justify="center">
         <v-col cols="12" lg="8" xl="9" style="max-width: 1000px">
           <p class="overline">Posted 5 days ago</p>
+          <!-- TODO -->
           <h4 class="h4-bold">{{ job.title }}</h4>
-          <h6 class="h6">At {{ company.name }}</h6>
+          <h6 class="h6">{{ $t('Common.at') + ' ' }} {{ company.name }}</h6>
+          <SkillPresentation :skills="job.skills" />
           <div></div>
           <div class="body-1 d-block mt-4" v-html="job.description"></div>
         </v-col>
         <v-col cols="12" lg="4" xl="3" class="mt-6">
-          <v-card max-width="620px" width="100%" class="px-4" elevation="3" color="bg">
-            <v-card-text>
-              <v-row>
-                <v-icon>fa fa-briefcase</v-icon>
-                <v-card-subtitle>{{ job.experienceLevel }}</v-card-subtitle>
-              </v-row>
-              <v-row>
-                <v-icon>far fa-clock</v-icon>
-                <v-card-subtitle>{{ job.contractType }}</v-card-subtitle>
-              </v-row>
-              <v-row>
-                <v-icon>fas fa-globe-americas</v-icon>
-                <v-card-subtitle v-for="lan of job.languages" :key="lan">{{ lan }}</v-card-subtitle>
-              </v-row>
-              <v-row v-if="job.salary">
-                <v-icon class="ml-1">fas fa-dollar-sign</v-icon>
-                <v-card-subtitle class="ml-2">{{ job.salary.price }}</v-card-subtitle>
-              </v-row>
-              <v-row justify="center" class="mt-3">
-                <v-btn large color="primary" width="98%">
-                  Apply For this position
-                </v-btn>
-              </v-row>
-              <v-divider class="mt-4" />
-              <v-row class="mt-5">
-                <div class="d-flex">
-                  <v-avatar height="80" width="80" color="cinza-lighten-2" class="ml-1"> </v-avatar>
-                  <div class="d-flex justify-center ml-4" style="flex-direction: column">
-                    <h6>{{ company.name }}</h6>
-                    <v-card-subtitle class="body-2 ma-n3 "
-                      >Job managed by {{ company.manager }}</v-card-subtitle
-                    >
-                  </div>
+          <v-card max-width="620px" width="100%" class="px-10 py-6" elevation="3" color="bg">
+            <IconText
+              v-for="(item, i) in getIconInfo()"
+              :key="i"
+              :icon="item.icon"
+              :text="item.text"
+              class="mb-2 ml-n3"
+            />
+            <v-row justify="center" class="mt-3">
+              <v-dialog v-model="apply">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    v-on="on"
+                    v-bind="attrs"
+                    large
+                    color="primary"
+                    @click="showConfirmationDialog1 = true"
+                  >
+                    {{ $t('Job.details.apply') }}
+                  </v-btn>
+                </template>
+                <DefaultDialog
+                  v-if="showConfirmationDialog1"
+                  :title="$t('Job.apply.title')"
+                  :subtitle="$t('Job.apply.subtitle')"
+                  :btnType="$t('Job.apply.btnType')"
+                  :btnText="$t('Job.apply.btnText')"
+                  @close="
+                    showConfirmationDialog1 = false;
+                    apply = false;
+                  "
+                  @confirm="
+                    showConfirmationDialog1 = false;
+                    showConfirmationDialog2 = true;
+                    applyForJob();
+                  "
+                />
+                <DefaultDialog
+                  :img="applicationConfirmedImg"
+                  :title="$t('Job.applicationConfirmed.title')"
+                  :subtitle="$t('Job.applicationConfirmed.subtitle')"
+                  :btnType="$t('Job.applicationConfirmed.btnType')"
+                  :btnText="$t('Job.applicationConfirmed.btnText')"
+                  v-if="showConfirmationDialog2"
+                  @confirm="
+                    showConfirmationDialog1 = false;
+                    showConfirmationDialog2 = false;
+                    apply = true;
+                  "
+                  @close="
+                    showConfirmationDialog2 = false;
+                    apply = false;
+                  "
+                />
+              </v-dialog>
+            </v-row>
+            <v-divider class="mt-4" />
+            <v-row class="mt-5">
+              <div class="d-flex">
+                <v-avatar height="80" width="80" color="cinza-lighten-2" class="ml-1"> </v-avatar>
+                <div class="d-flex justify-center ml-4" style="flex-direction: column">
+                  <h6>{{ company.name }}</h6>
+                  <v-card-subtitle class="body-2 ma-n3 ">
+                    {{ $t('Job.details.managedBy', { user: company.representative }) }}
+                  </v-card-subtitle>
                 </div>
-              </v-row>
-              <v-row class="mt-4">
-                <v-col cols="12">
-                  <h6>About the company</h6>
-                </v-col>
-                <v-card-subtitle
-                  class="mt-n4 body-1 d-block"
-                  v-for="ab of company.about.split('\n')"
-                  :key="ab"
-                >
-                  {{ ab }}
-                </v-card-subtitle>
-              </v-row>
-            </v-card-text>
+              </div>
+            </v-row>
+            <v-row class="mt-4">
+              <v-col cols="12">
+                <h6>{{ $t('Job.details.aboutTheCompany') }}</h6>
+              </v-col>
+              <v-card-subtitle v-html="company.companyDescription"> </v-card-subtitle>
+            </v-row>
           </v-card>
         </v-col>
       </v-row>
@@ -71,22 +100,39 @@
 </template>
 
 <script>
+import applicationConfirmedImg from 'Assets/application-confirmed.svg';
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
+import SkillPresentation from 'Components/Job/SkillPresentation';
+import IconText from 'Components/Interface/IconText';
+import DefaultDialog from 'Components/Dialogs/Default';
+import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'JobDescription',
   props: {
     confirm: Boolean,
   },
+  components: {
+    SkillPresentation,
+    IconText,
+    DefaultDialog,
+  },
   mounted() {
     this.companyId = this.$route.params.companyId;
     this.jobId = this.$route.params.jobId;
+
+    console.log(this.companyId);
+    console.log(this.jobId);
     this.getJobData();
     this.getCompanyData();
   },
   data() {
     return {
+      applicationConfirmedImg,
+      showConfirmationDialog2: false,
+      showConfirmationDialog1: false,
+      apply: false,
       jobId: '',
       job: {},
       companyId: '',
@@ -110,6 +156,33 @@ export default {
         this.job = await jobController.getById(this.jobId);
       } catch (e) {
         this.jobError = true;
+      }
+    },
+    getIconInfo() {
+      return [
+        {
+          icon: 'fa fa-briefcase',
+          text: this.$t(`Dictionary.experienceLevel.${this.job.experienceLevel || 'junior'}`),
+        },
+        {
+          icon: 'far fa-clock',
+          text: this.$t(`Dictionary.contractType.${this.job.contractType}`),
+        },
+      ];
+    },
+    async applyForJob() {
+      const jobController = new JobController();
+      const jwtHelper = new JwtHelper();
+
+      try {
+        const user = jwtHelper.getData('user');
+        console.log('user');
+        console.log(user);
+        const res = await jobController.apply(user.username, this.jobId);
+        console.log('res');
+        console.log(res);
+      } catch (e) {
+        alert(e);
       }
     },
   },

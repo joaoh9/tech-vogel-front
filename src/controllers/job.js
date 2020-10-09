@@ -30,4 +30,13 @@ export default class JobController {
     const { data } = await axios.get(`/jobs/${jobId}`);
     return data;
   }
+
+  async apply(username, jobId) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.post('/jobs/apply', {
+      username,
+      jobId,
+    });
+    return data;
+  }
 }

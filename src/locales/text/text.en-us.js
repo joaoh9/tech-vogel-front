@@ -8,6 +8,7 @@ const localeEnUs = {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
   Common: {
+    at: 'At',
     feedback: 'Feedback',
     tv: 'Tech Vogel',
     techVogel: 'Tech Vogel',
@@ -273,6 +274,25 @@ const localeEnUs = {
     list: {
       error: 'Something went wrong when retrieving the jobs from the Database',
     },
+    details: {
+      apply: 'Apply for this position',
+      managedBy: 'Job managed by {user}',
+      aboutTheCompany: 'About the company',
+    },
+    apply: {
+      title: 'Are you sure you want to apply for this position?',
+      subtitle:
+        'This application will cost you 1 Vogel. You can get more Vogels by visiting Tech Vogel every 24 hours!',
+      btnType: 'primary',
+      btnText: 'Apply for this position!',
+    },
+    applicationConfirmed: {
+      title: 'Your application was submitted!',
+      subtitle: 'If your skills are a good match for the requirements in this position, {companyName} might contact you to continue the selection process. Keep an eye on your email inbox!',
+      btnType: 'secondary',
+      btnText: 'browse more jobs',
+
+    },
   },
   footer: {
     socialMedia: {
@@ -307,7 +327,7 @@ const localeEnUs = {
       },
       {
         text: 'Advertise a position',
-        to: '/job/new',
+        to: '/jobs/new',
       },
       {
         text: 'login',
