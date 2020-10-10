@@ -79,7 +79,7 @@
 import JwtHelper from 'Helpers/jwt';
 
 export default {
-  name: 'Professional Dashboard',
+  name: 'ProfessionalDashboard',
   mounted() {
     const jwtHelper = new JwtHelper();
 
