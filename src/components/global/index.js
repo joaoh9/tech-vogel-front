@@ -8,6 +8,7 @@ import GButton from './Button';
 import PrimaryButton from './Buttons/Primary';
 import SecondaryButton from './Buttons/Secondary';
 import GCombobox from './GCombobox';
+import GBoostrap from './GBootstrap'
 
 [
   FormInput,
@@ -18,6 +19,7 @@ import GCombobox from './GCombobox';
   SecondaryButton,
   GButton,
   GCombobox,
+  GBoostrap,
 ].forEach(component => {
   Vue.component(component.name, component);
 });

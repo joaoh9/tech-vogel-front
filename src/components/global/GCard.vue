@@ -3,6 +3,7 @@
     class="primary-card mx-1"
     :elevation="$vuetify.breakpoint.mobile ? 0 : 6"
     color="bg"
+    :loading="loading"
     :min-width="getMinWidth()"
     :max-width="getMaxWidth()"
     :min-height="getMinHeight()"
@@ -10,10 +11,11 @@
   >
     <v-row justify="center">
       <v-col cols="1" md="2" />
-      <v-col cols="10" md="8">
+      <v-col cols="10" md="8" :class="$slots.buttons ? 'mb-1' : 'mb-3'">
         <slot name="card-header" />
         <slot name="card-content" />
-        <v-divider class="mt-4" />
+        <v-divider v-if="$slots.buttons" class="mt-4" />
+
         <slot name="buttons" />
       </v-col>
       <v-col cols="1" md="2" />
@@ -25,6 +27,8 @@
 export default {
   name: 'g-card',
   props: {
+    loading: Boolean,
+
     lg: Number,
     md: Number,
     sm: Number,

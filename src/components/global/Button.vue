@@ -63,9 +63,13 @@ export default {
     minwidth: [ String, Number ],
     dataCy: String,
     loading: Boolean,
+    elevation: [ String, Number ],
   },
   methods: {
     getElevation() {
+      if (this.elevation) {
+        return this.elevation;
+      }
       switch (this.type) {
         case 'primary':
         case 'secondary':
