@@ -20,12 +20,13 @@ const routes = [
     path: '/jobs/exemplo',
     name: 'Android Pleno Use Mobile',
     component: UseMobileAndroidPleno,
-    propos: true,
+    props: true,
   },
   {
     path: '/jobs',
     name: 'Jobs',
     component: Jobs,
+    props: true,
   },
 ];
 

@@ -1,5 +1,5 @@
 import Axios from 'Helpers/axios';
-
+import StorageHelper from 'Helpers/storage';
 export default class UserController {
   async saveUser({ name, username, email, password, birthDate = '1990-12-12' }) {
     const axios = Axios.GetInstance({ api: '/api' });
@@ -41,6 +41,17 @@ export default class UserController {
       username,
       password,
     });
+
+    return status;
+  }
+
+  async logout() {
+    const axios = Axios.GetInstance({ api: '/api' });
+    const { status } = await axios.post('logout');
+    if (status === 200) {
+      StorageHelper.removeState('user');
+      StorageHelper.removeState('company');
+    }
 
     return status;
   }

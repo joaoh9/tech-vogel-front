@@ -140,6 +140,7 @@ export default {
       }
     },
     goToDashboard(company = false) {
+      this.$emit('login', { logged: true, company });
       this.$router.push({
         path: this.nextRoute || company ? '/company/dashboard' : '/dashboard',
       });

@@ -15,8 +15,10 @@ const localeEnUs = {
     day: 'Day',
     month: 'Month',
     year: 'Year',
+    logout: 'Logout',
     from: 'From',
     to: 'To',
+    dashboard: 'Dashboard',
     description: 'description',
     company: 'company',
     user: 'user',
@@ -166,8 +168,8 @@ const localeEnUs = {
   },
   skills: {
     priorities: [
-      { text: 'Essencial', value: 5 },
-      { text: 'Important', value: 3 },
+      { text: 'Essential', value: 5 },
+      { text: 'Desirable', value: 3 },
       { text: 'Bonus', value: 1 },
     ],
     yearsOfExperience: [

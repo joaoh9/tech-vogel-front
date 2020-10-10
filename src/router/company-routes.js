@@ -1,5 +1,6 @@
 import NewCompany from 'Pages/Company/New';
 import Dashboard from 'Pages/Company/Dashboard';
+import ManageJobs from 'Pages/Company/ManageJobs';
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/company/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+  },
+  {
+    path: '/company/jobs',
+    name: 'Manage Jobs',
+    component: ManageJobs,
   },
 ];
 
