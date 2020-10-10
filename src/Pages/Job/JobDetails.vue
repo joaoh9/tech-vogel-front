@@ -13,12 +13,14 @@
           <!-- TODO -->
           <h4 class="h4-bold">{{ job.title }}</h4>
           <h6 class="h6">{{ $t('Common.at') + ' ' }} {{ company.name }}</h6>
-          <SkillPresentation :skills="job.skills" />
+          <v-card color="bg" class="pa-6">
+            <SkillPresentation :skills="job.skills" />
+          </v-card>
           <div></div>
           <div class="body-1 d-block mt-4" v-html="job.description"></div>
         </v-col>
         <v-col cols="12" lg="4" xl="3" class="mt-6">
-          <v-card max-width="620px" width="100%" class="px-10 py-6" elevation="3" color="bg">
+          <v-card class="px-10 py-6" elevation="3" color="bg">
             <IconText
               v-for="(item, i) in getIconInfo()"
               :key="i"
@@ -45,10 +47,7 @@
                   :subtitle="$t('Job.apply.subtitle')"
                   :btnType="$t('Job.apply.btnType')"
                   :btnText="$t('Job.apply.btnText')"
-                  @close="
-                    showConfirmationDialog1 = false;
-                    apply = false;
-                  "
+                  @close="showConfirmationDialog1 = false"
                   @confirm="
                     showConfirmationDialog1 = false;
                     showConfirmationDialog2 = true;
@@ -77,9 +76,10 @@
             <v-divider class="mt-4" />
             <v-row class="mt-5">
               <div class="d-flex">
-                <v-avatar height="80" width="80" color="cinza-lighten-2" class="ml-1"> </v-avatar>
-                <div class="d-flex justify-center ml-4" style="flex-direction: column">
-                  <h6>{{ company.name }}</h6>
+                <v-avatar height="80" :width="80" color="cinza-lighten-2"> </v-avatar>
+
+                <div class="d-flex justify-center flex-column">
+                  <h6 class="text-capitalize">{{ company.name }}</h6>
                   <v-card-subtitle class="body-2 ma-n3 ">
                     {{ $t('Job.details.managedBy', { user: company.representative }) }}
                   </v-card-subtitle>

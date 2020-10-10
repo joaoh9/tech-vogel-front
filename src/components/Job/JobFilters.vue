@@ -4,7 +4,7 @@
       <h6 class="font-weight-bold text--primary">
         {{ $t('Jobs.filterSearch') }}
       </h6>
-      <v-row>
+      <v-row align="center">
         <p class="text--primary body-2 mr-4">{{ $t('Jobs.cv') }}</p>
         <v-switch v-model="switch1" color="secondary" />
         <p class="text--primary body-2">{{ $t('Jobs.showJobs') }}</p>

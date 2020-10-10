@@ -124,7 +124,7 @@ export default {
       this.$emit('benefits', this.benefits);
     },
     'salary.min'() {
-      if (!this.salary.range) {
+      if (!this.range) {
         this.salary.max = this.salary.min;
         this.$emit('salary-max', this.salary.max);
       }

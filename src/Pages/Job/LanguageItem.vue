@@ -17,6 +17,7 @@
       class=" bg-color-bg d-inline-flex justify-center flex-wrap "
     >
       <v-btn
+        rounded
         class="bg-color-bg flex-fill"
         outlined
         :value="fluency"

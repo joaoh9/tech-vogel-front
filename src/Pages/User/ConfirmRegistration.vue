@@ -3,7 +3,7 @@
     <div class="d-flex justify-center mt-12">
       <g-card :md="500" :lg="500">
         <template v-slot:card-content>
-          <div class="d-flex justify-center ma-12" style="flex-direction: column">
+          <div class="d-flex justify-center ma-12 flex-column">
             <h4 class="h4-bold align-self-center">{{ $t('Signup.confirmEmail.title') }}</h4>
             <span class="body-1 align-self-center color-cinza-lighten-1 mt-4">
               {{ $t('Signup.confirmEmail.description') }}

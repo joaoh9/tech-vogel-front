@@ -4,7 +4,7 @@
       <h6 class="mr-4">{{ $t(`Dictionary.skills.${skillType}`) }}</h6>
       <v-row>
         <v-chip
-          class="mx-3 mb-2"
+          class="ml-2 mb-2 align-self-center"
           :style="getStyle(skill, skillType)"
           v-for="(skill, j) in skills[skillType]"
           :key="j"
@@ -29,9 +29,9 @@ export default {
     },
     getColor(skillType) {
       const map = {
-        techSkills: '#CDE4F8',
-        softSkills: '#FFF6C9',
-        languages: '#E2FAF3',
+        techSkills: 'white',
+        softSkills: 'white',
+        languages: 'white',
       };
 
       return map[skillType];

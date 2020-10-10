@@ -11,10 +11,10 @@
       <g-card :minsm="'100'">
         <template v-slot:card-content>
           <g-card-header :title="$t('Feedback.title')" />
-          <div class="mx-sm-12 mx-4 mt-4">
-            <form-input :title="$t('Feedback.topic')" />
+          <div class="mx-sm-12 mx-4 mt-4 text-center">
+            <form-input required :title="$t('Feedback.topic')" />
             <v-text-field v-model="topic" outlined />
-            <form-input :title="$t('Feedback.description')" />
+            <form-input required :title="$t('Feedback.description')" />
             <v-textarea outlined v-model="description" />
           </div>
         </template>

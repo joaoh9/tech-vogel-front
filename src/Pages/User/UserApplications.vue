@@ -2,7 +2,7 @@
   <div class="container-fluid mx-12">
     <v-row>
       <v-col md="4" cols="12">
-        <v-card>
+        <v-card color="bg">
           <v-card-text>
             <div class="d-flex flex-column align-stretch text-left flex-grow-0">
               <v-btn text block color="primary" class="" to="dashboard">
@@ -26,7 +26,7 @@
             <h4>{{ $t('User.applications.title') }}</h4>
           </div>
           <div v-for="(application, index) in applications" v-bind:key="index">
-            <v-card class="primary-card my-5">
+            <v-card color="bg" class="primary-card my-5">
               <v-card-text>
                 <v-row>
                   <v-col cols="2" v-if="!$vuetify.breakpoint.mobile">

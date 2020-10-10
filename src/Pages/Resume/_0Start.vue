@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="d-flex justify-center align-center mt-12 mx-12" style="flex-direction: column">
+    <div class="d-flex justify-center align-center mt-12 mx-12 flex-column" >
       <g-btn
         class="mt-4"
         type="primary"

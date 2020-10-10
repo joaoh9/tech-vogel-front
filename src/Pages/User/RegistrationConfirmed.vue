@@ -6,7 +6,7 @@
           <g-card-header :title="getHeaderTitle()" />
         </template>
         <template v-slot:card-content>
-          <div clas="d-flex justify-center ma-12" style="flex-direction: column">
+          <div clas="d-flex justify-center ma-12 flex-column">
             <div v-if="confirmationStatus === 0" class="d-flex justify-center">
               <g-btn type="primary" :label="$t('Common.confirm')" await @click="confirmAccount()" />
             </div>
