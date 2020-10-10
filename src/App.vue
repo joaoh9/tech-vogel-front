@@ -1,8 +1,20 @@
 <template>
-  <v-app :style="getPageStyle()">
-    <Navbar :key="$router.currentRoute.name" v-if="notLP()"></Navbar>
-    <v-main :style="getPageStyle()">
-      <router-view class="view"></router-view>
+  <v-app :style="getPageStyle()" :key="loggedIn.logged.toString() + 'app'">
+    <Navbar
+      :key="'navbar' + $router.currentRoute.name + loggedIn.logged.toString()"
+      v-if="!loggedIn.logged"
+    />
+    <LoggedInNavbar
+      :key="'loggedInNabar' + $router.currentRoute.name + loggedIn.logged.toString()"
+      v-if="loggedIn.logged"
+      :company="loggedIn.company"
+    />
+    <v-main :style="getPageStyle()" :key="loggedIn.logged.toString() + 'main'">
+      <router-view
+        @logout="e => (loggedIn = e)"
+        @login="e => (loggedIn = e)"
+        class="view"
+      ></router-view>
     </v-main>
     <Footer :style="getPageStyle(true)" />
   </v-app>
@@ -10,35 +22,30 @@
 
 <script>
 import Navbar from 'Components/Navbar/Navbar';
-import Storage from 'Helpers/storage';
+import LoggedInNavbar from 'Components/Navbar/LoggedInNavbar';
 import Footer from 'Components/Footer';
-import 'Public/css/typography.css';
-import 'Public/css/fonts.css';
-import 'Public/css/colors.css';
-import 'Public/css/complementary.css';
-import 'Public/css/card.css';
-import 'Public/css/spacing.css';
+import JwtHelper from 'Helpers/jwt';
+import 'Public/css'
 
 export default {
   name: 'app',
+  mounted() {
+    this.checkIfLoggedIn();
+  },
   data() {
     return {
-      user: null,
+      loggedIn: {
+        logged: false,
+        company: false,
+      },
     };
   },
   components: {
     Navbar,
+    LoggedInNavbar,
     Footer,
   },
   methods: {
-    userIsLoggedIn() {
-      const user = Storage.loadState('user');
-      if (!user) {
-        return false;
-      }
-      this.user = user;
-      return true;
-    },
     notLP() {
       return this.$router.history.current.name !== 'LandingPage';
     },
@@ -60,6 +67,26 @@ export default {
     },
     giveUsFeedback() {
       return; // TODO
+    },
+    async checkIfLoggedIn() {
+      const jwtHelper = new JwtHelper();
+      try {
+        await jwtHelper.getData('user');
+        this.loggedIn.logged = true;
+        this.loggedIn.company = true;
+      } catch (e) {
+        this.loggedIn.logged = false;
+        this.loggedIn.company = false;
+      }
+
+      try {
+        await jwtHelper.getData('company');
+        this.loggedIn.logged = true;
+        this.loggedIn.company = true;
+      } catch (e) {
+        this.loggedIn.logged = false;
+        this.loggedIn.company = false;
+      }
     },
   },
 };
