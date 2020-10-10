@@ -1,7 +1,6 @@
 <template>
   <v-card
-    class="primary-card mx-1"
-    :elevation="$vuetify.breakpoint.mobile ? 0 : 6"
+    :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-primary mx-1'"
     color="bg"
     :loading="loading"
     :min-width="getMinWidth()"

@@ -1,0 +1,11 @@
+.bs-primary {
+  box-shadow: 3px 3px 7px 0px rgba(26, 25, 60, 0.1) !important;
+}
+
+.bs-none {
+  box-shadow: 0px 0px 0px 0px rgba(26, 25, 60, 0.1) !important;
+}
+
+.boder-primary {
+  border: 1px solid rgba(255, 146, 0, 1);
+}
