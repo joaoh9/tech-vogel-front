@@ -81,22 +81,22 @@ h6 {
   font-feature-settings: 'liga' off;
 }
 
-.subtitle-1 {
-  overflow-wrap: break-word;
+.sub-1 {
+  overflow-wrap: break-word !important;
   /* Subtitle 1 */
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 150%;
-  /* or 24px */
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.15px;
-  font-feature-settings: 'liga' off;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 1rem !important;
+  line-height: 150% !important;
+  /* or 24px */ 
+  display: flex !important;
+  align-items: center !important;
+  letter-spacing: 0.15px !important;
+  font-feature-settings: 'liga' off !important;
 }
 
-.subtitle-2 {
+.sub-2 {
   overflow-wrap: break-word;
   font-family: Open Sans;
   font-style: normal;
@@ -110,7 +110,7 @@ h6 {
   font-feature-settings: 'liga' off;
 }
 
-.body-1 {
+.bdy-1 {
   overflow-wrap: break-word;
   /* Body 1 */
   font-family: Open Sans;
@@ -125,7 +125,9 @@ h6 {
   font-feature-settings: 'liga' off;
 }
 
-.body-2 {
+
+
+.bdy-2, input{
   overflow-wrap: break-word;
   /* Body 2 */
   font-family: Open Sans;
@@ -140,14 +142,15 @@ h6 {
   font-feature-settings: 'liga' off;
 }
 
+/* tag <caption> já existia, tive que colocar um sufixo para a classe caption */
 .caption {
   overflow-wrap: break-word;
   /* Caption */
-  font-family: Open Sans;
+  font-family: Open Sans !important;
   font-style: normal;
   font-weight: normal;
-  font-size: 0.85rem;
-  line-height: 150%;
+  font-size: 0.85rem !important;
+  line-height: 150% !important;
   /* or 18px */
   display: flex;
   align-items: center;

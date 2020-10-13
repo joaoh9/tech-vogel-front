@@ -9,3 +9,18 @@
 .boder-primary {
   border: 1px solid rgba(255, 146, 0, 1);
 }
+
+/* Cor da borda do v-text-field */
+.v-text-field--outlined fieldset {
+  border: 1px solid rgba(208, 208, 216, 1);
+  box-sizing: border-box;
+  border-radius: 6px;
+  background: #fcfcff;
+}
+
+.v-tabs-slider-wrapper {
+  height: 47px;
+  right: 0px;
+  top: 0px;
+  width: 2px;
+}
