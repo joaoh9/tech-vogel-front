@@ -1,7 +1,6 @@
 <template>
   <div class="">
     <form-input
-      position="left"
       :title="$t('Job.new.techSkills.title')"
       :description="$t('Job.new.techSkills.description')"
     />
@@ -44,12 +43,7 @@
       :items="softSkills"
       :experienceLevel="$t('skills.priorities')"
     />
-    <form-input
-      class="mt-6"
-      position="left"
-      :title="$t('Job.new.languages.title')"
-      :tooltip="$t('Job.new.languages.tooltip')"
-    />
+    <form-input class="mt-6 :title="$t('Job.new.languages.title')" />
     <v-autocomplete
       class="mb-10"
       :hint="$t('Job.new.languages.inputHint')"
@@ -75,7 +69,7 @@
         <v-icon @click="languages.splice(i, 1)" class="align-self-center mr-2">
           mdi-close
         </v-icon>
-        <div class="body-1 align-self-center" style="line-height: 100% !important">
+        <div class="bdy-1 align-self-center" style="line-height: 100% !important">
           {{ language.id }}
         </div>
       </v-col>

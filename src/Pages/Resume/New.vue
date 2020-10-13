@@ -84,7 +84,6 @@ import Skills from './_4Skills';
 import Education from './_5Education';
 
 import ResumeController from 'Controllers/resume';
-import 'Public/css/card.css';
 
 export default {
   name: 'NewJob',

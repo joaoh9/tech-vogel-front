@@ -1,22 +1,8 @@
 <template>
   <div>
-    <form-input
-      class="mt-6"
-      tooltip="teste"
-      position="left"
-      :title="$t('CV.register.personalInfo.fullName.title')"
-    />
-    <v-text-field
-      v-model="fullName"
-      v-on:input="$emit('full-name', fullName)"
-      outlined
-    />
-    <form-input
-      class="mt-6"
-      tooltip="teste"
-      position="left"
-      :title="$t('CV.register.main.title')"
-    />
+    <form-input class="mt-6" :title="$t('CV.register.personalInfo.fullName.title')" />
+    <v-text-field v-model="fullName" v-on:input="$emit('full-name', fullName)" outlined />
+    <form-input class="mt-6" :title="$t('CV.register.main.title')" />
     <v-text-field
       :placeholder="$t('CV.register.main.placeholder')"
       v-model="mainRole"
