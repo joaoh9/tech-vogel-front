@@ -3,8 +3,6 @@ import Vuetify from 'vuetify/lib';
 // import colors from 'vuetify/lib/util/colors';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-import 'Public/css/card.css';
-
 Vue.use(Vuetify);
 
 Vue.component('primary-card', {
