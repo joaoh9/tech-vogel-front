@@ -1,22 +1,10 @@
 <template>
   <div>
-    <v-tooltip v-if="tooltip" :left="left" :right="right" :top="top" :bottom="bottom">
-      <template v-slot:activator="{ on, attrs }">
-        <h6 v-on="on" v-bind="attrs" class="h6 d-flex">
-          {{ title }}
-          <span v-if="required" class="color-primary ml-1">*</span>
-        </h6>
-        <span class="color-cinza-lighten-1 caption">{{ description }}</span>
-      </template>
-      <span>{{ tooltip }}</span>
-    </v-tooltip>
-    <div v-else class="mb-3">
-      <h6 class="h6 d-flex">
-        {{ title }}
-        <span v-if="required" class="color-primary ml-1">*</span>
-      </h6>
-      <span class="color-cinza-lighten-1 caption">{{ description }}</span>
-    </div>
+    <sub-1 flex :class="description ? 'mb-0' : 'mb-2'">
+      {{ title }}
+      <span v-if="required" class="color-primary ml-1">*</span>
+    </sub-1>
+    <span class="color-cinza-lighten-1 caption-1 mt-1 mb-2" v-if="description">{{ description }}</span>
   </div>
 </template>
 
@@ -24,9 +12,7 @@
 export default {
   name: 'form-input',
   props: {
-    position: String,
     title: String,
-    tooltip: String,
     description: String,
     required: {
       type: Boolean,

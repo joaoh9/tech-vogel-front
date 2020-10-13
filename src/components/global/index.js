@@ -8,9 +8,12 @@ import GButton from './Button';
 import PrimaryButton from './Buttons/Primary';
 import SecondaryButton from './Buttons/Secondary';
 import GCombobox from './GCombobox';
-import GBoostrap from './GBootstrap'
+import GBootstrap from './GBootstrap';
+import text from './Text';
+console.log(text);
 
 [
+  ...text,
   FormInput,
   GAlerts,
   GCard,
@@ -19,7 +22,7 @@ import GBoostrap from './GBootstrap'
   SecondaryButton,
   GButton,
   GCombobox,
-  GBoostrap,
+  GBootstrap,
 ].forEach(component => {
   Vue.component(component.name, component);
 });
