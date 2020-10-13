@@ -1,6 +1,6 @@
 <template>
   <div class="mb-12">
-    <form-input position="left" :title="$t('Job.new.aboutTheRole.title')" />
+    <form-input :title="$t('Job.new.aboutTheRole.title')" />
     <vue-editor
       :placeholder="$t('Job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('Quill.defaultToolbar')"

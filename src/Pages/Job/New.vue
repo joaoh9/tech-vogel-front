@@ -121,7 +121,7 @@ export default {
     Benefits,
     Stepper,
   },
-  computed() {
+  mounted() {
     this.jobs_ = this.job;
     this.randomizer = new RandomizerHelper();
     this.idSufix = this.randomizer.randomString({ size: 6 });

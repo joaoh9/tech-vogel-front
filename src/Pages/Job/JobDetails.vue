@@ -17,7 +17,7 @@
             <SkillPresentation :skills="job.skills" />
           </v-card>
           <div></div>
-          <div class="body-1 d-block mt-4" v-html="job.description"></div>
+          <div class="bdy-1 d-block mt-4" v-html="job.description"></div>
         </v-col>
         <v-col cols="12" lg="4" xl="3" class="mt-6">
           <v-card class="px-10 py-6" elevation="3" color="bg">
@@ -80,7 +80,7 @@
 
                 <div class="d-flex justify-center flex-column">
                   <h6 class="text-capitalize">{{ company.name }}</h6>
-                  <v-card-subtitle class="body-2 ma-n3 ">
+                  <v-card-subtitle class="bdy-2 ma-n3 ">
                     {{ $t('Job.details.managedBy', { user: company.representative }) }}
                   </v-card-subtitle>
                 </div>

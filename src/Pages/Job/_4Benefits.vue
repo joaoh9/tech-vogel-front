@@ -1,15 +1,11 @@
 <template>
   <div>
-    <form-input
-      position="left"
-      :title="$t('Job.new.salary.title')"
-      :tooltip="$t('Job.new.salary.tooltip')"
-    />
+    <form-input :title="$t('Job.new.salary.title')" />
     <div class="d-flex justify-space-between">
       <v-select
         v-model="salary.currency"
         @change="$emit('salary-currency', salary.currency)"
-        label="Currency"
+        placeholder="Currency"
         title="Payment Currency"
         outlined
         :items="$t('Data.currencies')"
@@ -48,11 +44,7 @@
     <div class="d-flex justify-start mt-n6 mb-6">
       <v-checkbox v-model="range" label="Set salary range" />
     </div>
-    <form-input
-      position="left"
-      :title="$t('Job.new.perks.title')"
-      :tooltip="$t('Job.new.perks.tooltip')"
-    />
+    <form-input :title="$t('Job.new.perks.title')" />
     <vue-editor
       class="mb-6"
       :placeholder="$t('Job.new.perks.placeholder')"

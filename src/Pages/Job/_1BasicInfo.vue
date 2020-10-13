@@ -1,31 +1,30 @@
 <template>
   <div>
-    <form-input
-      position="left"
-      :title="$t('Job.new.jobTitle.title')"
-      :tooltip="$t('Job.new.jobTitle.tooltip')"
-      required
-    />
+    <form-input :title="$t('Job.new.jobTitle.title')" required />
     <v-text-field
+      outlined
       :rules="[rules.required]"
       v-model="title"
       @input="$emit('title', title)"
-      outlined
     />
 
-    <form-input position="left" :title="$t('Job.new.id.title')" required />
+    <form-input :title="$t('Job.new.id.title')" required />
     <v-text-field
-      :hint="$t('Job.new.id.inputHint', { company: company, id: id.replace(/ /g, '-') })"
+      :hint="
+        $t('Job.new.id.inputHint', {
+          company: company,
+          id: id
+            .replace(/\//g, '-')
+            .replace(/ /g, '-')
+            .replace(/[-]{1,9}/g, '-'),
+        })
+      "
       :rules="[rules.required]"
       outlined
       v-model="id"
       @input="$emit('id', id)"
     />
-    <form-input
-      position="right"
-      :title="$t('Job.new.experienceLevel.title')"
-      :tooltip="$t('Job.new.experienceLevel.tooltip')"
-    ></form-input>
+    <form-input required :title="$t('Job.new.experienceLevel.title')" />
     <v-autocomplete
       item-value="value"
       item-text="text"
@@ -36,11 +35,7 @@
       @input="$emit('experience-level', experienceLevel)"
       outlined
     />
-    <form-input
-      position="right"
-      :title="$t('Job.new.contractType.title')"
-      :tooltip="$t('Job.new.contractType.tooltip')"
-    />
+    <form-input :title="$t('Job.new.contractType.title')" />
     <v-autocomplete
       item-value="value"
       item-text="text"
@@ -61,6 +56,7 @@ export default {
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     const jwtHelper = new JwtHelper();
+    //  TODO: tratar erro de jwt
     const companyInfo = jwtHelper.getData('company');
     console.log('companyInfo', companyInfo);
     this.company = companyInfo.companyId;
@@ -80,7 +76,7 @@ export default {
   watch: {
     title() {
       this.id = this.title.replace(/ /g, '-');
-      this.$emit('id', this.id)
+      this.$emit('id', this.id);
     },
   },
 };
