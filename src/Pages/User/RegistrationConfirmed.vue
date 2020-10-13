@@ -37,7 +37,7 @@
                   type="outlined"
                   textColor="black"
                   @click="resendCode = !resendCode"
-                  class="body-1 cursor-pointer color-cinza-lighten-1"
+                  class="bdy-1 cursor-pointer color-cinza-lighten-1"
                   :label="$t('Signup.resendConfirmationCode.title')"
                 />
               </v-col>

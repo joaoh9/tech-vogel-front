@@ -14,11 +14,11 @@
         <v-card class="primary-card d-flex align-self-center" elevation="6" color="bg">
           <v-row class="ma-4">
             <v-icon class="d-flex mr-3">mdi-account</v-icon>
-            <div class="body-1">Belo Horizonte, Brazil</div>
+            <div class="bdy-1">Belo Horizonte, Brazil</div>
           </v-row>
           <v-row class="ma-4">
             <v-icon class="d-flex mr-3">fas fa-globe</v-icon>
-            <div class="body-1">English, Portuguese</div>
+            <div class="bdy-1">English, Portuguese</div>
           </v-row>
         </v-card>
       </v-col>
@@ -37,7 +37,7 @@
             <div class="align-self-start ml-12">
               <h5>{{ w.jobTitle }}</h5>
               <h6>{{ w.company }}</h6>
-              <p class="body-1">{{ w.description }}</p>
+              <p class="bdy-1">{{ w.description }}</p>
             </div>
           </div>
         </v-card>
@@ -93,7 +93,7 @@
                 <h6 class="mb-0 mr-4">{{ e.place }}</h6>
                 <span class="">{{ e.time.from }} to {{ e.time.to }}</span>
               </div>
-              <p class="body-1">{{ e.description }}</p>
+              <p class="bdy-1">{{ e.description }}</p>
             </div>
           </div>
         </v-card>

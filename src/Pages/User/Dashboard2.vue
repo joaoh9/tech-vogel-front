@@ -17,7 +17,7 @@
         </g-card>
         <div class="mt-6">
           <h6>Your profile isn't complete yet</h6>
-          <p class="subtitle-1">Having a complete profile lets us show you better job positions!</p>
+          <p class="sub-1">Having a complete profile lets us show you better job positions!</p>
           <v-progress-linear style="max-width: 300px" value="50" color="primary" />
         </div>
         <g-card :md="300" :lg="300" class="mt-6">

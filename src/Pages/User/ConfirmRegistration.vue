@@ -5,7 +5,7 @@
         <template v-slot:card-content>
           <div class="d-flex justify-center ma-12 flex-column">
             <h4 class="h4-bold align-self-center">{{ $t('Signup.confirmEmail.title') }}</h4>
-            <span class="body-1 align-self-center color-cinza-lighten-1 mt-4">
+            <span class="bdy-1 align-self-center color-cinza-lighten-1 mt-4">
               {{ $t('Signup.confirmEmail.description') }}
             </span>
             <div class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap">
@@ -13,7 +13,7 @@
                 type="text"
                 textColor="black"
                 @click="resendCode = !resendCode"
-                class="body-1 cursor-pointer color-cinza-lighten-1"
+                class="bdy-1 cursor-pointer color-cinza-lighten-1"
                 :label="$t('Signup.resendConfirmationCode.title')"
               />
             </div>
