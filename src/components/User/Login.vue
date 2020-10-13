@@ -15,7 +15,7 @@
       v-model="user.password"
     />
     <div class="d-flex justify-start ">
-      <p color="secondary" class="button-text align-self-center body-2 color-cinza-lighten-1">
+      <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
         {{ $t('login.forgotPassword') }}
       </p>
     </div>

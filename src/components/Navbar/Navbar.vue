@@ -1,18 +1,18 @@
 <template>
   <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
-    <v-btn class="body-2" text color="white darken-4" tile elevation="0" to="/">
+    <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/">
       <v-avatar width="150" tile>
         <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
       </v-avatar>
     </v-btn>
     <v-spacer />
-    <v-btn class="body-2" @click="goToJobList" :color="isHome() ? 'bg' : 'dark'" text>
+    <v-btn class="bdy-2" @click="goToJobList" :color="isHome() ? 'bg' : 'dark'" text>
       {{ $t('Common.jobs') }}
     </v-btn>
-    <v-btn class="body-2" @click="goToPricing" :color="isHome() ? 'bg' : 'dark'" text>
+    <v-btn class="bdy-2" @click="goToPricing" :color="isHome() ? 'bg' : 'dark'" text>
       {{ $t('Common.pricing') }}
     </v-btn>
-    <v-btn class="body-2" @click="goToHowItWorks" :color="isHome() ? 'bg' : 'dark'" text>
+    <v-btn class="bdy-2" @click="goToHowItWorks" :color="isHome() ? 'bg' : 'dark'" text>
       {{ $t('Common.howItWorks') }}
     </v-btn>
     <v-spacer />

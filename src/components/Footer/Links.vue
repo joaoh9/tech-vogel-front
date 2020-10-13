@@ -1,5 +1,5 @@
 <template>
-  <v-col class="d-flex flex-column">
+  <div class="d-flex flex-column">
     <h6 class="color-primary">{{ title }}</h6>
     <p
       @click="goToLink(item)"
@@ -9,7 +9,7 @@
     >
       {{ item.text }}
     </p>
-  </v-col>
+  </div>
 </template>
 
 <script>

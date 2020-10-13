@@ -14,12 +14,18 @@
           <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="2" class="align-self-start">
             <v-img height="75" contain :src="logo" />
           </v-col>
-          <FooterLinks :title="$t('Common.jobs')" :items="$t('footer.jobsInfo')" />
-          <FooterLinks :title="$t('Common.aboutUs')" :items="$t('footer.aboutUsInfo')" />
-          <FooterLinks
-            :title="$t('footer.socialMedia.title')"
-            :items="$t('footer.socialMedia.links')"
-          />
+          <v-col>
+            <FooterLinks :title="$t('Common.jobs')" :items="$t('footer.jobsInfo')" />
+          </v-col>
+          <v-col>
+            <FooterLinks :title="$t('Common.aboutUs')" :items="$t('footer.aboutUsInfo')" />
+          </v-col>
+          <v-col>
+            <FooterLinks
+              :title="$t('footer.socialMedia.title')"
+              :items="$t('footer.socialMedia.links')"
+            />
+          </v-col>
         </v-row>
       </v-card>
       <v-card

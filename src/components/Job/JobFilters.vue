@@ -5,9 +5,9 @@
         {{ $t('Jobs.filterSearch') }}
       </h6>
       <v-row align="center">
-        <p class="text--primary body-2 mr-4">{{ $t('Jobs.cv') }}</p>
+        <p class="text--primary bdy-2 mr-4">{{ $t('Jobs.cv') }}</p>
         <v-switch v-model="switch1" color="secondary" />
-        <p class="text--primary body-2">{{ $t('Jobs.showJobs') }}</p>
+        <p class="text--primary bdy-2">{{ $t('Jobs.showJobs') }}</p>
       </v-row>
       <v-row>
         <v-combobox

@@ -8,11 +8,13 @@
         @change="updateStep"
         background-color="rgba(0,0,0,0)"
         class="mr-4"
+        :key="updatedTab"
       >
         <v-tab
           v-for="(item, i) in stepsExibition"
           :key="i"
-          :class="`color-cinza-lighten-2 text-capitalize ${i === value_ ? 'subtitle-2' : 'body-2'}`"
+          :aria-selected="true"
+          :class="`color-cinza-lighten-2 text-capitalize ${i === value_ ? 'sub-2' : 'bdy-2'}`"
         >
           {{ item.name }}
         </v-tab>
@@ -36,8 +38,6 @@
 </template>
 
 <script>
-import 'Public/css/card.css';
-
 export default {
   name: 'Stepper',
   components: {},
@@ -51,6 +51,7 @@ export default {
   },
   data() {
     return {
+      updatedTab: false,
       step: 1,
       numSteps: Number(this.steps),
       value_: 0,
@@ -98,6 +99,7 @@ export default {
 </script>
 
 <style>
+/* Passar styles para pasta Public/css */
 .v-text-field {
   width: 100%;
 }
@@ -111,6 +113,23 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   top: 75px;
+}
+
+.v-tab {
+  justify-content: flex-end;
+}
+
+.v-tabs-slider-wrapper,
+.v-tabs-slider-wrapper > element.style {
+  align-self: center;
+  height: 30px !important;
+  right: 0px !important;
+  top: 0px !important;
+  width: 2px !important;
+}
+
+v-tabs-slider {
+  align-self: center;
 }
 </style>
 

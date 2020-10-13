@@ -11,7 +11,7 @@
         <v-icon @click="deleteSkills(i)" class="align-self-center mr-2">
           mdi-close
         </v-icon>
-        <div class="body-1 align-self-center" style="line-height: 100% !important">
+        <div class="bdy-1 align-self-center" style="line-height: 100% !important">
           {{ $t(`Dictionary.${skillTitle}.${skill.skillId}`) }}
         </div>
       </v-col>

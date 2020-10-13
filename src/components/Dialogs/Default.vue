@@ -10,7 +10,7 @@
         :src="img"
       />
       <h5 class="text-center">{{ title }}</h5>
-      <p class="subtitle-1 text-center">{{ subtitle }}</p>
+      <p class="sub-1 text-center">{{ subtitle }}</p>
       <g-btn :type="btnType" :label="btnText" @click="$emit('confirm')" />
     </v-card>
   </div>

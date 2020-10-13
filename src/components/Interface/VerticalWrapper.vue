@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import 'Public/css/card.css';
 
 export default {
   name: 'Wrapper',

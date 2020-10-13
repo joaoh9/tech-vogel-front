@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
-    <v-btn class="body-2" text color="transparent" tile elevation="0" to="/">
+    <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/">
       <v-avatar width="150" tile>
         <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
       </v-avatar>
