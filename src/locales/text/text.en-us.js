@@ -201,7 +201,6 @@ const localeEnUs = {
       jobTitle: {
         title: 'Job Title',
         inputHint: 'This should be concise and clear.',
-        tooltip: 'TODO',
       },
       id: {
         title: 'Your custom URL',
@@ -211,23 +210,19 @@ const localeEnUs = {
       experienceLevel: {
         title: 'Experience Level',
         inputHint: 'TODO',
-        tooltip: 'TODO',
       },
       contractType: {
         title: 'Contract Type',
         inputHint: 'This should let applicants know how they will potentially be hired.',
-        tooltip: 'TODO',
       },
       aboutTheRole: {
         title: 'About the role',
         description:
           'Describe the role in terms of daily activities, responsibilities and ????? (TODO). This information will be visible to everyone on Tech Vogel.',
-        tooltip: 'TODO',
         placeholder: 'TODO',
       },
       languages: {
         title: 'Required Language(s)',
-        tooltip: 'TODO',
         inputHint: 'TODO',
       },
       skillRequirements: {
@@ -249,12 +244,10 @@ const localeEnUs = {
       },
       softSkills: {
         title: 'Soft Skills',
-        tooltip: 'TODO',
         inputHint: 'Soft skills have a lower weigth on your matches',
       },
       language: {
         title: 'Language',
-        tooltip: 'TODO',
         inputHint: 'Select the language and fluency level.',
       },
       salaryAndPerks: {
@@ -264,11 +257,9 @@ const localeEnUs = {
       },
       salary: {
         title: 'Salary',
-        tooltip: 'TODO',
       },
       perks: {
         title: 'Perks and Benefits',
-        tooltip: 'TODO',
         placeholder: 'TODO',
       },
       steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
@@ -388,47 +379,36 @@ const localeEnUs = {
     register: {
       page1: {
         title: 'Register to apply for jobs',
-        tooltip: 'TODO',
       },
       fullName: {
         title: 'Full name',
-        tooltip: 'TODO',
       },
       email: {
         title: 'Email',
-        tooltip: 'TODO',
       },
       username: {
         title: 'Username',
-        tooltip: 'TODO',
       },
       password: {
         title: 'Password',
-        tooltip: 'TODO',
       },
       confirmPassword: {
         title: 'Confirm password',
-        tooltip: 'TODO',
       },
       page2: {
         title: 'Confirmation',
-        tooltip: 'TODO',
       },
       pageSubtitle: {
         title: 'An access code was sent to your registered email',
-        tooltip: 'TODO',
       },
       accessCode: {
         title: 'Access code',
-        tooltip: 'TODO',
       },
       accessCodeHelper: {
         title: 'Didn\'t get your access code? Click here',
-        tooltip: 'TODO',
       },
       page3: {
         title: 'Welcome to Tech Voguel',
-        tooltip: 'TODO',
       },
     },
     dashboard: {
