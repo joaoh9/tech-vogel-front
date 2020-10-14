@@ -5,7 +5,7 @@
     <v-autocomplete
       :hint="$t('Job.new.techSkills.inputHint')"
       v-model="techSkills"
-      :items="$t('Data.allSkills')"
+      :items="$t('Data.techSkills')"
       outlined
       multiple
       small-chips

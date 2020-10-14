@@ -1,289 +1,166 @@
 [
   {
     "text": "MySQL",
-    "value": {
-      "skillId": "mySQL",
-      "experienceLevel": 0
-    }
+    "skillId": "mySQL"
   },
   {
     "text": "PostgreSQL",
-    "value": {
-      "skillId": "postgreSQL",
-      "experienceLevel": 0
-    }
+    "skillId": "postgreSQL"
   },
   {
     "text": "MS SQL Server",
-    "value": {
-      "skillId": "mSSQLServer",
-      "experienceLevel": 0
-    }
+    "skillId": "mSSQLServer"
   },
   {
     "text": "SQLite",
-    "value": {
-      "skillId": "sQLite",
-      "experienceLevel": 0
-    }
+    "skillId": "sQLite"
   },
   {
     "text": "MongoDB",
-    "value": {
-      "skillId": "mongoDB",
-      "experienceLevel": 0
-    }
+    "skillId": "mongoDB"
   },
   {
     "text": "Redis",
-    "value": {
-      "skillId": "redis",
-      "experienceLevel": 0
-    }
+    "skillId": "redis"
   },
   {
     "text": "MariaDB",
-    "value": {
-      "skillId": "mariaDB",
-      "experienceLevel": 0
-    }
+    "skillId": "mariaDB"
   },
   {
     "text": "Oracle",
-    "value": {
-      "skillId": "oracle",
-      "experienceLevel": 0
-    }
+    "skillId": "oracle"
   },
   {
     "text": "Elasticsearch",
-    "value": {
-      "skillId": "elasticsearch",
-      "experienceLevel": 0
-    }
+    "skillId": "elasticsearch"
   },
   {
     "text": "Firebase",
-    "value": {
-      "skillId": "firebase",
-      "experienceLevel": 0
-    }
+    "skillId": "firebase"
   },
   {
     "text": "DynamoDB",
-    "value": {
-      "skillId": "dynamoDB",
-      "experienceLevel": 0
-    }
+    "skillId": "dynamoDB"
   },
   {
     "text": "Cassandra",
-    "value": {
-      "skillId": "cassandra",
-      "experienceLevel": 0
-    }
+    "skillId": "cassandra"
   },
   {
     "text": "Couchbase",
-    "value": {
-      "skillId": "couchbase",
-      "experienceLevel": 0
-    }
+    "skillId": "couchbase"
   },
   {
     "text": "Microsoft SQL Server",
-    "value": {
-      "skillId": "microsoftSQLServer",
-      "experienceLevel": 0
-    }
+    "skillId": "microsoftSQLServer"
   },
   {
     "text": "Teradata",
-    "value": {
-      "skillId": "teradata",
-      "experienceLevel": 0
-    }
+    "skillId": "teradata"
   },
   {
     "text": "Microsoft Azure SQL Database",
-    "value": {
-      "skillId": "microsoftAzureSQLDatabase",
-      "experienceLevel": 0
-    }
+    "skillId": "microsoftAzureSQLDatabase"
   },
   {
     "text": "SAP HANA",
-    "value": {
-      "skillId": "sAPHANA",
-      "experienceLevel": 0
-    }
+    "skillId": "sAPHANA"
   },
   {
     "text": "Microsoft Azure Cosmos DB",
-    "value": {
-      "skillId": "microsoftAzureCosmosDB",
-      "experienceLevel": 0
-    }
+    "skillId": "microsoftAzureCosmosDB"
   },
   {
     "text": "Datastax Enterprise",
-    "value": {
-      "skillId": "datastaxEnterprise",
-      "experienceLevel": 0
-    }
+    "skillId": "datastaxEnterprise"
   },
   {
     "text": "Amazon Neptune",
-    "value": {
-      "skillId": "amazonNeptune",
-      "experienceLevel": 0
-    }
+    "skillId": "amazonNeptune"
   },
   {
     "text": "Graph Engine",
-    "value": {
-      "skillId": "graphEngine",
-      "experienceLevel": 0
-    }
+    "skillId": "graphEngine"
   },
   {
     "text": "InfiniteGraph",
-    "value": {
-      "skillId": "infiniteGraph",
-      "experienceLevel": 0
-    }
+    "skillId": "infiniteGraph"
   },
   {
     "text": "Nebula Graph",
-    "value": {
-      "skillId": "nebulaGraph",
-      "experienceLevel": 0
-    }
+    "skillId": "nebulaGraph"
   },
   {
     "text": "Fluree",
-    "value": {
-      "skillId": "fluree",
-      "experienceLevel": 0
-    }
+    "skillId": "fluree"
   },
   {
     "text": "FlockDB",
-    "value": {
-      "skillId": "flockDB",
-      "experienceLevel": 0
-    }
+    "skillId": "flockDB"
   },
   {
     "text": "HyperGraphDB",
-    "value": {
-      "skillId": "hyperGraphDB",
-      "experienceLevel": 0
-    }
+    "skillId": "hyperGraphDB"
   },
   {
     "text": "GraphBase",
-    "value": {
-      "skillId": "graphBase",
-      "experienceLevel": 0
-    }
+    "skillId": "graphBase"
   },
   {
     "text": "TinkerGraph",
-    "value": {
-      "skillId": "tinkerGraph",
-      "experienceLevel": 0
-    }
+    "skillId": "tinkerGraph"
   },
   {
     "text": "AnzoGraph DB",
-    "value": {
-      "skillId": "anzoGraphDB",
-      "experienceLevel": 0
-    }
+    "skillId": "anzoGraphDB"
   },
   {
     "text": "Memgraph",
-    "value": {
-      "skillId": "memgraph",
-      "experienceLevel": 0
-    }
+    "skillId": "memgraph"
   },
   {
     "text": "Sparksee",
-    "value": {
-      "skillId": "sparksee",
-      "experienceLevel": 0
-    }
+    "skillId": "sparksee"
   },
   {
     "text": "VelocityDB",
-    "value": {
-      "skillId": "velocityDB",
-      "experienceLevel": 0
-    }
+    "skillId": "velocityDB"
   },
   {
     "text": "HugeGraph",
-    "value": {
-      "skillId": "hugeGraph",
-      "experienceLevel": 0
-    }
+    "skillId": "hugeGraph"
   },
   {
     "text": "TerminusDB",
-    "value": {
-      "skillId": "terminusDB",
-      "experienceLevel": 0
-    }
+    "skillId": "terminusDB"
   },
   {
     "text": "AgensGraph",
-    "value": {
-      "skillId": "agensGraph",
-      "experienceLevel": 0
-    }
+    "skillId": "agensGraph"
   },
   {
     "text": "HGraphDB",
-    "value": {
-      "skillId": "hGraphDB",
-      "experienceLevel": 0
-    }
+    "skillId": "hGraphDB"
   },
   {
     "text": "GlobalsDB",
-    "value": {
-      "skillId": "globalsDB",
-      "experienceLevel": 0
-    }
+    "skillId": "globalsDB"
   },
   {
     "text": "InfoGrid",
-    "value": {
-      "skillId": "infoGrid",
-      "experienceLevel": 0
-    }
+    "skillId": "infoGrid"
   },
   {
     "text": "Sqrrl",
-    "value": {
-      "skillId": "sqrrl",
-      "experienceLevel": 0
-    }
+    "skillId": "sqrrl"
   },
   {
     "text": "Titan",
-    "value": {
-      "skillId": "titan",
-      "experienceLevel": 0
-    }
+    "skillId": "titan"
   },
   {
     "text": "VelocityGraphg",
-    "value": {
-      "skillId": "velocityGraphg",
-      "experienceLevel": 0
-    }
+    "skillId": "velocityGraphg"
   }
 ]

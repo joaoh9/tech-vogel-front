@@ -1,1003 +1,574 @@
 [
   {
     "text": "Listening",
-    "value": {
-      "skillId": "listening",
-      "experienceLevel": 0
-    }
+    "skillId": "listening"
   },
   {
     "text": "Negotiation",
-    "value": {
-      "skillId": "negotiation",
-      "experienceLevel": 0
-    }
+    "skillId": "negotiation"
   },
   {
     "text": "Nonverbal communication",
-    "value": {
-      "skillId": "nonverbalCommunication",
-      "experienceLevel": 0
-    }
+    "skillId": "nonverbalCommunication"
   },
   {
     "text": "Persuasion",
-    "value": {
-      "skillId": "persuasion",
-      "experienceLevel": 0
-    }
+    "skillId": "persuasion"
   },
   {
     "text": "Presentation",
-    "value": {
-      "skillId": "presentation",
-      "experienceLevel": 0
-    }
+    "skillId": "presentation"
   },
   {
     "text": "Public speaking",
-    "value": {
-      "skillId": "publicSpeaking",
-      "experienceLevel": 0
-    }
+    "skillId": "publicSpeaking"
   },
   {
     "text": "Reading body language",
-    "value": {
-      "skillId": "readingBodyLanguage",
-      "experienceLevel": 0
-    }
+    "skillId": "readingBodyLanguage"
   },
   {
     "text": "Storytelling",
-    "value": {
-      "skillId": "storytelling",
-      "experienceLevel": 0
-    }
+    "skillId": "storytelling"
   },
   {
     "text": "Verbal communication",
-    "value": {
-      "skillId": "verbalCommunication",
-      "experienceLevel": 0
-    }
+    "skillId": "verbalCommunication"
   },
   {
     "text": "Visual communication",
-    "value": {
-      "skillId": "visualCommunication",
-      "experienceLevel": 0
-    }
+    "skillId": "visualCommunication"
   },
   {
     "text": "Writing reports and proposals",
-    "value": {
-      "skillId": "writingReportsAndProposals",
-      "experienceLevel": 0
-    }
+    "skillId": "writingReportsAndProposals"
   },
   {
     "text": "Writing skills",
-    "value": {
-      "skillId": "writingSkills",
-      "experienceLevel": 0
-    }
+    "skillId": "writingSkills"
   },
   {
     "text": "Adaptability",
-    "value": {
-      "skillId": "adaptability",
-      "experienceLevel": 0
-    }
+    "skillId": "adaptability"
   },
   {
     "text": "Artistic aptitude",
-    "value": {
-      "skillId": "artisticAptitude",
-      "experienceLevel": 0
-    }
+    "skillId": "artisticAptitude"
   },
   {
     "text": "Creativity",
-    "value": {
-      "skillId": "creativity",
-      "experienceLevel": 0
-    }
+    "skillId": "creativity"
   },
   {
     "text": "Critical observation",
-    "value": {
-      "skillId": "criticalObservation",
-      "experienceLevel": 0
-    }
+    "skillId": "criticalObservation"
   },
   {
     "text": "Critical thinking",
-    "value": {
-      "skillId": "criticalThinking",
-      "experienceLevel": 0
-    }
+    "skillId": "criticalThinking"
   },
   {
     "text": "Design aptitude",
-    "value": {
-      "skillId": "designAptitude",
-      "experienceLevel": 0
-    }
+    "skillId": "designAptitude"
   },
   {
     "text": "Desire to learn",
-    "value": {
-      "skillId": "desireToLearn",
-      "experienceLevel": 0
-    }
+    "skillId": "desireToLearn"
   },
   {
     "text": "Flexibility",
-    "value": {
-      "skillId": "flexibility",
-      "experienceLevel": 0
-    }
+    "skillId": "flexibility"
   },
   {
     "text": "Innovation",
-    "value": {
-      "skillId": "innovation",
-      "experienceLevel": 0
-    }
+    "skillId": "innovation"
   },
   {
     "text": "Logical thinking",
-    "value": {
-      "skillId": "logicalThinking",
-      "experienceLevel": 0
-    }
+    "skillId": "logicalThinking"
   },
   {
     "text": "Research",
-    "value": {
-      "skillId": "research",
-      "experienceLevel": 0
-    }
+    "skillId": "research"
   },
   {
     "text": "Resourcefulness",
-    "value": {
-      "skillId": "resourcefulness",
-      "experienceLevel": 0
-    }
+    "skillId": "resourcefulness"
   },
   {
     "text": "Thinking outside the box",
-    "value": {
-      "skillId": "thinkingOutsideTheBox",
-      "experienceLevel": 0
-    }
+    "skillId": "thinkingOutsideTheBox"
   },
   {
     "text": "Tolerance of change and uncertainty",
-    "value": {
-      "skillId": "toleranceOfChangeAndUncertainty",
-      "experienceLevel": 0
-    }
+    "skillId": "toleranceOfChangeAndUncertainty"
   },
   {
     "text": "Troubleshooting",
-    "value": {
-      "skillId": "troubleshooting",
-      "experienceLevel": 0
-    }
+    "skillId": "troubleshooting"
   },
   {
     "text": "Value education",
-    "value": {
-      "skillId": "valueEducation",
-      "experienceLevel": 0
-    }
+    "skillId": "valueEducation"
   },
   {
     "text": "Conflict management",
-    "value": {
-      "skillId": "conflictManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "conflictManagement"
   },
   {
     "text": "Conflict resolution",
-    "value": {
-      "skillId": "conflictResolution",
-      "experienceLevel": 0
-    }
+    "skillId": "conflictResolution"
   },
   {
     "text": "Deal making",
-    "value": {
-      "skillId": "dealMaking",
-      "experienceLevel": 0
-    }
+    "skillId": "dealMaking"
   },
   {
     "text": "Decision making",
-    "value": {
-      "skillId": "decisionMaking",
-      "experienceLevel": 0
-    }
+    "skillId": "decisionMaking"
   },
   {
     "text": "Delegation",
-    "value": {
-      "skillId": "delegation",
-      "experienceLevel": 0
-    }
+    "skillId": "delegation"
   },
   {
     "text": "Dispute resolution",
-    "value": {
-      "skillId": "disputeResolution",
-      "experienceLevel": 0
-    }
+    "skillId": "disputeResolution"
   },
   {
     "text": "Facilitation",
-    "value": {
-      "skillId": "facilitation",
-      "experienceLevel": 0
-    }
+    "skillId": "facilitation"
   },
   {
     "text": "Giving clear feedback",
-    "value": {
-      "skillId": "givingClearFeedback",
-      "experienceLevel": 0
-    }
+    "skillId": "givingClearFeedback"
   },
   {
     "text": "Inspiringpeople",
-    "value": {
-      "skillId": "inspiringpeople",
-      "experienceLevel": 0
-    }
+    "skillId": "inspiringpeople"
   },
   {
     "text": "Leadership",
-    "value": {
-      "skillId": "leadership",
-      "experienceLevel": 0
-    }
+    "skillId": "leadership"
   },
   {
     "text": "Management",
-    "value": {
-      "skillId": "management",
-      "experienceLevel": 0
-    }
+    "skillId": "management"
   },
   {
     "text": "Managing difficult conversations",
-    "value": {
-      "skillId": "managingDifficultConversations",
-      "experienceLevel": 0
-    }
+    "skillId": "managingDifficultConversations"
   },
   {
     "text": "Managing remote/virtual teams",
-    "value": {
-      "skillId": "managingRemotevirtualTeams",
-      "experienceLevel": 0
-    }
+    "skillId": "managingRemotevirtualTeams"
   },
   {
     "text": "Meeting management",
-    "value": {
-      "skillId": "meetingManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "meetingManagement"
   },
   {
     "text": "Mentoring",
-    "value": {
-      "skillId": "mentoring",
-      "experienceLevel": 0
-    }
+    "skillId": "mentoring"
   },
   {
     "text": "Project management",
-    "value": {
-      "skillId": "projectManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "projectManagement"
   },
   {
     "text": "Resolving issues",
-    "value": {
-      "skillId": "resolvingIssues",
-      "experienceLevel": 0
-    }
+    "skillId": "resolvingIssues"
   },
   {
     "text": "Successful coaching",
-    "value": {
-      "skillId": "successfulCoaching",
-      "experienceLevel": 0
-    }
+    "skillId": "successfulCoaching"
   },
   {
     "text": "Supervising",
-    "value": {
-      "skillId": "supervising",
-      "experienceLevel": 0
-    }
+    "skillId": "supervising"
   },
   {
     "text": "Talent management",
-    "value": {
-      "skillId": "talentManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "talentManagement"
   },
   {
     "text": "Confidence",
-    "value": {
-      "skillId": "confidence",
-      "experienceLevel": 0
-    }
+    "skillId": "confidence"
   },
   {
     "text": "Cooperation",
-    "value": {
-      "skillId": "cooperation",
-      "experienceLevel": 0
-    }
+    "skillId": "cooperation"
   },
   {
     "text": "Courtesy",
-    "value": {
-      "skillId": "courtesy",
-      "experienceLevel": 0
-    }
+    "skillId": "courtesy"
   },
   {
     "text": "Energy",
-    "value": {
-      "skillId": "energy",
-      "experienceLevel": 0
-    }
+    "skillId": "energy"
   },
   {
     "text": "Enthusiasm",
-    "value": {
-      "skillId": "enthusiasm",
-      "experienceLevel": 0
-    }
+    "skillId": "enthusiasm"
   },
   {
     "text": "Friendliness",
-    "value": {
-      "skillId": "friendliness",
-      "experienceLevel": 0
-    }
+    "skillId": "friendliness"
   },
   {
     "text": "Honesty",
-    "value": {
-      "skillId": "honesty",
-      "experienceLevel": 0
-    }
+    "skillId": "honesty"
   },
   {
     "text": "Humorous",
-    "value": {
-      "skillId": "humorous",
-      "experienceLevel": 0
-    }
+    "skillId": "humorous"
   },
   {
     "text": "Patience",
-    "value": {
-      "skillId": "patience",
-      "experienceLevel": 0
-    }
+    "skillId": "patience"
   },
   {
     "text": "Respectability",
-    "value": {
-      "skillId": "respectability",
-      "experienceLevel": 0
-    }
+    "skillId": "respectability"
   },
   {
     "text": "Respectfulness",
-    "value": {
-      "skillId": "respectfulness",
-      "experienceLevel": 0
-    }
+    "skillId": "respectfulness"
   },
   {
     "text": "Accepting feedback",
-    "value": {
-      "skillId": "acceptingFeedback",
-      "experienceLevel": 0
-    }
+    "skillId": "acceptingFeedback"
   },
   {
     "text": "Collaboration",
-    "value": {
-      "skillId": "collaboration",
-      "experienceLevel": 0
-    }
+    "skillId": "collaboration"
   },
   {
     "text": "Dealing with difficult situations",
-    "value": {
-      "skillId": "dealingWithDifficultSituations",
-      "experienceLevel": 0
-    }
+    "skillId": "dealingWithDifficultSituations"
   },
   {
     "text": "Dealing with office politics",
-    "value": {
-      "skillId": "dealingWithOfficePolitics",
-      "experienceLevel": 0
-    }
+    "skillId": "dealingWithOfficePolitics"
   },
   {
     "text": "Disability awareness",
-    "value": {
-      "skillId": "disabilityAwareness",
-      "experienceLevel": 0
-    }
+    "skillId": "disabilityAwareness"
   },
   {
     "text": "Diversity awareness",
-    "value": {
-      "skillId": "diversityAwareness",
-      "experienceLevel": 0
-    }
+    "skillId": "diversityAwareness"
   },
   {
     "text": "Emotional intelligence",
-    "value": {
-      "skillId": "emotionalIntelligence",
-      "experienceLevel": 0
-    }
+    "skillId": "emotionalIntelligence"
   },
   {
     "text": "Empathy",
-    "value": {
-      "skillId": "empathy",
-      "experienceLevel": 0
-    }
+    "skillId": "empathy"
   },
   {
     "text": "Establishing interpersonal relationships",
-    "value": {
-      "skillId": "establishingInterpersonalRelationships",
-      "experienceLevel": 0
-    }
+    "skillId": "establishingInterpersonalRelationships"
   },
   {
     "text": "Dealing with difficult personalities",
-    "value": {
-      "skillId": "dealingWithDifficultPersonalities",
-      "experienceLevel": 0
-    }
+    "skillId": "dealingWithDifficultPersonalities"
   },
   {
     "text": "Intercultural competence",
-    "value": {
-      "skillId": "interculturalCompetence",
-      "experienceLevel": 0
-    }
+    "skillId": "interculturalCompetence"
   },
   {
     "text": "Interpersonal skills",
-    "value": {
-      "skillId": "interpersonalSkills",
-      "experienceLevel": 0
-    }
+    "skillId": "interpersonalSkills"
   },
   {
     "text": "Influence",
-    "value": {
-      "skillId": "influence",
-      "experienceLevel": 0
-    }
+    "skillId": "influence"
   },
   {
     "text": "Networking",
-    "value": {
-      "skillId": "networking",
-      "experienceLevel": 0
-    }
+    "skillId": "networking"
   },
   {
     "text": "Selling skills",
-    "value": {
-      "skillId": "sellingSkills",
-      "experienceLevel": 0
-    }
+    "skillId": "sellingSkills"
   },
   {
     "text": "Social skills",
-    "value": {
-      "skillId": "socialSkills",
-      "experienceLevel": 0
-    }
+    "skillId": "socialSkills"
   },
   {
     "text": "Team building",
-    "value": {
-      "skillId": "teamBuilding",
-      "experienceLevel": 0
-    }
+    "skillId": "teamBuilding"
   },
   {
     "text": "Teamwork",
-    "value": {
-      "skillId": "teamwork",
-      "experienceLevel": 0
-    }
+    "skillId": "teamwork"
   },
   {
     "text": "Attentiveness",
-    "value": {
-      "skillId": "attentiveness",
-      "experienceLevel": 0
-    }
+    "skillId": "attentiveness"
   },
   {
     "text": "Competitiveness",
-    "value": {
-      "skillId": "competitiveness",
-      "experienceLevel": 0
-    }
+    "skillId": "competitiveness"
   },
   {
     "text": "Dedication",
-    "value": {
-      "skillId": "dedication",
-      "experienceLevel": 0
-    }
+    "skillId": "dedication"
   },
   {
     "text": "Dependability",
-    "value": {
-      "skillId": "dependability",
-      "experienceLevel": 0
-    }
+    "skillId": "dependability"
   },
   {
     "text": "Following direction",
-    "value": {
-      "skillId": "followingDirection",
-      "experienceLevel": 0
-    }
+    "skillId": "followingDirection"
   },
   {
     "text": "Independence",
-    "value": {
-      "skillId": "independence",
-      "experienceLevel": 0
-    }
+    "skillId": "independence"
   },
   {
     "text": "Meeting deadlines",
-    "value": {
-      "skillId": "meetingDeadlines",
-      "experienceLevel": 0
-    }
+    "skillId": "meetingDeadlines"
   },
   {
     "text": "Motivation",
-    "value": {
-      "skillId": "motivation",
-      "experienceLevel": 0
-    }
+    "skillId": "motivation"
   },
   {
     "text": "Multitasking",
-    "value": {
-      "skillId": "multitasking",
-      "experienceLevel": 0
-    }
+    "skillId": "multitasking"
   },
   {
     "text": "Organization",
-    "value": {
-      "skillId": "organization",
-      "experienceLevel": 0
-    }
+    "skillId": "organization"
   },
   {
     "text": "Perseverance",
-    "value": {
-      "skillId": "perseverance",
-      "experienceLevel": 0
-    }
+    "skillId": "perseverance"
   },
   {
     "text": "Persistence",
-    "value": {
-      "skillId": "persistence",
-      "experienceLevel": 0
-    }
+    "skillId": "persistence"
   },
   {
     "text": "Planning",
-    "value": {
-      "skillId": "planning",
-      "experienceLevel": 0
-    }
+    "skillId": "planning"
   },
   {
     "text": "Proper business etiquette",
-    "value": {
-      "skillId": "properBusinessEtiquette",
-      "experienceLevel": 0
-    }
+    "skillId": "properBusinessEtiquette"
   },
   {
     "text": "Punctuality",
-    "value": {
-      "skillId": "punctuality",
-      "experienceLevel": 0
-    }
+    "skillId": "punctuality"
   },
   {
     "text": "Reliability",
-    "value": {
-      "skillId": "reliability",
-      "experienceLevel": 0
-    }
+    "skillId": "reliability"
   },
   {
     "text": "Resilience",
-    "value": {
-      "skillId": "resilience",
-      "experienceLevel": 0
-    }
+    "skillId": "resilience"
   },
   {
     "text": "Results-orientation",
-    "value": {
-      "skillId": "resultsorientation",
-      "experienceLevel": 0
-    }
+    "skillId": "resultsorientation"
   },
   {
     "text": "Self-direction",
-    "value": {
-      "skillId": "selfdirection",
-      "experienceLevel": 0
-    }
+    "skillId": "selfdirection"
   },
   {
     "text": "Self-monitoring",
-    "value": {
-      "skillId": "selfmonitoring",
-      "experienceLevel": 0
-    }
+    "skillId": "selfmonitoring"
   },
   {
     "text": "Staying on task",
-    "value": {
-      "skillId": "stayingOnTask",
-      "experienceLevel": 0
-    }
+    "skillId": "stayingOnTask"
   },
   {
     "text": "Strategic planning",
-    "value": {
-      "skillId": "strategicPlanning",
-      "experienceLevel": 0
-    }
+    "skillId": "strategicPlanning"
   },
   {
     "text": "Time management",
-    "value": {
-      "skillId": "timeManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "timeManagement"
   },
   {
     "text": "Trainability",
-    "value": {
-      "skillId": "trainability",
-      "experienceLevel": 0
-    }
+    "skillId": "trainability"
   },
   {
     "text": "Working well under pressure",
-    "value": {
-      "skillId": "workingWellUnderPressure",
-      "experienceLevel": 0
-    }
+    "skillId": "workingWellUnderPressure"
   },
   {
     "text": "Assertiveness",
-    "value": {
-      "skillId": "assertiveness",
-      "experienceLevel": 0
-    }
+    "skillId": "assertiveness"
   },
   {
     "text": "Business ethics",
-    "value": {
-      "skillId": "businessEthics",
-      "experienceLevel": 0
-    }
+    "skillId": "businessEthics"
   },
   {
     "text": "Business storytelling",
-    "value": {
-      "skillId": "businessStorytelling",
-      "experienceLevel": 0
-    }
+    "skillId": "businessStorytelling"
   },
   {
     "text": "Business trend awareness",
-    "value": {
-      "skillId": "businessTrendAwareness",
-      "experienceLevel": 0
-    }
+    "skillId": "businessTrendAwareness"
   },
   {
     "text": "Customer Service",
-    "value": {
-      "skillId": "customerService",
-      "experienceLevel": 0
-    }
+    "skillId": "customerService"
   },
   {
     "text": "Effective communicator",
-    "value": {
-      "skillId": "effectiveCommunicator",
-      "experienceLevel": 0
-    }
+    "skillId": "effectiveCommunicator"
   },
   {
     "text": "Emotion management",
-    "value": {
-      "skillId": "emotionManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "emotionManagement"
   },
   {
     "text": "Ergonomic sensitivity",
-    "value": {
-      "skillId": "ergonomicSensitivity",
-      "experienceLevel": 0
-    }
+    "skillId": "ergonomicSensitivity"
   },
   {
     "text": "Follow instructions",
-    "value": {
-      "skillId": "followInstructions",
-      "experienceLevel": 0
-    }
+    "skillId": "followInstructions"
   },
   {
     "text": "Follow regulations",
-    "value": {
-      "skillId": "followRegulations",
-      "experienceLevel": 0
-    }
+    "skillId": "followRegulations"
   },
   {
     "text": "Follow rules",
-    "value": {
-      "skillId": "followRules",
-      "experienceLevel": 0
-    }
+    "skillId": "followRules"
   },
   {
     "text": "Functions well under pressure",
-    "value": {
-      "skillId": "functionsWellUnderPressure",
-      "experienceLevel": 0
-    }
+    "skillId": "functionsWellUnderPressure"
   },
   {
     "text": "Good attitude",
-    "value": {
-      "skillId": "goodAttitude",
-      "experienceLevel": 0
-    }
+    "skillId": "goodAttitude"
   },
   {
     "text": "Highly recommended",
-    "value": {
-      "skillId": "highlyRecommended",
-      "experienceLevel": 0
-    }
+    "skillId": "highlyRecommended"
   },
   {
     "text": "Independent",
-    "value": {
-      "skillId": "independent",
-      "experienceLevel": 0
-    }
+    "skillId": "independent"
   },
   {
     "text": "Interviewing",
-    "value": {
-      "skillId": "interviewing",
-      "experienceLevel": 0
-    }
+    "skillId": "interviewing"
   },
   {
     "text": "Knowledge management",
-    "value": {
-      "skillId": "knowledgeManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "knowledgeManagement"
   },
   {
     "text": "Meets deadlines",
-    "value": {
-      "skillId": "meetsDeadlines",
-      "experienceLevel": 0
-    }
+    "skillId": "meetsDeadlines"
   },
   {
     "text": "Motivating",
-    "value": {
-      "skillId": "motivating",
-      "experienceLevel": 0
-    }
+    "skillId": "motivating"
   },
   {
     "text": "Perform effectively in a deadline environment",
-    "value": {
-      "skillId": "performEffectivelyInADeadlineEnvironment",
-      "experienceLevel": 0
-    }
+    "skillId": "performEffectivelyInADeadlineEnvironment"
   },
   {
     "text": "Performance management",
-    "value": {
-      "skillId": "performanceManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "performanceManagement"
   },
   {
     "text": "Positive work ethic",
-    "value": {
-      "skillId": "positiveWorkEthic",
-      "experienceLevel": 0
-    }
+    "skillId": "positiveWorkEthic"
   },
   {
     "text": "Problem solving",
-    "value": {
-      "skillId": "problemSolving",
-      "experienceLevel": 0
-    }
+    "skillId": "problemSolving"
   },
   {
     "text": "Process improvement",
-    "value": {
-      "skillId": "processImprovement",
-      "experienceLevel": 0
-    }
+    "skillId": "processImprovement"
   },
   {
     "text": "Quick-witted",
-    "value": {
-      "skillId": "quickwitted",
-      "experienceLevel": 0
-    }
+    "skillId": "quickwitted"
   },
   {
     "text": "Results oriented",
-    "value": {
-      "skillId": "resultsOriented",
-      "experienceLevel": 0
-    }
+    "skillId": "resultsOriented"
   },
   {
     "text": "Safety conscious",
-    "value": {
-      "skillId": "safetyConscious",
-      "experienceLevel": 0
-    }
+    "skillId": "safetyConscious"
   },
   {
     "text": "Scheduling",
-    "value": {
-      "skillId": "scheduling",
-      "experienceLevel": 0
-    }
+    "skillId": "scheduling"
   },
   {
     "text": "Self-awareness",
-    "value": {
-      "skillId": "selfawareness",
-      "experienceLevel": 0
-    }
+    "skillId": "selfawareness"
   },
   {
     "text": "Self-supervising",
-    "value": {
-      "skillId": "selfsupervising",
-      "experienceLevel": 0
-    }
+    "skillId": "selfsupervising"
   },
   {
     "text": "Stress management",
-    "value": {
-      "skillId": "stressManagement",
-      "experienceLevel": 0
-    }
+    "skillId": "stressManagement"
   },
   {
     "text": "Team player",
-    "value": {
-      "skillId": "teamPlayer",
-      "experienceLevel": 0
-    }
+    "skillId": "teamPlayer"
   },
   {
     "text": "Technology savvy",
-    "value": {
-      "skillId": "technologySavvy",
-      "experienceLevel": 0
-    }
+    "skillId": "technologySavvy"
   },
   {
     "text": "Technology trend awareness",
-    "value": {
-      "skillId": "technologyTrendAwareness",
-      "experienceLevel": 0
-    }
+    "skillId": "technologyTrendAwareness"
   },
   {
     "text": "Tolerant",
-    "value": {
-      "skillId": "tolerant",
-      "experienceLevel": 0
-    }
+    "skillId": "tolerant"
   },
   {
     "text": "Trainable",
-    "value": {
-      "skillId": "trainable",
-      "experienceLevel": 0
-    }
+    "skillId": "trainable"
   },
   {
     "text": "Training",
-    "value": {
-      "skillId": "training",
-      "experienceLevel": 0
-    }
+    "skillId": "training"
   },
   {
     "text": "Willing to accept feedback",
-    "value": {
-      "skillId": "willingToAcceptFeedback",
-      "experienceLevel": 0
-    }
+    "skillId": "willingToAcceptFeedback"
   },
   {
     "text": "Willingness to learn",
-    "value": {
-      "skillId": "willingnessToLearn",
-      "experienceLevel": 0
-    }
+    "skillId": "willingnessToLearn"
   },
   {
     "text": "Work-life balance",
-    "value": {
-      "skillId": "worklifeBalance",
-      "experienceLevel": 0
-    }
+    "skillId": "worklifeBalance"
   },
   {
     "text": "Works well under pressure",
-    "value": {
-      "skillId": "worksWellUnderPressure",
-      "experienceLevel": 0
-    }
+    "skillId": "worksWellUnderPressure"
   }
 ]

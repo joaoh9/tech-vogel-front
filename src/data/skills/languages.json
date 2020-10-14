@@ -1,751 +1,430 @@
 [
   {
     "text": "English",
-    "value": {
-      "skillId": "ENG",
-      "experienceLevel": 0
-    }
+    "skillId": "ENG"
   },
   {
     "text": "Portuguese",
-    "value": {
-      "skillId": "POR",
-      "experienceLevel": 0
-    }
+    "skillId": "POR"
   },
   {
     "text": "Spanish",
-    "value": {
-      "skillId": "SPN",
-      "experienceLevel": 0
-    }
+    "skillId": "SPN"
   },
   {
     "text": "French",
-    "value": {
-      "skillId": "FRN",
-      "experienceLevel": 0
-    }
+    "skillId": "FRN"
   },
   {
     "text": "German, Standard",
-    "value": {
-      "skillId": "GER",
-      "experienceLevel": 0
-    }
+    "skillId": "GER"
   },
   {
     "text": "Akan",
-    "value": {
-      "skillId": "TWS",
-      "experienceLevel": 0
-    }
+    "skillId": "TWS"
   },
   {
     "text": "Amharic",
-    "value": {
-      "skillId": "AMH",
-      "experienceLevel": 0
-    }
+    "skillId": "AMH"
   },
   {
     "text": "Arabic, Algerian",
-    "value": {
-      "skillId": "ARQ",
-      "experienceLevel": 0
-    }
+    "skillId": "ARQ"
   },
   {
     "text": "Arabic, Egyptian",
-    "value": {
-      "skillId": "ARZ",
-      "experienceLevel": 0
-    }
+    "skillId": "ARZ"
   },
   {
     "text": "Arabic, Mesopotamian",
-    "value": {
-      "skillId": "ACM",
-      "experienceLevel": 0
-    }
+    "skillId": "ACM"
   },
   {
     "text": "Arabic, Moroccan",
-    "value": {
-      "skillId": "ARY",
-      "experienceLevel": 0
-    }
+    "skillId": "ARY"
   },
   {
     "text": "Arabic, Najdi",
-    "value": {
-      "skillId": "ARS",
-      "experienceLevel": 0
-    }
+    "skillId": "ARS"
   },
   {
     "text": "Arabic, North Levantine",
-    "value": {
-      "skillId": "APC",
-      "experienceLevel": 0
-    }
+    "skillId": "APC"
   },
   {
     "text": "Arabic, Saidi",
-    "value": {
-      "skillId": "AEC",
-      "experienceLevel": 0
-    }
+    "skillId": "AEC"
   },
   {
     "text": "Arabic, Sanaani",
-    "value": {
-      "skillId": "AYN",
-      "experienceLevel": 0
-    }
+    "skillId": "AYN"
   },
   {
     "text": "Arabic, Sudanese",
-    "value": {
-      "skillId": "APD",
-      "experienceLevel": 0
-    }
+    "skillId": "APD"
   },
   {
     "text": "Arabic, Tunisian",
-    "value": {
-      "skillId": "AEB",
-      "experienceLevel": 0
-    }
+    "skillId": "AEB"
   },
   {
     "text": "Assamese",
-    "value": {
-      "skillId": "ASM",
-      "experienceLevel": 0
-    }
+    "skillId": "ASM"
   },
   {
     "text": "Awadhi",
-    "value": {
-      "skillId": "AWD",
-      "experienceLevel": 0
-    }
+    "skillId": "AWD"
   },
   {
     "text": "Azerbaijani, North",
-    "value": {
-      "skillId": "AZE",
-      "experienceLevel": 0
-    }
+    "skillId": "AZE"
   },
   {
     "text": "Azerbaijani, South",
-    "value": {
-      "skillId": "AZB",
-      "experienceLevel": 0
-    }
+    "skillId": "AZB"
   },
   {
     "text": "Belarusan",
-    "value": {
-      "skillId": "RUW",
-      "experienceLevel": 0
-    }
+    "skillId": "RUW"
   },
   {
     "text": "Bengali",
-    "value": {
-      "skillId": "BNG",
-      "experienceLevel": 0
-    }
+    "skillId": "BNG"
   },
   {
     "text": "Bhojpuri",
-    "value": {
-      "skillId": "BHJ",
-      "experienceLevel": 0
-    }
+    "skillId": "BHJ"
   },
   {
     "text": "Bulgarian",
-    "value": {
-      "skillId": "BLG",
-      "experienceLevel": 0
-    }
+    "skillId": "BLG"
   },
   {
     "text": "Burmese",
-    "value": {
-      "skillId": "BMS",
-      "experienceLevel": 0
-    }
+    "skillId": "BMS"
   },
   {
     "text": "Cebuano",
-    "value": {
-      "skillId": "CEB",
-      "experienceLevel": 0
-    }
+    "skillId": "CEB"
   },
   {
     "text": "Chhattisgarhi",
-    "value": {
-      "skillId": "HNE",
-      "experienceLevel": 0
-    }
+    "skillId": "HNE"
   },
   {
     "text": "Chinese, Gan",
-    "value": {
-      "skillId": "KNN",
-      "experienceLevel": 0
-    }
+    "skillId": "KNN"
   },
   {
     "text": "Chinese, Hakka",
-    "value": {
-      "skillId": "HAK",
-      "experienceLevel": 0
-    }
+    "skillId": "HAK"
   },
   {
     "text": "Chinese, Jinyu",
-    "value": {
-      "skillId": "CJY",
-      "experienceLevel": 0
-    }
+    "skillId": "CJY"
   },
   {
     "text": "Chinese, Mandarin",
-    "value": {
-      "skillId": "CHN",
-      "experienceLevel": 0
-    }
+    "skillId": "CHN"
   },
   {
     "text": "Chinese, Min Bei",
-    "value": {
-      "skillId": "MNP",
-      "experienceLevel": 0
-    }
+    "skillId": "MNP"
   },
   {
     "text": "Chinese, Min Nan",
-    "value": {
-      "skillId": "CFR",
-      "experienceLevel": 0
-    }
+    "skillId": "CFR"
   },
   {
     "text": "Chinese, Wu",
-    "value": {
-      "skillId": "WUU",
-      "experienceLevel": 0
-    }
+    "skillId": "WUU"
   },
   {
     "text": "Chinese, Xiang",
-    "value": {
-      "skillId": "HSN",
-      "experienceLevel": 0
-    }
+    "skillId": "HSN"
   },
   {
     "text": "Chinese, Yue",
-    "value": {
-      "skillId": "YUH",
-      "experienceLevel": 0
-    }
+    "skillId": "YUH"
   },
   {
     "text": "Chittagonian",
-    "value": {
-      "skillId": "CIT",
-      "experienceLevel": 0
-    }
+    "skillId": "CIT"
   },
   {
     "text": "Czech",
-    "value": {
-      "skillId": "CZC",
-      "experienceLevel": 0
-    }
+    "skillId": "CZC"
   },
   {
     "text": "Deccan",
-    "value": {
-      "skillId": "DCC",
-      "experienceLevel": 0
-    }
+    "skillId": "DCC"
   },
   {
     "text": "Dutch",
-    "value": {
-      "skillId": "DUT",
-      "experienceLevel": 0
-    }
+    "skillId": "DUT"
   },
   {
     "text": "Farsi, Eastern",
-    "value": {
-      "skillId": "PRS",
-      "experienceLevel": 0
-    }
+    "skillId": "PRS"
   },
   {
     "text": "Farsi, Western",
-    "value": {
-      "skillId": "PES",
-      "experienceLevel": 0
-    }
+    "skillId": "PES"
   },
   {
     "text": "Fulfulde, Nigerian",
-    "value": {
-      "skillId": "FUV",
-      "experienceLevel": 0
-    }
+    "skillId": "FUV"
   },
   {
     "text": "Greek",
-    "value": {
-      "skillId": "GRK",
-      "experienceLevel": 0
-    }
+    "skillId": "GRK"
   },
   {
     "text": "Gujarati",
-    "value": {
-      "skillId": "GJR",
-      "experienceLevel": 0
-    }
+    "skillId": "GJR"
   },
   {
     "text": "Haitian Creole French",
-    "value": {
-      "skillId": "HAT",
-      "experienceLevel": 0
-    }
+    "skillId": "HAT"
   },
   {
     "text": "Haryanvi",
-    "value": {
-      "skillId": "BGC",
-      "experienceLevel": 0
-    }
+    "skillId": "BGC"
   },
   {
     "text": "Hausa",
-    "value": {
-      "skillId": "HUA",
-      "experienceLevel": 0
-    }
+    "skillId": "HUA"
   },
   {
     "text": "Hiligaynon",
-    "value": {
-      "skillId": "HIL",
-      "experienceLevel": 0
-    }
+    "skillId": "HIL"
   },
   {
     "text": "Hindi",
-    "value": {
-      "skillId": "HND",
-      "experienceLevel": 0
-    }
+    "skillId": "HND"
   },
   {
     "text": "Hungarian",
-    "value": {
-      "skillId": "HNG",
-      "experienceLevel": 0
-    }
+    "skillId": "HNG"
   },
   {
     "text": "Igbo",
-    "value": {
-      "skillId": "IGR",
-      "experienceLevel": 0
-    }
+    "skillId": "IGR"
   },
   {
     "text": "Ilocano",
-    "value": {
-      "skillId": "ILO",
-      "experienceLevel": 0
-    }
+    "skillId": "ILO"
   },
   {
     "text": "Indonesian",
-    "value": {
-      "skillId": "INZ",
-      "experienceLevel": 0
-    }
+    "skillId": "INZ"
   },
   {
     "text": "Italian",
-    "value": {
-      "skillId": "ITN",
-      "experienceLevel": 0
-    }
+    "skillId": "ITN"
   },
   {
     "text": "Japanese",
-    "value": {
-      "skillId": "JPN",
-      "experienceLevel": 0
-    }
+    "skillId": "JPN"
   },
   {
     "text": "Javanese",
-    "value": {
-      "skillId": "JAN",
-      "experienceLevel": 0
-    }
+    "skillId": "JAN"
   },
   {
     "text": "Kannada",
-    "value": {
-      "skillId": "KJV",
-      "experienceLevel": 0
-    }
+    "skillId": "KJV"
   },
   {
     "text": "Kazakh",
-    "value": {
-      "skillId": "KAZ",
-      "experienceLevel": 0
-    }
+    "skillId": "KAZ"
   },
   {
     "text": "Khmer, Central",
-    "value": {
-      "skillId": "KMR",
-      "experienceLevel": 0
-    }
+    "skillId": "KMR"
   },
   {
     "text": "Korean",
-    "value": {
-      "skillId": "KKN",
-      "experienceLevel": 0
-    }
+    "skillId": "KKN"
   },
   {
     "text": "Kurmanji",
-    "value": {
-      "skillId": "KUR",
-      "experienceLevel": 0
-    }
+    "skillId": "KUR"
   },
   {
     "text": "Lombard",
-    "value": {
-      "skillId": "LMO",
-      "experienceLevel": 0
-    }
+    "skillId": "LMO"
   },
   {
     "text": "Madura",
-    "value": {
-      "skillId": "MHJ",
-      "experienceLevel": 0
-    }
+    "skillId": "MHJ"
   },
   {
     "text": "Magahi",
-    "value": {
-      "skillId": "MQM",
-      "experienceLevel": 0
-    }
+    "skillId": "MQM"
   },
   {
     "text": "Maithili",
-    "value": {
-      "skillId": "MKP",
-      "experienceLevel": 0
-    }
+    "skillId": "MKP"
   },
   {
     "text": "Malagasy",
-    "value": {
-      "skillId": "MEX",
-      "experienceLevel": 0
-    }
+    "skillId": "MEX"
   },
   {
     "text": "Malay",
-    "value": {
-      "skillId": "MLI",
-      "experienceLevel": 0
-    }
+    "skillId": "MLI"
   },
   {
     "text": "Malayalam",
-    "value": {
-      "skillId": "MJS",
-      "experienceLevel": 0
-    }
+    "skillId": "MJS"
   },
   {
     "text": "Marathi",
-    "value": {
-      "skillId": "MRT",
-      "experienceLevel": 0
-    }
+    "skillId": "MRT"
   },
   {
     "text": "Marwari",
-    "value": {
-      "skillId": "MKD",
-      "experienceLevel": 0
-    }
+    "skillId": "MKD"
   },
   {
     "text": "Napoletano-Calabrese",
-    "value": {
-      "skillId": "NPL",
-      "experienceLevel": 0
-    }
+    "skillId": "NPL"
   },
   {
     "text": "Nepali",
-    "value": {
-      "skillId": "NEP",
-      "experienceLevel": 0
-    }
+    "skillId": "NEP"
   },
   {
     "text": "Oriya",
-    "value": {
-      "skillId": "ORY",
-      "experienceLevel": 0
-    }
+    "skillId": "ORY"
   },
   {
     "text": "Oromo, West-Central",
-    "value": {
-      "skillId": "GAZ",
-      "experienceLevel": 0
-    }
+    "skillId": "GAZ"
   },
   {
     "text": "Panjabi, Eastern",
-    "value": {
-      "skillId": "PNJ",
-      "experienceLevel": 0
-    }
+    "skillId": "PNJ"
   },
   {
     "text": "Panjabi, Western",
-    "value": {
-      "skillId": "PNB",
-      "experienceLevel": 0
-    }
+    "skillId": "PNB"
   },
   {
     "text": "Pashto, Northern",
-    "value": {
-      "skillId": "PBU",
-      "experienceLevel": 0
-    }
+    "skillId": "PBU"
   },
   {
     "text": "Pashto, Southern",
-    "value": {
-      "skillId": "PBT",
-      "experienceLevel": 0
-    }
+    "skillId": "PBT"
   },
   {
     "text": "Polish",
-    "value": {
-      "skillId": "PQL",
-      "experienceLevel": 0
-    }
+    "skillId": "PQL"
   },
   {
     "text": "Romanian",
-    "value": {
-      "skillId": "RUM",
-      "experienceLevel": 0
-    }
+    "skillId": "RUM"
   },
   {
     "text": "Russian",
-    "value": {
-      "skillId": "RUS",
-      "experienceLevel": 0
-    }
+    "skillId": "RUS"
   },
   {
     "text": "Rwanda",
-    "value": {
-      "skillId": "RUA",
-      "experienceLevel": 0
-    }
+    "skillId": "RUA"
   },
   {
     "text": "Saraiki",
-    "value": {
-      "skillId": "SKR",
-      "experienceLevel": 0
-    }
+    "skillId": "SKR"
   },
   {
     "text": "Serbo-Croatian",
-    "value": {
-      "skillId": "SRC",
-      "experienceLevel": 0
-    }
+    "skillId": "SRC"
   },
   {
     "text": "Shona",
-    "value": {
-      "skillId": "SHD",
-      "experienceLevel": 0
-    }
+    "skillId": "SHD"
   },
   {
     "text": "Sindhi",
-    "value": {
-      "skillId": "SND",
-      "experienceLevel": 0
-    }
+    "skillId": "SND"
   },
   {
     "text": "Sinhala",
-    "value": {
-      "skillId": "SNH",
-      "experienceLevel": 0
-    }
+    "skillId": "SNH"
   },
   {
     "text": "Somali",
-    "value": {
-      "skillId": "SOM",
-      "experienceLevel": 0
-    }
+    "skillId": "SOM"
   },
   {
     "text": "Sunda",
-    "value": {
-      "skillId": "SUO",
-      "experienceLevel": 0
-    }
+    "skillId": "SUO"
   },
   {
     "text": "Swedish",
-    "value": {
-      "skillId": "SWD",
-      "experienceLevel": 0
-    }
+    "skillId": "SWD"
   },
   {
     "text": "Tagalog",
-    "value": {
-      "skillId": "TGL",
-      "experienceLevel": 0
-    }
+    "skillId": "TGL"
   },
   {
     "text": "Tamil",
-    "value": {
-      "skillId": "TCV",
-      "experienceLevel": 0
-    }
+    "skillId": "TCV"
   },
   {
     "text": "Tatar",
-    "value": {
-      "skillId": "TTR",
-      "experienceLevel": 0
-    }
+    "skillId": "TTR"
   },
   {
     "text": "Telugu",
-    "value": {
-      "skillId": "TCW",
-      "experienceLevel": 0
-    }
+    "skillId": "TCW"
   },
   {
     "text": "Thai, Northeastern",
-    "value": {
-      "skillId": "TTS",
-      "experienceLevel": 0
-    }
+    "skillId": "TTS"
   },
   {
     "text": "Thai",
-    "value": {
-      "skillId": "THJ",
-      "experienceLevel": 0
-    }
+    "skillId": "THJ"
   },
   {
     "text": "Turkish",
-    "value": {
-      "skillId": "TRK",
-      "experienceLevel": 0
-    }
+    "skillId": "TRK"
   },
   {
     "text": "Ukrainian",
-    "value": {
-      "skillId": "UKR",
-      "experienceLevel": 0
-    }
+    "skillId": "UKR"
   },
   {
     "text": "Urdu",
-    "value": {
-      "skillId": "URD",
-      "experienceLevel": 0
-    }
+    "skillId": "URD"
   },
   {
     "text": "Uyghur",
-    "value": {
-      "skillId": "UIG",
-      "experienceLevel": 0
-    }
+    "skillId": "UIG"
   },
   {
     "text": "Uzbek, Northern",
-    "value": {
-      "skillId": "UZB",
-      "experienceLevel": 0
-    }
+    "skillId": "UZB"
   },
   {
     "text": "Vietnamese",
-    "value": {
-      "skillId": "VIE",
-      "experienceLevel": 0
-    }
+    "skillId": "VIE"
   },
   {
     "text": "Yoruba",
-    "value": {
-      "skillId": "YOR",
-      "experienceLevel": 0
-    }
+    "skillId": "YOR"
   },
   {
     "text": "Zhuang, Northern",
-    "value": {
-      "skillId": "CCX",
-      "experienceLevel": 0
-    }
+    "skillId": "CCX"
   },
   {
     "text": "Zulu",
-    "value": {
-      "skillId": "ZUU",
-      "experienceLevel": 0
-    }
+    "skillId": "ZUU"
   }
 ]

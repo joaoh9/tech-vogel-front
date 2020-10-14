@@ -1,0 +1,78 @@
+[
+  {
+    "text": "Project",
+    "skillId": "project"
+  },
+  {
+    "text": "Bottle",
+    "skillId": "bottle"
+  },
+  {
+    "text": "BlueBream",
+    "skillId": "blueBream"
+  },
+  {
+    "text": "CherryPy",
+    "skillId": "cherryPy"
+  },
+  {
+    "text": "CubicWeb",
+    "skillId": "cubicWeb"
+  },
+  {
+    "text": "Django",
+    "skillId": "django"
+  },
+  {
+    "text": "Flask",
+    "skillId": "flask"
+  },
+  {
+    "text": "Google App Engine",
+    "skillId": "Google App Engine"
+  },
+  {
+    "text": "Grok",
+    "skillId": "grok"
+  },
+  {
+    "text": "Nagare",
+    "skillId": "nagare"
+  },
+  {
+    "text": "Pyjs",
+    "skillId": "pyjs"
+  },
+  {
+    "text": "Pylons",
+    "skillId": "pylons"
+  },
+  {
+    "text": "Pyramid",
+    "skillId": "pyramid"
+  },
+  {
+    "text": "TACTIC",
+    "skillId": "tACTIC"
+  },
+  {
+    "text": "Tornado",
+    "skillId": "tornado"
+  },
+  {
+    "text": "TurboGears",
+    "skillId": "turboGears"
+  },
+  {
+    "text": "web2py",
+    "skillId": "web2-py"
+  },
+  {
+    "text": "Webware",
+    "skillId": "webware"
+  },
+  {
+    "text": "Zope 2",
+    "skillId": "zope-2"
+  }
+]
