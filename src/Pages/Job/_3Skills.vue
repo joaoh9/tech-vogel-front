@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h6 class="mb-0">{{ $t('Job.new.techSkills.title') }}</h6>
-    <span class="color-cinza-lighten-1 caption-1 mb-2">{{ $t('Job.new.techSkills.description') }} </span>
+    <form-input
+      type="h6"
+      :title="$t('Job.new.techSkills.title')"
+      :description="$t('Job.new.techSkills.description')"
+    />
+
     <v-autocomplete
       :hint="$t('Job.new.techSkills.inputHint')"
       v-model="techSkills"
@@ -22,8 +26,13 @@
       skillTitle="techSkills"
       :experienceLevel="$t('skills.priorities')"
     />
-    <h6 class="mt-6 mb-0">{{ $t('Job.new.otherSkills.title') }}</h6>
-    <span class="color-cinza-lighten-1 caption-1">{{ $t('Job.new.otherSkills.description') }}</span>
+
+    <form-input
+      class="mt-4"
+      type="h6"
+      :title="$t('Job.new.otherSkills.title')"
+      :description="$t('Job.new.otherSkills.description')"
+    />
     <form-input
       class="mt-4"
       :title="$t('Job.new.softSkills.title')"

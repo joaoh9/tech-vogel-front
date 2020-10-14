@@ -1,10 +1,16 @@
 <template>
   <div>
-    <sub-1 flex :class="description ? 'mb-0' : 'mb-2'">
+    <sub-1 v-if="type === 'sub-1'" flex>
       {{ title }}
       <span v-if="required" class="color-primary ml-1">*</span>
     </sub-1>
-    <span class="color-cinza-lighten-1 caption-1 mt-1 mb-2" v-if="description">{{ description }}</span>
+    <h6 v-else-if="type === 'h6'" flex class="mb-1">
+      {{ title }}
+      <span v-if="required" class="color-primary ml-1">*</span>
+    </h6>
+    <div class="mb-3 mt-1">
+      <capt-1>{{ description }}</capt-1>
+    </div>
   </div>
 </template>
 
@@ -13,10 +19,17 @@ export default {
   name: 'form-input',
   props: {
     title: String,
-    description: String,
+    description: {
+      type: String,
+      default: '',
+    },
     required: {
       type: Boolean,
       default: false,
+    },
+    type: {
+      type: String,
+      default: 'sub-1',
     },
   },
   mounted() {
