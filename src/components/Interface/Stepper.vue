@@ -108,15 +108,18 @@ export default {
   font-family: Open Sans !important;
 }
 
+
+.v-tab {
+  justify-content: flex-end;
+}
+
+/*
+TODO: trocar barrinha laranja da sidebar prol lado direito
 .sidebar {
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 75px;
-}
-
-.v-tab {
-  justify-content: flex-end;
 }
 
 .v-tabs-slider-wrapper,
@@ -131,6 +134,7 @@ export default {
 v-tabs-slider {
   align-self: center;
 }
+*/
 </style>
 
 

@@ -8,7 +8,6 @@
               :title="$t(`CV.register.${$t('CV.register.pages')[currentStep]}.title`)"
               :description="$t(`CV.register.${$t('CV.register.pages')[currentStep]}.description`)"
             />
-            {{ resume }}
           </template>
           <template v-slot:card-content>
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">

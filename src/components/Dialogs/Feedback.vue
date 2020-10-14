@@ -2,7 +2,7 @@
   <v-dialog v-model="dialog" :min-width="minWidth()">
     <template v-slot:activator="{ on, attrs }">
       <div class="d-flex justify-end mb-4">
-        <v-btn large v-on="on" v-bind="attrs" class="mr-6" @click="giveUsFeedback()" text>
+        <v-btn outlined large v-on="on" v-bind="attrs" class="mr-6" @click="giveUsFeedback()" >
           {{ $t('Common.feedback') }}
         </v-btn>
       </div>

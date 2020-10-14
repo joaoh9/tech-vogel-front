@@ -8,7 +8,7 @@
       {{ title }}
       <span v-if="required" class="color-primary ml-1">*</span>
     </h6>
-    <div class="mb-3 mt-1">
+    <div class="mb-3">
       <capt-1>{{ description }}</capt-1>
     </div>
   </div>

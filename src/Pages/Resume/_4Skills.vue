@@ -1,13 +1,14 @@
 <template>
   <div class="">
     <form-input
+      type="h6"
       :title="$t('Job.new.techSkills.title')"
       :description="$t('Job.new.techSkills.description')"
     />
     <v-autocomplete
       :hint="$t('Job.new.techSkills.inputHint')"
       v-model="techSkills"
-      :items="$t('Data.allSkills')"
+      :items="$t('Data.techSkills')"
       hide-details
       hide-selected
       outlined
@@ -22,8 +23,12 @@
       :items="techSkills"
       :experienceLevel="$t('skills.yearsOfExperience')"
     />
-    <h5 class="mt-6">{{ $t('Job.new.otherSkills.title') }}</h5>
-    <span class="color-cinza-lighten-1 caption">{{ $t('Job.new.otherSkills.description') }}</span>
+    <form-input
+      class="mt-2"
+      type="h6"
+      :title="$t('Job.new.otherSkills.title')"
+      :description="$t('Job.new.otherSkills.description')"
+    />
     <form-input class="mt-4" :title="$t('Job.new.softSkills.title')" />
     <v-autocomplete
       :hint="$t('Job.new.softSkills.inputHint')"
