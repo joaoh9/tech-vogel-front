@@ -1,47 +1,93 @@
 <template>
-  <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
-    <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/">
-      <v-avatar width="150" tile>
-        <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
-      </v-avatar>
-    </v-btn>
-    <v-spacer />
-    <v-btn class="bdy-2" @click="goToJobList" :color="isHome() ? 'bg' : 'dark'" text>
-      {{ $t('Common.jobs') }}
-    </v-btn>
-    <v-btn class="bdy-2" @click="goToPricing" :color="isHome() ? 'bg' : 'dark'" text>
-      {{ $t('Common.pricing') }}
-    </v-btn>
-    <v-btn class="bdy-2" @click="goToHowItWorks" :color="isHome() ? 'bg' : 'dark'" text>
-      {{ $t('Common.howItWorks') }}
-    </v-btn>
-    <v-spacer />
-    <g-btn
-      dataCy="nav-signup"
-      :type="isHome() ? 'text' : 'text'"
-      :text="isHome() ? true : false"
-      :color="isHome() ? 'primary' : 'dark'"
-      :textColor="isHome() ? 'primary' : 'dark'"
-      to="/signup"
-      :label="$t('Common.findAJob')"
-    />
+  <div>
+    <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
+      <v-app-bar-nav-icon
+        v-if="$vuetify.breakpoint.mobile"
+        @click="drawer = true"
+        :color="isHome() ? 'bg' : 'dark'"
+      ></v-app-bar-nav-icon>
+      <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/">
+        <v-avatar width="150" tile>
+          <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
+        </v-avatar>
+      </v-btn>
+      <v-spacer />
+      <v-btn
+        v-if="!$vuetify.breakpoint.mobile"
+        class="bdy-2"
+        @click="goToJobList"
+        :color="isHome() ? 'bg' : 'dark'"
+        text
+      >
+        {{ $t('Common.jobs') }}
+      </v-btn>
+      <v-btn
+        v-if="!$vuetify.breakpoint.mobile"
+        class="bdy-2"
+        @click="goToPricing"
+        :color="isHome() ? 'bg' : 'dark'"
+        text
+      >
+        {{ $t('Common.pricing') }}
+      </v-btn>
+      <v-btn
+        v-if="!$vuetify.breakpoint.mobile"
+        class="bdy-2"
+        @click="goToHowItWorks"
+        :color="isHome() ? 'bg' : 'dark'"
+        text
+      >
+        {{ $t('Common.howItWorks') }}
+      </v-btn>
+      <v-spacer />
+      <g-btn
+        v-if="!$vuetify.breakpoint.mobile"
+        dataCy="nav-signup"
+        :type="isHome() ? 'text' : 'text'"
+        :text="isHome() ? true : false"
+        :color="isHome() ? 'primary' : 'dark'"
+        :textColor="isHome() ? 'primary' : 'dark'"
+        to="/signup"
+        :label="$t('Common.findAJob')"
+      />
 
-    <g-btn
-      dataCy="nav-new-company"
-      type="primary"
-      class="ml-4"
-      to="/signup"
-      :label="$t('Common.postAJob')"
-    />
-    <g-btn
-      dataCy="nav-login"
-      type="outlined"
-      :color="isHome() ? 'bg' : 'dark'"
-      to="/login"
-      class="mx-4"
-      :label="$t('Common.login')"
-    />
-  </v-app-bar>
+      <g-btn
+        v-if="!$vuetify.breakpoint.mobile"
+        dataCy="nav-new-company"
+        type="primary"
+        class="ml-4"
+        to="/signup"
+        :label="$t('Common.postAJob')"
+      />
+      <g-btn
+        dataCy="nav-login"
+        type="outlined"
+        :color="isHome() ? 'bg' : 'dark'"
+        to="/login"
+        class="mx-4"
+        :label="$t('Common.login')"
+      />
+    </v-app-bar>
+    <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-list nav dense>
+          <v-list-item @click="goToJobList">
+            <v-list-item-title>{{ $t('Common.jobs') }}</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="goToPricing">
+            <v-list-item-title>{{ $t('Common.pricing') }}</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="goToHowItWorks">
+            <v-list-item-title>{{ $t('Common.howItWorks') }}</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="goToLogin">
+            <v-list-item-title>{{ $t('Common.findAJob') }}</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="goToLogin">
+            <v-list-item-title>{{ $t('Common.postAJob') }}</v-list-item-title>
+          </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script>
@@ -52,6 +98,7 @@ export default {
   components: {},
   data() {
     return {
+      drawer: false,
       logo: Logo,
     };
   },

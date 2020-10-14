@@ -43,7 +43,7 @@
       :items="softSkills"
       :experienceLevel="$t('skills.priorities')"
     />
-    <form-input class="mt-6 :title="$t('Job.new.languages.title')" />
+    <form-input class="mt-6" :title="$t('Job.new.languages.title')" />
     <v-autocomplete
       class="mb-10"
       :hint="$t('Job.new.languages.inputHint')"
