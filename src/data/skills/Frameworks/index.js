@@ -8,15 +8,6 @@ import php from './php.json';
 import py from './py.json';
 import ruby from './ruby.json';
 
-function addKeyPrefix(obj, prefix) {
-  Object.keys(obj).forEach(el => {
-    obj[prefix + el] = obj[el];
-    delete obj[el];
-  });
-
-  return obj;
-}
-
 function skillValueFormat(skillArray) {
   return Object.entries(skillArray).map(([ skillId, text ]) => ({
     text,
@@ -25,13 +16,13 @@ function skillValueFormat(skillArray) {
 }
 
 export default {
-  aspNet: skillValueFormat(addKeyPrefix(aspNet, 'frmwrk-.net-')),
-  cpp: skillValueFormat(addKeyPrefix(cpp, 'frmwrk-cpp-')),
-  css: skillValueFormat(addKeyPrefix(css, 'frmwrk-css-')),
-  java: skillValueFormat(addKeyPrefix(java, 'frmwrk-java-')),
-  js: skillValueFormat(addKeyPrefix(js, 'frmwrk-js-')),
-  perl: skillValueFormat(addKeyPrefix(perl, 'frmwrk-perl-')),
-  php: skillValueFormat(addKeyPrefix(php, 'frmwrk-php-')),
-  py: skillValueFormat(addKeyPrefix(py, 'frmwrk-py-')),
-  ruby: skillValueFormat(addKeyPrefix(ruby, 'frmwrk-ruby-')),
+  aspNet: skillValueFormat(aspNet),
+  cpp: skillValueFormat(cpp),
+  css: skillValueFormat(css),
+  java: skillValueFormat(java),
+  js: skillValueFormat(js),
+  perl: skillValueFormat(perl),
+  php: skillValueFormat(php),
+  py: skillValueFormat(py),
+  ruby: skillValueFormat(ruby),
 };
