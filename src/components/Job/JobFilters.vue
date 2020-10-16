@@ -12,7 +12,7 @@
       <v-row>
         <v-combobox
           class="mr-5"
-          :items="$t('Data.experienceLevel')"
+          :items="$t('skills.experienceLevel')"
           v-model="experienceLevel"
           @input="$emit('experience-level', experienceLevel)"
           outlined

@@ -30,7 +30,7 @@
       item-text="text"
       class="border-lg"
       :rules="[rules.required]"
-      :items="$t('Data.experienceLevel')"
+      :items="$t('skills.experienceLevel')"
       v-model="experienceLevel"
       @input="$emit('experience-level', experienceLevel)"
       outlined
@@ -39,7 +39,7 @@
     <v-autocomplete
       item-value="value"
       item-text="text"
-      :items="$t('Data.contractType')"
+      :items="$t('skills.contractType')"
       v-model="contractType"
       @input="$emit('contract-type', contractType)"
       outlined

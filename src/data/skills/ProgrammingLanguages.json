@@ -1,2738 +1,683 @@
-[
-  {
-    "text": "A.NET",
-    "skillId": "aDotNET"
-  },
-  {
-    "text": "A-0 System",
-    "skillId": "aMinus0System"
-  },
-  {
-    "text": "A+",
-    "skillId": "aPlus"
-  },
-  {
-    "text": "ABAP",
-    "skillId": "ABAP"
-  },
-  {
-    "text": "ABC",
-    "skillId": "ABC"
-  },
-  {
-    "text": "ABC ALGOL",
-    "skillId": "aBCALGOL"
-  },
-  {
-    "text": "ACC",
-    "skillId": "ACC"
-  },
-  {
-    "text": "Accent",
-    "skillId": "accent"
-  },
-  {
-    "text": "Ace DASL",
-    "skillId": "aceDASL"
-  },
-  {
-    "text": "Action!",
-    "skillId": "action"
-  },
-  {
-    "text": "ActionScript",
-    "skillId": "actionScript"
-  },
-  {
-    "text": "Actor",
-    "skillId": "actor"
-  },
-  {
-    "text": "Ada",
-    "skillId": "ada"
-  },
-  {
-    "text": "Adenine",
-    "skillId": "adenine"
-  },
-  {
-    "text": "Agda",
-    "skillId": "agda"
-  },
-  {
-    "text": "Agilent VEE",
-    "skillId": "agilentVEE"
-  },
-  {
-    "text": "Agora",
-    "skillId": "agora"
-  },
-  {
-    "text": "AIMMS",
-    "skillId": "AIMMS"
-  },
-  {
-    "text": "Aldor",
-    "skillId": "aldor"
-  },
-  {
-    "text": "Alef",
-    "skillId": "alef"
-  },
-  {
-    "text": "ALF",
-    "skillId": "ALF"
-  },
-  {
-    "text": "ALGOL 58",
-    "skillId": "aLGOL58"
-  },
-  {
-    "text": "ALGOL 60",
-    "skillId": "aLGOL60"
-  },
-  {
-    "text": "ALGOL 68",
-    "skillId": "aLGOL68"
-  },
-  {
-    "text": "ALGOL W",
-    "skillId": "aLGOLW"
-  },
-  {
-    "text": "Alice",
-    "skillId": "alice"
-  },
-  {
-    "text": "Alma-0",
-    "skillId": "almaMinus0"
-  },
-  {
-    "text": "AmbientTalk",
-    "skillId": "ambientTalk"
-  },
-  {
-    "text": "Amiga E",
-    "skillId": "amigaE"
-  },
-  {
-    "text": "AMOS",
-    "skillId": "AMOS"
-  },
-  {
-    "text": "AMPL",
-    "skillId": "AMPL"
-  },
-  {
-    "text": "AngelScript",
-    "skillId": "angelScript"
-  },
-  {
-    "text": "Apache Pig latin",
-    "skillId": "apachePigLatin"
-  },
-  {
-    "text": "Apex",
-    "skillId": "apex"
-  },
-  {
-    "text": "APL",
-    "skillId": "APL"
-  },
-  {
-    "text": "AppleScript",
-    "skillId": "appleScript"
-  },
-  {
-    "text": "APT",
-    "skillId": "APT"
-  },
-  {
-    "text": "Arc",
-    "skillId": "arc"
-  },
-  {
-    "text": "ARexx",
-    "skillId": "aRexx"
-  },
-  {
-    "text": "Argus",
-    "skillId": "argus"
-  },
-  {
-    "text": "Assembly",
-    "skillId": "assembly"
-  },
-  {
-    "text": "AutoHotkey",
-    "skillId": "autoHotkey"
-  },
-  {
-    "text": "AutoIt",
-    "skillId": "autoIt"
-  },
-  {
-    "text": "AutoLISP / Visual LISP",
-    "skillId": "autoLISPVisualLISP"
-  },
-  {
-    "text": "Averest",
-    "skillId": "averest"
-  },
-  {
-    "text": "AWK",
-    "skillId": "AWK"
-  },
-  {
-    "text": "Axum",
-    "skillId": "axum"
-  },
-  {
-    "text": "B",
-    "skillId": "B"
-  },
-  {
-    "text": "Babbage",
-    "skillId": "babbage"
-  },
-  {
-    "text": "Ballerina",
-    "skillId": "ballerina"
-  },
-  {
-    "text": "Bash",
-    "skillId": "bash"
-  },
-  {
-    "text": "BASIC",
-    "skillId": "BASIC"
-  },
-  {
-    "text": "Batch file (Windows/MS-DOS)",
-    "skillId": "batchFileWindowsMSMinusDOS"
-  },
-  {
-    "text": "bc",
-    "skillId": "bc"
-  },
-  {
-    "text": "BCPL",
-    "skillId": "BCPL"
-  },
-  {
-    "text": "BeanShell",
-    "skillId": "beanShell"
-  },
-  {
-    "text": "Bertrand",
-    "skillId": "bertrand"
-  },
-  {
-    "text": "BETA",
-    "skillId": "BETA"
-  },
-  {
-    "text": "BLISS",
-    "skillId": "BLISS"
-  },
-  {
-    "text": "Blockly",
-    "skillId": "blockly"
-  },
-  {
-    "text": "BlooP",
-    "skillId": "blooP"
-  },
-  {
-    "text": "Boo",
-    "skillId": "boo"
-  },
-  {
-    "text": "Boomerang",
-    "skillId": "boomerang"
-  },
-  {
-    "text": "Bosque",
-    "skillId": "bosque"
-  },
-  {
-    "text": "C",
-    "skillId": "C"
-  },
-  {
-    "text": "C--",
-    "skillId": "cMinusMinus"
-  },
-  {
-    "text": "C++",
-    "skillId": "cPlusPlus"
-  },
-  {
-    "text": "C*",
-    "skillId": "cStar"
-  },
-  {
-    "text": "C#",
-    "skillId": "cSharp"
-  },
-  {
-    "text": "C/AL",
-    "skillId": "cAL"
-  },
-  {
-    "text": "Caché ObjectScript",
-    "skillId": "cacheObjectScript"
-  },
-  {
-    "text": "C Shell (csh)",
-    "skillId": "cShellcsh"
-  },
-  {
-    "text": "Caml",
-    "skillId": "caml"
-  },
-  {
-    "text": "Cayenne",
-    "skillId": "cayenne"
-  },
-  {
-    "text": "CDuce",
-    "skillId": "cDuce"
-  },
-  {
-    "text": "Cecil",
-    "skillId": "cecil"
-  },
-  {
-    "text": "Cesil",
-    "skillId": "cesil"
-  },
-  {
-    "text": "Céu",
-    "skillId": "ceu"
-  },
-  {
-    "text": "Ceylon",
-    "skillId": "ceylon"
-  },
-  {
-    "text": "CFEngine",
-    "skillId": "cFEngine"
-  },
-  {
-    "text": "Cg",
-    "skillId": "cg"
-  },
-  {
-    "text": "Ch",
-    "skillId": "ch"
-  },
-  {
-    "text": "Chapel",
-    "skillId": "chapel"
-  },
-  {
-    "text": "Charm",
-    "skillId": "charm"
-  },
-  {
-    "text": "CHILL",
-    "skillId": "CHILL"
-  },
-  {
-    "text": "CHIP-8",
-    "skillId": "cHIPMinus8"
-  },
-  {
-    "text": "chomski",
-    "skillId": "chomski"
-  },
-  {
-    "text": "ChucK",
-    "skillId": "chucK"
-  },
-  {
-    "text": "Cilk",
-    "skillId": "cilk"
-  },
-  {
-    "text": "CL (IBM)",
-    "skillId": "cLIBM"
-  },
-  {
-    "text": "Claire",
-    "skillId": "claire"
-  },
-  {
-    "text": "Clarion",
-    "skillId": "clarion"
-  },
-  {
-    "text": "Clean",
-    "skillId": "clean"
-  },
-  {
-    "text": "Clipper",
-    "skillId": "clipper"
-  },
-  {
-    "text": "CLIPS",
-    "skillId": "CLIPS"
-  },
-  {
-    "text": "CLIST",
-    "skillId": "CLIST"
-  },
-  {
-    "text": "Clojure",
-    "skillId": "clojure"
-  },
-  {
-    "text": "CLU",
-    "skillId": "CLU"
-  },
-  {
-    "text": "CMS-2",
-    "skillId": "cMSMinus2"
-  },
-  {
-    "text": "COBOL",
-    "skillId": "COBOL"
-  },
-  {
-    "text": "CobolScript",
-    "skillId": "cobolScript"
-  },
-  {
-    "text": "Cobra",
-    "skillId": "cobra"
-  },
-  {
-    "text": "CoffeeScript",
-    "skillId": "coffeeScript"
-  },
-  {
-    "text": "ColdFusion",
-    "skillId": "coldFusion"
-  },
-  {
-    "text": "COMAL",
-    "skillId": "COMAL"
-  },
-  {
-    "text": "Combined Programming",
-    "skillId": "combinedCPL"
-  },
-  {
-    "text": "COMIT",
-    "skillId": "COMIT"
-  },
-  {
-    "text": "Common Intermediate",
-    "skillId": "commonIntermediate"
-  },
-  {
-    "text": "Common Lisp (CL)",
-    "skillId": "commonLisp"
-  },
-  {
-    "text": "COMPASS",
-    "skillId": "COMPASS"
-  },
-  {
-    "text": "Component Pascal",
-    "skillId": "componentPascal"
-  },
-  {
-    "text": "Constraint Handling Rules (CHR)",
-    "skillId": "constraintHandlingRulesCHR"
-  },
-  {
-    "text": "COMTRAN",
-    "skillId": "COMTRAN"
-  },
-  {
-    "text": "Cool",
-    "skillId": "cool"
-  },
-  {
-    "text": "Coq",
-    "skillId": "coq"
-  },
-  {
-    "text": "Coral 66",
-    "skillId": "coral66"
-  },
-  {
-    "text": "CorVision",
-    "skillId": "corVision"
-  },
-  {
-    "text": "COWSEL",
-    "skillId": "COWSEL"
-  },
-  {
-    "text": "CPL",
-    "skillId": "CPL"
-  },
-  {
-    "text": "Cryptol",
-    "skillId": "cryptol"
-  },
-  {
-    "text": "Crystal",
-    "skillId": "crystal"
-  },
-  {
-    "text": "Csound",
-    "skillId": "csound"
-  },
-  {
-    "text": "Cuneiform",
-    "skillId": "cuneiform"
-  },
-  {
-    "text": "Curl",
-    "skillId": "curl"
-  },
-  {
-    "text": "Curry",
-    "skillId": "curry"
-  },
-  {
-    "text": "Cybil",
-    "skillId": "cybil"
-  },
-  {
-    "text": "Cyclone",
-    "skillId": "cyclone"
-  },
-  {
-    "text": "Cypher Query ",
-    "skillId": "cypherQuery"
-  },
-  {
-    "text": "Cython",
-    "skillId": "cython"
-  },
-  {
-    "text": "CEEMAC",
-    "skillId": "CEEMAC"
-  },
-  {
-    "text": "D",
-    "skillId": "D"
-  },
-  {
-    "text": "Dart",
-    "skillId": "dart"
-  },
-  {
-    "text": "Darwin",
-    "skillId": "darwin"
-  },
-  {
-    "text": "DataFlex",
-    "skillId": "dataFlex"
-  },
-  {
-    "text": "Datalog",
-    "skillId": "datalog"
-  },
-  {
-    "text": "DATATRIEVE",
-    "skillId": "DATATRIEVE"
-  },
-  {
-    "text": "dBase",
-    "skillId": "dBase"
-  },
-  {
-    "text": "dc",
-    "skillId": "dc"
-  },
-  {
-    "text": "DCL",
-    "skillId": "DCL"
-  },
-  {
-    "text": "DinkC",
-    "skillId": "dinkC"
-  },
-  {
-    "text": "DIBOL",
-    "skillId": "DIBOL"
-  },
-  {
-    "text": "Dog",
-    "skillId": "dog"
-  },
-  {
-    "text": "Draco",
-    "skillId": "draco"
-  },
-  {
-    "text": "DRAKON",
-    "skillId": "DRAKON"
-  },
-  {
-    "text": "Dylan",
-    "skillId": "dylan"
-  },
-  {
-    "text": "DYNAMO",
-    "skillId": "DYNAMO"
-  },
-  {
-    "text": "DAX (Data Analysis Expressions)",
-    "skillId": "dAXDataAnalysisExpressions"
-  },
-  {
-    "text": "E",
-    "skillId": "E"
-  },
-  {
-    "text": "Ease",
-    "skillId": "ease"
-  },
-  {
-    "text": "Easy PL/I",
-    "skillId": "easyPLI"
-  },
-  {
-    "text": "EASYTRIEVE PLUS",
-    "skillId": "eASYTRIEVEPLUS"
-  },
-  {
-    "text": "eC",
-    "skillId": "eC"
-  },
-  {
-    "text": "ECMAScript",
-    "skillId": "eCMAScript"
-  },
-  {
-    "text": "Edinburgh IMP",
-    "skillId": "edinburghIMP"
-  },
-  {
-    "text": "EGL",
-    "skillId": "EGL"
-  },
-  {
-    "text": "Eiffel",
-    "skillId": "eiffel"
-  },
-  {
-    "text": "ELAN",
-    "skillId": "ELAN"
-  },
-  {
-    "text": "Elixir",
-    "skillId": "elixir"
-  },
-  {
-    "text": "Elm",
-    "skillId": "elm"
-  },
-  {
-    "text": "Emacs Lisp",
-    "skillId": "emacsLisp"
-  },
-  {
-    "text": "Emerald",
-    "skillId": "emerald"
-  },
-  {
-    "text": "Epigram",
-    "skillId": "epigram"
-  },
-  {
-    "text": "EPL (Easy ",
-    "skillId": "ePLEasy"
-  },
-  {
-    "text": "EPL (Eltron ",
-    "skillId": "ePLEltron"
-  },
-  {
-    "text": "Erlang",
-    "skillId": "erlang"
-  },
-  {
-    "text": "es",
-    "skillId": "es"
-  },
-  {
-    "text": "Escher",
-    "skillId": "escher"
-  },
-  {
-    "text": "ESPOL",
-    "skillId": "ESPOL"
-  },
-  {
-    "text": "Esterel",
-    "skillId": "esterel"
-  },
-  {
-    "text": "Etoys",
-    "skillId": "etoys"
-  },
-  {
-    "text": "Euclid",
-    "skillId": "euclid"
-  },
-  {
-    "text": "Euler",
-    "skillId": "euler"
-  },
-  {
-    "text": "Euphoria",
-    "skillId": "euphoria"
-  },
-  {
-    "text": "EusLisp Robot",
-    "skillId": "eusLispRobot"
-  },
-  {
-    "text": "CMS EXEC (EXEC)",
-    "skillId": "cMSEXECEXEC"
-  },
-  {
-    "text": "EXEC 2",
-    "skillId": "eXEC2"
-  },
-  {
-    "text": "Executable UML",
-    "skillId": "executableUML"
-  },
-  {
-    "text": "Ezhil",
-    "skillId": "ezhil"
-  },
-  {
-    "text": "F",
-    "skillId": "F"
-  },
-  {
-    "text": "F#",
-    "skillId": "fSharp"
-  },
-  {
-    "text": "F*",
-    "skillId": "fStar"
-  },
-  {
-    "text": "Factor",
-    "skillId": "factor"
-  },
-  {
-    "text": "Fantom",
-    "skillId": "fantom"
-  },
-  {
-    "text": "FAUST",
-    "skillId": "FAUST"
-  },
-  {
-    "text": "FFP",
-    "skillId": "FFP"
-  },
-  {
-    "text": "fish",
-    "skillId": "fish"
-  },
-  {
-    "text": "Fjölnir",
-    "skillId": "fjolnir"
-  },
-  {
-    "text": "FL",
-    "skillId": "FL"
-  },
-  {
-    "text": "Flavors",
-    "skillId": "flavors"
-  },
-  {
-    "text": "Flex",
-    "skillId": "flex"
-  },
-  {
-    "text": "FlooP",
-    "skillId": "flooP"
-  },
-  {
-    "text": "FLOW-MATIC",
-    "skillId": "fLOWMinusMATIC"
-  },
-  {
-    "text": "FOCAL",
-    "skillId": "FOCAL"
-  },
-  {
-    "text": "FOCUS",
-    "skillId": "FOCUS"
-  },
-  {
-    "text": "FOIL",
-    "skillId": "FOIL"
-  },
-  {
-    "text": "FORMAC",
-    "skillId": "FORMAC"
-  },
-  {
-    "text": "@Formula",
-    "skillId": "@Formula"
-  },
-  {
-    "text": "Forth",
-    "skillId": "forth"
-  },
-  {
-    "text": "Fortran",
-    "skillId": "fortran"
-  },
-  {
-    "text": "Fortress",
-    "skillId": "fortress"
-  },
-  {
-    "text": "FP",
-    "skillId": "FP"
-  },
-  {
-    "text": "Franz Lisp",
-    "skillId": "franzLisp"
-  },
-  {
-    "text": "FreeBasic",
-    "skillId": "freeBasic"
-  },
-  {
-    "text": "Futhark",
-    "skillId": "futhark"
-  },
-  {
-    "text": "F-Script",
-    "skillId": "fMinusScript"
-  },
-  {
-    "text": "Game Maker Language ",
-    "skillId": "gameMakerLanguage"
-  },
-  {
-    "text": "GameMonkey Script",
-    "skillId": "gameMonkeyScript"
-  },
-  {
-    "text": "GAMS",
-    "skillId": "GAMS"
-  },
-  {
-    "text": "GAP",
-    "skillId": "GAP"
-  },
-  {
-    "text": "G-code",
-    "skillId": "gMinuscode"
-  },
-  {
-    "text": "GDScript",
-    "skillId": "gDScript"
-  },
-  {
-    "text": "Genie",
-    "skillId": "genie"
-  },
-  {
-    "text": "GDL",
-    "skillId": "GDL"
-  },
-  {
-    "text": "GEORGE",
-    "skillId": "GEORGE"
-  },
-  {
-    "text": "GLSL",
-    "skillId": "GLSL"
-  },
-  {
-    "text": "GNU E",
-    "skillId": "gNUE"
-  },
-  {
-    "text": "GNU Guile",
-    "skillId": "gNUGuile"
-  },
-  {
-    "text": "Go",
-    "skillId": "go"
-  },
-  {
-    "text": "Go!",
-    "skillId": "goo"
-  },
-  {
-    "text": "GOAL",
-    "skillId": "GOAL"
-  },
-  {
-    "text": "Gödel",
-    "skillId": "godel"
-  },
-  {
-    "text": "Golo",
-    "skillId": "golo"
-  },
-  {
-    "text": "GOM (Good Old Mad)",
-    "skillId": "gOMGoodOldMad"
-  },
-  {
-    "text": "Google Apps Script",
-    "skillId": "googleAppsScript"
-  },
-  {
-    "text": "Gosu",
-    "skillId": "gosu"
-  },
-  {
-    "text": "GOTRAN",
-    "skillId": "GOTRAN"
-  },
-  {
-    "text": "GPSS",
-    "skillId": "GPSS"
-  },
-  {
-    "text": "GraphTalk",
-    "skillId": "graphTalk"
-  },
-  {
-    "text": "GRASS",
-    "skillId": "GRASS"
-  },
-  {
-    "text": "Grasshopper",
-    "skillId": "grasshopper"
-  },
-  {
-    "text": "Groovy",
-    "skillId": "groovy"
-  },
-  {
-    "text": "Hack",
-    "skillId": "hack"
-  },
-  {
-    "text": "HAGGIS",
-    "skillId": "HAGGIS"
-  },
-  {
-    "text": "HAL/S",
-    "skillId": "hALS"
-  },
-  {
-    "text": "Halide ",
-    "skillId": "halide"
-  },
-  {
-    "text": "Hamilton C shell",
-    "skillId": "hamiltonCShell"
-  },
-  {
-    "text": "Harbour",
-    "skillId": "harbour"
-  },
-  {
-    "text": "Hartmann pipelines",
-    "skillId": "hartmannPipelines"
-  },
-  {
-    "text": "Haskell",
-    "skillId": "haskell"
-  },
-  {
-    "text": "Haxe",
-    "skillId": "haxe"
-  },
-  {
-    "text": "Hermes",
-    "skillId": "hermes"
-  },
-  {
-    "text": "High Level Assembly",
-    "skillId": "highLevelAssembly"
-  },
-  {
-    "text": "HLSL",
-    "skillId": "HLSL"
-  },
-  {
-    "text": "Hollywood",
-    "skillId": "hollywood"
-  },
-  {
-    "text": "HolyC",
-    "skillId": "holyC"
-  },
-  {
-    "text": "Hop",
-    "skillId": "hop"
-  },
-  {
-    "text": "Hopscotch",
-    "skillId": "hopscotch"
-  },
-  {
-    "text": "Hope",
-    "skillId": "hope"
-  },
-  {
-    "text": "Hugo",
-    "skillId": "hugo"
-  },
-  {
-    "text": "Hume",
-    "skillId": "hume"
-  },
-  {
-    "text": "HyperTalk",
-    "skillId": "hyperTalk"
-  },
-  {
-    "text": "Io",
-    "skillId": "io"
-  },
-  {
-    "text": "Icon",
-    "skillId": "icon"
-  },
-  {
-    "text": "IBM Basic assembly",
-    "skillId": "IBMBasicAssembly"
-  },
-  {
-    "text": "IBM HAScript",
-    "skillId": "iBMHAScript"
-  },
-  {
-    "text": "IBM Informix-4GL",
-    "skillId": "iBMInformixMinus4GL"
-  },
-  {
-    "text": "IBM RPG",
-    "skillId": "iBMRPG"
-  },
-  {
-    "text": "IDL",
-    "skillId": "IDL"
-  },
-  {
-    "text": "Idris",
-    "skillId": "idris"
-  },
-  {
-    "text": "Inform",
-    "skillId": "inform"
-  },
-  {
-    "text": "J",
-    "skillId": "J"
-  },
-  {
-    "text": "J#",
-    "skillId": "jSharp"
-  },
-  {
-    "text": "J++",
-    "skillId": "jPlusPlus"
-  },
-  {
-    "text": "JADE",
-    "skillId": "JADE"
-  },
-  {
-    "text": "JAL",
-    "skillId": "JAL"
-  },
-  {
-    "text": "Janus ",
-    "skillId": "janus"
-  },
-  {
-    "text": "JASS",
-    "skillId": "JASS"
-  },
-  {
-    "text": "Java",
-    "skillId": "java"
-  },
-  {
-    "text": "JavaFX Script",
-    "skillId": "javaFXScript"
-  },
-  {
-    "text": "JavaScript",
-    "skillId": "javaScript"
-  },
-  {
-    "text": "Jess ",
-    "skillId": "jess"
-  },
-  {
-    "text": "JCL",
-    "skillId": "JCL"
-  },
-  {
-    "text": "JEAN",
-    "skillId": "JEAN"
-  },
-  {
-    "text": "Join Java",
-    "skillId": "joinJava"
-  },
-  {
-    "text": "JOSS",
-    "skillId": "JOSS"
-  },
-  {
-    "text": "Joule",
-    "skillId": "joule"
-  },
-  {
-    "text": "JOVIAL",
-    "skillId": "JOVIAL"
-  },
-  {
-    "text": "Joy",
-    "skillId": "joy"
-  },
-  {
-    "text": "JScript",
-    "skillId": "jScript"
-  },
-  {
-    "text": "JScript .NET",
-    "skillId": "jScriptDotNET"
-  },
-  {
-    "text": "Julia",
-    "skillId": "julia"
-  },
-  {
-    "text": "Jython",
-    "skillId": "jython"
-  },
-  {
-    "text": "K",
-    "skillId": "K"
-  },
-  {
-    "text": "Kaleidoscope",
-    "skillId": "kaleidoscope"
-  },
-  {
-    "text": "Karel",
-    "skillId": "karel"
-  },
-  {
-    "text": "KEE",
-    "skillId": "KEE"
-  },
-  {
-    "text": "Kixtart",
-    "skillId": "kixtart"
-  },
-  {
-    "text": "Klerer-May System",
-    "skillId": "klererMinusMaySystem"
-  },
-  {
-    "text": "KIF",
-    "skillId": "KIF"
-  },
-  {
-    "text": "Kojo",
-    "skillId": "kojo"
-  },
-  {
-    "text": "Kotlin",
-    "skillId": "kotlin"
-  },
-  {
-    "text": "KRC",
-    "skillId": "KRC"
-  },
-  {
-    "text": "KRL",
-    "skillId": "KRL"
-  },
-  {
-    "text": "KRL",
-    "skillId": "KRL"
-  },
-  {
-    "text": "KRYPTON",
-    "skillId": "KRYPTON"
-  },
-  {
-    "text": "Korn shell (ksh)",
-    "skillId": "kornShellksh"
-  },
-  {
-    "text": "Kodu",
-    "skillId": "kodu"
-  },
-  {
-    "text": "Kv",
-    "skillId": "kv"
-  },
-  {
-    "text": "LabVIEW",
-    "skillId": "labVIEW"
-  },
-  {
-    "text": "Ladder",
-    "skillId": "ladder"
-  },
-  {
-    "text": "LANSA",
-    "skillId": "LANSA"
-  },
-  {
-    "text": "Lasso",
-    "skillId": "lasso"
-  },
-  {
-    "text": "Lava",
-    "skillId": "lava"
-  },
-  {
-    "text": "LC-3",
-    "skillId": "lCMinus3"
-  },
-  {
-    "text": "Legoscript",
-    "skillId": "legoscript"
-  },
-  {
-    "text": "LIL",
-    "skillId": "LIL"
-  },
-  {
-    "text": "LilyPond",
-    "skillId": "lilyPond"
-  },
-  {
-    "text": "Limbo",
-    "skillId": "limbo"
-  },
-  {
-    "text": "Limnor",
-    "skillId": "limnor"
-  },
-  {
-    "text": "LINC",
-    "skillId": "LINC"
-  },
-  {
-    "text": "Lingo",
-    "skillId": "lingo"
-  },
-  {
-    "text": "LINQ",
-    "skillId": "LINQ"
-  },
-  {
-    "text": "LIS",
-    "skillId": "LIS"
-  },
-  {
-    "text": "LISA",
-    "skillId": "LISA"
-  },
-  {
-    "text": "Language H",
-    "skillId": "languageH"
-  },
-  {
-    "text": "Lisp",
-    "skillId": "lisp"
-  },
-  {
-    "text": "Lite-C",
-    "skillId": "liteMinusC"
-  },
-  {
-    "text": "Lithe",
-    "skillId": "lithe"
-  },
-  {
-    "text": "Little b",
-    "skillId": "littleB"
-  },
-  {
-    "text": "LLL",
-    "skillId": "LLL"
-  },
-  {
-    "text": "Logo",
-    "skillId": "logo"
-  },
-  {
-    "text": "Logtalk",
-    "skillId": "logtalk"
-  },
-  {
-    "text": "LotusScript",
-    "skillId": "lotusScript"
-  },
-  {
-    "text": "LPC",
-    "skillId": "LPC"
-  },
-  {
-    "text": "LSE",
-    "skillId": "LSE"
-  },
-  {
-    "text": "LSL",
-    "skillId": "LSL"
-  },
-  {
-    "text": "LiveCode",
-    "skillId": "liveCode"
-  },
-  {
-    "text": "LiveScript",
-    "skillId": "liveScript"
-  },
-  {
-    "text": "Lua",
-    "skillId": "lua"
-  },
-  {
-    "text": "Lucid",
-    "skillId": "lucid"
-  },
-  {
-    "text": "Lustre",
-    "skillId": "lustre"
-  },
-  {
-    "text": "LYaPAS",
-    "skillId": "lYaPAS"
-  },
-  {
-    "text": "Lynx",
-    "skillId": "lynx"
-  },
-  {
-    "text": "M2001",
-    "skillId": "m2001"
-  },
-  {
-    "text": "M4",
-    "skillId": "m4"
-  },
-  {
-    "text": "M#",
-    "skillId": "mSharp"
-  },
-  {
-    "text": "Machine code",
-    "skillId": "machineCode"
-  },
-  {
-    "text": "MAD (Michigan Algorithm Decoder)",
-    "skillId": "mADMichiganAlgorithmDecoder"
-  },
-  {
-    "text": "MAD/I",
-    "skillId": "mADI"
-  },
-  {
-    "text": "Magik",
-    "skillId": "magik"
-  },
-  {
-    "text": "Magma",
-    "skillId": "magma"
-  },
-  {
-    "text": "Máni",
-    "skillId": "mani"
-  },
-  {
-    "text": "Maple",
-    "skillId": "maple"
-  },
-  {
-    "text": "MAPPER (now part of BIS)",
-    "skillId": "mAPPERnowPartOfBIS"
-  },
-  {
-    "text": "MARK-IV (now VISION:BUILDER)",
-    "skillId": "mARKMinusIVnowVISIONBUILDER"
-  },
-  {
-    "text": "Mary",
-    "skillId": "mary"
-  },
-  {
-    "text": "MATLAB",
-    "skillId": "MATLAB"
-  },
-  {
-    "text": "MASM Microsoft Assembly x86",
-    "skillId": "mASMMicrosoftAssemblyX86"
-  },
-  {
-    "text": "MATH-MATIC",
-    "skillId": "mATHMinusMATIC"
-  },
-  {
-    "text": "Maude system",
-    "skillId": "maudeSystem"
-  },
-  {
-    "text": "Maxima",
-    "skillId": "maxima"
-  },
-  {
-    "text": "Max (Max Msp – Graphical Programming Environment)",
-    "skillId": "maxMaxMspGraphicalProgrammingEnvironment"
-  },
-  {
-    "text": "MaxScript internal language 3D Studio Max",
-    "skillId": "maxScriptInternalLanguage3DStudioMax"
-  },
-  {
-    "text": "Maya (MEL)",
-    "skillId": "mayaMEL"
-  },
-  {
-    "text": "MDL",
-    "skillId": "MDL"
-  },
-  {
-    "text": "Mercury",
-    "skillId": "mercury"
-  },
-  {
-    "text": "Mesa",
-    "skillId": "mesa"
-  },
-  {
-    "text": "MHEG-5 (Interactive TV ",
-    "skillId": "mHEGMinus5InteractiveTV"
-  },
-  {
-    "text": "Microcode",
-    "skillId": "microcode"
-  },
-  {
-    "text": "MicroScript",
-    "skillId": "microScript"
-  },
-  {
-    "text": "MIIS",
-    "skillId": "MIIS"
-  },
-  {
-    "text": "Milk ",
-    "skillId": "milk"
-  },
-  {
-    "text": "MIMIC",
-    "skillId": "MIMIC"
-  },
-  {
-    "text": "Mirah",
-    "skillId": "mirah"
-  },
-  {
-    "text": "Miranda",
-    "skillId": "miranda"
-  },
-  {
-    "text": "MIVA Script",
-    "skillId": "mIVAScript"
-  },
-  {
-    "text": "ML",
-    "skillId": "ML"
-  },
-  {
-    "text": "Model 204",
-    "skillId": "model204"
-  },
-  {
-    "text": "Modelica",
-    "skillId": "modelica"
-  },
-  {
-    "text": "Modula",
-    "skillId": "modula"
-  },
-  {
-    "text": "Modula-2",
-    "skillId": "modulaMinus2"
-  },
-  {
-    "text": "Modula-3",
-    "skillId": "modulaMinus3"
-  },
-  {
-    "text": "Mohol",
-    "skillId": "mohol"
-  },
-  {
-    "text": "MOO",
-    "skillId": "MOO"
-  },
-  {
-    "text": "Mortran",
-    "skillId": "mortran"
-  },
-  {
-    "text": "Mouse",
-    "skillId": "mouse"
-  },
-  {
-    "text": "MPD",
-    "skillId": "MPD"
-  },
-  {
-    "text": "MSL",
-    "skillId": "MSL"
-  },
-  {
-    "text": "MUMPS",
-    "skillId": "MUMPS"
-  },
-  {
-    "text": "MuPAD",
-    "skillId": "muPAD"
-  },
-  {
-    "text": "Mutan",
-    "skillId": "mutan"
-  },
-  {
-    "text": "Mystic Programming Language (MPL)",
-    "skillId": "mysticMPL"
-  },
-  {
-    "text": "N",
-    "skillId": "N"
-  },
-  {
-    "text": "NASM",
-    "skillId": "NASM"
-  },
-  {
-    "text": "Napier88",
-    "skillId": "napier88"
-  },
-  {
-    "text": "Neko",
-    "skillId": "neko"
-  },
-  {
-    "text": "Nemerle",
-    "skillId": "nemerle"
-  },
-  {
-    "text": "NESL",
-    "skillId": "NESL"
-  },
-  {
-    "text": "Net.Data",
-    "skillId": "netDotData"
-  },
-  {
-    "text": "NetLogo",
-    "skillId": "netLogo"
-  },
-  {
-    "text": "NetRexx",
-    "skillId": "netRexx"
-  },
-  {
-    "text": "NewLISP",
-    "skillId": "newLISP"
-  },
-  {
-    "text": "NEWP",
-    "skillId": "NEWP"
-  },
-  {
-    "text": "Newspeak",
-    "skillId": "newspeak"
-  },
-  {
-    "text": "NewtonScript",
-    "skillId": "newtonScript"
-  },
-  {
-    "text": "Nial",
-    "skillId": "nial"
-  },
-  {
-    "text": "Nickle (NITIN)",
-    "skillId": "nickleNITIN"
-  },
-  {
-    "text": "Nim",
-    "skillId": "nim"
-  },
-  {
-    "text": "Nix",
-    "skillId": "nix"
-  },
-  {
-    "text": "NPL",
-    "skillId": "NPL"
-  },
-  {
-    "text": "Not eXactly C (NXC)",
-    "skillId": "notEXactlyCNXC"
-  },
-  {
-    "text": "Not Quite C (NQC)",
-    "skillId": "notQuiteCNQC"
-  },
-  {
-    "text": "NSIS",
-    "skillId": "NSIS"
-  },
-  {
-    "text": "Nu",
-    "skillId": "nu"
-  },
-  {
-    "text": "NWScript",
-    "skillId": "nWScript"
-  },
-  {
-    "text": "NXT-G",
-    "skillId": "nXTMinusG"
-  },
-  {
-    "text": "o:XML",
-    "skillId": "oXML"
-  },
-  {
-    "text": "Oak",
-    "skillId": "oak"
-  },
-  {
-    "text": "Oberon",
-    "skillId": "oberon"
-  },
-  {
-    "text": "OBJ2",
-    "skillId": "oBJ2"
-  },
-  {
-    "text": "Object Lisp",
-    "skillId": "objectLisp"
-  },
-  {
-    "text": "ObjectLOGO",
-    "skillId": "objectLOGO"
-  },
-  {
-    "text": "Object REXX",
-    "skillId": "objectREXX"
-  },
-  {
-    "text": "Object Pascal",
-    "skillId": "objectPascal"
-  },
-  {
-    "text": "Objective-C",
-    "skillId": "objectiveMinusC"
-  },
-  {
-    "text": "Objective-J",
-    "skillId": "objectiveMinusJ"
-  },
-  {
-    "text": "Obliq",
-    "skillId": "obliq"
-  },
-  {
-    "text": "OCaml",
-    "skillId": "oCaml"
-  },
-  {
-    "text": "occam",
-    "skillId": "occam"
-  },
-  {
-    "text": "occam-π",
-    "skillId": "occamMinusπ"
-  },
-  {
-    "text": "Octave",
-    "skillId": "octave"
-  },
-  {
-    "text": "OmniMark",
-    "skillId": "omniMark"
-  },
-  {
-    "text": "Opa",
-    "skillId": "opa"
-  },
-  {
-    "text": "Opal",
-    "skillId": "opal"
-  },
-  {
-    "text": "OpenCL",
-    "skillId": "openCL"
-  },
-  {
-    "text": "OpenEdge ABL",
-    "skillId": "openEdgeABL"
-  },
-  {
-    "text": "OPL",
-    "skillId": "OPL"
-  },
-  {
-    "text": "OpenVera",
-    "skillId": "openVera"
-  },
-  {
-    "text": "OPS5",
-    "skillId": "oPS5"
-  },
-  {
-    "text": "OptimJ",
-    "skillId": "optimJ"
-  },
-  {
-    "text": "Orc",
-    "skillId": "orc"
-  },
-  {
-    "text": "ORCA/Modula-2",
-    "skillId": "oRCAModulaMinus2"
-  },
-  {
-    "text": "Oriel",
-    "skillId": "oriel"
-  },
-  {
-    "text": "Orwell",
-    "skillId": "orwell"
-  },
-  {
-    "text": "Oxygene",
-    "skillId": "oxygene"
-  },
-  {
-    "text": "Oz",
-    "skillId": "oz"
-  },
-  {
-    "text": "P",
-    "skillId": "P"
-  },
-  {
-    "text": "P4",
-    "skillId": "p4"
-  },
-  {
-    "text": "P´´",
-    "skillId": "p′′"
-  },
-  {
-    "text": "ParaSail ",
-    "skillId": "paraSail"
-  },
-  {
-    "text": "PARI/GP",
-    "skillId": "pARIGP"
-  },
-  {
-    "text": "Pascal",
-    "skillId": "pascal"
-  },
-  {
-    "text": "Pascal Script",
-    "skillId": "pascalScript"
-  },
-  {
-    "text": "PCASTL",
-    "skillId": "PCASTL"
-  },
-  {
-    "text": "PCF",
-    "skillId": "PCF"
-  },
-  {
-    "text": "PEARL",
-    "skillId": "PEARL"
-  },
-  {
-    "text": "PeopleCode",
-    "skillId": "peopleCode"
-  },
-  {
-    "text": "Perl",
-    "skillId": "perl"
-  },
-  {
-    "text": "PDL",
-    "skillId": "PDL"
-  },
-  {
-    "text": "Pharo",
-    "skillId": "pharo"
-  },
-  {
-    "text": "PHP",
-    "skillId": "PHP"
-  },
-  {
-    "text": "Pico",
-    "skillId": "pico"
-  },
-  {
-    "text": "Picolisp",
-    "skillId": "picolisp"
-  },
-  {
-    "text": "Pict",
-    "skillId": "pict"
-  },
-  {
-    "text": "Pike",
-    "skillId": "pike"
-  },
-  {
-    "text": "PILOT",
-    "skillId": "PILOT"
-  },
-  {
-    "text": "Pipelines",
-    "skillId": "pipelines"
-  },
-  {
-    "text": "Pizza",
-    "skillId": "pizza"
-  },
-  {
-    "text": "PL-11",
-    "skillId": "pLMinus11"
-  },
-  {
-    "text": "PL/0",
-    "skillId": "pL0"
-  },
-  {
-    "text": "PL/B",
-    "skillId": "pLB"
-  },
-  {
-    "text": "PL/C",
-    "skillId": "pLC"
-  },
-  {
-    "text": "PL/I",
-    "skillId": "pLI"
-  },
-  {
-    "text": "PL/M",
-    "skillId": "pLM"
-  },
-  {
-    "text": "PL/P",
-    "skillId": "pLP"
-  },
-  {
-    "text": "PL/SQL",
-    "skillId": "pLSQL"
-  },
-  {
-    "text": "PL360",
-    "skillId": "pL360"
-  },
-  {
-    "text": "PLANC",
-    "skillId": "PLANC"
-  },
-  {
-    "text": "Plankalkül",
-    "skillId": "plankalkul"
-  },
-  {
-    "text": "Planner",
-    "skillId": "planner"
-  },
-  {
-    "text": "PLEX",
-    "skillId": "PLEX"
-  },
-  {
-    "text": "PLEXIL",
-    "skillId": "PLEXIL"
-  },
-  {
-    "text": "Plus",
-    "skillId": "plus"
-  },
-  {
-    "text": "POP-11",
-    "skillId": "pOPMinus11"
-  },
-  {
-    "text": "POP-2",
-    "skillId": "pOPMinus2"
-  },
-  {
-    "text": "PostScript",
-    "skillId": "postScript"
-  },
-  {
-    "text": "PortablE",
-    "skillId": "portablE"
-  },
-  {
-    "text": "POV-Ray SDL",
-    "skillId": "pOVMinusRaySDL"
-  },
-  {
-    "text": "Powerhouse",
-    "skillId": "powerhouse"
-  },
-  {
-    "text": "PowerBuilder – 4GL GUI application generator from Sybase",
-    "skillId": "powerBuilder4GLGUIApplicationGeneratorFromSybase"
-  },
-  {
-    "text": "PowerShell",
-    "skillId": "powerShell"
-  },
-  {
-    "text": "PPL",
-    "skillId": "PPL"
-  },
-  {
-    "text": "Processing",
-    "skillId": "processing"
-  },
-  {
-    "text": "Processing.js",
-    "skillId": "processingDotjs"
-  },
-  {
-    "text": "Prograph",
-    "skillId": "prograph"
-  },
-  {
-    "text": "PROIV",
-    "skillId": "PROIV"
-  },
-  {
-    "text": "Prolog",
-    "skillId": "prolog"
-  },
-  {
-    "text": "PROMAL",
-    "skillId": "PROMAL"
-  },
-  {
-    "text": "Promela",
-    "skillId": "promela"
-  },
-  {
-    "text": "PROSE modeling",
-    "skillId": "pROSEModeling"
-  },
-  {
-    "text": "PROTEL",
-    "skillId": "PROTEL"
-  },
-  {
-    "text": "ProvideX",
-    "skillId": "provideX"
-  },
-  {
-    "text": "Pro*C",
-    "skillId": "proStarC"
-  },
-  {
-    "text": "Pure",
-    "skillId": "pure"
-  },
-  {
-    "text": "Pure Data",
-    "skillId": "pureData"
-  },
-  {
-    "text": "PureScript",
-    "skillId": "pureScript"
-  },
-  {
-    "text": "Python",
-    "skillId": "python"
-  },
-  {
-    "text": "Q (programming language from Kx Systems)",
-    "skillId": "qFromKxSystems"
-  },
-  {
-    "text": "Q# (Microsoft ",
-    "skillId": "qSharpMicrosoft"
-  },
-  {
-    "text": "Qalb",
-    "skillId": "qalb"
-  },
-  {
-    "text": "Quantum Computation Language",
-    "skillId": "quantumComputationLanguage"
-  },
-  {
-    "text": "QtScript",
-    "skillId": "qtScript"
-  },
-  {
-    "text": "QuakeC",
-    "skillId": "quakeC"
-  },
-  {
-    "text": "QPL",
-    "skillId": "QPL"
-  },
-  {
-    "text": ".QL",
-    "skillId": "dotQL"
-  },
-  {
-    "text": "R",
-    "skillId": "R"
-  },
-  {
-    "text": "R++",
-    "skillId": "rPlusPlus"
-  },
-  {
-    "text": "Racket",
-    "skillId": "racket"
-  },
-  {
-    "text": "Raku",
-    "skillId": "raku"
-  },
-  {
-    "text": "RAPID",
-    "skillId": "RAPID"
-  },
-  {
-    "text": "Rapira",
-    "skillId": "rapira"
-  },
-  {
-    "text": "Ratfiv",
-    "skillId": "ratfiv"
-  },
-  {
-    "text": "Ratfor",
-    "skillId": "ratfor"
-  },
-  {
-    "text": "rc",
-    "skillId": "rc"
-  },
-  {
-    "text": "Reason",
-    "skillId": "reason"
-  },
-  {
-    "text": "REBOL",
-    "skillId": "REBOL"
-  },
-  {
-    "text": "Red",
-    "skillId": "red"
-  },
-  {
-    "text": "Redcode",
-    "skillId": "redcode"
-  },
-  {
-    "text": "REFAL",
-    "skillId": "REFAL"
-  },
-  {
-    "text": "REXX",
-    "skillId": "REXX"
-  },
-  {
-    "text": "Rlab",
-    "skillId": "rlab"
-  },
-  {
-    "text": "ROOP",
-    "skillId": "ROOP"
-  },
-  {
-    "text": "RPG",
-    "skillId": "RPG"
-  },
-  {
-    "text": "RPL",
-    "skillId": "RPL"
-  },
-  {
-    "text": "RSL",
-    "skillId": "RSL"
-  },
-  {
-    "text": "RTL/2",
-    "skillId": "rTL2"
-  },
-  {
-    "text": "Ruby",
-    "skillId": "ruby"
-  },
-  {
-    "text": "Rust",
-    "skillId": "rust"
-  },
-  {
-    "text": "S",
-    "skillId": "S"
-  },
-  {
-    "text": "S2",
-    "skillId": "s2"
-  },
-  {
-    "text": "S3",
-    "skillId": "s3"
-  },
-  {
-    "text": "S-Lang",
-    "skillId": "sMinusLang"
-  },
-  {
-    "text": "S-PLUS",
-    "skillId": "sMinusPLUS"
-  },
-  {
-    "text": "SA-C",
-    "skillId": "sAMinusC"
-  },
-  {
-    "text": "SabreTalk",
-    "skillId": "sabreTalk"
-  },
-  {
-    "text": "SAIL",
-    "skillId": "SAIL"
-  },
-  {
-    "text": "SAS",
-    "skillId": "SAS"
-  },
-  {
-    "text": "SASL",
-    "skillId": "SASL"
-  },
-  {
-    "text": "Sather",
-    "skillId": "sather"
-  },
-  {
-    "text": "Sawzall",
-    "skillId": "sawzall"
-  },
-  {
-    "text": "Scala",
-    "skillId": "scala"
-  },
-  {
-    "text": "Scheme",
-    "skillId": "scheme"
-  },
-  {
-    "text": "Scilab",
-    "skillId": "scilab"
-  },
-  {
-    "text": "Scratch",
-    "skillId": "scratch"
-  },
-  {
-    "text": "Script.NET",
-    "skillId": "scriptDotNET"
-  },
-  {
-    "text": "Sed",
-    "skillId": "sed"
-  },
-  {
-    "text": "Seed7",
-    "skillId": "seed7"
-  },
-  {
-    "text": "Self",
-    "skillId": "self"
-  },
-  {
-    "text": "SenseTalk",
-    "skillId": "senseTalk"
-  },
-  {
-    "text": "SequenceL",
-    "skillId": "sequenceL"
-  },
-  {
-    "text": "Serpent",
-    "skillId": "serpent"
-  },
-  {
-    "text": "SETL",
-    "skillId": "SETL"
-  },
-  {
-    "text": "SIMPOL",
-    "skillId": "SIMPOL"
-  },
-  {
-    "text": "SIGNAL",
-    "skillId": "SIGNAL"
-  },
-  {
-    "text": "SiMPLE",
-    "skillId": "siMPLE"
-  },
-  {
-    "text": "SIMSCRIPT",
-    "skillId": "SIMSCRIPT"
-  },
-  {
-    "text": "Simula",
-    "skillId": "simula"
-  },
-  {
-    "text": "Simulink",
-    "skillId": "simulink"
-  },
-  {
-    "text": "Singularity",
-    "skillId": "singularity"
-  },
-  {
-    "text": "SISAL",
-    "skillId": "SISAL"
-  },
-  {
-    "text": "SLIP",
-    "skillId": "SLIP"
-  },
-  {
-    "text": "SMALL",
-    "skillId": "SMALL"
-  },
-  {
-    "text": "Smalltalk",
-    "skillId": "smalltalk"
-  },
-  {
-    "text": "SML",
-    "skillId": "SML"
-  },
-  {
-    "text": "Strongtalk",
-    "skillId": "strongtalk"
-  },
-  {
-    "text": "Snap!",
-    "skillId": "snap"
-  },
-  {
-    "text": "SNOBOL (SPITBOL)",
-    "skillId": "sNOBOLSPITBOL"
-  },
-  {
-    "text": "Snowball",
-    "skillId": "snowball"
-  },
-  {
-    "text": "SOL",
-    "skillId": "SOL"
-  },
-  {
-    "text": "Solidity",
-    "skillId": "solidity"
-  },
-  {
-    "text": "SOPHAEROS",
-    "skillId": "SOPHAEROS"
-  },
-  {
-    "text": "Source",
-    "skillId": "source"
-  },
-  {
-    "text": "SPARK",
-    "skillId": "SPARK"
-  },
-  {
-    "text": "Speakeasy",
-    "skillId": "speakeasy"
-  },
-  {
-    "text": "Speedcode",
-    "skillId": "speedcode"
-  },
-  {
-    "text": "SPIN",
-    "skillId": "SPIN"
-  },
-  {
-    "text": "SP/k",
-    "skillId": "sPk"
-  },
-  {
-    "text": "SPS",
-    "skillId": "SPS"
-  },
-  {
-    "text": "SQL",
-    "skillId": "SQL"
-  },
-  {
-    "text": "SQR",
-    "skillId": "SQR"
-  },
-  {
-    "text": "Squeak",
-    "skillId": "squeak"
-  },
-  {
-    "text": "Squirrel",
-    "skillId": "squirrel"
-  },
-  {
-    "text": "SR",
-    "skillId": "SR"
-  },
-  {
-    "text": "S/SL",
-    "skillId": "sSL"
-  },
-  {
-    "text": "Starlogo",
-    "skillId": "starlogo"
-  },
-  {
-    "text": "Strand",
-    "skillId": "strand"
-  },
-  {
-    "text": "Stata",
-    "skillId": "stata"
-  },
-  {
-    "text": "Stateflow",
-    "skillId": "stateflow"
-  },
-  {
-    "text": "Subtext",
-    "skillId": "subtext"
-  },
-  {
-    "text": "SBL",
-    "skillId": "SBL"
-  },
-  {
-    "text": "SuperCollider",
-    "skillId": "superCollider"
-  },
-  {
-    "text": "SuperTalk",
-    "skillId": "superTalk"
-  },
-  {
-    "text": "Swift (Apple)",
-    "skillId": "swiftApple"
-  },
-  {
-    "text": "Swift",
-    "skillId": "swift"
-  },
-  {
-    "text": "SYMPL",
-    "skillId": "SYMPL"
-  },
-  {
-    "text": "SystemVerilog",
-    "skillId": "systemVerilog"
-  },
-  {
-    "text": "T",
-    "skillId": "T"
-  },
-  {
-    "text": "TACL",
-    "skillId": "TACL"
-  },
-  {
-    "text": "TACPOL",
-    "skillId": "TACPOL"
-  },
-  {
-    "text": "TADS",
-    "skillId": "TADS"
-  },
-  {
-    "text": "TAL",
-    "skillId": "TAL"
-  },
-  {
-    "text": "Tcl",
-    "skillId": "tcl"
-  },
-  {
-    "text": "Tea",
-    "skillId": "tea"
-  },
-  {
-    "text": "TECO",
-    "skillId": "TECO"
-  },
-  {
-    "text": "TELCOMP",
-    "skillId": "TELCOMP"
-  },
-  {
-    "text": "TeX",
-    "skillId": "teX"
-  },
-  {
-    "text": "TEX",
-    "skillId": "TEX"
-  },
-  {
-    "text": "TIE",
-    "skillId": "TIE"
-  },
-  {
-    "text": "TMG, compiler-compiler",
-    "skillId": "tMG,CompilerMinuscompiler"
-  },
-  {
-    "text": "Tom",
-    "skillId": "tom"
-  },
-  {
-    "text": "Toi",
-    "skillId": "toi"
-  },
-  {
-    "text": "Topspeed",
-    "skillId": "topspeed"
-  },
-  {
-    "text": "TPU",
-    "skillId": "TPU"
-  },
-  {
-    "text": "Trac",
-    "skillId": "trac"
-  },
-  {
-    "text": "TTM",
-    "skillId": "TTM"
-  },
-  {
-    "text": "T-SQL",
-    "skillId": "tMinusSQL"
-  },
-  {
-    "text": "Transcript",
-    "skillId": "transcript"
-  },
-  {
-    "text": "TTCN",
-    "skillId": "TTCN"
-  },
-  {
-    "text": "Turing",
-    "skillId": "turing"
-  },
-  {
-    "text": "TUTOR",
-    "skillId": "TUTOR"
-  },
-  {
-    "text": "TXL",
-    "skillId": "TXL"
-  },
-  {
-    "text": "TypeScript",
-    "skillId": "typeScript"
-  },
-  {
-    "text": "Tynker",
-    "skillId": "tynker"
-  },
-  {
-    "text": "Ubercode",
-    "skillId": "ubercode"
-  },
-  {
-    "text": "UCSD Pascal",
-    "skillId": "uCSDPascal"
-  },
-  {
-    "text": "Umple",
-    "skillId": "umple"
-  },
-  {
-    "text": "Unicon",
-    "skillId": "unicon"
-  },
-  {
-    "text": "Uniface",
-    "skillId": "uniface"
-  },
-  {
-    "text": "UNITY",
-    "skillId": "UNITY"
-  },
-  {
-    "text": "Unix shell",
-    "skillId": "unixShell"
-  },
-  {
-    "text": "UnrealScript",
-    "skillId": "unrealScript"
-  },
-  {
-    "text": "Vala",
-    "skillId": "vala"
-  },
-  {
-    "text": "Verilog",
-    "skillId": "verilog"
-  },
-  {
-    "text": "VHDL",
-    "skillId": "VHDL"
-  },
-  {
-    "text": "Vim script",
-    "skillId": "vimScript"
-  },
-  {
-    "text": "Viper",
-    "skillId": "viper"
-  },
-  {
-    "text": "Visual DataFlex",
-    "skillId": "visualDataFlex"
-  },
-  {
-    "text": "Visual DialogScript",
-    "skillId": "visualDialogScript"
-  },
-  {
-    "text": "Visual FoxPro",
-    "skillId": "visualFoxPro"
-  },
-  {
-    "text": "Visual J++",
-    "skillId": "visualJPlusPlus"
-  },
-  {
-    "text": "Visual LISP",
-    "skillId": "visualLISP"
-  },
-  {
-    "text": "Visual Objects",
-    "skillId": "visualObjects"
-  },
-  {
-    "text": "Visual Prolog",
-    "skillId": "visualProlog"
-  },
-  {
-    "text": "WATFIV",
-    "skillId": "WATFIV"
-  },
-  {
-    "text": "WATFOR",
-    "skillId": "WATFOR"
-  },
-  {
-    "text": "WebAssembly",
-    "skillId": "webAssembly"
-  },
-  {
-    "text": "WebDNA",
-    "skillId": "webDNA"
-  },
-  {
-    "text": "Whiley",
-    "skillId": "whiley"
-  },
-  {
-    "text": "Winbatch",
-    "skillId": "winbatch"
-  },
-  {
-    "text": "Wolfram ",
-    "skillId": "wolfram"
-  },
-  {
-    "text": "Wyvern",
-    "skillId": "wyvern"
-  },
-  {
-    "text": "X++",
-    "skillId": "xPlusPlus"
-  },
-  {
-    "text": "X10",
-    "skillId": "x10"
-  },
-  {
-    "text": "xBase",
-    "skillId": "xBase"
-  },
-  {
-    "text": "xBase++",
-    "skillId": "xBasePlusPlus"
-  },
-  {
-    "text": "XBL",
-    "skillId": "XBL"
-  },
-  {
-    "text": "XC (targets XMOS architecture)",
-    "skillId": "xCtargetsXMOSArchitecture"
-  },
-  {
-    "text": "xHarbour",
-    "skillId": "xHarbour"
-  },
-  {
-    "text": "XL",
-    "skillId": "XL"
-  },
-  {
-    "text": "Xojo",
-    "skillId": "xojo"
-  },
-  {
-    "text": "XOTcl",
-    "skillId": "xOTcl"
-  },
-  {
-    "text": "Xod",
-    "skillId": "xod"
-  },
-  {
-    "text": "XPL",
-    "skillId": "XPL"
-  },
-  {
-    "text": "XPL0",
-    "skillId": "xPL0"
-  },
-  {
-    "text": "XQuery",
-    "skillId": "xQuery"
-  },
-  {
-    "text": "XSB",
-    "skillId": "XSB"
-  },
-  {
-    "text": "XSharp",
-    "skillId": "xSharp"
-  },
-  {
-    "text": "XSLT",
-    "skillId": "XSLT"
-  },
-  {
-    "text": "Xtend",
-    "skillId": "xtend"
-  },
-  {
-    "text": "Y",
-    "skillId": "Y"
-  },
-  {
-    "text": "YAML",
-    "skillId": "YAML"
-  },
-  {
-    "text": "Yorick",
-    "skillId": "yorick"
-  },
-  {
-    "text": "YQL",
-    "skillId": "YQL"
-  },
-  {
-    "text": "Yoix",
-    "skillId": "yoix"
-  },
-  {
-    "text": "YUI",
-    "skillId": "YUI"
-  },
-  {
-    "text": "Z notation",
-    "skillId": "zNotation"
-  },
-  {
-    "text": "Zebra",
-    "skillId": "zebra"
-  },
-  {
-    "text": "ZPL",
-    "skillId": "ZPL"
-  },
-  {
-    "text": "ZPL2",
-    "skillId": "zPL2"
-  },
-  {
-    "text": "Zeno",
-    "skillId": "zeno"
-  },
-  {
-    "text": "ZetaLisp",
-    "skillId": "zetaLisp"
-  },
-  {
-    "text": "Zig",
-    "skillId": "zig"
-  },
-  {
-    "text": "ZOPL",
-    "skillId": "ZOPL"
-  },
-  {
-    "text": "Z++",
-    "skillId": "zPlusPlus"
-  }
-]
+{
+  "aDotNET": "A.NET",
+  "aMinus0System": "A-0 System",
+  "aPlus": "A+",
+  "ABAP": "ABAP",
+  "ABC": "ABC",
+  "aBCALGOL": "ABC ALGOL",
+  "ACC": "ACC",
+  "accent": "Accent",
+  "aceDASL": "Ace DASL",
+  "action": "Action!",
+  "actionScript": "ActionScript",
+  "actor": "Actor",
+  "ada": "Ada",
+  "adenine": "Adenine",
+  "agda": "Agda",
+  "agilentVEE": "Agilent VEE",
+  "agora": "Agora",
+  "AIMMS": "AIMMS",
+  "aldor": "Aldor",
+  "alef": "Alef",
+  "ALF": "ALF",
+  "aLGOL58": "ALGOL 58",
+  "aLGOL60": "ALGOL 60",
+  "aLGOL68": "ALGOL 68",
+  "aLGOLW": "ALGOL W",
+  "alice": "Alice",
+  "almaMinus0": "Alma-0",
+  "ambientTalk": "AmbientTalk",
+  "amigaE": "Amiga E",
+  "AMOS": "AMOS",
+  "AMPL": "AMPL",
+  "angelScript": "AngelScript",
+  "apachePigLatin": "Apache Pig latin",
+  "apex": "Apex",
+  "APL": "APL",
+  "appleScript": "AppleScript",
+  "APT": "APT",
+  "arc": "Arc",
+  "aRexx": "ARexx",
+  "argus": "Argus",
+  "assembly": "Assembly",
+  "autoHotkey": "AutoHotkey",
+  "autoIt": "AutoIt",
+  "autoLISPVisualLISP": "AutoLISP / Visual LISP",
+  "averest": "Averest",
+  "AWK": "AWK",
+  "axum": "Axum",
+  "B": "B",
+  "babbage": "Babbage",
+  "ballerina": "Ballerina",
+  "bash": "Bash",
+  "BASIC": "BASIC",
+  "batchFileWindowsMSMinusDOS": "Batch file (Windows/MS-DOS)",
+  "bc": "bc",
+  "BCPL": "BCPL",
+  "beanShell": "BeanShell",
+  "bertrand": "Bertrand",
+  "BETA": "BETA",
+  "BLISS": "BLISS",
+  "blockly": "Blockly",
+  "blooP": "BlooP",
+  "boo": "Boo",
+  "boomerang": "Boomerang",
+  "bosque": "Bosque",
+  "C": "C",
+  "cMinusMinus": "C--",
+  "cPlusPlus": "C++",
+  "cStar": "C*",
+  "cSharp": "C#",
+  "cAL": "C/AL",
+  "cacheObjectScript": "Caché ObjectScript",
+  "cShellcsh": "C Shell (csh)",
+  "caml": "Caml",
+  "cayenne": "Cayenne",
+  "cDuce": "CDuce",
+  "cecil": "Cecil",
+  "cesil": "Cesil",
+  "ceu": "Céu",
+  "ceylon": "Ceylon",
+  "cFEngine": "CFEngine",
+  "cg": "Cg",
+  "ch": "Ch",
+  "chapel": "Chapel",
+  "charm": "Charm",
+  "CHILL": "CHILL",
+  "cHIPMinus8": "CHIP-8",
+  "chomski": "chomski",
+  "chucK": "ChucK",
+  "cilk": "Cilk",
+  "cLIBM": "CL (IBM)",
+  "claire": "Claire",
+  "clarion": "Clarion",
+  "clean": "Clean",
+  "clipper": "Clipper",
+  "CLIPS": "CLIPS",
+  "CLIST": "CLIST",
+  "clojure": "Clojure",
+  "CLU": "CLU",
+  "cMSMinus2": "CMS-2",
+  "COBOL": "COBOL",
+  "cobolScript": "CobolScript",
+  "cobra": "Cobra",
+  "coffeeScript": "CoffeeScript",
+  "coldFusion": "ColdFusion",
+  "COMAL": "COMAL",
+  "combinedCPL": "Combined Programming",
+  "COMIT": "COMIT",
+  "commonIntermediate": "Common Intermediate",
+  "commonLisp": "Common Lisp (CL)",
+  "COMPASS": "COMPASS",
+  "componentPascal": "Component Pascal",
+  "constraintHandlingRulesCHR": "Constraint Handling Rules (CHR)",
+  "COMTRAN": "COMTRAN",
+  "cool": "Cool",
+  "coq": "Coq",
+  "coral66": "Coral 66",
+  "corVision": "CorVision",
+  "COWSEL": "COWSEL",
+  "CPL": "CPL",
+  "cryptol": "Cryptol",
+  "crystal": "Crystal",
+  "csound": "Csound",
+  "cuneiform": "Cuneiform",
+  "curl": "Curl",
+  "curry": "Curry",
+  "cybil": "Cybil",
+  "cyclone": "Cyclone",
+  "cypherQuery": "Cypher Query ",
+  "cython": "Cython",
+  "CEEMAC": "CEEMAC",
+  "D": "D",
+  "dart": "Dart",
+  "darwin": "Darwin",
+  "dataFlex": "DataFlex",
+  "datalog": "Datalog",
+  "DATATRIEVE": "DATATRIEVE",
+  "dBase": "dBase",
+  "dc": "dc",
+  "DCL": "DCL",
+  "dinkC": "DinkC",
+  "DIBOL": "DIBOL",
+  "dog": "Dog",
+  "draco": "Draco",
+  "DRAKON": "DRAKON",
+  "dylan": "Dylan",
+  "DYNAMO": "DYNAMO",
+  "dAXDataAnalysisExpressions": "DAX (Data Analysis Expressions)",
+  "E": "E",
+  "ease": "Ease",
+  "easyPLI": "Easy PL/I",
+  "eASYTRIEVEPLUS": "EASYTRIEVE PLUS",
+  "eC": "eC",
+  "eCMAScript": "ECMAScript",
+  "edinburghIMP": "Edinburgh IMP",
+  "EGL": "EGL",
+  "eiffel": "Eiffel",
+  "ELAN": "ELAN",
+  "elixir": "Elixir",
+  "elm": "Elm",
+  "emacsLisp": "Emacs Lisp",
+  "emerald": "Emerald",
+  "epigram": "Epigram",
+  "ePLEasy": "EPL (Easy ",
+  "ePLEltron": "EPL (Eltron ",
+  "erlang": "Erlang",
+  "es": "es",
+  "escher": "Escher",
+  "ESPOL": "ESPOL",
+  "esterel": "Esterel",
+  "etoys": "Etoys",
+  "euclid": "Euclid",
+  "euler": "Euler",
+  "euphoria": "Euphoria",
+  "eusLispRobot": "EusLisp Robot",
+  "cMSEXECEXEC": "CMS EXEC (EXEC)",
+  "eXEC2": "EXEC 2",
+  "executableUML": "Executable UML",
+  "ezhil": "Ezhil",
+  "F": "F",
+  "fSharp": "F#",
+  "fStar": "F*",
+  "factor": "Factor",
+  "fantom": "Fantom",
+  "FAUST": "FAUST",
+  "FFP": "FFP",
+  "fish": "fish",
+  "fjolnir": "Fjölnir",
+  "FL": "FL",
+  "flavors": "Flavors",
+  "flex": "Flex",
+  "flooP": "FlooP",
+  "fLOWMinusMATIC": "FLOW-MATIC",
+  "FOCAL": "FOCAL",
+  "FOCUS": "FOCUS",
+  "FOIL": "FOIL",
+  "FORMAC": "FORMAC",
+  "@Formula": "@Formula",
+  "forth": "Forth",
+  "fortran": "Fortran",
+  "fortress": "Fortress",
+  "FP": "FP",
+  "franzLisp": "Franz Lisp",
+  "freeBasic": "FreeBasic",
+  "futhark": "Futhark",
+  "fMinusScript": "F-Script",
+  "gameMakerLanguage": "Game Maker Language ",
+  "gameMonkeyScript": "GameMonkey Script",
+  "GAMS": "GAMS",
+  "GAP": "GAP",
+  "gMinuscode": "G-code",
+  "gDScript": "GDScript",
+  "genie": "Genie",
+  "GDL": "GDL",
+  "GEORGE": "GEORGE",
+  "GLSL": "GLSL",
+  "gNUE": "GNU E",
+  "gNUGuile": "GNU Guile",
+  "go": "Go",
+  "goo": "Go!",
+  "GOAL": "GOAL",
+  "godel": "Gödel",
+  "golo": "Golo",
+  "gOMGoodOldMad": "GOM (Good Old Mad)",
+  "googleAppsScript": "Google Apps Script",
+  "gosu": "Gosu",
+  "GOTRAN": "GOTRAN",
+  "GPSS": "GPSS",
+  "graphTalk": "GraphTalk",
+  "GRASS": "GRASS",
+  "grasshopper": "Grasshopper",
+  "groovy": "Groovy",
+  "hack": "Hack",
+  "HAGGIS": "HAGGIS",
+  "hALS": "HAL/S",
+  "halide": "Halide ",
+  "hamiltonCShell": "Hamilton C shell",
+  "harbour": "Harbour",
+  "hartmannPipelines": "Hartmann pipelines",
+  "haskell": "Haskell",
+  "haxe": "Haxe",
+  "hermes": "Hermes",
+  "highLevelAssembly": "High Level Assembly",
+  "HLSL": "HLSL",
+  "hollywood": "Hollywood",
+  "holyC": "HolyC",
+  "hop": "Hop",
+  "hopscotch": "Hopscotch",
+  "hope": "Hope",
+  "hugo": "Hugo",
+  "hume": "Hume",
+  "hyperTalk": "HyperTalk",
+  "io": "Io",
+  "icon": "Icon",
+  "IBMBasicAssembly": "IBM Basic assembly",
+  "iBMHAScript": "IBM HAScript",
+  "iBMInformixMinus4GL": "IBM Informix-4GL",
+  "iBMRPG": "IBM RPG",
+  "IDL": "IDL",
+  "idris": "Idris",
+  "inform": "Inform",
+  "J": "J",
+  "jSharp": "J#",
+  "jPlusPlus": "J++",
+  "JADE": "JADE",
+  "JAL": "JAL",
+  "janus": "Janus ",
+  "JASS": "JASS",
+  "java": "Java",
+  "javaFXScript": "JavaFX Script",
+  "javaScript": "JavaScript",
+  "jess": "Jess ",
+  "JCL": "JCL",
+  "JEAN": "JEAN",
+  "joinJava": "Join Java",
+  "JOSS": "JOSS",
+  "joule": "Joule",
+  "JOVIAL": "JOVIAL",
+  "joy": "Joy",
+  "jScript": "JScript",
+  "jScriptDotNET": "JScript .NET",
+  "julia": "Julia",
+  "jython": "Jython",
+  "K": "K",
+  "kaleidoscope": "Kaleidoscope",
+  "karel": "Karel",
+  "KEE": "KEE",
+  "kixtart": "Kixtart",
+  "klererMinusMaySystem": "Klerer-May System",
+  "KIF": "KIF",
+  "kojo": "Kojo",
+  "kotlin": "Kotlin",
+  "KRC": "KRC",
+  "KRL": "KRL",
+  "KRL": "KRL",
+  "KRYPTON": "KRYPTON",
+  "kornShellksh": "Korn shell (ksh)",
+  "kodu": "Kodu",
+  "kv": "Kv",
+  "labVIEW": "LabVIEW",
+  "ladder": "Ladder",
+  "LANSA": "LANSA",
+  "lasso": "Lasso",
+  "lava": "Lava",
+  "lCMinus3": "LC-3",
+  "legoscript": "Legoscript",
+  "LIL": "LIL",
+  "lilyPond": "LilyPond",
+  "limbo": "Limbo",
+  "limnor": "Limnor",
+  "LINC": "LINC",
+  "lingo": "Lingo",
+  "LINQ": "LINQ",
+  "LIS": "LIS",
+  "LISA": "LISA",
+  "languageH": "Language H",
+  "lisp": "Lisp",
+  "liteMinusC": "Lite-C",
+  "lithe": "Lithe",
+  "littleB": "Little b",
+  "LLL": "LLL",
+  "logo": "Logo",
+  "logtalk": "Logtalk",
+  "lotusScript": "LotusScript",
+  "LPC": "LPC",
+  "LSE": "LSE",
+  "LSL": "LSL",
+  "liveCode": "LiveCode",
+  "liveScript": "LiveScript",
+  "lua": "Lua",
+  "lucid": "Lucid",
+  "lustre": "Lustre",
+  "lYaPAS": "LYaPAS",
+  "lynx": "Lynx",
+  "m2001": "M2001",
+  "m4": "M4",
+  "mSharp": "M#",
+  "machineCode": "Machine code",
+  "mADMichiganAlgorithmDecoder": "MAD (Michigan Algorithm Decoder)",
+  "mADI": "MAD/I",
+  "magik": "Magik",
+  "magma": "Magma",
+  "mani": "Máni",
+  "maple": "Maple",
+  "mAPPERnowPartOfBIS": "MAPPER (now part of BIS)",
+  "mARKMinusIVnowVISIONBUILDER": "MARK-IV (now VISION:BUILDER)",
+  "mary": "Mary",
+  "MATLAB": "MATLAB",
+  "mASMMicrosoftAssemblyX86": "MASM Microsoft Assembly x86",
+  "mATHMinusMATIC": "MATH-MATIC",
+  "maudeSystem": "Maude system",
+  "maxima": "Maxima",
+  "mayaMEL": "Maya (MEL)",
+  "MDL": "MDL",
+  "mercury": "Mercury",
+  "mesa": "Mesa",
+  "mHEGMinus5InteractiveTV": "MHEG-5 (Interactive TV ",
+  "microcode": "Microcode",
+  "microScript": "MicroScript",
+  "MIIS": "MIIS",
+  "milk": "Milk ",
+  "MIMIC": "MIMIC",
+  "mirah": "Mirah",
+  "miranda": "Miranda",
+  "mIVAScript": "MIVA Script",
+  "ML": "ML",
+  "model204": "Model 204",
+  "modelica": "Modelica",
+  "modula": "Modula",
+  "modulaMinus2": "Modula-2",
+  "modulaMinus3": "Modula-3",
+  "mohol": "Mohol",
+  "MOO": "MOO",
+  "mortran": "Mortran",
+  "mouse": "Mouse",
+  "MPD": "MPD",
+  "MSL": "MSL",
+  "MUMPS": "MUMPS",
+  "muPAD": "MuPAD",
+  "mutan": "Mutan",
+  "mysticMPL": "Mystic Programming Language (MPL)",
+  "N": "N",
+  "NASM": "NASM",
+  "napier88": "Napier88",
+  "neko": "Neko",
+  "nemerle": "Nemerle",
+  "NESL": "NESL",
+  "netDotData": "Net.Data",
+  "netLogo": "NetLogo",
+  "netRexx": "NetRexx",
+  "newLISP": "NewLISP",
+  "NEWP": "NEWP",
+  "newspeak": "Newspeak",
+  "newtonScript": "NewtonScript",
+  "nial": "Nial",
+  "nickleNITIN": "Nickle (NITIN)",
+  "nim": "Nim",
+  "nix": "Nix",
+  "NPL": "NPL",
+  "notEXactlyCNXC": "Not eXactly C (NXC)",
+  "notQuiteCNQC": "Not Quite C (NQC)",
+  "NSIS": "NSIS",
+  "nu": "Nu",
+  "nWScript": "NWScript",
+  "nXTMinusG": "NXT-G",
+  "oXML": "o:XML",
+  "oak": "Oak",
+  "oberon": "Oberon",
+  "oBJ2": "OBJ2",
+  "objectLisp": "Object Lisp",
+  "objectLOGO": "ObjectLOGO",
+  "objectREXX": "Object REXX",
+  "objectPascal": "Object Pascal",
+  "objectiveMinusC": "Objective-C",
+  "objectiveMinusJ": "Objective-J",
+  "obliq": "Obliq",
+  "oCaml": "OCaml",
+  "occam": "occam",
+  "occamMinusπ": "occam-π",
+  "octave": "Octave",
+  "omniMark": "OmniMark",
+  "opa": "Opa",
+  "opal": "Opal",
+  "openCL": "OpenCL",
+  "openEdgeABL": "OpenEdge ABL",
+  "OPL": "OPL",
+  "openVera": "OpenVera",
+  "oPS5": "OPS5",
+  "optimJ": "OptimJ",
+  "orc": "Orc",
+  "oRCAModulaMinus2": "ORCA/Modula-2",
+  "oriel": "Oriel",
+  "orwell": "Orwell",
+  "oxygene": "Oxygene",
+  "oz": "Oz",
+  "P": "P",
+  "p4": "P4",
+  "p′′": "P´´",
+  "paraSail": "ParaSail ",
+  "pARIGP": "PARI/GP",
+  "pascal": "Pascal",
+  "pascalScript": "Pascal Script",
+  "PCASTL": "PCASTL",
+  "PCF": "PCF",
+  "PEARL": "PEARL",
+  "peopleCode": "PeopleCode",
+  "perl": "Perl",
+  "PDL": "PDL",
+  "pharo": "Pharo",
+  "PHP": "PHP",
+  "pico": "Pico",
+  "picolisp": "Picolisp",
+  "pict": "Pict",
+  "pike": "Pike",
+  "PILOT": "PILOT",
+  "pipelines": "Pipelines",
+  "pizza": "Pizza",
+  "pLMinus11": "PL-11",
+  "pL0": "PL/0",
+  "pLB": "PL/B",
+  "pLC": "PL/C",
+  "pLI": "PL/I",
+  "pLM": "PL/M",
+  "pLP": "PL/P",
+  "pLSQL": "PL/SQL",
+  "pL360": "PL360",
+  "PLANC": "PLANC",
+  "plankalkul": "Plankalkül",
+  "planner": "Planner",
+  "PLEX": "PLEX",
+  "PLEXIL": "PLEXIL",
+  "plus": "Plus",
+  "pOPMinus11": "POP-11",
+  "pOPMinus2": "POP-2",
+  "postScript": "PostScript",
+  "portablE": "PortablE",
+  "pOVMinusRaySDL": "POV-Ray SDL",
+  "powerhouse": "Powerhouse",
+  "powerShell": "PowerShell",
+  "PPL": "PPL",
+  "processing": "Processing",
+  "processingDotjs": "Processing.js",
+  "prograph": "Prograph",
+  "PROIV": "PROIV",
+  "prolog": "Prolog",
+  "PROMAL": "PROMAL",
+  "promela": "Promela",
+  "pROSEModeling": "PROSE modeling",
+  "PROTEL": "PROTEL",
+  "provideX": "ProvideX",
+  "proStarC": "Pro*C",
+  "pure": "Pure",
+  "pureData": "Pure Data",
+  "pureScript": "PureScript",
+  "python": "Python",
+  "qFromKxSystems": "Q (programming language from Kx Systems)",
+  "qSharpMicrosoft": "Q# (Microsoft ",
+  "qalb": "Qalb",
+  "quantumComputationLanguage": "Quantum Computation Language",
+  "qtScript": "QtScript",
+  "quakeC": "QuakeC",
+  "QPL": "QPL",
+  "dotQL": ".QL",
+  "R": "R",
+  "rPlusPlus": "R++",
+  "racket": "Racket",
+  "raku": "Raku",
+  "RAPID": "RAPID",
+  "rapira": "Rapira",
+  "ratfiv": "Ratfiv",
+  "ratfor": "Ratfor",
+  "rc": "rc",
+  "reason": "Reason",
+  "REBOL": "REBOL",
+  "red": "Red",
+  "redcode": "Redcode",
+  "REFAL": "REFAL",
+  "REXX": "REXX",
+  "rlab": "Rlab",
+  "ROOP": "ROOP",
+  "RPG": "RPG",
+  "RPL": "RPL",
+  "RSL": "RSL",
+  "rTL2": "RTL/2",
+  "ruby": "Ruby",
+  "rust": "Rust",
+  "S": "S",
+  "s2": "S2",
+  "s3": "S3",
+  "sMinusLang": "S-Lang",
+  "sMinusPLUS": "S-PLUS",
+  "sAMinusC": "SA-C",
+  "sabreTalk": "SabreTalk",
+  "SAIL": "SAIL",
+  "SAS": "SAS",
+  "SASL": "SASL",
+  "sather": "Sather",
+  "sawzall": "Sawzall",
+  "scala": "Scala",
+  "scheme": "Scheme",
+  "scilab": "Scilab",
+  "scratch": "Scratch",
+  "scriptDotNET": "Script.NET",
+  "sed": "Sed",
+  "seed7": "Seed7",
+  "self": "Self",
+  "senseTalk": "SenseTalk",
+  "sequenceL": "SequenceL",
+  "serpent": "Serpent",
+  "SETL": "SETL",
+  "SIMPOL": "SIMPOL",
+  "SIGNAL": "SIGNAL",
+  "siMPLE": "SiMPLE",
+  "SIMSCRIPT": "SIMSCRIPT",
+  "simula": "Simula",
+  "simulink": "Simulink",
+  "singularity": "Singularity",
+  "SISAL": "SISAL",
+  "SLIP": "SLIP",
+  "SMALL": "SMALL",
+  "smalltalk": "Smalltalk",
+  "SML": "SML",
+  "strongtalk": "Strongtalk",
+  "snap": "Snap!",
+  "sNOBOLSPITBOL": "SNOBOL (SPITBOL)",
+  "snowball": "Snowball",
+  "SOL": "SOL",
+  "solidity": "Solidity",
+  "SOPHAEROS": "SOPHAEROS",
+  "source": "Source",
+  "SPARK": "SPARK",
+  "speakeasy": "Speakeasy",
+  "speedcode": "Speedcode",
+  "SPIN": "SPIN",
+  "sPk": "SP/k",
+  "SPS": "SPS",
+  "SQL": "SQL",
+  "SQR": "SQR",
+  "squeak": "Squeak",
+  "squirrel": "Squirrel",
+  "SR": "SR",
+  "sSL": "S/SL",
+  "starlogo": "Starlogo",
+  "strand": "Strand",
+  "stata": "Stata",
+  "stateflow": "Stateflow",
+  "subtext": "Subtext",
+  "SBL": "SBL",
+  "superCollider": "SuperCollider",
+  "superTalk": "SuperTalk",
+  "swiftApple": "Swift (Apple)",
+  "swift": "Swift",
+  "SYMPL": "SYMPL",
+  "systemVerilog": "SystemVerilog",
+  "T": "T",
+  "TACL": "TACL",
+  "TACPOL": "TACPOL",
+  "TADS": "TADS",
+  "TAL": "TAL",
+  "tcl": "Tcl",
+  "tea": "Tea",
+  "TECO": "TECO",
+  "TELCOMP": "TELCOMP",
+  "teX": "TeX",
+  "TEX": "TEX",
+  "TIE": "TIE",
+  "tMG,CompilerMinuscompiler": "TMG, compiler-compiler",
+  "tom": "Tom",
+  "toi": "Toi",
+  "topspeed": "Topspeed",
+  "TPU": "TPU",
+  "trac": "Trac",
+  "TTM": "TTM",
+  "tMinusSQL": "T-SQL",
+  "transcript": "Transcript",
+  "TTCN": "TTCN",
+  "turing": "Turing",
+  "TUTOR": "TUTOR",
+  "TXL": "TXL",
+  "typeScript": "TypeScript",
+  "tynker": "Tynker",
+  "ubercode": "Ubercode",
+  "uCSDPascal": "UCSD Pascal",
+  "umple": "Umple",
+  "unicon": "Unicon",
+  "uniface": "Uniface",
+  "UNITY": "UNITY",
+  "unixShell": "Unix shell",
+  "unrealScript": "UnrealScript",
+  "vala": "Vala",
+  "verilog": "Verilog",
+  "VHDL": "VHDL",
+  "vimScript": "Vim script",
+  "viper": "Viper",
+  "visualDataFlex": "Visual DataFlex",
+  "visualDialogScript": "Visual DialogScript",
+  "visualFoxPro": "Visual FoxPro",
+  "visualJPlusPlus": "Visual J++",
+  "visualLISP": "Visual LISP",
+  "visualObjects": "Visual Objects",
+  "visualProlog": "Visual Prolog",
+  "WATFIV": "WATFIV",
+  "WATFOR": "WATFOR",
+  "webAssembly": "WebAssembly",
+  "webDNA": "WebDNA",
+  "whiley": "Whiley",
+  "winbatch": "Winbatch",
+  "wolfram": "Wolfram ",
+  "wyvern": "Wyvern",
+  "xPlusPlus": "X++",
+  "x10": "X10",
+  "xBase": "xBase",
+  "xBasePlusPlus": "xBase++",
+  "XBL": "XBL",
+  "xCtargetsXMOSArchitecture": "XC (targets XMOS architecture)",
+  "xHarbour": "xHarbour",
+  "XL": "XL",
+  "xojo": "Xojo",
+  "xOTcl": "XOTcl",
+  "xod": "Xod",
+  "XPL": "XPL",
+  "xPL0": "XPL0",
+  "xQuery": "XQuery",
+  "XSB": "XSB",
+  "xSharp": "XSharp",
+  "XSLT": "XSLT",
+  "xtend": "Xtend",
+  "Y": "Y",
+  "YAML": "YAML",
+  "yorick": "Yorick",
+  "YQL": "YQL",
+  "yoix": "Yoix",
+  "YUI": "YUI",
+  "zNotation": "Z notation",
+  "zebra": "Zebra",
+  "ZPL": "ZPL",
+  "zPL2": "ZPL2",
+  "zeno": "Zeno",
+  "zetaLisp": "ZetaLisp",
+  "zig": "Zig",
+  "ZOPL": "ZOPL",
+  "zPlusPlus": "Z++"
+}

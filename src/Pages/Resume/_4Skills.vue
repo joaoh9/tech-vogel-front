@@ -8,7 +8,7 @@
     <v-autocomplete
       :hint="$t('Job.new.techSkills.inputHint')"
       v-model="techSkills"
-      :items="$t('Data.techSkills')"
+      :items="$t('skills.techSkills')"
       hide-details
       hide-selected
       outlined
@@ -36,7 +36,7 @@
       v-model="softSkills"
       item-text="text"
       item-value="value"
-      :items="$t('Data.softSkillsFlat')"
+      :items="$t('skills.softSkills')"
       outlined
       multiple
       small-chips
@@ -56,7 +56,7 @@
       v-model="languages"
       item-text="text"
       item-value="value"
-      :items="$t('Data.languages')"
+      :items="$t('skills.languages')"
       outlined
       multiple
       small-chips
@@ -89,7 +89,7 @@
             outlined
             input-value="value"
             :value="fluency.value"
-            v-for="(fluency, index) in $t('skills.languages.fluency')"
+            v-for="(fluency, index) in $t('skills.languages')"
             :key="`L-${index}`"
           >
             {{ fluency.text }}

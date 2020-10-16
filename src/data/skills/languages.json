@@ -1,430 +1,109 @@
-[
-  {
-    "text": "English",
-    "skillId": "ENG"
-  },
-  {
-    "text": "Portuguese",
-    "skillId": "POR"
-  },
-  {
-    "text": "Spanish",
-    "skillId": "SPN"
-  },
-  {
-    "text": "French",
-    "skillId": "FRN"
-  },
-  {
-    "text": "German, Standard",
-    "skillId": "GER"
-  },
-  {
-    "text": "Akan",
-    "skillId": "TWS"
-  },
-  {
-    "text": "Amharic",
-    "skillId": "AMH"
-  },
-  {
-    "text": "Arabic, Algerian",
-    "skillId": "ARQ"
-  },
-  {
-    "text": "Arabic, Egyptian",
-    "skillId": "ARZ"
-  },
-  {
-    "text": "Arabic, Mesopotamian",
-    "skillId": "ACM"
-  },
-  {
-    "text": "Arabic, Moroccan",
-    "skillId": "ARY"
-  },
-  {
-    "text": "Arabic, Najdi",
-    "skillId": "ARS"
-  },
-  {
-    "text": "Arabic, North Levantine",
-    "skillId": "APC"
-  },
-  {
-    "text": "Arabic, Saidi",
-    "skillId": "AEC"
-  },
-  {
-    "text": "Arabic, Sanaani",
-    "skillId": "AYN"
-  },
-  {
-    "text": "Arabic, Sudanese",
-    "skillId": "APD"
-  },
-  {
-    "text": "Arabic, Tunisian",
-    "skillId": "AEB"
-  },
-  {
-    "text": "Assamese",
-    "skillId": "ASM"
-  },
-  {
-    "text": "Awadhi",
-    "skillId": "AWD"
-  },
-  {
-    "text": "Azerbaijani, North",
-    "skillId": "AZE"
-  },
-  {
-    "text": "Azerbaijani, South",
-    "skillId": "AZB"
-  },
-  {
-    "text": "Belarusan",
-    "skillId": "RUW"
-  },
-  {
-    "text": "Bengali",
-    "skillId": "BNG"
-  },
-  {
-    "text": "Bhojpuri",
-    "skillId": "BHJ"
-  },
-  {
-    "text": "Bulgarian",
-    "skillId": "BLG"
-  },
-  {
-    "text": "Burmese",
-    "skillId": "BMS"
-  },
-  {
-    "text": "Cebuano",
-    "skillId": "CEB"
-  },
-  {
-    "text": "Chhattisgarhi",
-    "skillId": "HNE"
-  },
-  {
-    "text": "Chinese, Gan",
-    "skillId": "KNN"
-  },
-  {
-    "text": "Chinese, Hakka",
-    "skillId": "HAK"
-  },
-  {
-    "text": "Chinese, Jinyu",
-    "skillId": "CJY"
-  },
-  {
-    "text": "Chinese, Mandarin",
-    "skillId": "CHN"
-  },
-  {
-    "text": "Chinese, Min Bei",
-    "skillId": "MNP"
-  },
-  {
-    "text": "Chinese, Min Nan",
-    "skillId": "CFR"
-  },
-  {
-    "text": "Chinese, Wu",
-    "skillId": "WUU"
-  },
-  {
-    "text": "Chinese, Xiang",
-    "skillId": "HSN"
-  },
-  {
-    "text": "Chinese, Yue",
-    "skillId": "YUH"
-  },
-  {
-    "text": "Chittagonian",
-    "skillId": "CIT"
-  },
-  {
-    "text": "Czech",
-    "skillId": "CZC"
-  },
-  {
-    "text": "Deccan",
-    "skillId": "DCC"
-  },
-  {
-    "text": "Dutch",
-    "skillId": "DUT"
-  },
-  {
-    "text": "Farsi, Eastern",
-    "skillId": "PRS"
-  },
-  {
-    "text": "Farsi, Western",
-    "skillId": "PES"
-  },
-  {
-    "text": "Fulfulde, Nigerian",
-    "skillId": "FUV"
-  },
-  {
-    "text": "Greek",
-    "skillId": "GRK"
-  },
-  {
-    "text": "Gujarati",
-    "skillId": "GJR"
-  },
-  {
-    "text": "Haitian Creole French",
-    "skillId": "HAT"
-  },
-  {
-    "text": "Haryanvi",
-    "skillId": "BGC"
-  },
-  {
-    "text": "Hausa",
-    "skillId": "HUA"
-  },
-  {
-    "text": "Hiligaynon",
-    "skillId": "HIL"
-  },
-  {
-    "text": "Hindi",
-    "skillId": "HND"
-  },
-  {
-    "text": "Hungarian",
-    "skillId": "HNG"
-  },
-  {
-    "text": "Igbo",
-    "skillId": "IGR"
-  },
-  {
-    "text": "Ilocano",
-    "skillId": "ILO"
-  },
-  {
-    "text": "Indonesian",
-    "skillId": "INZ"
-  },
-  {
-    "text": "Italian",
-    "skillId": "ITN"
-  },
-  {
-    "text": "Japanese",
-    "skillId": "JPN"
-  },
-  {
-    "text": "Javanese",
-    "skillId": "JAN"
-  },
-  {
-    "text": "Kannada",
-    "skillId": "KJV"
-  },
-  {
-    "text": "Kazakh",
-    "skillId": "KAZ"
-  },
-  {
-    "text": "Khmer, Central",
-    "skillId": "KMR"
-  },
-  {
-    "text": "Korean",
-    "skillId": "KKN"
-  },
-  {
-    "text": "Kurmanji",
-    "skillId": "KUR"
-  },
-  {
-    "text": "Lombard",
-    "skillId": "LMO"
-  },
-  {
-    "text": "Madura",
-    "skillId": "MHJ"
-  },
-  {
-    "text": "Magahi",
-    "skillId": "MQM"
-  },
-  {
-    "text": "Maithili",
-    "skillId": "MKP"
-  },
-  {
-    "text": "Malagasy",
-    "skillId": "MEX"
-  },
-  {
-    "text": "Malay",
-    "skillId": "MLI"
-  },
-  {
-    "text": "Malayalam",
-    "skillId": "MJS"
-  },
-  {
-    "text": "Marathi",
-    "skillId": "MRT"
-  },
-  {
-    "text": "Marwari",
-    "skillId": "MKD"
-  },
-  {
-    "text": "Napoletano-Calabrese",
-    "skillId": "NPL"
-  },
-  {
-    "text": "Nepali",
-    "skillId": "NEP"
-  },
-  {
-    "text": "Oriya",
-    "skillId": "ORY"
-  },
-  {
-    "text": "Oromo, West-Central",
-    "skillId": "GAZ"
-  },
-  {
-    "text": "Panjabi, Eastern",
-    "skillId": "PNJ"
-  },
-  {
-    "text": "Panjabi, Western",
-    "skillId": "PNB"
-  },
-  {
-    "text": "Pashto, Northern",
-    "skillId": "PBU"
-  },
-  {
-    "text": "Pashto, Southern",
-    "skillId": "PBT"
-  },
-  {
-    "text": "Polish",
-    "skillId": "PQL"
-  },
-  {
-    "text": "Romanian",
-    "skillId": "RUM"
-  },
-  {
-    "text": "Russian",
-    "skillId": "RUS"
-  },
-  {
-    "text": "Rwanda",
-    "skillId": "RUA"
-  },
-  {
-    "text": "Saraiki",
-    "skillId": "SKR"
-  },
-  {
-    "text": "Serbo-Croatian",
-    "skillId": "SRC"
-  },
-  {
-    "text": "Shona",
-    "skillId": "SHD"
-  },
-  {
-    "text": "Sindhi",
-    "skillId": "SND"
-  },
-  {
-    "text": "Sinhala",
-    "skillId": "SNH"
-  },
-  {
-    "text": "Somali",
-    "skillId": "SOM"
-  },
-  {
-    "text": "Sunda",
-    "skillId": "SUO"
-  },
-  {
-    "text": "Swedish",
-    "skillId": "SWD"
-  },
-  {
-    "text": "Tagalog",
-    "skillId": "TGL"
-  },
-  {
-    "text": "Tamil",
-    "skillId": "TCV"
-  },
-  {
-    "text": "Tatar",
-    "skillId": "TTR"
-  },
-  {
-    "text": "Telugu",
-    "skillId": "TCW"
-  },
-  {
-    "text": "Thai, Northeastern",
-    "skillId": "TTS"
-  },
-  {
-    "text": "Thai",
-    "skillId": "THJ"
-  },
-  {
-    "text": "Turkish",
-    "skillId": "TRK"
-  },
-  {
-    "text": "Ukrainian",
-    "skillId": "UKR"
-  },
-  {
-    "text": "Urdu",
-    "skillId": "URD"
-  },
-  {
-    "text": "Uyghur",
-    "skillId": "UIG"
-  },
-  {
-    "text": "Uzbek, Northern",
-    "skillId": "UZB"
-  },
-  {
-    "text": "Vietnamese",
-    "skillId": "VIE"
-  },
-  {
-    "text": "Yoruba",
-    "skillId": "YOR"
-  },
-  {
-    "text": "Zhuang, Northern",
-    "skillId": "CCX"
-  },
-  {
-    "text": "Zulu",
-    "skillId": "ZUU"
-  }
-]
+{
+  "ENG": "English",
+  "POR": "Portuguese",
+  "SPN": "Spanish",
+  "FRN": "French",
+  "GER": "German, Standard",
+  "TWS": "Akan",
+  "AMH": "Amharic",
+  "ARQ": "Arabic, Algerian",
+  "ARZ": "Arabic, Egyptian",
+  "ACM": "Arabic, Mesopotamian",
+  "ARY": "Arabic, Moroccan",
+  "ARS": "Arabic, Najdi",
+  "APC": "Arabic, North Levantine",
+  "AEC": "Arabic, Saidi",
+  "AYN": "Arabic, Sanaani",
+  "APD": "Arabic, Sudanese",
+  "AEB": "Arabic, Tunisian",
+  "ASM": "Assamese",
+  "AWD": "Awadhi",
+  "AZE": "Azerbaijani, North",
+  "AZB": "Azerbaijani, South",
+  "RUW": "Belarusan",
+  "BNG": "Bengali",
+  "BHJ": "Bhojpuri",
+  "BLG": "Bulgarian",
+  "BMS": "Burmese",
+  "CEB": "Cebuano",
+  "HNE": "Chhattisgarhi",
+  "KNN": "Chinese, Gan",
+  "HAK": "Chinese, Hakka",
+  "CJY": "Chinese, Jinyu",
+  "CHN": "Chinese, Mandarin",
+  "MNP": "Chinese, Min Bei",
+  "CFR": "Chinese, Min Nan",
+  "WUU": "Chinese, Wu",
+  "HSN": "Chinese, Xiang",
+  "YUH": "Chinese, Yue",
+  "CIT": "Chittagonian",
+  "CZC": "Czech",
+  "DCC": "Deccan",
+  "DUT": "Dutch",
+  "PRS": "Farsi, Eastern",
+  "PES": "Farsi, Western",
+  "FUV": "Fulfulde, Nigerian",
+  "GRK": "Greek",
+  "GJR": "Gujarati",
+  "HAT": "Haitian Creole French",
+  "BGC": "Haryanvi",
+  "HUA": "Hausa",
+  "HIL": "Hiligaynon",
+  "HND": "Hindi",
+  "HNG": "Hungarian",
+  "IGR": "Igbo",
+  "ILO": "Ilocano",
+  "INZ": "Indonesian",
+  "ITN": "Italian",
+  "JPN": "Japanese",
+  "JAN": "Javanese",
+  "KJV": "Kannada",
+  "KAZ": "Kazakh",
+  "KMR": "Khmer, Central",
+  "KKN": "Korean",
+  "KUR": "Kurmanji",
+  "LMO": "Lombard",
+  "MHJ": "Madura",
+  "MQM": "Magahi",
+  "MKP": "Maithili",
+  "MEX": "Malagasy",
+  "MLI": "Malay",
+  "MJS": "Malayalam",
+  "MRT": "Marathi",
+  "MKD": "Marwari",
+  "NPL": "Napoletano-Calabrese",
+  "NEP": "Nepali",
+  "ORY": "Oriya",
+  "GAZ": "Oromo, West-Central",
+  "PNJ": "Panjabi, Eastern",
+  "PNB": "Panjabi, Western",
+  "PBU": "Pashto, Northern",
+  "PBT": "Pashto, Southern",
+  "PQL": "Polish",
+  "RUM": "Romanian",
+  "RUS": "Russian",
+  "RUA": "Rwanda",
+  "SKR": "Saraiki",
+  "SRC": "Serbo-Croatian",
+  "SHD": "Shona",
+  "SND": "Sindhi",
+  "SNH": "Sinhala",
+  "SOM": "Somali",
+  "SUO": "Sunda",
+  "SWD": "Swedish",
+  "TGL": "Tagalog",
+  "TCV": "Tamil",
+  "TTR": "Tatar",
+  "TCW": "Telugu",
+  "TTS": "Thai, Northeastern",
+  "THJ": "Thai",
+  "TRK": "Turkish",
+  "UKR": "Ukrainian",
+  "URD": "Urdu",
+  "UIG": "Uyghur",
+  "UZB": "Uzbek, Northern",
+  "VIE": "Vietnamese",
+  "YOR": "Yoruba",
+  "CCX": "Zhuang, Northern",
+  "ZUU": "Zulu"
+}

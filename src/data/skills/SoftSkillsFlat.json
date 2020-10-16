@@ -1,574 +1,142 @@
-[
-  {
-    "text": "Listening",
-    "skillId": "listening"
-  },
-  {
-    "text": "Negotiation",
-    "skillId": "negotiation"
-  },
-  {
-    "text": "Nonverbal communication",
-    "skillId": "nonverbalCommunication"
-  },
-  {
-    "text": "Persuasion",
-    "skillId": "persuasion"
-  },
-  {
-    "text": "Presentation",
-    "skillId": "presentation"
-  },
-  {
-    "text": "Public speaking",
-    "skillId": "publicSpeaking"
-  },
-  {
-    "text": "Reading body language",
-    "skillId": "readingBodyLanguage"
-  },
-  {
-    "text": "Storytelling",
-    "skillId": "storytelling"
-  },
-  {
-    "text": "Verbal communication",
-    "skillId": "verbalCommunication"
-  },
-  {
-    "text": "Visual communication",
-    "skillId": "visualCommunication"
-  },
-  {
-    "text": "Writing reports and proposals",
-    "skillId": "writingReportsAndProposals"
-  },
-  {
-    "text": "Writing skills",
-    "skillId": "writingSkills"
-  },
-  {
-    "text": "Adaptability",
-    "skillId": "adaptability"
-  },
-  {
-    "text": "Artistic aptitude",
-    "skillId": "artisticAptitude"
-  },
-  {
-    "text": "Creativity",
-    "skillId": "creativity"
-  },
-  {
-    "text": "Critical observation",
-    "skillId": "criticalObservation"
-  },
-  {
-    "text": "Critical thinking",
-    "skillId": "criticalThinking"
-  },
-  {
-    "text": "Design aptitude",
-    "skillId": "designAptitude"
-  },
-  {
-    "text": "Desire to learn",
-    "skillId": "desireToLearn"
-  },
-  {
-    "text": "Flexibility",
-    "skillId": "flexibility"
-  },
-  {
-    "text": "Innovation",
-    "skillId": "innovation"
-  },
-  {
-    "text": "Logical thinking",
-    "skillId": "logicalThinking"
-  },
-  {
-    "text": "Research",
-    "skillId": "research"
-  },
-  {
-    "text": "Resourcefulness",
-    "skillId": "resourcefulness"
-  },
-  {
-    "text": "Thinking outside the box",
-    "skillId": "thinkingOutsideTheBox"
-  },
-  {
-    "text": "Tolerance of change and uncertainty",
-    "skillId": "toleranceOfChangeAndUncertainty"
-  },
-  {
-    "text": "Troubleshooting",
-    "skillId": "troubleshooting"
-  },
-  {
-    "text": "Value education",
-    "skillId": "valueEducation"
-  },
-  {
-    "text": "Conflict management",
-    "skillId": "conflictManagement"
-  },
-  {
-    "text": "Conflict resolution",
-    "skillId": "conflictResolution"
-  },
-  {
-    "text": "Deal making",
-    "skillId": "dealMaking"
-  },
-  {
-    "text": "Decision making",
-    "skillId": "decisionMaking"
-  },
-  {
-    "text": "Delegation",
-    "skillId": "delegation"
-  },
-  {
-    "text": "Dispute resolution",
-    "skillId": "disputeResolution"
-  },
-  {
-    "text": "Facilitation",
-    "skillId": "facilitation"
-  },
-  {
-    "text": "Giving clear feedback",
-    "skillId": "givingClearFeedback"
-  },
-  {
-    "text": "Inspiringpeople",
-    "skillId": "inspiringpeople"
-  },
-  {
-    "text": "Leadership",
-    "skillId": "leadership"
-  },
-  {
-    "text": "Management",
-    "skillId": "management"
-  },
-  {
-    "text": "Managing difficult conversations",
-    "skillId": "managingDifficultConversations"
-  },
-  {
-    "text": "Managing remote/virtual teams",
-    "skillId": "managingRemotevirtualTeams"
-  },
-  {
-    "text": "Meeting management",
-    "skillId": "meetingManagement"
-  },
-  {
-    "text": "Mentoring",
-    "skillId": "mentoring"
-  },
-  {
-    "text": "Project management",
-    "skillId": "projectManagement"
-  },
-  {
-    "text": "Resolving issues",
-    "skillId": "resolvingIssues"
-  },
-  {
-    "text": "Successful coaching",
-    "skillId": "successfulCoaching"
-  },
-  {
-    "text": "Supervising",
-    "skillId": "supervising"
-  },
-  {
-    "text": "Talent management",
-    "skillId": "talentManagement"
-  },
-  {
-    "text": "Confidence",
-    "skillId": "confidence"
-  },
-  {
-    "text": "Cooperation",
-    "skillId": "cooperation"
-  },
-  {
-    "text": "Courtesy",
-    "skillId": "courtesy"
-  },
-  {
-    "text": "Energy",
-    "skillId": "energy"
-  },
-  {
-    "text": "Enthusiasm",
-    "skillId": "enthusiasm"
-  },
-  {
-    "text": "Friendliness",
-    "skillId": "friendliness"
-  },
-  {
-    "text": "Honesty",
-    "skillId": "honesty"
-  },
-  {
-    "text": "Humorous",
-    "skillId": "humorous"
-  },
-  {
-    "text": "Patience",
-    "skillId": "patience"
-  },
-  {
-    "text": "Respectability",
-    "skillId": "respectability"
-  },
-  {
-    "text": "Respectfulness",
-    "skillId": "respectfulness"
-  },
-  {
-    "text": "Accepting feedback",
-    "skillId": "acceptingFeedback"
-  },
-  {
-    "text": "Collaboration",
-    "skillId": "collaboration"
-  },
-  {
-    "text": "Dealing with difficult situations",
-    "skillId": "dealingWithDifficultSituations"
-  },
-  {
-    "text": "Dealing with office politics",
-    "skillId": "dealingWithOfficePolitics"
-  },
-  {
-    "text": "Disability awareness",
-    "skillId": "disabilityAwareness"
-  },
-  {
-    "text": "Diversity awareness",
-    "skillId": "diversityAwareness"
-  },
-  {
-    "text": "Emotional intelligence",
-    "skillId": "emotionalIntelligence"
-  },
-  {
-    "text": "Empathy",
-    "skillId": "empathy"
-  },
-  {
-    "text": "Establishing interpersonal relationships",
-    "skillId": "establishingInterpersonalRelationships"
-  },
-  {
-    "text": "Dealing with difficult personalities",
-    "skillId": "dealingWithDifficultPersonalities"
-  },
-  {
-    "text": "Intercultural competence",
-    "skillId": "interculturalCompetence"
-  },
-  {
-    "text": "Interpersonal skills",
-    "skillId": "interpersonalSkills"
-  },
-  {
-    "text": "Influence",
-    "skillId": "influence"
-  },
-  {
-    "text": "Networking",
-    "skillId": "networking"
-  },
-  {
-    "text": "Selling skills",
-    "skillId": "sellingSkills"
-  },
-  {
-    "text": "Social skills",
-    "skillId": "socialSkills"
-  },
-  {
-    "text": "Team building",
-    "skillId": "teamBuilding"
-  },
-  {
-    "text": "Teamwork",
-    "skillId": "teamwork"
-  },
-  {
-    "text": "Attentiveness",
-    "skillId": "attentiveness"
-  },
-  {
-    "text": "Competitiveness",
-    "skillId": "competitiveness"
-  },
-  {
-    "text": "Dedication",
-    "skillId": "dedication"
-  },
-  {
-    "text": "Dependability",
-    "skillId": "dependability"
-  },
-  {
-    "text": "Following direction",
-    "skillId": "followingDirection"
-  },
-  {
-    "text": "Independence",
-    "skillId": "independence"
-  },
-  {
-    "text": "Meeting deadlines",
-    "skillId": "meetingDeadlines"
-  },
-  {
-    "text": "Motivation",
-    "skillId": "motivation"
-  },
-  {
-    "text": "Multitasking",
-    "skillId": "multitasking"
-  },
-  {
-    "text": "Organization",
-    "skillId": "organization"
-  },
-  {
-    "text": "Perseverance",
-    "skillId": "perseverance"
-  },
-  {
-    "text": "Persistence",
-    "skillId": "persistence"
-  },
-  {
-    "text": "Planning",
-    "skillId": "planning"
-  },
-  {
-    "text": "Proper business etiquette",
-    "skillId": "properBusinessEtiquette"
-  },
-  {
-    "text": "Punctuality",
-    "skillId": "punctuality"
-  },
-  {
-    "text": "Reliability",
-    "skillId": "reliability"
-  },
-  {
-    "text": "Resilience",
-    "skillId": "resilience"
-  },
-  {
-    "text": "Results-orientation",
-    "skillId": "resultsorientation"
-  },
-  {
-    "text": "Self-direction",
-    "skillId": "selfdirection"
-  },
-  {
-    "text": "Self-monitoring",
-    "skillId": "selfmonitoring"
-  },
-  {
-    "text": "Staying on task",
-    "skillId": "stayingOnTask"
-  },
-  {
-    "text": "Strategic planning",
-    "skillId": "strategicPlanning"
-  },
-  {
-    "text": "Time management",
-    "skillId": "timeManagement"
-  },
-  {
-    "text": "Trainability",
-    "skillId": "trainability"
-  },
-  {
-    "text": "Working well under pressure",
-    "skillId": "workingWellUnderPressure"
-  },
-  {
-    "text": "Assertiveness",
-    "skillId": "assertiveness"
-  },
-  {
-    "text": "Business ethics",
-    "skillId": "businessEthics"
-  },
-  {
-    "text": "Business storytelling",
-    "skillId": "businessStorytelling"
-  },
-  {
-    "text": "Business trend awareness",
-    "skillId": "businessTrendAwareness"
-  },
-  {
-    "text": "Customer Service",
-    "skillId": "customerService"
-  },
-  {
-    "text": "Effective communicator",
-    "skillId": "effectiveCommunicator"
-  },
-  {
-    "text": "Emotion management",
-    "skillId": "emotionManagement"
-  },
-  {
-    "text": "Ergonomic sensitivity",
-    "skillId": "ergonomicSensitivity"
-  },
-  {
-    "text": "Follow instructions",
-    "skillId": "followInstructions"
-  },
-  {
-    "text": "Follow regulations",
-    "skillId": "followRegulations"
-  },
-  {
-    "text": "Follow rules",
-    "skillId": "followRules"
-  },
-  {
-    "text": "Functions well under pressure",
-    "skillId": "functionsWellUnderPressure"
-  },
-  {
-    "text": "Good attitude",
-    "skillId": "goodAttitude"
-  },
-  {
-    "text": "Highly recommended",
-    "skillId": "highlyRecommended"
-  },
-  {
-    "text": "Independent",
-    "skillId": "independent"
-  },
-  {
-    "text": "Interviewing",
-    "skillId": "interviewing"
-  },
-  {
-    "text": "Knowledge management",
-    "skillId": "knowledgeManagement"
-  },
-  {
-    "text": "Meets deadlines",
-    "skillId": "meetsDeadlines"
-  },
-  {
-    "text": "Motivating",
-    "skillId": "motivating"
-  },
-  {
-    "text": "Perform effectively in a deadline environment",
-    "skillId": "performEffectivelyInADeadlineEnvironment"
-  },
-  {
-    "text": "Performance management",
-    "skillId": "performanceManagement"
-  },
-  {
-    "text": "Positive work ethic",
-    "skillId": "positiveWorkEthic"
-  },
-  {
-    "text": "Problem solving",
-    "skillId": "problemSolving"
-  },
-  {
-    "text": "Process improvement",
-    "skillId": "processImprovement"
-  },
-  {
-    "text": "Quick-witted",
-    "skillId": "quickwitted"
-  },
-  {
-    "text": "Results oriented",
-    "skillId": "resultsOriented"
-  },
-  {
-    "text": "Safety conscious",
-    "skillId": "safetyConscious"
-  },
-  {
-    "text": "Scheduling",
-    "skillId": "scheduling"
-  },
-  {
-    "text": "Self-awareness",
-    "skillId": "selfawareness"
-  },
-  {
-    "text": "Self-supervising",
-    "skillId": "selfsupervising"
-  },
-  {
-    "text": "Stress management",
-    "skillId": "stressManagement"
-  },
-  {
-    "text": "Team player",
-    "skillId": "teamPlayer"
-  },
-  {
-    "text": "Technology savvy",
-    "skillId": "technologySavvy"
-  },
-  {
-    "text": "Technology trend awareness",
-    "skillId": "technologyTrendAwareness"
-  },
-  {
-    "text": "Tolerant",
-    "skillId": "tolerant"
-  },
-  {
-    "text": "Trainable",
-    "skillId": "trainable"
-  },
-  {
-    "text": "Training",
-    "skillId": "training"
-  },
-  {
-    "text": "Willing to accept feedback",
-    "skillId": "willingToAcceptFeedback"
-  },
-  {
-    "text": "Willingness to learn",
-    "skillId": "willingnessToLearn"
-  },
-  {
-    "text": "Work-life balance",
-    "skillId": "worklifeBalance"
-  },
-  {
-    "text": "Works well under pressure",
-    "skillId": "worksWellUnderPressure"
-  }
-]
+{
+  "listening": "Listening",
+  "negotiation": "Negotiation",
+  "nonverbalCommunication": "Nonverbal communication",
+  "persuasion": "Persuasion",
+  "presentation": "Presentation",
+  "publicSpeaking": "Public speaking",
+  "readingBodyLanguage": "Reading body language",
+  "storytelling": "Storytelling",
+  "verbalCommunication": "Verbal communication",
+  "visualCommunication": "Visual communication",
+  "writingReportsAndProposals": "Writing reports and proposals",
+  "writingSkills": "Writing skills",
+  "adaptability": "Adaptability",
+  "artisticAptitude": "Artistic aptitude",
+  "creativity": "Creativity",
+  "criticalObservation": "Critical observation",
+  "criticalThinking": "Critical thinking",
+  "designAptitude": "Design aptitude",
+  "desireToLearn": "Desire to learn",
+  "flexibility": "Flexibility",
+  "innovation": "Innovation",
+  "logicalThinking": "Logical thinking",
+  "research": "Research",
+  "resourcefulness": "Resourcefulness",
+  "thinkingOutsideTheBox": "Thinking outside the box",
+  "toleranceOfChangeAndUncertainty": "Tolerance of change and uncertainty",
+  "troubleshooting": "Troubleshooting",
+  "valueEducation": "Value education",
+  "conflictManagement": "Conflict management",
+  "conflictResolution": "Conflict resolution",
+  "dealMaking": "Deal making",
+  "decisionMaking": "Decision making",
+  "delegation": "Delegation",
+  "disputeResolution": "Dispute resolution",
+  "facilitation": "Facilitation",
+  "givingClearFeedback": "Giving clear feedback",
+  "inspiringpeople": "Inspiringpeople",
+  "leadership": "Leadership",
+  "management": "Management",
+  "managingDifficultConversations": "Managing difficult conversations",
+  "managingRemotevirtualTeams": "Managing remote/virtual teams",
+  "meetingManagement": "Meeting management",
+  "mentoring": "Mentoring",
+  "projectManagement": "Project management",
+  "resolvingIssues": "Resolving issues",
+  "successfulCoaching": "Successful coaching",
+  "supervising": "Supervising",
+  "talentManagement": "Talent management",
+  "confidence": "Confidence",
+  "cooperation": "Cooperation",
+  "courtesy": "Courtesy",
+  "energy": "Energy",
+  "enthusiasm": "Enthusiasm",
+  "friendliness": "Friendliness",
+  "honesty": "Honesty",
+  "humorous": "Humorous",
+  "patience": "Patience",
+  "respectability": "Respectability",
+  "respectfulness": "Respectfulness",
+  "acceptingFeedback": "Accepting feedback",
+  "collaboration": "Collaboration",
+  "dealingWithDifficultSituations": "Dealing with difficult situations",
+  "dealingWithOfficePolitics": "Dealing with office politics",
+  "disabilityAwareness": "Disability awareness",
+  "diversityAwareness": "Diversity awareness",
+  "emotionalIntelligence": "Emotional intelligence",
+  "empathy": "Empathy",
+  "interculturalCompetence": "Intercultural competence",
+  "interpersonalSkills": "Interpersonal skills",
+  "influence": "Influence",
+  "networking": "Networking",
+  "sellingSkills": "Selling skills",
+  "socialSkills": "Social skills",
+  "teamBuilding": "Team building",
+  "teamwork": "Teamwork",
+  "attentiveness": "Attentiveness",
+  "competitiveness": "Competitiveness",
+  "dedication": "Dedication",
+  "dependability": "Dependability",
+  "followingDirection": "Following direction",
+  "independence": "Independence",
+  "meetingDeadlines": "Meeting deadlines",
+  "motivation": "Motivation",
+  "multitasking": "Multitasking",
+  "organization": "Organization",
+  "perseverance": "Perseverance",
+  "persistence": "Persistence",
+  "planning": "Planning",
+  "properBusinessEtiquette": "Proper business etiquette",
+  "punctuality": "Punctuality",
+  "reliability": "Reliability",
+  "resilience": "Resilience",
+  "resultsorientation": "Results-orientation",
+  "selfdirection": "Self-direction",
+  "selfmonitoring": "Self-monitoring",
+  "stayingOnTask": "Staying on task",
+  "strategicPlanning": "Strategic planning",
+  "timeManagement": "Time management",
+  "trainability": "Trainability",
+  "workingWellUnderPressure": "Working well under pressure",
+  "assertiveness": "Assertiveness",
+  "businessEthics": "Business ethics",
+  "businessStorytelling": "Business storytelling",
+  "businessTrendAwareness": "Business trend awareness",
+  "customerService": "Customer Service",
+  "effectiveCommunicator": "Effective communicator",
+  "emotionManagement": "Emotion management",
+  "ergonomicSensitivity": "Ergonomic sensitivity",
+  "followInstructions": "Follow instructions",
+  "followRegulations": "Follow regulations",
+  "followRules": "Follow rules",
+  "functionsWellUnderPressure": "Functions well under pressure",
+  "goodAttitude": "Good attitude",
+  "highlyRecommended": "Highly recommended",
+  "independent": "Independent",
+  "interviewing": "Interviewing",
+  "knowledgeManagement": "Knowledge management",
+  "meetsDeadlines": "Meets deadlines",
+  "motivating": "Motivating",
+  "performanceManagement": "Performance management",
+  "positiveWorkEthic": "Positive work ethic",
+  "problemSolving": "Problem solving",
+  "processImprovement": "Process improvement",
+  "quickwitted": "Quick-witted",
+  "resultsOriented": "Results oriented",
+  "safetyConscious": "Safety conscious",
+  "scheduling": "Scheduling",
+  "selfawareness": "Self-awareness",
+  "selfsupervising": "Self-supervising",
+  "stressManagement": "Stress management",
+  "teamPlayer": "Team player",
+  "technologySavvy": "Technology savvy",
+  "technologyTrendAwareness": "Technology trend awareness",
+  "tolerant": "Tolerant",
+  "trainable": "Trainable",
+  "training": "Training",
+  "willingToAcceptFeedback": "Willing to accept feedback",
+  "willingnessToLearn": "Willingness to learn",
+  "worklifeBalance": "Work-life balance",
+  "worksWellUnderPressure": "Works well under pressure"
+}

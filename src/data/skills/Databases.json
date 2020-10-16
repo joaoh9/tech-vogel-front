@@ -1,166 +1,43 @@
-[
-  {
-    "text": "MySQL",
-    "skillId": "mySQL"
-  },
-  {
-    "text": "PostgreSQL",
-    "skillId": "postgreSQL"
-  },
-  {
-    "text": "MS SQL Server",
-    "skillId": "mSSQLServer"
-  },
-  {
-    "text": "SQLite",
-    "skillId": "sQLite"
-  },
-  {
-    "text": "MongoDB",
-    "skillId": "mongoDB"
-  },
-  {
-    "text": "Redis",
-    "skillId": "redis"
-  },
-  {
-    "text": "MariaDB",
-    "skillId": "mariaDB"
-  },
-  {
-    "text": "Oracle",
-    "skillId": "oracle"
-  },
-  {
-    "text": "Elasticsearch",
-    "skillId": "elasticsearch"
-  },
-  {
-    "text": "Firebase",
-    "skillId": "firebase"
-  },
-  {
-    "text": "DynamoDB",
-    "skillId": "dynamoDB"
-  },
-  {
-    "text": "Cassandra",
-    "skillId": "cassandra"
-  },
-  {
-    "text": "Couchbase",
-    "skillId": "couchbase"
-  },
-  {
-    "text": "Microsoft SQL Server",
-    "skillId": "microsoftSQLServer"
-  },
-  {
-    "text": "Teradata",
-    "skillId": "teradata"
-  },
-  {
-    "text": "Microsoft Azure SQL Database",
-    "skillId": "microsoftAzureSQLDatabase"
-  },
-  {
-    "text": "SAP HANA",
-    "skillId": "sAPHANA"
-  },
-  {
-    "text": "Microsoft Azure Cosmos DB",
-    "skillId": "microsoftAzureCosmosDB"
-  },
-  {
-    "text": "Datastax Enterprise",
-    "skillId": "datastaxEnterprise"
-  },
-  {
-    "text": "Amazon Neptune",
-    "skillId": "amazonNeptune"
-  },
-  {
-    "text": "Graph Engine",
-    "skillId": "graphEngine"
-  },
-  {
-    "text": "InfiniteGraph",
-    "skillId": "infiniteGraph"
-  },
-  {
-    "text": "Nebula Graph",
-    "skillId": "nebulaGraph"
-  },
-  {
-    "text": "Fluree",
-    "skillId": "fluree"
-  },
-  {
-    "text": "FlockDB",
-    "skillId": "flockDB"
-  },
-  {
-    "text": "HyperGraphDB",
-    "skillId": "hyperGraphDB"
-  },
-  {
-    "text": "GraphBase",
-    "skillId": "graphBase"
-  },
-  {
-    "text": "TinkerGraph",
-    "skillId": "tinkerGraph"
-  },
-  {
-    "text": "AnzoGraph DB",
-    "skillId": "anzoGraphDB"
-  },
-  {
-    "text": "Memgraph",
-    "skillId": "memgraph"
-  },
-  {
-    "text": "Sparksee",
-    "skillId": "sparksee"
-  },
-  {
-    "text": "VelocityDB",
-    "skillId": "velocityDB"
-  },
-  {
-    "text": "HugeGraph",
-    "skillId": "hugeGraph"
-  },
-  {
-    "text": "TerminusDB",
-    "skillId": "terminusDB"
-  },
-  {
-    "text": "AgensGraph",
-    "skillId": "agensGraph"
-  },
-  {
-    "text": "HGraphDB",
-    "skillId": "hGraphDB"
-  },
-  {
-    "text": "GlobalsDB",
-    "skillId": "globalsDB"
-  },
-  {
-    "text": "InfoGrid",
-    "skillId": "infoGrid"
-  },
-  {
-    "text": "Sqrrl",
-    "skillId": "sqrrl"
-  },
-  {
-    "text": "Titan",
-    "skillId": "titan"
-  },
-  {
-    "text": "VelocityGraphg",
-    "skillId": "velocityGraphg"
-  }
-]
+{
+  "mySQL": "MySQL",
+  "postgreSQL": "PostgreSQL",
+  "mSSQLServer": "MS SQL Server",
+  "sQLite": "SQLite",
+  "mongoDB": "MongoDB",
+  "redis": "Redis",
+  "mariaDB": "MariaDB",
+  "oracle": "Oracle",
+  "elasticsearch": "Elasticsearch",
+  "firebase": "Firebase",
+  "dynamoDB": "DynamoDB",
+  "cassandra": "Cassandra",
+  "couchbase": "Couchbase",
+  "microsoftSQLServer": "Microsoft SQL Server",
+  "teradata": "Teradata",
+  "microsoftAzureSQLDatabase": "Microsoft Azure SQL Database",
+  "sAPHANA": "SAP HANA",
+  "microsoftAzureCosmosDB": "Microsoft Azure Cosmos DB",
+  "datastaxEnterprise": "Datastax Enterprise",
+  "amazonNeptune": "Amazon Neptune",
+  "graphEngine": "Graph Engine",
+  "infiniteGraph": "InfiniteGraph",
+  "nebulaGraph": "Nebula Graph",
+  "fluree": "Fluree",
+  "flockDB": "FlockDB",
+  "hyperGraphDB": "HyperGraphDB",
+  "graphBase": "GraphBase",
+  "tinkerGraph": "TinkerGraph",
+  "anzoGraphDB": "AnzoGraph DB",
+  "memgraph": "Memgraph",
+  "sparksee": "Sparksee",
+  "velocityDB": "VelocityDB",
+  "hugeGraph": "HugeGraph",
+  "terminusDB": "TerminusDB",
+  "agensGraph": "AgensGraph",
+  "hGraphDB": "HGraphDB",
+  "globalsDB": "GlobalsDB",
+  "infoGrid": "InfoGrid",
+  "sqrrl": "Sqrrl",
+  "titan": "Titan",
+  "velocityGraphg": "VelocityGraphg"
+}

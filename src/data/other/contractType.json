@@ -1,5 +1,5 @@
-[
-  { "text": "Full-Time", "value": "FULL_TIME" },
-  { "text": "Part-time", "value": "PART_TIME" },
-  { "text": "Hourly", "value": "HOURLY" }
-]
+{
+  "FULL_TIME": "Full-Time",
+  "PART_TIME": "Part-time",
+  "HOURLY": "Hourly"
+}

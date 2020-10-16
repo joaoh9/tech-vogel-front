@@ -1,0 +1,21 @@
+{
+  "project": "Project",
+  "bottle": "Bottle",
+  "blueBream": "BlueBream",
+  "cherryPy": "CherryPy",
+  "cubicWeb": "CubicWeb",
+  "django": "Django",
+  "flask": "Flask",
+  "Google App Engine": "Google App Engine",
+  "grok": "Grok",
+  "nagare": "Nagare",
+  "pyjs": "Pyjs",
+  "pylons": "Pylons",
+  "pyramid": "Pyramid",
+  "tACTIC": "TACTIC",
+  "tornado": "Tornado",
+  "turboGears": "TurboGears",
+  "web2-py": "web2py",
+  "webware": "Webware",
+  "zope-2": "Zope 2"
+}

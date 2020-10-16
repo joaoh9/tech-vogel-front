@@ -1,0 +1,23 @@
+{
+  "agavi": "Agavi",
+  "cakePHP": "CakePHP",
+  "codeIgniter": "CodeIgniter",
+  "fatMinusFree": "Fat-Free",
+  "fuelPHP": "FuelPHP",
+  "gyroscope": "Gyroscope",
+  "jamroom": "Jamroom",
+  "kajona": "Kajona",
+  "kohana": "Kohana",
+  "laravel": "Laravel",
+  "li3Lithium": "Li3 (Lithium)",
+  "netteFramework": "Nette Framework",
+  "phalcon": "Phalcon",
+  "popPHP": "Pop PHP",
+  "PRADO": "PRADO",
+  "silex": "Silex",
+  "silverStripe": "SilverStripe",
+  "smart-Framework": "Smart.Framework",
+  "symfony": "Symfony",
+  "yii": "Yii",
+  "zendFramework": "Zend Framework"
+}

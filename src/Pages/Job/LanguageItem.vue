@@ -5,7 +5,7 @@
         placeholder="Skill"
         v-model="language.language"
         v-on:input="updateItem"
-        :items="$t('Data.languages')"
+        :items="$t('skills.languages')"
         item-text="label"
         item-value="code"
       />

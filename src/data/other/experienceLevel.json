@@ -1,8 +1,8 @@
-[
-  { "text": "Student", "value": "student" },
-  { "text": "Junior", "value": "junior" },
-  { "text": "Mid-Level", "value": "midLevel" },
-  { "text": "Senior", "value": "senior" },
-  { "text": "Lead", "value": "lead" },
-  { "text": "Manager", "value": "manager" }
-]
+{
+  "student": "Student",
+  "junior": "Junior",
+  "midLevel": "Mid-Level",
+  "senior": "Senior",
+  "lead": "Lead",
+  "manager": "Manager"
+}
