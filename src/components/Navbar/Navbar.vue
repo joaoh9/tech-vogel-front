@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
 
 export default {
@@ -88,6 +89,7 @@ export default {
     return {
       drawer: false,
       logo: Logo,
+      logoHome: LogoHome,
     };
   },
   methods: {
