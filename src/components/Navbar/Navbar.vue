@@ -70,21 +70,9 @@
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list nav dense>
-          <v-list-item @click="goToJobList">
-            <v-list-item-title>{{ $t('common.jobs') }}</v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="goToPricing">
-            <v-list-item-title>{{ $t('common.pricing') }}</v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="goToHowItWorks">
-            <v-list-item-title>{{ $t('common.howItWorks') }}</v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="goToLogin">
-            <v-list-item-title>{{ $t('common.findAJob') }}</v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="goToLogin">
-            <v-list-item-title>{{ $t('common.postAJob') }}</v-list-item-title>
-          </v-list-item>
+        <v-list-item v-for="(item, i) in getNavbarList()" :key="i" @click="item.goTo">
+          <h5>{{ item.text }}</h5>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -127,6 +115,15 @@ export default {
     },
     isHome() {
       return this.$router.currentRoute.name === 'Home';
+    },
+    getNavbarList() {
+      return [
+        { text: this.$t('common.jobs'), goTo: this.goToJobList },
+        { text: this.$t('common.pricing'), goTo: this.goToPricing },
+        { text: this.$t('common.howItWorks'), goTo: this.goToHowItWorks },
+        { text: this.$t('common.findAJob'), goTo: this.goToLogin },
+        { text: this.$t('common.postAJob'), goTo: this.goToLogin },
+      ];
     },
   },
 };
