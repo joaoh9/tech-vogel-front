@@ -2,12 +2,30 @@ export default {
   resume: {
     register: {
       tabs: [
-        'Start',
-        'Preferences',
-        'Personal Information',
-        'Work Experience',
-        'Skills',
-        'Education',
+        {
+          name: 'Start',
+          identifier: 'start',
+        },
+        {
+          name: 'Preferences',
+          identifier: 'preferences',
+        },
+        {
+          name: 'Personal Information',
+          identifier: 'personalInfo',
+        },
+        {
+          name: 'Work Experience',
+          identifier: 'workExperience',
+        },
+        {
+          name: 'Skills',
+          identifier: 'skills',
+        },
+        {
+          name: 'Education',
+          identifier: 'education',
+        },
       ],
       start: {
         title: 'Register your CV',
