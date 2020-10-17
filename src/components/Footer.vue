@@ -1,6 +1,5 @@
 <template>
   <div>
-    <feedback />
     <v-footer class="px-0 mt-0 pt-0">
       <v-card
         height="250"
@@ -50,13 +49,11 @@
 
 <script>
 import Logo from 'Assets/logo-redondo-amarelo-grad.png';
-import Feedback from 'Components/Dialogs/Feedback';
 import FooterLinks from 'Components/Footer/Links';
 
 export default {
   name: 'Footer',
   components: {
-    Feedback,
     FooterLinks,
   },
   data() {

@@ -65,9 +65,6 @@ export default {
 
       return pageStyle;
     },
-    giveUsFeedback() {
-      return; // TODO
-    },
     async checkIfLoggedIn() {
       const jwtHelper = new JwtHelper();
       try {
