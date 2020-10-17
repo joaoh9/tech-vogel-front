@@ -1,4 +1,3 @@
-import UserProfile from 'Pages/User/Profile';
 import UserLogin from 'Pages/User/Login';
 import UserSignup from 'Pages/User/Signup';
 import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
@@ -8,12 +7,6 @@ import UserApplications from 'Pages/User/UserApplications';
 import GitHubOauth from 'Pages/User/GitHubOauth'
 
 const routes = [
-  {
-    path: '/user/profile/:id',
-    name: 'User Profile',
-    component: UserProfile,
-    props: true,
-  },
   {
     path: '/login',
     name: 'User Login',
