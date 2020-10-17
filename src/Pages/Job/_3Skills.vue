@@ -2,12 +2,12 @@
   <div>
     <form-input
       type="h6"
-      :title="$t('Job.new.techSkills.title')"
-      :description="$t('Job.new.techSkills.description')"
+      :title="$t('job.new.techSkills.title')"
+      :description="$t('job.new.techSkills.description')"
     />
 
     <v-autocomplete
-      :hint="$t('Job.new.techSkills.inputHint')"
+      :hint="$t('job.new.techSkills.inputHint')"
       v-model="techSkills"
       :items="$t('skills.techSkills')"
       outlined
@@ -30,13 +30,13 @@
     <form-input
       class="mt-4"
       type="h6"
-      :title="$t('Job.new.otherSkills.title')"
-      :description="$t('Job.new.otherSkills.description')"
+      :title="$t('job.new.otherSkills.title')"
+      :description="$t('job.new.otherSkills.description')"
     />
     <form-input
       class="mt-4"
-      :title="$t('Job.new.softSkills.title')"
-      :description="$t('Job.new.softSkills.inputHint')"
+      :title="$t('job.new.softSkills.title')"
+      :description="$t('job.new.softSkills.inputHint')"
     />
     <v-autocomplete
       v-model="softSkills"
@@ -56,10 +56,10 @@
       skillTitle="softSkills"
       :experienceLevel="$t('skills.priorities')"
     />
-    <form-input class="mt-6" :title="$t('Job.new.languages.title')" />
+    <form-input class="mt-6" :title="$t('job.new.languages.title')" />
     <v-autocomplete
       class="mb-10"
-      :hint="$t('Job.new.languages.inputHint')"
+      :hint="$t('job.new.languages.inputHint')"
       hide-selected
       v-model="languages"
       item-text="text"
@@ -83,7 +83,7 @@
           mdi-close
         </v-icon>
         <div class="bdy-1 align-self-center" style="line-height: 100% !important">
-          {{ $t(`Dictionary.languages.${language.skillId}`) }}
+          {{ $t(`dictionary.languages.${language.skillId}`) }}
         </div>
       </v-col>
       <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">

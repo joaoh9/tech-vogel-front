@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form-input class="mt-6" :title="$t('CV.register.preferences.jobInterests.title')" />
+    <form-input class="mt-6" :title="$t('resume.register.preferences.jobInterests.title')" />
     <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
         v-model="jobInterests"
@@ -11,7 +11,7 @@
         :value="option.value"
       />
     </div>
-    <form-input class="mt-6" :title="$t('CV.register.preferences.jobType.title')" />
+    <form-input class="mt-6" :title="$t('resume.register.preferences.jobType.title')" />
     <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
         v-model="contractType"

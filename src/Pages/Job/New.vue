@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="d-flex justify-center mt-4 mt-md-12">
-      <Stepper :stepsNames="$t('Job.new.steppers')" v-model="currentStep" class="mb-6">
+      <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
         <template v-slot:default="{}" class="mb-6">
           <g-card>
             <template v-slot:card-header>
@@ -54,13 +54,13 @@
                 style="z-index: -1"
               >
                 <g-btn
-                  :label="$t('Common.back')"
+                  :label="$t('common.back')"
                   v-if="currentStep > 0"
                   type="secondary"
                   @click="currentStep--"
                 />
                 <g-btn
-                  :label="$t('Common.next')"
+                  :label="$t('common.next')"
                   type="primary"
                   @click="currentStep === 3 ? saveJob() : currentStep++"
                 />
@@ -72,8 +72,8 @@
     </div>
     <div>
       <g-alert
-        :succesMessage="$t('Signup.resendConfirmationCode.success')"
-        :errorMessage="$t('Signup.resendConfirmationCode.error')"
+        :succesMessage="$t('signup.resendConfirmationCode.success')"
+        :errorMessage="$t('signup.resendConfirmationCode.error')"
         v-on:success="s => (requestSuccess = s)"
         v-on:error="s => (requestError = s)"
         :successVar="requestSuccess"
@@ -167,10 +167,10 @@ export default {
     },
     getPageInfo() {
       return [
-        this.$t('Job.new.basicInfo'),
-        this.$t('Job.new.aboutTheRole'),
-        this.$t('Job.new.skillRequirements'),
-        this.$t('Job.new.salaryAndPerks'),
+        this.$t('job.new.basicInfo'),
+        this.$t('job.new.aboutTheRole'),
+        this.$t('job.new.skillRequirements'),
+        this.$t('job.new.salaryAndPerks'),
       ];
     },
     getPageTitle(currentStep) {

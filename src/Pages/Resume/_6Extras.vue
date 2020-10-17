@@ -1,8 +1,8 @@
 <template>
   <div>
    <g-card-header
-      :title="$t('CV.register.extras.title')"
-      :description="$t('CV.register.extras.description')"
+      :title="$t('resume.register.extras.title')"
+      :description="$t('resume.register.extras.description')"
     >
       <template v-slot:content="{}"> </template>
       <slot/>

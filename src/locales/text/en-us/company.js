@@ -1,5 +1,5 @@
 export default {
-  Company: {
+  company: {
     new: {
       steps: [ 'Basic Info', 'Additional Info', 'Contact' ],
       page1: 'Register as a company',

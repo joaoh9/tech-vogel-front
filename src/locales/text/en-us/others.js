@@ -3,7 +3,7 @@ import FlagIcons from 'Data/flagIcons';
 export default {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
-  Common: {
+  common: {
     at: 'At',
     feedback: 'Feedback',
     tv: 'Tech Vogel',
@@ -97,7 +97,7 @@ export default {
     passwordsDontMatch: 'Passwords do not match',
     termsAndConditions: 'Your must accept our Terms and Conditions',
   },
-  Quill: {
+  quill: {
     defaultToolbar: [
       // [{ size: [ 'small', false, 'large', 'huge' ] }],
       [ 'bold', 'italic', 'underline' ],
@@ -106,16 +106,23 @@ export default {
       ['code-block'],
     ],
   },
-  languages: {
+  internationalization: {
     data: [
       { i18n: 'pt-br', language: 'Português', country: 'brazil', flag: FlagIcons.brazil },
       { i18n: 'en-us', language: 'English', country: 'usa', flag: FlagIcons.usa },
     ],
     icons: FlagIcons,
   },
-  Feedback: {
+  feedback: {
     title: 'Leave your Feedback, bug encounter or suggestion!',
     topic: 'Topic',
     description: 'Description',
+  },
+  oAuth: {
+    github: {
+      confirm: 'Confirm GitHub acces to Tech Vogel?',
+      accessSucces: 'Github account successfully linked to Tech Vogel',
+      accessError: 'An error occurred when authorizing the application. Please try again later.',
+    },
   },
 };

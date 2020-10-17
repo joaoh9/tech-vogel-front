@@ -7,7 +7,7 @@
         </v-icon>
       </v-col>
       <v-col cols="12" md="8">
-        <h5>{{ $t('Company.dashboard.actions.' + action.name) }}</h5>
+        <h5>{{ $t('company.dashboard.actions.' + action.name) }}</h5>
       </v-col>
     </v-row>
   </v-card>

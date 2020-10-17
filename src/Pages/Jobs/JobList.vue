@@ -4,7 +4,7 @@
     <v-col cols="10" md="8">
       <div class="d-flex justify-center justify-md-space-center align-center flex-wrap">
         <h1 class="h1-bold ml-6 mr-4 text-center">
-          {{ $t('Common.jobs') }}
+          {{ $t('common.jobs') }}
         </h1>
         <v-text-field
           class="maxw-600 minw-300 align-self-center mt-13"

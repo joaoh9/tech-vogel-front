@@ -3,7 +3,7 @@
     <template v-slot:card-content>
       <div class="d-flex justify-space-between">
         <div>
-          <h6>{{ $t('Company.dashboard.greeting') }}</h6>
+          <h6>{{ $t('company.dashboard.greeting') }}</h6>
           <h4>{{ user.name }}</h4>
         </div>
         <v-avatar color="cinza" height="90">

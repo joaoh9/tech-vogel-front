@@ -15,10 +15,10 @@
             <v-img height="75" contain :src="logo" />
           </v-col>
           <v-col>
-            <FooterLinks :title="$t('Common.jobs')" :items="$t('footer.jobsInfo')" />
+            <FooterLinks :title="$t('common.jobs')" :items="$t('footer.jobsInfo')" />
           </v-col>
           <v-col>
-            <FooterLinks :title="$t('Common.aboutUs')" :items="$t('footer.aboutUsInfo')" />
+            <FooterLinks :title="$t('common.aboutUs')" :items="$t('footer.aboutUsInfo')" />
           </v-col>
           <v-col>
             <FooterLinks
@@ -63,12 +63,12 @@ export default {
     return {
       logo: Logo,
       footerInfo: [
-        this.$t('Common.copywright'),
-        this.$t('Common.termsOfService'),
-        this.$t('Common.privacyPolicy'),
-        this.$t('Common.cnpj') + ': ' + this.$t('Common.cnpjNumber'),
-        this.$t('Common.phone'),
-        this.$t('Common.contactEmail'),
+        this.$t('common.copywright'),
+        this.$t('common.termsOfService'),
+        this.$t('common.privacyPolicy'),
+        this.$t('common.cnpj') + ': ' + this.$t('common.cnpjNumber'),
+        this.$t('common.phone'),
+        this.$t('common.contactEmail'),
       ],
     };
   },

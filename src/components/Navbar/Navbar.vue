@@ -19,7 +19,7 @@
         :color="isHome() ? 'bg' : 'dark'"
         text
       >
-        {{ $t('Common.jobs') }}
+        {{ $t('common.jobs') }}
       </v-btn>
       <v-btn
         v-if="!$vuetify.breakpoint.mobile"
@@ -28,7 +28,7 @@
         :color="isHome() ? 'bg' : 'dark'"
         text
       >
-        {{ $t('Common.pricing') }}
+        {{ $t('common.pricing') }}
       </v-btn>
       <v-btn
         v-if="!$vuetify.breakpoint.mobile"
@@ -37,7 +37,7 @@
         :color="isHome() ? 'bg' : 'dark'"
         text
       >
-        {{ $t('Common.howItWorks') }}
+        {{ $t('common.howItWorks') }}
       </v-btn>
       <v-spacer />
       <g-btn
@@ -48,7 +48,7 @@
         :color="isHome() ? 'primary' : 'dark'"
         :textColor="isHome() ? 'primary' : 'dark'"
         to="/signup"
-        :label="$t('Common.findAJob')"
+        :label="$t('common.findAJob')"
       />
 
       <g-btn
@@ -57,7 +57,7 @@
         type="primary"
         class="ml-4"
         to="/signup"
-        :label="$t('Common.postAJob')"
+        :label="$t('common.postAJob')"
       />
       <g-btn
         dataCy="nav-login"
@@ -65,25 +65,25 @@
         :color="isHome() ? 'bg' : 'dark'"
         to="/login"
         class="mx-4"
-        :label="$t('Common.login')"
+        :label="$t('common.login')"
       />
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list nav dense>
           <v-list-item @click="goToJobList">
-            <v-list-item-title>{{ $t('Common.jobs') }}</v-list-item-title>
+            <v-list-item-title>{{ $t('common.jobs') }}</v-list-item-title>
           </v-list-item>
           <v-list-item @click="goToPricing">
-            <v-list-item-title>{{ $t('Common.pricing') }}</v-list-item-title>
+            <v-list-item-title>{{ $t('common.pricing') }}</v-list-item-title>
           </v-list-item>
           <v-list-item @click="goToHowItWorks">
-            <v-list-item-title>{{ $t('Common.howItWorks') }}</v-list-item-title>
+            <v-list-item-title>{{ $t('common.howItWorks') }}</v-list-item-title>
           </v-list-item>
           <v-list-item @click="goToLogin">
-            <v-list-item-title>{{ $t('Common.findAJob') }}</v-list-item-title>
+            <v-list-item-title>{{ $t('common.findAJob') }}</v-list-item-title>
           </v-list-item>
           <v-list-item @click="goToLogin">
-            <v-list-item-title>{{ $t('Common.postAJob') }}</v-list-item-title>
+            <v-list-item-title>{{ $t('common.postAJob') }}</v-list-item-title>
           </v-list-item>
       </v-list>
     </v-navigation-drawer>

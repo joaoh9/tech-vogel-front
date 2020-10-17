@@ -3,16 +3,16 @@
     <div class="d-flex justify-center mt-12">
       <g-card :lg="600" :md="500">
         <template v-slot:card-content>
-          <g-card-header :title="$t('Common.login')" :description="$t('login.subtitle')" />
-          <form-input class="mt-6" :title="$t('Common.username.label')" />
+          <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
+          <form-input class="mt-6" :title="$t('common.username.label')" />
           <v-text-field
-            :rules="[v => !!v || $t('Rules.requiredField')]"
+            :rules="[v => !!v || $t('rules.requiredField')]"
             outlined
             v-model="user.username"
           />
-          <form-input :title="$t('Common.password.label')" />
+          <form-input :title="$t('common.password.label')" />
           <v-text-field
-            :rules="[v => !!v || $t('Rules.requiredField')]"
+            :rules="[v => !!v || $t('rules.requiredField')]"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
             :type="showPassword ? 'text' : 'password'"
@@ -28,7 +28,7 @@
         <template v-slot:buttons>
           <div class="d-flex justify-space-between my-6">
             <v-btn to="/signup" color="secondary" tile outlined text large>
-              {{ $t('Common.signup') }}
+              {{ $t('common.signup') }}
             </v-btn>
             <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()">
               {{ $t('login.title') }}

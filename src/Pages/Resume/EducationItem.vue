@@ -2,51 +2,51 @@
   <div>
     <v-row>
       <v-col cols="12" md="8">
-        <form-input class="mt-6" :title="$t('CV.register.education.degree.title')" />
+        <form-input class="mt-6" :title="$t('resume.register.education.degree.title')" />
         <v-text-field
           v-model="education.degree"
-          :placeholder="$t('CV.register.education.placeholders.degree')"
+          :placeholder="$t('resume.register.education.placeholders.degree')"
           v-on:input="$emit('update-item', education)"
           outlined
         />
       </v-col>
       <v-col cols="12" md="4">
-        <form-input class="mt-6" :title="$t('CV.register.education.type')" />
+        <form-input class="mt-6" :title="$t('resume.register.education.type')" />
         <v-text-field
           v-model="education.institutionType"
-          :placeholder="$t('CV.register.education.placeholders.type')"
+          :placeholder="$t('resume.register.education.placeholders.type')"
           v-on:input="$emit('update-item', education)"
           outlined
         />
       </v-col>
     </v-row>
 
-    <form-input :title="$t('CV.register.education.institution')" />
+    <form-input :title="$t('resume.register.education.institution')" />
     <v-text-field
       v-model="education.name"
-      :placeholder="$t('CV.register.education.placeholders.institution')"
+      :placeholder="$t('resume.register.education.placeholders.institution')"
       v-on:input="$emit('update-item', education)"
       outlined
     />
 
     <v-row>
       <v-col cols="6" md="3">
-        <form-input :title="$t('CV.register.education.from')" />
+        <form-input :title="$t('resume.register.education.from')" />
         <v-text-field
           v-model="education.startDate"
           v-on:input="$emit('update-item', education)"
           outlined
-          :placeholder="$t('Common.year')"
+          :placeholder="$t('common.year')"
           :rules="[rules.year]"
         />
       </v-col>
       <v-col cols="6" md="3">
-        <form-input :title="$t('CV.register.education.to')" />
+        <form-input :title="$t('resume.register.education.to')" />
         <v-text-field
           v-model="education.endDate"
           v-on:input="$emit('update-item', education)"
           outlined
-          :placeholder="$t('Common.year')"
+          :placeholder="$t('common.year')"
           :rules="[rules.year]"
         />
       </v-col>

@@ -3,15 +3,15 @@
     <div class="d-flex justify-center mt-12">
       <g-card :lg="600" :md="500">
         <template v-slot:card-content>
-          <g-card-header :title="$t('Common.signup')" :description="$t('Signup.description')" />
-          <form-input class="mt-6" :title="$t('Signup.name.title')" />
+          <g-card-header :title="$t('common.signup')" :description="$t('signup.description')" />
+          <form-input class="mt-6" :title="$t('signup.name.title')" />
           <v-text-field
             data-cy="name"
             outlined
             :rules="[rules.min(3, user.name)]"
             v-model="user.name"
           />
-          <form-input v-if="askForUsername" :title="$t('Signup.username.title')" />
+          <form-input v-if="askForUsername" :title="$t('signup.username.title')" />
           <v-text-field
             data-cy="username"
             v-if="askForUsername"
@@ -20,7 +20,7 @@
             :error-messages="localRules.usernameUnavaliable"
             v-model="user.username"
           />
-          <form-input :title="$t('Signup.email.title')" />
+          <form-input :title="$t('signup.email.title')" />
           <v-text-field
             data-cy="email"
             outlined
@@ -28,7 +28,7 @@
             :rules="[rules.email(user.email)]"
             :error-messages="localRules.emailAlreadyRegistered"
           />
-          <form-input :title="$t('Common.confirm') + ' ' + $t('Signup.email.title')" />
+          <form-input :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
           <v-text-field
             data-cy="confirm-email"
             outlined
@@ -36,7 +36,7 @@
             :rules="[rules.equalEmail(user.email, user.confirmEmail)]"
             :error-messages="localRules.emailAlreadyRegistered"
           />
-          <form-input :title="$t('Common.password.label')" />
+          <form-input :title="$t('common.password.label')" />
           <v-text-field
             data-cy="password"
             :rules="[rules.min(8, user.password)]"
@@ -46,7 +46,7 @@
             outlined
             v-model="user.password"
           />
-          <form-input :title="$t('Common.confirmPassword.label')" />
+          <form-input :title="$t('common.confirmPassword.label')" />
           <v-text-field
             data-cy="confirm-password"
             :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
@@ -59,14 +59,14 @@
           <v-checkbox
             data-cy="terms-and-conditions"
             v-model="termsAndConditions"
-            :rules="[v => !!v || $t('Rules.termsAndConditions')]"
+            :rules="[v => !!v || $t('rules.termsAndConditions')]"
             :error-messages="localRules.termsAndConditions"
           >
             <template v-slot:label>
               <div>
-                {{ $t('Signup.termsAndConditions.text') }}
+                {{ $t('signup.termsAndConditions.text') }}
                 <strong @click="$router.push('/terms-and-conditions')" class="primary--text">
-                  {{ $t('Signup.termsAndConditions.termsAndConditions') }}
+                  {{ $t('signup.termsAndConditions.termsAndConditions') }}
                 </strong>
               </div>
             </template>
@@ -75,7 +75,7 @@
         <template v-slot:buttons>
           <div class="d-flex justify-space-between my-6">
             <v-btn data-cy="go-to-login" to="/login" color="secondary" tile outlined text large>
-              {{ $t('Common.login') }}
+              {{ $t('common.login') }}
             </v-btn>
             <v-btn
               data-cy="signup"
@@ -85,7 +85,7 @@
               elevation="0"
               large
             >
-              {{ $t('Common.signup') }}
+              {{ $t('common.signup') }}
             </v-btn>
           </div>
         </template>
@@ -139,7 +139,7 @@ export default {
       loading: {
         register: false,
       },
-      requestErrorMessage: this.$t('Signup.error.errorSavingUser'),
+      requestErrorMessage: this.$t('signup.error.errorSavingUser'),
     };
   },
   methods: {
@@ -147,7 +147,7 @@ export default {
       const userController = new UserController();
 
       if (!this.termsAndConditions) {
-        this.localRules.termsAndConditions = this.$t('Rules.termsAndConditions');
+        this.localRules.termsAndConditions = this.$t('rules.termsAndConditions');
         return false;
       }
       if (!this.askForUsername) {
@@ -199,7 +199,7 @@ export default {
       try {
         const user = await userController.getByEmail(this.user.email);
         if (user.length) {
-          this.localRules.emailAlreadyRegistered = this.$t('Rules.emailAlreadyRegistered');
+          this.localRules.emailAlreadyRegistered = this.$t('rules.emailAlreadyRegistered');
           return false;
         }
         return true;
@@ -211,14 +211,14 @@ export default {
       const userController = new UserController();
 
       if (this.rules.min(3, this.user.username) !== true) {
-        this.localRules.usernameUnavaliable = this.$t('Rules.lessThanXCharacters').replace('X', 4);
+        this.localRules.usernameUnavaliable = this.$t('rules.lessThanXCharacters').replace('X', 4);
         return false;
       }
 
       try {
         const user = await userController.getByUsername(this.user.username);
         if (user) {
-          this.localRules.usernameUnavaliable = this.$t('Rules.usernameUnavaliable');
+          this.localRules.usernameUnavaliable = this.$t('rules.usernameUnavaliable');
           return false;
         }
         return true;

@@ -1,9 +1,9 @@
 <template>
   <div class="mb-12">
-    <form-input :title="$t('Job.new.aboutTheRole.title')" />
+    <form-input :title="$t('job.new.aboutTheRole.title')" />
     <vue-editor
-      :placeholder="$t('Job.new.aboutTheRole.placeholder')"
-      :editorToolbar="$t('Quill.defaultToolbar')"
+      :placeholder="$t('job.new.aboutTheRole.placeholder')"
+      :editorToolbar="$t('quill.defaultToolbar')"
       v-model="description"
     />
   </div>

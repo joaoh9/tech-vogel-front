@@ -8,7 +8,7 @@
         <template v-slot:card-content>
           <div clas="d-flex justify-center ma-12 flex-column">
             <div v-if="confirmationStatus === 0" class="d-flex justify-center">
-              <g-btn type="primary" :label="$t('Common.confirm')" await @click="confirmAccount()" />
+              <g-btn type="primary" :label="$t('common.confirm')" await @click="confirmAccount()" />
             </div>
 
             <div
@@ -18,7 +18,7 @@
               <g-btn
                 type="primary"
                 class="mb-4"
-                :label="$t('Signup.buttons.createCompany')"
+                :label="$t('signup.buttons.createCompany')"
                 @click="crateCompany()"
                 block
               />
@@ -26,7 +26,7 @@
               <g-btn
                 type="primary"
                 class="mb-4"
-                :label="$t('Signup.buttons.createCV')"
+                :label="$t('signup.buttons.createCV')"
                 @click="crateCV()"
                 block
               />
@@ -38,7 +38,7 @@
                   textColor="black"
                   @click="resendCode = !resendCode"
                   class="bdy-1 cursor-pointer color-cinza-lighten-1"
-                  :label="$t('Signup.resendConfirmationCode.title')"
+                  :label="$t('signup.resendConfirmationCode.title')"
                 />
               </v-col>
             </v-row>
@@ -52,7 +52,7 @@
                     @click="resendConfirmationCode()"
                     type="primary"
                     :loading="resendLoad"
-                    :label="$t('Signup.resendConfirmationCode.resend')"
+                    :label="$t('signup.resendConfirmationCode.resend')"
                   />
                 </div>
               </v-col>
@@ -62,8 +62,8 @@
       </g-card>
     </div>
     <g-alert
-      :succesMessage="$t('Signup.resendConfirmationCode.success')"
-      :errorMessage="$t('Signup.resendConfirmationCode.error')"
+      :succesMessage="$t('signup.resendConfirmationCode.success')"
+      :errorMessage="$t('signup.resendConfirmationCode.error')"
       v-on:success="s => (requestSuccess = s)"
       v-on:error="s => (requestError = s)"
       :successVar="requestSuccess"
@@ -143,11 +143,11 @@ export default {
     getHeaderTitle() {
       switch (this.confirmationStatus) {
         case 0:
-          return this.$t('Signup.registrationConfirmed.clickToConfirm');
+          return this.$t('signup.registrationConfirmed.clickToConfirm');
         case 1:
-          return this.$t('Signup.registrationConfirmed.title');
+          return this.$t('signup.registrationConfirmed.title');
         case 2:
-          return this.$t('Signup.registrationConfirmed.error');
+          return this.$t('signup.registrationConfirmed.error');
       }
     },
     crateCompany() {

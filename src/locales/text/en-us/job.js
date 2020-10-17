@@ -1,5 +1,5 @@
 export default {
-  Job: {
+  job: {
     new: {
       basicInfo: {
         title: 'Basic information',

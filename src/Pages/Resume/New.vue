@@ -1,12 +1,12 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-md-12">
-    <Stepper :stepsNames="$t('CV.register.tabs')" v-model="currentStep">
+    <Stepper :stepsNames="$t('resume.register.tabs')" v-model="currentStep">
       <template v-slot:default="{}" class="mb-6">
         <g-card>
           <template v-slot:card-header>
             <g-card-header
-              :title="$t(`CV.register.${$t('CV.register.pages')[currentStep]}.title`)"
-              :description="$t(`CV.register.${$t('CV.register.pages')[currentStep]}.description`)"
+              :title="$t(`resume.register.${$t('resume.register.pages')[currentStep]}.title`)"
+              :description="$t(`resume.register.${$t('resume.register.pages')[currentStep]}.description`)"
             />
           </template>
           <template v-slot:card-content>
@@ -48,20 +48,20 @@
               style="z-index: -1"
             >
               <g-btn
-                :label="$t('Common.back')"
+                :label="$t('common.back')"
                 v-if="currentStep > 1"
                 type="secondary"
                 @click="currentStep--"
               />
               <g-btn
                 v-if="currentStep > 0 && currentStep < lastStep"
-                :label="$t('Common.next')"
+                :label="$t('common.next')"
                 type="primary"
                 @click="currentStep++"
               />
               <g-btn
                 v-if="currentStep === lastStep"
-                :label="$t('Common.finish')"
+                :label="$t('common.finish')"
                 type="primary"
                 @click="register"
               />
@@ -133,7 +133,7 @@ export default {
   },
   computed: {
     lastStep: function _() {
-      return (this.$t('CV.register.pages') || []).length - 1;
+      return (this.$t('resume.register.pages') || []).length - 1;
     },
   },
   methods: {

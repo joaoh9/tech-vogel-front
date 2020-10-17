@@ -1,5 +1,5 @@
-import enUS from './text.en-us';
-import ptBR from './text.pt-br';
+import enUS from './en-us';
+import ptBR from './pt-br';
 
 export default {
   'en-us': enUS,

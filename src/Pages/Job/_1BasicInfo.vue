@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form-input :title="$t('Job.new.jobTitle.title')" required />
+    <form-input :title="$t('job.new.jobTitle.title')" required />
     <v-text-field
       outlined
       :rules="[rules.required]"
@@ -8,10 +8,10 @@
       @input="$emit('title', title)"
     />
 
-    <form-input :title="$t('Job.new.id.title')" required />
+    <form-input :title="$t('job.new.id.title')" required />
     <v-text-field
       :hint="
-        $t('Job.new.id.inputHint', {
+        $t('job.new.id.inputHint', {
           company: company,
           id: id
             .replace(/\//g, '-')
@@ -24,7 +24,7 @@
       v-model="id"
       @input="$emit('id', id)"
     />
-    <form-input required :title="$t('Job.new.experienceLevel.title')" />
+    <form-input required :title="$t('job.new.experienceLevel.title')" />
     <v-autocomplete
       item-value="value"
       item-text="text"
@@ -35,7 +35,7 @@
       @input="$emit('experience-level', experienceLevel)"
       outlined
     />
-    <form-input :title="$t('Job.new.contractType.title')" />
+    <form-input :title="$t('job.new.contractType.title')" />
     <v-autocomplete
       item-value="value"
       item-text="text"

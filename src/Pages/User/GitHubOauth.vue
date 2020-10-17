@@ -8,14 +8,14 @@
         <template v-slot:card-content>
           <div class="text-center">
             <v-row justify="center">
-              <g-btn class="my-4" type="primary" :label="$t('Common.confirm')" @click="confirm()" />
+              <g-btn class="my-4" type="primary" :label="$t('common.confirm')" @click="confirm()" />
             </v-row>
             <v-row justify="center">
               <g-btn
                 class="my-4"
                 type="text"
                 color="dark"
-                :label="$t('Signup.registrationConfirmed.description')"
+                :label="$t('signup.registrationConfirmed.description')"
               />
             </v-row>
           </div>
@@ -24,8 +24,8 @@
     </div>
     <div class="d-flex justify-center">
       <g-alert
-        :succesMessage="$t('OAuth.github.accessSucces')"
-        :errorMessage="$t('OAuth.github.accessError')"
+        :succesMessage="$t('oAuth.github.accessSucces')"
+        :errorMessage="$t('oAuth.github.accessError')"
         v-on:success="s => (requestSuccess = s)"
         v-on:error="s => (requestError = s)"
         :successVar="requestSuccess"

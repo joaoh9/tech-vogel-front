@@ -1,5 +1,5 @@
 export default {
-  CV: {
+  resume: {
     register: {
       tabs: [
         'Start',
@@ -118,42 +118,7 @@ export default {
       },
     },
   },
-  User: {
-    register: {
-      page1: {
-        title: 'Register to apply for jobs',
-      },
-      fullName: {
-        title: 'Full name',
-      },
-      email: {
-        title: 'Email',
-      },
-      username: {
-        title: 'Username',
-      },
-      password: {
-        title: 'Password',
-      },
-      confirmPassword: {
-        title: 'Confirm password',
-      },
-      page2: {
-        title: 'Confirmation',
-      },
-      pageSubtitle: {
-        title: 'An access code was sent to your registered email',
-      },
-      accessCode: {
-        title: 'Access code',
-      },
-      accessCodeHelper: {
-        title: 'Didn\'t get your access code? Click here',
-      },
-      page3: {
-        title: 'Welcome to Tech Voguel',
-      },
-    },
+  user: {
     dashboard: {
       greeting: 'Hi,',
       actions: {

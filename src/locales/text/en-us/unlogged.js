@@ -1,9 +1,5 @@
 export default {
-  Home: {
-    title: 'Tech Vogel',
-    subtitle: 'Connecting I.T professionals with companies around the world for remote work',
-  },
-  Signup: {
+  signup: {
     title: 'Sign Up',
     description: 'Sign up for Tech Vogel',
     name: {
@@ -104,6 +100,4 @@ export default {
     forgotPassword: 'Forgot your password?',
     error: 'Wrong credentials',
   },
-  AboutUs:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget posuere odio varius aliquet massa aliquam iaculis malesuada. Sapien ut pharetra libero a dictum sit. Egestas vitae quisque purus interdum arcu. Hendrerit erat sed ut tincidunt. Amet luctus vestibulum vel sit tellus id arcu gravida. Augue non eu, urna augue varius. Sapien ut pharetra libero a dictum sit. Egestas vitae quisque purus interdum arcu. Hendrerit erat sed ut tincidunt. Amet luctus vestibulum vel sit tellus id arcu gravida. Augue non eu, urna augue varius',
 };

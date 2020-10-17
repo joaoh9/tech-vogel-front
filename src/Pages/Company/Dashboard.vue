@@ -14,7 +14,7 @@
         <div>
           <CompanyCard :company="company" v-if="company" />
           <div class="mt-8 mb-12">
-            <h4>{{ $t('Company.dashboard.actions.title') }}</h4>
+            <h4>{{ $t('company.dashboard.actions.title') }}</h4>
           </div>
           <v-row>
             <v-col cols="6" v-for="(action, index) in getCardActions()" v-bind:key="index">
@@ -26,7 +26,7 @@
               outlined
               block
               type="secondary"
-              :label="$t('Company.dashboard.manageAccountInfo')"
+              :label="$t('company.dashboard.manageAccountInfo')"
             />
           </div>
         </div>

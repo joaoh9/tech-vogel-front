@@ -18,7 +18,7 @@
         type="primary"
         class="ml-4"
         to="/signup"
-        :label="$t('Common.postAJob')"
+        :label="$t('common.postAJob')"
       />
       <g-btn
         v-if="!$vuetify.breakpoint.mobile"
@@ -28,7 +28,7 @@
         elevation="0"
         :to="getDashboardRoute()"
         class="mx-4"
-        :label="$t('Common.dashboard')"
+        :label="$t('common.dashboard')"
       />
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -49,10 +49,10 @@
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list nav dense>
         <v-list-item @click="goToSignup">
-          <v-list-item-title>{{ $t('Common.postAJob') }}</v-list-item-title>
+          <v-list-item-title>{{ $t('common.postAJob') }}</v-list-item-title>
         </v-list-item>
         <v-list-item @click="goToDashboard">
-          <v-list-item-title>{{ $t('Common.dashboard') }}</v-list-item-title>
+          <v-list-item-title>{{ $t('common.dashboard') }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -88,7 +88,7 @@ export default {
     getMenuList() {
       return [
         {
-          title: this.$t('Common.logout'),
+          title: this.$t('common.logout'),
           action: this.logout,
         },
       ];

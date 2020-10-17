@@ -9,7 +9,7 @@
           v-for="(skill, j) in skills[skillType]"
           :key="j"
         >
-          {{ $t(`Dictionary.${skillType}.${skill.skillId}`) }}
+          {{ $t(`dictionary.${skillType}.${skill.skillId}`) }}
         </v-chip>
       </v-row>
     </v-row>
