@@ -67,9 +67,6 @@ export default {
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.rulesLoaded = true;
-    console.log(this.nextRoute);
-    console.log(this.userEmail);
-    console.log(this.username);
     if (this.username) {
       this.user.username = this.username;
     }
@@ -126,17 +123,17 @@ export default {
     async seeIfUserIsACompanyOwner() {
       const userController = new UserController();
 
-      try {
-        const company = await userController.getCompany(this.user.username);
+      const company = await userController.getCompany(this.user.username);
+      console.log('company', company)
+      if (company) {
         StorageHelper.saveState('companyId', company[0]);
-
         this.goToDashboard(true);
-      } catch (e) {
-        alert(e); // TODO: melhorar tratamento de erro
+      } else {
+        this.goToDashboard(false);
       }
     },
     goToDashboard(company = false) {
-      this.$emit('login', { logged: true, company });
+      this.$emit('login');
       this.$router.push({
         path: this.nextRoute || company ? '/company/dashboard' : '/dashboard',
       });

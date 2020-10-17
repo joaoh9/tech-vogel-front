@@ -33,11 +33,7 @@
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-icon v-on="on" v-bind="attrs">mdi-chevron-down</v-icon>
-          <!-- <h3 data-cy="user-name" v-on="on" v-bind="attrs" style="color: white" class="ml-3">
-          {{ user.name }}
-        </h3> -->
           <v-icon v-on="on" v-bind="attrs" large>mdi-account-circle</v-icon>
-          <!-- <v-avatar v-on="on" v-bind="attrs" class="ml-3" color="grey"></v-avatar> -->
         </template>
         <v-list>
           <v-list-item @click="m.action" v-for="(m, i) of getMenuList()" :key="i">
@@ -63,6 +59,7 @@
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import UserController from 'Controllers/user';
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'LoggedInNavbar',
@@ -97,7 +94,9 @@ export default {
       const userController = new UserController();
       try {
         await userController.logout();
-        this.$emit('logout', { logged: false, company: false });
+        StorageHelper.removeState('user');
+        StorageHelper.removeState('companyId');
+        this.$emit('logout');
         this.$router.push({
           path: '/',
         });
