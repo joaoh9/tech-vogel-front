@@ -24,7 +24,7 @@
 import Navbar from 'Components/Navbar/Navbar';
 import LoggedInNavbar from 'Components/Navbar/LoggedInNavbar';
 import Footer from 'Components/Footer';
-import JwtHelper from 'Helpers/jwt';
+import StorageHelper from 'Helpers/storage';
 import 'Public/css';
 
 export default {
@@ -66,24 +66,18 @@ export default {
       return pageStyle;
     },
     async checkIfLoggedIn() {
-      const jwtHelper = new JwtHelper();
-      try {
-        await jwtHelper.getData('user');
+      if (StorageHelper.loadState('user')) {
         this.loggedIn.logged = true;
-        this.loggedIn.company = true;
-      } catch (e) {
+      } else {
         this.loggedIn.logged = false;
+      }
+
+      if (StorageHelper.loadState('companyId')) {
+        this.loggedIn.company = true;
+      } else {
         this.loggedIn.company = false;
       }
 
-      try {
-        await jwtHelper.getData('company');
-        this.loggedIn.logged = true;
-        this.loggedIn.company = true;
-      } catch (e) {
-        this.loggedIn.logged = false;
-        this.loggedIn.company = false;
-      }
     },
   },
 };

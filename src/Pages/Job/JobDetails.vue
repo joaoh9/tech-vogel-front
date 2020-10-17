@@ -106,7 +106,7 @@ import JobController from 'Controllers/job';
 import SkillPresentation from 'Components/Job/SkillPresentation';
 import IconText from 'Components/Interface/IconText';
 import DefaultDialog from 'Components/Dialogs/Default';
-import JwtHelper from 'Helpers/jwt';
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'JobDescription',
@@ -172,15 +172,10 @@ export default {
     },
     async applyForJob() {
       const jobController = new JobController();
-      const jwtHelper = new JwtHelper();
 
       try {
-        const user = jwtHelper.getData('user');
-        console.log('user');
-        console.log(user);
-        const res = await jobController.apply(user.username, this.jobId);
-        console.log('res');
-        console.log(res);
+        const user = StorageHelper.loadState('user');
+        await jobController.apply(user.username, this.jobId);
       } catch (e) {
         alert(e);
       }

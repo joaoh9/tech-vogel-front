@@ -1,6 +1,7 @@
-const loadState = key => {
+/* eslint-disable no-console */
+export const loadState = key => {
   try {
-    const serializedState = sessionStorage.getItem(key);
+    const serializedState = localStorage.getItem(key);
 
     if (serializedState === null) {
       return undefined;
@@ -12,40 +13,32 @@ const loadState = key => {
   }
 };
 
-const saveState = (key, state) => {
+export const saveState = (key, state) => {
   try {
     const serializedState = JSON.stringify(state);
 
-    sessionStorage.setItem(key, serializedState);
+    localStorage.setItem(key, serializedState);
   } catch (e) {
     return e;
   }
 };
 
-const removeState = key => {
+export const removeState = key => {
   try {
-    sessionStorage.removeItem(key);
+    localStorage.removeItem(key);
   } catch (e) {
     return e;
   }
 };
 
-const saveOnSession = (key, state) => {
+export const saveOnSession = (key, state) => {
   const serializedState = JSON.stringify(state);
 
   sessionStorage.setItem(key, serializedState);
 };
 
-const getFromSession = key => {
+export const getFromSession = key => {
   const serializedState = sessionStorage.getItem(key);
 
   return JSON.parse(serializedState);
 };
-
-export default {
-  loadState,
-  saveState,
-  removeState,
-  saveOnSession,
-  getFromSession ,
-}

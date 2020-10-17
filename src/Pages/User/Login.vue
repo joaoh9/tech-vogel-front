@@ -49,7 +49,6 @@
 import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
-import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'Login',
@@ -117,22 +116,19 @@ export default {
     },
     async saveUserCredentials() {
       const userController = new UserController();
-      const jwtHelper = new JwtHelper();
 
       const userInfo = await userController.getByUsername(this.user.username);
-      const userToken = jwtHelper.createToken(userInfo);
 
-      StorageHelper.saveOnSession('user', userToken);
+      StorageHelper.saveState('user', userInfo);
 
       this.seeIfUserIsACompanyOwner();
     },
     async seeIfUserIsACompanyOwner() {
       const userController = new UserController();
-      const jwtHelper = new JwtHelper();
+
       try {
         const company = await userController.getCompany(this.user.username);
-        const companyToken = jwtHelper.createToken({ companyId: company[0] }); // WARNING: salvando apenas o primeiro indice do array de companies do user
-        StorageHelper.saveOnSession('company', companyToken);
+        StorageHelper.saveState('companyId', company[0]);
 
         this.goToDashboard(true);
       } catch (e) {

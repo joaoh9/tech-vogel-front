@@ -76,14 +76,12 @@
 </template>
 
 <script>
-import JwtHelper from 'Helpers/jwt';
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'ProfessionalDashboard',
   mounted() {
-    const jwtHelper = new JwtHelper();
-
-    this.user = jwtHelper.getData('user');
+    this.user = StorageHelper.loadState('user');
   },
   data() {
     return {
