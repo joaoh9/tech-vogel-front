@@ -25,7 +25,7 @@ import Navbar from 'Components/Navbar/Navbar';
 import LoggedInNavbar from 'Components/Navbar/LoggedInNavbar';
 import Footer from 'Components/Footer';
 import JwtHelper from 'Helpers/jwt';
-import 'Public/css'
+import 'Public/css';
 
 export default {
   name: 'app',
@@ -98,23 +98,6 @@ export default {
   border-radius: 6px !important;
 }
 
-.v-btn__content {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 150%;
-  /* or 27px */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.035em;
-  font-feature-settings: 'liga' off;
-
-  /* color: #000000aa; */
-}
-
 .v-text-field .v-textarea .v-card .v-card:not() {
   border-radius: 6px !important;
 }
@@ -122,36 +105,4 @@ export default {
 h6 {
   margin-bottom: 10px !important;
 }
-
-/* QUILL EDITOR DEFAULT STYLE INIT */
-
-.ql-toolbar.ql-snow {
-  border: 1px solid rgba(0, 0, 0, 0.42) !important;
-  border-radius: 6px !important;
-  /* color: #706F98 !important; */
-  background-color: #706f98 !important;
-}
-.ql-container.ql-snow {
-  border: 1px solid rgba(0, 0, 0, 0.42) !important;
-  border-radius: 6px !important;
-}
-
-.quillWrapper .ql-snow .ql-stroke {
-  stroke: #f7f7fb !important;
-}
-
-.ql-snow .ql-fill {
-  fill: #f7f7fb !important;
-}
-
-pre {
-  border-radius: 6px !important;
-  background-color: #6c6c77 !important;
-}
-
-.ql-editor {
-  margin: 16px !important;
-}
-
-/* QUILL EDITOR DEFAULT STYLE FINISH */
 </style>
