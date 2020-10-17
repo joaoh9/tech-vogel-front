@@ -49,17 +49,13 @@
 
 <script>
 import RulesHelper from 'Helpers/rules';
-import JwtHelper from 'Helpers/jwt';
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob1',
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-    const jwtHelper = new JwtHelper();
-    //  TODO: tratar erro de jwt
-    const companyInfo = jwtHelper.getData('company');
-    console.log('companyInfo', companyInfo);
-    this.company = companyInfo.companyId;
+    this.company = StorageHelper.loadState('companyId');
   },
   data() {
     return {

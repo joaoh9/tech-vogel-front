@@ -26,7 +26,6 @@
 import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
-import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'LoginComponent',
@@ -81,13 +80,10 @@ export default {
     },
     async saveUserCredentials() {
       const userController = new UserController();
-      const jwtHelper = new JwtHelper();
 
       const userInfo = await userController.getByUsername(this.user.username);
 
-      const userToken = jwtHelper.createToken(userInfo);
-
-      StorageHelper.saveOnSession('user', userToken);
+      StorageHelper.saveState('user', userInfo);
     },
   },
 };

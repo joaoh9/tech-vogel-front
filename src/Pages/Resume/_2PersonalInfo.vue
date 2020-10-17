@@ -36,7 +36,6 @@
 
 <script>
 import StorageHelper from 'Helpers/storage';
-import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'ResumePersonalInfo',
@@ -56,9 +55,7 @@ export default {
   methods: {
     getUserInfo() {
       try {
-        const userToken = StorageHelper.loadState('user');
-        const jwtHelper = new JwtHelper();
-        const user = jwtHelper.decodeToken(userToken);
+        const user = StorageHelper.loadState('user');
         this.fullName = user.name;
       } catch (e) {
         console.log(e);

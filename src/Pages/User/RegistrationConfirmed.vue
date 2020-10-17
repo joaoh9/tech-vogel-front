@@ -75,7 +75,6 @@
 <script>
 import UserController from 'Controllers/user';
 import StorageHelper from 'Helpers/storage';
-import JwtHelper from 'Helpers/jwt';
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -118,11 +117,7 @@ export default {
       }
     },
     saveUserCredentials(user) {
-      const jwtHelper = new JwtHelper();
-
-      const userToken = jwtHelper.createToken(user);
-
-      StorageHelper.saveOnSession('user', userToken);
+      StorageHelper.saveState('user', user);
     },
     async resendConfirmationCode() {
       this.resendLoad = true;

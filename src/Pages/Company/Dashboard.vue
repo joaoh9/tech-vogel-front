@@ -36,11 +36,11 @@
 </template>
 
 <script>
-import JwtHelper from 'Helpers/jwt';
 import CompanyController from 'Controllers/company';
 import UserCard from 'Components/Dashboard/UserCard';
 import CompanyCard from 'Components/Dashboard/CompanyCard';
 import ActionCard from 'Components/Dashboard/ActionCard';
+import StorageHelper from 'Helpers/storage'
 
 export default {
   name: 'CompanyDashboard',
@@ -74,17 +74,16 @@ export default {
       }
     },
     async getUserInfo() {
-      const jwtHelper = new JwtHelper();
       this.loading.user = true;
       this.loading.company = true;
       try {
-        this.user = jwtHelper.getData('user');
+        this.user = StorageHelper.loadState('user');
         this.loading.user = false;
       } catch (e) {
         alert(e);
       }
       try {
-        const { companyId } = jwtHelper.getData('company');
+        const companyId = StorageHelper.loadState('companyId');
         await this.getCompanyInfo(companyId);
       } catch (e) {
         alert(e);

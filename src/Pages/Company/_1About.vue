@@ -39,7 +39,6 @@
 import { VueEditor } from 'vue2-editor';
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
-import JwtHelper from 'Helpers/jwt';
 
 export default {
   name: 'New',
@@ -75,9 +74,7 @@ export default {
   },
   methods: {
     loadUserFromStorage() {
-      const jwtHelper = new JwtHelper();
-
-      const userInfo = jwtHelper.decodeToken(StorageHelper.loadState('user'));
+      const userInfo = StorageHelper.loadState('user');
       this.ownerId = userInfo.username;
       this.representative = userInfo.name;
       this.representativeEmail = userInfo.email;
