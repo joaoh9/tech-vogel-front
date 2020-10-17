@@ -5,7 +5,7 @@
       <v-checkbox
         v-model="jobInterests"
         @change="$emit('job-interests', jobInterests)"
-        v-for="(option, index) in $t('skills.jobInterests')"
+        v-for="(option, index) in $t('enums.jobInterests')"
         :key="index"
         :label="option.text"
         :value="option.value"
@@ -16,7 +16,7 @@
       <v-checkbox
         v-model="contractType"
         @change="$emit('contract-type', contractType)"
-        v-for="(option, index) in $t('skills.contractType')"
+        v-for="(option, index) in $t('enums.contractType')"
         :label="option.text"
         :value="option.value"
         :key="index"

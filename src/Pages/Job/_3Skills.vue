@@ -24,7 +24,7 @@
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
       skillTitle="techSkills"
-      :experienceLevel="$t('skills.priorities')"
+      :experienceLevel="$t('enums.priorities')"
     />
 
     <form-input
@@ -54,7 +54,7 @@
       :key="`Soft-${softSkills.length}`"
       :items="softSkills"
       skillTitle="softSkills"
-      :experienceLevel="$t('skills.priorities')"
+      :experienceLevel="$t('enums.priorities')"
     />
     <form-input class="mt-6" :title="$t('job.new.languages.title')" />
     <v-autocomplete
@@ -83,7 +83,7 @@
           mdi-close
         </v-icon>
         <div class="bdy-1 align-self-center" style="line-height: 100% !important">
-          {{ $t(`dictionary.languages.${language.skillId}`) }}
+          {{ $t(`skills.dictionary.languages.${language.skillId}`) }}
         </div>
       </v-col>
       <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">
@@ -98,7 +98,7 @@
             outlined
             input-value="value"
             :value="fluency.value"
-            v-for="(fluency, index) in $t('skills.languages')"
+            v-for="(fluency, index) in $t('enums.languages')"
             :key="`L-${index}`"
           >
             {{ fluency.text }}
@@ -128,11 +128,6 @@ export default {
         languages: [],
       },
     };
-  },
-  methods: {
-    getSkillsPriorities() {
-      return this.$t('skills.priorities');
-    },
   },
   watch: {
     techSkills() {

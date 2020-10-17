@@ -15,7 +15,7 @@ function skillValueFormat(skillArray) {
   }));
 }
 
-export default {
+const formated = {
   aspNet: skillValueFormat(aspNet),
   cpp: skillValueFormat(cpp),
   css: skillValueFormat(css),
@@ -25,4 +25,26 @@ export default {
   php: skillValueFormat(php),
   py: skillValueFormat(py),
   ruby: skillValueFormat(ruby),
+};
+
+let all = [];
+
+Object.values(formated).forEach(value => {
+  all = all.concat(value);
+});
+
+export default {
+  formated,
+  all,
+  dictionary: {
+    ...aspNet,
+    ...cpp,
+    ...css,
+    ...java,
+    ...js,
+    ...perl,
+    ...php,
+    ...py,
+    ...ruby,
+  },
 };

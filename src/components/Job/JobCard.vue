@@ -69,7 +69,7 @@ export default {
         },
         {
           icon: 'mdi-briefcase-variant-outline',
-          text: this.$t(`dictionary.contractType.${this.job.contractType}`),
+          text: this.$t(`enums.contractType.${this.job.contractType}`),
         },
       ];
     },

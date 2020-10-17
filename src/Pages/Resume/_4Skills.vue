@@ -21,7 +21,7 @@
     <SkillExperienceLevel
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
-      :experienceLevel="$t('skills.yearsOfExperience')"
+      :experienceLevel="$t('enums.yearsOfExperience')"
     />
     <form-input
       class="mt-2"
@@ -46,7 +46,7 @@
     <SkillExperienceLevel
       :key="`Soft-${softSkills.length}`"
       :items="softSkills"
-      :experienceLevel="$t('skills.priorities')"
+      :experienceLevel="$t('enums.priorities')"
     />
     <form-input class="mt-6" :title="$t('job.new.languages.title')" />
     <v-autocomplete
@@ -89,7 +89,7 @@
             outlined
             input-value="value"
             :value="fluency.value"
-            v-for="(fluency, index) in $t('skills.languages')"
+            v-for="(fluency, index) in $t('enums.languages')"
             :key="`L-${index}`"
           >
             {{ fluency.text }}
@@ -116,9 +116,6 @@ export default {
     };
   },
   methods: {
-    getSkillsPriorities() {
-      return this.$t('skills.priorities');
-    },
     treatSkillInput(e) {
       alert(e);
       this.skills.push({ id: e, priority: 0 });

@@ -12,7 +12,7 @@
           mdi-close
         </v-icon>
         <div class="bdy-1 align-self-center" style="line-height: 100% !important">
-          {{ $t(`dictionary.${skillTitle}.${skill.skillId}`) }}
+          {{ $t(`skills.dictionary.${skillTitle}.${skill.skillId}`) }}
         </div>
       </v-col>
       <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">

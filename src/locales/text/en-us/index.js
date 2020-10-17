@@ -4,6 +4,8 @@ import job from './job';
 import others from './others';
 import unlogged from './unlogged';
 import user from './user';
+import enums from './enums';
+import skill from './skills';
 
 export default {
   ...bigText,
@@ -12,4 +14,6 @@ export default {
   ...others,
   ...unlogged,
   ...user,
+  ...enums,
+  ...skill,
 };

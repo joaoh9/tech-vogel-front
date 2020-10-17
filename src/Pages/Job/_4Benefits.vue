@@ -8,7 +8,7 @@
         placeholder="Currency"
         title="Payment Currency"
         outlined
-        :items="$t('skills.currencies')"
+        :items="$t('enums.currencies')"
         class="mr-2"
       />
       <v-autocomplete
@@ -17,7 +17,7 @@
         label="Time Frame"
         title="Time Frame"
         outlined
-        :items="$t('skills.payCheckTimeFrame')"
+        :items="$t('enums.payCheckTimeFrame')"
         class="mr-2"
       />
       <v-text-field

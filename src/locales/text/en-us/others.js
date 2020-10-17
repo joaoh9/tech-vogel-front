@@ -5,7 +5,6 @@ export default {
   techVogel: 'Tech Vogel',
   common: {
     at: 'At',
-    feedback: 'Feedback',
     tv: 'Tech Vogel',
     techVogel: 'Tech Vogel',
     day: 'Day',
@@ -112,11 +111,6 @@ export default {
       { i18n: 'en-us', language: 'English', country: 'usa', flag: FlagIcons.usa },
     ],
     icons: FlagIcons,
-  },
-  feedback: {
-    title: 'Leave your Feedback, bug encounter or suggestion!',
-    topic: 'Topic',
-    description: 'Description',
   },
   oAuth: {
     github: {

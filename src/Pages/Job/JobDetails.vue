@@ -162,11 +162,11 @@ export default {
       return [
         {
           icon: 'fa fa-briefcase',
-          text: this.$t(`dictionary.experienceLevel.${this.job.experienceLevel || 'junior'}`),
+          text: this.$t(`enums.dictionary.experienceLevel.${this.job.experienceLevel || 'junior'}`),
         },
         {
           icon: 'far fa-clock',
-          text: this.$t(`dictionary.contractType.${this.job.contractType}`),
+          text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
         },
       ];
     },

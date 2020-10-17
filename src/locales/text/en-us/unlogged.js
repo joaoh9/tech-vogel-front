@@ -1,3 +1,5 @@
+import bigText from './bigText';
+
 export default {
   signup: {
     title: 'Sign Up',
@@ -99,5 +101,37 @@ export default {
     createAccount: 'Create an account',
     forgotPassword: 'Forgot your password?',
     error: 'Wrong credentials',
+  },
+  privacyPolicy: {
+    title: 'Your privacy is important to us.',
+    description: 'You can learn more about the steps we take to ensure it here.',
+    subtitle: 'Our Privacy Policy',
+    chooseLanguageText: 'View our privacy policy in:',
+    buttons: [
+      'Introduction',
+      'Data processing',
+      'Data sharing',
+      'Data retention and erasure',
+      'Protection and storage',
+      'Policy changes',
+      'Cookies',
+      'Get in touch',
+    ],
+    bigText: bigText.privacyPolicy,
+  },
+  termsOfService: {
+    title: 'Your privacy is important to us.',
+    description: 'You can learn more about the steps we take to ensure it here.',
+    subtitle: 'Our Terms of Service',
+    chooseLanguageText: 'View our privacy policy in:',
+    buttons: [
+      'Introduction and general information',
+      'User data',
+      'Registration',
+      'Services and cost',
+      'Terms of service',
+      'Final information',
+    ],
+    bigText: bigText.termsOfService,
   },
 };
