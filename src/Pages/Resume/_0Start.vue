@@ -6,21 +6,21 @@
         type="primary"
         :minwidth="300"
         v-on:click="$emit('manual-register', 'manual-register')"
-        :label="$t('CV.register.start.registerManually.title')"
+        :label="$t('resume.register.start.registerManually.title')"
       />
       <g-btn
         type="disabled"
         :minwidth="300"
         class="mt-4"
         disabled
-        :label="$t('CV.register.start.linkGithub.title')"
+        :label="$t('resume.register.start.linkGithub.title')"
         :href="`https://github.com/login/oauth/authorize?client_id=${getClientId()}`"
       />
       <g-btn
         type="disabled"
         :minwidth="300"
         class="mt-4"
-        :label="$t('CV.register.start.linkLinkedIn.title')"
+        :label="$t('resume.register.start.linkLinkedIn.title')"
       />
     </div>
     <slot />

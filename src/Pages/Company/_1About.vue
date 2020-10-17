@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form-input :title="$t('Company.new.companyName')" />
+    <form-input :title="$t('company.new.companyName')" />
     <v-text-field
       tile
       outlined
@@ -8,7 +8,7 @@
       v-model="name"
       @input="$emit('company-name', name)"
     />
-    <form-input :title="$t('Company.new.representativeName')" />
+    <form-input :title="$t('company.new.representativeName')" />
     <v-text-field
       tile
       outlined
@@ -16,7 +16,7 @@
       v-model="representative"
       @input="$emit('representative-name', representative)"
     />
-    <form-input :title="$t('Company.new.representativeEmail')" />
+    <form-input :title="$t('company.new.representativeEmail')" />
     <v-text-field
       tile
       disabled
@@ -26,10 +26,10 @@
       @input="$emit('representative-email', representativeEmail)"
       :error-messages="localRules.emailAlreadyRegistered"
     />
-    <form-input :title="$t('Company.new.aboutYourCompany.title')" />
+    <form-input :title="$t('company.new.aboutYourCompany.title')" />
     <vue-editor
-      :placeholder="$t('Company.new.aboutYourCompany.placeholder')"
-      :editorToolbar="$t('Quill.defaultToolbar')"
+      :placeholder="$t('company.new.aboutYourCompany.placeholder')"
+      :editorToolbar="$t('quill.defaultToolbar')"
       v-model="companyDescription"
     />
   </div>

@@ -9,11 +9,11 @@
                 <v-icon left>
                   fa-angle-left
                 </v-icon>
-                {{ $t('User.applications.returnToDashboard') }}</v-btn
+                {{ $t('user.applications.returnToDashboard') }}</v-btn
               >
-              <div v-for="key in Object.keys($t('User.applications.actions'))" v-bind:key="key">
+              <div v-for="key in Object.keys($t('user.applications.actions'))" v-bind:key="key">
                 <v-btn v-if="!$vuetify.breakpoint.mobile" text block left color="primary">
-                  {{ $t('User.applications.actions.' + key) }}</v-btn
+                  {{ $t('user.applications.actions.' + key) }}</v-btn
                 >
               </div>
             </div>
@@ -23,7 +23,7 @@
       <v-col md="8" cols="12">
         <div>
           <div class="mt-5 mb-12">
-            <h4>{{ $t('User.applications.title') }}</h4>
+            <h4>{{ $t('user.applications.title') }}</h4>
           </div>
           <div v-for="(application, index) in applications" v-bind:key="index">
             <v-card color="bg" class="primary-card my-5">
@@ -60,7 +60,7 @@
                     </div>
                   </v-col>
                   <v-col cols="12" md="4" class="d-flex flex-column justify-center align-stretch text-center">
-                    <div>{{$tc('User.applications.job.period', 1)}}</div>
+                    <div>{{$tc('user.applications.job.period', 1)}}</div>
                     <div class="text-center">
                       <v-icon size="12" color="error" class="text-icon">
                         fa-circle

@@ -1,11 +1,11 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-md-12">
-    <!-- <Stepper ref="stepper" :stepsNames="$t('Company.new.steps')" v-model="currentStep" class="mb-6">
+    <!-- <Stepper ref="stepper" :stepsNames="$t('company.new.steps')" v-model="currentStep" class="mb-6">
       <template v-slot:default="{}">
         -->
     <g-card>
       <template v-slot:card-header>
-        <g-card-header :title="$t(`Company.new.page1`)" />
+        <g-card-header :title="$t(`company.new.page1`)" />
       </template>
       <template v-slot:card-content>
         <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
@@ -39,12 +39,12 @@
           style="z-index: -1"
         >
           <g-btn
-            :label="$t('Common.back')"
+            :label="$t('common.back')"
             v-if="currentStep > 0"
             type="secondary"
             @click="manageStepBack"
           />
-          <g-btn :label="$t('Common.next')" type="primary" @click="manageNextStep" />
+          <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" />
         </div>
       </template>
     </g-card>

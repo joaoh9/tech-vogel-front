@@ -1,8 +1,8 @@
 <template>
   <div>
-    <form-input :title="$t('Company.new.location')" />
+    <form-input :title="$t('company.new.location')" />
     <v-text-field tile outlined v-model="location" @input="$emit('location', location)" />
-    <form-input :title="$t('Company.new.aboutYourCompany')" />
+    <form-input :title="$t('company.new.aboutYourCompany')" />
     <v-textarea
       auto-grow
       rows="3"

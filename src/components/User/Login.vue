@@ -1,13 +1,13 @@
 <template>
   <div>
     <v-text-field
-      :rules="[v => !!v || $t('Rules.requiredField')]"
+      :rules="[v => !!v || $t('rules.requiredField')]"
       outlined
       v-model="user.username"
     />
-    <form-input :title="$t('Common.password.label')" />
+    <form-input :title="$t('common.password.label')" />
     <v-text-field
-      :rules="[v => !!v || $t('Rules.requiredField')]"
+      :rules="[v => !!v || $t('rules.requiredField')]"
       :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="showPassword = !showPassword"
       :type="showPassword ? 'text' : 'password'"

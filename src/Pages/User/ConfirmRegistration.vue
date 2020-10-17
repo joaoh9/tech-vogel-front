@@ -4,9 +4,9 @@
       <g-card :md="500" :lg="500">
         <template v-slot:card-content>
           <div class="d-flex justify-center ma-12 flex-column">
-            <h4 class="h4-bold align-self-center">{{ $t('Signup.confirmEmail.title') }}</h4>
+            <h4 class="h4-bold align-self-center">{{ $t('signup.confirmEmail.title') }}</h4>
             <span class="bdy-1 align-self-center color-cinza-lighten-1 mt-4">
-              {{ $t('Signup.confirmEmail.description') }}
+              {{ $t('signup.confirmEmail.description') }}
             </span>
             <div class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap">
               <g-btn
@@ -14,7 +14,7 @@
                 textColor="black"
                 @click="resendCode = !resendCode"
                 class="bdy-1 cursor-pointer color-cinza-lighten-1"
-                :label="$t('Signup.resendConfirmationCode.title')"
+                :label="$t('signup.resendConfirmationCode.title')"
               />
             </div>
 
@@ -29,7 +29,7 @@
                 @click="resendConfirmationCode()"
                 :loading="resendLoad"
                 type="primary"
-                :label="$t('Signup.resendConfirmationCode.resend')"
+                :label="$t('signup.resendConfirmationCode.resend')"
               />
             </div>
             <div class="d-flex justify-center">
@@ -39,7 +39,7 @@
                 v-if="!resendCode"
                 to="/login"
                 maxwidth="100"
-                :label="$t('Common.login')"
+                :label="$t('common.login')"
               />
             </div>
           </div>
@@ -47,8 +47,8 @@
       </g-card>
     </div>
     <g-alert
-      :succesMessage="$t('Signup.resendConfirmationCode.success')"
-      :errorMessage="$t('Signup.resendConfirmationCode.error')"
+      :succesMessage="$t('signup.resendConfirmationCode.success')"
+      :errorMessage="$t('signup.resendConfirmationCode.error')"
       v-on:success="s => (requestSuccess = s)"
       v-on:error="s => (requestError = s)"
       :successVar="requestSuccess"

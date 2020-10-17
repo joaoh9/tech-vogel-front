@@ -8,7 +8,7 @@
             <template v-slot:card-content>
               <div class="d-flex justify-space-between">
                 <div>
-                  <h6>{{ $t('User.dashboard.greeting') }}</h6>
+                  <h6>{{ $t('user.dashboard.greeting') }}</h6>
                   <h4>{{ user.name }}</h4>
                 </div>
                 <v-avatar size="90">
@@ -31,10 +31,10 @@
         <v-col cols="12" md="8">
           <div>
             <div class="mt-5 mb-12">
-              <h4>{{ $t('User.dashboard.actions.title') }}</h4>
+              <h4>{{ $t('user.dashboard.actions.title') }}</h4>
             </div>
             <div class="my-5">
-              <g-btn block type="primary" :label="$t('User.dashboard.registerCV')" />
+              <g-btn block type="primary" :label="$t('user.dashboard.registerCV')" />
             </div>
             <v-row>
               <v-col cols="6" v-for="(action, index) in actions" v-bind:key="index">
@@ -52,7 +52,7 @@
                         </v-icon>
                       </v-col>
                       <v-col cols="12" md="8">
-                        <h5>{{ $t('User.dashboard.actions.' + action.name) }}</h5>
+                        <h5>{{ $t('user.dashboard.actions.' + action.name) }}</h5>
                       </v-col>
                     </v-row>
                   </v-card-title>
@@ -64,7 +64,7 @@
                 outlined
                 block
                 type="secondary"
-                :label="$t('User.dashboard.manageAccountInfo')"
+                :label="$t('user.dashboard.manageAccountInfo')"
               />
             </div>
           </div>

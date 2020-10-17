@@ -40,7 +40,7 @@
       <v-col cols="6">
         <div class="d-flex justify-center">
           <g-btn
-            :label="$t('Common.addNewInput')"
+            :label="$t('common.addNewInput')"
             type="filled"
             color="dark"
             outlined

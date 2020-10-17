@@ -1,15 +1,15 @@
 <template>
   <div>
-    <form-input class="mt-6" :title="$t('CV.register.personalInfo.fullName.title')" />
+    <form-input class="mt-6" :title="$t('resume.register.personalInfo.fullName.title')" />
     <v-text-field v-model="fullName" v-on:input="$emit('full-name', fullName)" outlined />
-    <form-input class="mt-6" :title="$t('CV.register.main.title')" />
+    <form-input class="mt-6" :title="$t('resume.register.main.title')" />
     <v-text-field
-      :placeholder="$t('CV.register.main.placeholder')"
+      :placeholder="$t('resume.register.main.placeholder')"
       v-model="mainRole"
       v-on:input="$emit('main-role', mainRole)"
       outlined
     />
-    <form-input class="mt-6" :title="$t('CV.register.personalInfo.location.title')" />
+    <form-input class="mt-6" :title="$t('resume.register.personalInfo.location.title')" />
     <v-row>
       <v-col cols="12" md="8">
         <v-text-field
@@ -17,7 +17,7 @@
           v-on:input="$emit('location', location)"
           class="mt-n3"
           outlined
-          :placeholder="$t('CV.register.personalInfo.location.city')"
+          :placeholder="$t('resume.register.personalInfo.location.city')"
         />
       </v-col>
       <v-col cols="12" md="4">
@@ -26,7 +26,7 @@
           v-on:input="$emit('location', location)"
           class="mt-n3"
           outlined
-          :placeholder="$t('CV.register.personalInfo.location.country')"
+          :placeholder="$t('resume.register.personalInfo.location.country')"
         />
       </v-col>
     </v-row>

@@ -1,7 +1,7 @@
 <template>
   <div class="mx-3">
     <v-row class="d-flex flex-wrap" v-for="(skillType, i) in Object.keys(skills)" :key="i">
-      <h6 class="mr-4">{{ $t(`Dictionary.skills.${skillType}`) }}</h6>
+      <h6 class="mr-4">{{ $t(`dictionary.${skillTitle}.${skillType}`) }}</h6>
       <v-row>
         <v-chip
           class="ml-2 mb-2 align-self-center"
@@ -9,7 +9,7 @@
           v-for="(skill, j) in skills[skillType]"
           :key="j"
         >
-          {{ $t(`Dictionary.${skillType}.${skill.skillId}`) }}
+          {{ $t(`dictionary.${skillType}.${skill.skillId}`) }}
         </v-chip>
       </v-row>
     </v-row>
@@ -21,6 +21,7 @@ export default {
   name: 'SkillPresentation',
   props: {
     skills: Object,
+    skillTitle: String,
   },
   methods: {
     getStyle(skill, skillType) {

@@ -39,44 +39,7 @@ class T {
 
 const t = new T();
 
-const example = [
-  'Algolia Places',
-  'AOS – Animate On Scroll',
-  'Bideo.js',
-  'Cleave.js',
-  'Granim.js',
-  'Omniscient',
-  'Premonish',
-  'Slick',
-  'Shave',
-  'TypeScript',
-  'anime.js',
-  'Chart.js',
-  'D3.js',
-  'Glimmer',
-  'Multiple',
-  'Parsley',
-  'Popper.js',
-  'ReactJS',
-  'TaffyDB',
-  'Twee',
-  'Three.js',
-  'Voca',
-  'Aurelia',
-  'Angular',
-  'Ember',
-  'Mocha',
-  'Next.js',
-  'Vue.js',
-  'Webix',
-  'Babel',
-  'ESLint',
-  'Gatsby',
-  'Meteor',
-  'Poly',
-  'StencilJS',
-  'Webp',
-];
+const example = [ 'Project', 'Camping', 'Merb', 'Padrino', 'PureMVC', 'Ruby on Rails', 'Sinatra' ];
 
 example.forEach(element => {
   console.log(t.toCammelCase(element));

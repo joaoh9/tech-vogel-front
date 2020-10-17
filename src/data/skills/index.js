@@ -1,37 +1,34 @@
 import Databases from './Databases.json';
 import FrameWorks from './Frameworks';
-// import FrameWorksByGroup from './FrameworksByGroup.json';
 import ProgrammingLanguages from './ProgrammingLanguages.json';
-// import softSkills from './SoftSkills.json';
-import softSkillsFlat from './SoftSkillsFlat.json';
+import softSkills from './SoftSkills.json';
 import languages from './languages.json';
 
-function formatSkill(skillArray, prefix = '') {
-  return skillArray.map(s => ({
-    text: s.text,
-    value: { skillId: prefix + s.skillId, experienceLevel: 0 },
+function skillValueFormat(skillArray) {
+  return Object.entries(skillArray).map(([ skillId, text ]) => ({
+    text,
+    value: { skillId, experienceLevel: 0 },
   }));
 }
 const skills = {
-  Databases: formatSkill(Databases),
-  JsFrameworks: formatSkill(FrameWorks.JsFrameworks.json, FrameWorks.JsFrameworks.prefix),
-  PyFrameworks: formatSkill(FrameWorks.PyFrameworks.json, FrameWorks.PyFrameworks.prefix),
-  ProgrammingLanguages: formatSkill(ProgrammingLanguages),
-  softSkillsFlat: formatSkill(softSkillsFlat),
-  languages: formatSkill(languages),
-  // FrameWorksByGroup,
-  // softSkills,
+  Databases: skillValueFormat(Databases),
+  Frameworks: FrameWorks, // already formated
+  ProgrammingLanguages: skillValueFormat(ProgrammingLanguages),
+  softSkills: skillValueFormat(softSkills),
+  languages: skillValueFormat(languages),
 };
-
-console.log('JsFrameworks')
-console.log(skills.JsFrameworks)
-
 export default {
   ...skills,
-  allSkills: skills.ProgrammingLanguages.concat(skills.Databases).concat(skills.softSkillsFlat),
-  techSkills: skills
-    .ProgrammingLanguages
-    .concat(skills.Databases)
+  allSkills: skills.ProgrammingLanguages.concat(skills.Databases).concat(skills.softSkills),
+  techSkills: skills.ProgrammingLanguages.concat(skills.Databases)
     .concat(skills.JsFrameworks)
     .concat(skills.PyFrameworks),
+
+  dictionary: {
+    Databases,
+    FrameWorks,
+    ProgrammingLanguages,
+    softSkills,
+    languages,
+  },
 };

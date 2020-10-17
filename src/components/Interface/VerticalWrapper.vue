@@ -22,7 +22,7 @@
     </div>
     <div class="d-flex justify-center mt-5">
       <g-btn
-        :label="$t('Common.addNewInput')"
+        :label="$t('common.addNewInput')"
         type="filled"
         color="dark"
         outlined

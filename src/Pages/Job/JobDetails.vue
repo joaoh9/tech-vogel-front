@@ -12,7 +12,7 @@
           <p class="overline">Posted 5 days ago</p>
           <!-- TODO -->
           <h4 class="h4-bold">{{ job.title }}</h4>
-          <h6 class="h6">{{ $t('Common.at') + ' ' }} {{ company.name }}</h6>
+          <h6 class="h6">{{ $t('common.at') + ' ' }} {{ company.name }}</h6>
           <v-card color="bg" class="pa-6">
             <SkillPresentation :skills="job.skills" />
           </v-card>
@@ -162,11 +162,11 @@ export default {
       return [
         {
           icon: 'fa fa-briefcase',
-          text: this.$t(`Dictionary.experienceLevel.${this.job.experienceLevel || 'junior'}`),
+          text: this.$t(`dictionary.experienceLevel.${this.job.experienceLevel || 'junior'}`),
         },
         {
           icon: 'far fa-clock',
-          text: this.$t(`Dictionary.contractType.${this.job.contractType}`),
+          text: this.$t(`dictionary.contractType.${this.job.contractType}`),
         },
       ];
     },

@@ -3,18 +3,18 @@
     <template v-slot:activator="{ on, attrs }">
       <div class="d-flex justify-end mb-4">
         <v-btn outlined large v-on="on" v-bind="attrs" class="mr-6" @click="giveUsFeedback()" >
-          {{ $t('Common.feedback') }}
+          {{ $t('common.feedback') }}
         </v-btn>
       </div>
     </template>
     <div class="d-flex justify-center mt-12 ma-0">
       <g-card :minsm="'100'">
         <template v-slot:card-content>
-          <g-card-header :title="$t('Feedback.title')" />
+          <g-card-header :title="$t('feedback.title')" />
           <div class="mx-sm-12 mx-4 mt-4 text-center">
-            <form-input required :title="$t('Feedback.topic')" />
+            <form-input required :title="$t('feedback.topic')" />
             <v-text-field v-model="topic" outlined />
-            <form-input required :title="$t('Feedback.description')" />
+            <form-input required :title="$t('feedback.description')" />
             <v-textarea outlined v-model="description" />
           </div>
         </template>

@@ -3,7 +3,7 @@
     <template v-slot:card-content>
       <div class="d-flex justify-space-between">
         <div>
-          <p class="overline mt-2">{{ $t('Company.dashboard.yourCompany.title') }}</p>
+          <p class="overline mt-2">{{ $t('company.dashboard.yourCompany.title') }}</p>
           <h3 class="mb-5 mt-n2 h3-bold text-capitalize">{{ company.name }}</h3>
           <div class="d-flex">
             <div class="d-flex align-center mr-6">
@@ -12,7 +12,7 @@
               </h5>
               <span>
                 Current Jobs Posted
-                <!-- {{ $t('Company.dashboard.yourCompany.currentAds') }} -->
+                <!-- {{ $t('company.dashboard.yourCompany.currentAds') }} -->
               </span>
             </div>
             <div class="d-flex align-center">
@@ -21,7 +21,7 @@
               </h5>
               <span>
                 Remaining Tokens
-                <!-- {{ $t('Company.dashboard.yourCompany.remainingCredits') }} -->
+                <!-- {{ $t('company.dashboard.yourCompany.remainingCredits') }} -->
               </span>
             </div>
           </div>
