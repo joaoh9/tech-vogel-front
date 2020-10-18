@@ -31,7 +31,7 @@ export default new Vuetify({
         tag4: '#F0E5F9',
         tag5: '#FCECED',
         dark: '#29292F',
-        ligth: '#F7F7FB',
+        light: '#F7F7FB',
         support1: '#1E85DF',
         support2: '#FFD500',
         'cinza-lighten-1': '#6C6C77',

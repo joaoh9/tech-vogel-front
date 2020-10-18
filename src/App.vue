@@ -11,7 +11,7 @@
       @logout="() => checkIfLoggedIn()"
     />
     <v-main :style="getPageStyle()" :key="loggedIn.logged.toString() + 'main'">
-      <router-view @login="() => checkIfLoggedIn()" class="view"></router-view>
+      <router-view @login="() => checkIfLoggedIn()" class="view" />
     </v-main>
     <Footer :style="getPageStyle(true)" />
   </v-app>

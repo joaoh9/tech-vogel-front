@@ -5,7 +5,7 @@
       @click="goToLink(item)"
       v-for="(item, i) in items"
       :key="i"
-      class="color-ligth cursor-pointer"
+      class="color-light cursor-pointer"
     >
       {{ item.text }}
     </p>
