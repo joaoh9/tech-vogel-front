@@ -9,20 +9,24 @@
     />
 
     <form-input :title="$t('job.new.id.title')" required />
+    {{ id }}
     <v-text-field
       :hint="
         $t('job.new.id.inputHint', {
           company: company,
-          id: id
-            .replace(/\//g, '-')
-            .replace(/ /g, '-')
-            .replace(/[-]{1,9}/g, '-'),
+          id:
+            id
+              .replace(/\//g, '-')
+              .replace(/ /g, '-')
+              .replace(/[-]{1,9}/g, '-')
+              .replace(/[A-Z]/g, match => match.toLowerCase()) +
+            '-' +
+            randomId,
         })
       "
       outlined
       v-model="id"
       :rules="[rules.required(id)]"
-      @input="$emit('id', id)"
     />
     <form-input required :title="$t('job.new.experienceLevel.title')" />
     <v-autocomplete
@@ -56,9 +60,11 @@ export default {
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.company = StorageHelper.loadState('companyId');
+    this.randomId = Math.round(Math.random() * 10000).toString();
   },
   data() {
     return {
+      randomId: '',
       title: '',
       experienceLevel: '',
       contractType: '',
@@ -70,9 +76,19 @@ export default {
     };
   },
   watch: {
+    id() {
+      const auxId =
+        this.id
+          .replace(/\//g, '-')
+          .replace(/ /g, '-')
+          .replace(/[-]{1,9}/g, '-')
+          .replace(/[A-Z]/g, match => match.toLowerCase()) +
+        '-' +
+        this.randomId;
+      this.$emit('id', auxId);
+    },
     title() {
       this.id = this.title.replace(/ /g, '-');
-      this.$emit('id', this.id);
     },
   },
 };
