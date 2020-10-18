@@ -58,8 +58,16 @@ class Rules {
   }
 
   year(value) {
-    // TODO: validação para apenas aceitar anos que começam com 1900 ou 2000
-    return value.length === 4 || this.localeObj['Rules']['yearValidation'];
+    if (value.toString().length === 4) {
+      value = parseInt(value);
+      if (value <= new Date().getFullYear() && value >= 1970) {
+        return true;
+      } else {
+        return this.localeObj['Rules']['yearOutOfRange'];
+      }
+    } else {
+      return this.localeObj['Rules']['yearValidation'];
+    }
   }
 
   lettersAndNumbers(t) {

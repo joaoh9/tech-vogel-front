@@ -86,6 +86,7 @@ export default {
     letterOrNumber: 'Please write only letters or numbers',
     onlyNumber: 'Only numbers allowed',
     yearValidation: 'Year must contain 4 digits',
+    yearOutOfRange: 'Year out of range',
     equal: 'X must be equal to Y',
     notNumber: 'Not a number',
     requiredField: 'Field Required',

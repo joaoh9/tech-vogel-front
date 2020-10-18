@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <form-input
       type="h6"
       :title="$t('job.new.techSkills.title')"
