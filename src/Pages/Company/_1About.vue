@@ -75,6 +75,12 @@ export default {
   methods: {
     loadUserFromStorage() {
       const userInfo = StorageHelper.loadState('user');
+      if (!userInfo) {
+        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$router.push({
+          path: '/login',
+        });
+      }
       this.ownerId = userInfo.username;
       this.representative = userInfo.name;
       this.representativeEmail = userInfo.email;

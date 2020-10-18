@@ -79,7 +79,7 @@ export default {
     '500':
       'An unexpected error has occurred. Please try again later or email contact@techvogel.com',
   },
-  Rules: {
+  rules: {
     nameTooShort: 'Please write your full name',
     wrongFormatEmail: 'Email with wrong format!',
     lessThanXCharacters: 'Please write at least X characters',

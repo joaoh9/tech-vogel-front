@@ -54,12 +54,14 @@ export default {
   },
   methods: {
     getUserInfo() {
-      try {
-        const user = StorageHelper.loadState('user');
-        this.fullName = user.name;
-      } catch (e) {
-        console.log(e);
+      const user = StorageHelper.loadState('user');
+      if (!user) {
+        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$router.push({
+          path: '/login',
+        });
       }
+      this.fullName = user.name;
     },
   },
 };

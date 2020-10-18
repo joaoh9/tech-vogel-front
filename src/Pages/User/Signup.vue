@@ -1,103 +1,94 @@
 <template>
-  <div>
-    <div class="d-flex justify-center mt-12">
-      <g-card :lg="600" :md="500">
-        <template v-slot:card-content>
-          <g-card-header :title="$t('common.signup')" :description="$t('signup.description')" />
-          <form-input class="mt-6" :title="$t('signup.name.title')" />
-          <v-text-field
-            data-cy="name"
-            outlined
-            :rules="[rules.min(3, user.name)]"
-            v-model="user.name"
-          />
-          <form-input v-if="askForUsername" :title="$t('signup.username.title')" />
-          <v-text-field
-            data-cy="username"
-            v-if="askForUsername"
-            outlined
-            :rules="[rules.min(3, user.username)]"
-            :error-messages="localRules.usernameUnavaliable"
-            v-model="user.username"
-          />
-          <form-input :title="$t('signup.email.title')" />
-          <v-text-field
-            data-cy="email"
-            outlined
-            v-model="user.email"
-            :rules="[rules.email(user.email)]"
-            :error-messages="localRules.emailAlreadyRegistered"
-          />
-          <form-input :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
-          <v-text-field
-            data-cy="confirm-email"
-            outlined
-            v-model="user.confirmEmail"
-            :rules="[rules.equalEmail(user.email, user.confirmEmail)]"
-            :error-messages="localRules.emailAlreadyRegistered"
-          />
-          <form-input :title="$t('common.password.label')" />
-          <v-text-field
-            data-cy="password"
-            :rules="[rules.min(8, user.password)]"
-            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="showPassword = !showPassword"
-            :type="showPassword ? 'text' : 'password'"
-            outlined
-            v-model="user.password"
-          />
-          <form-input :title="$t('common.confirmPassword.label')" />
-          <v-text-field
-            data-cy="confirm-password"
-            :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
-            :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="showConfirmPassword = !showConfirmPassword"
-            :type="showConfirmPassword ? 'text' : 'password'"
-            outlined
-            v-model="user.confirmPassword"
-          />
-          <v-checkbox
-            data-cy="terms-and-conditions"
-            v-model="termsAndConditions"
-            :rules="[v => !!v || $t('rules.termsAndConditions')]"
-            :error-messages="localRules.termsAndConditions"
+  <div class="d-flex justify-center mt-12">
+    <g-card :lg="600" :md="500">
+      <template v-slot:card-content>
+        <g-card-header :title="$t('common.signup')" :description="$t('signup.description')" />
+        <form-input class="mt-6" :title="$t('signup.name.title')" />
+        <v-text-field
+          data-cy="name"
+          outlined
+          :rules="[rules.min(3, user.name)]"
+          v-model="user.name"
+        />
+        <form-input v-if="askForUsername" :title="$t('signup.username.title')" />
+        <v-text-field
+          data-cy="username"
+          v-if="askForUsername"
+          outlined
+          :rules="[rules.min(3, user.username)]"
+          :error-messages="localRules.usernameUnavaliable"
+          v-model="user.username"
+        />
+        <form-input :title="$t('signup.email.title')" />
+        <v-text-field
+          data-cy="email"
+          outlined
+          v-model="user.email"
+          :rules="[rules.email(user.email)]"
+          :error-messages="localRules.emailAlreadyRegistered"
+        />
+        <form-input :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
+        <v-text-field
+          data-cy="confirm-email"
+          outlined
+          v-model="user.confirmEmail"
+          :rules="[rules.equalEmail(user.email, user.confirmEmail)]"
+          :error-messages="localRules.emailAlreadyRegistered"
+        />
+        <form-input :title="$t('common.password.label')" />
+        <v-text-field
+          data-cy="password"
+          :rules="[rules.min(8, user.password)]"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword = !showPassword"
+          :type="showPassword ? 'text' : 'password'"
+          outlined
+          v-model="user.password"
+        />
+        <form-input :title="$t('common.confirmPassword.label')" />
+        <v-text-field
+          data-cy="confirm-password"
+          :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
+          :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showConfirmPassword = !showConfirmPassword"
+          :type="showConfirmPassword ? 'text' : 'password'"
+          outlined
+          v-model="user.confirmPassword"
+        />
+        <v-checkbox
+          data-cy="terms-and-conditions"
+          v-model="termsAndConditions"
+          :rules="[rules.termsAndConditions]"
+          :error-messages="localRules.termsAndConditions"
+        >
+          <template v-slot:label>
+            <div>
+              {{ $t('signup.termsAndConditions.text') }}
+              <strong @click="$router.push('/terms-and-conditions')" class="primary--text">
+                {{ $t('signup.termsAndConditions.termsAndConditions') }}
+              </strong>
+            </div>
+          </template>
+        </v-checkbox>
+      </template>
+      <template v-slot:buttons>
+        <div class="d-flex justify-space-between my-6">
+          <v-btn data-cy="go-to-login" to="/login" color="secondary" tile outlined text large>
+            {{ $t('common.login') }}
+          </v-btn>
+          <v-btn
+            data-cy="signup"
+            :loading="loading.register"
+            @click="signup"
+            color="primary"
+            elevation="0"
+            large
           >
-            <template v-slot:label>
-              <div>
-                {{ $t('signup.termsAndConditions.text') }}
-                <strong @click="$router.push('/terms-and-conditions')" class="primary--text">
-                  {{ $t('signup.termsAndConditions.termsAndConditions') }}
-                </strong>
-              </div>
-            </template>
-          </v-checkbox>
-        </template>
-        <template v-slot:buttons>
-          <div class="d-flex justify-space-between my-6">
-            <v-btn data-cy="go-to-login" to="/login" color="secondary" tile outlined text large>
-              {{ $t('common.login') }}
-            </v-btn>
-            <v-btn
-              data-cy="signup"
-              :loading="loading.register"
-              @click="signup"
-              color="primary"
-              elevation="0"
-              large
-            >
-              {{ $t('common.signup') }}
-            </v-btn>
-          </div>
-        </template>
-      </g-card>
-    </div>
-    <div>
-      <g-alert
-        :errorMessage="requestErrorMessage"
-        v-on:error="s => (requestError = s)"
-        :errorVar="requestError"
-      />
-    </div>
+            {{ $t('common.signup') }}
+          </v-btn>
+        </div>
+      </template>
+    </g-card>
   </div>
 </template>
 
@@ -122,6 +113,7 @@ export default {
         equalPassword: () => true,
         equalEmail: () => true,
         email: () => true,
+        termsAndConditions: () => true,
       },
       localRules: {
         emailAlreadyRegistered: null,
@@ -139,7 +131,7 @@ export default {
       loading: {
         register: false,
       },
-      requestErrorMessage: this.$t('signup.error.errorSavingUser'),
+      errorMessage: this.$t('signup.error.errorSavingUser'),
     };
   },
   methods: {
@@ -175,8 +167,9 @@ export default {
         });
       } catch (e) {
         if (e.response.status === 500) {
-          this.requestErrorMessage = this.$t('DefaultErrors.500');
+          this.errorMessage = this.$t('DefaultErrors.500');
         }
+        this.$toast.error(this.errorMessage)
         this.loading.register = false;
         return false;
       }

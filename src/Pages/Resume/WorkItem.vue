@@ -88,7 +88,6 @@ export default {
   },
   methods: {
     checkYearRules(variable, date) {
-      console.log('variable', variable);
       if (this.rules.onlyNumber(variable) === true && this.rules.year(variable) === true) {
         if (date === 'start-date') {
           this.job.startDate = parseInt(variable);

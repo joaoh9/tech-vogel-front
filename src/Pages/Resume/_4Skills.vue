@@ -115,12 +115,6 @@ export default {
       languages: [],
     };
   },
-  methods: {
-    treatSkillInput(e) {
-      alert(e);
-      this.skills.push({ id: e, priority: 0 });
-    },
-  },
   watch: {
     techSkills() {
       this.$emit('tech-skills', this.techSkills);

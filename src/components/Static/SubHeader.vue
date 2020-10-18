@@ -4,7 +4,7 @@
       <h4 class="mb-5 text-center">{{ subtitle }}</h4>
       <div class="text-center">
         <g-btn
-          class="ma-3"
+          class="mx-3 my-2"
           type="primary-outlined-rounded"
           v-for="(text, index) in buttons"
           :key="index"

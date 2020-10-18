@@ -147,7 +147,7 @@ export default {
             resume: this.resume,
           });
         } catch (e) {
-          alert(e);
+          this.$toast.error('There was an error when saving your resume');
         }
       }
     },

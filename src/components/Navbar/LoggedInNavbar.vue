@@ -100,8 +100,15 @@ export default {
         this.$router.push({
           path: '/',
         });
+        this.$toast.success('Logout successfull')
       } catch (e) {
-        alert(e);
+        StorageHelper.removeState('user');
+        StorageHelper.removeState('companyId');
+        this.$emit('logout');
+        this.$router.push({
+          path: '/',
+        });
+        this.$toast.success('Logout successfull')
       }
     },
     goToNewJob() {

@@ -104,15 +104,14 @@ export default {
         this.rules.min(3, this.company.name) !== true ||
         this.rules.min(3, this.company.representative) !== true
       ) {
-        // TODO colocar g-alert e avisar quando algo der errado
+        this.$toast.error('Please write a company name and a represetative name');
         return;
       }
       try {
-        const res = await companyController.save(this.company);
-        console.log('res');
-        console.log(res);
+        await companyController.save(this.company);
+        this.$toast.success('Company saved successfully');
       } catch (e) {
-        alert(e);
+        this.$toast.error('An error occurred when saving the company');
       }
     },
   },

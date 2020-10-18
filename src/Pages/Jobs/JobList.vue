@@ -53,37 +53,31 @@ export default {
   },
   methods: {
     async getJobs() {
-      // const jobController = new JobController();
-      // try {
-      //   this.jobs = await jobController.getAll();
-      //   await this.getCompanyInfo();
       this.finishedRequests = true;
-      // } catch (e) {
-      //   this.requestError = true;
-      // }
       this.jobs = [
         {
           title: 'job',
           contractType: 'FULL_TIME',
           company: { name: 'A' },
         },
-        {
-          title: 'job',
-          contractType: 'FULL_TIME',
-          company: { name: 'A' },
-        },
       ];
+      // const jobController = new JobController();
+      // try {
+      //   this.jobs = await jobController.getAll();
+      //   await this.getCompanyInfo();
+      //   this.finishedRequests = true;
+      // } catch (e) {
+      //   this.$toast.error(this.$t('Job.list.error'));
+      // }
     },
     async getCompanyInfo() {
       const companyController = new CompanyController();
       try {
         for (let i = 0; i < this.jobs.length; i++) {
           this.jobs[i].company = await companyController.getById(this.jobs[i].companyId);
-          console.log(this.jobs[i].company);
         }
       } catch (e) {
-        console.log(e);
-        this.requestError = true;
+        this.$toast.error('Something when wrong when getting company info for a job');
       }
     },
   },

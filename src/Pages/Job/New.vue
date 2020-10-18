@@ -1,86 +1,72 @@
 <template>
-  <div>
-    <div class="d-flex justify-center mt-4 mt-md-12">
-      <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
-        <template v-slot:default="{}" class="mb-6">
-          <g-card>
-            <template v-slot:card-header>
-              <g-card-header
-                :title="getPageTitle(currentStep)"
-                :description="getPageDescripton(currentStep)"
+  <div class="d-flex justify-center mt-4 mt-md-12">
+    <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
+      <template v-slot:default="{}" class="mb-6">
+        <g-card>
+          <template v-slot:card-header>
+            <g-card-header
+              :title="getPageTitle(currentStep)"
+              :description="getPageDescripton(currentStep)"
+            />
+          </template>
+          <template v-slot:card-content>
+            {{ job_ }}
+            <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
+              <BasicInfo
+                v-on:title="r => (job_.title = r)"
+                v-on:id="r => (job_.id = r)"
+                v-on:experience-level="r => (job_.experienceLevel = r)"
+                v-on:contract-type="r => (job_.contractType = r)"
+                v-on:advance="step++"
               />
-            </template>
-            <template v-slot:card-content>
-              {{ job_ }}
-              <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-                <BasicInfo
-                  v-on:title="r => (job_.title = r)"
-                  v-on:id="r => (job_.id = r)"
-                  v-on:experience-level="r => (job_.experienceLevel = r)"
-                  v-on:contract-type="r => (job_.contractType = r)"
-                  v-on:advance="step++"
-                />
-              </div>
-              <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-                <About
-                  v-on:description="r => (job_.description = r)"
-                  v-on:back="step--"
-                  v-on:advance="step++"
-                />
-              </div>
-              <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
-                <Skills
-                  v-on:skills="r => (job_.skills = r)"
-                  v-on:back="step--"
-                  v-on:advance="step++"
-                />
-              </div>
-              <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-                <Benefits
-                  v-on:benefits="r => (job_.benefits = r)"
-                  v-on:salary-currency="r => (job_.salary.currency = r)"
-                  v-on:salary-time-frame="r => (job_.salary.timeFrame = r)"
-                  v-on:salary-min="r => (job_.salary.min = r)"
-                  v-on:salary-max="r => (job_.salary.max = r)"
-                  v-on:back="step--"
-                  v-on:advance="preview"
-                />
-              </div>
-            </template>
-            <template v-slot:buttons>
-              <div
-                :class="
-                  `d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`
-                "
-                style="z-index: -1"
-              >
-                <g-btn
-                  :label="$t('common.back')"
-                  v-if="currentStep > 0"
-                  type="secondary"
-                  @click="currentStep--"
-                />
-                <g-btn
-                  :label="$t('common.next')"
-                  type="primary"
-                  @click="currentStep === 3 ? saveJob() : currentStep++"
-                />
-              </div>
-            </template>
-          </g-card>
-        </template>
-      </Stepper>
-    </div>
-    <div>
-      <g-alert
-        :succesMessage="$t('signup.resendConfirmationCode.success')"
-        :errorMessage="$t('signup.resendConfirmationCode.error')"
-        v-on:success="s => (requestSuccess = s)"
-        v-on:error="s => (requestError = s)"
-        :successVar="requestSuccess"
-        :errorVar="requestError"
-      />
-    </div>
+            </div>
+            <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
+              <About
+                v-on:description="r => (job_.description = r)"
+                v-on:back="step--"
+                v-on:advance="step++"
+              />
+            </div>
+            <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
+              <Skills
+                v-on:skills="r => (job_.skills = r)"
+                v-on:back="step--"
+                v-on:advance="step++"
+              />
+            </div>
+            <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
+              <Benefits
+                v-on:benefits="r => (job_.benefits = r)"
+                v-on:salary-currency="r => (job_.salary.currency = r)"
+                v-on:salary-time-frame="r => (job_.salary.timeFrame = r)"
+                v-on:salary-min="r => (job_.salary.min = r)"
+                v-on:salary-max="r => (job_.salary.max = r)"
+                v-on:back="step--"
+                v-on:advance="preview"
+              />
+            </div>
+          </template>
+          <template v-slot:buttons>
+            <div
+              :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`"
+              style="z-index: -1"
+            >
+              <g-btn
+                :label="$t('common.back')"
+                v-if="currentStep > 0"
+                type="secondary"
+                @click="currentStep--"
+              />
+              <g-btn
+                :label="$t('common.next')"
+                type="primary"
+                @click="currentStep === 3 ? saveJob() : currentStep++"
+              />
+            </div>
+          </template>
+        </g-card>
+      </template>
+    </Stepper>
   </div>
 </template>
 
@@ -131,8 +117,6 @@ export default {
     return {
       currentStep: 0,
       step: 1,
-      requestSuccess: false,
-      requestError: false,
       job_: {
         title: '',
         id: '',
@@ -162,8 +146,9 @@ export default {
 
       try {
         await jobController.save(this.job_);
+        this.$toast.success('Job saved successfully');
       } catch (e) {
-        this.requestError = true;
+        this.$toast.error('There was an error when saving the job');
       }
     },
     getPageInfo() {
