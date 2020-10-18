@@ -69,11 +69,7 @@
       />
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
-      <v-list nav dense>
-        <v-list-item v-for="(item, i) in getNavbarList()" :key="i" @click="item.goTo">
-          <h5>{{ item.text }}</h5>
-        </v-list-item>
-      </v-list>
+      <MobileDrawer :items="getNavbarList()" />
     </v-navigation-drawer>
   </div>
 </template>
@@ -81,10 +77,13 @@
 <script>
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
+import MobileDrawer from './MobileDrawer';
 
 export default {
   name: 'Navbar',
-  components: {},
+  components: {
+    MobileDrawer,
+  },
   data() {
     return {
       drawer: false,
