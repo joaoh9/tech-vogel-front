@@ -24,6 +24,7 @@
 
 <script>
 import IconText from 'Components/Interface/IconText';
+import CompanyController from 'Controllers/company';
 
 export default {
   name: 'listJobs',
@@ -31,12 +32,17 @@ export default {
     job: {
       type: Object,
     },
-    company: {
-      type: Object,
-    },
   },
   components: {
     IconText,
+  },
+  data () {
+    return {
+      company: {},
+    };
+  },
+  mounted() {
+    this.getCompanyInfo();
   },
   methods: {
     goToJobDetails() {
@@ -67,6 +73,14 @@ export default {
           text: this.$t('enums.contractType').find(ct => ct.value === this.job.contractType).text,
         },
       ];
+    },
+    async getCompanyInfo() {
+      const companyController = new CompanyController();
+      try {
+        this.company = await companyController.getById(this.job.companyId);
+      } catch (e) {
+        this.$toast.error('Something when wrong when getting company info for a job');
+      }
     },
   },
 };

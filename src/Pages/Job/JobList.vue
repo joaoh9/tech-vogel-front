@@ -11,7 +11,7 @@
       </template>
       <template v-slot:second-col>
         <v-row v-for="(job, i) in jobs" :key="i">
-          <JobCard :job="job" :company="job.company" class="mb-4" />
+          <JobCard :job="job" class="mb-4" />
         </v-row>
         <g-alert
           :errorMessage="$t('Job.list.error')"
