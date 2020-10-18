@@ -34,6 +34,17 @@ export default {
       softSkills,
       languages,
       ...frameworks.dictionary,
+      techSkills: {
+        ...programmingLanguages,
+        ...databases,
+        ...frameworks.dictionary,
+      },
+      allSkills: {
+        ...programmingLanguages,
+        ...databases,
+        ...frameworks.dictionary,
+        ...softSkills,
+      },
     },
   },
 };
