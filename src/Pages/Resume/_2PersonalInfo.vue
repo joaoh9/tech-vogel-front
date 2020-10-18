@@ -2,9 +2,9 @@
   <div>
     <form-input class="mt-6" :title="$t('resume.register.personalInfo.fullName.title')" />
     <v-text-field v-model="fullName" @input="$emit('full-name', fullName)" outlined />
-    <form-input class="mt-6" :title="$t('resume.register.main.title')" />
+    <form-input class="mt-6" :title="$t('resume.register.mainRole.title')" />
     <v-text-field
-      :placeholder="$t('resume.register.main.placeholder')"
+      :placeholder="$t('resume.register.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
       outlined

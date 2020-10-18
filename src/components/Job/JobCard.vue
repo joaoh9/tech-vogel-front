@@ -70,7 +70,7 @@ export default {
         },
         {
           icon: 'mdi-briefcase-variant-outline',
-          text: this.$t(`enums.contractType.${this.job.contractType}`),
+          text: this.$t('enums.contractType').find(ct => ct.value === this.job.contractType).text,
         },
       ];
     },

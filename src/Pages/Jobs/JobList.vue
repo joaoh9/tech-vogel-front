@@ -20,39 +20,6 @@
         />
       </template>
     </g-bootstrap>
-    <!-- <v-row>
-      <v-col cols="1" md="2"> </v-col>
-      <v-col cols="10" md="8">
-        <div class="d-flex justify-center justify-md-space-center align-center flex-wrap">
-          <h1 class="h1-bold ml-6 mr-4 text-center">
-            {{ $t('common.jobs') }}
-          </h1>
-          <v-text-field
-            class="maxw-600 minw-300 align-self-center mt-13"
-            outlined
-            label="Search Jobs"
-            v-if="false"
-          /> -->
-    <!-- TODO: query geral para liberar esse campo de pesquisa -->
-    <!-- </div>
-        <v-row justify="center" class="container">
-          <v-col cols="12" lg="4" xl="3" class="text-center">
-            <job-filters />
-          </v-col>
-          <v-col cols="12" lg="8" xl="9" v-if="finishedRequests">
-            <v-row v-for="(job, i) in jobs" :key="i">
-              <JobCard :job="job" :company="job.company" class="mb-4" />
-            </v-row>
-            <g-alert
-              :errorMessage="$t('Job.list.error')"
-              v-on:error="s => (requestError = s)"
-              :errorVar="requestError"
-            />
-          </v-col>
-        </v-row>
-      </v-col>
-      <v-col cols="1" md="2"> </v-col>
-    </v-row> -->
   </div>
 </template>
 
@@ -85,7 +52,7 @@ export default {
     };
   },
   methods: {
-    getJobs() {
+    async getJobs() {
       // const jobController = new JobController();
       // try {
       //   this.jobs = await jobController.getAll();

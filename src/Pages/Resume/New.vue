@@ -18,7 +18,6 @@
             />
           </template>
           <template v-slot:card-content>
-            {{ resume }}
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
               <Start v-on:manual-register="currentStep += 1" />
             </div>
