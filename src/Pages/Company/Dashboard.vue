@@ -4,11 +4,6 @@
       <v-col md="4" cols="12">
         <!-- TODO: internacionalização -->
         <UserCard :user="user" v-if="user" :key="loading.user" />
-        <div class="mt-6">
-          <h6>Your profile isn't complete yet</h6>
-          <p class="sub-1">Having a complete profile lets us show you better job positions!</p>
-          <v-progress-linear style="max-width: 300px" value="50" color="primary" />
-        </div>
       </v-col>
       <v-col md="8" cols="12" v-if="company">
         <div>

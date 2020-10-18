@@ -1,5 +1,5 @@
 <template>
-  <v-card color="bg" elevation="3" class="primary-card pa-4" @click="goTo(action.route)">
+  <v-card color="bg" class="bs-primary pa-4" @click="goTo(action.route)">
     <v-row align="center" style="word-break:normal;" justify="center" class="text-center">
       <v-col cols="12" md="4">
         <v-icon size="48">
