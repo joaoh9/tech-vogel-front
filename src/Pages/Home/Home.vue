@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="d-flex flex-wrap bg-color-secondary">
-      <div v-for="(jobj, index) in [1, 2, 3, 4, 5, 6]" :key="index">
+      <div v-for="(job, index) in jobs" :key="index">
         <JobCardMobile :job="job" class="mx-6 my-6" />
       </div>
     </div>
@@ -43,18 +43,7 @@ export default {
   },
   data() {
     return {
-      job: {
-        title: 'Full Stack Developer',
-        contractType: 'FULL_TIME',
-        salary: {
-          currency: 'BRL',
-          timeFrame: 'MONTHS',
-          min: 100,
-          max: 0,
-        },
-        companyName: 'Alura',
-        companyId: 'Tech-Vogel',
-      },
+      jobs: [],
     };
   },
   methods: {
