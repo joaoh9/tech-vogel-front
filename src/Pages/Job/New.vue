@@ -10,7 +10,6 @@
             />
           </template>
           <template v-slot:card-content>
-            {{ job_ }}
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
               <BasicInfo
                 v-on:title="r => (job_.title = r)"

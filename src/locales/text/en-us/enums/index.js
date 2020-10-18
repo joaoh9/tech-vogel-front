@@ -19,11 +19,7 @@ function textValueNumberFormat(data) {
 
 export default {
   enums: {
-    contractType: [
-      ...textValueFormat(contractType),
-      // { "text": "contract", "value": "CONTRACT" },
-      // { "text": "internship", "value": "INTERNSHIP" },
-    ],
+    contractType: textValueFormat(contractType),
     experienceLevel: textValueFormat(experienceLevel),
     jobInterests: textValueFormat(jobInterests),
     payCheckTimeFrame: textValueFormat(payCheckTimeFrame),
