@@ -108,8 +108,20 @@ export default {
   },
   internationalization: {
     data: [
-      { i18n: 'pt-br', language: 'Português', country: 'brazil', flag: FlagIcons.brazil },
-      { i18n: 'en-us', language: 'English', country: 'usa', flag: FlagIcons.usa },
+      {
+        i18n: 'en-us',
+        language: 'English',
+        country: 'usa',
+        flag: FlagIcons.usa,
+        disabledFlag: FlagIcons.usaDisabled,
+      },
+      {
+        i18n: 'pt-br',
+        language: 'Português',
+        country: 'brazil',
+        flag: FlagIcons.brazil,
+        disabledFlag: FlagIcons.brazilDisabled,
+      },
     ],
     icons: FlagIcons,
   },

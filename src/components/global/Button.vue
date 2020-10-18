@@ -11,6 +11,17 @@
   >
     {{ label }}
   </v-btn>
+
+  <v-btn
+    v-else-if="type === 'primary-outlined-rounded'"
+    outlined
+    rounded
+    color="primary"
+    class="round"
+  >
+    {{ label }}
+  </v-btn>
+
   <v-btn
     v-else
     :data-cy="dataCy"
@@ -116,4 +127,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.round {
+  border-radius: 28px !important;
+}
+</style>

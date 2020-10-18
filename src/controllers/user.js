@@ -1,5 +1,6 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+
 export default class UserController {
   async saveUser({ name, username, email, password, birthDate = '1990-12-12' }) {
     const axios = Axios.GetInstance({ api: '/api' });
