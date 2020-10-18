@@ -48,7 +48,7 @@
               </Skills>
             </div>
             <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
-              <Education v-on:education="e => (resume.education = e)"> </Education>
+              <Education v-on:update-item="e => (resume.education = e)"> </Education>
             </div>
           </template>
           <template v-slot:buttons>

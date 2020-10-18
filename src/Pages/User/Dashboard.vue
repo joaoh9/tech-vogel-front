@@ -34,7 +34,7 @@
               <h4>{{ $t('user.dashboard.actions.title') }}</h4>
             </div>
             <div class="my-5">
-              <g-btn block type="primary" :label="$t('user.dashboard.registerCV')" />
+              <g-btn to="/resume/new" block type="primary" :label="$t('user.dashboard.registerCV')" />
             </div>
             <v-row>
               <v-col cols="6" v-for="(action, index) in actions" v-bind:key="index">
