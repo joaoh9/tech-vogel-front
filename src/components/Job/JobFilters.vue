@@ -2,12 +2,13 @@
   <v-card max-width="500px" min-width="300" class="px-5" elevation="3" color="bg">
     <v-card-text>
       <h6 class="font-weight-bold text--primary">
-        {{ $t('Jobs.filterSearch') }}
+        TODO
+        <!-- TODO -->
       </h6>
       <v-row align="center">
         <p class="text--primary bdy-2 mr-4">{{ $t('Jobs.cv') }}</p>
         <v-switch v-model="switch1" color="secondary" />
-        <p class="text--primary bdy-2">{{ $t('Jobs.showJobs') }}</p>
+        <p class="text--primary bdy-2">{{ $t('jobs.showJobs') }}</p>
       </v-row>
       <v-row>
         <v-combobox
@@ -22,7 +23,8 @@
       <v-row>
         <v-col justify="center" align="center" class="mr-5" @click="editFilters()">
           <p class="text--secondary-lighten-1 text-center">
-            {{ $t('Jobs.editFilters') }}
+            TODO
+            <!-- TODO -->
           </p>
           <v-icon>fa fa-angle-down</v-icon>
         </v-col>

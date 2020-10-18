@@ -65,7 +65,7 @@ export default {
         await this.getCompanyInfo();
         this.finishedRequests = true;
       } catch (e) {
-        this.$toast.error(this.$t('Job.list.error'));
+        this.$toast.error(this.$t('job.list.error'));
       }
     },
     async getCompanyInfo() {

@@ -4,8 +4,6 @@ import FormInput from './FormInput';
 import GCard from './GCard';
 import GCardHeader from './GCardHeader';
 import GButton from './Button';
-import PrimaryButton from './Buttons/Primary';
-import SecondaryButton from './Buttons/Secondary';
 import GCombobox from './GCombobox';
 import GBootstrap from './GBootstrap';
 import text from './Text';
@@ -15,8 +13,6 @@ import text from './Text';
   FormInput,
   GCard,
   GCardHeader,
-  PrimaryButton,
-  SecondaryButton,
   GButton,
   GCombobox,
   GBootstrap,

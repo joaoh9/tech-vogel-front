@@ -53,7 +53,7 @@ export default {
     return {
       updatedTab: false,
       step: 1,
-      numSteps: Number(this.steps),
+      numSteps: parseInt(this.steps),
       value_: 0,
     };
   },
@@ -108,13 +108,11 @@ export default {
   font-family: Open Sans !important;
 }
 
-
 .v-tab {
   justify-content: flex-end;
 }
 
-/*
-TODO: trocar barrinha laranja da sidebar prol lado direito
+/* TODO: trocar barrinha laranja da sidebar prol lado direito
 .sidebar {
   width: 100%;
   position: -webkit-sticky;
@@ -136,5 +134,3 @@ v-tabs-slider {
 }
 */
 </style>
-
-

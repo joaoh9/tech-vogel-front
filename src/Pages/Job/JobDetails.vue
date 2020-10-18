@@ -6,11 +6,9 @@
       src="https://suzanadeoliveira.com/wp-content/uploads/2017/06/Google-Office-HD-Wallpapers-Backgrounds-Wallpaper-Abyss-scaled.jpg"
     />
     <div class="container mt-6 px-10 px-md-5">
-      <!-- {{ job }} -->
       <v-row justify="center">
         <v-col cols="12" lg="8" xl="9" style="max-width: 1000px">
           <p class="overline">Posted 5 days ago</p>
-          <!-- TODO -->
           <h4 class="h4-bold">{{ job.title }}</h4>
           <h6 class="h6">{{ $t('common.at') + ' ' }} {{ company.name }}</h6>
           <v-card color="bg" class="pa-6">
@@ -77,7 +75,6 @@
             <v-row class="mt-5">
               <div class="d-flex">
                 <v-avatar height="80" :width="80" color="cinza-lighten-2"> </v-avatar>
-
                 <div class="d-flex justify-center flex-column">
                   <h6 class="text-capitalize">{{ company.name }}</h6>
                   <v-card-subtitle class="bdy-2 ma-n3 ">

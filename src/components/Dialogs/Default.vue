@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'Default dialog',
+  name: 'DefaultDialog',
   props: {
     img: [ String, Object ],
     title: String,

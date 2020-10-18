@@ -11,6 +11,7 @@
                 {{ company.currentAds || 6 }}
               </h5>
               <span>
+                <!-- TODO: internacionalização de textos -->
                 Current Jobs Posted
                 <!-- {{ $t('company.dashboard.yourCompany.currentAds') }} -->
               </span>

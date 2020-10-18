@@ -68,7 +68,7 @@ import StorageHelper from 'Helpers/storage';
 import RulesHelper from 'Helpers/rules';
 
 export default {
-  name: 'Login',
+  name: 'RegistrationConfirmed',
   props: {
     user: Object,
   },
