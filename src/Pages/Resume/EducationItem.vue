@@ -37,7 +37,7 @@
           @input="$emit('update-item', education)"
           outlined
           :placeholder="$t('common.year')"
-          :rules="[rules.year]"
+          :rules="[rules.year(education.startDate)]"
         />
       </v-col>
       <v-col cols="6" md="3">
@@ -47,7 +47,7 @@
           @input="$emit('update-item', education)"
           outlined
           :placeholder="$t('common.year')"
-          :rules="[rules.year]"
+          :rules="[rules.year(education.endDate)]"
         />
       </v-col>
     </v-row>

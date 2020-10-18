@@ -1,74 +1,64 @@
 <template>
-  <div>
-    <div class="d-flex justify-center mt-12">
-      <g-card :sm="400" :md="500" :lg="600">
-        <template v-slot:card-header>
-          <g-card-header :title="getHeaderTitle()" />
-        </template>
-        <template v-slot:card-content>
-          <div clas="d-flex justify-center ma-12 flex-column">
-            <div v-if="confirmationStatus === 0" class="d-flex justify-center">
-              <g-btn type="primary" :label="$t('common.confirm')" await @click="confirmAccount()" />
-            </div>
-
-            <div
-              v-if="confirmationStatus === 1"
-              class="d-flex flex-column justify-space-around align-center mt-12"
-            >
-              <g-btn
-                type="primary"
-                class="mb-4"
-                :label="$t('signup.buttons.createCompany')"
-                @click="crateCompany()"
-                block
-              />
-
-              <g-btn
-                type="primary"
-                class="mb-4"
-                :label="$t('signup.buttons.createCV')"
-                @click="crateCV()"
-                block
-              />
-            </div>
-            <v-row justify="center" v-if="confirmationStatus === 2">
-              <v-col>
-                <g-btn
-                  type="outlined"
-                  textColor="black"
-                  @click="resendCode = !resendCode"
-                  class="bdy-1 cursor-pointer color-cinza-lighten-1"
-                  :label="$t('signup.resendConfirmationCode.title')"
-                />
-              </v-col>
-            </v-row>
-            <v-row justify="center">
-              <v-col>
-                <div v-if="resendCode" style="min-width: 100%" class="mt-6">
-                  <form-input class="mt-6" title="Your email" />
-                  <v-text-field :rules="[rules.email(email)]" outlined v-model="email" />
-                  <g-btn
-                    class="float-right"
-                    @click="resendConfirmationCode()"
-                    type="primary"
-                    :loading="resendLoad"
-                    :label="$t('signup.resendConfirmationCode.resend')"
-                  />
-                </div>
-              </v-col>
-            </v-row>
+  <div class="d-flex justify-center mt-12">
+    <g-card :sm="400" :md="500" :lg="600">
+      <template v-slot:card-header>
+        <g-card-header :title="getHeaderTitle()" />
+      </template>
+      <template v-slot:card-content>
+        <div clas="d-flex justify-center ma-12 flex-column">
+          <div v-if="confirmationStatus === 0" class="d-flex justify-center">
+            <g-btn type="primary" :label="$t('common.confirm')" await @click="confirmAccount()" />
           </div>
-        </template>
-      </g-card>
-    </div>
-    <g-alert
-      :succesMessage="$t('signup.resendConfirmationCode.success')"
-      :errorMessage="$t('signup.resendConfirmationCode.error')"
-      v-on:success="s => (requestSuccess = s)"
-      v-on:error="s => (requestError = s)"
-      :successVar="requestSuccess"
-      :errorVar="requestError"
-    />
+
+          <div
+            v-if="confirmationStatus === 1"
+            class="d-flex flex-column justify-space-around align-center mt-12"
+          >
+            <g-btn
+              type="primary"
+              class="mb-4"
+              :label="$t('signup.buttons.createCompany')"
+              @click="crateCompany()"
+              block
+            />
+
+            <g-btn
+              type="primary"
+              class="mb-4"
+              :label="$t('signup.buttons.createCV')"
+              @click="crateCV()"
+              block
+            />
+          </div>
+          <v-row justify="center" v-if="confirmationStatus === 2">
+            <v-col>
+              <g-btn
+                type="outlined"
+                textColor="black"
+                @click="resendCode = !resendCode"
+                class="bdy-1 cursor-pointer color-cinza-lighten-1"
+                :label="$t('signup.resendConfirmationCode.title')"
+              />
+            </v-col>
+          </v-row>
+          <v-row justify="center">
+            <v-col>
+              <div v-if="resendCode" style="min-width: 100%" class="mt-6">
+                <form-input class="mt-6" title="Your email" />
+                <v-text-field :rules="[rules.email(email)]" outlined v-model="email" />
+                <g-btn
+                  class="float-right"
+                  @click="resendConfirmationCode()"
+                  type="primary"
+                  :loading="resendLoad"
+                  :label="$t('signup.resendConfirmationCode.resend')"
+                />
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+      </template>
+    </g-card>
   </div>
 </template>
 
@@ -88,8 +78,6 @@ export default {
   },
   data() {
     return {
-      requestSuccess: false,
-      requestError: false,
       confirmationStatus: 0,
       resendCode: false,
       email: '',
@@ -127,12 +115,12 @@ export default {
         const success = await userController.resendConfirmationEmail(this.email);
 
         if (success.success) {
-          this.requestSuccess = true;
+          this.$toast.success(this.$t('signup.resendConfirmationCode.success'));
         }
         this.resendLoad = false;
       } catch (e) {
-        this.resendLoad = false;
-        this.requestError = true;
+        this.resendLoad = true;
+        this.$toast.error(this.$t('signup.resendConfirmationCode.error'));
       }
     },
     getHeaderTitle() {

@@ -46,14 +46,6 @@
         </template>
       </g-card>
     </div>
-    <g-alert
-      :succesMessage="$t('signup.resendConfirmationCode.success')"
-      :errorMessage="$t('signup.resendConfirmationCode.error')"
-      v-on:success="s => (requestSuccess = s)"
-      v-on:error="s => (requestError = s)"
-      :successVar="requestSuccess"
-      :errorVar="requestError"
-    />
   </div>
 </template>
 
@@ -78,8 +70,6 @@ export default {
   },
   data() {
     return {
-      requestSuccess: false,
-      requestError: false,
       resendCode: false,
       email: '',
       rules: {
@@ -95,12 +85,12 @@ export default {
       try {
         const success = await userController.resendConfirmationEmail(this.email);
         if (success.success) {
-          this.requestSuccess = true;
+          this.$toast.success(this.$t('signup.resendConfirmationCode.success'));
         }
         this.resendLoad = false;
       } catch (e) {
         this.resendLoad = false;
-        this.requestError = true;
+        this.$toast.error(this.$t('signup.resendConfirmationCode.error'));
       }
     },
   },

@@ -48,26 +48,31 @@ export default {
 
       try {
         this.company = await companyController.getById(companyId);
-        console.log(this.company);
         this.loading.company = false;
       } catch (e) {
-        alert(e);
+        this.$toast.error('Could not retrieve company info from database');
       }
     },
     async getUserInfo() {
       this.loading.user = true;
       this.loading.company = true;
-      try {
-        this.user = StorageHelper.loadState('user');
-        this.loading.user = false;
-      } catch (e) {
-        alert(e);
+      this.user = StorageHelper.loadState('user');
+      this.loading.user = false;
+      if (!this.user) {
+        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$router.push({
+          path: '/login',
+        });
+      }
+
+      const companyId = StorageHelper.loadState('companyId');
+      if (!companyId) {
+        this.$toast.error('Could not retrieve company info. Please make sure you are logged in');
       }
       try {
-        const companyId = StorageHelper.loadState('companyId');
         await this.getCompanyInfo(companyId);
       } catch (e) {
-        alert(e);
+        this.$toast.error('Could not retrieve company info from database');
       }
     },
     async getCompanyJobs() {
@@ -76,8 +81,7 @@ export default {
       try {
         this.jobs = await jobController.getAll();
       } catch (e) {
-        // TODO: gerenciar melhor erro
-        alert(e);
+        this.$toast.error('An error occured when retrieving jobs from the database')
       }
     },
     getFistColInfo() {

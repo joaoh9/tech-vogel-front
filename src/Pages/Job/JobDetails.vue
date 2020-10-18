@@ -122,8 +122,6 @@ export default {
     this.companyId = this.$route.params.companyId;
     this.jobId = this.$route.params.jobId;
 
-    console.log(this.companyId);
-    console.log(this.jobId);
     this.getJobData();
     this.getCompanyData();
   },
@@ -172,12 +170,17 @@ export default {
     },
     async applyForJob() {
       const jobController = new JobController();
-
+      const user = StorageHelper.loadState('user');
+      if (!user) {
+        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$router.push({
+          path: '/login',
+        });
+      }
       try {
-        const user = StorageHelper.loadState('user');
         await jobController.apply(user.username, this.jobId);
       } catch (e) {
-        alert(e);
+        this.$toast.error('An error occured when applying for this job');
       }
     },
   },

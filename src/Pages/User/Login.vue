@@ -1,47 +1,36 @@
 <template>
-  <div>
-    <div class="d-flex justify-center mt-12">
-      <g-card :lg="600" :md="500">
-        <template v-slot:card-content>
-          <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
-          <form-input class="mt-6" :title="$t('common.username.label')" />
-          <v-text-field
-            outlined
-            v-model="user.username"
-            :rules="[rules.required(user.username)]"
-          />
-          <form-input :title="$t('common.password.label')" />
-          <v-text-field
-            v-model="user.password"
-            :rules="[rules.required(user.password)]"
-            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="showPassword = !showPassword"
-            :type="showPassword ? 'text' : 'password'"
-            outlined
-          />
-          <div class="d-flex justify-start ">
-            <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
-              {{ $t('login.forgotPassword') }}
-            </p>
-          </div>
-        </template>
-        <template v-slot:buttons>
-          <div class="d-flex justify-space-between my-6">
-            <v-btn to="/signup" color="secondary" tile outlined text large>
-              {{ $t('common.signup') }}
-            </v-btn>
-            <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()">
-              {{ $t('login.title') }}
-            </v-btn>
-          </div>
-        </template>
-      </g-card>
-    </div>
-    <g-alert
-      :errorMessage="requestErrorMessage"
-      v-on:error="s => (requestError = s)"
-      :errorVar="requestError"
-    />
+  <div class="d-flex justify-center mt-12">
+    <g-card :lg="600" :md="500">
+      <template v-slot:card-content>
+        <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
+        <form-input class="mt-6" :title="$t('common.username.label')" />
+        <v-text-field outlined v-model="user.username" :rules="[rules.required(user.username)]" />
+        <form-input :title="$t('common.password.label')" />
+        <v-text-field
+          v-model="user.password"
+          :rules="[rules.required(user.password)]"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword = !showPassword"
+          :type="showPassword ? 'text' : 'password'"
+          outlined
+        />
+        <div class="d-flex justify-start ">
+          <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
+            {{ $t('login.forgotPassword') }}
+          </p>
+        </div>
+      </template>
+      <template v-slot:buttons>
+        <div class="d-flex justify-space-between my-6">
+          <v-btn to="/signup" color="secondary" tile outlined text large>
+            {{ $t('common.signup') }}
+          </v-btn>
+          <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()">
+            {{ $t('login.title') }}
+          </v-btn>
+        </div>
+      </template>
+    </g-card>
   </div>
 </template>
 
@@ -84,8 +73,7 @@ export default {
       rules: {
         required: () => true,
       },
-      requestError: false,
-      requestErrorMessage: this.$t('login.error'),
+      errorMessage: this.$t('login.error'),
     };
   },
   methods: {
@@ -103,14 +91,14 @@ export default {
         if (statusCode === 200) {
           return this.saveUserCredentials();
         }
-        this.requestError = true;
+        this.$toast.error(this.errorMessage);
         this.loading.login = false;
       } catch (e) {
         if (e.response.status === 500) {
-          this.requestErrorMessage = this.$t('DefaultErrors.500');
+          this.errorMessage = this.$t('DefaultErrors.500');
         }
         this.loading.login = false;
-        this.requestError = true;
+        this.$toast.error(this.errorMessage);
       }
       this.loading.login = false;
     },
@@ -127,7 +115,6 @@ export default {
       const userController = new UserController();
 
       const company = await userController.getCompany(this.user.username);
-      console.log('company', company)
       if (company) {
         StorageHelper.saveState('companyId', company[0]);
         this.goToDashboard(true);
@@ -136,6 +123,7 @@ export default {
       }
     },
     goToDashboard(company = false) {
+      this.$toast.open('Login successfull');
       this.$emit('login');
       this.$router.push({
         path: this.nextRoute || company ? '/company/dashboard' : '/dashboard',

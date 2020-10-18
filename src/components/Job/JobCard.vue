@@ -38,12 +38,6 @@ export default {
   components: {
     IconText,
   },
-  mounted() {
-    console.log('this.job');
-    console.log(this.job);
-    console.log('this.company');
-    console.log(this.company);
-  },
   methods: {
     goToJobDetails() {
       this.$router.push({

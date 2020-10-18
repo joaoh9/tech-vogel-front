@@ -82,6 +82,12 @@ export default {
   name: 'ProfessionalDashboard',
   mounted() {
     this.user = StorageHelper.loadState('user');
+    if (!this.user) {
+      this.$toast.error('Could not retrieve user info. Please login again');
+      this.$router.push({
+        path: '/login',
+      });
+    }
   },
   data() {
     return {

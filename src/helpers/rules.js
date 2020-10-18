@@ -4,7 +4,11 @@ class Rules {
   }
 
   required(v) {
-    return v ? true : this.localeObj['Rules']['requiredField'];
+    return v ? true : this.localeObj['rules']['requiredField'];
+  }
+
+  termsAndConditions(v) {
+    return v ? true : this.localeObj['rules']['termsAndConditions'];
   }
 
   maxCounter(v, counter = 5) {
@@ -17,30 +21,30 @@ class Rules {
   }
 
   name(v) {
-    return v.length > 3 || this.localeObj['Rules']['nameTooShort'];
+    return v.length > 3 || this.localeObj['rules']['nameTooShort'];
   }
 
   isNumber(v) {
     try {
       const x = parseFloat(v);
       if (isNaN(x)) {
-        return this.localeObj['Rules']['notNumber'];
+        return this.localeObj['rules']['notNumber'];
       }
 
       return true;
     } catch (e) {
-      return this.localeObj['Rules']['notNumber'];
+      return this.localeObj['rules']['notNumber'];
     }
   }
 
   email(v) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/;
 
-    return re.test(v) || this.localeObj['Rules']['wrongFormatEmail'];
+    return re.test(v) || this.localeObj['rules']['wrongFormatEmail'];
   }
 
   min(min, v) {
-    return v ? v.length > min : this.localeObj['Rules']['lessThanXCharacters'].replace('X', min);
+    return v ? v.length > min : this.localeObj['rules']['lessThanXCharacters'].replace('X', min);
   }
 
   validateLetterOrNumber(letter) {
@@ -54,7 +58,7 @@ class Rules {
       .toString()
       .split('')
       .every(n => n.charCodeAt(0) >= 48 && n.charCodeAt(0) <= 57);
-    return allNumbers || this.localeObj['Rules']['onlyNumber'];
+    return allNumbers || this.localeObj['rules']['onlyNumber'];
   }
 
   year(value) {
@@ -63,26 +67,26 @@ class Rules {
       if (value <= new Date().getFullYear() && value >= 1970) {
         return true;
       } else {
-        return this.localeObj['Rules']['yearOutOfRange'];
+        return this.localeObj['rules']['yearOutOfRange'];
       }
     } else {
-      return this.localeObj['Rules']['yearValidation'];
+      return this.localeObj['rules']['yearValidation'];
     }
   }
 
   lettersAndNumbers(t) {
     return (
       t.split('').filter(letter => !this.validateLetterOrNumber(letter)).length == 0 ||
-      this.localeObj['Rules']['letterOrNumber']
+      this.localeObj['rules']['letterOrNumber']
     );
   }
 
   equalEmail(x, y) {
-    return x === y || this.localeObj['Rules']['emailsDontMatch'];
+    return x === y || this.localeObj['rules']['emailsDontMatch'];
   }
 
   equalPassword(x, y) {
-    return x === y || this.localeObj['Rules']['passwordsDontMatch'];
+    return x === y || this.localeObj['rules']['passwordsDontMatch'];
   }
 }
 

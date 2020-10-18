@@ -19,14 +19,9 @@
           <job-filters />
         </v-col>
         <v-col cols="12" lg="8" xl="9" v-if="finishedRequests">
-          <v-row v-for="(job, i) in jobs" :key="i" >
+          <v-row v-for="(job, i) in jobs" :key="i">
             <JobCard :job="job" :company="job.company" class="mb-4" />
           </v-row>
-          <g-alert
-            :errorMessage="$t('Job.list.error')"
-            v-on:error="s => (requestError = s)"
-            :errorVar="requestError"
-          />
         </v-col>
       </v-row>
     </v-col>
@@ -70,7 +65,7 @@ export default {
         await this.getCompanyInfo();
         this.finishedRequests = true;
       } catch (e) {
-        this.requestError = true;
+        this.$toast.error(this.$t('Job.list.error'));
       }
     },
     async getCompanyInfo() {
@@ -78,11 +73,9 @@ export default {
       try {
         for (let i = 0; i < this.jobs.length; i++) {
           this.jobs[i].company = await companyController.getById(this.jobs[i].companyId);
-          console.log(this.jobs[i].company);
         }
       } catch (e) {
-        console.log(e);
-        this.requestError = true;
+        this.$toast.error('Something when wrong when getting company info for a job');
       }
     },
   },
