@@ -3,6 +3,7 @@ import experienceLevel from './experienceLevel.json';
 import jobInterests from './jobInterests.json';
 import payCheckTimeFrame from './payCheckTimeFrame.json';
 import currencies from './currencies.json';
+import currencyLocale from './currencyLocale.json';
 
 import languages from './languages.json';
 import yearsOfExperience from './yearsOfExperience.json';
@@ -41,6 +42,7 @@ export default {
       languages,
       yearsOfExperience,
       priorities,
+      currencyLocale,
     },
   },
 };

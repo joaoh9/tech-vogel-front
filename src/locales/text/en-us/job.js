@@ -93,6 +93,9 @@ export default {
         'If your skills are a good match for the requirements in this position, {companyName} might contact you to continue the selection process. Keep an eye on your email inbox!',
       btnType: 'secondary',
       btnText: 'browse more jobs',
+      jobType: {
+        title: 'Fully Remote',
+      },
     },
   },
 };

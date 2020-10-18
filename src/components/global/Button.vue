@@ -7,7 +7,7 @@
     :data-cy="dataCy"
     :min-width="minwidth"
     :max-width="maxwidth"
-    class="px-7"
+    class="button-text px-7"
   >
     {{ label }}
   </v-btn>
@@ -17,7 +17,7 @@
     outlined
     rounded
     color="primary"
-    class="round"
+    class="round button-text"
   >
     {{ label }}
   </v-btn>
@@ -31,7 +31,7 @@
     :outlined="getOutline()"
     :elevation="getElevation()"
     :text="getText()"
-    :class="`px-7 ${textColor ? `${textColor}--text` : ''} ${buttonClass}`"
+    :class="`button-text px-7  ${textColor ? `${textColor}--text` : ''} ${buttonClass}`"
     :to="to"
     :block="block"
     :dark="dark"

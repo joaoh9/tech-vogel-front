@@ -1,7 +1,7 @@
 import JobDetails from 'Pages/Job/JobDetails';
 import NewJob from 'Pages/Job/New'
 import UseMobileAndroidPleno from 'Pages/Job/UseMobileAndroidPleno'
-import Jobs from 'Pages/Jobs/JobList'
+import Jobs from 'Pages/Job/JobList'
 
 const routes = [
   {

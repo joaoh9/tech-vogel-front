@@ -6,9 +6,9 @@
         <!-- TODO -->
       </h6>
       <v-row align="center">
-        <p class="text--primary bdy-2 mr-4">{{ $t('Jobs.cv') }}</p>
+        <p class="text--primary bdy-2 mr-4">TODO</p>
         <v-switch v-model="switch1" color="secondary" />
-        <p class="text--primary bdy-2">{{ $t('jobs.showJobs') }}</p>
+        <p class="text--primary bdy-2">TODO</p>
       </v-row>
       <v-row>
         <v-combobox

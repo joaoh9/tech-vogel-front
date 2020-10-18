@@ -125,7 +125,7 @@ export default {
     getNavbarList() {
       return [
         {
-          text: this.companyId ? this.$t('common.postAJob') : this.$t('commmon.findAJob'),
+          text: this.companyId ? this.$t('common.postAJob') : this.$t('common.findAJob'),
           goTo: this.goToNewJob,
         },
         { text: this.$t('common.dashboard'), goTo: this.goToDashboard },
