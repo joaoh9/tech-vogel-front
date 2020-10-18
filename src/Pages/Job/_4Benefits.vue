@@ -108,7 +108,6 @@ export default {
       }
     },
     checkInput(emitValue, variable) {
-      console.log(this.rules.isNumber(variable))
       if (this.rules.isNumber(variable) === true) {
         this.$emit(emitValue, parseFloat(variable));
       }

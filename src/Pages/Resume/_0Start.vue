@@ -5,7 +5,7 @@
         class="mt-4"
         type="primary"
         :minwidth="300"
-        v-on:click="$emit('manual-register', 'manual-register')"
+        @click="$emit('manual-register', 'manual-register')"
         :label="$t('resume.register.start.registerManually.title')"
       />
       <g-btn

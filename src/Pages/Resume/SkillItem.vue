@@ -5,12 +5,12 @@
       small-chips
       placeholder="Skill"
       v-model="skill.skill"
-      v-on:input="updateItem"
+      @input="updateItem"
       :items="$t('skills.techSkills')"
     />
     <v-btn-toggle
       v-model="skill.experience"
-      v-on:change="updateItem"
+      @change="updateItem"
       color="primary"
       class=" bg-color-bg d-inline-flex justify-center flex-wrap"
     >

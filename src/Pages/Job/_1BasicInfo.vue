@@ -3,8 +3,8 @@
     <form-input :title="$t('job.new.jobTitle.title')" required />
     <v-text-field
       outlined
-      :rules="[rules.required]"
       v-model="title"
+      :rules="[rules.required(title)]"
       @input="$emit('title', title)"
     />
 
@@ -19,19 +19,19 @@
             .replace(/[-]{1,9}/g, '-'),
         })
       "
-      :rules="[rules.required]"
       outlined
       v-model="id"
+      :rules="[rules.required(id)]"
       @input="$emit('id', id)"
     />
     <form-input required :title="$t('job.new.experienceLevel.title')" />
     <v-autocomplete
+      v-model="experienceLevel"
+      :rules="[rules.required(experienceLevel)]"
       item-value="value"
       item-text="text"
       class="border-lg"
-      :rules="[rules.required]"
       :items="$t('enums.experienceLevel')"
-      v-model="experienceLevel"
       @input="$emit('experience-level', experienceLevel)"
       outlined
     />

@@ -6,18 +6,18 @@
           <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
           <form-input class="mt-6" :title="$t('common.username.label')" />
           <v-text-field
-            :rules="[v => !!v || $t('rules.requiredField')]"
             outlined
             v-model="user.username"
+            :rules="[rules.required(user.username)]"
           />
           <form-input :title="$t('common.password.label')" />
           <v-text-field
-            :rules="[v => !!v || $t('rules.requiredField')]"
+            v-model="user.password"
+            :rules="[rules.required(user.password)]"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
             :type="showPassword ? 'text' : 'password'"
             outlined
-            v-model="user.password"
           />
           <div class="d-flex justify-start ">
             <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
@@ -80,6 +80,9 @@ export default {
       },
       loading: {
         login: false,
+      },
+      rules: {
+        required: () => true,
       },
       requestError: false,
       requestErrorMessage: this.$t('login.error'),

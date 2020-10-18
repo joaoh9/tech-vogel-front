@@ -1,12 +1,12 @@
 <template>
   <div>
     <form-input class="mt-6" :title="$t('resume.register.personalInfo.fullName.title')" />
-    <v-text-field v-model="fullName" v-on:input="$emit('full-name', fullName)" outlined />
+    <v-text-field v-model="fullName" @input="$emit('full-name', fullName)" outlined />
     <form-input class="mt-6" :title="$t('resume.register.main.title')" />
     <v-text-field
       :placeholder="$t('resume.register.main.placeholder')"
       v-model="mainRole"
-      v-on:input="$emit('main-role', mainRole)"
+      @input="$emit('main-role', mainRole)"
       outlined
     />
     <form-input class="mt-6" :title="$t('resume.register.personalInfo.location.title')" />
@@ -14,7 +14,7 @@
       <v-col cols="12" md="8">
         <v-text-field
           v-model="location.city"
-          v-on:input="$emit('location', location)"
+          @input="$emit('location', location)"
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.city')"
@@ -23,7 +23,7 @@
       <v-col cols="12" md="4">
         <v-text-field
           v-model="location.country"
-          v-on:input="$emit('location', location)"
+          @input="$emit('location', location)"
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.country')"

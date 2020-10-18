@@ -27,7 +27,6 @@
           <v-icon>fa fa-angle-down</v-icon>
         </v-col>
       </v-row>
-      <div v-if="editYourFilters"></div>
     </v-card-text>
   </v-card>
 </template>

@@ -15,7 +15,7 @@
             "
           />
         </div>
-        <v-btn icon class="mr-2" color="secondary" v-on:click="removeItem(index)">
+        <v-btn icon class="mr-2" color="secondary" @click="removeItem(index)">
           <v-icon x-small>fa-trash</v-icon>
         </v-btn>
       </div>
