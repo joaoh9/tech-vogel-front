@@ -86,6 +86,7 @@ export default {
     letterOrNumber: 'Please write only letters or numbers',
     onlyNumber: 'Only numbers allowed',
     yearValidation: 'Year must contain 4 digits',
+    yearOutOfRange: 'Year out of range',
     equal: 'X must be equal to Y',
     notNumber: 'Not a number',
     requiredField: 'Field Required',
@@ -107,8 +108,20 @@ export default {
   },
   internationalization: {
     data: [
-      { i18n: 'pt-br', language: 'Português', country: 'brazil', flag: FlagIcons.brazil },
-      { i18n: 'en-us', language: 'English', country: 'usa', flag: FlagIcons.usa },
+      {
+        i18n: 'en-us',
+        language: 'English',
+        country: 'usa',
+        flag: FlagIcons.usa,
+        disabledFlag: FlagIcons.usaDisabled,
+      },
+      {
+        i18n: 'pt-br',
+        language: 'Português',
+        country: 'brazil',
+        flag: FlagIcons.brazil,
+        disabledFlag: FlagIcons.brazilDisabled,
+      },
     ],
     icons: FlagIcons,
   },

@@ -19,7 +19,7 @@
         <v-radio-group :row="$vuetify.breakpoint.mdAndUp" v-model="items[i]['experienceLevel']">
           <v-radio
             color="primary"
-            :class="`mx-md-${experienceLevel.length > 3 ? '2' : '6'} mx-0 my-2 my-md-0`"
+            :class="`mx-md-${experienceLevel.length >= 3 ? '2' : '6'} mx-0 my-2`"
             v-for="(check, j) in experienceLevel"
             :key="j"
             :label="check.text"

@@ -5,11 +5,20 @@
         <g-card>
           <template v-slot:card-header>
             <g-card-header
-              :title="$t(`resume.register.${$t('resume.register.tabs')[currentStep]['identifier']}.title`)"
-              :description="$t(`resume.register.${$t('resume.register.tabs')[currentStep]['identifier']}.description`)"
+              :title="
+                $t(`resume.register.${$t('resume.register.tabs')[currentStep]['identifier']}.title`)
+              "
+              :description="
+                $t(
+                  `resume.register.${
+                    $t('resume.register.tabs')[currentStep]['identifier']
+                  }.description`
+                )
+              "
             />
           </template>
           <template v-slot:card-content>
+            {{ resume }}
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
               <Start v-on:manual-register="currentStep += 1" />
             </div>
@@ -28,7 +37,7 @@
               </PersonalInfo>
             </div>
             <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-              <WorkExperience v-on:job="e => (resume.job = e)"> </WorkExperience>
+              <WorkExperience v-on:update-item="e => (resume.jobs = e)"> </WorkExperience>
             </div>
             <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
               <Skills
@@ -107,14 +116,7 @@ export default {
           city: '',
           country: '',
         },
-        job: {
-          companyName: '',
-          role: '',
-          startDate: 0,
-          endDate: 0,
-          description: '',
-          currentJob: false,
-        },
+        jobs: [],
         skills: {
           techSkills: [],
           softSkills: [],

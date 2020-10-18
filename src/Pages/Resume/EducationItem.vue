@@ -6,7 +6,7 @@
         <v-text-field
           v-model="education.degree"
           :placeholder="$t('resume.register.education.placeholders.degree')"
-          v-on:input="$emit('update-item', education)"
+          @input="$emit('update-item', education)"
           outlined
         />
       </v-col>
@@ -15,7 +15,7 @@
         <v-text-field
           v-model="education.institutionType"
           :placeholder="$t('resume.register.education.placeholders.type')"
-          v-on:input="$emit('update-item', education)"
+          @input="$emit('update-item', education)"
           outlined
         />
       </v-col>
@@ -25,7 +25,7 @@
     <v-text-field
       v-model="education.name"
       :placeholder="$t('resume.register.education.placeholders.institution')"
-      v-on:input="$emit('update-item', education)"
+      @input="$emit('update-item', education)"
       outlined
     />
 
@@ -34,7 +34,7 @@
         <form-input :title="$t('resume.register.education.from')" />
         <v-text-field
           v-model="education.startDate"
-          v-on:input="$emit('update-item', education)"
+          @input="$emit('update-item', education)"
           outlined
           :placeholder="$t('common.year')"
           :rules="[rules.year]"
@@ -44,7 +44,7 @@
         <form-input :title="$t('resume.register.education.to')" />
         <v-text-field
           v-model="education.endDate"
-          v-on:input="$emit('update-item', education)"
+          @input="$emit('update-item', education)"
           outlined
           :placeholder="$t('common.year')"
           :rules="[rules.year]"

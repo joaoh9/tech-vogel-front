@@ -6,18 +6,18 @@
           <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
           <form-input class="mt-6" :title="$t('common.username.label')" />
           <v-text-field
-            :rules="[v => !!v || $t('rules.requiredField')]"
             outlined
             v-model="user.username"
+            :rules="[rules.required(user.username)]"
           />
           <form-input :title="$t('common.password.label')" />
           <v-text-field
-            :rules="[v => !!v || $t('rules.requiredField')]"
+            v-model="user.password"
+            :rules="[rules.required(user.password)]"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
             :type="showPassword ? 'text' : 'password'"
             outlined
-            v-model="user.password"
           />
           <div class="d-flex justify-start ">
             <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
@@ -67,9 +67,6 @@ export default {
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.rulesLoaded = true;
-    console.log(this.nextRoute);
-    console.log(this.userEmail);
-    console.log(this.username);
     if (this.username) {
       this.user.username = this.username;
     }
@@ -83,6 +80,9 @@ export default {
       },
       loading: {
         login: false,
+      },
+      rules: {
+        required: () => true,
       },
       requestError: false,
       requestErrorMessage: this.$t('login.error'),
@@ -126,17 +126,17 @@ export default {
     async seeIfUserIsACompanyOwner() {
       const userController = new UserController();
 
-      try {
-        const company = await userController.getCompany(this.user.username);
+      const company = await userController.getCompany(this.user.username);
+      console.log('company', company)
+      if (company) {
         StorageHelper.saveState('companyId', company[0]);
-
         this.goToDashboard(true);
-      } catch (e) {
-        alert(e); // TODO: melhorar tratamento de erro
+      } else {
+        this.goToDashboard(false);
       }
     },
     goToDashboard(company = false) {
-      this.$emit('login', { logged: true, company });
+      this.$emit('login');
       this.$router.push({
         path: this.nextRoute || company ? '/company/dashboard' : '/dashboard',
       });

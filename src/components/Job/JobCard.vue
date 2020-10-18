@@ -24,6 +24,7 @@
 
 <script>
 import IconText from 'Components/Interface/IconText';
+
 export default {
   name: 'listJobs',
   props: {

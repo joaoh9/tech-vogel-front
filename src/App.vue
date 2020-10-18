@@ -8,13 +8,10 @@
       :key="'loggedInNabar' + $router.currentRoute.name + loggedIn.logged.toString()"
       v-if="loggedIn.logged"
       :company="loggedIn.company"
+      @logout="() => checkIfLoggedIn()"
     />
     <v-main :style="getPageStyle()" :key="loggedIn.logged.toString() + 'main'">
-      <router-view
-        @logout="e => (loggedIn = e)"
-        @login="e => (loggedIn = e)"
-        class="view"
-      ></router-view>
+      <router-view @login="() => checkIfLoggedIn()" class="view" />
     </v-main>
     <Footer :style="getPageStyle(true)" />
   </v-app>
@@ -77,7 +74,6 @@ export default {
       } else {
         this.loggedIn.company = false;
       }
-
     },
   },
 };

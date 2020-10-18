@@ -4,6 +4,7 @@
 
 <script>
 import JobDescription from 'Pages/Job/JobDetails';
+
 export default {
   name: 'UseMobileAndroidPleno',
   components: {

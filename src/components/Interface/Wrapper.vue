@@ -18,7 +18,7 @@
           "
         />
         <div class="d-flex justify-end flex-grow-1">
-          <v-btn icon color="secondary" v-on:click="removeItem(index)">
+          <v-btn icon color="secondary" @click="removeItem(index)">
             <v-icon>fa-trash</v-icon>
           </v-btn>
         </div>
@@ -30,7 +30,7 @@
           <v-btn
             icon
             color="secondary"
-            v-on:click="currentItem -= 1"
+            @click="currentItem -= 1"
             v-bind:style="{ display: itemsLen && currentItem !== 0 ? 'block' : 'none' }"
           >
             <v-icon color="dark" large>fa-arrow-alt-circle-left</v-icon>
@@ -53,7 +53,7 @@
           <v-btn
             icon
             color="secondary"
-            v-on:click="currentItem += 1"
+            @click="currentItem += 1"
             v-bind:style="{ display: itemsLen && currentItem + 1 !== itemsLen ? 'block' : 'none' }"
           >
             <v-icon large>fa-arrow-alt-circle-right</v-icon>

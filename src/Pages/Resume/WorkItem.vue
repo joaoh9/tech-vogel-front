@@ -1,35 +1,37 @@
 <template>
   <div class="mb-6">
-    <form-input class="mt-6" :title="$t('resume.register.workExperience.company.title')" />
+    <form-input required class="mt-6" :title="$t('resume.register.workExperience.company.title')" />
     <v-text-field
       v-model="job.companyName"
-      v-on:input="$emit('update-item', job)"
+      :rules="[rules.required(job.companyName)]"
+      @input="$emit('company-name', job.companyName)"
       :placeholder="$t('resume.register.workExperience.placeholders.company.title')"
       outlined
     />
-    <form-input class="" :title="$t('resume.register.workExperience.position')" />
+    <form-input required :title="$t('resume.register.workExperience.position')" />
     <v-text-field
       v-model="job.role"
-      v-on:input="$emit('update-item', job)"
+      :rules="[rules.required(job.role)]"
+      @input="$emit('role', job.role)"
       :placeholder="$t('resume.register.workExperience.placeholders.position')"
       outlined
     />
-    <v-row>
+    <v-row class="mt-n4 mb-n4">
       <v-col cols="12" md="3">
-        <form-input class="" :title="$t('common.from')" />
+        <form-input :title="$t('common.from')" />
         <v-text-field
           v-model="job.startDate"
-          v-on:input="$emit('update-item', job)"
+          @input="checkYearRules(job.startDate, 'start-date')"
           :placeholder="$t('common.year')"
           outlined
           :rules="[rules.onlyNumber(job.startDate), rules.year(job.startDate)]"
         />
       </v-col>
       <v-col cols="12" md="3">
-        <form-input class="" :title="$t('common.to')" />
+        <form-input :title="$t('common.to')" />
         <v-text-field
           v-model="job.endDate"
-          v-on:input="$emit('update-item', job)"
+          @input="checkYearRules(job.endDate, 'end-date')"
           :placeholder="$t('common.year')"
           outlined
           :rules="[rules.onlyNumber(job.endDate), rules.year(job.endDate)]"
@@ -37,19 +39,18 @@
         />
       </v-col>
     </v-row>
-    <div class="d-flex justify-space-between mt-12">
+    <div class="d-flex justify-space-between">
       <v-checkbox
         v-model="job.currentJob"
-        v-on:input="$emit('job', job)"
+        @change="$emit('current-job', job.currentJob)"
         v-for="(options, index) in $t('resume.register.workExperience.myJob.options')"
         :label="options"
         :key="index"
       />
     </div>
     <form-input :title="$t('resume.register.workExperience.jobDescription.title')" />
-    <!-- TODO: mudar para vue-editor -->
     <vue-editor
-      :placeholder="$t('resume.register.workEperience.jobDescription')"
+      placeholder="TODO"
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="job.jobDescription"
     />
@@ -81,8 +82,24 @@ export default {
       rules: {
         year: () => true,
         onlyNumber: () => true,
+        required: () => true,
       },
     };
+  },
+  methods: {
+    checkYearRules(variable, date) {
+      console.log('variable', variable);
+      if (this.rules.onlyNumber(variable) === true && this.rules.year(variable) === true) {
+        if (date === 'start-date') {
+          this.job.startDate = parseInt(variable);
+          this.$emit(date, this.job.startDate);
+        } else if (date === 'end-date') {
+          this.job.endDate = parseInt(variable);
+          this.$emit(date, this.job.endDate);
+        }
+      }
+      return;
+    },
   },
   watch: {
     'job.currentJob'(e) {
@@ -91,7 +108,7 @@ export default {
       }
     },
     'job.jobDescription'() {
-      this.$emit('update-item', this.job);
+      this.$emit('job-description', this.job.description);
     },
   },
 };

@@ -25,7 +25,10 @@ const _skills = {
 export default {
   skills: {
     ..._skills,
-    allSkills: _skills.programmingLanguages.concat(_skills.databases).concat(_skills.softSkills),
+    allSkills: _skills.programmingLanguages
+      .concat(_skills.databases)
+      .concat(frameworks.all)
+      .concat(_skills.softSkills),
     techSkills: _skills.programmingLanguages.concat(_skills.databases).concat(frameworks.all),
 
     dictionary: {

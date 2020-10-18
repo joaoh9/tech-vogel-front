@@ -89,7 +89,7 @@ h6 {
   font-weight: normal !important;
   font-size: 1rem !important;
   line-height: 150% !important;
-  /* or 24px */ 
+  /* or 24px */
   display: flex !important;
   align-items: center !important;
   letter-spacing: 0.15px !important;
@@ -125,9 +125,8 @@ h6 {
   font-feature-settings: 'liga' off;
 }
 
-
-
-.bdy-2, input{
+.bdy-2,
+input {
   overflow-wrap: break-word;
   /* Body 2 */
   font-family: Open Sans;
@@ -241,6 +240,18 @@ h6 {
   display: flex;
   align-items: center;
   letter-spacing: 0.25px;
+}
+
+.h5-bold {
+  overflow-wrap: break-word;
+  /* H5 Bold */
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 150%;
+  /* or 36px */
 }
 
 .h1-alternative {

@@ -42,6 +42,7 @@ const getFromSession = key => {
 
   return JSON.parse(serializedState);
 };
+
 export default {
   loadState,
   saveState,

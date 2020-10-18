@@ -5,7 +5,7 @@
         v-if="$vuetify.breakpoint.mobile"
         @click="drawer = true"
         :color="isHome() ? 'bg' : 'dark'"
-      ></v-app-bar-nav-icon>
+      />
       <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
@@ -33,11 +33,7 @@
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-icon v-on="on" v-bind="attrs">mdi-chevron-down</v-icon>
-          <!-- <h3 data-cy="user-name" v-on="on" v-bind="attrs" style="color: white" class="ml-3">
-          {{ user.name }}
-        </h3> -->
           <v-icon v-on="on" v-bind="attrs" large>mdi-account-circle</v-icon>
-          <!-- <v-avatar v-on="on" v-bind="attrs" class="ml-3" color="grey"></v-avatar> -->
         </template>
         <v-list>
           <v-list-item @click="m.action" v-for="(m, i) of getMenuList()" :key="i">
@@ -47,14 +43,7 @@
       </v-menu>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
-      <v-list nav dense>
-        <v-list-item @click="goToSignup">
-          <v-list-item-title>{{ $t('common.postAJob') }}</v-list-item-title>
-        </v-list-item>
-        <v-list-item @click="goToDashboard">
-          <v-list-item-title>{{ $t('common.dashboard') }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
+      <MobileDrawer :items="getNavbarList()" />
     </v-navigation-drawer>
   </div>
 </template>
@@ -63,11 +52,16 @@
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import UserController from 'Controllers/user';
+import StorageHelper from 'Helpers/storage';
+import MobileDrawer from './MobileDrawer';
 
 export default {
   name: 'LoggedInNavbar',
-  props: {
-    company: Boolean,
+  mounted() {
+    this.checkIfCompany();
+  },
+  components: {
+    MobileDrawer,
   },
   data() {
     return {
@@ -77,13 +71,16 @@ export default {
     };
   },
   methods: {
+    checkIfCompany() {
+      this.companyId = StorageHelper.loadState('companyId');
+    },
     goToDashboard() {
       this.$router.push({
         path: this.getDashboardRoute(),
       });
     },
     getDashboardRoute() {
-      return this.company ? '/company/dashboard' : '/dashboard';
+      return this.companyId ? '/company/dashboard' : '/dashboard';
     },
     getMenuList() {
       return [
@@ -97,7 +94,9 @@ export default {
       const userController = new UserController();
       try {
         await userController.logout();
-        this.$emit('logout', { logged: false, company: false });
+        StorageHelper.removeState('user');
+        StorageHelper.removeState('companyId');
+        this.$emit('logout');
         this.$router.push({
           path: '/',
         });
@@ -105,9 +104,9 @@ export default {
         alert(e);
       }
     },
-    goToSignup() {
+    goToNewJob() {
       this.$router.push({
-        path: '/signup',
+        path: '/jobs/new',
       });
     },
     getBgColor() {
@@ -115,6 +114,15 @@ export default {
     },
     isHome() {
       return this.$router.currentRoute.name === 'Home';
+    },
+    getNavbarList() {
+      return [
+        {
+          text: this.companyId ? this.$t('common.postAJob') : this.$t('commmon.findAJob'),
+          goTo: this.goToNewJob,
+        },
+        { text: this.$t('common.dashboard'), goTo: this.goToDashboard },
+      ];
     },
   },
 };

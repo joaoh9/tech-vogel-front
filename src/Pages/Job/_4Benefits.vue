@@ -22,7 +22,7 @@
       />
       <v-text-field
         :prefix="getPrefix()"
-        @input="$emit('salary-min', parseFloat(salary.min))"
+        @input="checkInput('salary-min', salary.min)"
         v-model="salary.min"
         :rules="[rules.isNumber(salary.min)]"
         :label="range ? 'From' : 'Price'"
@@ -31,7 +31,7 @@
         :class="range ? 'mr-2' : ''"
       />
       <v-text-field
-        @input="$emit('salary-max', parseFloat(salary.max))"
+        @input="checkInput('salary-max', salary.max)"
         v-model="salary.max"
         :prefix="getPrefix()"
         :rules="[rules.isNumber(salary.max)]"
@@ -107,6 +107,11 @@ export default {
           return 'R$';
       }
     },
+    checkInput(emitValue, variable) {
+      if (this.rules.isNumber(variable) === true) {
+        this.$emit(emitValue, parseFloat(variable));
+      }
+    },
   },
   watch: {
     range() {
@@ -118,7 +123,6 @@ export default {
     'salary.min'() {
       if (!this.range) {
         this.salary.max = this.salary.min;
-        this.$emit('salary-max', this.salary.max);
       }
     },
   },

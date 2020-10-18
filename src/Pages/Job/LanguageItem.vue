@@ -4,7 +4,7 @@
       <v-combobox
         placeholder="Skill"
         v-model="language.language"
-        v-on:input="updateItem"
+        @input="updateItem"
         :items="$t('skills.languages')"
         item-text="label"
         item-value="code"
@@ -12,7 +12,7 @@
     </div>
     <v-btn-toggle
       v-model="language.fluency"
-      v-on:change="updateItem"
+      @change="updateItem"
       color="primary"
       class=" bg-color-bg d-inline-flex justify-center flex-wrap "
     >

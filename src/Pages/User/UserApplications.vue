@@ -5,7 +5,7 @@
         <v-card color="bg">
           <v-card-text>
             <div class="d-flex flex-column align-stretch text-left flex-grow-0">
-              <v-btn text block color="primary" class="" to="dashboard">
+              <v-btn text block color="primary" to="dashboard">
                 <v-icon left>
                   fa-angle-left
                 </v-icon>
@@ -47,7 +47,7 @@
                         <v-icon class="text-icon" color="secondary">
                           fa-building
                         </v-icon>
-                        <div class="" style="font-weight: bold">
+                        <div style="font-weight: bold">
                           {{ application.job.company.name }}
                         </div>
                       </div>
@@ -59,8 +59,12 @@
                       </div>
                     </div>
                   </v-col>
-                  <v-col cols="12" md="4" class="d-flex flex-column justify-center align-stretch text-center">
-                    <div>{{$tc('user.applications.job.period', 1)}}</div>
+                  <v-col
+                    cols="12"
+                    md="4"
+                    class="d-flex flex-column justify-center align-stretch text-center"
+                  >
+                    <div>{{ $tc('user.applications.job.period', 1) }}</div>
                     <div class="text-center">
                       <v-icon size="12" color="error" class="text-icon">
                         fa-circle
