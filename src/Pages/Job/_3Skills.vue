@@ -71,41 +71,12 @@
       deletable-chips
       hide-details
     />
-    <v-row
-      justify="center"
-      align="center"
-      v-for="(language, i) in languages"
-      :key="`Lan-${i}`"
-      :class="i === 0 ? 'mt-4' : 'mt-n0'"
-    >
-      <v-col class="d-flex" cols="12" md="4">
-        <v-icon @click="languages.splice(i, 1)" class="align-self-center mr-2">
-          mdi-close
-        </v-icon>
-        <div class="bdy-1 align-self-center" style="line-height: 100% !important">
-          {{ $t(`skills.dictionary.languages.${language.skillId}`) }}
-        </div>
-      </v-col>
-      <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">
-        <v-btn-toggle
-          v-model="languages[i]['experienceLevel']"
-          color="primary"
-          class=" bg-color-bg d-inline-flex justify-center flex-wrap "
-          mandatory
-        >
-          <v-btn
-            class="bg-color-bg flex-fill ma-1"
-            outlined
-            input-value="value"
-            :value="fluency.value"
-            v-for="(fluency, index) in $t('enums.languages')"
-            :key="`L-${index}`"
-          >
-            {{ fluency.text }}
-          </v-btn>
-        </v-btn-toggle>
-      </v-col>
-    </v-row>
+    <SkillExperienceLevel
+      :key="`Languages-${languages.length}`"
+      :items="languages"
+      skillTitle="languages"
+      :experienceLevel="$t('enums.languages')"
+    />
   </div>
 </template>
 
