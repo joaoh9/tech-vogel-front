@@ -25,15 +25,16 @@
           <div class="mt-5 mb-12">
             <h4>{{ $t('user.applications.title') }}</h4>
           </div>
-          <div v-for="(application, index) in applications" v-bind:key="index">
+          <div v-for="(jobApplication, index) in jobApplications" v-bind:key="index">
             <v-card color="bg" class="primary-card my-5">
               <v-card-text>
                 <v-row>
                   <v-col cols="2" v-if="!$vuetify.breakpoint.mobile">
                     <v-avatar size="90">
                       <v-img
-                        v-if="application.job.company.profilePhoto"
-                        :src="application.job.company.profilePhoto"
+                        v-if="jobApplication.job.company.profilePhoto"
+                        :src="jobApplication.job.company.profilePhoto"
+                        alt="Profile photo"
                       />
                       <v-icon v-else>
                         fa-users
@@ -41,22 +42,10 @@
                     </v-avatar>
                   </v-col>
                   <v-col cols="12" md="6" class="d-flex flex-column justify-space-between">
-                    <h5>{{ application.job.title }}</h5>
+                    <h5>{{ jobApplication.job.title }}</h5>
                     <div class="d-flex space-between flex-fill align-center">
-                      <div class="flex-fill">
-                        <v-icon class="text-icon" color="secondary">
-                          fa-building
-                        </v-icon>
-                        <div style="font-weight: bold">
-                          {{ application.job.company.name }}
-                        </div>
-                      </div>
-                      <div class="flex-fill">
-                        <v-icon class="text-icon" color="secondary">
-                          fa-briefcase
-                        </v-icon>
-                        <div style="font-weight: bold">{{ application.job.type }}</div>
-                      </div>
+                        <icon-text icon="fa-building" :text="(jobApplication.job.company || {}).name"/>
+                        <icon-text icon="fa-briefcase" :text="$t('enums.contractType').find(ct => ct.value === jobApplication.job.contractType).text"/>
                     </div>
                   </v-col>
                   <v-col
@@ -65,11 +54,8 @@
                     class="d-flex flex-column justify-center align-stretch text-center"
                   >
                     <div>{{ $tc('user.applications.job.period', 1) }}</div>
-                    <div class="text-center">
-                      <v-icon size="12" color="error" class="text-icon">
-                        fa-circle
-                      </v-icon>
-                      <div style="font-weight: bold">{{ application.job.status }}</div>
+                    <div class="d-flex justify-center">
+                      <icon-text size="10" icon="fa-circle" color="primary" :text="jobApplication.application.status.stage"/>
                     </div>
                   </v-col>
                 </v-row>
@@ -83,35 +69,70 @@
 </template>
 
 <script>
+import JobController from 'Controllers/job';
+import CompanyController from 'Controllers/company';
+import StorageHelper from 'Helpers/storage';
+import IconText from 'Components/Interface/IconText';
+
 export default {
-  name: 'User Applications',
+  name: 'UserApplications',
   data() {
     return {
-      applications: [
-        {
-          job: {
-            status: 'Waiting',
-            title: 'Full Stack DEV',
-            type: 'Job Type',
-            company: {
-              name: 'Company Name',
-            },
-          },
-        },
-        {
-          job: {
-            status: 'Waiting',
-            title: 'Full Stack DEV',
-            type: 'Job Type',
-            company: {
-              name: 'Company Name',
-            },
-          },
-        },
-      ],
+      jobApplications: [],
     };
   },
+  components: {
+    IconText,
+  },
+  mounted() {
+    this.loadUserFromStorage();
+    this.getJobs();
+  },
   methods: {
+    loadUserFromStorage() {
+      const userInfo = StorageHelper.loadState('user');
+      if (!userInfo) {
+        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$router.push({
+          path: '/login',
+        });
+      }
+      this.user = userInfo;
+    },
+    async getJobs() {
+      const jobController = new JobController();
+      try {
+        const jobs = await jobController.getAll();
+        const reducer = (jobs, job) => {
+          const application = (job.jobApplications || []).find(application => {
+            return application.username === 'brenoam';
+          });
+          if (application) {
+            job.company = job.company || {};
+            jobs.push({ job: job, application: application })
+          }
+          return jobs;
+        };
+        this.jobApplications = jobs.reduce(reducer, []);
+
+        await this.getCompanyInfo();
+        this.finishedRequests = true;
+      } catch (e) {
+        this.$toast.error(this.$t('job.list.error'));
+      }
+    },
+    async getCompanyInfo() {
+      const companyController = new CompanyController();
+      try {
+        for (let i = 0; i < this.jobApplications.length; i++) {
+          this.jobApplications[i].job.company = await companyController.getById(
+            this.jobApplications[i].job.companyId,
+          );
+        }
+      } catch (e) {
+        this.$toast.error('Something when wrong when getting company info for a job');
+      }
+    },
     goToApplications: function() {},
     goToFindJobs: function() {
       this.$router.push('/jobs/new');
