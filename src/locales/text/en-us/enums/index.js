@@ -4,7 +4,7 @@ import jobInterests from './jobInterests.json';
 import payCheckTimeFrame from './payCheckTimeFrame.json';
 import currencies from './currencies.json';
 import currencyLocale from './currencyLocale.json';
-
+import skills from './skills.json'
 import languages from './languages.json';
 import yearsOfExperience from './yearsOfExperience.json';
 import priorities from './priorities.json';
@@ -19,6 +19,7 @@ function textValueNumberFormat(data) {
 
 export default {
   enums: {
+    skills,
     contractType: textValueFormat(contractType),
     experienceLevel: textValueFormat(experienceLevel),
     jobInterests: textValueFormat(jobInterests),
@@ -30,6 +31,7 @@ export default {
     priorities: textValueNumberFormat(priorities),
 
     dictionary: {
+      skills,
       contractType,
       experienceLevel,
       jobInterests,

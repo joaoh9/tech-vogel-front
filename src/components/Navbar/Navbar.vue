@@ -5,40 +5,21 @@
         v-if="$vuetify.breakpoint.mobile"
         @click="drawer = true"
         :color="isHome() ? 'bg' : 'dark'"
-      ></v-app-bar-nav-icon>
-      <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/">
+      />
+      <v-btn text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
         </v-avatar>
       </v-btn>
-      <v-spacer />
-      <v-btn
-        v-if="!$vuetify.breakpoint.mobile"
-        class="bdy-2"
-        @click="goToJobList"
+      <g-btn
+        class="cursor-pointer mx-n2"
+        type="text"
         :color="isHome() ? 'bg' : 'dark'"
-        text
-      >
-        {{ $t('common.jobs') }}
-      </v-btn>
-      <v-btn
-        v-if="!$vuetify.breakpoint.mobile"
-        class="bdy-2"
-        @click="goToPricing"
-        :color="isHome() ? 'bg' : 'dark'"
-        text
-      >
-        {{ $t('common.pricing') }}
-      </v-btn>
-      <v-btn
-        v-if="!$vuetify.breakpoint.mobile"
-        class="bdy-2"
-        @click="goToHowItWorks"
-        :color="isHome() ? 'bg' : 'dark'"
-        text
-      >
-        {{ $t('common.howItWorks') }}
-      </v-btn>
+        v-for="(item, i) in getTextButtons()"
+        :key="i"
+        @click="item.goTo()"
+        :label="item.text"
+      />
       <v-spacer />
       <g-btn
         v-if="!$vuetify.breakpoint.mobile"
@@ -68,8 +49,8 @@
         :label="$t('common.login')"
       />
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
-      <MobileDrawer :items="getNavbarList()" />
+    <v-navigation-drawer v-model="drawer" absolute temporary class="">
+      <MobileDrawer :items="getTextButtons().concat(getPrimaryButtons())" />
     </v-navigation-drawer>
   </div>
 </template>
@@ -98,18 +79,28 @@ export default {
       });
     },
     goToLogin() {
+      console.log('goToLogin');
       this.$router.push({
         path: '/login',
       });
     },
     goToJobList() {
-      // TODO
+      console.log('goToJobList');
+      this.$router.push({
+        path: '/jobs',
+      });
     },
     goToPricing() {
-      // TODO
+      console.log('goToPricing');
+      this.$router.push({
+        path: '/pricing',
+      });
     },
     goToHowItWorks() {
-      // TODO
+      console.log('goToHowItWorks');
+      this.$router.push({
+        path: '/how-it-works',
+      });
     },
     getBgColor() {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
@@ -117,11 +108,15 @@ export default {
     isHome() {
       return this.$router.currentRoute.name === 'Home';
     },
-    getNavbarList() {
+    getTextButtons() {
       return [
         { text: this.$t('common.jobs'), goTo: this.goToJobList },
         { text: this.$t('common.pricing'), goTo: this.goToPricing },
         { text: this.$t('common.howItWorks'), goTo: this.goToHowItWorks },
+      ];
+    },
+    getPrimaryButtons() {
+      return [
         { text: this.$t('common.findAJob'), goTo: this.goToLogin },
         { text: this.$t('common.postAJob'), goTo: this.goToLogin },
       ];
@@ -130,9 +125,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.v-toolbar {
-  box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.2), 0px 8px 5px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-</style>
+<style scoped></style>

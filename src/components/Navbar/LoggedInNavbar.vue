@@ -12,24 +12,16 @@
         </v-avatar>
       </v-btn>
       <v-spacer />
-      <g-btn
-        v-if="!$vuetify.breakpoint.mobile"
-        dataCy="nav-new-company"
-        type="primary"
-        class="ml-4"
-        to="/signup"
-        :label="$t('common.postAJob')"
-      />
-      <g-btn
-        v-if="!$vuetify.breakpoint.mobile"
-        dataCy="nav-login"
-        type="primay"
-        color="primary"
-        elevation="0"
-        :to="getDashboardRoute()"
-        class="mx-4"
-        :label="$t('common.dashboard')"
-      />
+      <div v-if="!$vuetify.breakpoint.mobile" class="d-flex">
+        <g-btn
+          v-for="(item, i) in getPrimaryButtons()"
+          :key="i"
+          type="primary"
+          :label="item.text"
+          @click="item.goTo()"
+          class="mr-6"
+        />
+      </div>
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-icon v-on="on" v-bind="attrs">mdi-chevron-down</v-icon>
@@ -43,7 +35,7 @@
       </v-menu>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
-      <MobileDrawer :items="getNavbarList()" />
+      <MobileDrawer :items="getPrimaryButtons()" />
     </v-navigation-drawer>
   </div>
 </template>
@@ -57,9 +49,6 @@ import MobileDrawer from './MobileDrawer';
 
 export default {
   name: 'LoggedInNavbar',
-  mounted() {
-    this.checkIfCompany();
-  },
   components: {
     MobileDrawer,
   },
@@ -72,7 +61,7 @@ export default {
   },
   methods: {
     checkIfCompany() {
-      this.companyId = StorageHelper.loadState('companyId');
+      return StorageHelper.loadState('companyId');
     },
     goToDashboard() {
       this.$router.push({
@@ -80,7 +69,7 @@ export default {
       });
     },
     getDashboardRoute() {
-      return this.companyId ? '/company/dashboard' : '/dashboard';
+      return this.checkIfCompany() ? '/company/dashboard' : '/dashboard';
     },
     getMenuList() {
       return [
@@ -100,7 +89,7 @@ export default {
         this.$router.push({
           path: '/',
         });
-        this.$toast.success('Logout successfull')
+        this.$toast.success('Logout successfull');
       } catch (e) {
         StorageHelper.removeState('user');
         StorageHelper.removeState('companyId');
@@ -108,7 +97,7 @@ export default {
         this.$router.push({
           path: '/',
         });
-        this.$toast.success('Logout successfull')
+        this.$toast.success('Logout successfull');
       }
     },
     goToNewJob() {
@@ -116,17 +105,23 @@ export default {
         path: '/jobs/new',
       });
     },
+    goToJobList() {
+      this.$router.push({
+        path: '/jobs',
+      })
+    },
     getBgColor() {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
     },
     isHome() {
       return this.$router.currentRoute.name === 'Home';
     },
-    getNavbarList() {
+    getPrimaryButtons() {
+      const company = this.checkIfCompany();
       return [
         {
-          text: this.companyId ? this.$t('common.postAJob') : this.$t('common.findAJob'),
-          goTo: this.goToNewJob,
+          text: company ? this.$t('common.postAJob') : this.$t('common.findAJob'),
+          goTo: company ? this.goToNewJob : this.goToJobList,
         },
         { text: this.$t('common.dashboard'), goTo: this.goToDashboard },
       ];

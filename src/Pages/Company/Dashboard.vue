@@ -2,7 +2,6 @@
   <div class="container-fluid mx-12">
     <v-row>
       <v-col md="4" cols="12">
-        <!-- TODO: internacionalização -->
         <UserCard :user="user" v-if="user" :key="loading.user" />
       </v-col>
       <v-col md="8" cols="12" v-if="company">

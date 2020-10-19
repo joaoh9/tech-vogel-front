@@ -16,22 +16,13 @@
                 v-on:id="r => (job_.id = r)"
                 v-on:experience-level="r => (job_.experienceLevel = r)"
                 v-on:contract-type="r => (job_.contractType = r)"
-                v-on:advance="step++"
               />
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-              <About
-                v-on:description="r => (job_.description = r)"
-                v-on:back="step--"
-                v-on:advance="step++"
-              />
+              <About v-on:description="r => (job_.description = r)" />
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
-              <Skills
-                v-on:skills="r => (job_.skills = r)"
-                v-on:back="step--"
-                v-on:advance="step++"
-              />
+              <Skills v-on:skills="r => (job_.skills = r)" />
             </div>
             <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
               <Benefits
@@ -40,8 +31,6 @@
                 v-on:salary-time-frame="r => (job_.salary.timeFrame = r)"
                 v-on:salary-min="r => (job_.salary.min = r)"
                 v-on:salary-max="r => (job_.salary.max = r)"
-                v-on:back="step--"
-                v-on:advance="preview"
               />
             </div>
           </template>
@@ -56,11 +45,7 @@
                 type="secondary"
                 @click="currentStep--"
               />
-              <g-btn
-                :label="$t('common.next')"
-                type="primary"
-                @click="currentStep === 3 ? saveJob() : currentStep++"
-              />
+              <g-btn :label="$t('common.next')" type="primary" @click="checkInputsAndFollowUp()" />
             </div>
           </template>
         </g-card>
@@ -76,28 +61,15 @@ import About from './_2About';
 import Skills from './_3Skills';
 import Benefits from './_4Benefits';
 import JobController from 'Controllers/job';
-import RandomizerHelper from 'Helpers/random';
+import CompanyController from 'Controllers/company';
+import Settings from '@config';
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob',
   params: {
     job: {
       type: Object,
-      default: () => ({
-        title: '',
-        id: '',
-        experienceLevel: '',
-        contractType: '',
-        description: '',
-        skills: [],
-        benefits: '',
-        salary: {
-          currency: 'USD',
-          timeFrame: 'MONTHS',
-          min: 0,
-          max: 0,
-        },
-      }),
     },
   },
   components: {
@@ -109,8 +81,7 @@ export default {
   },
   mounted() {
     this.jobs_ = this.job;
-    this.randomizer = new RandomizerHelper();
-    this.idSufix = this.randomizer.randomString({ size: 6 });
+    this.getCompanyInfo();
   },
   data() {
     return {
@@ -122,7 +93,11 @@ export default {
         experienceLevel: '',
         contractType: '',
         description: '',
-        skills: [],
+        skills: {
+          techSkills: [],
+          softSkills: [],
+          languages: [],
+        },
         benefits: '',
         salary: {
           currency: 'USD',
@@ -131,14 +106,30 @@ export default {
           max: 0,
         },
       },
+      company: {},
     };
   },
   methods: {
-    preview() {
+    previewJob() {
       this.$router.push({
         name: 'Job Description',
-        params: { job: this.job_ },
+        params: {
+          job_: this.job_,
+          company_: this.company,
+          editMode: true,
+        },
       });
+    },
+    async getCompanyInfo() {
+      const companyController = new CompanyController();
+      const companyId = StorageHelper.loadState('companyId');
+      if (!companyId) {
+        this.$toast.error('You must have a registered company in order to post a job!');
+        this.$router.push({
+          name: 'Home',
+        });
+      }
+      this.company = await companyController.getById(companyId);
     },
     async saveJob() {
       const jobController = new JobController();
@@ -161,8 +152,61 @@ export default {
     getPageTitle(currentStep) {
       return this.getPageInfo()[currentStep].title;
     },
+
     getPageDescripton(currentStep) {
       return this.getPageInfo()[currentStep].description;
+    },
+    checkInputsAndFollowUp() {
+      switch (this.currentStep) {
+        case 0:
+          if (
+            this.job_.title &&
+            this.job_.id &&
+            this.job_.experienceLevel &&
+            this.job_.contractType
+          ) {
+            console.log(this.job)
+            this.currentStep++;
+          } else {
+            this.$toast.warning('You should fill all required information!');
+          }
+          break;
+        case 1:
+          if (this.job_.description) {
+            this.currentStep++;
+          } else {
+            this.$toast.warning(
+              'Please give your appplicants a more detailed information about your job',
+            );
+          }
+          break;
+        case 2:
+          for (const skill of Object.keys(this.job_.skills)) {
+            const skillValidated = this.validateSkills(skill);
+            if (skillValidated !== true) {
+              return this.$toast.warning(skillValidated);
+            }
+          }
+          this.currentStep++;
+          break;
+        case 3:
+          // TODO: regras de validação para "Salary and perks"
+          this.previewJob();
+          break;
+      }
+    },
+    validateSkills(skill) {
+      if (this.job_.skills[skill].length < Settings.skills[skill].min) {
+        return `Please select at least ${Settings.skills[skill].min} ${this.$t(
+          `enums.skills.${skill}`,
+        )}!`;
+      }
+      if (this.job_.skills[skill].length > Settings.skills[skill].max) {
+        return `Please select a maximum of ${Settings.skills[skill].max} ${this.$t(
+          `enums.skills.${skill}`,
+        )}!`;
+      }
+      return true;
     },
   },
 };

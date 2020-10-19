@@ -28,13 +28,13 @@
     />
 
     <form-input
-      class="mt-4"
+      class="mt-6"
       type="h6"
       :title="$t('job.new.otherSkills.title')"
       :description="$t('job.new.otherSkills.description')"
     />
     <form-input
-      class="mt-4"
+      class="mt-8"
       :title="$t('job.new.softSkills.title')"
       :description="$t('job.new.softSkills.inputHint')"
     />
