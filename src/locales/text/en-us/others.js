@@ -16,6 +16,7 @@ export default {
     logout: 'Logout',
     from: 'From',
     to: 'To',
+    settings: 'Settings',
     dashboard: 'Dashboard',
     description: 'description',
     company: 'company',
