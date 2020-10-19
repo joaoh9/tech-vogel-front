@@ -50,8 +50,8 @@
           jobs.push({
             companyName: '',
             role: '',
-            startDate: 0,
-            endDate: 0,
+            startDate: '',
+            endDate: '',
             description: '',
             currentJob: false,
           })
@@ -76,14 +76,14 @@ export default {
         {
           companyName: '',
           role: '',
-          startDate: 0,
-          endDate: 0,
+          startDate: '',
+          endDate: '',
           description: '',
           currentJob: false,
         },
       ],
       j: [
-        { companyName: '', role: '', startDate: 0, endDate: 0, description: '', currentJob: '' },
+        { companyName: '', role: '', startDate: '', endDate: '', description: '', currentJob: '' },
         {
           companyName: '',
           role: '',

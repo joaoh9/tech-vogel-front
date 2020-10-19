@@ -16,6 +16,7 @@
           v-model="education.institutionType"
           :placeholder="$t('resume.register.education.placeholders.type')"
           @input="$emit('institution-type', education.institutionType)"
+          disabled
           outlined
         />
       </v-col>
@@ -66,11 +67,11 @@ export default {
     return {
       education: {
         degree: '',
-        institutionType: '',
+        institutionType: 'COLLEGE',
         description: '',
         name: '',
-        startDate: 0,
-        endDate: 0,
+        startDate: '',
+        endDate: '',
       },
       rules: {
         year: () => true,

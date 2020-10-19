@@ -40,11 +40,8 @@
             </div>
             <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
               <Skills
-                v-on:tech-skills="e => (resume.skills.techSkills = e)"
-                v-on:soft-skills="e => (resume.skills.softSkills = e)"
-                v-on:languages="e => (resume.skills.languages = e)"
-              >
-              </Skills>
+                v-on:skills="e => (resume.skills = e)"
+              />
             </div>
             <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
               <Education v-on:update-item="e => (resume.education = e)"> </Education>
@@ -71,7 +68,7 @@
                 v-if="currentStep === lastStep"
                 :label="$t('common.finish')"
                 type="primary"
-                @click="register"
+                @click="saveResume"
               />
             </div>
           </template>
@@ -121,37 +118,54 @@ export default {
           softSkills: [],
           languages: [],
         },
-        education: {
-          degree: '',
-          institutionType: '',
-          description: '',
-          institution: '',
-          startDate: '',
-          endDate: '',
-        },
+        education: [
+          {
+            degree: '',
+            institutionType: '',
+            description: '',
+            institution: '',
+            startDate: '',
+            endDate: '',
+          },
+        ],
       },
     };
   },
   computed: {
     lastStep: function _() {
-      return (this.$t('resume.register.pages') || []).length - 1;
+      return (this.$t('resume.register.tabs') || []).length - 1;
     },
   },
   methods: {
     async saveResume() {
       const resumeController = new ResumeController();
       const validResume = this.validateResume();
+
+      const resume = Object.assign({
+        workFieldId: 'it',
+      }, this.resume);
+      resume.education = {
+        courses: [],
+        educationInstitutions: this.resume.education,
+        researches: [],
+      };
+      (resume.education.educationInstitutions || []).forEach(edInst => {
+        edInst.location = {
+          'city': 'Belo Horizonte',
+          'country': 'BRA',
+        };
+      })
       if (validResume) {
         try {
-          await resumeController.save({
-            resume: this.resume,
+          await resumeController.save(resume);
+          this.$router.push({
+            'path': '/dashboard',
           });
         } catch (e) {
-          this.$toast.error('There was an error when saving your resume');
+          this.$toast.error('There was an error saving your resume');
         }
       }
     },
-
     validateResume() {
       return true; // TODO
     },
