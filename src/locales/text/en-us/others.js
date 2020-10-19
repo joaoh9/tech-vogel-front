@@ -7,9 +7,12 @@ export default {
     at: 'At',
     tv: 'Tech Vogel',
     techVogel: 'Tech Vogel',
+    applyCTA: 'I want to apply',
+    hireCTA: 'I want to hire',
     day: 'Day',
     month: 'Month',
     year: 'Year',
+    learnMore: 'Learn more',
     logout: 'Logout',
     from: 'From',
     to: 'To',
@@ -74,6 +77,29 @@ export default {
       text: 'I accept the terms and conditions',
       link: '',
     },
+  },
+  home: {
+    title1: 'Find remote',
+    title2: '<programmers>',
+    title3: 'for your company!',
+    subtitle1: 'Get your projects off the ground with the help of the',
+    subtitle2: 'programmers that best fit your needs!',
+  },
+  howItWorks: {
+    title: 'How It Works',
+    forCompanies: 'For companies',
+    step: {
+      '1': 'Log in to your account, fill your job description and press "post Job”',
+      '2':
+        'Your job will be running in our platform for 15 days collecting as many applications as possible',
+      '3': 'Receive your report with the fitest Devs for your Job.',
+      '4': 'Start your inside process and hire the best Dev for your project growth!',
+    },
+  },
+  report: {
+    title: 'How can a report help me?',
+    subtitle:
+      'Our report is a solution for your company to save time and get better hiring results by showing you the three applicants that best fit your requirements.',
   },
   errors: {
     '500':

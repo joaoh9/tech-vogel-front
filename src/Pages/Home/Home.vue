@@ -1,24 +1,40 @@
 <template>
   <div>
-    <div
-      style="min-height:100vh;"
-      class="container-fluid d-flex flex-column align-center justify-center"
-    >
-      <h1 class="mb-3">Tech Vogel</h1>
-      <h4 class="mx-5 mb-5 color-white">
-        We connect I.T. professionals from around the globe to companies looking for remote
-        employees.
-      </h4>
-      <div>
-        <v-row>
-          <v-col cols="12" md="6">
-            <g-btn type="primary" label="I want to hire" to="/signup" />
-          </v-col>
-          <v-col cols="12" md="6">
-            <g-btn type="primary" label="I'm looking for a job" to="/signup" />
-          </v-col>
-        </v-row>
-      </div>
+    <div class="container-fluid d-flex flex-column">
+      <v-img :src="homeBg" style="min-height:100vh" class="bg-color-secondary mt-n16">
+        <div
+          :style="
+            `margin-top: 156px; ${
+              $vuetify.breakpoint.mobile ? 'margin-left: 50px' : 'margin-left: 150px'
+            }`
+          "
+        >
+          <h1 class="h1-bold-alternative color-light">{{ $t('home.title1') }}</h1>
+          <h1 class="h1-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
+          <h1 class="h1-bold-alternative color-light">{{ $t('home.title3') }}</h1>
+          <h5 class="h5 mt-12 color-bg">{{ $t('home.subtitle1') }}</h5>
+          <h5 class="h5 color-bg">{{ $t('home.subtitle2') }}</h5>
+          <div class="d-flex mt-14">
+            <g-btn
+              style="height: 56px; width: 270px;"
+              type="primary"
+              label="I want to hire"
+              to="/signup"
+            />
+            <g-btn
+              class="ml-8"
+              style="height: 56px; width: 270px;"
+              type="outline"
+              color="light"
+              label="I want to hire"
+              to="/signup"
+            />
+          </div>
+        </div>
+      </v-img>
+    </div>
+    <div class="bg-color-bg py-16">
+      <HowItWorks />
     </div>
     <div class="d-flex flex-wrap bg-color-secondary">
       <div v-for="(job, index) in jobs" :key="index">
@@ -32,11 +48,14 @@
 import JobController from 'Controllers/job';
 import CompanyController from 'Controllers/company';
 import JobCardMobile from 'Components/Job/JobCardMobile';
+import homeBg from 'Assets/home-bg-op-20.svg';
+import HowItWorks from 'Components/Static/HowItWorks';
 
 export default {
   name: 'Home',
   components: {
     JobCardMobile,
+    HowItWorks,
   },
   mounted() {
     this.getJobs();
@@ -44,6 +63,7 @@ export default {
   data() {
     return {
       jobs: [],
+      homeBg,
     };
   },
   methods: {
@@ -72,10 +92,6 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  color: white !important;
-  font-weight: bold;
-}
 h6 {
   color: white;
 }
