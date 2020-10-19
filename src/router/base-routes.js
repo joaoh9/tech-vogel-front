@@ -1,7 +1,7 @@
 import Home from 'Pages/Home/Home';
 import PrivacyPolicy from 'Pages/Static/PrivacyPolicy';
 import TermsOfService from 'Pages/Static/TermsOfService';
-import NotFound from 'Pages/Static/NotFound'
+import NotFound from 'Pages/Static/NotFound';
 
 const routes = [
   {
@@ -27,6 +27,8 @@ const routes = [
   },
   // TODO
   /*
+  pricing
+  how-it-works
   {
     path: '/terms-and-conditions',
     name: 'Terms and Conditions',

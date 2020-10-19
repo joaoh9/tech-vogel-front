@@ -11,16 +11,15 @@
           <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
         </v-avatar>
       </v-btn>
-      <bdy-1
-        class="cursor-pointer mx-4"
+      <g-btn
+        class="cursor-pointer mx-n2"
         type="text"
-        :color="isHome() ? 'color-bg' : 'color-dark'"
+        :color="isHome() ? 'bg' : 'dark'"
         v-for="(item, i) in getTextButtons()"
         :key="i"
-        @click="item.goTo"
-      >
-        {{ item.text }}
-      </bdy-1>
+        @click="item.goTo()"
+        :label="item.text"
+      />
       <v-spacer />
       <g-btn
         v-if="!$vuetify.breakpoint.mobile"
@@ -80,18 +79,28 @@ export default {
       });
     },
     goToLogin() {
+      console.log('goToLogin');
       this.$router.push({
         path: '/login',
       });
     },
     goToJobList() {
-      // TODO
+      console.log('goToJobList');
+      this.$router.push({
+        path: '/jobs',
+      });
     },
     goToPricing() {
-      // TODO
+      console.log('goToPricing');
+      this.$router.push({
+        path: '/pricing',
+      });
     },
     goToHowItWorks() {
-      // TODO
+      console.log('goToHowItWorks');
+      this.$router.push({
+        path: '/how-it-works',
+      });
     },
     getBgColor() {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
@@ -116,9 +125,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.v-toolbar {
-  box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.2), 0px 8px 5px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-</style>
+<style scoped></style>

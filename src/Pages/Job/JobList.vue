@@ -13,11 +13,6 @@
         <v-row v-for="(job, i) in jobs" :key="i">
           <JobCard :job="job" class="mb-4" />
         </v-row>
-        <g-alert
-          :errorMessage="$t('Job.list.error')"
-          v-on:error="s => (requestError = s)"
-          :errorVar="requestError"
-        />
       </template>
     </g-bootstrap>
   </div>
@@ -45,7 +40,6 @@ export default {
   },
   data() {
     return {
-      requestError: false,
       finishedRequests: false,
       skills: [],
       jobs: [],

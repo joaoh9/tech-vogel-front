@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-footer class="px-0 mt-0 pt-0">
+    <v-footer class="px-0 mt-12 pt-0">
       <v-card
         height="250"
         width="100%"
