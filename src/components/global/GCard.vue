@@ -14,7 +14,6 @@
         <slot name="card-header" />
         <slot name="card-content" />
         <v-divider v-if="$slots.buttons" class="mt-4" />
-
         <slot name="buttons" />
       </v-col>
       <v-col cols="1" md="2" />

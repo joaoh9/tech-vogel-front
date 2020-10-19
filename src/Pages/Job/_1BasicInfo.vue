@@ -9,7 +9,6 @@
     />
 
     <form-input :title="$t('job.new.id.title')" required />
-    {{ id }}
     <v-text-field
       :hint="
         $t('job.new.id.inputHint', {
@@ -39,13 +38,14 @@
       @input="$emit('experience-level', experienceLevel)"
       outlined
     />
-    <form-input :title="$t('job.new.contractType.title')" />
+    <form-input required :title="$t('job.new.contractType.title')" />
     <v-autocomplete
+      v-model="contractType"
+      @input="$emit('contract-type', contractType)"
+      :rules="[rules.required(contractType)]"
       item-value="value"
       item-text="text"
       :items="$t('enums.contractType')"
-      v-model="contractType"
-      @input="$emit('contract-type', contractType)"
       outlined
     />
   </div>

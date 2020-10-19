@@ -6,8 +6,10 @@ import unlogged from './unlogged';
 import user from './user';
 import enums from './enums';
 import skill from './skills';
+import common from './common'
 
 export default {
+  ...common,
   ...bigText,
   ...company,
   ...job,
