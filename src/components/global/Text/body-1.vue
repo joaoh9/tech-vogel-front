@@ -1,5 +1,5 @@
 <template>
-  <p :class="`${color} bdy-1`"><slot name="default"></slot></p>
+  <p :class="`color-${color} bdy-1`"><slot name="default"></slot></p>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: 'color-cinza-lighten-1',
+      default: 'cinza-lighten-1',
     },
   },
 };

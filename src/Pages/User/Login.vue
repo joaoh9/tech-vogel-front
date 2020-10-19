@@ -126,7 +126,12 @@ export default {
       this.$toast.open('Login successfull');
       this.$emit('login');
       this.$router.push({
-        path: this.nextRoute || company ? '/company/dashboard' : '/dashboard',
+        path:
+          this.nextRoute.length > 0
+            ? this.nextRoute
+            : company
+              ? '/company/dashboard'
+              : '/dashboard',
       });
     },
   },

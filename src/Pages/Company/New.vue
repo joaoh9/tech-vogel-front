@@ -60,6 +60,7 @@ import About from 'Pages/Company/_1About';
 // import New3 from 'Pages/Company/New3';
 import CompanyController from 'Controllers/company';
 import RulesHelper from 'Helpers/rules';
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'New',
@@ -108,8 +109,19 @@ export default {
         return;
       }
       try {
-        await companyController.save(this.company);
+        const companyId = this.company.name
+          .replace(/ /g, '-')
+          .replace(/[A-Z]/g, match => match.toLowerCase());
+
+        await companyController.save({
+          ...this.company,
+          companyId,
+        });
         this.$toast.success('Company saved successfully');
+        StorageHelper.saveState('companyId', companyId);
+        this.$router.push({
+          path: '/pricing',
+        });
       } catch (e) {
         this.$toast.error('An error occurred when saving the company');
       }
