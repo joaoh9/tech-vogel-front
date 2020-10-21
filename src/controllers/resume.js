@@ -14,4 +14,11 @@ export default class {
     const { data } = await axios.post('/resumes', finalObj);
     return data;
   }
+
+  async getByUsername(username) {
+    const axios = Axios.GetInstance({ api: '/api' });
+    const { data } = await axios.get(`/resumes/${username}`);
+
+    return data;
+  }
 }

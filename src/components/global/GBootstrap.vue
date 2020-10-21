@@ -55,7 +55,7 @@ export default {
       const fc = Boolean(this.$slots['first-col']);
       const sc = Boolean(this.$slots['second-col']);
       const tc = Boolean(this.$slots['third-col']);
-      const colsQty = this.getColsQty(fc, sc, tc)
+      const colsQty = this.getColsQty(fc, sc, tc);
       return {
         firstColumn: {
           condition: fc,

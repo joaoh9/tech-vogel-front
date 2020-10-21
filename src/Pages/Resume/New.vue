@@ -32,16 +32,15 @@
                 v-on:full-name="e => (resume.fullName = e)"
                 v-on:main-role="e => (resume.mainRole = e)"
                 v-on:location="e => (resume.location = e)"
+                v-on:personal-bio="e => (resume.biography.personalBio = e)"
               >
               </PersonalInfo>
             </div>
             <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-              <WorkExperience v-on:update-item="e => (resume.jobs = e)"> </WorkExperience>
+              <WorkExperience v-on:update-item="e => (resume.workHistory = e)"> </WorkExperience>
             </div>
             <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
-              <Skills
-                v-on:skills="e => (resume.skills = e)"
-              />
+              <Skills v-on:skills="e => (resume.skills = e)" />
             </div>
             <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
               <Education v-on:update-item="e => (resume.education = e)"> </Education>
@@ -105,6 +104,12 @@ export default {
       educationComponent: Education,
       currentStep: 0,
       resume: {
+        cases: [],
+        customSkills: [],
+        biography: {
+          birthDate: '1990-01-01',
+          personalBio: '',
+        },
         jobInterests: [],
         contractType: [],
         mainRole: '',
@@ -112,7 +117,7 @@ export default {
           city: '',
           country: '',
         },
-        jobs: [],
+        workHistory: [],
         skills: {
           techSkills: [],
           softSkills: [],
@@ -141,9 +146,12 @@ export default {
       const resumeController = new ResumeController();
       const validResume = this.validateResume();
 
-      const resume = Object.assign({
-        workFieldId: 'it',
-      }, this.resume);
+      const resume = Object.assign(
+        {
+          workFieldId: 'it',
+        },
+        this.resume,
+      );
       resume.education = {
         courses: [],
         educationInstitutions: this.resume.education,
@@ -151,15 +159,15 @@ export default {
       };
       (resume.education.educationInstitutions || []).forEach(edInst => {
         edInst.location = {
-          'city': 'Belo Horizonte',
-          'country': 'BRA',
+          city: 'Belo Horizonte',
+          country: 'BRA',
         };
-      })
+      });
       if (validResume) {
         try {
           await resumeController.save(resume);
           this.$router.push({
-            'path': '/dashboard',
+            path: '/dashboard',
           });
         } catch (e) {
           this.$toast.error('There was an error saving your resume');
