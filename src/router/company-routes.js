@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: '/company/dashboard',
-    name: 'Dashboard',
+    name: 'Company Dashboard',
     component: Dashboard,
   },
   {

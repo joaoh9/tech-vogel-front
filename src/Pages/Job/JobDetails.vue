@@ -127,6 +127,9 @@ export default {
       try {
         await jobController.save(this.job);
         this.$toast.success('Job saved successfully');
+        this.$router.push({
+          path: '/company/jobs',
+        })
       } catch (e) {
         this.$toast.error('There was an error when saving the job');
       }

@@ -81,7 +81,7 @@ export default {
       try {
         this.jobs = await jobController.getAll();
       } catch (e) {
-        this.$toast.error('An error occured when retrieving jobs from the database')
+        this.$toast.error('An error occured when retrieving jobs from the database');
       }
     },
     getFistColInfo() {

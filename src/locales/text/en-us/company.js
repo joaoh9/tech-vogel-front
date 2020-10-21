@@ -27,7 +27,7 @@ export default {
       actions: {
         title: 'What would you like to do today?',
         manageListings: 'Manage active listings',
-        postJob: 'Post a jobs',
+        postJob: 'Post a job',
         editProfile: 'Edit company profile',
         managePayment: 'Manage payment',
       },

@@ -24,8 +24,12 @@
       </div>
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
-          <v-icon v-on="on" v-bind="attrs">mdi-chevron-down</v-icon>
-          <v-icon v-on="on" v-bind="attrs" large>mdi-account-circle</v-icon>
+          <v-icon :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs">
+            mdi-chevron-down
+          </v-icon>
+          <v-icon :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs" large>
+            mdi-account-circle
+          </v-icon>
         </template>
         <v-list>
           <v-list-item @click="m.action" v-for="(m, i) of getMenuList()" :key="i">
@@ -108,7 +112,7 @@ export default {
     goToJobList() {
       this.$router.push({
         path: '/jobs',
-      })
+      });
     },
     getBgColor() {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';

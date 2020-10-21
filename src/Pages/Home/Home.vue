@@ -26,7 +26,7 @@
               style="height: 56px; width: 270px;"
               type="outline"
               color="light"
-              label="I want to hire"
+              label="I want to get hired"
               to="/signup"
             />
           </div>
@@ -36,7 +36,7 @@
     <div class="bg-color-bg py-16">
       <HowItWorks />
     </div>
-    <div class="d-flex flex-wrap bg-color-secondary">
+    <div v-if="jobs.length" class="d-flex flex-wrap bg-color-secondary">
       <div v-for="(job, index) in jobs" :key="index">
         <JobCardMobile :job="job" class="mx-6 my-6" />
       </div>

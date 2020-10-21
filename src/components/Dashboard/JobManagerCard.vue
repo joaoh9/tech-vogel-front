@@ -1,9 +1,9 @@
 '<template>
-  <v-card class="pa-4 px-12 mt-6" elevation="6" color="bg" :min-width="getMinWidth()">
+  <v-card class="border-primary bs-primary pa-4 px-12 mt-6" color="bg" :min-width="getMinWidth()">
     <v-row>
       <v-col cols="7">
         <div class="d-flex flex-column">
-          <span class="overline">Posted x days ago</span>
+          <span class="overline">Posted {{ getDaysAgo() }}</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
           <!-- TODO: interncaionalização -->
           <span class="caption-1 color-primary">See report ></span>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import DateHelper from 'Helpers/date';
+
 export default {
   name: 'JobManagerCard',
   props: {
@@ -68,6 +70,9 @@ export default {
           text: this.$t(`enums.contractType.${this.job.contractType}`),
         },
       ];
+    },
+    getDaysAgo() {
+      return DateHelper.format(new Date(this.job.createdAt));
     },
   },
 };
