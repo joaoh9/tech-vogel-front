@@ -36,6 +36,9 @@
     <div class="bg-color-bg py-16">
       <HowItWorks />
     </div>
+    <div class="bg-color-bg pt-8 pb-16">
+      <Report />
+    </div>
     <div v-if="jobs.length" class="d-flex flex-wrap bg-color-secondary">
       <div v-for="(job, index) in jobs" :key="index">
         <JobCardMobile :job="job" class="mx-6 my-6" />
@@ -50,12 +53,14 @@ import CompanyController from 'Controllers/company';
 import JobCardMobile from 'Components/Job/JobCardMobile';
 import homeBg from 'Assets/home-bg-op-20.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
+import Report from 'Components/Static/Report';
 
 export default {
   name: 'Home',
   components: {
     JobCardMobile,
     HowItWorks,
+    Report,
   },
   mounted() {
     this.getJobs();
