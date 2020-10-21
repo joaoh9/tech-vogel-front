@@ -1,17 +1,24 @@
-import UserLogin from 'Pages/User/Login';
-import UserSignup from 'Pages/User/Signup';
-import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
-import RegistrationConfirmed from 'Pages/User/RegistrationConfirmed';
-import UserDashboard from 'Pages/User/Dashboard';
-import UserApplications from 'Pages/User/UserApplications';
-import GitHubOauth from 'Pages/User/GitHubOauth'
 import AccountSettings from 'Pages/User/AccountSettings'
+import GitHubOauth from 'Pages/User/GitHubOauth'
+import RegistrationConfirmed from 'Pages/User/RegistrationConfirmed';
+import UserApplications from 'Pages/User/UserApplications';
+import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
+import UserDashboard from 'Pages/User/Dashboard';
+import UserLogin from 'Pages/User/Login';
+import UserProfile from 'Pages/User/Profile';
+import UserSignup from 'Pages/User/Signup';
 
 const routes = [
   {
     path: '/login',
     name: 'User Login',
     component: UserLogin,
+    props: true,
+  },
+  {
+    path: '/user/profile',
+    name: 'User Profile',
+    component: UserProfile,
     props: true,
   },
   {

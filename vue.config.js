@@ -12,16 +12,6 @@ module.exports = {
         ws: true,
         changeOrigin: true,
       },
-      '^/resend-confirmation-link': {
-        target: 'https://run.mocky.io/v3/67948d36-0279-479c-9d06-02c4ea79ad37', // TODO
-        pathRewrite: { '^/api': '' },
-        changeOrigin: true,
-      },
-      '^/api-github': {
-        target: 'https://github.com/login/oauth',
-        pathRewrite: { '^/api-github': '' },
-        changeOrigin: true,
-      },
       '/api-github': {
         target: 'https://github.com/login/oauth',
         pathRewrite: { '^/api-github': '' },

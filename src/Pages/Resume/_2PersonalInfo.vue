@@ -30,15 +30,25 @@
         />
       </v-col>
     </v-row>
+    <form-input :title="$t('resume.register.workExperience.jobDescription.title')" />
+    <vue-editor
+      placeholder="TODO"
+      :editorToolbar="$t('quill.defaultToolbar')"
+      v-model="personalBio"
+    />
     <slot />
   </div>
 </template>
 
 <script>
 import StorageHelper from 'Helpers/storage';
+import { VueEditor } from 'vue2-editor';
 
 export default {
   name: 'ResumePersonalInfo',
+  components: {
+    VueEditor,
+  },
   mounted() {
     this.getUserInfo();
   },
@@ -50,6 +60,7 @@ export default {
         city: '',
         country: '',
       },
+      personalBio: '',
     };
   },
   methods: {
@@ -62,6 +73,11 @@ export default {
         });
       }
       this.fullName = user.name;
+    },
+  },
+  watch: {
+    'personalBio'() {
+      this.$emit('personal-bio', this.personalBio);
     },
   },
 };
