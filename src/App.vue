@@ -10,10 +10,10 @@
       :company="loggedIn.company"
       @logout="() => checkIfLoggedIn()"
     />
-    <v-main :style="getPageStyle()" :key="loggedIn.logged.toString() + 'main'">
+    <v-main :key="loggedIn.logged.toString() + 'main'">
       <router-view @login="() => checkIfLoggedIn()" class="view" />
     </v-main>
-    <Footer :style="getPageStyle(true)" />
+    <Footer />
   </v-app>
 </template>
 

@@ -167,7 +167,7 @@ export default {
         });
       } catch (e) {
         if (e.response.status === 500) {
-          this.errorMessage = this.$t('DefaultErrors.500');
+          this.errorMessage = this.$t('errors.500');
         }
         this.$toast.error(this.errorMessage)
         this.loading.register = false;

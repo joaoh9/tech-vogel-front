@@ -95,7 +95,7 @@ export default {
         this.loading.login = false;
       } catch (e) {
         if (e.response.status === 500) {
-          this.errorMessage = this.$t('DefaultErrors.500');
+          this.errorMessage = this.$t('errors.500');
         }
         this.loading.login = false;
         this.$toast.error(this.errorMessage);
