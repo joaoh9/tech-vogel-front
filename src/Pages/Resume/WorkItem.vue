@@ -74,8 +74,8 @@ export default {
       job: {
         companyName: '',
         role: '',
-        startDate: 0,
-        endDate: 0,
+        startDate: '',
+        endDate: '',
         description: '',
         currentJob: false,
       },

@@ -43,11 +43,11 @@
         @click="
           education.push({
             degree: '',
-            institutionType: '',
+            institutionType: 'COLLEGE',
             description: '',
             name: '',
-            startDate: 0,
-            endDate: 0,
+            startDate: '',
+            endDate: '',
           })
         "
       />
@@ -69,7 +69,7 @@ export default {
       education: [
         {
           degree: '',
-          institutionType: '',
+          institutionType: 'COLLEGE',
           description: '',
           name: '',
           startDate: '',
