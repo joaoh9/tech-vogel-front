@@ -147,6 +147,9 @@ export default {
         manageCredits: 'Manage credits',
       },
       registerCV: 'Register my CV',
+      registerCVNow: 'Register my CV now',
+      skipStep: 'Skip this step',
+      doItLater: 'Do it later',
       manageAccountInfo: 'Manage my account information',
     },
     applications: {
@@ -170,6 +173,18 @@ export default {
         { text: 'Password', icon: 'fas fa-lock' },
         { text: 'Payment', icon: 'far fa-credit-card' },
       ],
+    },
+  },
+  onboarding: {
+    welcome: {
+      title: 'Welcome to Tech Vogel',
+      secondTitle: 'We’re happy you’re here!',
+      subtitle: 'Start your journey towards the freedom of remote work by registering your CV.',
+    },
+    welcome2: {
+      title: 'Are you sure you don’t want to register your CV now?',
+      subtitle:
+        'Filling out your CV information now will enable you to quickly apply to any position you are interested in and will allow us to show you positions that best fit your profile and skills!',
     },
   },
 };
