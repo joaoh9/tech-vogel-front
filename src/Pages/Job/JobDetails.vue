@@ -65,7 +65,7 @@ export default {
     company_: Object,
     editMode: {
       type: Boolean,
-      defaul: false,
+      default: false,
     },
   },
   components: {
