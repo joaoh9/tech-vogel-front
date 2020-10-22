@@ -31,7 +31,7 @@
           <!-- <UserInformation title="Work experience" job /> -->
 
           <v-divider class="my-10 orange-color" />
-          <Skills title="Skills" />
+          <!-- <Skills title="Skills" /> -->
 
           <v-divider class="my-10 orange-color" />
           <!-- <UserInformation title="Education" company /> -->
@@ -46,7 +46,7 @@ import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 import UserCard from 'Components/Dashboard/UserCard';
 import FindMe from 'Components/User/FindMe';
 // // import UserInformation from 'Components/User/UserInformation';
-import Skills from 'Components/User/Skills';
+// // import Skills from 'Components/User/Skills';
 import UserResume from 'Controllers/resume';
 
 export default {
@@ -56,7 +56,7 @@ export default {
     UserCard,
     FindMe,
     // UserInformation,
-    Skills,
+    // Skills,
   },
   props: {
     user_: Object,
