@@ -22,6 +22,10 @@ export default class UserController {
     return data;
   }
 
+  getById(id) {
+    return this.getByUsername(id);
+  }
+
   async getByUsername(username) {
     const axios = Axios.GetInstance({ api: '/api' });
     const { data } = await axios.get(`/users/${username}`);

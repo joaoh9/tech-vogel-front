@@ -5,6 +5,7 @@ import UserApplications from 'Pages/User/UserApplications';
 import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
 import UserDashboard from 'Pages/User/Dashboard';
 import UserLogin from 'Pages/User/Login';
+import UserProfileBreno from 'Pages/User/ProfileBreno';
 import UserProfile from 'Pages/User/Profile';
 import UserSignup from 'Pages/User/Signup';
 
@@ -17,6 +18,12 @@ const routes = [
   },
   {
     path: '/user/profile',
+    name: 'User Profile',
+    component: UserProfileBreno,
+    props: true,
+  },
+  {
+    path: '/user/id/:id',
     name: 'User Profile',
     component: UserProfile,
     props: true,

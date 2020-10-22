@@ -117,8 +117,8 @@ export default {
     },
     getPrimaryButtons() {
       return [
-        { text: this.$t('common.findAJob'), goTo: this.goToLogin },
-        { text: this.$t('common.postAJob'), goTo: this.goToLogin },
+        { text: this.$t('common.findAJob'), goTo: this.goToSignup },
+        { text: this.$t('common.postAJob'), goTo: this.goToSignup },
       ];
     },
   },

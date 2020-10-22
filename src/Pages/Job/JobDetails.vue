@@ -100,7 +100,7 @@ export default {
       try {
         this.company = await companyController.getById(this.companyId);
       } catch (e) {
-        this.companyError = true;
+        this.$toast.error(`Something went wrong when retrieving company ${this.companyId} data`);
       }
     },
     async getJobData() {
@@ -109,7 +109,7 @@ export default {
       try {
         this.job = await jobController.getById(this.jobId);
       } catch (e) {
-        this.jobError = true;
+        this.$toast.error(`Something went wrong when retrieving job ${this.jobId} data`);
       }
     },
     getTimePosted() {
@@ -129,7 +129,7 @@ export default {
         this.$toast.success('Job saved successfully');
         this.$router.push({
           path: '/company/jobs',
-        })
+        });
       } catch (e) {
         this.$toast.error('There was an error when saving the job');
       }
