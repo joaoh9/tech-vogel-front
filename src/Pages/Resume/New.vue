@@ -83,7 +83,7 @@ import Start from './_0Start';
 import Preferences from './_1Preferences';
 import PersonalInfo from './_2PersonalInfo';
 import WorkExperience from './_3WorkExperience';
-import Skills from './_4Skills';
+import Skills from 'Components/General/SkillsSelection';
 import Education from './_5Education';
 
 import ResumeController from 'Controllers/resume';

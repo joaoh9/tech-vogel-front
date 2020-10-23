@@ -28,25 +28,27 @@
       :rules="[rules.required(id)]"
     />
     <form-input required :title="$t('job.new.experienceLevel.title')" />
-    <v-autocomplete
-      v-model="experienceLevel"
+    <g-autocomplete
+      @input="
+        e => {
+          experienceLevel = e;
+          $emit('experience-level', experienceLevel);
+        }
+      "
       :rules="[rules.required(experienceLevel)]"
-      item-value="value"
-      item-text="text"
       class="border-lg"
       :items="$t('enums.experienceLevel')"
-      @input="$emit('experience-level', experienceLevel)"
-      outlined
     />
     <form-input required :title="$t('job.new.contractType.title')" />
-    <v-autocomplete
-      v-model="contractType"
-      @input="$emit('contract-type', contractType)"
+    <g-autocomplete
+      @input="
+        e => {
+          contractType = e;
+          $emit('contract-type', contractType);
+        }
+      "
       :rules="[rules.required(contractType)]"
-      item-value="value"
-      item-text="text"
       :items="$t('enums.contractType')"
-      outlined
     />
   </div>
 </template>

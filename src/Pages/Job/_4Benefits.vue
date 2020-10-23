@@ -11,9 +11,13 @@
         :items="$t('enums.currencies')"
         class="mr-2"
       />
-      <v-autocomplete
-        v-model="salary.timeFrame"
-        @change="$emit('salary-time-frame', salary.timeFrame)"
+      <g-autocomplete
+        @input="
+          e => {
+            salary.timeFrame;
+            $emit('salary-time-frame', salary.timeFrame);
+          }
+        "
         label="Time Frame"
         title="Time Frame"
         outlined
