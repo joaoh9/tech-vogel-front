@@ -4,18 +4,7 @@
       <template v-slot:default="{}" class="mb-6">
         <g-card>
           <template v-slot:card-header>
-            <g-card-header
-              :title="
-                $t(`resume.register.${$t('resume.register.tabs')[currentStep]['identifier']}.title`)
-              "
-              :description="
-                $t(
-                  `resume.register.${
-                    $t('resume.register.tabs')[currentStep]['identifier']
-                  }.description`
-                )
-              "
-            />
+            <g-card-header :title="getPageTitle()" :description="getPageDescription()" />
           </template>
           <template v-slot:card-content>
             <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
@@ -180,6 +169,18 @@ export default {
     },
     validateResume() {
       return true; // TODO
+    },
+    getPageTitle() {
+      return this.$t(
+        `resume.register.${this.$t('resume.register.tabs')[this.currentStep]['identifier']}.title`,
+      );
+    },
+    getPageDescription() {
+      return this.$t(
+        `resume.register.${
+          this.$t('resume.register.tabs')[this.currentStep]['identifier']
+        }.description`,
+      );
     },
   },
 };

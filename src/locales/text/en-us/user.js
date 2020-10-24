@@ -70,7 +70,7 @@ export default {
           country: 'Country',
         },
         profilePicture: {
-          title: 'Add a profile picture',
+          title: 'Upload your profile picture',
           specifics: 'Maximum size: 200 x 200px\nFile format: .jpg or .png',
         },
       },

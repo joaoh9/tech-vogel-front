@@ -1,5 +1,16 @@
 <template>
   <div>
+    <v-file-input
+      v-model="profilePicture"
+      :placeholder="$t('resume.register.personalInfo.profilePicture.title')"
+      @change="handleFileUpload"
+    >
+      <template v-slot:selection="{ text }">
+        <v-chip color="primary" dark label small pill>
+          {{ text }}
+        </v-chip>
+      </template>
+    </v-file-input>
     <form-input class="mt-6" :title="$t('resume.register.personalInfo.fullName.title')" />
     <v-text-field v-model="fullName" @input="$emit('full-name', fullName)" outlined />
     <form-input class="mt-6" :title="$t('resume.register.mainRole.title')" />
@@ -61,6 +72,7 @@ export default {
         country: '',
       },
       personalBio: '',
+      profilePicture: [],
     };
   },
   methods: {
@@ -74,10 +86,24 @@ export default {
       }
       this.fullName = user.name;
     },
+    async handleFileUpload() {
+      this.profilePicture.data64 = await this.getBase64(this.profilePicture);
+    },
+    getBase64(file) {
+      console.log(file);
+      return new Promise(resolve => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+      });
+    },
   },
   watch: {
     personalBio() {
       this.$emit('personal-bio', this.personalBio);
+    },
+    profilePicture() {
+      console.log(this.profilePicture);
     },
   },
 };
