@@ -85,7 +85,7 @@ export default {
         to: '/jobs/new',
       },
       {
-        text: 'login',
+        text: 'Login',
         to: '/login',
       },
     ],

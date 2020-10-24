@@ -2,7 +2,6 @@
   <div>
     <form-input :title="$t('company.new.companyName')" />
     <v-text-field
-      tile
       outlined
       :rules="[rules.min(3, name)]"
       v-model="name"
@@ -10,7 +9,6 @@
     />
     <form-input :title="$t('company.new.representativeName')" />
     <v-text-field
-      tile
       outlined
       :rules="[rules.min(3, representative)]"
       v-model="representative"
@@ -18,7 +16,6 @@
     />
     <form-input :title="$t('company.new.representativeEmail')" />
     <v-text-field
-      tile
       disabled
       outlined
       :rules="[rules.email(representativeEmail)]"

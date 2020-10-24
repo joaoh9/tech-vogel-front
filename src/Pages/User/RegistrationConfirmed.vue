@@ -30,15 +30,17 @@
               block
             />
           </div>
-          <v-row justify="center" v-if="confirmationStatus === 2">
+          <v-row justify="center" v-if="confirmationStatus === 0">
             <v-col>
-              <g-btn
-                type="outlined"
-                textColor="black"
-                @click="resendCode = !resendCode"
-                class="bdy-1 cursor-pointer color-cinza-lighten-1"
-                :label="$t('signup.resendConfirmationCode.title')"
-              />
+              <div class="d-flex justify-center">
+                <g-btn
+                  type="outlined"
+                  textColor="black"
+                  @click="resendCode = !resendCode"
+                  class="bdy-1 cursor-pointer color-cinza-lighten-1"
+                  :label="$t('signup.resendConfirmationCode.title')"
+                />
+              </div>
             </v-col>
           </v-row>
           <v-row justify="center">
