@@ -76,7 +76,7 @@ export default {
     },
   },
   watch: {
-    'personalBio'() {
+    personalBio() {
       this.$emit('personal-bio', this.personalBio);
     },
   },

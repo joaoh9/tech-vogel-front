@@ -28,6 +28,8 @@ export default {
   name: 'app',
   mounted() {
     this.checkIfLoggedIn();
+    window.name = 'Tech Vogel';
+    document.title = 'Tech Vogel';
   },
   data() {
     return {

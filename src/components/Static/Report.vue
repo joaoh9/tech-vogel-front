@@ -7,11 +7,6 @@
           <h5 class="color-black">
             {{ $t('report.subtitle') }}
           </h5>
-          <!-- <v-card class="pa-6 mt-12 d-flex align-center justify-space-between bs-primary">
-            <h6 class="color-primary mb-0">{{ $t('report.card') }}</h6>
-            <v-icon color="primary">mdi-arrow-down</v-icon>
-          </v-card>
-          -->
           <v-expansion-panels class="mt-6">
             <v-expansion-panel class="boder-primary bs-none" style="background-color: #fcfcff;">
               <v-expansion-panel-header>
@@ -25,7 +20,6 @@
                 <bdy-1 color="dark">
                   {{ text.description }}
                 </bdy-1>
-                <!-- </div> -->
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
