@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="500px" min-width="300" class="px-5" elevation="3" color="bg">
+  <v-card v-if="filtersImplemented" max-width="500px" min-width="300" class="px-5 bs-primary" color="bg">
     <v-card-text>
       <h6 class="font-weight-bold text--primary">
         TODO
@@ -41,6 +41,7 @@ export default {
       editYourFilters: false,
       switch1: '',
       experienceLevel: '',
+      filtersImplemented: false,
     };
   },
 };
