@@ -7,22 +7,7 @@
           <h5 class="color-black">
             {{ $t('report.subtitle') }}
           </h5>
-          <v-expansion-panels class="mt-6">
-            <v-expansion-panel class="boder-primary bs-none" style="background-color: #fcfcff;">
-              <v-expansion-panel-header>
-                <h6 class="color-primary mb-0">{{ $t('report.card') }}</h6>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content
-                v-for="(text, index) in getReportText()"
-                :key="index"
-                class="my-3"
-              >
-                <bdy-1 color="dark">
-                  {{ text.description }}
-                </bdy-1>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
+          <FAQ :items="$t('FAQ.report')" />
         </div>
       </v-col>
       <v-col cols="12" md="6">
@@ -33,23 +18,18 @@
 </template>
 
 <script>
+import FAQ from 'Components/Static/FAQ';
 import Report from 'Assets/report.svg';
 
 export default {
   name: 'Report',
+  components: {
+    FAQ,
+  },
   data() {
     return {
       img: Report,
     };
-  },
-  methods: {
-    getReportText() {
-      return [
-        { description: this.$t('report.explanation.1') },
-        { description: this.$t('report.explanation.2') },
-        { description: this.$t('report.explanation.3') },
-      ];
-    },
   },
 };
 </script>

@@ -26,14 +26,6 @@ export default {
     subtitle:
       'Our report is a solution for your company to save time and get better hiring results by showing you the three applicants that best fit your requirements.',
     card: 'How does it work?',
-    explanation: {
-      '1':
-        'When potential applicants register to Tech Vogel, they are asked to select which programming languages, frameworks and knowledge areas they are skilled on and for how long they have been working with them. They can also select soft skills and foreign language skills.',
-      '2':
-        'When a company creates a job ad on Tech Vogel, they are also asked to select a group of skills that are required for that position and rank them by priority. ',
-      '3':
-        'Our algorithm compares the information on the job ad to the skills on the applicants’ CVs and, after 15 days of the job ad being up, the company will receive their Report with the breakdown of the three best CVs for the job!',
-    },
   },
   errors: {
     '500':
