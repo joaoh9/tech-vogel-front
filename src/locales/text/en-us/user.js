@@ -152,6 +152,7 @@ export default {
       doItLater: 'Do it later',
       manageAccountInfo: 'Manage my account information',
     },
+    gotToDashboard: 'Go to Dashboard',
     applications: {
       title: 'Your applications',
       returnToDashboard: 'Return to dashboard',
@@ -180,17 +181,33 @@ export default {
         { text: 'Payment', icon: 'far fa-credit-card' },
       ],
     },
-  },
-  onboarding: {
-    welcome: {
+    onboarding: {
       title: 'Welcome to Tech Vogel',
-      secondTitle: 'We’re happy you’re here!',
-      subtitle: 'Start your journey towards the freedom of remote work by registering your CV.',
-    },
-    welcome2: {
-      title: 'Are you sure you don’t want to register your CV now?',
-      subtitle:
-        'Filling out your CV information now will enable you to quickly apply to any position you are interested in and will allow us to show you positions that best fit your profile and skills!',
+      description:
+        'Here, you\'ll find ads for remote job positions in tech. We value your experience and want to make it the best it can be, so any feedback you\'d like to give us is appreciated, just click the Feedback tab on the right of your screen!\n\n\nLearn more about how the platform works below:',
+      skip: 'Skip first look',
+      data: [
+        {
+          title: 'Sobre os 15 vogels',
+          subtitle:
+            'Vogels are how you’ll be able to keep track of how many jobs you’ve applied to. For everyday you log into Tech Vogel from now on, you will receive 1 more Vogel!',
+        },
+        {
+          title: 'Clear and straight-to-the-point job ads',
+          subtitle:
+            'Companies on Tech Vogel are required to fill out their job ad with every detail about the position, including compensation, perks and much more!',
+        },
+        {
+          title: 'Two-click application process',
+          subtitle:
+            'After you register your CV, you will be able to apply to jobs just with two clicks. No forms, no uploads, just clicks!',
+        },
+        {
+          title: 'No-nonsense feedback',
+          subtitle:
+            'When you apply through Tech Vogel, you’ll never be left hanging. After the job ad finishes running, you will know in up to 1 day if you were included on the report to the company.',
+        },
+      ],
     },
   },
 };

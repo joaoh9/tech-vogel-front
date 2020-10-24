@@ -2,7 +2,7 @@
   <div class="mb-6">
     <PrimaryHeader
       :title="$t('privacyPolicy.title')"
-      :description="$t('privacyPolicy.description')"
+      :subtitle="$t('privacyPolicy.description')"
     />
 
     <SubHeader :subtitle="$t('privacyPolicy.subtitle')" :buttons="$t('privacyPolicy.buttons')" />

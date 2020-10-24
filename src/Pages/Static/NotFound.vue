@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PrimaryHeader title="404 - Page not found" description="Uh-oh" />
+    <PrimaryHeader title="404 - Page not found" subtitle="Uh-oh" />
     <div class="d-flex justify-center mt-6">
       <g-btn to="/" type="primary" label="Click here to return home" />
     </div>

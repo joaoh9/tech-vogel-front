@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex justify-center">
       <v-tabs
-        v-if="!$vuetify.breakpoint.smAndDown"
+        v-if="!$vuetify.breakpoint.mobile"
         vertical
         :value="this.value"
         @change="updateStep"
@@ -21,10 +21,10 @@
       </v-tabs>
       <slot name="default" />
     </div>
-    <v-divider v-if="$vuetify.breakpoint.smAndDown" class="mb-4" />
-    <div class="d-flex justify-center my-2" v-if="$vuetify.breakpoint.smAndDown">
+    <v-divider v-if="$vuetify.breakpoint.mobile" class="mb-4" />
+    <div class="d-flex justify-center my-2" v-if="$vuetify.breakpoint.mobile">
       <v-rating
-        :value="this.stepBottomNav"
+        :value="stepBottomNav"
         :length="stepsNames.length"
         small
         empty-icon="mdi-circle"
@@ -32,7 +32,7 @@
         color="primary"
         background-color="tertiary"
         @input="updateStepBottomNav"
-      ></v-rating>
+      />
     </div>
   </div>
 </template>

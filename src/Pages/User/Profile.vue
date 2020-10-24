@@ -2,7 +2,7 @@
   <div>
     <PrimaryHeader
       title="Revise your CV!"
-      description="You will be able to edit it at any time"
+      subtitle="You will be able to edit it at any time"
       :cols="true"
     >
       <div :class="!$vuetify.breakpoint.mobile && 'd-flex align-center justify-center mt-8'">

@@ -79,25 +79,21 @@ export default {
       });
     },
     goToLogin() {
-      console.log('goToLogin');
       this.$router.push({
         path: '/login',
       });
     },
     goToJobList() {
-      console.log('goToJobList');
       this.$router.push({
         path: '/jobs',
       });
     },
     goToPricing() {
-      console.log('goToPricing');
       this.$router.push({
         path: '/pricing',
       });
     },
     goToHowItWorks() {
-      console.log('goToHowItWorks');
       this.$router.push({
         path: '/how-it-works',
       });

@@ -2,7 +2,7 @@
   <div>
     <PrimaryHeader
       :title="$t('termsOfService.title')"
-      :description="$t('termsOfService.description')"
+      :subtitle="$t('termsOfService.description')"
     />
 
     <SubHeader
