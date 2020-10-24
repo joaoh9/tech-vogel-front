@@ -2,7 +2,7 @@
   <v-row>
     <v-col cols="1" md="2"> </v-col>
     <v-col cols="10" md="8">
-      <v-row>
+      <v-row v-if="false">
         <v-col cols="12" md="4">
           <g-card minWidth="0" maxWidth="100vw">
             <template v-slot:card-content>
@@ -70,6 +70,7 @@
           </div>
         </v-col>
       </v-row>
+      <NoJobsApplied />
     </v-col>
     <v-col cols="1" md="2"></v-col>
   </v-row>
@@ -77,9 +78,13 @@
 
 <script>
 import StorageHelper from 'Helpers/storage';
+import NoJobsApplied from 'Components/Dashboard/NoJobsApplied'
 
 export default {
   name: 'ProfessionalDashboard',
+  components: {
+    NoJobsApplied,
+  },
   mounted() {
     this.user = StorageHelper.loadState('user');
     if (!this.user) {
