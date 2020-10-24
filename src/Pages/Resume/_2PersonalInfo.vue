@@ -11,9 +11,9 @@
         </v-chip>
       </template>
     </v-file-input>
-    <form-input class="mt-6" :title="$t('resume.register.personalInfo.fullName.title')" />
+    <form-input required class="mt-6" :title="$t('resume.register.personalInfo.fullName.title')" />
     <v-text-field v-model="fullName" @input="$emit('full-name', fullName)" outlined />
-    <form-input class="mt-6" :title="$t('resume.register.mainRole.title')" />
+    <form-input required class="mt-6" :title="$t('resume.register.mainRole.title')" />
     <v-text-field
       :placeholder="$t('resume.register.mainRole.placeholder')"
       v-model="mainRole"
@@ -41,7 +41,7 @@
         />
       </v-col>
     </v-row>
-    <form-input :title="$t('resume.register.workExperience.jobDescription.title')" />
+    <form-input required :title="$t('resume.register.workExperience.jobDescription.title')" />
     <vue-editor
       placeholder="TODO"
       :editorToolbar="$t('quill.defaultToolbar')"

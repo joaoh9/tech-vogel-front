@@ -3,7 +3,8 @@
     v-if="type === 'disabled'"
     disabled
     @click="$emit('click')"
-    large
+    :large="!xl"
+    :x-large="xl"
     :data-cy="dataCy"
     :min-width="minwidth"
     :max-width="maxwidth"
@@ -23,10 +24,11 @@
   </v-btn>
 
   <v-btn
+    :large="!xl"
+    :x-large="xl"
     v-else
     :data-cy="dataCy"
     @click="$emit('click')"
-    large
     :color="getColor()"
     :outlined="getOutline()"
     :elevation="getElevation()"
@@ -76,6 +78,7 @@ export default {
     dataCy: String,
     loading: Boolean,
     elevation: [ String, Number ],
+    xl: Boolean,
   },
   methods: {
     getElevation() {
