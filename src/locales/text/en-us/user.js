@@ -164,6 +164,12 @@ export default {
       job: {
         period: 'Applied one day ago | Applied %{count} days ago',
       },
+      noJobsApplied: {
+        title: 'You haven’t applied to any jobs yet.',
+        text1:
+          'Once you do, they will be displayed here and you’ll be able to check on their status and get feedback from recruiters.',
+        text2: 'Remember to register your CV before you start applying!',
+      },
     },
     settings: {
       title: 'Settings',

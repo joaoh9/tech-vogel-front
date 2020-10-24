@@ -4,6 +4,7 @@ import TermsOfService from 'Pages/Static/TermsOfService';
 import NotFound from 'Pages/Static/NotFound';
 import AboutUs from 'Components/Static/AboutUs';
 import HowItWorks from 'Components/Static/HowItWorks';
+import FAQ from 'Pages/Static/FAQ'
 
 const routes = [
   {
@@ -37,16 +38,11 @@ const routes = [
     name: 'How it works',
     component: HowItWorks,
   },
-  // TODO
-  /*
-  pricing
-  how-it-works
   {
-    path: '/terms-and-conditions',
-    name: 'Terms and Conditions',
-    component: null, // TODO
+    path: '/FAQ',
+    name: 'FAQ',
+    component: FAQ,
   },
-  */
 ];
 
 export default routes;

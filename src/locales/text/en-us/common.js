@@ -19,6 +19,7 @@ export default {
     user: 'user',
     professional: 'professional',
     howItWorks: 'How It Works',
+    FAQ: 'FAQ',
     login: 'Login',
     signup: 'Sign up',
     apply: 'Apply',
