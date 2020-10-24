@@ -2,7 +2,7 @@
   <div class="d-flex flex-column">
     <h6 class="color-primary">{{ title }}</h6>
     <p
-      @click="goToLink(item)"
+      @click="newWindow ? goToNewWindow(item) : goToLink(item)"
       v-for="(item, i) in items"
       :key="i"
       class="color-light cursor-pointer"
@@ -18,10 +18,14 @@ export default {
   props: {
     items: Array,
     title: String,
+    newWindow: Boolean,
   },
   methods: {
     goToLink(item) {
       this.$router.push({ path: item.to });
+    },
+    goToNewWindow(item) {
+      window.open(item.link, '_blank');
     },
   },
 };

@@ -119,6 +119,12 @@ export default {
     ],
     bigText: bigText.privacyPolicy,
   },
+  aboutUs: {
+    text1:
+      'Tech Vogel was created by people passionated with freedom, so we created a platform for developers to find the best remote jobs and maintain their freedom to work wherever they feel most comfortable and productive!',
+    text2:
+      'Our vision has always been and always will be to bring freedom to as many people as possible through our platform, allowing remote work and more projects taking off each day with a diversified and qualifide workforce.',
+  },
   termsOfService: {
     title: 'Your privacy is important to us.',
     description: 'You can learn more about the steps we take to ensure it here.',

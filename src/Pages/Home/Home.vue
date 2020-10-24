@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-color-bg ">
     <div class="container-fluid d-flex flex-column">
       <v-img :src="homeBg" style="min-height:100vh" class="bg-color-secondary mt-n16">
         <div
@@ -33,16 +33,19 @@
         </div>
       </v-img>
     </div>
-    <div class="bg-color-bg py-16">
+    <div class="my-6">
       <HowItWorks />
     </div>
-    <div class="bg-color-bg pt-8 pb-16">
+    <div class="pb-16">
       <Report />
     </div>
     <div v-if="jobs.length" class="d-flex flex-wrap bg-color-secondary">
       <div v-for="(job, index) in jobs" :key="index">
         <JobCardMobile :job="job" class="mx-6 my-6" />
       </div>
+    </div>
+    <div>
+      <AboutUs />
     </div>
   </div>
 </template>
@@ -54,6 +57,7 @@ import JobCardMobile from 'Components/Job/JobCardMobile';
 import homeBg from 'Assets/home-bg-op-20.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
 import Report from 'Components/Static/Report';
+import AboutUs from 'Components/Static/AboutUs'
 
 export default {
   name: 'Home',
@@ -61,6 +65,7 @@ export default {
     JobCardMobile,
     HowItWorks,
     Report,
+    AboutUs,
   },
   mounted() {
     this.getJobs();

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-footer :class="`px-0 ${isHome() ? '' : 'mt-12'} pt-0`">
+  <div class="bg-color-bg">
+    <v-footer :class="`px-0 mt-12 pt-0`">
       <v-card
         height="250"
         width="100%"
@@ -21,6 +21,7 @@
           </v-col>
           <v-col>
             <FooterLinks
+              newWindow
               :title="$t('footer.socialMedia.title')"
               :items="$t('footer.socialMedia.links')"
             />
@@ -68,14 +69,6 @@ export default {
         this.$t('common.contactEmail'),
       ],
     };
-  },
-  methods: {
-    goToSocialMedia(sm) {
-      window.open(sm.link, '_blank');
-    },
-    isHome() {
-      return this.$router.history.current.name === 'Home';
-    },
   },
 };
 </script>

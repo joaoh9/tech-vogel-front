@@ -26,6 +26,7 @@ export default {
     hire: 'Hire',
     hiring: 'Hiring',
     aboutUs: 'About Us',
+    about: 'About',
     content: 'Content',
     next: 'Next',
     confirm: 'Confirm',

@@ -2,6 +2,8 @@ import Home from 'Pages/Home/Home';
 import PrivacyPolicy from 'Pages/Static/PrivacyPolicy';
 import TermsOfService from 'Pages/Static/TermsOfService';
 import NotFound from 'Pages/Static/NotFound';
+import AboutUs from 'Components/Static/AboutUs';
+import HowItWorks from 'Components/Static/HowItWorks';
 
 const routes = [
   {
@@ -25,6 +27,16 @@ const routes = [
     name: 'Not Found',
     component: NotFound,
   },
+  {
+    path: '/aboutus',
+    name: 'About us',
+    component: AboutUs, // TODO
+  },
+  {
+    path: '/how-it-works',
+    name: 'How it works',
+    component: HowItWorks,
+  },
   // TODO
   /*
   pricing
@@ -32,16 +44,6 @@ const routes = [
   {
     path: '/terms-and-conditions',
     name: 'Terms and Conditions',
-    component: null, // TODO
-  },
-  {
-    path: '/aboutus',
-    name: 'About us',
-    component: null, // TODO
-  },
-  {
-    path: '/about-us',
-    name: 'About us',
     component: null, // TODO
   },
   */

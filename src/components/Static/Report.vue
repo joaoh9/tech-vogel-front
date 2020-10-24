@@ -17,7 +17,11 @@
               <v-expansion-panel-header>
                 <h6 class="color-primary mb-0">{{ $t('report.card') }}</h6>
               </v-expansion-panel-header>
-              <v-expansion-panel-content v-for="(text, index) in getReportText()" :key="index" class="my-3">
+              <v-expansion-panel-content
+                v-for="(text, index) in getReportText()"
+                :key="index"
+                class="my-3"
+              >
                 <bdy-1 color="dark">
                   {{ text.description }}
                 </bdy-1>
@@ -28,14 +32,15 @@
         </div>
       </v-col>
       <v-col cols="12" md="6">
-        <v-img :src="img" contain height="500" class="mt-16" />
+        <v-img :src="img" contain height="300" class="mt-16" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import Report from '../../assets/report.svg';
+import Report from 'Assets/report.svg';
+
 export default {
   name: 'Report',
   data() {
