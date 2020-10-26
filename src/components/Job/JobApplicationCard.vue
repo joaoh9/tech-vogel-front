@@ -51,21 +51,16 @@
       </v-dialog>
     </v-row>
     <v-divider class="mt-4" />
-    <v-row class="mt-5">
-      <div class="d-flex">
-        <!-- <v-avatar height="80" width="80" color="cinza-lighten-2"> </v-avatar> -->
-        <div class="d-flex justify-center flex-column">
-          <h6 class="text-capitalize">{{ company.name }}</h6>
-          <bdy-2>
-            {{ $t('job.details.managedBy', { user: company.representative }) }}
-          </bdy-2>
-        </div>
-      </div>
-    </v-row>
-    <v-row class="mt-4">
+    <div class="d-flex align-center flex-column">
+      <h6 class="text-capitalize">{{ company.name }}</h6>
+      <bdy-2>
+        {{ $t('job.details.managedBy', { user: company.representative }) }}
+      </bdy-2>
+    </div>
+    <div class="d-flex align-center flex-column mt-4">
       <h6>{{ $t('job.details.aboutTheCompany') }}</h6>
-      <div class="color-cinza-lighten-1" v-html="company.companyDescription"></div>
-    </v-row>
+      <sub-1 class="" v-html="company.companyDescription"></sub-1>
+    </div>
   </v-card>
 </template>
 

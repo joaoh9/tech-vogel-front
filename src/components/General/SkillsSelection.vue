@@ -11,6 +11,7 @@
       :items="$t('skills.techSkills')"
     />
     <sub-1>{{ $t(`${form}.new.techSkills.inputHint`) }}</sub-1>
+
     <SkillExperienceLevel
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
@@ -62,6 +63,17 @@ export default {
       type: String,
       default: 'job',
     },
+    job: {
+      type: Object,
+    },
+  },
+  mounted() {
+    if (this.job && this.job.skills) {
+      this.skills = this.job.skills;
+      this.techSkills = this.job.techSkills;
+      this.softSkills = this.job.softSkills;
+      this.languages = this.job.languages;
+    }
   },
   data() {
     return {

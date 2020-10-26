@@ -1,32 +1,39 @@
 <template>
-  <div class="container-fluid mx-12">
-    <v-row>
-      <v-col md="4" cols="12">
-        <UserCard :user="user" v-if="user" :key="loading.user" />
-      </v-col>
-      <v-col md="8" cols="12" v-if="company">
-        <div>
-          <CompanyCard :company="company" v-if="company" />
-          <div class="mt-8 mb-12">
-            <h4>{{ $t('company.dashboard.actions.title') }}</h4>
-          </div>
-          <v-row>
-            <v-col cols="6" v-for="(action, index) in getCardActions()" v-bind:key="index">
-              <ActionCard :action="action" />
-            </v-col>
-          </v-row>
-          <div class="my-5">
-            <g-btn
-              outlined
-              block
-              type="secondary"
-              :label="$t('company.dashboard.manageAccountInfo')"
-            />
-          </div>
+  <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
+    <template template v-slot:first-col>
+      <UserCard :user="user" />
+      <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" />
+      <g-btn
+        class="mt-4"
+        type="outlined"
+        color="secondary"
+        block
+        xl
+        :label="$t('user.dashboard.manageAccount')"
+      />
+    </template>
+    <template template v-slot:second-col>
+      <div>
+        <CompanyCard :company="company" />
+        <div class="mt-8 mb-12">
+          <h4>{{ $t('company.dashboard.actions.title') }}</h4>
         </div>
-      </v-col>
-    </v-row>
-  </div>
+        <v-row>
+          <v-col cols="6" v-for="(action, index) in getCardActions()" v-bind:key="index">
+            <ActionCard :action="action" />
+          </v-col>
+        </v-row>
+        <div class="my-5">
+          <g-btn
+            outlined
+            block
+            type="secondary"
+            :label="$t('company.dashboard.manageAccountInfo')"
+          />
+        </div>
+      </div>
+    </template>
+  </g-bootstrap>
 </template>
 
 <script>
@@ -40,6 +47,7 @@ export default {
   name: 'CompanyDashboard',
   mounted() {
     this.getUserInfo();
+    this.getCompanyInfo();
   },
   components: {
     CompanyCard,
@@ -57,14 +65,24 @@ export default {
     };
   },
   methods: {
-    async getCompanyInfo(companyId) {
+    async getCompanyInfo() {
+      const companyId = StorageHelper.loadState('companyId');
+      if (!companyId) {
+        this.$toast.error(
+          'Could not retrieve company info. Make sure you have a registered company',
+        );
+        this.$router.push({
+          name: 'New Company',
+        });
+      }
       const companyController = new CompanyController();
 
       try {
         this.company = await companyController.getById(companyId);
-        this.loading.company = false;
       } catch (e) {
-        this.loading.company = false;
+        this.$toast.error(
+          'Could not retrieve company info. Make sure you have a registered company',
+        );
       }
     },
     async getUserInfo() {
@@ -78,14 +96,6 @@ export default {
           path: '/login',
         });
       }
-
-      const companyId = StorageHelper.loadState('companyId');
-      if (!companyId) {
-        this.$toast.error(
-          'Could not retrieve company info. Make sure you have a registered company',
-        );
-      }
-      await this.getCompanyInfo(companyId);
     },
     getCardActions() {
       return [
@@ -110,6 +120,20 @@ export default {
           icon: 'fa-dollar-sign',
         },
       ];
+    },
+    getFistColInfo() {
+      return {
+        md: 4,
+        cols: 12,
+        condition: true,
+      };
+    },
+    getSecondColInfo() {
+      return {
+        md: 8,
+        cols: 12,
+        condition: true,
+      };
     },
   },
   watch: {

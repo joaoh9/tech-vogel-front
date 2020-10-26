@@ -1,55 +1,71 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-md-12">
     <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
-      <template v-slot:default="{}" class="mb-6">
-        <g-card>
-          <template v-slot:card-header>
-            <g-card-header
-              :title="getPageTitle(currentStep)"
-              :description="getPageDescripton(currentStep)"
+      <g-card>
+        <template v-slot:card-header>
+          <g-card-header
+            :title="getPageTitle(currentStep)"
+            :description="getPageDescripton(currentStep)"
+          />
+        </template>
+        <template v-slot:card-content>
+          <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
+            <BasicInfo
+              :job="{
+                title: (job && job.title) || '',
+                experienceLevel: (job && job.experienceLevel) || '',
+                contractType: (job && job.contractType) || '',
+                id: (job && job.id) || '',
+              }"
+              v-on:title="r => (job_.title = r)"
+              v-on:id="r => (job_.id = r)"
+              v-on:experience-level="r => (job_.experienceLevel = r)"
+              v-on:contract-type="r => (job_.contractType = r)"
             />
-          </template>
-          <template v-slot:card-content>
-            <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-              <BasicInfo
-                v-on:title="r => (job_.title = r)"
-                v-on:id="r => (job_.id = r)"
-                v-on:experience-level="r => (job_.experienceLevel = r)"
-                v-on:contract-type="r => (job_.contractType = r)"
-              />
-            </div>
-            <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-              <About v-on:description="r => (job_.description = r)" />
-            </div>
-            <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
-              <Skills v-on:skills="r => (job_.skills = r)" />
-            </div>
-            <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-              <Benefits
-                v-on:benefits="r => (job_.benefits = r)"
-                v-on:salary-currency="r => (job_.salary.currency = r)"
-                v-on:salary-time-frame="r => (job_.salary.timeFrame = r)"
-                v-on:salary-min="r => (job_.salary.min = r)"
-                v-on:salary-max="r => (job_.salary.max = r)"
-              />
-            </div>
-          </template>
-          <template v-slot:buttons>
-            <div
-              :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`"
-              style="z-index: -1"
-            >
-              <g-btn
-                :label="$t('common.back')"
-                v-if="currentStep > 0"
-                type="secondary"
-                @click="currentStep--"
-              />
-              <g-btn :label="$t('common.next')" type="primary" @click="checkInputsAndFollowUp()" />
-            </div>
-          </template>
-        </g-card>
-      </template>
+          </div>
+          <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
+            <About
+              :job="{ description: (job && job.description) || '' }"
+              v-on:description="r => (job_.description = r)"
+            />
+          </div>
+          <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
+            <Skills
+              :job="{
+                skills: (job && job.skills) || null,
+                techSkills: (job && job.skills.techSkills) || null,
+                softSkills: (job && job.skills.softSkills) || null,
+                languages: (job && job.skills.languages) || null,
+              }"
+              v-on:skills="r => (job_.skills = r)"
+            />
+          </div>
+          <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
+            <Benefits
+              :job="{ benefits: (job && job.benefits) || '', salary: (job && job.salary) || null }"
+              v-on:benefits="r => (job_.benefits = r)"
+              v-on:salary-currency="r => (job_.salary.currency = r)"
+              v-on:salary-time-frame="r => (job_.salary.timeFrame = r)"
+              v-on:salary-min="r => (job_.salary.min = r)"
+              v-on:salary-max="r => (job_.salary.max = r)"
+            />
+          </div>
+        </template>
+        <template v-slot:buttons>
+          <div
+            :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`"
+            style="z-index: -1"
+          >
+            <g-btn
+              :label="$t('common.back')"
+              v-if="currentStep > 0"
+              type="secondary"
+              @click="currentStep--"
+            />
+            <g-btn :label="$t('common.next')" type="primary" @click="checkInputsAndFollowUp()" />
+          </div>
+        </template>
+      </g-card>
     </Stepper>
   </div>
 </template>
@@ -67,9 +83,10 @@ import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob',
-  params: {
+  props: {
     job: {
       type: Object,
+      default: () => {},
     },
   },
   components: {
@@ -80,7 +97,10 @@ export default {
     Stepper,
   },
   mounted() {
-    this.jobs_ = this.job;
+    console.log('this.job', this.job);
+    if (this.job) {
+      this.job_ = this.job;
+    }
     this.getCompanyInfo();
   },
   data() {

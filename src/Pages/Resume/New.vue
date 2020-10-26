@@ -1,67 +1,65 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-md-12">
     <Stepper :stepsNames="$t('resume.register.tabs').map(s => s.name)" v-model="currentStep">
-      <template v-slot:default="{}" class="mb-6">
-        <g-card>
-          <template v-slot:card-header>
-            <g-card-header :title="getPageTitle()" :description="getPageDescription()" />
-          </template>
-          <template v-slot:card-content>
-            <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-              <Start v-on:manual-register="currentStep += 1" />
-            </div>
-            <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-              <Preferences
-                v-on:job-interests="e => (resume.jobInterests = e)"
-                v-on:contract-type="e => (resume.contractType = e)"
-              />
-            </div>
-            <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
-              <PersonalInfo
-                v-on:full-name="e => (resume.fullName = e)"
-                v-on:main-role="e => (resume.mainRole = e)"
-                v-on:location="e => (resume.location = e)"
-                v-on:personal-bio="e => (resume.biography.personalBio = e)"
-              >
-              </PersonalInfo>
-            </div>
-            <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-              <WorkExperience v-on:update-item="e => (resume.workHistory = e)"> </WorkExperience>
-            </div>
-            <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
-              <Skills form="resume" v-on:skills="e => (resume.skills = e)" />
-            </div>
-            <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
-              <Education v-on:update-item="e => (resume.education = e)"> </Education>
-            </div>
-          </template>
-          <template v-slot:buttons>
-            <div
-              :class="`d-flex ${currentStep === 1 ? 'justify-end' : 'justify-space-between'}  my-6`"
-              style="z-index: -1"
+      <g-card>
+        <template v-slot:card-header>
+          <g-card-header :title="getPageTitle()" :description="getPageDescription()" />
+        </template>
+        <template v-slot:card-content>
+          <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
+            <Start v-on:manual-register="currentStep += 1" />
+          </div>
+          <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
+            <Preferences
+              v-on:job-interests="e => (resume.jobInterests = e)"
+              v-on:contract-type="e => (resume.contractType = e)"
+            />
+          </div>
+          <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
+            <PersonalInfo
+              v-on:full-name="e => (resume.fullName = e)"
+              v-on:main-role="e => (resume.mainRole = e)"
+              v-on:location="e => (resume.location = e)"
+              v-on:personal-bio="e => (resume.biography.personalBio = e)"
             >
-              <g-btn
-                :label="$t('common.back')"
-                v-if="currentStep > 1"
-                type="secondary"
-                @click="currentStep--"
-              />
-              <g-btn
-                v-if="currentStep > 0 && currentStep < lastStep"
-                :label="$t('common.next')"
-                type="primary"
-                @click="currentStep++"
-              />
-              <g-btn
-                v-if="currentStep === lastStep"
-                :label="$t('common.finish')"
-                type="primary"
-                @click="saveResume"
-              />
-            </div>
-          </template>
-        </g-card>
-      </template>
+            </PersonalInfo>
+          </div>
+          <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
+            <WorkExperience v-on:update-item="e => (resume.workHistory = e)"> </WorkExperience>
+          </div>
+          <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
+            <Skills form="resume" v-on:skills="e => (resume.skills = e)" />
+          </div>
+          <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
+            <Education v-on:update-item="e => (resume.education = e)"> </Education>
+          </div>
+        </template>
+        <template v-slot:buttons>
+          <div
+            :class="`d-flex ${currentStep === 1 ? 'justify-end' : 'justify-space-between'}  my-6`"
+            style="z-index: -1"
+          >
+            <g-btn
+              :label="$t('common.back')"
+              v-if="currentStep > 1"
+              type="secondary"
+              @click="currentStep--"
+            />
+            <g-btn
+              v-if="currentStep > 0 && currentStep < lastStep"
+              :label="$t('common.next')"
+              type="primary"
+              @click="currentStep++"
+            />
+            <g-btn
+              v-if="currentStep === lastStep"
+              :label="$t('common.finish')"
+              type="primary"
+              @click="saveResume"
+            />
+          </div>
+        </template>
+      </g-card>
     </Stepper>
   </div>
 </template>
@@ -74,7 +72,7 @@ import PersonalInfo from './_2PersonalInfo';
 import WorkExperience from './_3WorkExperience';
 import Skills from 'Components/General/SkillsSelection';
 import Education from './_5Education';
-
+import StorageHelper from 'Helpers/storage'
 import ResumeController from 'Controllers/resume';
 
 export default {
@@ -90,6 +88,13 @@ export default {
     WorkExperience,
     Skills,
     Education,
+  },
+  mounted() {
+    const company = StorageHelper.loadState('companyId')
+    if(company) {
+      this.$router.push('/404')
+      // De propósito
+    }
   },
   data() {
     return {

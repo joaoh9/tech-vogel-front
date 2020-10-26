@@ -7,19 +7,23 @@
         :value="this.value"
         @change="updateStep"
         background-color="rgba(0,0,0,0)"
-        class="mr-4"
+        class="mr-4 cursor-default"
         :key="updatedTab"
       >
         <v-tab
           v-for="(item, i) in stepsExibition"
           :key="i"
           :aria-selected="true"
+          style="cursor: default"
+          @click="() => true"
           :class="`color-cinza-lighten-2 text-capitalize ${i === value_ ? 'sub-2' : 'bdy-2'}`"
         >
           {{ item.name }}
         </v-tab>
       </v-tabs>
-      <slot name="default" />
+      <div class="mb-6">
+        <slot name="default" />
+      </div>
     </div>
     <v-divider v-if="$vuetify.breakpoint.mobile" class="mb-4" />
     <div class="d-flex justify-center my-2" v-if="$vuetify.breakpoint.mobile">
@@ -47,12 +51,15 @@ export default {
     stepsNames: Array,
   },
   mounted() {
-    this.value_ = this.value;
+    this.updateSliderWrapper();
+    console.log('this.value', this.value);
+    this.value_ = parseInt(this.value);
+    this.updateSliderWrapper();
   },
   data() {
     return {
       updatedTab: false,
-      step: 1,
+      step: 0,
       numSteps: parseInt(this.steps),
       value_: 0,
     };
@@ -70,29 +77,26 @@ export default {
       return stepsExibition;
     },
     stepBottomNav() {
+      this.updateSliderWrapper();
       return this.value_ + 1;
     },
   },
   methods: {
-    getTitleStyle(step) {
-      return {
-        color: this.value_ === step ? '#ff9200' : '',
-      };
-    },
-    getStepIndicatorStyle(step) {
-      return {
-        'background-color': this.value_ === step ? '#ff9200' : 'rgba(123,23,23,0)',
-        width: '2px',
-        height: '25px',
-      };
+    updateSliderWrapper() {
+      const wrapper = document.querySelector('.v-tabs-slider-wrapper');
+      if (!wrapper) return;
+      wrapper.removeAttribute('style');
+      wrapper.setAttribute('style', 'height: 48px; right: 0px; top: 48px; width: 2px;');
     },
     updateStep(step) {
       this.value_ = step;
       this.$emit('input', this.value_);
+      this.updateSliderWrapper();
     },
     updateStepBottomNav(step) {
       this.value_ = step - 1;
       this.$emit('input', this.value_);
+      this.updateSliderWrapper();
     },
   },
 };
@@ -110,6 +114,13 @@ export default {
 
 .v-tab {
   justify-content: flex-end;
+}
+
+.v-tabs-slider-wrapper {
+  height: 47px;
+  right: 0px;
+  top: 0px;
+  width: 2px;
 }
 
 /* TODO: trocar barrinha laranja da sidebar prol lado direito
