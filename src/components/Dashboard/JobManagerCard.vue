@@ -1,7 +1,7 @@
 '<template>
   <v-card class="border-primary bs-primary pa-4 px-12 mt-6" color="bg" :min-width="getMinWidth()">
     <v-row>
-      <v-col cols="7">
+      <v-col cols="8">
         <div class="d-flex flex-column">
           <span class="overline">Posted {{ getDaysAgo() }}</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
@@ -12,7 +12,7 @@
       <v-col cols="1">
         <v-divider vertical />
       </v-col>
-      <v-col cols="4">
+      <v-col cols="3">
         <div class="d-flex justify-center flex-column align-center">
           <g-btn type="text" color="primary" label="See Job >" @click="goToJobDetails" />
           <g-btn type="text" color="primary" label="Edit Job" @click="editJob" />

@@ -1,7 +1,7 @@
 <template>
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
-      <UserCard :user="user" />
+      <UserCard :user="user" v-if="user" :key="loading.user" />
       <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" />
       <g-btn
         class="mt-4"
@@ -14,22 +14,9 @@
     </template>
     <template template v-slot:second-col>
       <div>
-        <CompanyCard :company="company" />
-        <div class="mt-8 mb-12">
-          <h4>{{ $t('company.dashboard.actions.title') }}</h4>
-        </div>
-        <v-row>
-          <v-col cols="6" v-for="(action, index) in getCardActions()" v-bind:key="index">
-            <ActionCard :action="action" />
-          </v-col>
-        </v-row>
-        <div class="my-5">
-          <g-btn
-            outlined
-            block
-            type="secondary"
-            :label="$t('company.dashboard.manageAccountInfo')"
-          />
+        <CompanyCard :company="company" v-if="company" :key="loading.company" />
+        <div v-for="(job, i) in jobs" :key="i">
+          <JobManagerCard :job="job" :company="company" />
         </div>
       </div>
     </template>
@@ -37,10 +24,13 @@
 </template>
 
 <script>
+import JobManagerCard from 'Components/Dashboard/JobManagerCard';
 import UserCard from 'Components/Dashboard/UserCard';
 import CompanyCard from 'Components/Dashboard/CompanyCard';
-import ActionCard from 'Components/Dashboard/ActionCard';
+
 import CompanyController from 'Controllers/company';
+import JobController from 'Controllers/job';
+
 import StorageHelper from 'Helpers/storage';
 
 export default {
@@ -48,11 +38,12 @@ export default {
   mounted() {
     this.getUserInfo();
     this.getCompanyInfo();
+    this.getCompanyJobs();
   },
   components: {
     CompanyCard,
     UserCard,
-    ActionCard,
+    JobManagerCard,
   },
   data() {
     return {
@@ -62,6 +53,7 @@ export default {
         company: false,
         user: false,
       },
+      jobs: [],
     };
   },
   methods: {
@@ -97,29 +89,14 @@ export default {
         });
       }
     },
-    getCardActions() {
-      return [
-        {
-          name: 'manageListings',
-          route: { path: '/company/jobs' },
-          icon: 'fa-stream',
-        },
-        {
-          name: 'postJob',
-          route: { path: '/jobs/new' },
-          icon: 'fa-bullhorn',
-        },
-        {
-          name: 'editProfile',
-          route: { path: '' },
-          icon: 'fa-edit',
-        },
-        {
-          name: 'managePayment',
-          route: { path: '' },
-          icon: 'fa-dollar-sign',
-        },
-      ];
+    async getCompanyJobs() {
+      const jobController = new JobController();
+
+      try {
+        this.jobs = await jobController.getAll();
+      } catch (e) {
+        this.$toast.error('An error occured when retrieving jobs from the database');
+      }
     },
     getFistColInfo() {
       return {

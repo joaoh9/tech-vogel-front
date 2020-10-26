@@ -1,10 +1,10 @@
 <template>
-  <div class="mx-3">
+  <div class="mx-3" v-if="skills" :key="skills.length">
     <v-row class="d-flex flex-wrap" v-for="(skillType, i) in Object.keys(skills)" :key="i">
       <h6 class="mr-4 color-secondary">{{ $t(`enums.skills.${skillType}`) }}</h6>
       <v-row>
         <v-chip
-          class="ml-2 mb-4 align-self-center"
+          :class="`ml-2 align-self-center ${j < skills[skillType] ? 'mb-4' : ''}`"
           v-for="(skill, j) in skills[skillType]"
           :style="getStyle(skill, skillType)"
           :key="j"

@@ -1,12 +1,12 @@
 '<template>
-  <v-card class="pa-4 px-12" elevation="3" color="bg" :min-width="getMinWidth()">
+  <v-card class="pa-4 px-12 bs-primary" color="bg" :min-width="getMinWidth()">
     <div class="d-flex justify-space-between">
       <div>
         <div class="d-flex flex-column">
           <span class="overline">Posted x days ago</span>
-          <h5 class="h5-bold">{{ job.title }}</h5>
-          <div class="d-flex justify-space-between">
-            <icon-text
+          <h5 class="h5-bold mt-1">{{ job.title }}</h5>
+          <div class="d-flex justify-space-between ml-n2 mt-2">
+            <IconText
               v-for="(item, i) in getIconInfo()"
               :key="i"
               :icon="item.icon"
@@ -36,13 +36,13 @@ export default {
   components: {
     IconText,
   },
-  data () {
+  mounted() {
+    this.getCompanyInfo();
+  },
+  data() {
     return {
       company: {},
     };
-  },
-  mounted() {
-    this.getCompanyInfo();
   },
   methods: {
     goToJobDetails() {

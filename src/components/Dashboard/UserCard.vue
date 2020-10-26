@@ -1,5 +1,5 @@
 <template>
-  <v-card style="background-color: #fcfcff;" class="bg-color-bg bs-primary" :loading="!loaded">
+  <v-card class="bs-primary" color="bg" :loading="!loaded">
     <div v-if="user" :key="loaded" class="d-flex justify-space-between py-2 mx-12">
       <h5 class="text-center">{{ 'Hi, ' + name }}</h5>
       <div class="d-flex my-4">

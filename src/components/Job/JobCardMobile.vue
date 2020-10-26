@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="d-flex justify-center align-center my-8">
-          <g-btn type="primary" label="Apply now" />
+          <g-btn type="primary" label="View Details" @click="goToJobDetails" />
         </div>
       </div>
     </v-card>
@@ -26,6 +26,7 @@
 
 <script>
 import IconText from 'Components/Interface/IconText';
+import CompanyController from 'Controllers/company';
 
 export default {
   name: 'JobCardMobile',
@@ -37,6 +38,14 @@ export default {
       type: Object,
     },
   },
+  mounted() {
+    this.getCompanyInfo();
+  },
+  data() {
+    return {
+      company: {},
+    };
+  },
   methods: {
     currencyConverter() {
       return this.$t(`Dictionary.currency.${this.job.salary.currency}`);
@@ -44,7 +53,7 @@ export default {
     getJobInformation() {
       return (
         this.$n(`${this.job.salary.min}`, 'currency', this.currencyConverter()) +
-        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`) }` +
+        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}` +
         ' | ' +
         this.$t('Job.jobType.title').toUpperCase()
       );
@@ -60,6 +69,19 @@ export default {
           text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
         },
       ];
+    },
+    async getCompanyInfo() {
+      const companyController = new CompanyController();
+      try {
+        this.company = await companyController.getById(this.job.companyId);
+      } catch (e) {
+        this.$toast.error('Something when wrong when getting company info for a job');
+      }
+    },
+    goToJobDetails() {
+      this.$router.push({
+        path: `/jobs/${this.company.companyId}/${this.job.id}`,
+      });
     },
   },
 };

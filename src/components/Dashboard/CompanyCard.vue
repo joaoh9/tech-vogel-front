@@ -1,5 +1,5 @@
 <template>
-  <v-card minWidth="0" class="pa-12 bs-primary" style="background-color: #fcfcff;">
+  <v-card minWidth="0" class="pa-12 bs-primary" color="bg">
     <div class="d-flex justify-space-between">
       <div>
         <p class="overline">{{ $t('company.dashboard.yourCompany.title') }}</p>

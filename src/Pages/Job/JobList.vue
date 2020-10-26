@@ -5,14 +5,18 @@
         {{ $t('common.jobs') }}
       </h1>
     </div>
-    <g-bootstrap>
+    <g-bootstrap class="mt-12">
       <template v-slot:first-col>
         <job-filters />
       </template>
       <template v-slot:second-col>
-        <v-row v-for="(job, i) in jobs" :key="i">
-          <JobCard :job="job" class="mb-4" />
-        </v-row>
+        <div v-for="(job, i) in jobs" :key="i">
+          <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
+          <JobCardMobile :job="job" class="mb-4" v-else />
+        </div>
+      </template>
+      <template v-slot:third-col>
+        <job-filters />
       </template>
     </g-bootstrap>
   </div>
@@ -21,7 +25,9 @@
 <script>
 import JobController from 'Controllers/job';
 import CompanyController from 'Controllers/company';
+
 import JobCard from 'Components/Job/JobCard';
+import JobCardMobile from 'Components/Job/JobCardMobile';
 import JobFilters from 'Components/Job/JobFilters';
 
 export default {
@@ -37,6 +43,7 @@ export default {
   components: {
     JobCard,
     JobFilters,
+    JobCardMobile,
   },
   data() {
     return {

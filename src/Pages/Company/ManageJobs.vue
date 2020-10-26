@@ -1,21 +1,13 @@
 <template>
-  <g-bootstrap :firstCol="getFistColInfo()" :secondCol="getSecondColInfo()">
-    <template v-slot:first-col>
-      <UserCard :user="user" v-if="user" />
-    </template>
-    <template v-slot:second-col>
-      <CompanyCard :company="company" v-if="company" />
-      <div v-for="(job, i) in jobs" :key="i">
-        <JobManagerCard :job="job" :company="company" />
-      </div>
-    </template>
-  </g-bootstrap>
+  <div>
+    <div v-for="(job, i) in jobs" :key="i">
+      <JobManagerCard :job="job" :company="company" />
+    </div>
+  </div>
 </template>
 
 <script>
-import CompanyCard from 'Components/Dashboard/CompanyCard';
 import JobManagerCard from 'Components/Dashboard/JobManagerCard';
-import UserCard from 'Components/Dashboard/UserCard';
 import StorageHelper from 'Helpers/storage';
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
@@ -23,8 +15,6 @@ import JobController from 'Controllers/job';
 export default {
   name: 'ManageJobs',
   components: {
-    CompanyCard,
-    UserCard,
     JobManagerCard,
   },
   mounted() {
@@ -83,20 +73,6 @@ export default {
       } catch (e) {
         this.$toast.error('An error occured when retrieving jobs from the database');
       }
-    },
-    getFistColInfo() {
-      return {
-        md: 4,
-        cols: 12,
-        condition: true,
-      };
-    },
-    getSecondColInfo() {
-      return {
-        md: 8,
-        cols: 12,
-        condition: true,
-      };
     },
   },
 };
