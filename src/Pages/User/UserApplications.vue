@@ -44,11 +44,11 @@
                   <v-col cols="12" md="6" class="d-flex flex-column justify-space-between">
                     <h5>{{ jobApplication.job.title }}</h5>
                     <div class="d-flex space-between flex-fill align-center">
-                      <icon-text
+                      <IconText
                         icon="fa-building"
                         :text="(jobApplication.job.company || {}).name"
                       />
-                      <icon-text
+                      <IconText
                         icon="fa-briefcase"
                         :text="
                           $t('enums.contractType').find(
@@ -65,7 +65,7 @@
                   >
                     <div>{{ $tc('user.applications.job.period', 1) }}</div>
                     <div class="d-flex justify-center">
-                      <icon-text
+                      <IconText
                         size="10"
                         icon="fa-circle"
                         color="primary"
