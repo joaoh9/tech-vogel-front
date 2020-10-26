@@ -44,8 +44,18 @@
                   <v-col cols="12" md="6" class="d-flex flex-column justify-space-between">
                     <h5>{{ jobApplication.job.title }}</h5>
                     <div class="d-flex space-between flex-fill align-center">
-                        <icon-text icon="fa-building" :text="(jobApplication.job.company || {}).name"/>
-                        <icon-text icon="fa-briefcase" :text="$t('enums.contractType').find(ct => ct.value === jobApplication.job.contractType).text"/>
+                      <icon-text
+                        icon="fa-building"
+                        :text="(jobApplication.job.company || {}).name"
+                      />
+                      <icon-text
+                        icon="fa-briefcase"
+                        :text="
+                          $t('enums.contractType').find(
+                            ct => ct.value === jobApplication.job.contractType
+                          ).text
+                        "
+                      />
                     </div>
                   </v-col>
                   <v-col
@@ -55,7 +65,12 @@
                   >
                     <div>{{ $tc('user.applications.job.period', 1) }}</div>
                     <div class="d-flex justify-center">
-                      <icon-text size="10" icon="fa-circle" color="primary" :text="jobApplication.application.status.stage"/>
+                      <icon-text
+                        size="10"
+                        icon="fa-circle"
+                        color="primary"
+                        :text="jobApplication.application.status.stage"
+                      />
                     </div>
                   </v-col>
                 </v-row>
@@ -109,7 +124,7 @@ export default {
           });
           if (application) {
             job.company = job.company || {};
-            jobs.push({ job: job, application: application })
+            jobs.push({ job: job, application: application });
           }
           return jobs;
         };

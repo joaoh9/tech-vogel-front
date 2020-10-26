@@ -1,14 +1,11 @@
 <template>
-  <v-card width="400" height="380" class="bs-primary bg-color-bg">
-    <div class="d-flex flex-column align-center">
-      <v-avatar color="purple" size="140" class="my-6">
-        <!-- <v-img v-if="user.profilePhoto" :src="user.profilePhoto" /> -->
-      </v-avatar>
-      <h4 class="h4-bold mb-2 text-center">{{ $t('user.card.name') }}</h4>
-      <sub-1 class="color-dark">{{ $t('user.card.stack') }}</sub-1>
+  <v-card style="background-color: #fcfcff;" class="bg-color-bg bs-primary" :loading="!loaded">
+    <div v-if="user" :key="loaded" class="d-flex justify-space-between py-2 mx-12">
+      <h5 class="text-center">{{ 'Hi, ' + name }}</h5>
       <div class="d-flex my-4">
-        <v-icon color="secondary" class="mr-2">mdi-map-marker</v-icon>
-        <bdy-1 color="secondary">{{ $t('user.card.city') }}, {{ $t('user.card.country') }}</bdy-1>
+        <v-avatar color="purple" size="40">
+          <!-- <v-img v-if="user.profilePhoto" :src="user.profilePhoto" /> -->
+        </v-avatar>
       </div>
     </div>
   </v-card>
@@ -19,6 +16,28 @@ export default {
   name: 'UserCard',
   props: {
     user: Object,
+  },
+  async mounted() {
+    this.getDisplayName();
+  },
+  data() {
+    return {
+      loaded: false,
+      name: '',
+    };
+  },
+  methods: {
+    async getDisplayName() {
+      await new Promise(resolve => setTimeout(resolve, 1 * 1000));
+      const names = this.user.name.split(' ');
+      const singlename = names[0] === names[names.length - 1];
+      if (singlename) {
+        this.name = names[0];
+      } else {
+        this.name = names[0] + ' ' + names[names.length - 1];
+      }
+      this.loaded = true;
+    },
   },
 };
 </script>

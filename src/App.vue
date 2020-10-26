@@ -11,7 +11,11 @@
       @logout="() => checkIfLoggedIn()"
     />
     <v-main :key="loggedIn.logged.toString() + 'main'">
-      <router-view @login="() => checkIfLoggedIn()" class="view" />
+      <router-view
+        @login="() => checkIfLoggedIn()"
+        @logout="() => checkIfLoggedIn()"
+        class="view"
+      />
     </v-main>
     <Footer />
   </v-app>

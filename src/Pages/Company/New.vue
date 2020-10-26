@@ -109,9 +109,9 @@ export default {
         return;
       }
       try {
-        const companyId = this.company.name
-          .replace(/ /g, '-')
-          .replace(/[A-Z]/g, match => match.toLowerCase());
+        const companyId =
+          this.company.name.replace(/ /g, '-').replace(/[A-Z]/g, match => match.toLowerCase()) +
+          Math.round(Math.random() * 10 ** 6).toString();
 
         await companyController.save({
           ...this.company,
@@ -123,6 +123,9 @@ export default {
           path: '/pricing',
         });
       } catch (e) {
+        if (e.response.status === 409) {
+          this.$toast.warn('There is already a saved company for this user name');
+        }
         this.$toast.error('An error occurred when saving the company');
       }
     },
