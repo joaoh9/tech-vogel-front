@@ -135,6 +135,11 @@ export default {
         button: 'I’M DONE!',
       },
     },
+    new: {
+      techSkills: {
+        inputHint: 'Select the skills according to your years of experience',
+      },
+    },
   },
   user: {
     dashboard: {
@@ -150,7 +155,10 @@ export default {
       registerCVNow: 'Register my CV now',
       skipStep: 'Skip this step',
       doItLater: 'Do it later',
+      manageAccount: 'Manage Account',
       manageAccountInfo: 'Manage my account information',
+      tokenExplanation:
+        'You get 1 Vogel for each time you log in on different days. Every time you apply to a position, you spent 1 Vogel.',
     },
     gotToDashboard: 'Go to Dashboard',
     applications: {

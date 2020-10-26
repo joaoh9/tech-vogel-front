@@ -29,7 +29,7 @@
               <WorkExperience v-on:update-item="e => (resume.workHistory = e)"> </WorkExperience>
             </div>
             <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
-              <Skills v-on:skills="e => (resume.skills = e)" />
+              <Skills form="resume" v-on:skills="e => (resume.skills = e)" />
             </div>
             <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
               <Education v-on:update-item="e => (resume.education = e)"> </Education>
@@ -79,6 +79,9 @@ import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'NewJob',
+  props: {
+    editMode: Boolean,
+  },
   components: {
     Stepper,
     Start,

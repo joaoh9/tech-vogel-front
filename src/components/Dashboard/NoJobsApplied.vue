@@ -1,6 +1,5 @@
 <template>
   <div class="d-flex align-center flex-column">
-    <h4 class="h4-bold">{{ $t('user.applications.title') }}</h4>
     <v-img class="mt-6" :src="howItWorks2" max-height="400" />
     <h6 class="mt-6">{{ $t('user.applications.noJobsApplied.title') }}</h6>
     <g-btn class="mt-3" type="primary" label="Go to Job List" to="/jobs" />

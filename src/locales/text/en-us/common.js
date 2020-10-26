@@ -5,6 +5,8 @@ export default {
     techVogel: 'Tech Vogel',
     applyCTA: 'I want to apply',
     hireCTA: 'I want to hire',
+    userTokens: 'Vogels',
+    companyTokens: 'Job Posts',
     day: 'Day',
     month: 'Month',
     year: 'Year',

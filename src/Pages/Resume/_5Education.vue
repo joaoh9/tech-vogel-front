@@ -83,6 +83,6 @@ export default {
 
 <style scoped>
 .v-divider {
-  border: 1px solid #3b3973;
+  border: 0.9px solid #3b3973;
 }
 </style>

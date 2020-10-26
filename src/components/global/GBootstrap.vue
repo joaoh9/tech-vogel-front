@@ -74,8 +74,8 @@ export default {
         },
       };
     },
-    getColsQty (first, second, third) {
-      return  first && third ? 3 : first || third ? 2 : 1;
+    getColsQty(first, second, third) {
+      return first && third ? 3 : first || third ? 2 : 1;
     },
     getLateralColSize(colsQty) {
       let size = 12;

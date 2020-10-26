@@ -165,7 +165,6 @@ export default {
             this.job_.experienceLevel &&
             this.job_.contractType
           ) {
-            console.log(this.job)
             this.currentStep++;
           } else {
             this.$toast.warning('You should fill all required information!');

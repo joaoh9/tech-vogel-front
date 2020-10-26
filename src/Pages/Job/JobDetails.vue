@@ -9,8 +9,8 @@
     <!-- TODO: internacionalização de texto -->
     <PrimaryHeader
       v-if="editMode"
-      title="Revise your job ad!"
-      description="You will only be able to edit it for 24 hours after posting."
+      :title="$t('job.confirmJob.title')"
+      :subtitle="$t('job.confirmJob.subtitle')"
       :cols="true"
     >
       <div class="d-flex mt-8">
@@ -116,8 +116,6 @@ export default {
       if (this.editMode) {
         return 'Posted just now';
       } else {
-        console.log(this.job);
-        console.log(this.job.createdAt);
         return DateHelper.format(this.job.createdAt);
       }
     },

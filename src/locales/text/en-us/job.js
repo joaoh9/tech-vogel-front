@@ -97,5 +97,9 @@ export default {
         title: 'Fully Remote',
       },
     },
+    confirmJob: {
+      title: 'Revise your job ad!',
+      subtitle: 'You will only be able to edit it for 24 hours after posting.',
+    },
   },
 };

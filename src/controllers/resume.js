@@ -10,7 +10,6 @@ export default class {
       ...resume,
       username: user.username,
     };
-    console.log(finalObj)
     const { data } = await axios.post('/resumes', finalObj);
     return data;
   }
@@ -20,5 +19,10 @@ export default class {
     const { data } = await axios.get(`/resumes/${username}`);
 
     return data;
+  }
+
+  async hasSavedResume(username) {
+    const userResume = await this.getByUsername(username);
+    return userResume.length > 0;
   }
 }

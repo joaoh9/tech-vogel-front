@@ -11,16 +11,14 @@
         </v-chip>
       </template>
     </v-file-input>
-    <form-input required class="mt-6" :title="$t('resume.register.personalInfo.fullName.title')" />
-    <v-text-field v-model="fullName" @input="$emit('full-name', fullName)" outlined />
-    <form-input required class="mt-6" :title="$t('resume.register.mainRole.title')" />
+    <form-input required class="mt-0" :title="$t('resume.register.mainRole.title')" />
     <v-text-field
       :placeholder="$t('resume.register.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
       outlined
     />
-    <form-input class="mt-6" :title="$t('resume.register.personalInfo.location.title')" />
+    <form-input class="mt-0" :title="$t('resume.register.personalInfo.location.title')" />
     <v-row>
       <v-col cols="12" md="8">
         <v-text-field
@@ -90,7 +88,6 @@ export default {
       this.profilePicture.data64 = await this.getBase64(this.profilePicture);
     },
     getBase64(file) {
-      console.log(file);
       return new Promise(resolve => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -102,9 +99,7 @@ export default {
     personalBio() {
       this.$emit('personal-bio', this.personalBio);
     },
-    profilePicture() {
-      console.log(this.profilePicture);
-    },
+    profilePicture() {},
   },
 };
 </script>

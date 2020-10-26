@@ -10,12 +10,12 @@
       @input="e => (techSkills = e)"
       :items="$t('skills.techSkills')"
     />
-
+    <sub-1>{{ $t(`${form}.new.techSkills.inputHint`) }}</sub-1>
     <SkillExperienceLevel
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
       skillTitle="techSkills"
-      :experienceLevel="$t('enums.priorities')"
+      :experienceLevel="form === 'job' ? $t('enums.priorities') : $t('enums.yearsOfExperience')"
     />
 
     <form-input
@@ -56,6 +56,12 @@ export default {
   name: 'NewJob3',
   components: {
     SkillExperienceLevel,
+  },
+  props: {
+    form: {
+      type: String,
+      default: 'job',
+    },
   },
   data() {
     return {

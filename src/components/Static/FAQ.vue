@@ -26,11 +26,6 @@ export default {
   props: {
     items: Array,
   },
-  mounted() {
-    console.log(this.items);
-    console.log(this.getFAQ());
-    console.log(this.getAllFAQ());
-  },
   methods: {
     getAllFAQ() {
       return this.$t('FAQ.items');

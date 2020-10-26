@@ -4,12 +4,12 @@ import programmingLanguages from './programmingLanguages.json';
 import softSkills from './softSkills.json';
 import languages from './languages.json';
 
-function skillValueFormat(skillArray) {
+function skillValueFormat(skillArray, xpLvl = 0) {
   return Object.entries(skillArray).map(([ skillId, text ]) => ({
     text,
     value: {
       skillId,
-      experienceLevel: 0,
+      experienceLevel: xpLvl,
     },
   }));
 }
@@ -17,7 +17,7 @@ function skillValueFormat(skillArray) {
 const _skills = {
   databases: skillValueFormat(databases),
   programmingLanguages: skillValueFormat(programmingLanguages),
-  softSkills: skillValueFormat(softSkills),
+  softSkills: skillValueFormat(softSkills, 1),
   languages: skillValueFormat(languages),
   frameworks, // already formated
 };

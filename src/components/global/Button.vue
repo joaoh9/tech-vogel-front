@@ -2,6 +2,7 @@
   <v-btn
     v-if="type === 'disabled'"
     disabled
+    :block="block"
     @click="$emit('click')"
     :large="!xl"
     :x-large="xl"

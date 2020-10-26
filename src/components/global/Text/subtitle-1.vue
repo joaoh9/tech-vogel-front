@@ -1,12 +1,15 @@
 <template>
-  <span class="sub-1"><slot name="default"></slot></span>
+  <p :class="`color-${color} sub-1`"><slot name="default"></slot></p>
 </template>
 
 <script>
 export default {
   name: 'sub-1',
   props: {
-    flex: Boolean,
+    color: {
+      type: String,
+      default: 'cinza-lighten-1',
+    },
   },
 };
 </script>

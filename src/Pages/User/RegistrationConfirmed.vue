@@ -30,7 +30,7 @@
               block
             />
           </div>
-          <v-row justify="center" v-if="confirmationStatus === 0">
+          <v-row justify="center" v-if="confirmationStatus === 2">
             <v-col>
               <div class="d-flex justify-center">
                 <g-btn
