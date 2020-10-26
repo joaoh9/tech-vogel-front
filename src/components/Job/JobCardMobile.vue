@@ -1,20 +1,18 @@
 <template>
   <div class="d-flex">
-    <v-card class="px-16 job-card-mobile">
+    <v-card class="px-16 job-card-mobile" max-width="450">
       <div class="d-flex align-center justify-center flex-column mt-6">
         <span class="overline primary--text">{{ getJobInformation() }}</span>
-        <h5 class="pa-0 my-2">{{ job.title }}</h5>
+        <h5 class="pa-0 my-2 text-center">{{ job.title }}</h5>
 
-        <div class="d-flex">
-          <div class="d-flex align-center">
-            <IconText
-              v-for="(item, index) in getIconInfo()"
-              :key="index"
-              :icon="item.icon"
-              :text="item.text"
-              textSize="bdy-2"
-            />
-          </div>
+        <div class="d-flex align-center">
+          <IconText
+            v-for="(item, index) in getIconInfo()"
+            :key="index"
+            :icon="item.icon"
+            :text="item.text"
+            textSize="bdy-2"
+          />
         </div>
         <div class="d-flex justify-center align-center my-8">
           <g-btn type="primary" label="View Details" @click="goToJobDetails" />

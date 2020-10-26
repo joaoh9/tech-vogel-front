@@ -7,7 +7,7 @@
     </div>
     <g-bootstrap class="mt-12">
       <template v-slot:first-col>
-        <job-filters />
+        <div></div>
       </template>
       <template v-slot:second-col>
         <div v-for="(job, i) in jobs" :key="i">
@@ -16,7 +16,7 @@
         </div>
       </template>
       <template v-slot:third-col>
-        <job-filters />
+        <div></div>
       </template>
     </g-bootstrap>
   </div>

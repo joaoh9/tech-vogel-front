@@ -39,10 +39,23 @@
     <div class="pb-16">
       <Report />
     </div>
-    <div v-if="jobs.length" class="d-flex flex-wrap bg-color-secondary">
-      <div v-for="(job, index) in jobs" :key="index">
-        <JobCardMobile :job="job" class="mx-6 my-6" />
-      </div>
+    <div class="my-16 bg-color-secondary">
+      <g-bootstrap>
+        <template v-slot:first-col>
+          <div></div>
+        </template>
+        <template v-slot:second-col>
+          <div class="mt-n12 mb-n12">
+            <div v-for="(job, i) in jobs" :key="i">
+              <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
+              <JobCardMobile :job="job" class="mb-4" v-else />
+            </div>
+          </div>
+        </template>
+        <template v-slot:third-col>
+          <div></div>
+        </template>
+      </g-bootstrap>
     </div>
     <div>
       <AboutUs />
@@ -53,17 +66,19 @@
 <script>
 import JobController from 'Controllers/job';
 import CompanyController from 'Controllers/company';
+import JobCard from 'Components/Job/JobCard';
 import JobCardMobile from 'Components/Job/JobCardMobile';
 import homeBg from 'Assets/home-bg-op-20.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
 import Report from 'Components/Static/Report';
-import AboutUs from 'Components/Static/AboutUs'
+import AboutUs from 'Components/Static/AboutUs';
 
 export default {
   name: 'Home',
   components: {
     JobCardMobile,
     HowItWorks,
+    JobCard,
     Report,
     AboutUs,
   },
