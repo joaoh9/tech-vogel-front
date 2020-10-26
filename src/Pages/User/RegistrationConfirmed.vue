@@ -150,6 +150,7 @@ export default {
         name: 'User Login',
         params: {
           nextRoute: '/resume/new',
+          firstLogin: true,
           userEmail: this.userEmail,
           username: this.username,
         },

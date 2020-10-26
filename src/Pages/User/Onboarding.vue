@@ -7,6 +7,7 @@
     />
     <div class="d-flex align-center flex-column">
       <v-carousel
+        :continuous="false"
         v-model="carousel"
         style="max-width: 600px"
         next-icon="fas fa-chevron-right fas-2x"

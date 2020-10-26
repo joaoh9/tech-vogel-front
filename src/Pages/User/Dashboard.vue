@@ -1,7 +1,7 @@
 <template>
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
-      <UserCard :user="user" />
+      <UserCard :user="user" v-if="loaded.user" :key="loaded.user" />
       <div class="d-flex flex-column align-center">
         <UserTokens class="mt-8" tokens="15" />
         <capt-1 class="mt-4">{{ $t('user.dashboard.tokenExplanation') }}</capt-1>
@@ -53,6 +53,10 @@ export default {
     // UserApplications,
   },
   mounted() {
+    const company = StorageHelper.loadState('companyId');
+    if (company) {
+      this.$router.push('/company/dashboard');
+    }
     this.loadUserInfo();
     this.getResumeInfo();
     this.getAppliedJobs();
@@ -62,6 +66,9 @@ export default {
       user: {},
       hasSavedResume: false,
       appliedJobs: [],
+      loaded: {
+        user: false,
+      },
     };
   },
   methods: {
@@ -73,6 +80,7 @@ export default {
           path: '/login',
         });
       }
+      this.loaded.user = true;
     },
     goToApplications: function() {
       this.$router.push('/applications');

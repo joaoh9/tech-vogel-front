@@ -11,11 +11,7 @@
       @logout="() => checkIfLoggedIn()"
     />
     <v-main :key="loggedIn.logged.toString() + 'main'">
-      <router-view
-        @login="() => checkIfLoggedIn()"
-        @logout="() => checkIfLoggedIn()"
-        class="view"
-      />
+      <router-view @login="() => checkIfLoggedIn()" @logout="() => logout()" class="view" />
     </v-main>
     <Footer />
   </v-app>
@@ -51,6 +47,11 @@ export default {
   methods: {
     notLP() {
       return this.$router.history.current.name !== 'LandingPage';
+    },
+    logout() {
+      StorageHelper.removeState('user');
+      StorageHelper.removeState('companyId');
+      this.checkIfLoggedIn()
     },
     getPageStyle(footer = false) {
       const pageStyle = {

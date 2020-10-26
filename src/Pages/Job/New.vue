@@ -76,7 +76,6 @@ import BasicInfo from './_1BasicInfo';
 import About from './_2About';
 import Skills from 'Components/General/SkillsSelection';
 import Benefits from './_4Benefits';
-import JobController from 'Controllers/job';
 import CompanyController from 'Controllers/company';
 import Settings from '@config';
 import StorageHelper from 'Helpers/storage';
@@ -88,6 +87,7 @@ export default {
       type: Object,
       default: () => {},
     },
+    editMode: Boolean,
   },
   components: {
     BasicInfo,
@@ -97,7 +97,6 @@ export default {
     Stepper,
   },
   mounted() {
-    console.log('this.job', this.job);
     if (this.job) {
       this.job_ = this.job;
     }
@@ -137,6 +136,7 @@ export default {
           job_: this.job_,
           company_: this.company,
           editMode: true,
+          editingJobPosted: this.editMode,
         },
       });
     },
@@ -150,16 +150,6 @@ export default {
         });
       }
       this.company = await companyController.getById(companyId);
-    },
-    async saveJob() {
-      const jobController = new JobController();
-
-      try {
-        await jobController.save(this.job_);
-        this.$toast.success('Job saved successfully');
-      } catch (e) {
-        this.$toast.error('There was an error when saving the job');
-      }
     },
     getPageInfo() {
       return [

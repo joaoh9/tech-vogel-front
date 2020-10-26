@@ -52,6 +52,10 @@ export default {
     username: {
       type: String,
     },
+    firstLogin: {
+      type: Boolean,
+      default: false,
+    },
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
@@ -117,21 +121,18 @@ export default {
       const company = await userController.getCompany(this.user.username);
       if (company) {
         StorageHelper.saveState('companyId', company[0]);
-        this.goToDashboard(true);
+        this.goToNextRoute('/commpany/dashboard');
       } else {
-        this.goToDashboard(false);
+        this.goToNextRoute('/dashboard');
       }
     },
-    goToDashboard(company = false) {
+    goToNextRoute(route) {
+      route = this.nextRoute ? this.nextRoute : route;
+      route = this.firstLogin ? '/onboarding' : route;
       this.$toast.open('Login successfull');
       this.$emit('login');
       this.$router.push({
-        path:
-          this.nextRoute.length > 0
-            ? this.nextRoute
-            : company
-              ? '/company/dashboard'
-              : '/dashboard',
+        path: route,
       });
     },
   },

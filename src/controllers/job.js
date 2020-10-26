@@ -30,7 +30,7 @@ export default class JobController {
 
   async getAppliedJobs(username) {
     // TODO: atualizar com rota do back
-    return this.getAll()
+    return this.getAll();
   }
 
   async apply(username, jobId) {
@@ -39,6 +39,12 @@ export default class JobController {
       username,
       jobId,
     });
+    return data;
+  }
+
+  async patch(job) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.patch('/jobs', job);
     return data;
   }
 }

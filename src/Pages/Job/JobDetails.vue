@@ -19,9 +19,15 @@
           class="mx-4"
           type="outline"
           color="light"
-          label="Go back & edit"
+          label="Go back & change"
         />
-        <g-btn @click="saveJob" type="filled" color="light" textColor="primary" label="Post Job" />
+        <g-btn
+          @click="runAction"
+          type="filled"
+          color="light"
+          textColor="primary"
+          :label="editingJobPosted ? 'Confirm Edit' : 'Post Job'"
+        />
       </div>
     </PrimaryHeader>
     <div class="container mt-6 px-10 px-md-5">
@@ -64,6 +70,10 @@ export default {
     job_: Object,
     company_: Object,
     editMode: {
+      type: Boolean,
+      default: false,
+    },
+    editingJobPosted: {
       type: Boolean,
       default: false,
     },
@@ -121,6 +131,9 @@ export default {
         return DateHelper.format(this.job.createdAt);
       }
     },
+    runAction() {
+      return this.editingJobPosted ? this.editJob() : this.editJob();
+    },
     async saveJob() {
       const jobController = new JobController();
 
@@ -128,7 +141,20 @@ export default {
         await jobController.save(this.job);
         this.$toast.success('Job saved successfully');
         this.$router.push({
-          path: '/company/jobs',
+          path: '/company/dashboard',
+        });
+      } catch (e) {
+        this.$toast.error('There was an error when saving the job');
+      }
+    },
+    async editJob() {
+      const jobController = new JobController();
+
+      try {
+        await jobController.patch(this.job);
+        this.$toast.success('Job edited successfully');
+        this.$router.push({
+          path: '/company/dashboard',
         });
       } catch (e) {
         this.$toast.error('There was an error when saving the job');

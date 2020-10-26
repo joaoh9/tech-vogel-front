@@ -6,7 +6,14 @@
         @click="drawer = true"
         :color="isHome() ? 'bg' : 'dark'"
       />
-      <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/jobs">
+      <v-btn
+        class="bdy-2"
+        text
+        color="transparent"
+        tile
+        elevation="0"
+        :to="company ? getDashboardRoute() : '/jobs'"
+      >
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
         </v-avatar>
@@ -56,16 +63,20 @@ export default {
   components: {
     MobileDrawer,
   },
+  mounted() {
+    this.checkIfCompany();
+  },
   data() {
     return {
       drawer: false,
       logo: Logo,
       logoHome: LogoHome,
+      company: '',
     };
   },
   methods: {
     checkIfCompany() {
-      return StorageHelper.loadState('companyId');
+      this.company = StorageHelper.loadState('companyId');
     },
     goToDashboard() {
       this.$router.push({
@@ -73,7 +84,7 @@ export default {
       });
     },
     getDashboardRoute() {
-      return this.checkIfCompany() ? '/company/dashboard' : '/dashboard';
+      return this.company ? '/company/dashboard' : '/dashboard';
     },
     getMenuList() {
       return [
@@ -87,16 +98,12 @@ export default {
       const userController = new UserController();
       try {
         await userController.logout();
-        StorageHelper.removeState('user');
-        StorageHelper.removeState('companyId');
         this.$emit('logout');
         this.$router.push({
           path: '/',
         });
         this.$toast.success('Logout successfull');
       } catch (e) {
-        StorageHelper.removeState('user');
-        StorageHelper.removeState('companyId');
         this.$emit('logout');
         this.$router.push({
           path: '/',
@@ -121,11 +128,10 @@ export default {
       return this.$router.currentRoute.name === 'Home';
     },
     getPrimaryButtons() {
-      const company = this.checkIfCompany();
       return [
         {
-          text: company ? this.$t('common.postAJob') : this.$t('common.findAJob'),
-          goTo: company ? this.goToNewJob : this.goToJobList,
+          text: this.company ? this.$t('common.postAJob') : this.$t('common.findAJob'),
+          goTo: this.company ? this.goToNewJob : this.goToJobList,
         },
         { text: this.$t('common.dashboard'), goTo: this.goToDashboard },
       ];

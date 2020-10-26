@@ -1,7 +1,7 @@
 <template>
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
-      <UserCard :user="user" v-if="user" :key="loading.user" />
+      <UserCard :user="user" v-if="user" :key="loaded.user" />
       <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" />
       <g-btn
         class="mt-4"
@@ -14,7 +14,7 @@
     </template>
     <template template v-slot:second-col>
       <div>
-        <CompanyCard :company="company" v-if="company" :key="loading.company" />
+        <CompanyCard :company="company" v-if="company" :key="loaded.company" />
         <div v-for="(job, i) in jobs" :key="i">
           <JobManagerCard :job="job" :company="company" />
         </div>
@@ -49,7 +49,7 @@ export default {
     return {
       user: null,
       company: null,
-      loading: {
+      loaded: {
         company: false,
         user: false,
       },
@@ -71,6 +71,7 @@ export default {
 
       try {
         this.company = await companyController.getById(companyId);
+        this.loaded.company = true
       } catch (e) {
         this.$toast.error(
           'Could not retrieve company info. Make sure you have a registered company',
@@ -78,10 +79,8 @@ export default {
       }
     },
     async getUserInfo() {
-      this.loading.user = true;
-      this.loading.company = true;
       this.user = StorageHelper.loadState('user');
-      this.loading.user = false;
+      this.loaded.user = false;
       if (!this.user) {
         this.$toast('Could not retrieve user info. Please login again');
         this.$router.push({
