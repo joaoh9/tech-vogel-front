@@ -28,7 +28,6 @@ import CompanyController from 'Controllers/company';
 
 import JobCard from 'Components/Job/JobCard';
 import JobCardMobile from 'Components/Job/JobCardMobile';
-import JobFilters from 'Components/Job/JobFilters';
 
 export default {
   name: 'JobDescription',
@@ -42,7 +41,6 @@ export default {
   },
   components: {
     JobCard,
-    JobFilters,
     JobCardMobile,
   },
   data() {
