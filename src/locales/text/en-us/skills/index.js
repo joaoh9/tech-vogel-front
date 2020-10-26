@@ -16,7 +16,7 @@ function skillValueFormat(skillArray, xpLvl = 0) {
 
 const _skills = {
   databases: skillValueFormat(databases),
-  programmingLanguages: skillValueFormat(programmingLanguages),
+  programmingLanguages: skillValueFormat(programmingLanguages, 3),
   softSkills: skillValueFormat(softSkills, 1),
   languages: skillValueFormat(languages),
   frameworks, // already formated

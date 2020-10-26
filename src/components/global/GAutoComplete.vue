@@ -7,6 +7,7 @@
     :multiple="multiple"
     :items="items"
     v-model="data"
+    class="mb-8"
     outlined
     small-chips
     deletable-chips

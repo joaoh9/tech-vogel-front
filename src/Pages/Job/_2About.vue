@@ -14,8 +14,14 @@ import { VueEditor } from 'vue2-editor';
 
 export default {
   name: 'NewJob2',
+  props: {
+    job: Object,
+  },
   components: {
     VueEditor,
+  },
+  mounted() {
+    this.description = this.job.description;
   },
   data() {
     return {

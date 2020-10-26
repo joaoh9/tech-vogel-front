@@ -35,8 +35,8 @@
           $emit('experience-level', experienceLevel);
         }
       "
+      :multiple="false"
       :rules="[rules.required(experienceLevel)]"
-      class="border-lg"
       :items="$t('enums.experienceLevel')"
     />
     <form-input required :title="$t('job.new.contractType.title')" />
@@ -47,6 +47,7 @@
           $emit('contract-type', contractType);
         }
       "
+      :multiple="false"
       :rules="[rules.required(contractType)]"
       :items="$t('enums.contractType')"
     />
@@ -59,10 +60,18 @@ import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob1',
+  props: {
+    job: Object,
+  },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.company = StorageHelper.loadState('companyId');
     this.randomId = Math.round(Math.random() * 10000).toString();
+
+    this.title = this.job.title
+    this.experienceLevel = this.job.experienceLevel
+    this.contractType = this.job.contractType
+    this.id = this.job.id
   },
   data() {
     return {

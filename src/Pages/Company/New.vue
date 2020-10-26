@@ -1,7 +1,6 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-md-12">
     <!-- <Stepper ref="stepper" :stepsNames="$t('company.new.steps')" v-model="currentStep" class="mb-6">
-      <template v-slot:default="{}">
         -->
     <g-card>
       <template v-slot:card-header>
@@ -48,8 +47,7 @@
         </div>
       </template>
     </g-card>
-    <!--  </template>
-    </Stepper> -->
+    <!-- </Stepper> -->
   </div>
 </template>
 

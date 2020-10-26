@@ -18,6 +18,7 @@
             $emit('salary-time-frame', salary.timeFrame);
           }
         "
+        :multiple="false"
         label="Time Frame"
         title="Time Frame"
         outlined
@@ -64,11 +65,19 @@ import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'NewJob4',
+  props: {
+    job: Object,
+  },
   components: {
     VueEditor,
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    this.benefits = this.job.benefits;
+    if (this.job.salary) {
+      this.salary = this.job.salary;
+      this.salary.range = false;
+    }
   },
   data() {
     return {

@@ -5,7 +5,7 @@ import ManageJobs from 'Pages/Company/ManageJobs';
 const routes = [
   {
     path: '/company/new',
-    name: 'New',
+    name: 'New Company',
     component: NewCompany,
     props: true,
   },

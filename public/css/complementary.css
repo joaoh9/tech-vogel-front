@@ -1,3 +1,19 @@
 .cursor-pointer {
   cursor: pointer;
 }
+.cursor-alias, .cursor-default {
+  cursor: default;
+}
+
+.v-btn:not(.v-btn--round).v-size--x-large {
+  height: 56px !important;
+}
+
+.v-btn.v-size--x-large {
+  height: 56px !important;
+}
+
+.v-autocomplete__content.v-menu__content {
+  background-color: #fcfcff !important;
+  color: #fcfcff !important;
+}

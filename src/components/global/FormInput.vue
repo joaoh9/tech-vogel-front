@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sub-1 v-if="type === 'sub-1'" flex>
+    <sub-1 v-if="type === 'sub-1'" color="dark" flex>
       {{ title }}
       <span v-if="required" class="color-primary ml-1">*</span>
     </sub-1>
