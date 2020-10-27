@@ -73,6 +73,9 @@ export default {
           title: 'Upload your profile picture',
           specifics: 'Maximum size: 200 x 200px\nFile format: .jpg or .png',
         },
+        personalBio: {
+          title: 'Your personal Bio',
+        },
       },
       workExperience: {
         title: 'Share your work experience',
@@ -142,6 +145,7 @@ export default {
     },
   },
   user: {
+    findMe: 'Where to find me',
     dashboard: {
       greeting: 'Hi,',
       actions: {

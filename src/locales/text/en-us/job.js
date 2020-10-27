@@ -26,8 +26,8 @@ export default {
       aboutTheRole: {
         title: 'About the role',
         description:
-          'Describe the role in terms of daily activities, responsibilities and ????? (TODO). This information will be visible to everyone on Tech Vogel.',
-        placeholder: 'TODO',
+          'Describe in a captivating way what that professional role will be. And talk about the project itself so that candidates can see if they are fit for the Job or not.',
+        placeholder: 'At this position your job will be...',
       },
       languages: {
         title: 'Required Language(s)',
@@ -68,7 +68,7 @@ export default {
       },
       perks: {
         title: 'Perks and Benefits',
-        placeholder: 'TODO',
+        placeholder: 'Working at Criptorocket you can expect to have:\n  - Gym pas\n  - Food stamp\n  - Free Netflix\n  - A pationate team ready to rock ',
       },
       steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
     },
@@ -101,5 +101,8 @@ export default {
       title: 'Revise your job ad!',
       subtitle: 'You will only be able to edit it for 24 hours after posting.',
     },
+    posted: 'Posted',
+    seeReport: 'See report',
+    timePosted: 'Posted {time}',
   },
 };

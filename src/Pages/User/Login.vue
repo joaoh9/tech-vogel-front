@@ -121,7 +121,7 @@ export default {
       const company = await userController.getCompany(this.user.username);
       if (company) {
         StorageHelper.saveState('companyId', company[0]);
-        this.goToNextRoute('/commpany/dashboard');
+        this.goToNextRoute('/company/dashboard');
       } else {
         this.goToNextRoute('/dashboard');
       }

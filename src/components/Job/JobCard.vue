@@ -3,7 +3,7 @@
     <div class="d-flex justify-space-between">
       <div>
         <div class="d-flex flex-column">
-          <span class="overline">Posted x days ago</span>
+          <span class="overline">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</span>
           <h5 class="h5-bold mt-1">{{ job.title }}</h5>
           <div class="d-flex justify-space-between ml-n2 mt-2">
             <IconText
@@ -25,6 +25,7 @@
 <script>
 import IconText from 'Components/Interface/IconText';
 import CompanyController from 'Controllers/company';
+import DateHelper from 'Helpers/date';
 
 export default {
   name: 'listJobs',
@@ -81,6 +82,9 @@ export default {
       } catch (e) {
         this.$toast.error('Something when wrong when getting company info for a job');
       }
+    },
+    getDaysAgo() {
+      return DateHelper.format(new Date(this.job.createdAt));
     },
   },
 };

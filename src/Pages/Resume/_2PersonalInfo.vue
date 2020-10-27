@@ -39,7 +39,7 @@
         />
       </v-col>
     </v-row>
-    <form-input required :title="$t('resume.register.workExperience.jobDescription.title')" />
+    <form-input required :title="$t('resume.register.personalInfo.personalBio.title')" />
     <vue-editor
       placeholder="TODO"
       :editorToolbar="$t('quill.defaultToolbar')"

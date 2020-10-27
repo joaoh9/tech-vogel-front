@@ -6,6 +6,7 @@
           <g-card-header :title="getPageTitle()" :description="getPageDescription()" />
         </template>
         <template v-slot:card-content>
+          {{ resume }}
           <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
             <Start v-on:manual-register="currentStep += 1" />
           </div>
@@ -72,7 +73,7 @@ import PersonalInfo from './_2PersonalInfo';
 import WorkExperience from './_3WorkExperience';
 import Skills from 'Components/General/SkillsSelection';
 import Education from './_5Education';
-import StorageHelper from 'Helpers/storage'
+import StorageHelper from 'Helpers/storage';
 import ResumeController from 'Controllers/resume';
 
 export default {
@@ -90,9 +91,9 @@ export default {
     Education,
   },
   mounted() {
-    const company = StorageHelper.loadState('companyId')
-    if(company) {
-      this.$router.push('/404')
+    const company = StorageHelper.loadState('companyId');
+    if (company) {
+      this.$router.push('/404');
       // De propósito
     }
   },

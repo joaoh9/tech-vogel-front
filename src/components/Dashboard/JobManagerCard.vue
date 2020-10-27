@@ -3,10 +3,10 @@
     <v-row>
       <v-col cols="8">
         <div class="d-flex flex-column">
-          <span class="overline">Posted {{ getDaysAgo() }}</span>
+          <span class="overline">{{ $t('job.posted') }} {{ getDaysAgo() }}</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
           <!-- TODO: interncaionalização -->
-          <span class="caption-1 color-primary">See report ></span>
+          <span class="caption-1 color-primary">{{ $t('job.seeReport') }} ></span>
         </div>
       </v-col>
       <v-col cols="1">

@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col cols="12" md="8">
-        <form-input  class="mt-6" :title="$t('resume.register.education.degree.title')" />
+        <form-input required :title="$t('resume.register.education.degree.title')" />
         <v-text-field
           v-model="education.degree"
           :placeholder="$t('resume.register.education.placeholders.degree')"
@@ -11,18 +11,17 @@
         />
       </v-col>
       <v-col cols="12" md="4">
-        <form-input class="mt-6" :title="$t('resume.register.education.type')" />
+        <form-input required :title="$t('resume.register.education.type')" />
         <v-text-field
           v-model="education.institutionType"
           :placeholder="$t('resume.register.education.placeholders.type')"
           @input="$emit('institution-type', education.institutionType)"
-          disabled
           outlined
         />
       </v-col>
     </v-row>
 
-    <form-input :title="$t('resume.register.education.institution')" />
+    <form-input required :title="$t('resume.register.education.institution')" />
     <v-text-field
       v-model="education.name"
       :placeholder="$t('resume.register.education.placeholders.institution')"
@@ -32,7 +31,7 @@
 
     <v-row>
       <v-col cols="6" md="3">
-        <form-input :title="$t('resume.register.education.from')" />
+        <form-input required :title="$t('resume.register.education.from')" />
         <v-text-field
           v-model="education.startDate"
           @input="checkYearRules(education.startDate, 'start-date')"
@@ -42,7 +41,7 @@
         />
       </v-col>
       <v-col cols="6" md="3">
-        <form-input :title="$t('resume.register.education.to')" />
+        <form-input required :title="$t('resume.register.education.to')" />
         <v-text-field
           v-model="education.endDate"
           @input="checkYearRules(education.endDate, 'end-date')"
@@ -67,7 +66,7 @@ export default {
     return {
       education: {
         degree: '',
-        institutionType: 'COLLEGE',
+        institutionType: '',
         description: '',
         name: '',
         startDate: '',

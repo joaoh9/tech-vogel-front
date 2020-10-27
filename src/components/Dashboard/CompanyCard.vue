@@ -11,8 +11,7 @@
               {{ jobsPosted || 6 }}
             </h5>
             <span>
-              <!-- TODO: internacionalização de textos -->
-              Current Jobs Posted
+              {{ $t('company.dashboard.yourCompany.currentJobs') }}
             </span>
           </div>
           <div class="d-flex align-center">
@@ -20,8 +19,7 @@
               {{ company.remainingCredits || 16 }}
             </h5>
             <span>
-              Remaining Tokens
-              <!-- {{ $t('company.dashboard.yourCompany.remainingCredits') }} -->
+              {{ $t('company.dashboard.yourCompany.remainingCredits') }}
             </span>
           </div>
         </div>

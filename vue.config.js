@@ -12,6 +12,12 @@ module.exports = {
         ws: true,
         changeOrigin: true,
       },
+      '^/serve': {
+        target: 'http://localhost:5200',
+        pathRewrite: { '^/api': '' },
+        ws: true,
+        changeOrigin: true,
+      },
       '/api-github': {
         target: 'https://github.com/login/oauth',
         pathRewrite: { '^/api-github': '' },

@@ -122,26 +122,4 @@ export default {
   top: 0px;
   width: 2px;
 }
-
-/* TODO: trocar barrinha laranja da sidebar prol lado direito
-.sidebar {
-  width: 100%;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 75px;
-}
-
-.v-tabs-slider-wrapper,
-.v-tabs-slider-wrapper > element.style {
-  align-self: center;
-  height: 30px !important;
-  right: 0px !important;
-  top: 0px !important;
-  width: 2px !important;
-}
-
-v-tabs-slider {
-  align-self: center;
-}
-*/
 </style>

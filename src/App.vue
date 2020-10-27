@@ -8,7 +8,7 @@
       :key="'loggedInNabar' + $router.currentRoute.name + loggedIn.logged.toString()"
       v-if="loggedIn.logged"
       :company="loggedIn.company"
-      @logout="() => checkIfLoggedIn()"
+      @logout="() => logout()"
     />
     <v-main :key="loggedIn.logged.toString() + 'main'">
       <router-view @login="() => checkIfLoggedIn()" @logout="() => logout()" class="view" />
