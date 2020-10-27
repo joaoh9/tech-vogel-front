@@ -144,30 +144,9 @@ export default {
       const resumeController = new ResumeController();
       const validResume = this.validateResume();
 
-      const resume = Object.assign(
-        {
-          workFieldId: 'it',
-        },
-        this.resume,
-      );
-      resume.education = {
-        courses: [],
-        educationInstitutions: this.resume.education,
-        researches: [],
-      };
-      resume.education.educationInstitutions = (resume.education.educationInstitutions || []).map(
-        edInst => ({
-          ...edInst,
-          location: {
-            city: 'Belo Horizonte',
-            country: 'BRA',
-          },
-        }),
-      );
-
       if (validResume) {
         try {
-          await resumeController.save(resume);
+          await resumeController.save(this.resume);
           this.$router.push({
             path: '/dashboard',
           });

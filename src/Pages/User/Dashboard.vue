@@ -116,7 +116,11 @@ export default {
       try {
         this.hasSavedResume = await resumeController.hasSavedResume(this.user.username);
       } catch (e) {
-        return inactivityHelper.userLogin(e, 'Something went wrong when retrieving your resume');
+        if (e.response.status === 404) {
+          this.hasSavedResume = false;
+          return;
+        }
+        return inactivityHelper.userLogin(e, '', false);
       }
     },
     async getAppliedJobs() {
