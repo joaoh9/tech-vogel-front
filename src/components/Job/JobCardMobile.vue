@@ -46,14 +46,14 @@ export default {
   },
   methods: {
     currencyConverter() {
-      return this.$t(`Dictionary.currency.${this.job.salary.currency}`);
+      return this.$t(`dictionary.currency.${this.job.salary.currency}`);
     },
     getJobInformation() {
       return (
         this.$n(`${this.job.salary.min}`, 'currency', this.currencyConverter()) +
         `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}` +
         ' | ' +
-        this.$t('Job.jobType.title').toUpperCase()
+        this.$t('job.jobType.title').toUpperCase()
       );
     },
     getIconInfo() {

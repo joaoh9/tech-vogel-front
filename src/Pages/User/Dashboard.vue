@@ -26,7 +26,7 @@
       <div class="d-flex align-center flex-column">
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length" />
-        <!-- <UserApplications :jobs="appliedJobs" /> -->
+        <UserApplications :jobs="appliedJobs" />
       </div>
     </template>
   </g-bootstrap>
@@ -125,12 +125,11 @@ export default {
     },
     async getAppliedJobs() {
       const jobController = new JobController();
-      // const inactivityHelper = new InactivityHelper(this);
 
       try {
-        this.appliedJobs = await jobController.getAll();
+        this.appliedJobs = await jobController.getAppliedJobs(this.user.username);
       } catch (e) {
-        console.log(e);
+        this.$toast.error('Something went wrong when retrieving applied jobs');
       }
     },
   },

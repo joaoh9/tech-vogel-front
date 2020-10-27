@@ -71,7 +71,7 @@ export default {
 
       try {
         this.company = await companyController.getById(companyId);
-        this.loaded.company = true
+        this.loaded.company = true;
       } catch (e) {
         this.$toast.error(
           'Could not retrieve company info. Make sure you have a registered company',
@@ -92,7 +92,7 @@ export default {
       const jobController = new JobController();
 
       try {
-        this.jobs = await jobController.getAll();
+        this.jobs = await jobController.getCompanyJobs(this.company.companyId);
       } catch (e) {
         this.$toast.error('An error occured when retrieving jobs from the database');
       }

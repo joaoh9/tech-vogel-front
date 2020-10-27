@@ -14,7 +14,7 @@ module.exports = {
       },
       '^/serve': {
         target: 'http://localhost:5200',
-        pathRewrite: { '^/api': '' },
+        pathRewrite: { '^/serve': '' },
         ws: true,
         changeOrigin: true,
       },

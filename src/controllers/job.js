@@ -29,8 +29,15 @@ export default class JobController {
   }
 
   async getAppliedJobs(username) {
-    // TODO: atualizar com rota do back
-    return this.getAll();
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/jobs/user/${username}`);
+    return data;
+  }
+
+  async getCompanyJobs(companyId) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/jobs/company/${companyId}`);
+    return data;
   }
 
   async apply(username, jobId) {
