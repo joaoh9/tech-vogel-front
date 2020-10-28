@@ -61,7 +61,7 @@ import JobController from 'Controllers/job';
 import CompanyController from 'Controllers/company';
 import JobCard from 'Components/Job/JobCard';
 import JobCardMobile from 'Components/Job/JobCardMobile';
-import homeBg from 'Assets/home-bg-op-20.svg';
+import homeBg from 'Assets/home-bg-op-20c.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
 import Report from 'Components/Static/Report';
 import AboutUs from 'Components/Static/AboutUs';

@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import Logo from 'Assets/logo-redondo-amarelo-grad.png';
+import Logo from 'Assets/logo-redondo-amarelo-grad.svg';
 import FooterLinks from 'Components/Footer/Links';
 
 export default {

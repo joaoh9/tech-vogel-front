@@ -24,7 +24,6 @@ export default {
         currentAds: 'Current ads',
         currentJobs: 'Current Jobs Posted',
         remainingCredits: 'Remaining credits',
-        currentJobs: 'Current Jobs Posted',
       },
       actions: {
         title: 'What would you like to do today?',
