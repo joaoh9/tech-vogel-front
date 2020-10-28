@@ -31,6 +31,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Language',
   props: {},
@@ -49,6 +50,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

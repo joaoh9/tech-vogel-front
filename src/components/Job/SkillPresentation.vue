@@ -17,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'SkillPresentation',
   props: {
@@ -39,6 +40,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

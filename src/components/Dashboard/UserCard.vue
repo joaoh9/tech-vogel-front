@@ -1,10 +1,10 @@
 <template>
-  <v-card class="bs-primary" color="bg" :loading="!loaded">
+  <v-card class="bs-primary" color="bg" :loading="!loaded" @click="$emit('click')">
     <div v-if="user" :key="loaded" class="d-flex justify-space-between py-2 mx-12">
       <h5 class="text-center">{{ 'Hi, ' + name }}</h5>
       <div class="d-flex my-4">
         <v-avatar color="grey" size="40">
-          <!-- <v-img v-if="user.profilePhoto" :src="user.profilePhoto" /> -->
+          <v-img v-if="picture" :src="picture.data64" />
         </v-avatar>
       </div>
     </div>
@@ -12,10 +12,12 @@
 </template>
 
 <script>
+
 export default {
   name: 'UserCard',
   props: {
     user: Object,
+    picture: Object,
   },
   async mounted() {
     this.getDisplayName();
@@ -40,6 +42,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'g-card',
   props: {
@@ -111,6 +112,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

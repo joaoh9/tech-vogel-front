@@ -45,8 +45,8 @@
           </thead>
           <tbody>
             <tr v-for="(skill, index) in resume_.skills.techSkills" v-bind:key="index">
-              <td>{{$t(`skills.dictionary.techSkills.${skill.skillId}`)}}</td>
-              <td>{{skill.experienceLevel}}</td>
+              <td>{{ $t(`skills.dictionary.techSkills.${skill.skillId}`) }}</td>
+              <td>{{ skill.experienceLevel }}</td>
             </tr>
           </tbody>
         </table>
@@ -59,7 +59,7 @@
           </thead>
           <tbody>
             <tr v-for="(skill, index) in resume_.skills.softSkills" v-bind:key="index">
-              <td>{{$t(`skills.dictionary.softSkills.${skill.skillId}`)}}</td>
+              <td>{{ $t(`skills.dictionary.softSkills.${skill.skillId}`) }}</td>
             </tr>
           </tbody>
         </table>
@@ -73,8 +73,8 @@
           </thead>
           <tbody>
             <tr v-for="(skill, index) in resume_.skills.languages" v-bind:key="index">
-              <td>{{$t(`skills.dictionary.languages.${skill.skillId}`)}}</td>
-              <td>{{skill.experienceLevel}}</td>
+              <td>{{ $t(`skills.dictionary.languages.${skill.skillId}`) }}</td>
+              <td>{{ skill.experienceLevel }}</td>
             </tr>
           </tbody>
         </table>
@@ -102,9 +102,10 @@
 </template>
 
 <script>
+import IconText from 'Components/Interface/IconText';
+
 import UserController from 'Controllers/user';
 import ResumeController from 'Controllers/resume';
-import IconText from 'Components/Interface/IconText';
 
 export default {
   name: 'UserProfile',

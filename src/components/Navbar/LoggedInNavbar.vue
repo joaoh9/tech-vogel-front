@@ -54,8 +54,11 @@
 <script>
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
+
 import UserController from 'Controllers/user';
+
 import StorageHelper from 'Helpers/storage';
+
 import MobileDrawer from './MobileDrawer';
 
 export default {
@@ -138,6 +141,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped></style>

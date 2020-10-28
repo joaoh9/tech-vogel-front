@@ -59,6 +59,7 @@
 
 <script>
 import { VueEditor } from 'vue2-editor';
+
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -111,6 +112,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

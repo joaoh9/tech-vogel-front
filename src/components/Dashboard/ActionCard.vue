@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'DashboardActionCard',
   props: {
@@ -25,6 +26,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

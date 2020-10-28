@@ -3,6 +3,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'bdy-1',
   props: {
@@ -12,6 +13,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

@@ -30,6 +30,7 @@ import IconText from 'Components/Interface/IconText';
 import PersonalSettings from 'Components/User/Settings/Personal';
 import Password from 'Components/User/Settings/Password';
 import Payment from 'Components/User/Settings/Payment';
+
 export default {
   name: 'AccountSettings',
   components: {
@@ -39,6 +40,7 @@ export default {
     Payment,
   },
 };
+
 </script>
 
 <style></style>

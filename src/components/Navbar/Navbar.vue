@@ -58,6 +58,7 @@
 <script>
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
+
 import MobileDrawer from './MobileDrawer';
 
 export default {
@@ -119,6 +120,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped></style>

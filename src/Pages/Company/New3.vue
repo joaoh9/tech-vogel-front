@@ -12,6 +12,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'New3',
   data() {
@@ -23,4 +24,5 @@ export default {
     };
   },
 };
+
 </script>

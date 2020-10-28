@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Skills',
   props: {
@@ -45,6 +46,7 @@ export default {
     this.$forceUpdate();
   },
 };
+
 </script>
 
 <style></style>

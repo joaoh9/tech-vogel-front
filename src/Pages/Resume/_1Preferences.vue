@@ -27,6 +27,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Preferences',
   data() {
@@ -36,6 +37,7 @@ export default {
     };
   },
 };
+
 </script>
 
 <style></style>

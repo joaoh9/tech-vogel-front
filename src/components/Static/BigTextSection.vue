@@ -12,6 +12,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'staticSection',
   props: {
@@ -25,6 +26,7 @@ export default {
     };
   },
 };
+
 </script>
 
 <style>

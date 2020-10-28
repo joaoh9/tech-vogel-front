@@ -34,6 +34,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Job Filters',
   data() {
@@ -45,6 +46,7 @@ export default {
     };
   },
 };
+
 </script>
 
 <style></style>

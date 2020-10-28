@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'g-card-header',
   props: {
@@ -15,6 +16,7 @@ export default {
     description: String,
   },
 };
+
 </script>
 
 <style></style>

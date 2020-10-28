@@ -94,6 +94,7 @@
 
 <script>
 import UserController from 'Controllers/user';
+
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -221,6 +222,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

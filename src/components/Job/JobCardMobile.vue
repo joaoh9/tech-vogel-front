@@ -24,6 +24,7 @@
 
 <script>
 import IconText from 'Components/Interface/IconText';
+
 import CompanyController from 'Controllers/company';
 
 export default {
@@ -83,6 +84,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

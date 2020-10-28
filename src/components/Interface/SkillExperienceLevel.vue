@@ -32,6 +32,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'SkillExperienceLevel',
   props: {
@@ -45,6 +46,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

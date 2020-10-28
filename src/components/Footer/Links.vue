@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'FooterLinks',
   props: {
@@ -29,6 +30,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

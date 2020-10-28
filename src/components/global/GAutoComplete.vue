@@ -19,6 +19,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'g-autocomplete',
   props: {
@@ -43,6 +44,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

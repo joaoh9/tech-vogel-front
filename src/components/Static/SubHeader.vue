@@ -22,6 +22,7 @@ import usaFlag from 'Data/flagIcons/usa.svg';
 import brazilFlag from 'Data/flagIcons/brazil.svg';
 import usaDisabledFlag from 'Data/flagIcons/usaDisabled.svg';
 import brazilDisabledFlag from 'Data/flagIcons/brazilDisabled.svg';
+
 import ChangeLanguage from './ChangeLanguage';
 
 export default {
@@ -44,6 +45,7 @@ export default {
     };
   },
 };
+
 </script>
 
 <style></style>u

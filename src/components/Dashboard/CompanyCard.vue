@@ -32,6 +32,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'DashboardCompanyCard',
   props: {
@@ -39,6 +40,7 @@ export default {
     jobsPosted: [ Number, String ],
   },
 };
+
 </script>
 
 <style></style>

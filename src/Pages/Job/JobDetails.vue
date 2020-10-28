@@ -6,7 +6,6 @@
       v-if="!editMode"
       src="https://suzanadeoliveira.com/wp-content/uploads/2017/06/Google-Office-HD-Wallpapers-Backgrounds-Wallpaper-Abyss-scaled.jpg"
     />
-    <!-- TODO: internacionalização de texto -->
     <PrimaryHeader
       v-if="editMode"
       :title="$t('job.confirmJob.title')"
@@ -170,6 +169,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>

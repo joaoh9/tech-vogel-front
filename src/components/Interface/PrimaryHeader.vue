@@ -36,6 +36,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'PrimaryHeader',
   props: {
@@ -45,6 +46,7 @@ export default {
     cols: Boolean,
   },
 };
+
 </script>
 
 <style></style>

@@ -50,11 +50,13 @@
 </template>
 
 <script>
-import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 import pic1 from 'Assets/Onboarding/1.svg';
 import pic2 from 'Assets/Onboarding/2.svg';
 import pic3 from 'Assets/Onboarding/3.svg';
 import pic4 from 'Assets/Onboarding/4.svg';
+
+import PrimaryHeader from 'Components/Interface/PrimaryHeader';
+
 import StorageHelper from 'Helpers/storage';
 
 export default {
@@ -81,6 +83,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

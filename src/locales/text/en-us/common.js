@@ -78,6 +78,6 @@ export default {
       text: 'I accept the terms and conditions',
       link: '',
     },
-    youHave: 'You Have',
+    youHave: 'You have',
   },
 };

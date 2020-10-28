@@ -10,6 +10,7 @@
 <script>
 const MB = 1000000;
 const MAX_FILE_SIZE = 10 * MB;
+
 export default {
   name: 'ImageInput',
   data() {
@@ -53,4 +54,5 @@ export default {
     },
   },
 };
+
 </script>

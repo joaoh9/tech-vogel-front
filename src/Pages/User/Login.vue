@@ -36,6 +36,7 @@
 
 <script>
 import UserController from 'Controllers/user';
+
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
 
@@ -137,6 +138,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

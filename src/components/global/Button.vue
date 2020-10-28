@@ -48,6 +48,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'g-btn',
   props: {
@@ -129,6 +130,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style>

@@ -35,6 +35,7 @@ import HowItWorks1 from 'Assets/how-it-works-1.svg';
 import HowItWorks2 from 'Assets/how-it-works-2.svg';
 import HowItWorks3 from 'Assets/how-it-works-3.svg';
 import HowItWorks4 from 'Assets/how-it-works-4.svg';
+
 export default {
   name: 'HowItWorks',
   data() {
@@ -56,6 +57,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

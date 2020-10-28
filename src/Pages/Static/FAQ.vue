@@ -8,6 +8,7 @@
 
 <script>
 import FAQ from 'Components/Static/FAQ';
+
 export default {
   name: 'FAQPage',
   props: {
@@ -17,5 +18,6 @@ export default {
     FAQ,
   },
 };
+
 </script>
 <style></style>

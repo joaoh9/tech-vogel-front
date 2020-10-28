@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'form-input',
   props: {
@@ -62,6 +63,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

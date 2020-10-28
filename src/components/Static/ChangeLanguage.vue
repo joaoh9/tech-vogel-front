@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'ChangeLanguage',
   props: {
@@ -34,6 +35,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style>

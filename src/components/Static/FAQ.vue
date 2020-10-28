@@ -21,6 +21,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'FAQComponent',
   props: {
@@ -35,5 +36,6 @@ export default {
     },
   },
 };
+
 </script>
 <style></style>

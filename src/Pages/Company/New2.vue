@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'New2',
   data() {
@@ -17,4 +18,5 @@ export default {
     };
   },
 };
+
 </script>

@@ -31,6 +31,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'DefaultDialog',
   props: {
@@ -50,6 +51,7 @@ export default {
     secBtnText: String,
   },
 };
+
 </script>
 
 <style scoped></style>

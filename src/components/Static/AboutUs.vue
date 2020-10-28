@@ -17,6 +17,7 @@
 
 <script>
 import LogoEscritaPreto from 'Assets/logo+escrita-preto.svg';
+
 export default {
   name: 'AboutUs',
   data() {
@@ -25,6 +26,7 @@ export default {
     };
   },
 };
+
 </script>
 
 <style></style>
