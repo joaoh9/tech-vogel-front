@@ -70,7 +70,8 @@ export default {
           country: 'Country',
         },
         profilePicture: {
-          title: 'Upload your profile picture',
+          title: 'Profile picture',
+          placeholder: 'Upload your profile picture',
           specifics: 'Maximum size: 200 x 200px\nFile format: .jpg or .png',
         },
         personalBio: {
@@ -112,20 +113,26 @@ export default {
         description:
           'You’ll be able to edit these or add more information later on.\nThis information will be displayed to recruiters and people\nwho visit your profile.',
         school: 'School',
-        degree: {
-          title: 'Degree',
+        courseTitle: {
+          title: 'Course Title',
+          placeholder: 'Name of the course',
           options: [ 'Bachelor', 'Undergraduate Degree' ],
         },
+        degree: {
+          title: 'Degree',
+          placeholder: 'Ex: Bachelor',
+        },
+        about: {
+          title: 'Description',
+          placeholder: 'Tell us about your experience in this institution',
+        },
         fieldOfStudy: 'Field of study',
-        type: 'Type',
         institution: 'Institution',
         from: 'From',
         to: 'To',
         addMore: 'ADD MORE',
         continue: 'CONTINUE',
         placeholders: {
-          degree: 'Name of the course',
-          type: 'Ex: Bachelor',
           institution: 'Name of the Institution',
           from: 'From',
           to: 'To',
@@ -155,6 +162,7 @@ export default {
         editProfile: 'Edit my profile',
         manageCredits: 'Manage credits',
       },
+      editCV: 'Edit my CV',
       registerCV: 'Register my CV',
       registerCVNow: 'Register my CV now',
       skipStep: 'Skip this step',

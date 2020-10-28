@@ -1,15 +1,12 @@
 <template>
   <div>
+    <form-input :title="$t('resume.register.personalInfo.profilePicture.title')" />
     <v-file-input
+      outlined
+      :placeholder="$t('resume.register.personalInfo.profilePicture.placeholder')"
       v-model="profilePicture"
-      :placeholder="$t('resume.register.personalInfo.profilePicture.title')"
       @change="handleFileUpload"
     >
-      <template v-slot:selection="{ text }">
-        <v-chip color="primary" dark label small pill>
-          {{ text }}
-        </v-chip>
-      </template>
     </v-file-input>
     <form-input required class="mt-0" :title="$t('resume.register.mainRole.title')" />
     <v-text-field
@@ -50,8 +47,9 @@
 </template>
 
 <script>
-import StorageHelper from 'Helpers/storage';
 import { VueEditor } from 'vue2-editor';
+
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'ResumePersonalInfo',
@@ -63,14 +61,13 @@ export default {
   },
   data() {
     return {
-      fullName: '',
-      mainRole: '',
       location: {
         city: '',
         country: '',
       },
       personalBio: '',
-      profilePicture: [],
+      profilePicture: null,
+      mainRole: '',
     };
   },
   methods: {
@@ -82,10 +79,17 @@ export default {
           path: '/login',
         });
       }
-      this.fullName = user.name;
     },
     async handleFileUpload() {
-      this.profilePicture.data64 = await this.getBase64(this.profilePicture);
+      const data64 = await this.getBase64(this.profilePicture);
+      const file = {
+        data64,
+        name: this.profilePicture.name,
+        size: this.profilePicture.size,
+        type: this.profilePicture.type,
+      };
+
+      this.$emit('profile-picture', file);
     },
     getBase64(file) {
       return new Promise(resolve => {
@@ -99,7 +103,6 @@ export default {
     personalBio() {
       this.$emit('personal-bio', this.personalBio);
     },
-    profilePicture() {},
   },
 };
 </script>

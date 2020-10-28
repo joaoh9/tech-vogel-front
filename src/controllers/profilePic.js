@@ -9,13 +9,14 @@ export default class {
     const finalObj = {
       ...resume,
     };
-    const { data } = await axios.post(`/v1/resume/${user.username}`, finalObj);
+    const { data } = await axios.post(`/v1/profile-picture/${user.username}`, finalObj);
     return data;
   }
 
   async getByUsername(username) {
     const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.get(`/v1/resume/${username}`);
+    const { data } = await axios.get(`/v1/profile-picture/${username}`);
+
     return data;
   }
 
@@ -23,7 +24,7 @@ export default class {
     const user = StorageHelper.loadState('user');
 
     const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.put(`/v1/resume/${user.username}`, edits);
+    const { data } = await axios.put(`/v1/profile-picture/${user.username}`, edits);
 
     return data;
   }

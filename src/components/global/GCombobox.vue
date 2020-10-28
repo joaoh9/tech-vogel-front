@@ -3,6 +3,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'g-combobox',
   props: {
@@ -11,6 +12,7 @@ export default {
     outlined: Boolean,
   },
 };
+
 </script>
 
 <style></style>

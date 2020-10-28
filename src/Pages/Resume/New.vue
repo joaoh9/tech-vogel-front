@@ -6,7 +6,6 @@
           <g-card-header :title="getPageTitle()" :description="getPageDescription()" />
         </template>
         <template v-slot:card-content>
-          {{ resume }}
           <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
             <Start v-on:manual-register="currentStep += 1" />
           </div>
@@ -18,7 +17,7 @@
           </div>
           <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
             <PersonalInfo
-              v-on:full-name="e => (resume.fullName = e)"
+              v-on:profile-picture="e => (profilePicture = e)"
               v-on:main-role="e => (resume.mainRole = e)"
               v-on:location="e => (resume.location = e)"
               v-on:personal-bio="e => (resume.biography.personalBio = e)"
@@ -67,14 +66,18 @@
 
 <script>
 import Stepper from 'Components/Interface/Stepper';
+import Skills from 'Components/General/SkillsSelection';
+
+import ResumeController from 'Controllers/resume';
+import ProfilePictureController from 'Controllers/profilePic';
+
+import StorageHelper from 'Helpers/storage';
+
 import Start from './_0Start';
 import Preferences from './_1Preferences';
 import PersonalInfo from './_2PersonalInfo';
 import WorkExperience from './_3WorkExperience';
-import Skills from 'Components/General/SkillsSelection';
 import Education from './_5Education';
-import StorageHelper from 'Helpers/storage';
-import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'NewJob',
@@ -101,13 +104,9 @@ export default {
     return {
       educationComponent: Education,
       currentStep: 0,
+      profilePicture: {},
       resume: {
-        cases: [],
-        customSkills: [],
-        biography: {
-          birthDate: '1990-01-01',
-          personalBio: '',
-        },
+        personalBio: '',
         jobInterests: [],
         contractType: [],
         mainRole: '',
@@ -126,6 +125,7 @@ export default {
             degree: '',
             institutionType: '',
             description: '',
+            name: '',
             institution: '',
             startDate: '',
             endDate: '',
@@ -142,11 +142,18 @@ export default {
   methods: {
     async saveResume() {
       const resumeController = new ResumeController();
+      const profilePictureController = new ProfilePictureController();
       const validResume = this.validateResume();
 
       if (validResume) {
         try {
-          await resumeController.save(this.resume);
+          if (this.editMode) {
+            await resumeController.editByUsername(this.resume);
+            await profilePictureController.editByUsername(this.profilePicture);
+          } else {
+            await profilePictureController.save(this.profilePicture);
+            await resumeController.save(this.resume);
+          }
           this.$router.push({
             path: '/dashboard',
           });

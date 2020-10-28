@@ -2,9 +2,9 @@
   <div>
     <div v-for="(edu, i) in education" :key="i">
       <EducationItem
-        v-on:degree="
+        v-on:course-title="
           e => {
-            education[i].degree = e;
+            education[i].courseTitle = e;
             $emit('update-item', education);
           }
         "
@@ -14,9 +14,9 @@
             $emit('update-item', education);
           }
         "
-        v-on:name="
+        v-on:institution-name="
           e => {
-            education[i].name = e;
+            education[i].institutionName = e;
             $emit('update-item', education);
           }
         "
@@ -32,6 +32,18 @@
             $emit('update-item', education);
           }
         "
+        v-on:degree="
+          e => {
+            education[i].degree = e;
+            $emit('update-item', education);
+          }
+        "
+        v-on:description="
+          e => {
+            education[i].description = e;
+            $emit('update-item', education);
+          }
+        "
       />
       <v-divider v-if="i < education.length - 1" />
     </div>
@@ -42,12 +54,12 @@
         label="Add more"
         @click="
           education.push({
+            courseTitle: '',
             degree: '',
-            institutionType: 'COLLEGE',
             description: '',
-            name: '',
-            startDate: '',
-            endDate: '',
+            institutionName: '',
+            startDate: 0,
+            endDate: 0,
           })
         "
       />
@@ -68,12 +80,12 @@ export default {
       educationComponent: EducationItem,
       education: [
         {
+          courseTitle: '',
           degree: '',
-          institutionType: 'COLLEGE',
           description: '',
-          name: '',
-          startDate: '',
-          endDate: '',
+          institutionName: '',
+          startDate: 0,
+          endDate: 0,
         },
       ],
     };

@@ -1,7 +1,13 @@
 <template>
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
-      <UserCard :user="user" v-if="loaded.user" :key="loaded.user" />
+      <UserCard
+        :user="user"
+        v-if="loaded.user"
+        :key="loaded.user"
+        @click="goToUserProfile()"
+        :picture="profilePic"
+      />
       <div class="d-flex flex-column align-center">
         <UserTokens class="mt-8" tokens="15" />
         <capt-1 class="mt-4">{{ $t('user.dashboard.tokenExplanation') }}</capt-1>
@@ -10,7 +16,7 @@
           @click="getResumeRoute()"
           class="mt-8"
           type="primary"
-          :label="$t('user.dashboard.registerCV')"
+          :label="resume ? $t('user.dashboard.editCV') : $t('user.dashboard.registerCV')"
         />
         <g-btn
           block
@@ -26,7 +32,7 @@
       <div class="d-flex align-center flex-column">
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length" />
-        <UserApplications :jobs="appliedJobs" />
+        <UserApplications v-else :jobs="appliedJobs" />
       </div>
     </template>
   </g-bootstrap>
@@ -39,9 +45,10 @@ import InactivityHelper from 'Helpers/inactivity';
 import NoJobsApplied from 'Components/Dashboard/NoJobsApplied';
 import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
-// // import UserApplications from 'Components/Dashboard/UserApplications';
+import UserApplications from './UserApplications';
 
 import ResumeController from 'Controllers/resume';
+import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
 
 export default {
@@ -50,7 +57,7 @@ export default {
     NoJobsApplied,
     UserCard,
     UserTokens,
-    // UserApplications,
+    UserApplications,
   },
   mounted() {
     const company = StorageHelper.loadState('companyId');
@@ -60,12 +67,14 @@ export default {
     this.loadUserInfo();
     this.getResumeInfo();
     this.getAppliedJobs();
+    this.getProfilePicture();
   },
   data() {
     return {
       user: {},
-      hasSavedResume: false,
+      resume: null,
       appliedJobs: [],
+      profilePic: null,
       loaded: {
         user: false,
       },
@@ -92,7 +101,7 @@ export default {
       this.$router.push('/resume/new');
     },
     getResumeRoute() {
-      return this.hasSavedResume
+      return this.resume
         ? this.$router.push({ name: 'Resume Form', params: { editMode: true } })
         : this.$router.push('/resume/new');
     },
@@ -114,10 +123,10 @@ export default {
       const inactivityHelper = new InactivityHelper(this);
       const resumeController = new ResumeController();
       try {
-        this.hasSavedResume = await resumeController.hasSavedResume(this.user.username);
+        this.resume = await resumeController.getByUsername(this.user.username);
       } catch (e) {
         if (e.response.status === 404) {
-          this.hasSavedResume = false;
+          this.resume = false;
           return;
         }
         return inactivityHelper.userLogin(e, '', false);
@@ -131,6 +140,23 @@ export default {
       } catch (e) {
         this.$toast.error('Something went wrong when retrieving applied jobs');
       }
+    },
+    async getProfilePicture() {
+      const profilePictureController = new ProfilePictureController();
+
+      try {
+        this.profilePic = await profilePictureController.getByUsername(this.user.username);
+      } catch (e) {
+        if (e.response.status === 404) {
+          this.profilePic = null;
+        }
+        this.$toast.info('Error when retrieving profile picture');
+      }
+    },
+    goToUserProfile() {
+      this.$router.push({
+        path: `/user/id/${this.user.username}`,
+      });
     },
   },
 };

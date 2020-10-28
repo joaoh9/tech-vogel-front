@@ -2,20 +2,20 @@
   <div>
     <v-row>
       <v-col cols="12" md="8">
-        <form-input required :title="$t('resume.register.education.degree.title')" />
+        <form-input required :title="$t('resume.register.education.courseTitle.title')" />
         <v-text-field
-          v-model="education.degree"
-          :placeholder="$t('resume.register.education.placeholders.degree')"
-          @input="$emit('degree', education.degree)"
+          v-model="education.courseTitle"
+          :placeholder="$t('resume.register.education.courseTitle.placeholder')"
+          @input="$emit('course-title', education.courseTitle)"
           outlined
         />
       </v-col>
       <v-col cols="12" md="4">
-        <form-input required :title="$t('resume.register.education.type')" />
+        <form-input required :title="$t('resume.register.education.degree.title')" />
         <v-text-field
-          v-model="education.institutionType"
-          :placeholder="$t('resume.register.education.placeholders.type')"
-          @input="$emit('institution-type', education.institutionType)"
+          v-model="education.degree"
+          :placeholder="$t('resume.register.education.degree.placeholder')"
+          @input="$emit('institution-type', education.degree)"
           outlined
         />
       </v-col>
@@ -23,9 +23,9 @@
 
     <form-input required :title="$t('resume.register.education.institution')" />
     <v-text-field
-      v-model="education.name"
+      v-model="education.institutionName"
       :placeholder="$t('resume.register.education.placeholders.institution')"
-      @input="$emit('name', education.name)"
+      @input="$emit('institution-name', education.institutionName)"
       outlined
     />
 
@@ -51,26 +51,38 @@
         />
       </v-col>
     </v-row>
+    <form-input :title="$t('resume.register.education.about.title')" />
+    <vue-editor
+      :placeholder="$t('resume.register.education.about.placeholder')"
+      :editorToolbar="$t('quill.defaultToolbar')"
+      v-model="education.description"
+      class="mb-6"
+    />
   </div>
 </template>
 
 <script>
+import { VueEditor } from 'vue2-editor';
+
 import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'EducationItem',
+  components: {
+    VueEditor,
+  },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
   data() {
     return {
       education: {
+        courseTitle: '',
         degree: '',
-        institutionType: '',
         description: '',
-        name: '',
-        startDate: '',
-        endDate: '',
+        institutionName: '',
+        startDate: 0,
+        endDate: 0,
       },
       rules: {
         year: () => true,
@@ -90,6 +102,11 @@ export default {
         }
       }
       return;
+    },
+  },
+  watch: {
+    'edication.description'() {
+      this.$emit('description', this.education.description);
     },
   },
 };

@@ -1,20 +1,33 @@
 <template>
-  <g-card :lg="300" :md="300" :sm="300" :maxlg="300" :maxmd="300" class="ma-6">
-    <template v-slot:card-content>
-      <div class="d-flex justify-space-between pa-2">
-        <v-img height="120" contain :src="img" />
-        <h5 class="h5-bold">{{ text }}</h5>
-      </div>
-    </template>
-  </g-card>
+  <v-card class="bs-primary mx-10" color="bg">
+    <div class="d-flex align-center flex-column">
+      <v-img height="160" width="160" class="mt-10" :src="picture.data64" />
+      <h4 class="h4-bold mt-6">{{ user.name }}</h4>
+      <sub-1 color="dark">{{ role }}</sub-1>
+      <IconText
+        class="mt-4 mb-8"
+        :text="`${location.city}, ${location.country}`"
+        type="bdy-1 color-secondary-lighten-1"
+        icon="mdi-map-marker"
+        color="secondary-lighten-1"
+      />
+    </div>
+  </v-card>
 </template>
 
 <script>
+import IconText from 'Components/Interface/IconText';
+
 export default {
   name: 'DashboardCard',
   props: {
-    text: String,
-    img: String,
+    user: Object,
+    picture: Object,
+    role: String,
+    location: Object,
+  },
+  components: {
+    IconText,
   },
 };
 </script>

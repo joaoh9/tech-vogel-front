@@ -1,45 +1,45 @@
 <template>
   <div>
-    <div v-for="(job, i) in jobs" :key="i">
+    <div v-for="(job, i) in workHistory" :key="i">
       <WorkItem
         v-on:company-name="
           e => {
-            jobs[i].companyName = e;
-            $emit('update-item', jobs);
+            workHistory[i].companyName = e;
+            $emit('update-item', workHistory);
           }
         "
         v-on:role="
           e => {
-            jobs[i].role = e;
-            $emit('update-item', jobs);
+            workHistory[i].role = e;
+            $emit('update-item', workHistory);
           }
         "
         v-on:current-job="
           e => {
-            jobs[i].currentJob = e;
-            $emit('update-item', jobs);
+            workHistory[i].currentJob = e;
+            $emit('update-item', workHistory);
           }
         "
         v-on:start-date="
           e => {
-            jobs[i].startDate = e;
-            $emit('update-item', jobs);
+            workHistory[i].startDate = e;
+            $emit('update-item', workHistory);
           }
         "
         v-on:end-date="
           e => {
-            jobs[i].endDate = e;
-            $emit('update-item', jobs);
+            workHistory[i].endDate = e;
+            $emit('update-item', workHistory);
           }
         "
         v-on:job-description="
           e => {
-            jobs[i].description = e;
-            $emit('update-item', jobs);
+            workHistory[i].description = e;
+            $emit('update-item', workHistory);
           }
         "
       />
-      <v-divider v-if="i < jobs.length - 1" />
+      <v-divider v-if="i < workHistory.length - 1" />
     </div>
     <div class="d-flex justify-center">
       <g-btn
@@ -47,7 +47,7 @@
         color="primary"
         label="Add more"
         @click="
-          jobs.push({
+          workHistory.push({
             companyName: '',
             role: '',
             startDate: '',
@@ -72,7 +72,7 @@ export default {
   data() {
     return {
       workComponent: WorkItem,
-      jobs: [
+      workHistory: [
         {
           companyName: '',
           role: '',
@@ -112,6 +112,7 @@ export default {
     };
   },
 };
+
 </script>
 
 <style scoped>

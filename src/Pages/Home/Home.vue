@@ -39,23 +39,16 @@
     <div class="pb-16">
       <Report />
     </div>
-    <div class="my-16 bg-color-secondary">
-      <g-bootstrap>
-        <template v-slot:first-col>
-          <div></div>
-        </template>
-        <template v-slot:second-col>
-          <div class="mt-n12 mb-n12">
-            <div v-for="(job, i) in jobs" :key="i">
-              <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
-              <JobCardMobile :job="job" class="mb-4" v-else />
-            </div>
+    <div class="bg-color-secondary">
+      <div class="mx-12 my-10 d-flex justify-center flex-wrap">
+        <div class="my-12">
+          <div v-for="(job, i) in jobs" :key="i" class="">
+            <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
+            <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
+            <JobCardMobile :job="job" class="mb-4" v-else />
           </div>
-        </template>
-        <template v-slot:third-col>
-          <div></div>
-        </template>
-      </g-bootstrap>
+        </div>
+      </div>
     </div>
     <div>
       <AboutUs />
@@ -114,6 +107,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>

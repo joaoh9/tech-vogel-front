@@ -6,22 +6,19 @@
           <v-col cols="2" v-if="!$vuetify.breakpoint.mobile">
             <v-avatar color="cinza-lighten-2" size="90">
               <v-img
-                v-if="jobApplication.job.company.profilePhoto"
-                :src="jobApplication.job.company.profilePhoto"
+                v-if="job.company.profilePhoto"
+                :src="job.company.profilePhoto"
                 alt="Profile photo"
               />
             </v-avatar>
           </v-col>
           <v-col cols="12" md="6" class="d-flex flex-column justify-space-between">
-            <h5>{{ jobApplication.job.title }}</h5>
+            <h5>{{ job.title }}</h5>
             <div class="d-flex space-between flex-fill align-center">
-              <IconText icon="fa-building" :text="(jobApplication.job.company || {}).name" />
+              <IconText icon="fa-building" :text="(job.company || {}).name" />
               <IconText
                 icon="fa-briefcase"
-                :text="
-                  $t('enums.contractType').find(ct => ct.value === jobApplication.job.contractType)
-                    .text
-                "
+                :text="$t('enums.contractType').find(ct => ct.value === job.contractType).text"
               />
             </div>
           </v-col>
@@ -32,12 +29,7 @@
           >
             <div>{{ $tc('user.applications.job.period', 1) }}</div>
             <div class="d-flex justify-center">
-              <IconText
-                size="10"
-                icon="fa-circle"
-                color="primary"
-                :text="jobApplication.application.status.stage"
-              />
+              <IconText size="10" icon="fa-circle" color="primary" text="Applied" />
             </div>
           </v-col>
         </v-row>
@@ -56,15 +48,11 @@ export default {
   },
   data() {
     return {
-      jobApplications: [],
+      jobApplications: {},
     };
   },
   components: {
     IconText,
-  },
-  mounted() {
-    this.loadUserFromStorage();
-    this.getJobs();
   },
   methods: {
     goToFindJobs: function() {
@@ -76,6 +64,7 @@ export default {
     goToManageCredits: function() {},
   },
 };
+
 </script>
 
 <style>

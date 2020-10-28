@@ -1,6 +1,7 @@
 <template>
   <div>
     <PrimaryHeader
+      v-if="editMode"
       title="Revise your CV!"
       subtitle="You will be able to edit it at any time"
       :cols="true"
@@ -16,25 +17,53 @@
       </div>
     </PrimaryHeader>
     <v-container>
-      <v-row class="mt-12">
-        <v-col cols="12" md="6">
-          <UserCard />
-          <div class="mt-4">
-            <FindMe />
-          </div>
+      <v-row>
+        <v-col cols="12" md="5">
+          <UserCard
+            v-if="user"
+            :user="user"
+            :key="loading.user"
+            :picture="profilePic"
+            :role="resume.mainRole"
+            :location="resume.location"
+          />
+          <FindMe class="mt-6" />
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="7">
           <h5 class="h5-bold color-primary mb-4">About me</h5>
-          <bdy-1>{{ $t('user.aboutMe') }}</bdy-1>
+          <div class="bdy-1 color-dark" v-html="resume.personalBio"></div>
+
+          <v-divider class="my-8" />
+          <!-- TODO: internacionlização de textos work experience -->
+          <UserInformation
+            v-for="(work, i) in resume.workHistory"
+            :key="i"
+            title="Work experience"
+            :data="work"
+            type="work"
+          />
+          <v-divider class="my-8" />
+
+          <div v-if="resume && resume.skills">
+            <Skills
+              v-for="(skillType, i) in Object.keys(resume.skills)"
+              :key="i + 'skill'"
+              :skillTitle="$t(`enums.skills.${skillType}`)"
+              :skills="resume.skills[skillType]"
+              :skillType="skillType"
+              class="mb-6"
+            />
+          </div>
 
           <v-divider class="my-10 orange-color" />
-          <!-- <UserInformation title="Work experience" job /> -->
-
-          <v-divider class="my-10 orange-color" />
-          <!-- <Skills title="Skills" /> -->
-
-          <v-divider class="my-10 orange-color" />
-          <!-- <UserInformation title="Education" company /> -->
+          <!-- TODO: internacionlização de textos education -->
+          <UserInformation
+            v-for="(edu, i) in resume.education"
+            :key="i + 'edu'"
+            title="Education"
+            :data="edu"
+            type="edu"
+          />
         </v-col>
       </v-row>
     </v-container>
@@ -43,11 +72,14 @@
 
 <script>
 import PrimaryHeader from 'Components/Interface/PrimaryHeader';
-import UserCard from 'Components/Dashboard/UserCard';
+import UserCard from 'Components/User/DashboardCard';
 import FindMe from 'Components/User/FindMe';
-// // import UserInformation from 'Components/User/UserInformation';
-// // import Skills from 'Components/User/Skills';
-import UserResume from 'Controllers/resume';
+import UserInformation from 'Components/User/UserInformation';
+import Skills from 'Components/User/Skills';
+
+import UserController from 'Controllers/user';
+import ProfilePictureController from 'Controllers/profilePic';
+import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'UserProfile',
@@ -55,11 +87,12 @@ export default {
     PrimaryHeader,
     UserCard,
     FindMe,
-    // UserInformation,
-    // Skills,
+    UserInformation,
+    Skills,
   },
   props: {
     user_: Object,
+    editMode: Boolean,
   },
   mounted() {
     this.userId = this.$route.params.userId;
@@ -69,33 +102,53 @@ export default {
       this.getUser();
       this.getUserResume();
     }
+    this.getProfilePicture();
   },
   data() {
     return {
       userId: '',
       user: {},
       resume: {},
+      loading: { user: false },
+      profilePic: null,
     };
   },
   methods: {
     async getUser() {
-      const userController = new userController();
+      const userController = new UserController();
+      this.loading.user = true;
       try {
-        this.user = await userController.getById(this.userId);
+        this.user = await userController.getByUsername(this.userId);
       } catch (e) {
         this.$toast.error(`Something went wrong when retrieving user ${this.userId} data`);
       }
     },
     async getUserResume() {
-      const resumeController = new UserResume();
+      const resumeController = new ResumeController();
       try {
-        this.resume = await resumeController.getResumeByUsername(this.userId);
+        this.resume = await resumeController.getByUsername(this.userId);
       } catch (e) {
         this.$toast.error(`Something went wrong when retrieving user resume ${this.userId} data`);
+      }
+    },
+    async getProfilePicture() {
+      const profilePictureController = new ProfilePictureController();
+
+      try {
+        this.profilePic = await profilePictureController.getByUsername(this.userId);
+      } catch (e) {
+        if (e.response.status === 404) {
+          this.profilePic = null;
+        }
+        this.$toast.info('Error when retrieving profile picture');
       }
     },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.v-divider {
+  border: 0.9px solid #ff9200 !important;
+}
+</style>

@@ -65,10 +65,12 @@
 </template>
 
 <script>
-import StorageHelper from 'Helpers/storage';
 import DefaultDialog from 'Components/Dialogs/Default';
 import IconText from 'Components/Interface/IconText';
+
 import JobController from 'Controllers/job';
+
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'JobApplicationCard',
@@ -120,6 +122,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style></style>

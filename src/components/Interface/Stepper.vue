@@ -42,6 +42,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Stepper',
   components: {},
@@ -52,7 +53,6 @@ export default {
   },
   mounted() {
     this.updateSliderWrapper();
-    console.log('this.value', this.value);
     this.value_ = parseInt(this.value);
     this.updateSliderWrapper();
   },
@@ -100,6 +100,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style>

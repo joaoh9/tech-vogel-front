@@ -22,8 +22,8 @@ export default {
       yourCompany: {
         title: 'Your company',
         currentAds: 'Current ads',
-        remainingCredits: 'Remaining credits',
         currentJobs: 'Current Jobs Posted',
+        remainingCredits: 'Remaining credits',
       },
       actions: {
         title: 'What would you like to do today?',
