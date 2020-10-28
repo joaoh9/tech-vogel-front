@@ -17,6 +17,7 @@
           :label="btnText"
           to="/resume/new"
           class="btn-primary"
+          @click="$emit('confirm')"
         />
         <g-btn
           v-if="secBtnType"

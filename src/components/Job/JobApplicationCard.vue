@@ -8,15 +8,14 @@
       class="mb-2 ml-n3"
     />
     <v-row justify="center" class="mt-6">
+      <g-btn
+        :type="getApplicationButtonType()"
+        @click="applyForJob()"
+        :label="$t('job.details.apply')"
+      />
+      <!--
       <v-dialog v-model="apply">
         <template v-slot:activator="{ on, attrs }">
-          <g-btn
-            v-on="on"
-            v-bind="attrs"
-            :type="getApplicationButtonType()"
-            @click="showConfirmationDialog1 = true"
-            :label="$t('job.details.apply')"
-          />
         </template>
         <DefaultDialog
           v-if="showConfirmationDialog1"
@@ -49,9 +48,10 @@
           "
         />
       </v-dialog>
+        -->
     </v-row>
     <v-divider class="mt-4" />
-    <div class="d-flex align-center flex-column">
+    <div class="d-flex align-center flex-column mt-4">
       <h6 class="text-capitalize">{{ company.name }}</h6>
       <bdy-2>
         {{ $t('job.details.managedBy', { user: company.representative }) }}
@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import DefaultDialog from 'Components/Dialogs/Default';
+// import DefaultDialog from 'Components/Dialogs/Default';
 import IconText from 'Components/Interface/IconText';
 
 import JobController from 'Controllers/job';
@@ -80,10 +80,16 @@ export default {
   },
   components: {
     IconText,
-    DefaultDialog,
+    // DefaultDialog,
+  },
+  mounted() {
+    this.jobId = this.$route.params.jobId;
+    this.companyId = this.$route.params.companyId;
   },
   data() {
     return {
+      companyId: null,
+      jobId: null,
       apply: false,
       showConfirmationDialog2: false,
       showConfirmationDialog1: false,
@@ -114,15 +120,20 @@ export default {
           path: '/login',
         });
       }
+
+      console.log(this.jobId);
+      console.log(this.companyId);
+      console.log(user.username);
+
       try {
         await jobController.apply(user.username, this.jobId);
+        this.$toast.success('Successfully applied for job');
       } catch (e) {
         this.$toast.error('An error occured when applying for this job');
       }
     },
   },
 };
-
 </script>
 
 <style></style>

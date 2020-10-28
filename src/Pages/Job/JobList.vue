@@ -5,20 +5,12 @@
         {{ $t('common.jobs') }}
       </h1>
     </div>
-    <g-bootstrap class="mt-12">
-      <template v-slot:first-col>
-        <div></div>
-      </template>
-      <template v-slot:second-col>
-        <div v-for="(job, i) in jobs" :key="i">
-          <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
-          <JobCardMobile :job="job" class="mb-4" v-else />
-        </div>
-      </template>
-      <template v-slot:third-col>
-        <div></div>
-      </template>
-    </g-bootstrap>
+    <div class="mx-12 my-10 d-flex justify-center flex-wrap">
+      <div v-for="(job, i) in jobs" :key="i">
+        <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
+        <JobCardMobile :job="job" class="mb-4" v-else />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -73,7 +65,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped>

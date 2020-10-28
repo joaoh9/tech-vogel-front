@@ -84,4 +84,6 @@ export default {
       accessError: 'An error occurred when authorizing the application. Please try again later.',
     },
   },
+  lorem:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quibusdam nihil deserunt modi cupiditate ut, incidunt ducimus architecto impedit, atque magni amet suscipit autem ad, inventore quas consequuntur repellendus temporibus?',
 };

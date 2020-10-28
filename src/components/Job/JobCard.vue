@@ -3,8 +3,8 @@
     <div class="d-flex justify-space-between">
       <div>
         <div class="d-flex flex-column">
-          <span class="overline">{{ $t('job.postedDaysAgo') }}</span>
-          <h5 class="h5-bold mt-1">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</h5>
+          <span class="overline">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</span>
+          <h5 class="h5-bold mt-1">{{ job.title }}</h5>
           <div class="d-flex justify-space-between ml-n2 mt-2">
             <IconText
               v-for="(item, i) in getIconInfo()"
@@ -90,7 +90,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>
