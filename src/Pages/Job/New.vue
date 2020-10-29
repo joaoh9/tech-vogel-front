@@ -89,7 +89,7 @@ export default {
     },
     editingJobPosted: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   components: {

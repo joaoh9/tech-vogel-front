@@ -1,6 +1,6 @@
 {
   "angular": "Angular",
-  "node.js": "Node.js",
+  "node-js": "Node.js",
   "express": "Express.js",
   "vue-js": "Vue.js",
   "redux": "Redux",

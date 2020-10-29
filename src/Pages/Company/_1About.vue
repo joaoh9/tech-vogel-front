@@ -24,23 +24,22 @@
       :error-messages="localRules.emailAlreadyRegistered"
     />
     <form-input :title="$t('company.new.aboutYourCompany.title')" />
-    <vue-editor
+    <v-textarea
+      outlined
       :placeholder="$t('company.new.aboutYourCompany.placeholder')"
-      :editorToolbar="$t('quill.defaultToolbar')"
+      :rules="[rules.required(companyDescription)]"
       v-model="companyDescription"
     />
   </div>
 </template>
 
 <script>
-import { VueEditor } from 'vue2-editor';
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'New',
   components: {
-    VueEditor,
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
