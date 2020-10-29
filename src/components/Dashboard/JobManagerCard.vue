@@ -44,7 +44,7 @@ export default {
     editJob() {
       this.$router.push({
         name: 'New Job',
-        params: { job: this.job, editMode: true },
+        params: { job: this.job, editingJobPosted: true },
       });
     },
     getMinWidth() {

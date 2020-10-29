@@ -59,7 +59,7 @@
     </div>
     <div class="d-flex align-center flex-column mt-4">
       <h6>{{ $t('job.details.aboutTheCompany') }}</h6>
-      <sub-1 class="" v-html="company.companyDescription"></sub-1>
+      <sub-1 style="display: block" v-html="company.companyDescription"></sub-1>
     </div>
   </v-card>
 </template>

@@ -131,7 +131,7 @@ export default {
       }
     },
     runAction() {
-      return this.editingJobPosted ? this.editJob() : this.editJob();
+      return this.editingJobPosted ? this.editJob() : this.saveJob();
     },
     async saveJob() {
       const jobController = new JobController();

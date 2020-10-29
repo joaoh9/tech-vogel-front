@@ -87,7 +87,10 @@ export default {
       type: Object,
       default: () => {},
     },
-    editMode: Boolean,
+    editingJobPosted: {
+      type: Boolean,
+      default: true,
+    },
   },
   components: {
     BasicInfo,
@@ -136,7 +139,7 @@ export default {
           job_: this.job_,
           company_: this.company,
           editMode: true,
-          editingJobPosted: this.editMode,
+          editingJobPosted: this.editingJobPosted,
         },
       });
     },
