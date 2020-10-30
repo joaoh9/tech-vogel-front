@@ -64,8 +64,12 @@
           <template v-slot:label>
             <div>
               {{ $t('signup.termsAndConditions.text') }}
-              <strong @click="$router.push('/terms-and-conditions')" class="primary--text">
-                {{ $t('signup.termsAndConditions.termsAndConditions') }}
+              <strong @click="$router.push('/terms-of-service')" class="primary--text">
+                {{ $t('common.termsAndConditions') }}
+              </strong>
+              {{ $t('common.and') }}
+              <strong @click="$router.push('/privacy-policy')" class="primary--text">
+                {{ $t('common.privacyPolicy') }}
               </strong>
             </div>
           </template>
@@ -170,7 +174,7 @@ export default {
         if (e.response.status === 500) {
           this.errorMessage = this.$t('errors.500');
         }
-        this.$toast.error(this.errorMessage)
+        this.$toast.error(this.errorMessage);
         this.loading.register = false;
         return false;
       }
@@ -222,7 +226,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

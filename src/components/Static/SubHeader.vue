@@ -1,8 +1,8 @@
 <template>
-  <v-container>
-    <div class="d-flex align-center justify-center flex-column mt-14">
+  <div>
+    <div class="d-flex flex-wrap justify-center align-center flex-column mt-14">
       <h4 class="mb-5 text-center">{{ subtitle }}</h4>
-      <div class="text-center">
+      <div class="d-flex flex-wrap justify-center mx-12">
         <g-btn
           class="mx-3 my-2"
           type="primary-outlined-rounded"
@@ -14,7 +14,7 @@
       </div>
       <ChangeLanguage :chooseLanguageText="$t('privacyPolicy.chooseLanguageText')" />
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -45,8 +45,6 @@ export default {
     };
   },
 };
-
 </script>
 
-<style></style>u
-u
+<style></style>

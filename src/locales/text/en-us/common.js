@@ -1,6 +1,7 @@
 export default {
   common: {
     at: 'At',
+    and: 'and',
     tv: 'Tech Vogel',
     techVogel: 'Tech Vogel',
     applyCTA: 'I want to apply',
@@ -40,7 +41,7 @@ export default {
     characters: 'Characters',
     finish: 'I\'m done!',
     copywright: '©2020 Tech Vogel. All rights reserved.',
-    termsOfService: 'Terms of service',
+    termsAndConditions: 'Terms and conditions',
     privacyPolicy: 'Privacy policy',
     cnpj: 'CNPJ',
     cnpjNumber: '38.216.987/0001-59',
@@ -73,10 +74,6 @@ export default {
     confirmPassword: {
       placeholder: 'Confirm Password',
       label: 'Confirm Password',
-    },
-    termsAndConditions: {
-      text: 'I accept the terms and conditions',
-      link: '',
     },
     youHave: 'You have',
   },

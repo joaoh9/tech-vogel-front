@@ -1,12 +1,9 @@
 <template>
   <div class="mb-6">
-    <PrimaryHeader
-      :title="$t('privacyPolicy.title')"
-      :subtitle="$t('privacyPolicy.description')"
-    />
-
-    <SubHeader :subtitle="$t('privacyPolicy.subtitle')" :buttons="$t('privacyPolicy.buttons')" />
-
+    <PrimaryHeader :title="$t('privacyPolicy.title')" :subtitle="$t('privacyPolicy.description')" />
+    <div class="mt-4">
+      <SubHeader :subtitle="$t('privacyPolicy.subtitle')" :buttons="$t('privacyPolicy.buttons')" />
+    </div>
     <BigTextSection
       v-for="(text, index) in getBigText()"
       :key="index"
