@@ -17,4 +17,6 @@ export default {
     softSkills: { min: 0, max: 3 },
     languages: { min: 0, max: 4 },
   },
+  // 4 hours
+  storageExpiry: parseInt(process.env.VUE_APP_STORAGE_EXPIRY) || 4 * 60 * 60 * 1000,
 };

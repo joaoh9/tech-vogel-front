@@ -1,13 +1,23 @@
+import settings from '@config';
+
 /* eslint-disable no-console */
 const loadState = key => {
   try {
     const serializedState = localStorage.getItem(key);
 
     if (serializedState === null) {
-      return undefined;
+      return null;
     }
 
-    return JSON.parse(serializedState);
+    const item = JSON.parse(serializedState);
+    const now = new Date();
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key);
+      return null;
+    }
+
+    return item.value;
   } catch (e) {
     return undefined;
   }
@@ -15,7 +25,11 @@ const loadState = key => {
 
 const saveState = (key, state) => {
   try {
-    const serializedState = JSON.stringify(state);
+    const now = new Date().getTime();
+    const serializedState = JSON.stringify({
+      value: state,
+      expiry: now + settings.storageExpiry,
+    });
 
     localStorage.setItem(key, serializedState);
   } catch (e) {
