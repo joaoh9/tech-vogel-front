@@ -24,6 +24,8 @@ const loadState = key => {
 };
 
 const saveState = (key, state) => {
+  state = typeof state === 'string' ? state : JSON.stringify(state);
+
   try {
     const now = new Date().getTime();
     const serializedState = JSON.stringify({

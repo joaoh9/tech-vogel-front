@@ -19,6 +19,7 @@
             {{ $t('login.forgotPassword') }}
           </p>
         </div>
+        <g-btn @click="githubAuth()" block type="primary" label="Login with Github" />
       </template>
       <template v-slot:buttons>
         <div class="d-flex justify-space-between my-6">
@@ -36,6 +37,7 @@
 
 <script>
 import UserController from 'Controllers/user';
+import GithubController from 'Controllers/githubOauth';
 
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
@@ -136,9 +138,15 @@ export default {
         path: route,
       });
     },
+    async githubAuth() {
+      const githubController = new GithubController();
+
+      const userInfo = await githubController.getUserInfo();
+
+      console.log(userInfo);
+    },
   },
 };
-
 </script>
 
 <style></style>

@@ -55,6 +55,8 @@
           outlined
           v-model="user.confirmPassword"
         />
+        <g-btn @click="goToAuthGithubLink()" block type="primary" label="Signup with Github" />
+        <g-btn class="mt-4" disabled block type="primary" label="Signup with Linkedin" />
         <v-checkbox
           data-cy="terms-and-conditions"
           v-model="termsAndConditions"
@@ -100,6 +102,8 @@
 import UserController from 'Controllers/user';
 
 import RulesHelper from 'Helpers/rules';
+
+import settings from '@config';
 
 export default {
   name: 'Login',
@@ -223,6 +227,12 @@ export default {
       } catch (e) {
         return true;
       }
+    },
+    goToAuthGithubLink() {
+      window.open(
+        `https://github.com/login/oauth/authorize?client_id=${settings.github.client_id}`,
+        '_blank',
+      );
     },
   },
 };

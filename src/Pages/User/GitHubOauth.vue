@@ -24,7 +24,9 @@
 </template>
 
 <script>
-import OAuthController from 'Controllers/OAuth';
+import OAuthController from 'Controllers/githubOauth';
+
+import Storage from 'Helpers/storage';
 
 export default {
   name: 'GitHubOAuth',
@@ -33,15 +35,17 @@ export default {
       const oAuthController = new OAuthController();
 
       try {
-        await oAuthController.confirmAcces(this.$route.query.code);
+        const authData = await oAuthController.confirmAcces(this.$route.query.code);
+
+        Storage.saveState('access_token', authData.accessToken);
         this.$toast.success(this.$t('oAuth.github.accessSucces'));
+        this.$router.push({ name: 'User Login' });
       } catch (e) {
         this.$toast.error(this.$t('oAuth.github.accessError'));
       }
     },
   },
 };
-
 </script>
 
 <style></style>
