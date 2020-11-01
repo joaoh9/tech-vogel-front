@@ -7,16 +7,31 @@
         </template>
         <template v-slot:card-content>
           <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-            <Start v-on:manual-register="currentStep += 1" />
+            <Start
+              v-on:manual-register="currentStep += 1"
+              v-on:github-info="
+                githubInfo => {
+                  resume.location.city = githubInfo.location;
+                  resume.personalBio = githubInfo.bio;
+                  currentStep += 1;
+                  dataUpdated = !dataUpdated;
+                }
+              "
+            />
           </div>
           <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
             <Preferences
+              :key="dataUpdated"
               v-on:job-interests="e => (resume.jobInterests = e)"
               v-on:contract-type="e => (resume.contractType = e)"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
             <PersonalInfo
+              :key="dataUpdated"
+              :_personalBio="resume.personalBio"
+              :_locationCity="resume.location.city"
+              :_locationCountry="resume.location.country"
               v-on:profile-picture="e => (profilePicture = e)"
               v-on:main-role="e => (resume.mainRole = e)"
               v-on:location="e => (resume.location = e)"
@@ -104,6 +119,7 @@ export default {
     return {
       educationComponent: Education,
       currentStep: 0,
+      dataUpdated: false,
       profilePicture: {},
       resume: {
         personalBio: '',
@@ -149,10 +165,13 @@ export default {
         try {
           if (this.editMode) {
             await resumeController.editByUsername(this.resume);
-            await profilePictureController.editByUsername(this.profilePicture);
           } else {
             await profilePictureController.save(this.profilePicture);
+          }
+          if (Object.keys(this.profilePicture).length) {
             await resumeController.save(this.resume);
+          } else if (this.editMode && Object.keys(this.profilePicture).length) {
+            await profilePictureController.editByUsername(this.profilePicture);
           }
           this.$router.push({
             path: '/dashboard',

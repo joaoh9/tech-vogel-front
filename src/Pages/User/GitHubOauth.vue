@@ -35,13 +35,30 @@ export default {
       const oAuthController = new OAuthController();
 
       try {
-        const authData = await oAuthController.confirmAcces(this.$route.query.code);
+        const hasAccessToken = Storage.loadState('access_token');
 
-        Storage.saveState('access_token', authData.accessToken);
+        const data = await oAuthController.confirmAcces(this.$route.query.code);
+
+        Storage.saveState('access_token', data.accessToken);
+        Storage.saveState('github_username', data.username);
         this.$toast.success(this.$t('oAuth.github.accessSucces'));
-        this.$router.push({ name: 'User Login' });
+
+        if (hasAccessToken) {
+          this.$toast.success('You can close this tab and retry your request on the other page');
+          return;
+        }
+
+        this.$router.push({
+          name: 'User Signup',
+          params: {
+            _email: data.email,
+            _username: data.username,
+            _name: data.name,
+          },
+        });
       } catch (e) {
         this.$toast.error(this.$t('oAuth.github.accessError'));
+        console.log(e);
       }
     },
   },

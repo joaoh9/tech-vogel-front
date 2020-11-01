@@ -34,7 +34,10 @@
           <v-icon :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs">
             mdi-chevron-down
           </v-icon>
-          <v-icon :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs" large>
+          <v-avatar size="30" v-if="profilePic" :key="profilePic">
+            <v-img contain :src="profilePic" />
+          </v-avatar>
+          <v-icon v-else :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs" large>
             mdi-account-circle
           </v-icon>
         </template>
@@ -68,6 +71,7 @@ export default {
   },
   mounted() {
     this.checkIfCompany();
+    this.getUserProfilePic();
   },
   data() {
     return {
@@ -75,11 +79,23 @@ export default {
       logo: Logo,
       logoHome: LogoHome,
       company: '',
+      profilePic: null,
     };
   },
   methods: {
     checkIfCompany() {
       this.company = StorageHelper.loadState('companyId');
+    },
+    async getUserProfilePic() {
+      const user = StorageHelper.loadState('user');
+      const userController = new UserController();
+
+      const profilePicData = await userController.getProfilePicture(user.username);
+      console.log('profilePic');
+      console.log(profilePicData);
+
+      this.profilePic = profilePicData.data64 || profilePicData.srcLink;
+      console.log(this.profilePic);
     },
     goToDashboard() {
       this.$router.push({
@@ -141,7 +157,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped></style>

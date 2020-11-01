@@ -5,14 +5,17 @@ export default class UserController {
   async saveUser({ name, username, email, password, birthDate = '1990-12-12' }) {
     const axios = Axios.GetInstance({ api: '/api' });
 
-    const { data } = await axios.post('/users', {
+    const res = await axios.post('/users', {
       username,
       name,
       email,
       password,
       birthDate,
     });
-    return data;
+
+    console.log(res);
+
+    return res.data;
   }
 
   async getByEmail(email) {
@@ -59,6 +62,21 @@ export default class UserController {
     }
 
     return status;
+  }
+
+  async getProfilePicture(username) {
+    const axios = Axios.GetInstance({ api: '/serve' });
+
+    try {
+      const { data } = await axios.get(`/v1/profile-picture/${username}`);
+
+      return data;
+    } catch (e) {
+      if (e.response.status === 404) {
+        return null;
+      }
+      throw e;
+    }
   }
 
   async emailLogin({ email, password }) {

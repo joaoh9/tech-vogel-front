@@ -19,7 +19,6 @@
             {{ $t('login.forgotPassword') }}
           </p>
         </div>
-        <g-btn @click="githubAuth()" block type="primary" label="Login with Github" />
       </template>
       <template v-slot:buttons>
         <div class="d-flex justify-space-between my-6">
@@ -37,7 +36,7 @@
 
 <script>
 import UserController from 'Controllers/user';
-import GithubController from 'Controllers/githubOauth';
+import ResumeController from 'Controllers/resume';
 
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
@@ -126,9 +125,32 @@ export default {
         StorageHelper.saveState('companyId', company[0]);
         this.goToNextRoute('/company/dashboard');
       } else {
-        this.goToNextRoute('/dashboard');
+        this.seeIfUserHasSavedResume();
       }
     },
+    async seeIfUserHasSavedResume() {
+      const resumeController = new ResumeController();
+
+      try {
+        const resume = await resumeController.getByUsername(this.user.username);
+
+        if (!resume || (resume && resume.length === 0)) {
+          return this.goToSidePick();
+        }
+      } catch (e) {
+        if (e.response.status === 404) {
+          return this.goToSidePick();
+        }
+      }
+
+      this.goToNextRoute('/dashboard');
+    },
+    goToSidePick() {
+      this.$router.push({
+        name: 'Side Pick',
+      });
+    },
+
     goToNextRoute(route) {
       route = this.nextRoute ? this.nextRoute : route;
       route = this.firstLogin ? '/onboarding' : route;
@@ -137,13 +159,6 @@ export default {
       this.$router.push({
         path: route,
       });
-    },
-    async githubAuth() {
-      const githubController = new GithubController();
-
-      const userInfo = await githubController.getUserInfo();
-
-      console.log(userInfo);
     },
   },
 };
