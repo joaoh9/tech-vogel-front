@@ -12,8 +12,8 @@
         class="mr-2"
       />
       <g-autocomplete
-        @input="$emit('salary-time-frame', salary.timeFrame)"
         v-model="salary.timeFrame"
+        @input="$emit('salary-time-frame', salary.timeFrame)"
         :multiple="false"
         label="Time Frame"
         title="Time Frame"
