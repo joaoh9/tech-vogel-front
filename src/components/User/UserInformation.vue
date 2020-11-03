@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h5 class="h5-bold color-secondary">{{ title }}</h5>
     <div v-if="type === 'work'">
       <div class="mt-4">
         <capt-1 color="primary"> {{ data.startDate }} {{ data.endDate }} </capt-1>

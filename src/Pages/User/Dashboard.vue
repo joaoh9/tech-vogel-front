@@ -65,7 +65,6 @@ export default {
       this.$router.push('/company/dashboard');
     }
     this.loadUserInfo();
-    this.getResumeInfo();
     this.getAppliedJobs();
     this.getProfilePicture();
   },
@@ -118,19 +117,6 @@ export default {
         cols: 12,
         condition: true,
       };
-    },
-    async getResumeInfo() {
-      const inactivityHelper = new InactivityHelper(this);
-      const resumeController = new ResumeController();
-      try {
-        this.resume = await resumeController.getByUsername(this.user.username);
-      } catch (e) {
-        if (e.response.status === 404) {
-          this.resume = false;
-          return;
-        }
-        return inactivityHelper.userLogin(e, '', false);
-      }
     },
     async getAppliedJobs() {
       const jobController = new JobController();

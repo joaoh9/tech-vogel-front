@@ -53,10 +53,27 @@ import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'ResumePersonalInfo',
+  props: {
+    _personalBio: {
+      type: String,
+      default: () => '',
+    },
+    _locationCountry: {
+      type: String,
+      default: () => '',
+    },
+    _locationCity: {
+      type: String,
+      default: () => '',
+    },
+  },
   components: {
     VueEditor,
   },
   mounted() {
+    this.personalBio = this._personalBio || '';
+    this.location.country = this._locationCountry || '';
+    this.location.city = this._locationCity || '';
     this.getUserInfo();
   },
   data() {

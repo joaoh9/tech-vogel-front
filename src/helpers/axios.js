@@ -15,11 +15,16 @@ export default class Axios {
       headers['Authorization'] = `Bearer ${token}`;
     }
 
+    console.log(
+      `[AxiosHelper] Creating Axios with Header:
+       ${JSON.stringify(headers)} and baseURL: ${api}`,
+    );
+
     return axios.create({
       baseURL: api,
-      timeout: 30000,
+      timeout: 30 * 1000,
       headers,
-      maxContentLength: 20 * 1000000,
+      maxContentLength: 20 * 1000 * 1000,
       withCredentials: true,
     });
   }

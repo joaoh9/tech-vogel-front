@@ -24,7 +24,9 @@
 </template>
 
 <script>
-import OAuthController from 'Controllers/OAuth';
+import OAuthController from 'Controllers/githubOauth';
+
+import Storage from 'Helpers/storage';
 
 export default {
   name: 'GitHubOAuth',
@@ -33,15 +35,34 @@ export default {
       const oAuthController = new OAuthController();
 
       try {
-        await oAuthController.confirmAcces(this.$route.query.code);
+        const hasAccessToken = Storage.loadState('access_token');
+
+        const data = await oAuthController.confirmAcces(this.$route.query.code);
+
+        Storage.saveState('access_token', data.accessToken);
+        Storage.saveState('github_username', data.username);
         this.$toast.success(this.$t('oAuth.github.accessSucces'));
+
+        if (hasAccessToken) {
+          this.$toast.success('You can close this tab and retry your request on the other page');
+          return;
+        }
+
+        this.$router.push({
+          name: 'User Signup',
+          params: {
+            _email: data.email,
+            _username: data.username,
+            _name: data.name,
+          },
+        });
       } catch (e) {
         this.$toast.error(this.$t('oAuth.github.accessError'));
+        console.log(e);
       }
     },
   },
 };
-
 </script>
 
 <style></style>

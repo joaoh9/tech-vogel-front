@@ -36,6 +36,7 @@
 
 <script>
 import UserController from 'Controllers/user';
+import ResumeController from 'Controllers/resume';
 
 import RulesHelper from 'Helpers/rules';
 import StorageHelper from 'Helpers/storage';
@@ -124,9 +125,33 @@ export default {
         StorageHelper.saveState('companyId', company[0]);
         this.goToNextRoute('/company/dashboard');
       } else {
-        this.goToNextRoute('/dashboard');
+        this.seeIfUserHasSavedResume();
       }
     },
+    async seeIfUserHasSavedResume() {
+      const resumeController = new ResumeController();
+
+      try {
+        const resume = await resumeController.getByUsername(this.user.username);
+
+        if (!resume || (resume && resume.length === 0)) {
+          return this.goToSidePick();
+        }
+      } catch (e) {
+        if (e.response.status === 404) {
+          return this.goToSidePick();
+        }
+      }
+
+      this.goToNextRoute('/dashboard');
+    },
+    goToSidePick() {
+      this.$emit('login');
+      this.$router.push({
+        name: 'Side Pick',
+      });
+    },
+
     goToNextRoute(route) {
       route = this.nextRoute ? this.nextRoute : route;
       route = this.firstLogin ? '/onboarding' : route;
@@ -138,7 +163,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

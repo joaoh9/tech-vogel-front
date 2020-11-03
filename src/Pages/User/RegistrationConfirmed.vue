@@ -10,26 +10,6 @@
             <g-btn type="primary" :label="$t('common.confirm')" await @click="confirmAccount()" />
           </div>
 
-          <div
-            v-if="confirmationStatus === 1"
-            class="d-flex flex-column justify-space-around align-center mt-12"
-          >
-            <g-btn
-              type="primary"
-              class="mb-4"
-              :label="$t('signup.buttons.createCompany')"
-              @click="crateCompany()"
-              block
-            />
-
-            <g-btn
-              type="primary"
-              class="mb-4"
-              :label="$t('signup.buttons.createCV')"
-              @click="crateCV()"
-              block
-            />
-          </div>
           <v-row justify="center" v-if="confirmationStatus === 2">
             <v-col>
               <div class="d-flex justify-center">
@@ -74,10 +54,13 @@ export default {
   name: 'RegistrationConfirmed',
   props: {
     user: Object,
+    _code: Number,
+    _text: String,
   },
   async mounted() {
     this.confirmationId = this.$route.params.id;
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    this.confirmationStatus = this._code || 0;
   },
   data() {
     return {
@@ -102,7 +85,7 @@ export default {
         this.userEmail = user.email;
         this.username = user.username;
 
-        this.confirmationStatus = 1;
+        this.goToLogin();
       } catch (e) {
         this.confirmationStatus = 2;
       }
@@ -131,27 +114,15 @@ export default {
         case 0:
           return this.$t('signup.registrationConfirmed.clickToConfirm');
         case 1:
-          return this.$t('signup.registrationConfirmed.title');
+          return this._text || this.$t('signup.registrationConfirmed.title');
         case 2:
           return this.$t('signup.registrationConfirmed.error');
       }
     },
-    crateCompany() {
+    goToLogin() {
       this.$router.push({
         name: 'User Login',
         params: {
-          nextRoute: '/company/new',
-          userEmail: this.userEmail,
-          username: this.username,
-        },
-      });
-    },
-    crateCV() {
-      this.$router.push({
-        name: 'User Login',
-        params: {
-          nextRoute: '/resume/new',
-          firstLogin: true,
           userEmail: this.userEmail,
           username: this.username,
         },
@@ -159,7 +130,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

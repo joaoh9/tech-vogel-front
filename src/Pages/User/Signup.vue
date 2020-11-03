@@ -17,6 +17,7 @@
           outlined
           :rules="[rules.min(3, user.username)]"
           :error-messages="localRules.usernameUnavaliable"
+          @input="localRules.usernameUnavaliable = null"
           v-model="user.username"
         />
         <form-input :title="$t('signup.email.title')" />
@@ -54,6 +55,21 @@
           :type="showConfirmPassword ? 'text' : 'password'"
           outlined
           v-model="user.confirmPassword"
+        />
+        <g-btn
+          @click="goToAuthGithubLink()"
+          block
+          v-if="!_username"
+          type="primary"
+          label="Signup with Github"
+        />
+        <g-btn
+          class="mt-4"
+          disabled
+          block
+          v-if="!_username"
+          type="primary"
+          label="Signup with Linkedin"
         />
         <v-checkbox
           data-cy="terms-and-conditions"
@@ -101,10 +117,20 @@ import UserController from 'Controllers/user';
 
 import RulesHelper from 'Helpers/rules';
 
+import settings from '@config';
+
 export default {
   name: 'Login',
+  props: {
+    _email: String,
+    _username: String,
+    _name: String,
+  },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    this.user.email = this._email || '';
+    this.user.username = this._username || '';
+    this.user.name = this._name || '';
   },
   data() {
     return {
@@ -157,8 +183,14 @@ export default {
 
       const validEmail = await this.validEmail();
       const validUsername = await this.validUsername();
+      if (!validEmail) {
+        this.$toast.warning('Email already registered!');
+      }
+      if (!validUsername) {
+        this.$toast.warning('Username already registered');
+      }
       if (!validEmail || !validUsername) {
-        return false;
+        return;
       }
 
       this.loading.register = true;
@@ -170,6 +202,15 @@ export default {
           password: this.user.password,
           birthDate: '1990-12-12',
         });
+        this.loading.register = false;
+
+        this.$router.push({
+          path: '/confirm-registration',
+          params: {
+            _username: this.user.username,
+            _email: this.user.email,
+          },
+        });
       } catch (e) {
         if (e.response.status === 500) {
           this.errorMessage = this.$t('errors.500');
@@ -178,16 +219,6 @@ export default {
         this.loading.register = false;
         return false;
       }
-
-      this.loading.register = false;
-
-      this.$router.push({
-        path: '/confirm-registration',
-        params: {
-          _username: this.user.username,
-          _email: this.user.email,
-        },
-      });
     },
     async validEmail() {
       const userController = new UserController();
@@ -196,7 +227,8 @@ export default {
       }
       try {
         const user = await userController.getByEmail(this.user.email);
-        if (user.length) {
+
+        if (user.email) {
           this.localRules.emailAlreadyRegistered = this.$t('rules.emailAlreadyRegistered');
           return false;
         }
@@ -223,6 +255,12 @@ export default {
       } catch (e) {
         return true;
       }
+    },
+    goToAuthGithubLink() {
+      window.open(
+        `https://github.com/login/oauth/authorize?client_id=${settings.github.client_id}`,
+        '_blank',
+      );
     },
   },
 };

@@ -51,7 +51,10 @@ export default {
     logout() {
       StorageHelper.removeState('user');
       StorageHelper.removeState('companyId');
-      this.checkIfLoggedIn()
+      StorageHelper.removeState('access_token');
+      StorageHelper.removeState('github_username');
+
+      this.checkIfLoggedIn();
     },
     getPageStyle(footer = false) {
       const pageStyle = {
@@ -84,7 +87,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style>

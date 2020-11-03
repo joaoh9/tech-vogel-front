@@ -3,6 +3,7 @@ import GitHubOauth from 'Pages/User/GitHubOauth';
 import RegistrationConfirmed from 'Pages/User/RegistrationConfirmed';
 import UserApplications from 'Pages/User/UserApplications';
 import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
+import SidePick from 'Pages/User/SidePick';
 import UserDashboard from 'Pages/User/Dashboard';
 import UserLogin from 'Pages/User/Login';
 import UserProfileBreno from 'Pages/User/ProfileBreno';
@@ -31,7 +32,7 @@ const routes = [
   },
   {
     path: '/signup',
-    name: 'User Sign up',
+    name: 'User Signup',
     component: UserSignup,
     props: true,
   },
@@ -45,6 +46,13 @@ const routes = [
     path: '/confirm-registration/:id',
     name: 'Registration Confirmed',
     component: RegistrationConfirmed,
+    props: true,
+  },
+  {
+    path: '/side-pick',
+    name: 'Side Pick',
+    component: SidePick,
+    props: true,
   },
   {
     path: '/dashboard',
