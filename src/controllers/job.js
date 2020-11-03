@@ -10,6 +10,7 @@ export default class JobController {
     const finalObj = {
       ...jobDetails,
       companyId,
+      tokenId: 'ID',
     };
 
     const { data } = await axios.post('/jobs', finalObj);
