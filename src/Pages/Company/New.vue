@@ -118,7 +118,7 @@ export default {
         this.$toast.success('Company saved successfully');
         StorageHelper.saveState('companyId', companyId);
         this.$router.push({
-          path: '/pricing',
+          path: '/jobs/new',
         });
       } catch (e) {
         if (e.response.status === 409) {

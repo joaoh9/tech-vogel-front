@@ -24,7 +24,7 @@ export default class Axios {
       baseURL: api,
       timeout: 30 * 1000,
       headers,
-      maxContentLength: 20 * 1000000,
+      maxContentLength: 20 * 1000 * 1000,
       withCredentials: true,
     });
   }

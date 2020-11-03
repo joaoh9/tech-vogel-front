@@ -146,6 +146,7 @@ export default {
       this.goToNextRoute('/dashboard');
     },
     goToSidePick() {
+      this.$emit('login');
       this.$router.push({
         name: 'Side Pick',
       });

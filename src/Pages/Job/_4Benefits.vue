@@ -12,12 +12,8 @@
         class="mr-2"
       />
       <g-autocomplete
-        @input="
-          e => {
-            salary.timeFrame;
-            $emit('salary-time-frame', salary.timeFrame);
-          }
-        "
+        @input="$emit('salary-time-frame', salary.timeFrame)"
+        v-model="salary.timeFrame"
         :multiple="false"
         label="Time Frame"
         title="Time Frame"
@@ -140,7 +136,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>
