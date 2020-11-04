@@ -1,19 +1,19 @@
 <template>
-  <div class="container-fluid mx-12">
+  <div class="" style="width:100%">
     <v-card color="bg" class="primary-card my-5" v-for="(job, index) in jobs" v-bind:key="index">
       <v-card-text>
         <v-row>
           <v-col cols="2" v-if="!$vuetify.breakpoint.mobile">
             <v-avatar color="cinza-lighten-2" size="90">
               <v-img
-                v-if="job.company.profilePhoto"
+                v-if="job.company && job.company.profilePhoto"
                 :src="job.company.profilePhoto"
                 alt="Profile photo"
               />
             </v-avatar>
           </v-col>
           <v-col cols="12" md="6" class="d-flex flex-column justify-space-between">
-            <h5>{{ job.title }}</h5>
+            <h5 class="my-3">{{ job.title }}</h5>
             <div class="d-flex space-between flex-fill align-center">
               <IconText icon="fa-building" :text="(job.company || {}).name" />
               <IconText
