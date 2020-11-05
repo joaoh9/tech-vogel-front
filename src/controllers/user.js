@@ -13,7 +13,6 @@ export default class UserController {
       birthDate,
     });
 
-    console.log(res);
 
     return res.data;
   }

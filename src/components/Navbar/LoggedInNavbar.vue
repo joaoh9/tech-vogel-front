@@ -94,7 +94,7 @@ export default {
       console.log('profilePic');
       console.log(profilePicData);
 
-      this.profilePic = profilePicData.data64 || profilePicData.srcLink;
+      this.profilePic = profilePicData?.data64 || profilePicData?.srcLink;
       console.log(this.profilePic);
     },
     goToDashboard() {

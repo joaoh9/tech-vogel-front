@@ -59,14 +59,14 @@ export default {
     UserTokens,
     UserApplications,
   },
-  mounted() {
+  async mounted() {
     const company = StorageHelper.loadState('companyId');
     if (company) {
       this.$router.push('/company/dashboard');
     }
-    this.loadUserInfo();
-    this.getAppliedJobs();
-    this.getProfilePicture();
+    await this.loadUserInfo();
+    await this.getAppliedJobs();
+    await this.getProfilePicture();
   },
   data() {
     return {

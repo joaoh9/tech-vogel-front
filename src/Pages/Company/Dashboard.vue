@@ -35,10 +35,10 @@ import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'CompanyDashboard',
-  mounted() {
-    this.getUserInfo();
-    this.getCompanyInfo();
-    this.getCompanyJobs();
+  async mounted() {
+    await this.getUserInfo();
+    await this.getCompanyInfo();
+    await this.getCompanyJobs();
   },
   components: {
     CompanyCard,
@@ -92,7 +92,7 @@ export default {
       const jobController = new JobController();
 
       try {
-        this.jobs = await jobController.getCompanyJobs(this.company.companyId);
+        this.jobs = await jobController.getCompanyJobs(this.company && this.company.companyId);
       } catch (e) {
         this.$toast.error('An error occured when retrieving jobs from the database');
       }
