@@ -7,6 +7,7 @@ import user from './user';
 import enums from './enums';
 import skill from './skills';
 import common from './common'
+import toast from './toast/index';
 
 export default {
   ...common,
@@ -18,4 +19,5 @@ export default {
   ...user,
   ...enums,
   ...skill,
+  ...toast,
 };

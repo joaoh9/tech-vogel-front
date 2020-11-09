@@ -24,7 +24,10 @@ export default {
     handleFileUpload(e) {
       e.target.files.forEach(file => {
         if (file.size > MAX_FILE_SIZE) {
-          this.$toast.e(`Arquivo ${file.name} exceede limite de ${MAX_FILE_SIZE / MB}MB`);
+          this.$toast.error(
+            this.$t('toast.error.filename', { filename: file.name }),
+            this.$t('toast.error.fileSize', { fileSize: MAX_FILE_SIZE / MB }),
+          );
           return;
         }
         this.processDocument(file);
@@ -49,10 +52,9 @@ export default {
           return;
         })
         .catch(() => {
-          this.$toast.e(`Houve algo de errado ao processar o arquivo ${file.name}`);
+          this.$toast.error(this.$t('toast.error.somethingWrong', { filename: file.name }));
         });
     },
   },
 };
-
 </script>

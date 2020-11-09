@@ -30,7 +30,7 @@ export default {
         placeholder: 'At this position your job will be...',
       },
       languages: {
-        title: 'Required Language(s)',
+        title: 'Language(s)',
         inputHint: 'TODO',
       },
       skillRequirements: {
@@ -72,9 +72,7 @@ export default {
       },
       steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
     },
-    list: {
-      error: 'Something went wrong when retrieving the jobs from the Database',
-    },
+
     details: {
       apply: 'Apply for this position',
       managedBy: 'Job managed by {user}',
@@ -105,4 +103,6 @@ export default {
     seeReport: 'See report',
     timePosted: 'Posted {time}',
   },
+  selectAtLeast: 'Please select at least',
+  selectMaximum: 'Please select a maximum of',
 };

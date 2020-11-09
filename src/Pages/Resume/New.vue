@@ -177,7 +177,7 @@ export default {
             path: '/dashboard',
           });
         } catch (e) {
-          this.$toast.error('There was an error saving your resume');
+          this.$toast.error(this.$t('toast.error.saveResume'));
         }
       }
     },

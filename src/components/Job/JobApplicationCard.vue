@@ -115,7 +115,7 @@ export default {
       const jobController = new JobController();
       const user = StorageHelper.loadState('user');
       if (!user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
@@ -127,9 +127,9 @@ export default {
 
       try {
         await jobController.apply(user.username, this.jobId);
-        this.$toast.success('Successfully applied for job');
+        this.$toast.success(this.$t('toast.success.jobApplied'));
       } catch (e) {
-        this.$toast.error('An error occured when applying for this job');
+        this.$toast.error(this.$t('toast.error.jobApplying'));
       }
     },
   },

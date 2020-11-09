@@ -5,7 +5,7 @@ export default class UserController {
   async saveUser({ name, username, email, password, birthDate = '1990-12-12' }) {
     const axios = Axios.GetInstance({ api: '/api' });
 
-    const { data } = await axios.post('/users', {
+    const res = await axios.post('/users', {
       username,
       name,
       email,
@@ -13,7 +13,9 @@ export default class UserController {
       birthDate,
     });
 
-    return data;
+    console.log(res);
+
+    return res.data;
   }
 
   async getByEmail(email) {

@@ -155,7 +155,7 @@ export default {
     goToNextRoute(route) {
       route = this.nextRoute ? this.nextRoute : route;
       route = this.firstLogin ? '/onboarding' : route;
-      this.$toast.open('Login successfull');
+      this.$toast.open(this.$t('toast.open.login'));
       this.$emit('login');
       this.$router.push({
         path: route,

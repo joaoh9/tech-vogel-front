@@ -1,7 +1,7 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
 
-export default class JobController {
+export default class GithubOauthController {
   async confirmAccess(code) {
     const axios = await Axios.GetInstance({ api: '/serve' });
     const { data } = await axios.get(`/v1/github-signup?code=${code}`);
@@ -14,7 +14,6 @@ export default class JobController {
     if (!accessToken) {
       throw {
         status: 403,
-        message: 'You must grant github acces first!',
       };
     }
     const axios = await Axios.GetInstance({ api: '/serve', token: accessToken });
@@ -32,7 +31,6 @@ export default class JobController {
     if (!accessToken || !githubUsername) {
       throw {
         status: 403,
-        message: 'You must grant github acces first!',
       };
     }
 

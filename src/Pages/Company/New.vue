@@ -103,7 +103,7 @@ export default {
         this.rules.min(3, this.company.name) !== true ||
         this.rules.min(3, this.company.representative) !== true
       ) {
-        this.$toast.error('Please write a company name and a represetative name');
+        this.$toast.error(this.$t('toast.error.writeNames'));
         return;
       }
       try {
@@ -115,16 +115,16 @@ export default {
           ...this.company,
           companyId,
         });
-        this.$toast.success('Company saved successfully');
+        this.$toast.success(this.$t('toast.success.savedCompany'));
         StorageHelper.saveState('companyId', companyId);
         this.$router.push({
           path: '/jobs/new',
         });
       } catch (e) {
         if (e.response.status === 409) {
-          this.$toast.warn('There is already a saved company for this user name');
+          this.$toast.warning(this.$t('toast.warning.userHasCompany'));
         }
-        this.$toast.error('An error occurred when saving the company');
+        this.$toast.error(this.$t('toast.error.saveCompany'));
       }
     },
   },

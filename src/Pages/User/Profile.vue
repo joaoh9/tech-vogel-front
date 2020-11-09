@@ -138,7 +138,7 @@ export default {
       try {
         this.user = await userController.getByUsername(this.userId);
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving user ${this.userId} data`);
+        this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: this.userId }));
       }
     },
     async getUserResume() {
@@ -146,7 +146,8 @@ export default {
       try {
         this.resume = await resumeController.getByUsername(this.userId);
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving user resume ${this.userId} data`);
+        this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
+
       }
     },
     async getProfilePicture() {
@@ -158,7 +159,7 @@ export default {
         if (e.response.status === 404) {
           this.profilePic = null;
         }
-        this.$toast.info('Error when retrieving profile picture');
+        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
   },

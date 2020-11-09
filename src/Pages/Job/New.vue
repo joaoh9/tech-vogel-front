@@ -147,7 +147,7 @@ export default {
       const companyController = new CompanyController();
       const companyId = StorageHelper.loadState('companyId');
       if (!companyId) {
-        this.$toast.error('You must have a registered company in order to post a job!');
+        this.$toast.error(this.$t('toast.error.registeredCompany'));
         this.$router.push({
           name: 'Home',
         });
@@ -180,16 +180,14 @@ export default {
           ) {
             this.currentStep++;
           } else {
-            this.$toast.warning('You should fill all required information!');
+            this.$toast.warning(this.$t('toast.warning.fillAll'));
           }
           break;
         case 1:
           if (this.job_.description) {
             this.currentStep++;
           } else {
-            this.$toast.warning(
-              'Please give your appplicants a more detailed information about your job',
-            );
+            this.$toast.warning(this.$t('toast.warning.detailedInfo'));
           }
           break;
         case 2:
@@ -209,20 +207,23 @@ export default {
     },
     validateSkills(skill) {
       if (this.job_.skills[skill].length < Settings.skills[skill].min) {
-        return `Please select at least ${Settings.skills[skill].min} ${this.$t(
-          `enums.skills.${skill}`,
-        )}!`;
+        return this.$t(
+          'job.selectAtLeast',
+          Settings.skills[skill].min,
+          this.$t(`enums.skills.${skill}!`),
+        );
       }
       if (this.job_.skills[skill].length > Settings.skills[skill].max) {
-        return `Please select a maximum of ${Settings.skills[skill].max} ${this.$t(
-          `enums.skills.${skill}`,
-        )}!`;
+        return this.$t(
+          'job.selectMaximum',
+          Settings.skills[skill].max,
+          this.$t(`enums.skills.${skill}!`),
+        );
       }
       return true;
     },
   },
 };
-
 </script>
 
 <style>
