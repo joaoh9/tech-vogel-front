@@ -2,7 +2,7 @@ import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
 
 export default class JobController {
-  async confirmAcces(code) {
+  async confirmAccess(code) {
     const axios = await Axios.GetInstance({ api: '/serve' });
     const { data } = await axios.get(`/v1/github-signup?code=${code}`);
 

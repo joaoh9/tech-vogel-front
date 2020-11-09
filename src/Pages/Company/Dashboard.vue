@@ -35,10 +35,10 @@ import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'CompanyDashboard',
-  async mounted() {
-    await this.getUserInfo();
-    await this.getCompanyInfo();
-    await this.getCompanyJobs();
+  mounted() {
+    this.getUserInfo();
+    this.getCompanyInfo();
+    this.getCompanyJobs();
   },
   components: {
     CompanyCard,

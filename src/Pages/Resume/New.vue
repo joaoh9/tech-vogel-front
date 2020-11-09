@@ -95,7 +95,7 @@ import WorkExperience from './_3WorkExperience';
 import Education from './_5Education';
 
 export default {
-  name: 'NewJob',
+  name: 'NewResume',
   props: {
     editMode: Boolean,
   },
