@@ -210,14 +210,14 @@ export default {
         return this.$t(
           'job.selectAtLeast',
           Settings.skills[skill].min,
-          this.$t(`enums.skills.${skill}!`),
+          this.$t(`enums.skills.${skill}`),
         );
       }
       if (this.job_.skills[skill].length > Settings.skills[skill].max) {
         return this.$t(
           'job.selectMaximum',
           Settings.skills[skill].max,
-          this.$t(`enums.skills.${skill}!`),
+          this.$t(`enums.skills.${skill}`),
         );
       }
       return true;

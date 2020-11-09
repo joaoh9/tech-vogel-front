@@ -14,7 +14,7 @@
       color="primary"
       class=" bg-color-bg d-inline-flex justify-center flex-wrap"
     >
-      <v-btn class="bg-color-bg" v-for="(xp, index) in $t('enums.dictionary.experienceOptions')" :key="index" outlined :value="xp">
+      <v-btn class="bg-color-bg" v-for="(xp, index) in getExperienceOptions()" :key="index" outlined :value="xp">
         {{ xp }}
       </v-btn>
     </v-btn-toggle>
@@ -39,6 +39,9 @@ export default {
   methods: {
     updateItem() {
       this.$emit('update-item', this.skill);
+    },
+    getExperienceOptions() {
+      return this.$t('enums.dictionary.experienceOptions');
     },
   },
   mounted() {
