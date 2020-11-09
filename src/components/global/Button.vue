@@ -44,11 +44,14 @@
     :loading="loading"
   >
     {{ label }}
+
+    <v-icon right>
+      {{ icon }}
+    </v-icon>
   </v-btn>
 </template>
 
 <script>
-
 export default {
   name: 'g-btn',
   props: {
@@ -81,6 +84,7 @@ export default {
     loading: Boolean,
     elevation: [ String, Number ],
     xl: Boolean,
+    icon: String,
   },
   methods: {
     getElevation() {
@@ -130,7 +134,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style>
