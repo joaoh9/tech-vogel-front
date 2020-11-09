@@ -1,8 +1,7 @@
 export default {
   toast: {
     error: {
-      filename: 'File {filename}',
-      fileSize: 'exceeds {fileSize} MB limit',
+      fileExceeds: 'File {filename} exceeds {fileSize} MB limit',
       somethingWrong: 'There was something wrong when processing the file {filename}',
       companyInfo: 'Could not retrieve company info. Make sure you have a registered company',
       companyInfoLogged: 'Could not retrieve company info. Please make sure you are logged in',

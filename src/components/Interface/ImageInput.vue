@@ -25,8 +25,10 @@ export default {
       e.target.files.forEach(file => {
         if (file.size > MAX_FILE_SIZE) {
           this.$toast.error(
-            this.$t('toast.error.filename', { filename: file.name }),
-            this.$t('toast.error.fileSize', { fileSize: MAX_FILE_SIZE / MB }),
+            this.$t('toast.error.fileExceeds', {
+              filename: file.name,
+              fileSize: MAX_FILE_SIZE / MB,
+            }),
           );
           return;
         }
