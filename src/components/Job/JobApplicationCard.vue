@@ -97,6 +97,7 @@ export default {
   },
   methods: {
     getIconInfo() {
+      const currencySymbol = this.getPrefix(this.job.salary.currency);
       return [
         {
           icon: 'fa fa-briefcase',
@@ -105,6 +106,15 @@ export default {
         {
           icon: 'far fa-clock',
           text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
+        },
+        {
+          icon: 'fa fa-money-bill-wave',
+          text:
+            currencySymbol +
+            this.job.salary.min +
+            (this.job.salary.max ? ' - ' + currencySymbol + this.job.salary.max : '') +
+            ' ' +
+            this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`),
         },
       ];
     },
@@ -130,6 +140,18 @@ export default {
         this.$toast.success('Successfully applied for job');
       } catch (e) {
         this.$toast.error('An error occured when applying for this job');
+      }
+    },
+    getPrefix(currency) {
+      switch (currency) {
+        case 'USD':
+          return '$';
+        case 'GBP':
+          return '£';
+        case 'EUR':
+          return '€';
+        case 'BRL':
+          return 'R$';
       }
     },
   },

@@ -122,7 +122,9 @@ export default {
       dataUpdated: false,
       profilePicture: {},
       resume: {
-        personalBio: '',
+        biography: {
+          personalBio: '',
+        },
         jobInterests: [],
         contractType: [],
         mainRole: '',
