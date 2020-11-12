@@ -40,7 +40,7 @@ export default {
         this.company = await companyController.getById(companyId);
         this.loading.company = false;
       } catch (e) {
-        this.$toast.error('Could not retrieve company info from database');
+        this.$toast.error(this.$t('toast.error.retrieveCompany'));
       }
     },
     async getUserInfo() {
@@ -49,7 +49,7 @@ export default {
       this.user = StorageHelper.loadState('user');
       this.loading.user = false;
       if (!this.user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
@@ -57,12 +57,12 @@ export default {
 
       const companyId = StorageHelper.loadState('companyId');
       if (!companyId) {
-        this.$toast.error('Could not retrieve company info. Please make sure you are logged in');
+        this.$toast.error(this.$t('toast.error.companyInfoLogged'));
       }
       try {
         await this.getCompanyInfo(companyId);
       } catch (e) {
-        this.$toast.error('Could not retrieve company info from database');
+        this.$toast.error(this.$t('toast.error.retrieveCompany'));
       }
     },
     async getCompanyJobs() {
@@ -71,7 +71,7 @@ export default {
       try {
         this.jobs = await jobController.getAll();
       } catch (e) {
-        this.$toast.error('An error occured when retrieving jobs from the database');
+        this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
     },
   },

@@ -44,7 +44,7 @@ export default {
         this.$toast.success(this.$t('oAuth.github.accessSuccess'));
 
         if (hasAccessToken) {
-          this.$toast.success('You can close this tab and retry your request on the other page');
+          this.$toast.success(this.$t('toast.success.closeTab'));
           return;
         }
 

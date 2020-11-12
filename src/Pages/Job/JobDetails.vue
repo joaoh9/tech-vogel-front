@@ -111,7 +111,7 @@ export default {
       try {
         this.company = await companyController.getById(this.companyId);
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving company ${this.companyId} data`);
+        this.$toast.error(this.$t('toast.error.companyData', { companyId: this.companyId }));
       }
     },
     async getJobData() {
@@ -120,12 +120,13 @@ export default {
       try {
         this.job = await jobController.getById(this.jobId);
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving job ${this.jobId} data`);
+        this.$toast.error(this.$t('toast.error.jobData', { jobId: this.jobId }));
+
       }
     },
     getTimePosted() {
       if (this.editMode) {
-        return 'Posted just now';
+        return this.$t('common.postedNow');
       } else {
         return DateHelper.format(this.job.createdAt);
       }
@@ -138,12 +139,12 @@ export default {
 
       try {
         await jobController.save(this.job);
-        this.$toast.success('Job saved successfully');
+        this.$toast.success(this.$t('toast.success.jobSaved'));
         this.$router.push({
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.error('There was an error when saving the job');
+        this.$toast.error(this.$t('toast.error.saveJob'));
       }
     },
     async editJob() {
@@ -151,12 +152,12 @@ export default {
 
       try {
         await jobController.patch(this.job);
-        this.$toast.success('Job edited successfully');
+        this.$toast.success(this.$t('toast.success.jobEdit'));
         this.$router.push({
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.error('There was an error when saving the job');
+        this.$toast.error(this.$t('toast.error.saveJob'));
       }
     },
     goBackAndEdit() {

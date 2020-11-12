@@ -94,7 +94,7 @@ export default {
       console.log('profilePic');
       console.log(profilePicData);
 
-      this.profilePic = profilePicData?.data64 || profilePicData?.srcLink;
+      this.profilePic = profilePicData.data64 || profilePicData.srcLink;
       console.log(this.profilePic);
     },
     goToDashboard() {
@@ -121,13 +121,13 @@ export default {
         this.$router.push({
           path: '/',
         });
-        this.$toast.success('Logout successfull');
+        this.$toast.success(this.$t('toast.success.logout'));
       } catch (e) {
         this.$emit('logout');
         this.$router.push({
           path: '/',
         });
-        this.$toast.success('Logout successfull');
+        this.$toast.success(this.$t('toast.success.logout'));
       }
     },
     goToNewJob() {

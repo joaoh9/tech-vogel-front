@@ -184,10 +184,10 @@ export default {
       const validEmail = await this.validEmail();
       const validUsername = await this.validUsername();
       if (!validEmail) {
-        this.$toast.warning('Email already registered!');
+        this.$toast.warning(this.$t('toast.warning.emailRegistered'));
       }
       if (!validUsername) {
-        this.$toast.warning('Username already registered');
+        this.$toast.warning(this.$t('toast.warning.userRegistered'));
       }
       if (!validEmail || !validUsername) {
         return;

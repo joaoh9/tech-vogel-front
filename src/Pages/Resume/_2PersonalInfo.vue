@@ -91,7 +91,7 @@ export default {
     getUserInfo() {
       const user = StorageHelper.loadState('user');
       if (!user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });

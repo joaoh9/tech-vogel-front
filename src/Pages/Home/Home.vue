@@ -92,7 +92,7 @@ export default {
         this.jobs = this.jobs.splice(0, 6);
         await this.getCompanyInfo();
       } catch (e) {
-        this.$toast.error('An error occurred when retrieving jobs from the database');
+        this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
     },
     async getCompanyInfo() {
@@ -102,7 +102,7 @@ export default {
           this.jobs[i].company = await companyController.getById(this.jobs[i].companyId);
         }
       } catch (e) {
-        this.$toast.error('An error has occurred when retrieving company information on a job');
+        this.$toast.error(this.$t('toast.error.retrieveCompanyInfo'));
       }
     },
   },

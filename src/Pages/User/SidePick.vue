@@ -45,8 +45,7 @@ export default {
   },
   methods: {
     getHeaderTitle() {
-      // TODO: internacionalização
-      return 'Choose your side';
+      return this.$t('common.chooseSide');
     },
     crateCompany() {
       this.$router.push({

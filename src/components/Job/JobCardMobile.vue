@@ -74,7 +74,7 @@ export default {
       try {
         this.company = await companyController.getById(this.job.companyId);
       } catch (e) {
-        this.$toast.error('Something when wrong when getting company info for a job');
+        this.$toast.error(this.$t('toast.error.getCompany'));
       }
     },
     goToJobDetails() {

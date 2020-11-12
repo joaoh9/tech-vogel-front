@@ -76,5 +76,7 @@ export default {
       label: 'Confirm Password',
     },
     youHave: 'You have',
+    postedNow: 'Posted just now',
+    chooseSide: 'Choose your side',
   },
 };

@@ -40,7 +40,6 @@
 
 <script>
 import StorageHelper from 'Helpers/storage';
-import InactivityHelper from 'Helpers/inactivity';
 
 import NoJobsApplied from 'Components/Dashboard/NoJobsApplied';
 import UserCard from 'Components/Dashboard/UserCard';
@@ -83,7 +82,7 @@ export default {
     loadUserInfo() {
       this.user = StorageHelper.loadState('user');
       if (!this.user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
@@ -124,7 +123,7 @@ export default {
       try {
         this.appliedJobs = await jobController.getAppliedJobs(this.user.username);
       } catch (e) {
-        this.$toast.error('Something went wrong when retrieving applied jobs');
+        this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
       }
     },
     async getProfilePicture() {
@@ -136,7 +135,7 @@ export default {
         if (e.response.status === 404) {
           this.profilePic = null;
         }
-        this.$toast.info('Error when retrieving profile picture');
+        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
     goToUserProfile() {

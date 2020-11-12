@@ -60,9 +60,7 @@ export default {
     async getCompanyInfo() {
       const companyId = StorageHelper.loadState('companyId');
       if (!companyId) {
-        this.$toast.error(
-          'Could not retrieve company info. Make sure you have a registered company',
-        );
+        this.$toast.error(this.$t('toast.error.companyInfo'));
         this.$router.push({
           name: 'New Company',
         });
@@ -73,16 +71,14 @@ export default {
         this.company = await companyController.getById(companyId);
         this.loaded.company = true;
       } catch (e) {
-        this.$toast.error(
-          'Could not retrieve company info. Make sure you have a registered company',
-        );
+        this.$toast.error(this.$t('toast.error.companyInfo'));
       }
     },
     async getUserInfo() {
       this.user = StorageHelper.loadState('user');
       this.loaded.user = false;
       if (!this.user) {
-        this.$toast('Could not retrieve user info. Please login again');
+        this.$toast(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
@@ -92,9 +88,9 @@ export default {
       const jobController = new JobController();
 
       try {
-        this.jobs = await jobController.getCompanyJobs(this.company && this.company.companyId);
+        this.jobs = await jobController.getCompanyJobs(this.company.companyId);
       } catch (e) {
-        this.$toast.error('An error occured when retrieving jobs from the database');
+        this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
     },
     getFistColInfo() {
@@ -118,7 +114,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style>
