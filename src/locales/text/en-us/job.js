@@ -102,7 +102,7 @@ export default {
     posted: 'Posted',
     seeReport: 'See report',
     timePosted: 'Posted {time}',
+    selectAtLeast: 'Please select at least',
+    selectMaximum: 'Please select a maximum of',
   },
-  selectAtLeast: 'Please select at least',
-  selectMaximum: 'Please select a maximum of',
 };
