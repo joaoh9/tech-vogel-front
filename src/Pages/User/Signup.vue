@@ -10,16 +10,6 @@
           :rules="[rules.min(3, user.name)]"
           v-model="user.name"
         />
-        <form-input v-if="askForUsername" :title="$t('signup.username.title')" />
-        <v-text-field
-          data-cy="username"
-          v-if="askForUsername"
-          outlined
-          :rules="[rules.min(3, user.username)]"
-          :error-messages="localRules.usernameUnavaliable"
-          @input="localRules.usernameUnavaliable = null"
-          v-model="user.username"
-        />
         <form-input :title="$t('signup.email.title')" />
         <v-text-field
           data-cy="email"
@@ -59,7 +49,7 @@
         <g-btn
           @click="goToAuthGithubLink()"
           block
-          v-if="!_username"
+          v-if="!_emai"
           type="primary"
           label="Signup with Github"
         />
@@ -67,7 +57,7 @@
           class="mt-4"
           disabled
           block
-          v-if="!_username"
+          v-if="!_emai"
           type="primary"
           label="Signup with Linkedin"
         />
@@ -123,18 +113,15 @@ export default {
   name: 'Login',
   props: {
     _email: String,
-    _username: String,
     _name: String,
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.user.email = this._email || '';
-    this.user.username = this._username || '';
     this.user.name = this._name || '';
   },
   data() {
     return {
-      askForUsername: true,
       requestError: false,
       showPassword: false,
       showConfirmPassword: false,
@@ -148,14 +135,12 @@ export default {
       },
       localRules: {
         emailAlreadyRegistered: null,
-        usernameUnavaliable: null,
         termsAndConditions: null,
       },
       user: {
         name: '',
         email: '',
         confirmEmail: '',
-        username: '',
         password: '',
         confirmPassword: '',
       },
@@ -173,23 +158,12 @@ export default {
         this.localRules.termsAndConditions = this.$t('rules.termsAndConditions');
         return false;
       }
-      if (!this.askForUsername) {
-        this.user.username =
-          this.user.email.split('@')[0] +
-          Math.random()
-            .toString()
-            .slice(3, 10);
-      }
 
       const validEmail = await this.validEmail();
-      const validUsername = await this.validUsername();
       if (!validEmail) {
         this.$toast.warning(this.$t('toast.warning.emailRegistered'));
       }
-      if (!validUsername) {
-        this.$toast.warning(this.$t('toast.warning.userRegistered'));
-      }
-      if (!validEmail || !validUsername) {
+      if (!validEmail) {
         return;
       }
 
@@ -197,17 +171,14 @@ export default {
       try {
         await userController.saveUser({
           name: this.user.name,
-          username: this.user.username,
           email: this.user.email,
           password: this.user.password,
-          birthDate: '1990-12-12',
         });
         this.loading.register = false;
 
         this.$router.push({
           path: '/confirm-registration',
           params: {
-            _username: this.user.username,
             _email: this.user.email,
           },
         });
@@ -230,25 +201,6 @@ export default {
 
         if (user.email) {
           this.localRules.emailAlreadyRegistered = this.$t('rules.emailAlreadyRegistered');
-          return false;
-        }
-        return true;
-      } catch (e) {
-        return true;
-      }
-    },
-    async validUsername() {
-      const userController = new UserController();
-
-      if (this.rules.min(3, this.user.username) !== true) {
-        this.localRules.usernameUnavaliable = this.$t('rules.lessThanXCharacters').replace('X', 4);
-        return false;
-      }
-
-      try {
-        const user = await userController.getByUsername(this.user.username);
-        if (user) {
-          this.localRules.usernameUnavaliable = this.$t('rules.usernameUnavaliable');
           return false;
         }
         return true;

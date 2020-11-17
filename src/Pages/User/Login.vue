@@ -3,8 +3,8 @@
     <g-card :lg="600" :md="500">
       <template v-slot:card-content>
         <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
-        <form-input class="mt-6" :title="$t('common.username.label')" />
-        <v-text-field outlined v-model="user.username" :rules="[rules.required(user.username)]" />
+        <form-input class="mt-6" :title="$t('common.email.label')" />
+        <v-text-field outlined v-model="user.email" :rules="[rules.required(user.email)]" />
         <form-input :title="$t('common.password.label')" />
         <v-text-field
           v-model="user.password"
@@ -51,7 +51,7 @@ export default {
     userEmail: {
       type: String,
     },
-    username: {
+    email: {
       type: String,
     },
     firstLogin: {
@@ -62,15 +62,15 @@ export default {
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.rulesLoaded = true;
-    if (this.username) {
-      this.user.username = this.username;
+    if (this.email) {
+      this.user.email = this.email;
     }
   },
   data() {
     return {
       showPassword: false,
       user: {
-        username: '',
+        email: '',
         password: '',
       },
       loading: {
@@ -85,17 +85,17 @@ export default {
   methods: {
     async login() {
       const userController = new UserController();
-      if (!this.user.username || !this.user.password) {
+      if (!this.user.email || !this.user.password) {
         return;
       }
       this.loading.login = true;
       try {
-        const statusCode = await userController.login({
-          username: this.user.username,
+        const { statusCode, data } = await userController.auth({
+          email: this.user.email,
           password: this.user.password,
         });
         if (statusCode === 200) {
-          return this.saveUserCredentials();
+          return this.saveUserCredentials(data);
         }
         this.$toast.error(this.errorMessage);
         this.loading.login = false;
@@ -108,12 +108,8 @@ export default {
       }
       this.loading.login = false;
     },
-    async saveUserCredentials() {
-      const userController = new UserController();
-
-      const userInfo = await userController.getByUsername(this.user.username);
-
-      StorageHelper.saveState('user', userInfo);
+    async saveUserCredentials(userToken) {
+      StorageHelper.saveState('user', userToken);
 
       this.seeIfUserIsACompanyOwner();
     },
@@ -132,7 +128,7 @@ export default {
       const resumeController = new ResumeController();
 
       try {
-        const resume = await resumeController.getByUsername(this.user.username);
+        const resume = await resumeController.getByEmail(this.user.email);
 
         if (!resume || (resume && resume.length === 0)) {
           return this.goToSidePick();
