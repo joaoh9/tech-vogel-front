@@ -23,17 +23,16 @@ export default class UserController {
     return data;
   }
 
-
-  async getCompany(username) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.get(`/users/companies/${username}`);
+  async getCompanyByEmail(email) {
+    const axios = Axios.GetInstance({ api: '/serve' });
+    const { data } = await axios.get(`/v1/companies/author/email/${email}`);
 
     return data;
   }
 
   async auth({ email, password }) {
     const axios = Axios.GetInstance({ api: '/serve' });
-    const { data, status } = await axios.post('/v1/auth', {
+    const { data, status } = await axios.post('/v1/users/auth', {
       email,
       password,
     });
@@ -42,7 +41,7 @@ export default class UserController {
   }
 
   async logout() {
-    const axios = Axios.GetInstance({ api: '/api' });
+    const axios = Axios.GetInstance({ api: '/serve' });
     const { status } = await axios.post('logout');
     if (status === 200) {
       StorageHelper.removeState('user');
@@ -68,7 +67,7 @@ export default class UserController {
   }
 
   async emailLogin({ email, password }) {
-    const axios = Axios.GetInstance({ api: '/api' });
+    const axios = Axios.GetInstance({ api: '/serve' });
     const { data } = await axios.post('/emailLogin', {
       email,
       password,
