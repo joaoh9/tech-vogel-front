@@ -2,15 +2,13 @@ import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
 
 export default class UserController {
-  async saveUser({ name, username, email, password, birthDate = '1990-12-12' }) {
-    const axios = Axios.GetInstance({ api: '/api' });
+  async saveUser({ name, email, password }) {
+    const axios = Axios.GetInstance({ api: '/serve' });
 
-    const res = await axios.post('/users', {
-      username,
+    const res = await axios.post('/v1/users', {
       name,
       email,
       password,
-      birthDate,
     });
 
     console.log(res);
@@ -19,22 +17,12 @@ export default class UserController {
   }
 
   async getByEmail(email) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.get(`/users/byEmail/${email}`);
+    const axios = Axios.GetInstance({ api: '/serve' });
+    const { data } = await axios.get(`/v1/users/email/${email}`);
 
     return data;
   }
 
-  getById(id) {
-    return this.getByUsername(id);
-  }
-
-  async getByUsername(username) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.get(`/users/${username}`);
-
-    return data;
-  }
 
   async getCompany(username) {
     const axios = Axios.GetInstance({ api: '/api' });
@@ -43,14 +31,14 @@ export default class UserController {
     return data;
   }
 
-  async login({ username, password }) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { status } = await axios.post('login', {
-      username,
+  async auth({ email, password }) {
+    const axios = Axios.GetInstance({ api: '/serve' });
+    const { data, status } = await axios.post('/v1/auth', {
+      email,
       password,
     });
 
-    return status;
+    return { data, statusCode: status };
   }
 
   async logout() {
