@@ -35,6 +35,7 @@ import UserController from 'Controllers/user';
 export default {
   name: 'CompanyDashboard',
   async mounted() {
+    await this.isCompanyValdation()
     await this.getUserInfo();
     await this.getCompanyInfo();
     await this.getCompanyJobs();
