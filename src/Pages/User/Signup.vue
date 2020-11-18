@@ -49,7 +49,7 @@
         <g-btn
           @click="goToAuthGithubLink()"
           block
-          v-if="!_emai"
+          v-if="!_email"
           type="primary"
           label="Signup with Github"
         />
@@ -57,7 +57,7 @@
           class="mt-4"
           disabled
           block
-          v-if="!_emai"
+          v-if="!_email"
           type="primary"
           label="Signup with Linkedin"
         />

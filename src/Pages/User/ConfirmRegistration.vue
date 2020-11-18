@@ -57,7 +57,7 @@ export default {
   name: 'Login',
   props: {
     _username: String,
-    _email: String,
+    // _email: String,
   },
   mounted() {
     if (this._username) {

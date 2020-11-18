@@ -35,7 +35,6 @@ export default class UserController {
 
     const axios = Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/users/${userId}`, updates);
-
     return data;
   }
 
