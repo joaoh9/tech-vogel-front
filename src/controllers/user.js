@@ -1,5 +1,6 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import jwtDecode from 'jwt-decode';
 
 export default class UserController {
   async saveUser({ name, email, password }) {
@@ -24,9 +25,17 @@ export default class UserController {
   }
 
 
-  async getCompany(username) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.get(`/users/companies/${username}`);
+  decodeUserToken(_token) {
+    const token = _token || StorageHelper.loadState('userToken');
+    return jwtDecode(token);
+  }
+
+  async update(updates) {
+    const userToken = StorageHelper.loadState('userToken');
+    const userId = updates.id || updates.userId || this.decodeUserToken().id
+
+    const axios = Axios.GetInstance({ api: '/serve', token: userToken });
+    const { data } = await axios.put(`/v1/users/${userId}`, updates);
 
     return data;
   }

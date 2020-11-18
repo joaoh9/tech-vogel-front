@@ -9,10 +9,8 @@
       <template v-slot:card-content>
         <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
           <About
-            v-on:owner-id="e => (company.ownerId = e)"
             v-on:company-name="e => (company.name = e)"
-            v-on:representative-name="e => (company.representative = e)"
-            v-on:company-description="e => (company.companyDescription = e)"
+            v-on:company-description="e => (company.description = e)"
           />
         </div>
         <!--
@@ -58,7 +56,6 @@ import About from 'Pages/Company/_1About';
 // import New3 from 'Pages/Company/New3';
 import CompanyController from 'Controllers/company';
 import RulesHelper from 'Helpers/rules';
-import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'New',
@@ -76,10 +73,8 @@ export default {
     return {
       currentStep: 0,
       company: {
-        ownerId: '',
         name: '',
-        representative: '',
-        companyDescription: '',
+        description: '',
       },
     };
   },
@@ -99,26 +94,16 @@ export default {
     },
     async register() {
       const companyController = new CompanyController();
-      if (
-        this.rules.min(3, this.company.name) !== true ||
-        this.rules.min(3, this.company.representative) !== true
-      ) {
+      if (this.rules.min(3, this.company.name) !== true) {
         this.$toast.error(this.$t('toast.error.writeNames'));
         return;
       }
       try {
-        const companyId =
-          this.company.name.replace(/ /g, '-').replace(/[A-Z]/g, match => match.toLowerCase()) +
-          Math.round(Math.random() * 10 ** 6).toString();
-
-        await companyController.save({
-          ...this.company,
-          companyId,
-        });
+        await companyController.save(this.company);
         this.$toast.success(this.$t('toast.success.savedCompany'));
-        StorageHelper.saveState('companyId', companyId);
+
         this.$router.push({
-          path: '/jobs/new',
+          path: '/jobs/new', // TODO: mudar pra pricing depois
         });
       } catch (e) {
         if (e.response.status === 409) {
@@ -129,5 +114,4 @@ export default {
     },
   },
 };
-
 </script>

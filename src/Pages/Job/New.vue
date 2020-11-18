@@ -77,6 +77,7 @@ import About from './_2About';
 import Skills from 'Components/General/SkillsSelection';
 import Benefits from './_4Benefits';
 import CompanyController from 'Controllers/company';
+import UserController from 'Controllers/user';
 import Settings from '@config';
 import StorageHelper from 'Helpers/storage';
 
@@ -103,6 +104,7 @@ export default {
     if (this.job) {
       this.job_ = this.job;
     }
+    this.isCompanyValdation();
     this.getCompanyInfo();
   },
   data() {
@@ -143,16 +145,24 @@ export default {
         },
       });
     },
-    async getCompanyInfo() {
-      const companyController = new CompanyController();
-      const companyId = StorageHelper.loadState('companyId');
-      if (!companyId) {
+    async isCompanyValdation() {
+      const userController = new UserController();
+      const { isCompany } = userController.decodeUserToken();
+      if (!isCompany) {
         this.$toast.error(this.$t('toast.error.registeredCompany'));
         this.$router.push({
           name: 'Home',
         });
       }
-      this.company = await companyController.getById(companyId);
+    },
+    async getCompanyInfo() {
+      const companyController = new CompanyController();
+      try {
+        this.company = await companyController.getByAuthorId('current');
+      } catch (e) {
+        this.$toast.error('Something went wrong when retrieving company info');
+        console.log(e);
+      }
     },
     getPageInfo() {
       return [

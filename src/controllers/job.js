@@ -18,14 +18,14 @@ export default class JobController {
   }
 
   async getAll() {
-    const axios = await Axios.GetInstance();
-    const { data } = await axios.get('/jobs');
+    const axios = await Axios.GetInstance({ api: '/serve' });
+    const { data } = await axios.get('/v1/jobs');
     return data;
   }
 
   async getById(jobId) {
-    const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/jobs/${jobId}`);
+    const axios = await Axios.GetInstance({ api: '/serve' });
+    const { data } = await axios.get(`/v1/jobs/${jobId}`);
     return data;
   }
 
@@ -37,22 +37,22 @@ export default class JobController {
 
   async getCompanyJobs(companyId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/jobs/company/${companyId}`);
+    const { data } = await axios.get(`/v1/jobs/company/${companyId}`);
     return data;
   }
 
   async apply(username, jobId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.post('/jobs/apply', {
+    const { data } = await axios.post('/v1/jobs/apply', {
       username,
       jobId,
     });
     return data;
   }
 
-  async patch(job) {
-    const axios = await Axios.GetInstance();
-    const { data } = await axios.patch('/jobs', job);
+  async update(jobId, updates) {
+    const axios = await Axios.GetInstance({ api: '/serve' });
+    const { data } = await axios.put(`/v1/jobs/${jobId}`, updates);
     return data;
   }
 }

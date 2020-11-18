@@ -11,6 +11,8 @@ export default class Axios {
       accept: 'application/json',
     };
 
+    console.log('token: ' + token)
+
     if (token) {
       headers['Authorization'] = `Bearer ${token}`;
     }

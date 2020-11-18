@@ -11,7 +11,7 @@
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCompany')"
-              @click="crateCompany()"
+              @click="createCompany()"
               block
             />
 
@@ -19,7 +19,7 @@
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCV')"
-              @click="crateCV()"
+              @click="createCV()"
               block
             />
           </div>
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import UserController from 'Controllers/user';
+
 export default {
   name: 'RegistrationConfirmed',
   props: {
@@ -47,12 +49,28 @@ export default {
     getHeaderTitle() {
       return this.$t('common.chooseSide');
     },
-    crateCompany() {
+    async createCompany() {
+      const userController = new UserController();
+
+      try {
+        await userController.update({ side: 2 });
+      } catch (e) {
+        this.$toast.error('Something went wrong. Try again later');
+        console.log(e);
+      }
+
       this.$router.push({
         path: '/company/new',
       });
     },
-    crateCV() {
+    async createCV() {
+      const userController = new UserController();
+      try {
+        await userController.update({ side: 1 }); // Joao arruma o nome da função
+      } catch (e) {
+        this.$toast.error('Something went wrong. Try again later');
+        console.log(e);
+      }
       this.$router.push({
         path: '/resume/new',
       });
