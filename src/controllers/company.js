@@ -35,11 +35,9 @@ export default class CompanyController {
   }
 
   async getByUserId(userId) {
-    console.log('userId: ' + userId);
     if (userId === 'current' || !userId) {
       userId = this.decodeUserToken().id;
     }
-    console.log('userId: ' + userId);
     const axios = Axios.GetInstance();
     const { data } = await axios.get(`/v1/companies/author/${userId}`);
 
