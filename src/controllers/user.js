@@ -1,5 +1,6 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import jwtDecode from 'jwt-decode'
 
 export default class UserController {
   async saveUser({ name, email, password }) {
@@ -23,11 +24,13 @@ export default class UserController {
     return data;
   }
 
-  async getCompanyByEmail(email) {
-    const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.get(`/v1/companies/author/email/${email}`);
+  saveUserToken(token) {
+    StorageHelper.saveState('userToken', token);
+  }
 
-    return data;
+  decodeUserToken(_token) {
+    const token = _token || StorageHelper.loadState('userToken');
+    return jwtDecode(token)
   }
 
   async auth({ email, password }) {
@@ -38,17 +41,6 @@ export default class UserController {
     });
 
     return { data, statusCode: status };
-  }
-
-  async logout() {
-    const axios = Axios.GetInstance({ api: '/serve' });
-    const { status } = await axios.post('logout');
-    if (status === 200) {
-      StorageHelper.removeState('user');
-      StorageHelper.removeState('company');
-    }
-
-    return status;
   }
 
   async getProfilePicture(username) {
@@ -64,33 +56,5 @@ export default class UserController {
       }
       throw e;
     }
-  }
-
-  async emailLogin({ email, password }) {
-    const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.post('/emailLogin', {
-      email,
-      password,
-    });
-
-    return data;
-  }
-
-  async resendConfirmationEmail(email) {
-    const user = await this.getByEmail(email);
-
-    const axios = Axios.GetInstance();
-
-    const { data } = await axios.get(`/users/sendConfirmationEmail/${user.username}`);
-
-    return { ...data, email };
-  }
-
-  async confirmAccount(confirmationId) {
-    const axios = Axios.GetInstance();
-
-    const { data } = await axios.get(`/users/confirmAccount/${confirmationId}`);
-
-    return data;
   }
 }

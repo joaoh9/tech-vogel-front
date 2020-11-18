@@ -36,10 +36,8 @@
 
 <script>
 import UserController from 'Controllers/user';
-import ResumeController from 'Controllers/resume';
 
 import RulesHelper from 'Helpers/rules';
-import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'Login',
@@ -85,78 +83,43 @@ export default {
   methods: {
     async login() {
       const userController = new UserController();
-      if (!this.user.email || !this.user.password) {
-        return this.$toast.error(this.$t('toast.error.userOrPassword'));
-      }
-      this.loading.login = true;
+
       try {
-        const { statusCode, data } = await userController.auth({
+        const { data: userInfo } = await userController.auth({
           email: this.user.email,
           password: this.user.password,
         });
-        if (statusCode === 200) {
-          this.saveUserCredentials(data);
-        }
-        this.$toast.error(this.errorMessage);
-        this.loading.login = false;
-      } catch (e) {
-        if (e.response.status === 500) {
-          this.errorMessage = this.$t('errors.500');
-        }
-        this.loading.login = false;
-        this.$toast.error(this.errorMessage);
-      }
-      this.loading.login = false;
 
-      return this.$router.push('/side-pick');
-    },
-    async saveUserCredentials(userToken) {
-      StorageHelper.saveState('user', userToken);
-      this.seeIfUserIsACompanyOwner();
-    },
+        userController.saveUserToken(userInfo.token);
 
-    async seeIfUserIsACompanyOwner() {
-      const userController = new UserController();
-
-      const company = await userController.getCompanyByEmail(this.user.email);
-      if (company) {
-        StorageHelper.saveState('companyId', company[0]);
-        this.goToNextRoute('/company/dashboard');
-      } else {
-        this.seeIfUserHasSavedResume();
-      }
-    },
-    async seeIfUserHasSavedResume() {
-      const resumeController = new ResumeController();
-
-      try {
-        const resume = await resumeController.getByEmail(this.user.email);
-
-        if (!resume || (resume && resume.length === 0)) {
+        if (userInfo.side === 2) {
+          return this.goToCompanyDashboard();
+        } else if (userInfo.side === 1) {
+          return this.goToUserDashboard();
+        } else {
           return this.goToSidePick();
         }
       } catch (e) {
-        if (e.response.status === 404) {
-          return this.goToSidePick();
-        }
+        this.$toast.error('Something went wrong on your login');
       }
-
-      this.goToNextRoute('/dashboard');
     },
+
     goToSidePick() {
-      this.$emit('login');
+      console.log('going to side pick');
       this.$router.push({
         name: 'Side Pick',
       });
     },
 
-    goToNextRoute(route) {
-      route = this.nextRoute ? this.nextRoute : route;
-      route = this.firstLogin ? '/onboarding' : route;
-      this.$toast.open(this.$t('toast.open.login'));
-      this.$emit('login');
+    goToCompanyDashboard() {
       this.$router.push({
-        path: route,
+        name: 'Company Dashboard',
+      });
+    },
+
+    goToUserDashboard() {
+      this.$router.push({
+        name: 'User Dashboard',
       });
     },
   },
