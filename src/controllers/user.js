@@ -33,14 +33,17 @@ export default class UserController {
     const userToken = StorageHelper.loadState('userToken');
     const userId = updates.id || updates.userId || this.decodeUserToken().id;
 
+    const userInfo = jwtDecode(userToken);
+    userInfo.side = updates;
+
     const axios = Axios.GetInstance(userToken);
-    const { data } = await axios.put(`/v1/users/${userId}`, updates);
+    const { data } = await axios.put(`/v1/users/${userId}`, userInfo.side);
     return data;
   }
 
   async auth({ email, password }) {
     const axios = Axios.GetInstance();
-    const { data, status } = await axios.post('/v1/auth', {
+    const { data, status } = await axios.post('/v1/users/auth', {
       email,
       password,
     });

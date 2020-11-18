@@ -65,8 +65,9 @@ export default {
     },
     async createCV() {
       const userController = new UserController();
+
       try {
-        await userController.update({ side: 1 }); // Joao arruma o nome da função
+        await userController.update({ side: 1 });
       } catch (e) {
         this.$toast.error('Something went wrong. Try again later');
         console.log(e);
