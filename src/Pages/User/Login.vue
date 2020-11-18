@@ -86,7 +86,7 @@ export default {
     async login() {
       const userController = new UserController();
       if (!this.user.email || !this.user.password) {
-        return;
+        return this.$toast.error(this.$t('toast.error.userOrPassword'));
       }
       this.loading.login = true;
       try {
@@ -95,7 +95,7 @@ export default {
           password: this.user.password,
         });
         if (statusCode === 200) {
-          return this.saveUserCredentials(data);
+          this.saveUserCredentials(data);
         }
         this.$toast.error(this.errorMessage);
         this.loading.login = false;
@@ -107,16 +107,18 @@ export default {
         this.$toast.error(this.errorMessage);
       }
       this.loading.login = false;
+
+      return this.$router.push('/side-pick');
     },
     async saveUserCredentials(userToken) {
       StorageHelper.saveState('user', userToken);
-
       this.seeIfUserIsACompanyOwner();
     },
+
     async seeIfUserIsACompanyOwner() {
       const userController = new UserController();
 
-      const company = await userController.getCompany(this.user.username);
+      const company = await userController.getCompanyByEmail(this.user.email);
       if (company) {
         StorageHelper.saveState('companyId', company[0]);
         this.goToNextRoute('/company/dashboard');

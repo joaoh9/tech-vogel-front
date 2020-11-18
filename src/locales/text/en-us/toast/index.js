@@ -23,6 +23,7 @@ export default {
       jobList: 'Something went wrong when retrieving the jobs from the Database',
       registeredCompany: 'You must have a registered company in order to post a job!',
       githubRetrieve: 'Something went wrong when retrieving your github data',
+      userOrPassword: 'Please insert a correct email or password',
     },
     success: {
       jobApplied: 'Successfully applied for job',
