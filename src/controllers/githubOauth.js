@@ -3,7 +3,7 @@ import StorageHelper from 'Helpers/storage';
 
 export default class GithubOauthController {
   async confirmAccess(code) {
-    const axios = await Axios.GetInstance({ api: '/serve' });
+    const axios = await Axios.GetInstance();
     const { data } = await axios.get(`/v1/github-signup?code=${code}`);
 
     return data;
@@ -16,7 +16,7 @@ export default class GithubOauthController {
         status: 403,
       };
     }
-    const axios = await Axios.GetInstance({ api: '/serve', token: accessToken });
+    const axios = await Axios.GetInstance(accessToken);
 
     const { data } = await axios.get('/v1/github-info');
 
@@ -34,7 +34,7 @@ export default class GithubOauthController {
       };
     }
 
-    const axios = await Axios.GetInstance({ api: '/serve', token: accessToken });
+    const axios = await Axios.GetInstance(accessToken);
 
     const { data } = await axios.get(`/v1/repo-info/${userInfo.username}/${githubUsername}`);
 

@@ -22,29 +22,31 @@ export default class CompanyController {
     return data;
   }
 
-  async getUserToken(){
-    const userToken = StorageHelper.loadState('userToken');
-    return jwtDecode(userToken);
+  decodeUserToken(_token) {
+    const token = _token || StorageHelper.loadState('userToken');
+    return jwtDecode(token);
   }
 
   async getByUserEmail(email) {
-    const axios = Axios.GetInstance({ api: '/serve' });
+    const axios = Axios.GetInstance();
     const { data } = await axios.get(`/v1/companies/author/email/${email}`);
 
     return data;
   }
 
   async getByUserId(userId) {
+    console.log('userId: ' + userId);
     if (userId === 'current') {
-      userId = this.getUserToken().id
+      userId = this.decodeUserToken().id;
     }
-    const axios = Axios.GetInstance({ api: '/serve' });
+    console.log('userId: ' + userId);
+    const axios = Axios.GetInstance();
     const { data } = await axios.get(`/v1/companies/author/${userId}`);
 
     return data;
   }
 
   getByAuthorId(authorId) {
-    return this.getByUserId(authorId)
+    return this.getByUserId(authorId);
   }
 }

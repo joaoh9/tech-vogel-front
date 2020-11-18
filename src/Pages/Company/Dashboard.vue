@@ -32,12 +32,9 @@ import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
 
-import StorageHelper from 'Helpers/storage';
-
 export default {
   name: 'CompanyDashboard',
   async mounted() {
-    await this.isCompanyValdation()
     await this.getUserInfo();
     await this.getCompanyInfo();
     await this.getCompanyJobs();
@@ -59,22 +56,11 @@ export default {
     };
   },
   methods: {
-    async isCompanyValdation() {
-      const userController = new UserController();
-      const userInfo = userController.decodeUserToken();
-
-      if (!userInfo) {
-        this.$toast.error(this.$t('toast.error.companyInfo'));
-        this.$router.push({
-          name: 'New Company',
-        });
-      }
-    },
     async getCompanyInfo() {
       const companyController = new CompanyController();
 
       try {
-        this.company = await companyController.getById(companyId);
+        this.company = await companyController.getByAuthorId('current');
         this.loaded.company = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.companyInfo'));
