@@ -36,13 +36,13 @@ export default class JobController {
   }
 
   async getCompanyJobs(companyId) {
-    const axios = await Axios.GetInstance({ api: '/serve'});
+    const axios = await Axios.GetInstance();
     const { data } = await axios.get(`/v1/jobs/company/${companyId}`);
     return data;
   }
 
   async apply(username, jobId) {
-    const axios = await Axios.GetInstance({ api: '/serve'});
+    const axios = await Axios.GetInstance();
     const { data } = await axios.post('/v1/jobs/apply', {
       username,
       jobId,

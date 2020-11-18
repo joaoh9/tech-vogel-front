@@ -49,17 +49,6 @@ export default class UserController {
     return { data, statusCode: status };
   }
 
-  async logout() {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { status } = await axios.post('logout');
-    if (status === 200) {
-      StorageHelper.removeState('user');
-      StorageHelper.removeState('company');
-    }
-
-    return status;
-  }
-
   async getProfilePicture(username) {
     const axios = Axios.GetInstance();
 
@@ -73,33 +62,5 @@ export default class UserController {
       }
       throw e;
     }
-  }
-
-  async emailLogin({ email, password }) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.post('/emailLogin', {
-      email,
-      password,
-    });
-
-    return data;
-  }
-
-  async resendConfirmationEmail(email) {
-    const user = await this.getByEmail(email);
-
-    const axios = Axios.GetInstance();
-
-    const { data } = await axios.get(`/users/sendConfirmationEmail/${user.username}`);
-
-    return { ...data, email };
-  }
-
-  async confirmAccount(confirmationId) {
-    const axios = Axios.GetInstance();
-
-    const { data } = await axios.get(`/users/confirmAccount/${confirmationId}`);
-
-    return data;
   }
 }
