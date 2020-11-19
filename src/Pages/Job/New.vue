@@ -79,7 +79,6 @@ import Benefits from './_4Benefits';
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
 import Settings from '@config';
-import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob',
@@ -104,7 +103,7 @@ export default {
     if (this.job) {
       this.job_ = this.job;
     }
-    this.isCompanyValidation();
+    // this.isCompanyValidation();
     this.getCompanyInfo();
   },
   data() {
@@ -152,7 +151,7 @@ export default {
       if (side != 2) {
         this.$toast.error(this.$t('toast.error.registeredCompany'));
         this.$router.push({
-          name: 'Home',
+          name: 'New Company',
         });
       }
     },

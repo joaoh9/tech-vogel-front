@@ -90,7 +90,7 @@ export default {
       const user = StorageHelper.loadState('user');
       const userController = new UserController();
 
-      const profilePicData = await userController.getProfilePicture(user.username);
+      const profilePicData = await userController.getProfilePicture(user.email);
       console.log('profilePic');
       console.log(profilePicData);
 

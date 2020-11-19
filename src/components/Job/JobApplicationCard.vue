@@ -131,10 +131,6 @@ export default {
         });
       }
 
-      console.log(this.jobId);
-      console.log(this.companyId);
-      console.log(user.username);
-
       try {
         await jobController.apply(user.username, this.jobId);
         this.$toast.success(this.$t('toast.success.jobApplied'));

@@ -93,12 +93,11 @@ export default {
 
         userController.saveUserToken(userInfo.token);
 
-        const user = userController.decodeUserToken(userInfo.token);
-        StorageHelper.saveState('user', user);
-
         if (userInfo.side === 2) {
           return this.goToCompanyDashboard();
         } else if (userInfo.side === 1) {
+          // userInfo.side = 1;
+          // StorageHelper.loadState('userToken');
           return this.goToUserDashboard();
         } else {
           return this.goToSidePick();

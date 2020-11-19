@@ -13,7 +13,7 @@ export default class JobController {
       tokenId: 'ID',
     };
 
-    const { data } = await axios.post('/jobs', finalObj);
+    const { data } = await axios.post('/v1/jobs', finalObj);
     return data;
   }
 
@@ -29,9 +29,9 @@ export default class JobController {
     return data;
   }
 
-  async getAppliedJobs(username) {
+  async getAppliedJobs(email) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/jobs/user/${username}`);
+    const { data } = await axios.get(`/v1/jobs/user/${email}`);
     return data;
   }
 

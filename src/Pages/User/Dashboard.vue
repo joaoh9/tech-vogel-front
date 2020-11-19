@@ -46,9 +46,9 @@ import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
 import UserApplications from './UserApplications';
 
-import ResumeController from 'Controllers/resume';
 import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
+import UserController from 'Controllers/user';
 
 export default {
   name: 'ProfessionalDashboard',
@@ -80,7 +80,11 @@ export default {
   },
   methods: {
     loadUserInfo() {
-      this.user = StorageHelper.loadState('user');
+      const userController = new UserController();
+      const { id } = userController.decodeUserToken();
+
+      this.user = id;
+
       if (!this.user) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({

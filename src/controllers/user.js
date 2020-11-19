@@ -47,6 +47,12 @@ export default class UserController {
     return data;
   }
 
+  async getById(companyId) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/v1/users/${companyId}`);
+    return data;
+  }
+
   async auth({ email, password }) {
     const axios = Axios.GetInstance();
     const { data, status } = await axios.post('/v1/users/auth', {
@@ -57,11 +63,11 @@ export default class UserController {
     return { data, statusCode: status };
   }
 
-  async getProfilePicture(username) {
+  async getProfilePicture(email) {
     const axios = Axios.GetInstance();
 
     try {
-      const { data } = await axios.get(`/v1/profile-picture/${username}`);
+      const { data } = await axios.get(`/v1/profile-picture/${email}`);
 
       return data;
     } catch (e) {
