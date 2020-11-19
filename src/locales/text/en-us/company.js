@@ -34,5 +34,20 @@ export default {
       },
       manageAccountInfo: 'Manage my account information',
     },
+    report: {
+      title: 'Candidate Report',
+      postedOn: 'Posted on',
+      createdOn: 'Report created on',
+      totalApplicants: 'Total applicants',
+      yourTopMatches: 'Your top %{count} matches',
+      matchesDisclaimer: 'These are the candidates that bvest match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
+      yourCompany: {
+        title: 'Your company',
+        currentAds: 'Current ads',
+      },
+      candidates: {
+        viewCandidate: 'View skills and CV',
+      },
+    },
   },
 };
