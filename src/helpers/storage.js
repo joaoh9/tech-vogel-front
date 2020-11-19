@@ -21,7 +21,7 @@ const loadState = key => {
 
     return item.value[0] === '{' ? JSON.parse(item.value) : item.value;
   } catch (e) {
-    return undefined;
+    return null;
   }
 };
 
