@@ -7,10 +7,7 @@ export default class CompanyController {
     const userToken = StorageHelper.loadState('userToken');
     const userInfo = jwtDecode(userToken);
 
-    const axios = await Axios.GetInstance({
-      api: '/serve',
-      token: userToken,
-    });
+    const axios = Axios.GetInstance(userToken);
 
     const { data } = await axios.post('/v1/companies', { ...details, authorId: userInfo.id });
     return data;
