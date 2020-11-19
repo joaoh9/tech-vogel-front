@@ -36,7 +36,7 @@
 
 <script>
 import UserController from 'Controllers/user';
-
+import StorageHelper from 'Helpers/storage';
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -63,6 +63,7 @@ export default {
     if (this.email) {
       this.user.email = this.email;
     }
+    this.decodeUserToken();
   },
   data() {
     return {
@@ -91,6 +92,9 @@ export default {
         });
 
         userController.saveUserToken(userInfo.token);
+
+        const user = userController.decodeUserToken(userInfo.token);
+        StorageHelper.saveState('user', user);
 
         if (userInfo.side === 2) {
           return this.goToCompanyDashboard();
