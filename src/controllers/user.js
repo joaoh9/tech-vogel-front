@@ -26,7 +26,12 @@ export default class UserController {
 
   decodeUserToken(_token) {
     const token = _token || StorageHelper.loadState('userToken');
+
     return jwtDecode(token);
+  }
+
+  saveUserToken(token) {
+    StorageHelper.saveState('userToken', token);
   }
 
   async update(updates) {
@@ -38,6 +43,7 @@ export default class UserController {
 
     const axios = Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/users/${userId}`, userInfo.side);
+
     return data;
   }
 
