@@ -29,9 +29,9 @@ export default class JobController {
     return data;
   }
 
-  async getAppliedJobs(email) {
+  async getAppliedJobs(id) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/jobs/user/${email}`);
+    const { data } = await axios.get(`/v1/jobs/user/${id}`);
     return data;
   }
 

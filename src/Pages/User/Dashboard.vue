@@ -81,9 +81,7 @@ export default {
   methods: {
     loadUserInfo() {
       const userController = new UserController();
-      const { id } = userController.decodeUserToken();
-
-      this.user = id;
+      this.user = userController.decodeUserToken();
 
       if (!this.user) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));
@@ -125,7 +123,7 @@ export default {
       const jobController = new JobController();
 
       try {
-        this.appliedJobs = await jobController.getAppliedJobs(this.user.username);
+        this.appliedJobs = await jobController.getAppliedJobs(this.user.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
       }
@@ -134,7 +132,7 @@ export default {
       const profilePictureController = new ProfilePictureController();
 
       try {
-        this.profilePic = await profilePictureController.getByUsername(this.user.username);
+        this.profilePic = await profilePictureController.getByUsername(this.user.id);
       } catch (e) {
         if (e.response.status === 404) {
           this.profilePic = null;

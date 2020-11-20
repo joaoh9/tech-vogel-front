@@ -90,9 +90,10 @@ export default {
   methods: {
     getUserInfo() {
       const user = StorageHelper.loadState('user');
+
       if (!user) {
         this.$router.push({
-          path: '/resume/new',
+          path: '/login',
         });
       }
     },

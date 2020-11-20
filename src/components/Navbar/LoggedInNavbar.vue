@@ -87,15 +87,12 @@ export default {
       this.company = StorageHelper.loadState('companyId');
     },
     async getUserProfilePic() {
-      const user = StorageHelper.loadState('user');
       const userController = new UserController();
+      const user = userController.decodeUserToken();
 
-      const profilePicData = await userController.getProfilePicture(user.email);
-      console.log('profilePic');
-      console.log(profilePicData);
+      const profilePicData = await userController.getProfilePicture(user.id);
 
       this.profilePic = profilePicData.data64 || profilePicData.srcLink;
-      console.log(this.profilePic);
     },
     goToDashboard() {
       this.$router.push({

@@ -11,7 +11,7 @@
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCompany')"
-              @click="createCompany()"
+              @click="updateCompanySide()"
               block
             />
 
@@ -19,7 +19,7 @@
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCV')"
-              @click="createCV()"
+              @click="updateUserSide()"
               block
             />
           </div>
@@ -49,7 +49,7 @@ export default {
     getHeaderTitle() {
       return this.$t('common.chooseSide');
     },
-    async createCompany() {
+    async updateCompanySide() {
       const userController = new UserController();
 
       try {
@@ -63,7 +63,7 @@ export default {
         path: '/company/new',
       });
     },
-    async createCV() {
+    async updateUserSide() {
       const userController = new UserController();
 
       try {

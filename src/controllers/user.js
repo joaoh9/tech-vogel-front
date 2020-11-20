@@ -12,8 +12,6 @@ export default class UserController {
       password,
     });
 
-    console.log(res);
-
     return res.data;
   }
 
@@ -39,17 +37,17 @@ export default class UserController {
     const userId = updates.id || updates.userId || this.decodeUserToken().id;
 
     const userInfo = jwtDecode(userToken);
-    userInfo.side = updates;
+    updates = userInfo.side;
 
     const axios = Axios.GetInstance(userToken);
-    const { data } = await axios.put(`/v1/users/${userId}`, userInfo.side);
+    const { data } = await axios.put(`/v1/users/${userId}`, updates);
 
     return data;
   }
 
-  async getById(companyId) {
+  async getById(userId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/users/${companyId}`);
+    const { data } = await axios.get(`/v1/users/${userId}`);
     return data;
   }
 
@@ -63,11 +61,11 @@ export default class UserController {
     return { data, statusCode: status };
   }
 
-  async getProfilePicture(email) {
+  async getProfilePicture(userId) {
     const axios = Axios.GetInstance();
 
     try {
-      const { data } = await axios.get(`/v1/profile-picture/${email}`);
+      const { data } = await axios.get(`/v1/profile-picture/${userId}`);
 
       return data;
     } catch (e) {

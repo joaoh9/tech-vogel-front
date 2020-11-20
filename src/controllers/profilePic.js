@@ -1,29 +1,35 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import UserController from 'Controllers/user';
 
 export default class {
   async save(resume) {
     const axios = await Axios.GetInstance();
+    const userController = new UserController();
+    const userId = userController.decodeUserToken().id;
 
     const finalObj = {
       ...resume,
+      userId,
     };
     const { data } = await axios.post('/v1/profile-picture/', finalObj);
+
     return data;
   }
 
-  async getByUsername(email) {
+  async getByUsername(userId) {
     const axios = Axios.GetInstance();
-    const { data } = await axios.get(`/v1/profile-picture/${email}`);
+    const { data } = await axios.get(`/v1/profile-picture/${userId}`);
 
     return data;
   }
 
   async editByUsername(edits) {
-    const user = StorageHelper.loadState('user');
-
     const axios = Axios.GetInstance();
-    const { data } = await axios.put(`/v1/profile-picture/${user.email}`, edits);
+    const userController = new UserController();
+    const userId = userController.decodeUserToken().id;
+
+    const { data } = await axios.put(`/v1/profile-picture/${userId}`, edits);
 
     return data;
   }
