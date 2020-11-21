@@ -39,11 +39,9 @@ export default {
       retrieveProfilePicture: 'Error when retrieving profile picture',
     },
     warning: {
-      userHasCompany: 'Username has already have this company name saved',
       fillAll: 'You should fill all required information!',
       detailedInfo: 'Please give to your appplicants a more detailed information about your job',
       emailRegistered: 'Email already registered',
-      userRegistered: 'Username already registered',
     },
     open: {
       login: 'Login successfull',

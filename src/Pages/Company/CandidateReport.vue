@@ -64,9 +64,9 @@
 import CompactCompanyCard from 'Components/Dashboard/CompactCompanyCard';
 
 import CompanyController from 'Controllers/company';
+import UserController from 'Controllers/user';
 import JobController from 'Controllers/job';
 
-import StorageHelper from 'Helpers/storage';
 import moment from 'moment';
 
 export default {
@@ -102,8 +102,10 @@ export default {
   },
   methods: {
     async getCompanyInfo() {
-      const companyId = StorageHelper.loadState('companyId');
-      if (!companyId) {
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+
+      if (userInfo !== 2) {
         this.$toast.error(this.$t('toast.error.companyInfo'));
         this.$router.push({
           name: 'New Company',
@@ -112,7 +114,7 @@ export default {
       const companyController = new CompanyController();
 
       try {
-        this.company = await companyController.getById(companyId);
+        this.company = await companyController.getByUserId('current');
         this.loaded.company = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.companyInfo'));

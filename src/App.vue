@@ -21,7 +21,11 @@
 import Navbar from 'Components/Navbar/Navbar';
 import LoggedInNavbar from 'Components/Navbar/LoggedInNavbar';
 import Footer from 'Components/Footer';
+
+import UserController from 'Controllers/user';
+
 import StorageHelper from 'Helpers/storage';
+
 import 'Public/css';
 
 export default {
@@ -49,7 +53,7 @@ export default {
       return this.$router.history.current.name !== 'LandingPage';
     },
     logout() {
-      StorageHelper.removeState('user');
+      StorageHelper.removeState('userToken');
       StorageHelper.removeState('access_token');
       StorageHelper.removeState('github_username');
 
@@ -72,17 +76,11 @@ export default {
       return pageStyle;
     },
     async checkIfLoggedIn() {
-      if (StorageHelper.loadState('userToken')) {
-        this.loggedIn.logged = true;
-      } else {
-        this.loggedIn.logged = false;
-      }
+      const userController = new UserController();
+      const user = userController.decodeUserToken();
 
-      if (StorageHelper.loadState('companyId')) {
-        this.loggedIn.company = true;
-      } else {
-        this.loggedIn.company = false;
-      }
+      this.loggedIn.logged = user ? true : false;
+      this.loggedIn.company = user.side == 2 ? true : false;
     },
   },
 };

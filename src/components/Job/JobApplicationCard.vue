@@ -69,6 +69,7 @@
 import IconText from 'Components/Interface/IconText';
 
 import JobController from 'Controllers/job';
+import UserController from 'Controllers/user';
 
 import StorageHelper from 'Helpers/storage';
 
@@ -122,12 +123,16 @@ export default {
       ];
     },
     getApplicationButtonType() {
-      return StorageHelper.loadState('companyId') ? 'disabled' : 'primary';
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+      return userInfo.side === 2 ? 'disabled' : 'primary';
     },
     async applyForJob() {
       const jobController = new JobController();
-      const user = StorageHelper.loadState('user');
-      if (!user) {
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+
+      if (!userInfo) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
@@ -135,7 +140,7 @@ export default {
       }
 
       try {
-        await jobController.apply(user.username, this.jobId);
+        await jobController.apply(userInfo.id, this.jobId);
         this.$toast.success(this.$t('toast.success.jobApplied'));
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobApplying'));

@@ -106,9 +106,6 @@ export default {
           path: '/jobs/new', // TODO: mudar pra pricing depois
         });
       } catch (e) {
-        if (e.response.status === 409) {
-          this.$toast.warning(this.$t('toast.warning.userHasCompany'));
-        }
         this.$toast.error(this.$t('toast.error.saveCompany'));
       }
     },

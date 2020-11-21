@@ -39,8 +39,6 @@
 </template>
 
 <script>
-import StorageHelper from 'Helpers/storage';
-
 import NoJobsApplied from 'Components/Dashboard/NoJobsApplied';
 import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
@@ -59,8 +57,10 @@ export default {
     UserApplications,
   },
   mounted() {
-    const company = StorageHelper.loadState('companyId');
-    if (company) {
+    const userController = new UserController();
+    const userInfo = userController.decodeUserToken();
+
+    if (userInfo.side === 2) {
       this.$router.push('/company/dashboard');
     }
     this.loadUserInfo();
@@ -132,7 +132,7 @@ export default {
       const profilePictureController = new ProfilePictureController();
 
       try {
-        this.profilePic = await profilePictureController.getByUsername(this.user.id);
+        this.profilePic = await profilePictureController.getByUserId(this.user.id);
       } catch (e) {
         if (e.response.status === 404) {
           this.profilePic = null;
@@ -142,7 +142,7 @@ export default {
     },
     goToUserProfile() {
       this.$router.push({
-        path: `/user/id/${this.user.username}`,
+        path: `/user/id/${this.user.id}`,
       });
     },
   },

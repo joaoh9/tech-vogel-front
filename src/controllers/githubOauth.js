@@ -1,5 +1,6 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import UserController from './user';
 
 export default class GithubOauthController {
   async confirmAccess(code) {
@@ -26,7 +27,8 @@ export default class GithubOauthController {
   async getRepoInfo() {
     const accessToken = StorageHelper.loadState('access_token');
     const githubUsername = StorageHelper.loadState('github_username');
-    const userInfo = StorageHelper.loadState('user');
+    const userController = new UserController();
+    const userInfo = userController.decodeUserToken();
 
     if (!accessToken || !githubUsername) {
       throw {
@@ -36,7 +38,7 @@ export default class GithubOauthController {
 
     const axios = await Axios.GetInstance(accessToken);
 
-    const { data } = await axios.get(`/v1/repo-info/${userInfo.username}/${githubUsername}`);
+    const { data } = await axios.get(`/v1/repo-info/${userInfo.id}/${githubUsername}`);
 
     return data;
   }

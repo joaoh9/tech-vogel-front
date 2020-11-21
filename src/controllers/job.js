@@ -14,7 +14,7 @@ export default class JobController {
     const finalObj = {
       ...jobDetails,
       companyId: companyData.id,
-    }
+    };
 
     const axios = await Axios.GetInstance(token);
     const { data } = await axios.post('/v1/jobs', finalObj);
@@ -41,18 +41,15 @@ export default class JobController {
   }
 
   async getCompanyJobs(companyId) {
-    const userToken = StorageHelper.loadState('userToken')
+    const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.get(`/v1/jobs/company/${companyId}`);
     return data;
   }
 
-  async apply(username, jobId) {
+  async apply(userId, jobId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.post('/v1/jobs/apply', {
-      username,
-      jobId,
-    });
+    const { data } = await axios.post(`/v1/jobs/${jobId}/apply/${userId}`);
     return data;
   }
 

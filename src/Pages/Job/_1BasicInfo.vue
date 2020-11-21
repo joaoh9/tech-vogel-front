@@ -36,7 +36,6 @@
 
 <script>
 import RulesHelper from 'Helpers/rules';
-import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob1',
@@ -45,8 +44,7 @@ export default {
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-    this.company = StorageHelper.loadState('companyId');
-
+    this.company = this.job.company;
     this.title = this.job.title
     this.experienceLevel = this.job.experienceLevel
     this.contractType = this.job.contractType

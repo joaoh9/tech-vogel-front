@@ -10,6 +10,7 @@
 import JobManagerCard from 'Components/Dashboard/JobManagerCard';
 import StorageHelper from 'Helpers/storage';
 import CompanyController from 'Controllers/company';
+import UserController from 'Controllers/user';
 import JobController from 'Controllers/job';
 
 export default {
@@ -33,11 +34,11 @@ export default {
     };
   },
   methods: {
-    async getCompanyInfo(companyId) {
+    async getCompanyInfo() {
       const companyController = new CompanyController();
 
       try {
-        this.company = await companyController.getById(companyId);
+        this.company = await companyController.getByUserId('current');
         this.loading.company = false;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveCompany'));
@@ -55,12 +56,14 @@ export default {
         });
       }
 
-      const companyId = StorageHelper.loadState('companyId');
-      if (!companyId) {
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+
+      if (userInfo.side !== 2) {
         this.$toast.error(this.$t('toast.error.companyInfoLogged'));
       }
       try {
-        await this.getCompanyInfo(companyId);
+        await this.getCompanyInfo();
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveCompany'));
       }
@@ -76,7 +79,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

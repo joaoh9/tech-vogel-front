@@ -57,7 +57,7 @@ import pic4 from 'Assets/Onboarding/4.svg';
 
 import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 
-import StorageHelper from 'Helpers/storage';
+import UserController from 'Controllers/user'
 
 export default {
   name: 'Onboarding',
@@ -76,14 +76,15 @@ export default {
       return this.$t('user.onboarding.data').map((el, i) => ({ ...el, img: this.images[i] }));
     },
     checkIfCompany() {
-      return StorageHelper.loadState('companyId');
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+      return userInfo.side === 2;
     },
     getDashboardRoute() {
       return this.checkIfCompany() ? '/company/dashboard' : '/dashboard';
     },
   },
 };
-
 </script>
 
 <style></style>

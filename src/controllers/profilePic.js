@@ -18,19 +18,9 @@ export default class {
     return data;
   }
 
-  async getByUsername(userId) {
+  async getByUserId(userId) {
     const axios = Axios.GetInstance();
     const { data } = await axios.get(`/v1/profile-picture/${userId}`);
-
-    return data;
-  }
-
-  async editByUsername(edits) {
-    const axios = Axios.GetInstance();
-    const userController = new UserController();
-    const userId = userController.decodeUserToken().id;
-
-    const { data } = await axios.put(`/v1/profile-picture/${userId}`, edits);
 
     return data;
   }

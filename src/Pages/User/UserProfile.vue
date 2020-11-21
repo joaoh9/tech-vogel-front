@@ -97,7 +97,7 @@ export default {
       const resumeController = new ResumeController();
 
       try {
-        this.resume = await resumeController.getByUsername(this.userId);
+        this.resume = await resumeController.getByUserId(this.userId);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
 

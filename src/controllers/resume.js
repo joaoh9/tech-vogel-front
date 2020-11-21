@@ -17,18 +17,9 @@ export default class {
     return data;
   }
 
-  async getByUsername(username) {
+  async getByUserId(userId) {
     const axios = Axios.GetInstance();
-    const { data } = await axios.get(`/v1/resume/${username}`);
-
-    return data;
-  }
-
-  async editByUsername(edits) { // TODO: Fix this function
-    const user = StorageHelper.loadState('user');
-
-    const axios = Axios.GetInstance();
-    const { data } = await axios.put(`/v1/resume/${user.username}`, edits);
+    const { data } = await axios.get(`/v1/resume/${userId}`);
 
     return data;
   }

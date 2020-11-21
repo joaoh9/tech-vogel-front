@@ -7,9 +7,6 @@ export default {
     name: {
       title: 'Your name',
     },
-    username: {
-      title: 'Pick a username',
-    },
     email: {
       title: 'Your Email',
     },

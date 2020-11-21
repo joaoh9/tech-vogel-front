@@ -52,7 +52,6 @@ export default {
           name: 'User Signup',
           params: {
             _email: data.email,
-            _username: data.username,
             _name: data.name,
           },
         });

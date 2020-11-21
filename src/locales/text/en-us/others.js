@@ -43,7 +43,6 @@ export default {
     notNumber: 'Not a number',
     requiredField: 'Field Required',
     emailAlreadyRegistered: 'Email already registered!',
-    usernameUnavaliable: 'Username not avaliable!',
     weakPassword: 'Password too weak!',
     emailsDontMatch: 'Emails do not match',
     passwordsDontMatch: 'Passwords do not match',

@@ -6,7 +6,6 @@ import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
 import SidePick from 'Pages/User/SidePick';
 import UserDashboard from 'Pages/User/Dashboard';
 import UserLogin from 'Pages/User/Login';
-import UserProfileBreno from 'Pages/User/ProfileBreno';
 import UserProfile from 'Pages/User/Profile';
 import UserSignup from 'Pages/User/Signup';
 import Onboarding from 'Pages/User/Onboarding';
@@ -16,12 +15,6 @@ const routes = [
     path: '/login',
     name: 'User Login',
     component: UserLogin,
-    props: true,
-  },
-  {
-    path: '/user/profile',
-    name: 'User Profile 2',
-    component: UserProfileBreno,
     props: true,
   },
   {

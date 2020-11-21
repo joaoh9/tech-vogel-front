@@ -60,8 +60,6 @@ import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 
 import UserController from 'Controllers/user';
 
-import StorageHelper from 'Helpers/storage';
-
 import MobileDrawer from './MobileDrawer';
 
 export default {
@@ -84,7 +82,9 @@ export default {
   },
   methods: {
     checkIfCompany() {
-      this.company = StorageHelper.loadState('companyId');
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+      this.isCompany = userInfo.side === 2;
     },
     async getUserProfilePic() {
       const userController = new UserController();
@@ -97,7 +97,6 @@ export default {
           this.profilePic = null;
         }
       }
-
     },
     goToDashboard() {
       this.$router.push({
@@ -105,7 +104,7 @@ export default {
       });
     },
     getDashboardRoute() {
-      return this.company ? '/company/dashboard' : '/dashboard';
+      return this.isCompany ? '/company/dashboard' : '/dashboard';
     },
     getMenuList() {
       return [
@@ -151,8 +150,8 @@ export default {
     getPrimaryButtons() {
       return [
         {
-          text: this.company ? this.$t('common.postAJob') : this.$t('common.findAJob'),
-          goTo: this.company ? this.goToNewJob : this.goToJobList,
+          text: this.isCompany ? this.$t('common.postAJob') : this.$t('common.findAJob'),
+          goTo: this.isCompany ? this.goToNewJob : this.goToJobList,
         },
         { text: this.$t('common.dashboard'), goTo: this.goToDashboard },
       ];

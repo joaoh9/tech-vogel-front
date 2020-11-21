@@ -136,7 +136,7 @@ export default {
       const userController = new UserController();
       this.loading.user = true;
       try {
-        this.user = await userController.getByUsername(this.userId);
+        this.user = await userController.getByUserId(this.userId);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: this.userId }));
       }
@@ -144,7 +144,7 @@ export default {
     async getUserResume() {
       const resumeController = new ResumeController();
       try {
-        this.resume = await resumeController.getByUsername(this.userId);
+        this.resume = await resumeController.getByUserId(this.userId);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
 
@@ -154,7 +154,7 @@ export default {
       const profilePictureController = new ProfilePictureController();
 
       try {
-        this.profilePic = await profilePictureController.getByUsername(this.userId);
+        this.profilePic = await profilePictureController.getByUserId(this.userId);
       } catch (e) {
         if (e.response.status === 404) {
           this.profilePic = null;

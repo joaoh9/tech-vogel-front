@@ -58,7 +58,6 @@ export default {
     language: 'Language',
     languages: 'Languages',
     fluency: 'Fluency',
-    usernameOrEmail: 'Username or Email',
     email: {
       placeholder: 'Email',
       label: 'Email',
@@ -67,11 +66,6 @@ export default {
       placeholder: 'Password',
       label: 'Password',
     },
-    username:
-      {
-        placeholder: 'Username',
-        label: 'Username',
-      } || 'Username',
     confirmPassword: {
       placeholder: 'Confirm Password',
       label: 'Confirm Password',
