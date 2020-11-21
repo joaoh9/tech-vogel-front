@@ -36,9 +36,6 @@ export default class UserController {
     const userToken = StorageHelper.loadState('userToken');
     const userId = updates.id || updates.userId || this.decodeUserToken().id;
 
-    const userInfo = jwtDecode(userToken);
-    updates = userInfo.side;
-
     const axios = Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/users/${userId}`, updates);
 

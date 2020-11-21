@@ -81,7 +81,7 @@ export default {
     async getCompanyJobs() {
       const jobController = new JobController();
       try {
-        this.jobs = await jobController.getCompanyJobs(this.company.companyId); // TODO: Fix companyId
+        this.jobs = await jobController.getCompanyJobs(this.company.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
       }

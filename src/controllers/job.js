@@ -1,19 +1,24 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import CompanyController from 'Controllers/company';
 
 export default class JobController {
   async save(jobDetails) {
-    const axios = await Axios.GetInstance();
+    const token = StorageHelper.loadState('userToken');
 
-    const companyId = StorageHelper.loadState('companyId');
+    const companyController = new CompanyController();
+    const authorId = companyController.decodeUserToken().id;
+
+    const companyData = await companyController.getByUserId(authorId);
 
     const finalObj = {
       ...jobDetails,
-      companyId,
-      tokenId: 'ID',
-    };
+      companyId: companyData.id,
+    }
 
+    const axios = await Axios.GetInstance(token);
     const { data } = await axios.post('/v1/jobs', finalObj);
+
     return data;
   }
 

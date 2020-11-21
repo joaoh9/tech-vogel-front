@@ -89,7 +89,7 @@ export default {
   },
   methods: {
     getUserInfo() {
-      const user = StorageHelper.loadState('user');
+      const user = StorageHelper.loadState('userToken');
 
       if (!user) {
         this.$router.push({

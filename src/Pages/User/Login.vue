@@ -105,7 +105,6 @@ export default {
     },
 
     goToSidePick() {
-      console.log('going to side pick');
       this.$router.push({
         name: 'Side Pick',
       });

@@ -4,7 +4,8 @@ import UserController from 'Controllers/user';
 
 export default class {
   async save(resume) {
-    const axios = await Axios.GetInstance();
+    const token = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(token);
     const userController = new UserController();
     const userId = userController.decodeUserToken().id;
 
