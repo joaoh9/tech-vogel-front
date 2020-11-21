@@ -12,8 +12,6 @@ export default class UserController {
       password,
     });
 
-    console.log(res);
-
     return res.data;
   }
 
@@ -26,7 +24,12 @@ export default class UserController {
 
   decodeUserToken(_token) {
     const token = _token || StorageHelper.loadState('userToken');
+
     return jwtDecode(token);
+  }
+
+  saveUserToken(token) {
+    StorageHelper.saveState('userToken', token);
   }
 
   async update(updates) {
@@ -35,12 +38,19 @@ export default class UserController {
 
     const axios = Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/users/${userId}`, updates);
+
+    return data;
+  }
+
+  async getById(userId) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/v1/users/${userId}`);
     return data;
   }
 
   async auth({ email, password }) {
     const axios = Axios.GetInstance();
-    const { data, status } = await axios.post('/v1/auth', {
+    const { data, status } = await axios.post('/v1/users/auth', {
       email,
       password,
     });
@@ -48,11 +58,11 @@ export default class UserController {
     return { data, statusCode: status };
   }
 
-  async getProfilePicture(username) {
+  async getProfilePicture(userId) {
     const axios = Axios.GetInstance();
 
     try {
-      const { data } = await axios.get(`/v1/profile-picture/${username}`);
+      const { data } = await axios.get(`/v1/profile-picture/${userId}`);
 
       return data;
     } catch (e) {

@@ -89,9 +89,9 @@ export default {
   },
   methods: {
     getUserInfo() {
-      const user = StorageHelper.loadState('user');
+      const user = StorageHelper.loadState('userToken');
+
       if (!user) {
-        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });

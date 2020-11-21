@@ -35,7 +35,6 @@ import UserController from 'Controllers/user';
 export default {
   name: 'CompanyDashboard',
   async mounted() {
-    await this.isCompanyValdation()
     await this.getUserInfo();
     await this.getCompanyInfo();
     await this.getCompanyJobs();
@@ -81,9 +80,8 @@ export default {
     },
     async getCompanyJobs() {
       const jobController = new JobController();
-
       try {
-        this.jobs = await jobController.getCompanyJobs(this.company.companyId);
+        this.jobs = await jobController.getCompanyJobs(this.company.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
       }

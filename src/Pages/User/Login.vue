@@ -36,7 +36,7 @@
 
 <script>
 import UserController from 'Controllers/user';
-
+import StorageHelper from 'Helpers/storage';
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -105,7 +105,6 @@ export default {
     },
 
     goToSidePick() {
-      console.log('going to side pick');
       this.$router.push({
         name: 'Side Pick',
       });

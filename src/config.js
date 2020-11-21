@@ -13,7 +13,12 @@ export default {
   github: {
     client_id: process.env.VUE_APP_GITHUB_CLIENT_ID ||  'Iv1.3d3580c2a8b96f5c',
     skills: {
+      techSkills: { min: 3, max: 7 },
+      softSkills: { min: 0, max: 3 },
+      languages: { min: 0, max: 4 },
     },
+  },
+  skills: {
     techSkills: { min: 3, max: 7 },
     softSkills: { min: 0, max: 3 },
     languages: { min: 0, max: 4 },

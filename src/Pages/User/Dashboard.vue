@@ -46,9 +46,9 @@ import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
 import UserApplications from './UserApplications';
 
-import ResumeController from 'Controllers/resume';
 import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
+import UserController from 'Controllers/user';
 
 export default {
   name: 'ProfessionalDashboard',
@@ -80,7 +80,9 @@ export default {
   },
   methods: {
     loadUserInfo() {
-      this.user = StorageHelper.loadState('user');
+      const userController = new UserController();
+      this.user = userController.decodeUserToken();
+
       if (!this.user) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
@@ -121,7 +123,7 @@ export default {
       const jobController = new JobController();
 
       try {
-        this.appliedJobs = await jobController.getAppliedJobs(this.user.username);
+        this.appliedJobs = await jobController.getAppliedJobs(this.user.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
       }
@@ -130,7 +132,7 @@ export default {
       const profilePictureController = new ProfilePictureController();
 
       try {
-        this.profilePic = await profilePictureController.getByUsername(this.user.username);
+        this.profilePic = await profilePictureController.getByUsername(this.user.id);
       } catch (e) {
         if (e.response.status === 404) {
           this.profilePic = null;

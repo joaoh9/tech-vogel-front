@@ -79,7 +79,6 @@ import Benefits from './_4Benefits';
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
 import Settings from '@config';
-import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob',
@@ -104,7 +103,7 @@ export default {
     if (this.job) {
       this.job_ = this.job;
     }
-    this.isCompanyValdation();
+    // this.isCompanyValidation();
     this.getCompanyInfo();
   },
   data() {
@@ -145,13 +144,14 @@ export default {
         },
       });
     },
-    async isCompanyValdation() {
+    async isCompanyValidation() {
       const userController = new UserController();
-      const { isCompany } = userController.decodeUserToken();
-      if (!isCompany) {
+      const { side } = userController.decodeUserToken();
+
+      if (side != 2) {
         this.$toast.error(this.$t('toast.error.registeredCompany'));
         this.$router.push({
-          name: 'Home',
+          name: 'New Company',
         });
       }
     },
@@ -203,7 +203,7 @@ export default {
         case 2:
           for (const skill of Object.keys(this.job_.skills)) {
             const skillValidated = this.validateSkills(skill);
-            if (skillValidated !== true) {
+            if (!skillValidated) {
               return this.$toast.warning(skillValidated);
             }
           }
