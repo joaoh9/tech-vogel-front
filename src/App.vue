@@ -50,7 +50,6 @@ export default {
     },
     logout() {
       StorageHelper.removeState('user');
-      StorageHelper.removeState('companyId');
       StorageHelper.removeState('access_token');
       StorageHelper.removeState('github_username');
 
@@ -73,7 +72,7 @@ export default {
       return pageStyle;
     },
     async checkIfLoggedIn() {
-      if (StorageHelper.loadState('user')) {
+      if (StorageHelper.loadState('userToken')) {
         this.loggedIn.logged = true;
       } else {
         this.loggedIn.logged = false;

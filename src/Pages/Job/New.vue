@@ -1,5 +1,6 @@
 <template>
-  <div class="d-flex justify-center mt-4 mt-md-12">
+  <div class="d-flex flex-column align-center mt-4 mt-md-12">
+    <h3 class="text-center h3-bold mb-3 color-primary">Post a job!</h3>
     <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
       <g-card>
         <template v-slot:card-header>
@@ -15,10 +16,8 @@
                 title: (job && job.title) || '',
                 experienceLevel: (job && job.experienceLevel) || '',
                 contractType: (job && job.contractType) || '',
-                id: (job && job.id) || '',
               }"
               v-on:title="r => (job_.title = r)"
-              v-on:id="r => (job_.id = r)"
               v-on:experience-level="r => (job_.experienceLevel = r)"
               v-on:contract-type="r => (job_.contractType = r)"
             />
@@ -112,7 +111,6 @@ export default {
       step: 1,
       job_: {
         title: '',
-        id: '',
         experienceLevel: '',
         contractType: '',
         description: '',
@@ -184,7 +182,6 @@ export default {
         case 0:
           if (
             this.job_.title &&
-            this.job_.id &&
             this.job_.experienceLevel &&
             this.job_.contractType
           ) {

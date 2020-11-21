@@ -42,6 +42,7 @@ export default {
     finish: 'I\'m done!',
     copywright: '©2020 Tech Vogel. All rights reserved.',
     termsAndConditions: 'Terms and conditions',
+    termsOfService: 'Terms of service',
     privacyPolicy: 'Privacy policy',
     cnpj: 'CNPJ',
     cnpjNumber: '38.216.987/0001-59',

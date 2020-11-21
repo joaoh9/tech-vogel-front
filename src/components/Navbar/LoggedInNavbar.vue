@@ -89,10 +89,15 @@ export default {
     async getUserProfilePic() {
       const userController = new UserController();
       const user = userController.decodeUserToken();
+      try {
+        const profilePicData = await userController.getProfilePicture(user.id);
+        this.profilePic = profilePicData.data64 || profilePicData.srcLink;
+      } catch (e) {
+        if (e.status === 404) {
+          this.profilePic = null;
+        }
+      }
 
-      const profilePicData = await userController.getProfilePicture(user.id);
-
-      this.profilePic = profilePicData.data64 || profilePicData.srcLink;
     },
     goToDashboard() {
       this.$router.push({

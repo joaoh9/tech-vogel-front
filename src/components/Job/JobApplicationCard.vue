@@ -1,5 +1,5 @@
 <template>
-  <v-card :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-none pa-8'" color="bg">
+  <v-card v-if="job" :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-none pa-8'" color="bg">
     <IconText
       v-for="(item, i) in getIconInfo()"
       :key="i"
@@ -97,6 +97,9 @@ export default {
   },
   methods: {
     getIconInfo() {
+      if (!this.job || !this.job.salary) {
+        return [];
+      }
       const currencySymbol = this.getPrefix(this.job.salary.currency);
       return [
         {

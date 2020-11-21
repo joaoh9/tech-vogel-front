@@ -15,11 +15,6 @@ export default class Axios {
       headers['Authorization'] = `Bearer ${token}`;
     }
 
-    console.log(
-      `[AxiosHelper] Creating Axios with Header:
-       ${JSON.stringify(headers)} and baseURL: /serve`,
-    );
-
     return axios.create({
       baseURL: '/serve',
       timeout: 30 * 1000,
