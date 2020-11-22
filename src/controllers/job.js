@@ -4,19 +4,17 @@ import CompanyController from 'Controllers/company';
 
 export default class JobController {
   async save(jobDetails) {
-    const token = StorageHelper.loadState('userToken');
+    const userToken = StorageHelper.loadState('userToken');
 
     const companyController = new CompanyController();
-    const authorId = companyController.decodeUserToken().id;
-
-    const companyData = await companyController.getByUserId(authorId);
+    const companyInfo = await companyController.getByUserId('current');
 
     const finalObj = {
       ...jobDetails,
-      companyId: companyData.id,
+      companyId: companyInfo.id,
     };
 
-    const axios = await Axios.GetInstance(token);
+    const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.post('/v1/jobs', finalObj);
 
     return data;
@@ -28,18 +26,6 @@ export default class JobController {
     return data;
   }
 
-  async getById(jobId) {
-    const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/jobs/${jobId}`);
-    return data;
-  }
-
-  async getAppliedJobs(id) {
-    const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/jobs/user/${id}`);
-    return data;
-  }
-
   async getCompanyJobs(companyId) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
@@ -47,15 +33,37 @@ export default class JobController {
     return data;
   }
 
-  async apply(userId, jobId) {
+  async getAppliedJobs(id) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const { data } = await axios.get(`/v1/jobs/user/${id}`);
+    return data;
+  }
+
+  async getById(jobId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.post(`/v1/jobs/${jobId}/apply/${userId}`);
+    const { data } = await axios.get(`/v1/jobs/${jobId}`);
     return data;
   }
 
   async update(jobId, updates) {
-    const axios = await Axios.GetInstance();
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/jobs/${jobId}`, updates);
+    return data;
+  }
+
+  async remove(jobId) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const { data } = await axios.put(`/v1/jobs/${jobId}`);
+    return data;
+  }
+
+  async apply(userId, jobId) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const { data } = await axios.post(`/v1/jobs/${jobId}/apply/${userId}`);
     return data;
   }
 }

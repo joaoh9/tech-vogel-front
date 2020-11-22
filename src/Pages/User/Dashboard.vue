@@ -9,7 +9,7 @@
         :picture="profilePic"
       />
       <div class="d-flex flex-column align-center">
-        <UserTokens class="mt-8" tokens="15" />
+        <UserTokens class="mt-8" :tokens="user.tokens" />
         <capt-1 class="mt-4">{{ $t('user.dashboard.tokenExplanation') }}</capt-1>
         <g-btn
           block
@@ -47,6 +47,7 @@ import UserApplications from './UserApplications';
 import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
+import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'ProfessionalDashboard',
@@ -64,6 +65,7 @@ export default {
       this.$router.push('/company/dashboard');
     }
     this.loadUserInfo();
+    this.loadResume();
     this.getAppliedJobs();
     this.getProfilePicture();
   },
@@ -90,6 +92,12 @@ export default {
         });
       }
       this.loaded.user = true;
+    },
+
+    async loadResume() {
+      const resumeController = new ResumeController();
+      this.resume = await resumeController.getByUserId(this.user.id)
+      console.log(this.resume)
     },
     goToApplications: function() {
       this.$router.push('/applications');
@@ -136,6 +144,7 @@ export default {
       } catch (e) {
         if (e.response.status === 404) {
           this.profilePic = null;
+          return;
         }
         this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }

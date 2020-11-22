@@ -45,18 +45,7 @@
           />
           <v-divider class="my-8" />
 
-          <h5 class="h5-bold color-dark mb-4">Github Stats</h5>
-          <h6 class="mt-3 font-weight-regular">Public Repositories</h6>
-          <sub-1>26</sub-1>
-
-          <h6 class="mt-3 font-weight-regular">Contributions in the last year</h6>
-          <sub-1>2,003</sub-1>
-
-          <h6 class="mt-3 font-weight-regular">Forked Repositories</h6>
-          <sub-1>3</sub-1>
-
-          <h6 class="mt-3 font-weight-regular">Stars count</h6>
-          <sub-1>15</sub-1>
+          <GithubStats />
 
           <v-divider class="my-8" />
 
@@ -94,6 +83,7 @@ import UserCard from 'Components/User/DashboardCard';
 import FindMe from 'Components/User/FindMe';
 import UserInformation from 'Components/User/UserInformation';
 import Skills from 'Components/User/Skills';
+import GithubStats from 'Components/User/GithubStats';
 
 import UserController from 'Controllers/user';
 import ProfilePictureController from 'Controllers/profilePic';
@@ -107,6 +97,7 @@ export default {
     FindMe,
     UserInformation,
     Skills,
+    GithubStats,
   },
   props: {
     user_: Object,
@@ -147,7 +138,6 @@ export default {
         this.resume = await resumeController.getByUserId(this.userId);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
-
       }
     },
     async getProfilePicture() {
@@ -158,6 +148,7 @@ export default {
       } catch (e) {
         if (e.response.status === 404) {
           this.profilePic = null;
+          return;
         }
         this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }

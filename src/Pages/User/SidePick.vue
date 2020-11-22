@@ -56,7 +56,6 @@ export default {
         await userController.update({ side: 2 });
       } catch (e) {
         this.$toast.error('Something went wrong. Try again later');
-        console.log(e);
       }
 
       this.$router.push({
@@ -70,7 +69,6 @@ export default {
         await userController.update({ side: 1 });
       } catch (e) {
         this.$toast.error('Something went wrong. Try again later');
-        console.log(e);
       }
       this.$router.push({
         path: '/resume/new',

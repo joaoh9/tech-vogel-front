@@ -160,12 +160,11 @@ export default {
   methods: {
     async saveResume() {
       const resumeController = new ResumeController();
-      // const profilePictureController = new ProfilePictureController();
-      console.log('saveResume -> this.resume', this.resume)
+      const profilePictureController = new ProfilePictureController();
 
       try {
         await resumeController.save(this.resume);
-        console.log('saveResume -> this.resume', this.resume)
+        await profilePictureController.save(this.profilePicture);
         this.$toast.success(this.$t('toast.success.saveResume'));
         this.$router.push({
           path: '/dashboard',

@@ -49,8 +49,6 @@ export default {
         const githubInfo = await githubOauthController.getUserInfo();
         this.$emit('update-profile-picture')
 
-        console.log(githubInfo);
-
         this.loading = false;
         this.$toast.success(this.$t('toast.success.githubRetrieve'));
         this.$emit('github-info', githubInfo);
@@ -61,7 +59,6 @@ export default {
         }
         this.loading = false;
         this.$toast.error(this.$t('toast.error.githubRetrieve'));
-        console.log(e);
       }
     },
     goToAuthGithubLink() {

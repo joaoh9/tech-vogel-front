@@ -9,7 +9,7 @@
           <tr>
             <th><overline>Skill</overline></th>
             <th><overline>Years of Experience</overline></th>
-            <th v-if="skillTitle === 'Tech Skills'"><overline>Github Projects</overline></th>
+            <!-- <th v-if="skillTitle === 'Tech Skills'"><overline>Github Projects</overline></th> -->
           </tr>
         </thead>
         <tbody>
@@ -22,11 +22,11 @@
             <td>
               <bdy-1 class="text-center" color="secondary">{{ item.experienceLevel }} </bdy-1>
             </td>
-            <td>
-              <bdy-1 v-if="skillTitle === 'Tech Skills'" class="text-center" color="secondary">
-                {{ githubLanguages[item.skillId] }}
-              </bdy-1>
-            </td>
+            <!-- <td> -->
+              <!-- <bdy-1 v-if="skillTitle === 'Tech Skills'" class="text-center" color="secondary"> -->
+                <!-- {{ githubLanguages[item.skillId] }} -->
+              <!-- </bdy-1> -->
+            <!-- </td> -->
           </tr>
         </tbody>
       </v-simple-table>

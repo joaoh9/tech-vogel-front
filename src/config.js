@@ -13,15 +13,15 @@ export default {
   github: {
     client_id: process.env.VUE_APP_GITHUB_CLIENT_ID ||  'Iv1.3d3580c2a8b96f5c',
     skills: {
-      techSkills: { min: 3, max: 7 },
+      techSkills: { min: 3, max: 12 },
       softSkills: { min: 0, max: 3 },
-      languages: { min: 0, max: 4 },
+      languages: { min: 0, max: 7 },
     },
   },
   skills: {
-    techSkills: { min: 3, max: 7 },
-    softSkills: { min: 0, max: 3 },
-    languages: { min: 0, max: 4 },
+    techSkills: { min: 3, max: 12 },
+    softSkills: { min: 0, max: 5 },
+    languages: { min: 0, max: 7 },
   },
   frontURL: process.env.VUE_APP_FRONT_URL || 'http://localhost:5100',
   // 4 hours

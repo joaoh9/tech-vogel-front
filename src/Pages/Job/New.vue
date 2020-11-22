@@ -156,10 +156,9 @@ export default {
     async getCompanyInfo() {
       const companyController = new CompanyController();
       try {
-        this.company = await companyController.getByAuthorId('current');
+        this.company = await companyController.getByUserId('current');
       } catch (e) {
         this.$toast.error('Something went wrong when retrieving company info');
-        console.log(e);
       }
     },
     getPageInfo() {

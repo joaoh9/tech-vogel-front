@@ -57,7 +57,6 @@ export default {
         });
       } catch (e) {
         this.$toast.error(this.$t('oAuth.github.accessError'));
-        console.log(e);
       }
     },
   },

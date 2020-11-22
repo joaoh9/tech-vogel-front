@@ -30,5 +30,6 @@
   "COBOL": "COBOL",
   "curl": "Curl",
   "D": "D",
+  "solidity": "Solidity",
   "eCMAScript": "ECMAScript"
 }
