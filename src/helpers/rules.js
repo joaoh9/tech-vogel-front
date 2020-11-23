@@ -44,7 +44,7 @@ class Rules {
   }
 
   min(min, v) {
-    return v ? v.length >= min : this.localeObj['rules']['lessThanXCharacters'].replace('X', min);
+    return v.length >= min || this.localeObj['rules']['lessThanXCharacters'].replace('X', min);
   }
 
   validateLetterOrNumber(letter) {

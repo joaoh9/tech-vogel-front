@@ -44,6 +44,8 @@
 import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
 
+import StorageHelper from 'Helpers/storage';
+
 export default {
   name: 'Login',
   props: {
@@ -68,6 +70,7 @@ export default {
     if (this.email) {
       this.user.email = this.email;
     }
+    this.retrieveUserDataFromLocalStorage();
   },
   data() {
     return {
@@ -86,9 +89,18 @@ export default {
     };
   },
   methods: {
+    retrieveUserDataFromLocalStorage() {
+      const userController = new UserController();
+      const userToken = StorageHelper.loadState('userToken');
+      if (!userToken) {
+        return;
+      }
+      const userInfo = userController.decodeUserToken(userToken);
+
+      this.user.email = userInfo.email;
+    },
     async login() {
       const userController = new UserController();
-
       try {
         const { data: userInfo } = await userController.auth({
           email: this.user.email,
@@ -96,7 +108,7 @@ export default {
         });
 
         userController.saveUserToken(userInfo.token);
-
+        this.$emit('login');
         if (userInfo.side === 2) {
           return this.goToCompanyDashboard();
         } else if (userInfo.side === 1) {
