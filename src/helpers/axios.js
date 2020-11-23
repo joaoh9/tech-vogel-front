@@ -16,7 +16,7 @@ export default class Axios {
     }
 
     return axios.create({
-      baseURL: '/serve',
+      baseURL: '/api',
       timeout: 30 * 1000,
       headers,
       maxContentLength: 20 * 1000 * 1000,
