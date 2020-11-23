@@ -20,6 +20,7 @@
               type="primary"
               label="I want to hire"
               to="/signup"
+              data-cy="nav-signup"
             />
             <g-btn
               class="ml-8"
@@ -28,6 +29,7 @@
               color="light"
               label="I want to get hired"
               to="/signup"
+              data-cy="nav-signup"
             />
           </div>
         </div>

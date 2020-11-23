@@ -41,7 +41,7 @@
             type="secondary"
             @click="manageStepBack"
           />
-          <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" />
+          <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" data-cy="register-next" />
         </div>
       </template>
     </g-card>
