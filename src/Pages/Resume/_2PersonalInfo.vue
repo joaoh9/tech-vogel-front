@@ -10,6 +10,7 @@
     </v-file-input>
     <form-input required class="mt-0" :title="$t('resume.register.mainRole.title')" />
     <v-text-field
+      autofocus
       :placeholder="$t('resume.register.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"

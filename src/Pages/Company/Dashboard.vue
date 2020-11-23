@@ -5,7 +5,7 @@
       <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" />
       <g-btn
         class="mt-4"
-        type="outlined"
+        type="disabled"
         color="secondary"
         block
         xl

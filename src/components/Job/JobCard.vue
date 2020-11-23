@@ -50,7 +50,7 @@ export default {
   methods: {
     goToJobDetails() {
       this.$router.push({
-        path: `/jobs/${this.company.companyId}/${this.job.id}`,
+        path: `/jobs/${this.job.companyId}/${this.job.id}`,
       });
     },
     getMinWidth() {

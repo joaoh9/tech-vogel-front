@@ -22,6 +22,18 @@ export default class UserController {
     return data;
   }
 
+  async emailExists(email) {
+    try {
+      await this.getByEmail(email);
+      return true;
+    } catch (e) {
+      if (e.response.status === 404) {
+        return false;
+      }
+      return true;
+    }
+  }
+
   decodeUserToken(_token) {
     const token = _token || StorageHelper.loadState('userToken');
 
@@ -34,7 +46,8 @@ export default class UserController {
 
   async update(updates) {
     const userToken = StorageHelper.loadState('userToken');
-    const userId = updates.id || updates.userId || this.decodeUserToken().id;
+    const userInfo = this.decodeUserToken();
+    const userId = updates.id || updates.userId || userInfo.id;
 
     const axios = Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/users/${userId}`, updates);

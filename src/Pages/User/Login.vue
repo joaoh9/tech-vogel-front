@@ -4,7 +4,12 @@
       <template v-slot:card-content>
         <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
         <form-input class="mt-6" :title="$t('common.email.label')" />
-        <v-text-field outlined v-model="user.email" :rules="[rules.required(user.email)]" />
+        <v-text-field
+          outlined
+          v-model="user.email"
+          :rules="[rules.required(user.email)]"
+          autofocus
+        />
         <form-input :title="$t('common.password.label')" />
         <v-text-field
           v-model="user.password"
@@ -12,6 +17,7 @@
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
           :type="showPassword ? 'text' : 'password'"
+          v-on:keyup.enter="login"
           outlined
         />
         <div class="d-flex justify-start ">
@@ -36,7 +42,6 @@
 
 <script>
 import UserController from 'Controllers/user';
-import StorageHelper from 'Helpers/storage';
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -100,7 +105,20 @@ export default {
           return this.goToSidePick();
         }
       } catch (e) {
-        this.$toast.error('Something went wrong on your login');
+        // TODO: internacionlização
+
+        if (e.response.status === 422) {
+          const validEmail = await userController.emailExists(this.user.email);
+          console.log('🚀 ~ file: Login.vue ~ line 112 ~ login ~ validEmail', validEmail);
+          if (!validEmail) {
+            return this.$toast.warning(this.$t('toast.warning.wrongEmailLogine'));
+          }
+          return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
+        }
+        if (e.response.status === 404) {
+          return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
+        }
+        return this.$toast.error('Something went wrong on your login');
       }
     },
 

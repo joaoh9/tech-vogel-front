@@ -1,6 +1,7 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
 import CompanyController from 'Controllers/company';
+import qs from 'qs';
 
 export default class JobController {
   async save(jobDetails) {
@@ -20,23 +21,26 @@ export default class JobController {
     return data;
   }
 
-  async getAll() {
+  async getAll({ limit = 15, skip = 0 } = {}) {
+    const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get('/v1/jobs');
+    const { data } = await axios.get('/v1/jobs' + query);
     return data;
   }
 
-  async getCompanyJobs(companyId) {
+  async getCompanyJobs(companyId, { limit = 15, skip = 0 } = {}) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.get(`/v1/jobs/company/${companyId}`);
+    const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
+    const { data } = await axios.get(`/v1/jobs/company/${companyId}` + query);
     return data;
   }
 
-  async getAppliedJobs(id) {
+  async getAppliedJobs(userId, { limit = 15, skip = 0 } = {}) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.get(`/v1/jobs/user/${id}`);
+    const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
+    const { data } = await axios.get(`/v1/jobs/user/${userId}` + query);
     return data;
   }
 

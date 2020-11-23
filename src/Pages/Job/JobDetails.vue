@@ -1,11 +1,5 @@
 <template>
   <div>
-    <v-parallax
-      style="opacity: 60%; background-color: black"
-      height="250"
-      v-if="!editMode"
-      src="https://suzanadeoliveira.com/wp-content/uploads/2017/06/Google-Office-HD-Wallpapers-Backgrounds-Wallpaper-Abyss-scaled.jpg"
-    />
     <PrimaryHeader
       v-if="editMode"
       :title="$t('job.confirmJob.title')"
@@ -121,7 +115,6 @@ export default {
         this.job = await jobController.getById(this.jobId);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobData', { jobId: this.jobId }));
-
       }
     },
     getTimePosted() {
@@ -170,7 +163,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped>

@@ -66,6 +66,7 @@ export default {
       placeholder: 'Password',
       label: 'Password',
     },
+    comingSoon: 'Coming soon!',
     confirmPassword: {
       placeholder: 'Confirm Password',
       label: 'Confirm Password',

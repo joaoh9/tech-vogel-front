@@ -31,8 +31,11 @@
     <template template v-slot:second-col>
       <div class="d-flex align-center flex-column">
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
-        <NoJobsApplied v-if="!appliedJobs.length" />
-        <UserApplications v-else :jobs="appliedJobs" />
+        <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
+        <div v-for="(job, i) in appliedJobs" :key="i">
+          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.mdAndUp" />
+          <JobCardMobile :job="job" class="mb-4" v-else-if="loaded.jobs" />
+        </div>
       </div>
     </template>
   </g-bootstrap>
@@ -42,11 +45,13 @@
 import NoJobsApplied from 'Components/Dashboard/NoJobsApplied';
 import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
-import UserApplications from './UserApplications';
+import JobCard from 'Components/Job/JobCard';
+import JobCardMobile from 'Components/Job/JobCardMobile';
 
 import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
+import CompanyController from 'Controllers/company';
 import ResumeController from 'Controllers/resume';
 
 export default {
@@ -55,7 +60,8 @@ export default {
     NoJobsApplied,
     UserCard,
     UserTokens,
-    UserApplications,
+    JobCard,
+    JobCardMobile,
   },
   mounted() {
     const userController = new UserController();
@@ -77,6 +83,7 @@ export default {
       profilePic: null,
       loaded: {
         user: false,
+        jobs: false,
       },
     };
   },
@@ -96,8 +103,7 @@ export default {
 
     async loadResume() {
       const resumeController = new ResumeController();
-      this.resume = await resumeController.getByUserId(this.user.id)
-      console.log(this.resume)
+      this.resume = await resumeController.getByUserId(this.user.id);
     },
     goToApplications: function() {
       this.$router.push('/applications');
@@ -129,9 +135,17 @@ export default {
     },
     async getAppliedJobs() {
       const jobController = new JobController();
+      const companyController = new CompanyController();
 
       try {
         this.appliedJobs = await jobController.getAppliedJobs(this.user.id);
+        for (let i = 0; i < this.appliedJobs.length; i++) {
+          this.appliedJobs[i].company = await companyController.getById(
+            this.appliedJobs[i].companyId,
+          );
+          this.appliedJobs[i].createdAt = this.appliedJobs[i].appliedAt;
+        }
+        this.loaded.jobs = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
       }

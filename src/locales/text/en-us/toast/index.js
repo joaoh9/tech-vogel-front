@@ -42,6 +42,9 @@ export default {
       fillAll: 'You should fill all required information!',
       detailedInfo: 'Please give to your appplicants a more detailed information about your job',
       emailRegistered: 'Email already registered',
+      wrongEmailLogin:
+        'The email you entered doesn\'t belong to an account. Please check your email and try again.',
+      wrongPasswordLogin: 'Sorry, your password was incorrect. Please double-check your password.',
     },
     open: {
       login: 'Login successfull',

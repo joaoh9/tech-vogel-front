@@ -6,6 +6,7 @@
       :description="$t('job.new.techSkills.description')"
     />
     <g-autocomplete
+      autofocus
       :hint="$t('job.new.techSkills.inputHint')"
       @input="e => (techSkills = e)"
       :items="$t('skills.techSkills')"

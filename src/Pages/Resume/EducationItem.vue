@@ -4,6 +4,7 @@
       <v-col cols="12" md="8">
         <form-input required :title="$t('resume.register.education.courseTitle.title')" />
         <v-text-field
+          autofocus
           v-model="education.courseTitle"
           :placeholder="$t('resume.register.education.courseTitle.placeholder')"
           @input="$emit('course-title', education.courseTitle)"

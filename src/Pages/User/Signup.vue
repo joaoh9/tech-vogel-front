@@ -9,6 +9,7 @@
           outlined
           :rules="[rules.min(3, user.name)]"
           v-model="user.name"
+          autofocus
         />
         <form-input :title="$t('signup.email.title')" />
         <v-text-field
@@ -50,21 +51,22 @@
           @click="goToAuthGithubLink()"
           block
           v-if="!_email"
-          type="primary"
-          label="Signup with Github"
+          type="disabled"
+          :title="$t('common.comingSoon')"
+          :label="$t('user.githubSignup')"
         />
         <g-btn
           class="mt-4"
           disabled
           block
           v-if="!_email"
-          type="primary"
-          label="Signup with Linkedin"
+          type="disabled"
+          :label="$t('user.linkedInSignup')"
         />
         <v-checkbox
           data-cy="terms-and-conditions"
           v-model="termsAndConditions"
-          :rules="[rules.termsAndConditions]"
+          :rules="[rules.required(termsAndConditions)]"
           :error-messages="localRules.termsAndConditions"
         >
           <template v-slot:label>
@@ -89,7 +91,7 @@
           <v-btn
             data-cy="signup"
             :loading="loading.register"
-            @click="signup"
+            @click="validateForm"
             color="primary"
             elevation="0"
             large
@@ -131,7 +133,7 @@ export default {
         equalPassword: () => true,
         equalEmail: () => true,
         email: () => true,
-        termsAndConditions: () => true,
+        required: () => true,
       },
       localRules: {
         emailAlreadyRegistered: null,
@@ -151,22 +153,41 @@ export default {
     };
   },
   methods: {
-    async signup() {
-      const userController = new UserController();
-
+    async validateForm() {
       if (!this.termsAndConditions) {
         this.localRules.termsAndConditions = this.$t('rules.termsAndConditions');
-        return false;
+      } else {
+        this.localRules.termsAndConditions = '';
+      }
+      const emailRuleOk = this.rules.email(this.user.email) === true;
+      if (!emailRuleOk) {
+        // TODO: internacionlização
+        this.localRules.emailAlreadyRegistered = 'Email required';
       }
 
       const validEmail = await this.validEmail();
       if (!validEmail) {
         this.$toast.warning(this.$t('toast.warning.emailRegistered'));
       }
-      if (!validEmail) {
-        return;
+      if (emailRuleOk && validEmail) {
+        this.localRules.emailAlreadyRegistered = '';
       }
 
+      const nameRuleOk = this.rules.min(3, this.user.name) === true;
+      if (!nameRuleOk) {
+        // TODO: internacionlização
+        this.user.name = '';
+        // this.$toast.warning('Name must be greater than 3 characters');
+      }
+
+      if (!this.termsAndConditions || !emailRuleOk || !validEmail || !nameRuleOk) {
+        return false;
+      }
+
+      this.signup();
+    },
+    async signup() {
+      const userController = new UserController();
       this.loading.register = true;
       try {
         await userController.saveUser({
@@ -193,9 +214,6 @@ export default {
     },
     async validEmail() {
       const userController = new UserController();
-      if (this.rules.email(this.user.email) !== true) {
-        return false;
-      }
       try {
         const user = await userController.getByEmail(this.user.email);
 

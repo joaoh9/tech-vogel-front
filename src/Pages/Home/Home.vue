@@ -42,8 +42,7 @@
     <div class="bg-color-secondary">
       <div class="mx-12 my-10 d-flex justify-center flex-wrap">
         <div class="my-12">
-          <div v-for="(job, i) in jobs" :key="i" class="">
-            <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
+          <div v-for="(job, i) in jobs" :key="i" class="color-white">
             <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
             <JobCardMobile :job="job" class="mb-4" v-else />
           </div>
@@ -88,8 +87,7 @@ export default {
     async getJobs() {
       const jobController = new JobController();
       try {
-        this.jobs = await jobController.getAll();
-        this.jobs = this.jobs.splice(0, 6);
+        this.jobs = await jobController.getAll({ limit: 6 });
         await this.getCompanyInfo();
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
@@ -107,7 +105,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped>

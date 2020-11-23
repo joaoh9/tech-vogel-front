@@ -77,10 +77,20 @@ export default {
     },
     async checkIfLoggedIn() {
       const userController = new UserController();
-      const user = userController.decodeUserToken();
+      try {
+        const user = userController.decodeUserToken();
+        console.log(
+          '🚀 ~ file: App.vue ~ line 80 ~ checkIfLoggedIn ~ userController',
+          userController,
+        );
+        console.log('🚀 ~ file: App.vue ~ line 81 ~ checkIfLoggedIn ~ user', user);
 
-      this.loggedIn.logged = user ? true : false;
-      this.loggedIn.company = user.side == 2 ? true : false;
+        this.loggedIn.logged = true;
+        this.loggedIn.company = user.side == 2 ? true : false;
+      } catch (e) {
+        this.loggedIn.logged = false;
+        this.loggedIn.company = false;
+      }
     },
   },
 };

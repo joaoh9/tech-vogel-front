@@ -45,9 +45,9 @@
           />
           <v-divider class="my-8" />
 
-          <GithubStats />
+          <!-- <GithubStats /> -->
 
-          <v-divider class="my-8" />
+          <!-- <v-divider class="my-8" /> -->
 
           <div v-if="resume && resume.skills">
             <Skills
@@ -83,7 +83,7 @@ import UserCard from 'Components/User/DashboardCard';
 import FindMe from 'Components/User/FindMe';
 import UserInformation from 'Components/User/UserInformation';
 import Skills from 'Components/User/Skills';
-import GithubStats from 'Components/User/GithubStats';
+// import GithubStats from 'Components/User/GithubStats';
 
 import UserController from 'Controllers/user';
 import ProfilePictureController from 'Controllers/profilePic';
@@ -97,7 +97,7 @@ export default {
     FindMe,
     UserInformation,
     Skills,
-    GithubStats,
+    // GithubStats,
   },
   props: {
     user_: Object,

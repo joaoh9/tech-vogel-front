@@ -2,6 +2,7 @@
   <div class="mb-6">
     <form-input required class="mt-6" :title="$t('resume.register.workExperience.company.title')" />
     <v-text-field
+      autofocus
       v-model="job.companyName"
       :rules="[rules.required(job.companyName)]"
       @input="$emit('company-name', job.companyName)"

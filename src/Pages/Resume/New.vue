@@ -35,7 +35,7 @@
               v-on:profile-picture="e => (profilePicture = e)"
               v-on:main-role="e => (resume.mainRole = e)"
               v-on:location="e => (resume.location = e)"
-              v-on:personal-bio="e => (resume.biography.personalBio = e)"
+              v-on:personal-bio="e => (resume.personalBio = e)"
             >
             </PersonalInfo>
           </div>
@@ -122,9 +122,7 @@ export default {
       dataUpdated: false,
       profilePicture: {},
       resume: {
-        biography: {
-          personalBio: '',
-        },
+        personalBio: '',
         jobInterests: [],
         contractType: [],
         mainRole: '',

@@ -15,7 +15,7 @@
           <v-col cols="12" md="6" class="d-flex flex-column justify-space-between">
             <h5>{{ job.title }}</h5>
             <div class="d-flex space-between flex-fill align-center">
-              <IconText icon="fa-building" :text="(job.company || {}).name" />
+              <IconText icon="fa-building" :text="job.company.name" />
               <IconText
                 icon="fa-briefcase"
                 :text="$t('enums.contractType').find(ct => ct.value === job.contractType).text"
