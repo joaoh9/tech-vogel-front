@@ -91,11 +91,11 @@ export default {
   methods: {
     retrieveUserDataFromLocalStorage() {
       const userController = new UserController();
-      const userToken = StorageHelper.loadState('userToken');
-      if (!userToken) {
+      const trashedToken = StorageHelper.loadState('trashedToken');
+      if (!trashedToken) {
         return;
       }
-      const userInfo = userController.decodeUserToken(userToken);
+      const userInfo = userController.decodeUserToken(trashedToken);
 
       this.user.email = userInfo.email;
     },

@@ -53,6 +53,10 @@ export default {
       return this.$router.history.current.name !== 'LandingPage';
     },
     logout() {
+      const userToken = StorageHelper.loadState('userToken');
+      const [ , payload  ] = userToken.split('.');
+      const trashedToken = [ '', payload, '' ].join('.');
+      StorageHelper.saveState('trashedToken', trashedToken);
       StorageHelper.removeState('userToken');
       StorageHelper.removeState('access_token');
       StorageHelper.removeState('github_username');
