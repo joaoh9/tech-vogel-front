@@ -109,9 +109,9 @@ export default {
 
         userController.saveUserToken(userInfo.token);
         this.$emit('login');
-        if (userInfo.side === 2) {
+        if (userInfo.side === 20) {
           return this.goToCompanyDashboard();
-        } else if (userInfo.side === 1) {
+        } else if (userInfo.side === 10) {
           return this.goToUserDashboard();
         } else {
           return this.goToSidePick();

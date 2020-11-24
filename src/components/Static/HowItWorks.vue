@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <div id="howItWorks">
     <v-row justify="center">
       <h2 class="color-secondary mb-12">{{ $t('common.howItWorks') }}</h2>
     </v-row>
@@ -27,6 +28,7 @@
         </div>
       </v-col>
     </v-row>
+    </div>
   </v-container>
 </template>
 

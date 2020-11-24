@@ -53,7 +53,7 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.update({ side: 2 });
+        await userController.update({ side: 20 });
       } catch (e) {
         this.$toast.error('Something went wrong. Try again later');
       }
@@ -66,7 +66,7 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.update({ side: 1 });
+        await userController.update({ side: 10 });
       } catch (e) {
         this.$toast.error('Something went wrong. Try again later');
       }

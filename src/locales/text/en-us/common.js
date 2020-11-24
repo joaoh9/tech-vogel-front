@@ -23,7 +23,7 @@ export default {
     professional: 'professional',
     howItWorks: 'How It Works',
     FAQ: 'FAQ',
-    login: 'Login',
+    login: 'Log in',
     signup: 'Sign up',
     apply: 'Apply',
     applying: 'Applying',

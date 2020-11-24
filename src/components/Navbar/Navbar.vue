@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
+  <div class="mx-16">
+    <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile class="mx-16 mt-4">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.mobile"
         @click="drawer = true"
         :color="isHome() ? 'bg' : 'dark'"
+        class="mx-16"
       />
       <v-btn text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
@@ -12,42 +13,30 @@
         </v-avatar>
       </v-btn>
       <g-btn
-        class="cursor-pointer mx-n2"
+        class="cursor-pointer mx-n2 button-text text-buttons"
         type="text"
         :color="isHome() ? 'bg' : 'dark'"
-        v-for="(item, i) in getTextButtons()"
-        :key="i"
+        v-for="(item, index) in getTextButtons()"
+        :key="index"
         @click="item.goTo()"
         :label="item.text"
       />
-      <v-spacer />
-      <g-btn
-        v-if="!$vuetify.breakpoint.mobile"
-        dataCy="nav-signup"
-        :type="isHome() ? 'text' : 'text'"
-        :text="isHome() ? true : false"
-        :color="isHome() ? 'primary' : 'dark'"
-        :textColor="isHome() ? 'primary' : 'dark'"
-        to="/signup"
-        :label="$t('common.findAJob')"
-      />
 
-      <g-btn
+      <v-spacer />
+
+      <v-btn dataCy="nav-login" to="/login" class="mx-4" color="white" text>
+        {{ $t('common.login') }}
+      </v-btn>
+
+      <v-btn
         v-if="!$vuetify.breakpoint.mobile"
+        color="primary"
         dataCy="nav-new-company"
-        type="primary"
-        class="ml-4"
+        class="py-5 px-12"
         to="/signup"
-        :label="$t('common.postAJob')"
-      />
-      <g-btn
-        dataCy="nav-login"
-        type="outlined"
-        :color="isHome() ? 'bg' : 'dark'"
-        to="/login"
-        class="mx-4"
-        :label="$t('common.login')"
-      />
+      >
+        {{ $t('common.signup') }}
+      </v-btn>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary class="">
       <MobileDrawer :items="getTextButtons().concat(getPrimaryButtons())" />
@@ -58,7 +47,6 @@
 <script>
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
-
 import MobileDrawer from './MobileDrawer';
 
 export default {
@@ -99,6 +87,13 @@ export default {
         path: '/how-it-works',
       });
     },
+
+    goToAboutUs() {
+      return this.$router.push({
+        path: '/about-us',
+      });
+    },
+
     getBgColor() {
       return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
     },
@@ -108,19 +103,27 @@ export default {
     getTextButtons() {
       return [
         { text: this.$t('common.jobs'), goTo: this.goToJobList },
-        { text: this.$t('common.pricing'), goTo: this.goToPricing },
         { text: this.$t('common.howItWorks'), goTo: this.goToHowItWorks },
+        { text: this.$t('common.pricing'), goTo: this.goToPricing },
+        { text: this.$t('common.aboutUs'), goTo: this.goToAboutUs },
       ];
     },
     getPrimaryButtons() {
       return [
-        { text: this.$t('common.findAJob'), goTo: this.goToSignup },
-        { text: this.$t('common.postAJob'), goTo: this.goToSignup },
+        { text: this.$t('common.login'), goTo: this.goToSignup },
+        { text: this.$t('common.signup'), goTo: this.goToSignup },
       ];
     },
   },
 };
-
 </script>
 
-<style scoped></style>
+<style scoped>
+.button-text {
+  font-weight: 500;
+}
+
+.text-buttons {
+  text-transform: initial;
+}
+</style>
