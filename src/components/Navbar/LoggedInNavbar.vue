@@ -84,7 +84,7 @@ export default {
     checkIfCompany() {
       const userController = new UserController();
       const userInfo = userController.decodeUserToken();
-      this.isCompany = userInfo.side === 2;
+      this.isCompany = userInfo.side === 20 || userInfo.side === 21 || userInfo.side === 22;
     },
     async getUserProfilePic() {
       const userController = new UserController();

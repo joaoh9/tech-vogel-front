@@ -1,22 +1,25 @@
 <template>
   <div>
-    <form-input :title="$t('job.new.salary.title')" />
+    <form-input :title="$t('job.new.salary.title')" required />
     <div class="d-flex justify-space-between">
       <v-select
         v-model="salary.currency"
         @change="$emit('salary-currency', salary.currency)"
+        :rules="[rules.required(salary.currency)]"
         placeholder="Currency"
-        title="Payment Currency"
+        label="Payment currency"
+        title="Payment currency"
         outlined
         :items="$t('enums.currencies')"
         class="mr-2"
       />
-      <g-autocomplete
+      <v-select
         v-model="salary.timeFrame"
-        @input="$emit('salary-time-frame', salary.timeFrame)"
-        :multiple="false"
-        label="Time Frame"
-        title="Time Frame"
+        @change="$emit('salary-time-frame', salary.timeFrame)"
+        :rules="[rules.required(salary.timeFrame)]"
+        label="Time frame"
+        title="Time frame"
+        placeholder="Time frame"
         outlined
         :items="$t('enums.payCheckTimeFrame')"
         class="mr-2"
@@ -86,6 +89,7 @@ export default {
         range: false,
       },
       rules: {
+        required: () => true,
         isNumber: () => true,
       },
       range: false,

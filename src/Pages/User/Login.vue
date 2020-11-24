@@ -109,10 +109,18 @@ export default {
 
         userController.saveUserToken(userInfo.token);
         this.$emit('login');
+
+        // Needs refactor
         if (userInfo.side === 20) {
-          return this.goToCompanyDashboard();
+          return this.goToRegisterCompany();
         } else if (userInfo.side === 10) {
+          return this.goToRegisterResume();
+        } else if (userInfo.side === 11) {
           return this.goToUserDashboard();
+        } else if (userInfo.side === 21) {
+          return this.goToRegisterJob();
+        } else if (userInfo.side === 22) {
+          return this.goToCompanyDashboard();
         } else {
           return this.goToSidePick();
         }
@@ -143,6 +151,24 @@ export default {
     goToCompanyDashboard() {
       this.$router.push({
         name: 'Company Dashboard',
+      });
+    },
+
+    goToRegisterCompany() {
+      this.$router.push({
+        name: 'New Company',
+      });
+    },
+
+    goToRegisterResume() {
+      this.$router.push({
+        name: 'Resume Form',
+      });
+    },
+
+    goToRegisterJob() {
+      this.$router.push({
+        name: 'New Job',
       });
     },
 

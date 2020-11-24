@@ -11,7 +11,6 @@
       <h3 class="align-self-start ml-16 color-secondary mr-8">
         {{ $t('howItWorks.forCompanies') }}
       </h3>
-      <h5 class="color-primary">{{ $t('common.learnMore') }} ></h5>
     </v-row>
     <v-row justify="center">
       <v-col

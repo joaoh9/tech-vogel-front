@@ -6,10 +6,10 @@
       :subtitle="$t('job.confirmJob.subtitle')"
       :cols="true"
     >
-      <div class="d-flex mt-8">
+      <div class="d-flex justify-center mt-8">
         <g-btn
           @click="goBackAndEdit"
-          class="mx-4"
+          class="mx-12"
           type="outline"
           color="light"
           label="Go back & change"

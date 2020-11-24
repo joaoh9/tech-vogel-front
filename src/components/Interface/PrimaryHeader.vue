@@ -1,5 +1,5 @@
 <template>
-  <v-card color="primary" class="px-16 pt-16 pb-16" flat style="border-radius: 0px !important">
+  <v-card color="primary" class="px-16 mt-12 pt-4 pb-4" flat style="border-radius: 0px !important">
     <v-row v-if="cols">
       <v-col cols="12" md="6">
         <h3 class="h3-bold color-light">{{ title }}</h3>

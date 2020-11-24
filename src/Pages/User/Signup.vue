@@ -3,6 +3,24 @@
     <g-card :lg="600" :md="500">
       <template v-slot:card-content>
         <g-card-header :title="$t('common.signup')" :description="$t('signup.description')" />
+        <g-btn
+          @click="goToAuthGithubLink()"
+          block
+          v-if="!_email"
+          type="disabled"
+          :title="$t('common.comingSoon')"
+          label="Coming soon - GitHub & LinkedIn sign up"
+        />
+
+        <!-- <g-btn
+          class="mt-4"
+          disabled
+          block
+          v-if="!_email"
+          type="disabled"
+          :label="$t('user.linkedInSignup')"
+        /> -->
+
         <form-input class="mt-6" :title="$t('signup.name.title')" />
         <v-text-field
           data-cy="name"
@@ -11,6 +29,7 @@
           v-model="user.name"
           autofocus
         />
+
         <form-input :title="$t('signup.email.title')" />
         <v-text-field
           data-cy="email"
@@ -19,6 +38,7 @@
           :rules="[rules.email(user.email)]"
           :error-messages="localRules.emailAlreadyRegistered"
         />
+
         <form-input :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
         <v-text-field
           data-cy="confirm-email"
@@ -27,6 +47,7 @@
           :rules="[rules.equalEmail(user.email, user.confirmEmail)]"
           :error-messages="localRules.emailAlreadyRegistered"
         />
+
         <form-input :title="$t('common.password.label')" />
         <v-text-field
           data-cy="password"
@@ -37,6 +58,7 @@
           outlined
           v-model="user.password"
         />
+
         <form-input :title="$t('common.confirmPassword.label')" />
         <v-text-field
           data-cy="confirm-password"
@@ -47,22 +69,7 @@
           outlined
           v-model="user.confirmPassword"
         />
-        <g-btn
-          @click="goToAuthGithubLink()"
-          block
-          v-if="!_email"
-          type="disabled"
-          :title="$t('common.comingSoon')"
-          :label="$t('user.githubSignup')"
-        />
-        <g-btn
-          class="mt-4"
-          disabled
-          block
-          v-if="!_email"
-          type="disabled"
-          :label="$t('user.linkedInSignup')"
-        />
+
         <v-checkbox
           data-cy="terms-and-conditions"
           v-model="termsAndConditions"

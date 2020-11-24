@@ -24,7 +24,7 @@
 
       <v-spacer />
 
-      <v-btn dataCy="nav-login" to="/login" class="mx-4" color="white" text>
+      <v-btn dataCy="nav-login" to="/login" class="mx-4 py-5" :color="isHome() ? 'white' : 'dark'" text>
         {{ $t('common.login') }}
       </v-btn>
 

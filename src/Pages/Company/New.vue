@@ -55,6 +55,7 @@ import About from 'Pages/Company/_1About';
 // import New2 from 'Pages/Company/New2';
 // import New3 from 'Pages/Company/New3';
 import CompanyController from 'Controllers/company';
+import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -94,12 +95,15 @@ export default {
     },
     async register() {
       const companyController = new CompanyController();
+      const userController = new UserController();
+
       if (this.rules.min(3, this.company.name) !== true) {
         this.$toast.error(this.$t('toast.error.writeNames'));
         return;
       }
       try {
         await companyController.save(this.company);
+        await userController.update({ side: 21 });
         this.$toast.success(this.$t('toast.success.savedCompany'));
 
         this.$router.push({
