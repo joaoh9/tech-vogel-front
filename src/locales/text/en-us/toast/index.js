@@ -24,6 +24,7 @@ export default {
       registeredCompany: 'You must have a registered company in order to post a job!',
       githubRetrieve: 'Something went wrong when retrieving your github data',
       userOrPassword: 'Please insert a correct email or password',
+      notAllowed: 'You are not allowed to access this page',
     },
     success: {
       jobApplied: 'Successfully applied for job',
