@@ -3,6 +3,10 @@ export default {
     new: {
       steps: [ 'Basic Info', 'Additional Info', 'Contact' ],
       page1: 'Register as a company',
+      logo: {
+        title: 'Company logo',
+        placeholder: 'Upload company logo',
+      },
       companyName: 'Company name',
       representativeName: 'Representative name',
       representativeEmail: 'Representative email',

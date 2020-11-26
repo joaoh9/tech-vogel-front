@@ -18,7 +18,7 @@
             <g-btn
               style="height: 56px; width: 270px;"
               type="primary"
-              label="I want to hire"
+              :label="$t('common.hireCTA')"
               to="/signup"
               data-cy="home-signup"
             />
@@ -27,7 +27,7 @@
               style="height: 56px; width: 270px;"
               type="outline"
               color="light"
-              label="I want to get hired"
+              :label="$t('common.applyCTA')"
               to="/signup"
               data-cy="home-signup"
             />

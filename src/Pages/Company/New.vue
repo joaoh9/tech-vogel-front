@@ -9,6 +9,7 @@
       <template v-slot:card-content>
         <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
           <About
+            v-on:company-logo="e => (logo = e)"
             v-on:company-name="e => (company.name = e)"
             v-on:company-description="e => (company.description = e)"
           />
@@ -56,6 +57,7 @@ import About from 'Pages/Company/_1About';
 // import New3 from 'Pages/Company/New3';
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
+import ProfilePictureController from 'Controllers/profilePic';
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -73,6 +75,7 @@ export default {
   data() {
     return {
       currentStep: 0,
+      logo: {},
       company: {
         name: '',
         description: '',
@@ -96,6 +99,8 @@ export default {
     async register() {
       const companyController = new CompanyController();
       const userController = new UserController();
+      const profilePictureController = new ProfilePictureController();
+
 
       if (this.rules.min(3, this.company.name) !== true) {
         this.$toast.error(this.$t('toast.error.writeNames'));
@@ -103,6 +108,7 @@ export default {
       }
       try {
         await companyController.save(this.company);
+        await profilePictureController.save(this.logo);
         await userController.update({ side: 21 });
         this.$toast.success(this.$t('toast.success.savedCompany'));
 

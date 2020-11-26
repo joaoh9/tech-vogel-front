@@ -26,6 +26,10 @@ export default {
           name: 'Education',
           identifier: 'education',
         },
+        {
+          name: 'Links',
+          identifier: 'links',
+        },
       ],
       start: {
         title: 'Register your CV',
@@ -138,6 +142,38 @@ export default {
           to: 'To',
         },
       },
+      links: {
+        title: 'Links',
+        description: 'Some description to place here',
+        github: {
+          title: 'GitHub',
+          placeholder: 'Ex: https://github.com/user',
+        },
+        linkedin: {
+          title: 'LinkedIn',
+          placeholder: 'Ex: https://linkedin.com/in/user',
+        },
+        behance: {
+          title: 'Behance',
+          placeholder: 'Ex: https://behance.net/user',
+        },
+        website: {
+          title: 'Your website',
+          placeholder: 'Ex: https://yourwebsite',
+        },
+        instagram: {
+          title: 'Instagram',
+          placeholder: 'Ex: https://instagram.com/user',
+        },
+        twitter: {
+          title: 'Twitter',
+          placeholder: 'Ex: https://twitter.com/user',
+        },
+        facebook: {
+          title: 'Facebook',
+          placeholder: 'Ex: https://facebook.com/user',
+        },
+      },
       extras: {
         title: 'Anything else?',
         description:
@@ -150,6 +186,16 @@ export default {
         inputHint: 'Select the skills according to your years of experience',
       },
     },
+    revise: 'Revise your CV!',
+    edit: 'You will be able to edit it at any time',
+    post: 'Post CV',
+    aboutMe: 'About me',
+    workExperience: 'Work experience',
+    education: 'Education',
+    skills: 'Skills',
+    techSkills: 'Tech skills',
+    softSkills: 'Soft skills',
+    langSkills: 'Language skills',
   },
   user: {
     findMe: 'Where to find me',
@@ -231,5 +277,15 @@ export default {
         },
       ],
     },
+    github: {
+      stats: 'Github Stats',
+      publicRepo: 'Public Repositories',
+      contributions: 'Contributions in the last year',
+      forkedRepo: 'Forked Repositories',
+      starsCount: 'Stars Count',
+      confirmAuth: 'Confirm GitHub authorization?',
+    },
+    skills: 'Skill',
+    yearsExperience: 'Years of Experience',
   },
 };

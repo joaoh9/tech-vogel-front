@@ -12,14 +12,14 @@
           class="mx-12"
           type="outline"
           color="light"
-          label="Go back & change"
+          :label="$t('common.backChange')"
         />
         <g-btn
           @click="runAction"
           type="filled"
           color="light"
           textColor="primary"
-          :label="editingJobPosted ? 'Confirm Edit' : 'Post Job'"
+          :label="editingJobPosted ? $t('common.confirmEdit') : $t('common.postJob')"
         />
       </div>
     </PrimaryHeader>

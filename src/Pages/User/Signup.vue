@@ -9,7 +9,7 @@
           v-if="!_email"
           type="disabled"
           :title="$t('common.comingSoon')"
-          label="Coming soon - GitHub & LinkedIn sign up"
+          :label="$t('common.comingSoon')"
         />
 
         <!-- <g-btn
@@ -168,8 +168,7 @@ export default {
       }
       const emailRuleOk = this.rules.email(this.user.email) === true;
       if (!emailRuleOk) {
-        // TODO: internacionlização
-        this.localRules.emailAlreadyRegistered = 'Email required';
+        this.localRules.emailAlreadyRegistered = this.$t('common.emailRequired');
       }
 
       const validEmail = await this.validEmail();
@@ -182,9 +181,8 @@ export default {
 
       const nameRuleOk = this.rules.min(3, this.user.name) === true;
       if (!nameRuleOk) {
-        // TODO: internacionlização
         this.user.name = '';
-        // this.$toast.warning('Name must be greater than 3 characters');
+        this.$toast.warning(this.$t('toast.warning.nameGreater'));
       }
 
       if (!this.termsAndConditions || !emailRuleOk || !validEmail || !nameRuleOk) {

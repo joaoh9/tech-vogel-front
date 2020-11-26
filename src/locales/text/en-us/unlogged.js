@@ -90,6 +90,7 @@ export default {
       { text: 'Our story', to: '/aboutus' },
       { text: 'How it works', to: '/how-it-works' },
       { text: 'Pricing', to: '/pricing' },
+      { text: 'FAQ', to: '/faq' },
     ],
   },
   login: {

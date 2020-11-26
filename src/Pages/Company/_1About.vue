@@ -1,5 +1,13 @@
 <template>
   <div>
+    <form-input :title="$t('company.new.logo.title')" />
+    <v-file-input
+      outlined
+      :placeholder="$t('company.new.logo.placeholder')"
+      v-model="logo"
+      @change="handleFileUpload"
+    >
+    </v-file-input>
     <form-input :title="$t('company.new.companyName')" />
     <v-text-field
       outlined
@@ -31,6 +39,7 @@ export default {
   },
   data() {
     return {
+      logo: null,
       name: '',
       description: '',
       rules: {
@@ -50,6 +59,24 @@ export default {
           path: '/login',
         });
       }
+    },
+    getBase64(file) {
+      return new Promise(resolve => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+      });
+    },
+    async handleFileUpload() {
+      const data64 = await this.getBase64(this.logo);
+      const file = {
+        data64,
+        name: this.logo.name,
+        size: this.logo.size,
+        type: this.logo.type,
+      };
+
+      this.$emit('profile-picture', file);
     },
   },
   watch: {

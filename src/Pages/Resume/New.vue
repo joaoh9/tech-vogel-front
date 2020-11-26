@@ -40,13 +40,16 @@
             </PersonalInfo>
           </div>
           <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-            <WorkExperience v-on:update-item="e => (resume.workHistory = e)"> </WorkExperience>
+            <WorkExperience v-on:update-item="e => (resume.workHistory = e)" />
           </div>
           <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
             <Skills form="resume" v-on:skills="e => (resume.skills = e)" />
           </div>
           <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
-            <Education v-on:update-item="e => (resume.education = e)"> </Education>
+            <Education v-on:update-item="e => (resume.education = e)" />
+          </div>
+          <div v-bind:style="{ display: currentStep == 6 ? 'block' : 'none' }">
+            <Links v-on:update-item="e => (resume.links = e)" />
           </div>
         </template>
         <template v-slot:buttons>
@@ -92,6 +95,7 @@ import Preferences from './_1Preferences';
 import PersonalInfo from './_2PersonalInfo';
 import WorkExperience from './_3WorkExperience';
 import Education from './_5Education';
+import Links from './_6Links';
 
 export default {
   name: 'NewResume',
@@ -106,12 +110,13 @@ export default {
     WorkExperience,
     Skills,
     Education,
+    Links,
   },
   mounted() {
     const userController = new UserController();
     const company = userController.decodeUserToken();
 
-    if (company.side === 2) {
+    if (company.side === 20) {
       this.$router.push('/404');
     }
   },
@@ -147,6 +152,7 @@ export default {
             endDate: '',
           },
         ],
+        links: [],
       },
     };
   },

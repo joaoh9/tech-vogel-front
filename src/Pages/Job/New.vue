@@ -157,7 +157,7 @@ export default {
       try {
         this.company = await companyController.getByUserId('current');
       } catch (e) {
-        this.$toast.error('Something went wrong when retrieving company info');
+        this.$toast.error(this.$t('toast.error.retrieveCompanyInfo'));
       }
     },
     getPageInfo() {

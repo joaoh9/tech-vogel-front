@@ -51,7 +51,7 @@
       <g-btn
         type="outlined"
         color="primary"
-        label="Add more"
+        :label="$t('common.addMore')"
         @click="
           education.push({
             courseTitle: '',

@@ -2,7 +2,7 @@
   <div class="d-flex justify-center mt-4 mt-md-12">
     <g-card>
       <template v-slot:card-header>
-        <g-card-header title="Confirmar autorização do GitHub?" />
+        <g-card-header :title="$t('user.github.confirmAuth')" />
       </template>
       <template v-slot:card-content>
         <div class="text-center">

@@ -1,7 +1,7 @@
 <template>
   <v-card class="bs-primary" color="bg" :loading="!loaded" @click="$emit('click')">
     <div v-if="user" :key="loaded" class="d-flex justify-space-between py-2 mx-12">
-      <h5 class="text-center">{{ 'Hi, ' + name }}</h5>
+      <h5 class="text-center">{{ $t('common.hi') + name }}</h5>
       <div class="d-flex my-4">
         <v-avatar color="grey" size="40">
           <v-img v-if="picture" :src="picture.data64" />

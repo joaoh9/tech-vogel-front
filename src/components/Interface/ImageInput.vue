@@ -54,7 +54,7 @@ export default {
           return;
         })
         .catch(() => {
-          this.$toast.error(this.$t('toast.error.somethingWrong', { filename: file.name }));
+          this.$toast.error(this.$t('toast.error.fileProcessWrong', { filename: file.name }));
         });
     },
   },

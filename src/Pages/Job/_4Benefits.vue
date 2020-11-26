@@ -32,6 +32,7 @@
         :label="range ? 'From' : 'Price'"
         :title="range ? 'From' : 'Price'"
         outlined
+        v-mask="salaryMask(this.salary.min)"
         :class="range ? 'mr-2' : ''"
       />
       <v-text-field
@@ -41,6 +42,7 @@
         :rules="[rules.isNumber(salary.max)]"
         :label="range ? 'To' : 'Price'"
         :title="range ? 'To' : 'Price'"
+        v-mask="salaryMask(this.salary.max)"
         outlined
         v-if="range"
       />
@@ -96,6 +98,22 @@ export default {
     };
   },
   methods: {
+    salaryMask(value) {
+      const masks = {
+        2: '#,##',
+        5: '##,##',
+        6: '###,##',
+        7: '####,##',
+        8: '##.###,##',
+        10: '###.###,##',
+      };
+
+      if (value) {
+        value = masks[value.length];
+      }
+
+      return value;
+    },
     getPriceMask(value) {
       switch (this.salary.currency) {
         case 'USD':

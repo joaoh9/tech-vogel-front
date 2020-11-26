@@ -104,5 +104,8 @@ export default {
     timePosted: 'Posted {time}',
     selectAtLeast: 'Please select at least',
     selectMaximum: 'Please select a maximum of',
+    see: 'See Job >',
+    edit: 'Edit Job',
+    list: 'Go to Job List',
   },
 };

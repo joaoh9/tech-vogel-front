@@ -26,7 +26,7 @@
           <v-row justify="center">
             <v-col>
               <div v-if="resendCode" style="min-width: 100%" class="mt-6">
-                <form-input class="mt-6" title="Your email" />
+                <form-input class="mt-6" :title="$t('signup.email.title')" />
                 <v-text-field :rules="[rules.email(email)]" outlined v-model="email" />
                 <g-btn
                   class="float-right"

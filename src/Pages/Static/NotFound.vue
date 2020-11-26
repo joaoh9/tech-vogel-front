@@ -1,8 +1,8 @@
 <template>
   <div>
-    <PrimaryHeader title="404 - Page not found" subtitle="Uh-oh" />
+    <PrimaryHeader :title="$t('common.pageNotFound')" :subtitle="$t('common.uhOh')" />
     <div class="d-flex justify-center mt-6">
-      <g-btn to="/" type="primary" label="Click here to return home" />
+      <g-btn to="/" type="primary" :label="$t('common.returnHome')" />
     </div>
   </div>
 </template>
