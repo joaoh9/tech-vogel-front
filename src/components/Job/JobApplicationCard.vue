@@ -71,8 +71,6 @@ import IconText from 'Components/Interface/IconText';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
 
-import StorageHelper from 'Helpers/storage';
-
 export default {
   name: 'JobApplicationCard',
   props: {
