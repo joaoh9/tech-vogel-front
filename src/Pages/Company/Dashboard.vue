@@ -1,7 +1,7 @@
 <template>
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
-      <UserCard :user="user" v-if="user" :key="loaded.user" />
+      <UserCard :user="user" v-if="user" :key="loaded.user" :picture="logo" />
       <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" />
       <g-btn
         class="mt-4"
@@ -14,7 +14,7 @@
     </template>
     <template template v-slot:second-col>
       <div>
-        <CompanyCard :company="company" v-if="company" :key="loaded.company" />
+        <CompanyCard :company="company" v-if="company" :key="loaded.company" :picture="logo" />
         <div v-for="(job, i) in jobs" :key="i">
           <JobManagerCard :job="job" :company="company" />
         </div>
@@ -31,6 +31,7 @@ import CompanyCard from 'Components/Dashboard/CompanyCard';
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
+import ProfilePictureController from 'Controllers/profilePic';
 
 export default {
   name: 'CompanyDashboard',
@@ -38,6 +39,7 @@ export default {
     await this.getUserInfo();
     await this.getCompanyInfo();
     await this.getCompanyJobs();
+    await this.getLogo();
   },
   components: {
     CompanyCard,
@@ -46,8 +48,9 @@ export default {
   },
   data() {
     return {
-      user: null,
+      user: {},
       company: null,
+      logo: null,
       loaded: {
         company: false,
         user: false,
@@ -84,6 +87,19 @@ export default {
         this.jobs = await jobController.getCompanyJobs(this.company.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
+      }
+    },
+    async getLogo() {
+      const profilePictureController = new ProfilePictureController();
+
+      try {
+        this.logo = await profilePictureController.getByUserId(this.user.id);
+      } catch (e) {
+        if (e.response.status === 404) {
+          this.logo = null;
+          return;
+        }
+        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
     getFistColInfo() {

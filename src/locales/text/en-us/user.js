@@ -27,7 +27,7 @@ export default {
           identifier: 'education',
         },
         {
-          name: 'Links',
+          name: 'Social Links',
           identifier: 'links',
         },
       ],
@@ -145,34 +145,6 @@ export default {
       links: {
         title: 'Links',
         description: 'Some description to place here',
-        github: {
-          title: 'GitHub',
-          placeholder: 'Ex: https://github.com/user',
-        },
-        linkedin: {
-          title: 'LinkedIn',
-          placeholder: 'Ex: https://linkedin.com/in/user',
-        },
-        behance: {
-          title: 'Behance',
-          placeholder: 'Ex: https://behance.net/user',
-        },
-        website: {
-          title: 'Your website',
-          placeholder: 'Ex: https://yourwebsite',
-        },
-        instagram: {
-          title: 'Instagram',
-          placeholder: 'Ex: https://instagram.com/user',
-        },
-        twitter: {
-          title: 'Twitter',
-          placeholder: 'Ex: https://twitter.com/user',
-        },
-        facebook: {
-          title: 'Facebook',
-          placeholder: 'Ex: https://facebook.com/user',
-        },
       },
       extras: {
         title: 'Anything else?',

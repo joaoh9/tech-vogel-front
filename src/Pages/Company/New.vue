@@ -1,60 +1,51 @@
 <template>
-  <div class="d-flex justify-center mt-4 mt-md-12">
-    <!-- <Stepper ref="stepper" :stepsNames="$t('company.new.steps')" v-model="currentStep" class="mb-6">
-        -->
-    <g-card>
-      <template v-slot:card-header>
-        <g-card-header :title="$t(`company.new.page1`)" />
-      </template>
-      <template v-slot:card-content>
-        <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
-          <About
-            v-on:company-logo="e => (logo = e)"
-            v-on:company-name="e => (company.name = e)"
-            v-on:company-description="e => (company.description = e)"
-          />
-        </div>
-        <!--
-            <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-              <New2
-                v-on:location="e => (company.location = e)"
-                v-on:about="e => (company.about = e)"
-              />
-            </div>
-            <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
-              <New3
-                v-on:webpage="e => (company.links.webpage = e)"
-                v-on:linkedin="e => (company.links.linkedin = e)"
-                v-on:instagram="e => (company.links.instagram = e)"
-                v-on:twitter="e => (company.links.twitter = e)"
-              />
-            </div>
-            -->
-      </template>
-      <template v-slot:buttons>
-        <div
-          :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`"
-          style="z-index: -1"
-        >
-          <g-btn
-            :label="$t('common.back')"
-            v-if="currentStep > 0"
-            type="secondary"
-            @click="manageStepBack"
-          />
-          <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" />
-        </div>
-      </template>
-    </g-card>
-    <!-- </Stepper> -->
+  <div>
+    <PrimaryHeader
+      :title="$t('company.new.getStarted')"
+      :subtitle="$t('company.new.formInfo')"
+      :cols="true"
+    />
+    <div class="d-flex justify-center mt-4 mt-md-12">
+      <g-card>
+        <template v-slot:card-header>
+          <g-card-header :title="$t(`company.new.companyInfo`)" class="color-secondary" />
+          <capt-1 class="mt-4">{{ $t('company.new.learnMore') }}</capt-1>
+        </template>
+        <template v-slot:card-content>
+          <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }" class="mt-12">
+            <About
+              v-on:company-logo="e => (logo = e)"
+              v-on:company-name="e => (company.name = e)"
+              v-on:company-description="e => (company.description = e)"
+              v-on:website="e => (company.links.website = e)"
+              v-on:linkedin="e => (company.links.linkedin = e)"
+              v-on:instagram="e => (company.links.instagram = e)"
+              v-on:twitter="e => (company.links.twitter = e)"
+            />
+          </div>
+        </template>
+        <template v-slot:buttons>
+          <div
+            :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`"
+            style="z-index: -1"
+          >
+            <g-btn
+              :label="$t('common.back')"
+              v-if="currentStep > 0"
+              type="secondary"
+              @click="manageStepBack"
+            />
+            <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" />
+          </div>
+        </template>
+      </g-card>
+    </div>
   </div>
 </template>
 
 <script>
-// import Stepper from 'Components/Interface/Stepper';
 import About from 'Pages/Company/_1About';
-// import New2 from 'Pages/Company/New2';
-// import New3 from 'Pages/Company/New3';
+import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
 import ProfilePictureController from 'Controllers/profilePic';
@@ -62,15 +53,12 @@ import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'New',
-  props: {},
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
   components: {
     About,
-    // New2,
-    // New3,
-    // Stepper,
+    PrimaryHeader,
   },
   data() {
     return {
@@ -79,6 +67,12 @@ export default {
       company: {
         name: '',
         description: '',
+        links: {
+          website: '',
+          linkedin: '',
+          instagram: '',
+          twitter: '',
+        },
       },
     };
   },
@@ -101,8 +95,7 @@ export default {
       const userController = new UserController();
       const profilePictureController = new ProfilePictureController();
 
-
-      if (this.rules.min(3, this.company.name) !== true) {
+      if (this.rules.min(3, this.company.name) !== true || !this.company.description) {
         this.$toast.error(this.$t('toast.error.writeNames'));
         return;
       }

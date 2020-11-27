@@ -8,19 +8,48 @@
       @change="handleFileUpload"
     >
     </v-file-input>
-    <form-input :title="$t('company.new.companyName')" />
+
+    <form-input :title="$t('company.new.companyName')" required />
     <v-text-field
       outlined
-      :rules="[rules.min(3, name)]"
+      :rules="[rules.min(3, name), rules.required(name)]"
       v-model="name"
       @input="$emit('company-name', name)"
     />
-    <form-input :title="$t('company.new.aboutYourCompany.title')" />
-    <v-textarea
+
+    <form-input :title="$t('company.new.aboutYourCompany.title')" required />
+    <v-textarea outlined :rules="[rules.required(description)]" v-model="description" />
+
+    <form-input :title="$t('common.links.webpage.title')" />
+    <v-text-field
+      :placeholder="$t('common.links.webpage.placeholder')"
+      v-model="website"
+      @input="$emit('website', website)"
       outlined
-      :placeholder="$t('company.new.aboutYourCompany.placeholder')"
-      :rules="[rules.required(description)]"
-      v-model="description"
+    />
+
+    <form-input :title="$t('common.links.linkedin.title')" />
+    <v-text-field
+      :placeholder="$t('common.links.linkedin.placeholder')"
+      v-model="linkedin"
+      @input="$emit('linkedin', linkedin)"
+      outlined
+    />
+
+    <form-input :title="$t('common.links.instagram.title')" />
+    <v-text-field
+      :placeholder="$t('common.links.instagram.placeholder')"
+      v-model="instagram"
+      @input="$emit('instagram', instagram)"
+      outlined
+    />
+
+    <form-input :title="$t('common.links.twitter.title')" />
+    <v-text-field
+      :placeholder="$t('common.links.twitter.placeholder')"
+      v-model="twitter"
+      @input="$emit('twitter', twitter)"
+      outlined
     />
   </div>
 </template>
@@ -42,6 +71,10 @@ export default {
       logo: null,
       name: '',
       description: '',
+      website: '',
+      linkedin: '',
+      instagram: '',
+      twitter: '',
       rules: {
         min: () => true,
         required: () => true,
@@ -76,7 +109,7 @@ export default {
         type: this.logo.type,
       };
 
-      this.$emit('profile-picture', file);
+      this.$emit('company-logo', file);
     },
   },
   watch: {

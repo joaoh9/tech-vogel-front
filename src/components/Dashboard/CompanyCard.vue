@@ -1,6 +1,6 @@
 <template>
   <v-card minWidth="0" class="pa-12 bs-primary" color="bg">
-    <div class="d-flex justify-space-between">
+    <div v-if="company" :key="loaded" class="d-flex justify-space-between">
       <div>
         <p class="overline">{{ $t('company.dashboard.yourCompany.title') }}</p>
         <h3 class="mb-5 mt-n2 h3-bold text-capitalize">{{ company.name }}</h3>
@@ -25,7 +25,7 @@
         </div>
       </div>
       <v-avatar class="align-self-center" size="90" color="cinza-lighten-3">
-        <v-img v-if="company.profilePhoto" :src="company.profilePhoto" />
+        <v-img v-if="picture" :src="picture.data64" />
       </v-avatar>
     </div>
   </v-card>
@@ -37,7 +37,13 @@ export default {
   name: 'DashboardCompanyCard',
   props: {
     company: Object,
+    picture: Object,
     jobsPosted: [ Number, String ],
+  },
+  data() {
+    return {
+      loaded: false,
+    }
   },
 };
 

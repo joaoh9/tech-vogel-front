@@ -18,7 +18,7 @@ export default {
       jobData: 'Something went wrong when retrieving job {jobId} data',
       saveCompany: 'An error occurred when saving the company',
       saveResume: 'There was an error saving your resume',
-      writeNames: 'Please write a company name and a represetative name',
+      writeNames: 'Please write the company name and a description',
       saveJob: 'There was an error when saving the job',
       jobList: 'Something went wrong when retrieving the jobs from the Database',
       registeredCompany: 'You must have a registered company in order to post a job!',

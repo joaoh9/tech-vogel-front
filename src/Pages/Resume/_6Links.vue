@@ -1,59 +1,35 @@
 <template>
   <div>
-    <form-input :title="$t('resume.register.links.github.title')" />
+    <form-input :title="$t('common.links.website.title')" />
     <v-text-field
-      autofocus
-      :placeholder="$t('resume.register.links.github.placeholder')"
-      v-model="github"
-      @input="$emit('github', github)"
-      outlined
-    />
-
-    <form-input :title="$t('resume.register.links.linkedin.title')" />
-    <v-text-field
-      :placeholder="$t('resume.register.links.linkedin.placeholder')"
-      v-model="linkedin"
-      @input="$emit('linkedin', linkedin)"
-      outlined
-    />
-
-    <form-input :title="$t('resume.register.links.behance.title')" />
-    <v-text-field
-      :placeholder="$t('resume.register.links.behance.placeholder')"
-      v-model="behance"
-      @input="$emit('behance', behance)"
-      outlined
-    />
-
-    <form-input :title="$t('resume.register.links.website.title')" />
-    <v-text-field
-      :placeholder="$t('resume.register.links.website.placeholder')"
+      :placeholder="$t('common.links.website.placeholder')"
       v-model="website"
       @input="$emit('website', website)"
       outlined
     />
 
-    <form-input :title="$t('resume.register.links.instagram.title')" />
+    <form-input :title="$t('common.links.github.title')" />
     <v-text-field
-      :placeholder="$t('resume.register.links.instagram.placeholder')"
-      v-model="instagram"
-      @input="$emit('instagram', instagram)"
+      autofocus
+      :placeholder="$t('common.links.github.placeholder')"
+      v-model="github"
+      @input="$emit('github', github)"
       outlined
     />
 
-    <form-input :title="$t('resume.register.links.twitter.title')" />
+    <form-input :title="$t('common.links.linkedin.title')" />
     <v-text-field
-      :placeholder="$t('resume.register.links.twitter.placeholder')"
-      v-model="twitter"
-      @input="$emit('twitter', twitter)"
+      :placeholder="$t('common.links.linkedin.placeholder')"
+      v-model="linkedin"
+      @input="$emit('linkedin', linkedin)"
       outlined
     />
 
-    <form-input :title="$t('resume.register.links.facebook.title')" />
+    <form-input :title="$t('common.links.behance.title')" />
     <v-text-field
-      :placeholder="$t('resume.register.links.facebook.placeholder')"
-      v-model="facebook"
-      @input="$emit('facebook', facebook)"
+      :placeholder="$t('common.links.behance.placeholder')"
+      v-model="behance"
+      @input="$emit('behance', behance)"
       outlined
     />
   </div>
@@ -68,10 +44,7 @@ export default {
       linkedin: '',
       behance: '',
       website: '',
-      instagram: '',
-      twitter: '',
-      facebook: '',
-    }
+    };
   },
 };
 </script>

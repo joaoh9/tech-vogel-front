@@ -84,5 +84,35 @@ export default {
     pageNotFound: '404 - Page not found',
     uhOh: 'Uh-oh',
     returnHome: 'Click here to return home',
+    links: {
+      github: {
+        title: 'GitHub',
+        placeholder: 'https://github.com/',
+      },
+      linkedin: {
+        title: 'LinkedIn',
+        placeholder: 'https://linkedin.com/in/',
+      },
+      behance: {
+        title: 'Behance',
+        placeholder: 'https://behance.net/',
+      },
+      website: {
+        title: 'Your website',
+        placeholder: 'https://',
+      },
+      webpage: {
+        title: 'Company webpage',
+        placeholder: 'https://',
+      },
+      instagram: {
+        title: 'Instagram',
+        placeholder: 'https://instagram.com/',
+      },
+      twitter: {
+        title: 'Twitter',
+        placeholder: 'https://twitter.com/',
+      },
+    },
   },
 };

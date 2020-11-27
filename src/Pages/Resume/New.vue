@@ -49,7 +49,12 @@
             <Education v-on:update-item="e => (resume.education = e)" />
           </div>
           <div v-bind:style="{ display: currentStep == 6 ? 'block' : 'none' }">
-            <Links v-on:update-item="e => (resume.links = e)" />
+            <Links
+              v-on:website="e => (resume.links.website = e)"
+              v-on:linkedin="e => (resume.links.linkedin = e)"
+              v-on:github="e => (resume.links.github = e)"
+              v-on:behance="e => (resume.links.behance = e)"
+            />
           </div>
         </template>
         <template v-slot:buttons>
@@ -152,7 +157,12 @@ export default {
             endDate: '',
           },
         ],
-        links: [],
+        links: {
+          website: '',
+          github: '',
+          linkedin: '',
+          behance: '',
+        },
       },
     };
   },
@@ -165,10 +175,12 @@ export default {
     async saveResume() {
       const resumeController = new ResumeController();
       const profilePictureController = new ProfilePictureController();
+      const userController = new UserController();
 
       try {
         await resumeController.save(this.resume);
         await profilePictureController.save(this.profilePicture);
+        await userController.update({ side: 11 });
         this.$toast.success(this.$t('toast.success.saveResume'));
         this.$router.push({
           path: '/dashboard',
