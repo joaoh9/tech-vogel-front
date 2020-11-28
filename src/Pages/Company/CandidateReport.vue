@@ -29,50 +29,17 @@
           </div>
           <div class="d-flex flex-column flex-wrap mx-2 my-3">
             <div style="font-weight:bold">{{ $t('company.report.totalApplicants') }}</div>
-            <div>{{ 13 }}</div>
+            <div>{{ report_.totalApplicants }}</div>
           </div>
         </div>
         <v-divider class="my-10"></v-divider>
-        <h4 class="my-5">{{ $tc('company.report.yourTopMatches', totalMatches) }}</h4>
+        <h4 class="my-5">{{ $tc('company.report.yourTopMatches', report_.totalMatches) }}</h4>
         <bdy-1>{{ $t('company.report.matchesDisclaimer') }} </bdy-1>
-        <v-card
-          class="border-primary bs-primary pa-4 px-12 mt-6"
-          color="bg"
-          v-for="(candidate, i) in report_"
-          v-bind:key="i"
-        >
-          <div class="d-flex justify-start flex-wrap align-center">
-            <v-avatar class="align-self-center mr-15" size="90" color="cinza-lighten-3">
-              <v-img v-if="candidate.profilePhoto" :src="candidate.profilePhoto" />
-            </v-avatar>
-            <div class="d-flex flex-column flex-fill">
-              <h4 class="mt-2">{{ candidate.user.name }}</h4>
-              <h6 style="font-weight:normal; color:gray" class="mb-2">{{ candidate.mainRole }}</h6>
-              <div class="d-flex flex-wrap">
-                <v-btn :disabled="candidate.github" class="" text>
-                  <v-icon left>
-                    fab fa-github
-                  </v-icon>
-                  Github
-                </v-btn>
-                <v-btn :disabled="!candidate.linkedin" class="" text>
-                  <v-icon left>
-                    fab fa-linkedin
-                  </v-icon>
-                  Linkedin
-                </v-btn>
-              </div>
-            </div>
-            <v-spacer></v-spacer>
-            <g-btn
-              type="outlined"
-              color="secondary"
-              :to="'/user/id/' + userId"
-              class="my-10 align-self-center flex-fill "
-              :label="$t('company.report.candidates.viewCandidate')"
-            />
-          </div>
-        </v-card>
+        <CandidateCard
+          v-for="(candidate, index) in report_.candidates"
+          v-bind:key="index"
+          :candidate="candidate"
+        />
       </div>
     </template>
   </g-bootstrap>
@@ -80,6 +47,7 @@
 
 <script>
 import CompactCompanyCard from 'Components/Dashboard/CompactCompanyCard';
+import CandidateCard from 'Components/Report/CandidateCard';
 
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
@@ -100,6 +68,7 @@ export default {
   },
   components: {
     CompactCompanyCard,
+    CandidateCard,
   },
   data() {
     return {
@@ -107,27 +76,21 @@ export default {
       company: {},
       job: {},
       report: [],
-      report_: [
-        {
-          user: {
-            name: 'Paulo Freitas',
+      report_: {
+        totalApplicants: 13,
+        totalMatches: 3,
+        candidates: [
+          {
+            userId: '5fc075ddc153290396c87a38',
           },
-          mainRole: 'Fullstack Developer',
-        },
-        {
-          user: {
-            name: 'Bernardo Silva',
-          },
-          mainRole: 'Fullstack Developer',
-        },
-      ],
+        ],
+      },
       userId: null,
       jobId: null,
       loaded: {
         company: false,
         user: false,
       },
-      totalMatches: 3,
       jobs: [],
     };
   },
@@ -140,7 +103,6 @@ export default {
       } catch (e) {
         this.$toast.error(this.$t('toast.error.companyData', { companyId: this.companyId }));
       }
-      console.log(this.company);
     },
     async getJob() {
       const jobController = new JobController();
@@ -149,12 +111,10 @@ export default {
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
-      console.log(this.job);
     },
     async getUserInfo() {
       const userController = new UserController();
       this.user = userController.decodeUserToken();
-      console.log(this.user);
 
       this.loaded.user = false;
       if (!this.user) {

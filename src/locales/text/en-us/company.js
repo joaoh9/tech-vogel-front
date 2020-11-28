@@ -48,6 +48,14 @@ export default {
       candidates: {
         viewCandidate: 'View skills and CV',
       },
+      candidateProfile: {
+        copyEmail: 'Copy email',
+        copySuccess: 'The candidate email was copied to your clipboard',
+        location: 'Location',
+        email: 'Email',
+        experienceLevel: 'Experience Level',
+        memberSince: 'On Tech Vogel since',
+      },
     },
   },
 };
