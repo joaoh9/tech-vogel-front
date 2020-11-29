@@ -24,6 +24,8 @@ export default {
     howItWorks: 'How It Works',
     FAQ: 'FAQ',
     login: 'Log in',
+    loginGithub: 'Log in with GitHub',
+    loginLinkedin: 'Log in with LinkedIn',
     signup: 'Sign up',
     apply: 'Apply',
     applying: 'Applying',

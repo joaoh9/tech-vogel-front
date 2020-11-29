@@ -11,6 +11,9 @@
     :max-width="maxwidth"
     class="button-text px-7"
   >
+    <v-icon left>
+      {{ icon }}
+    </v-icon>
     {{ label }}
   </v-btn>
 
