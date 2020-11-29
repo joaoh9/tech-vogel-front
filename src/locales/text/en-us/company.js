@@ -3,6 +3,10 @@ export default {
     new: {
       steps: [ 'Basic Info', 'Additional Info', 'Contact' ],
       page1: 'Register as a company',
+      logo: {
+        title: 'Company logo',
+        placeholder: 'Upload company logo',
+      },
       companyName: 'Company name',
       representativeName: 'Representative name',
       representativeEmail: 'Representative email',
@@ -16,6 +20,10 @@ export default {
       linkedin: 'LinkedIn',
       twitter: 'Twitter',
       instagram: 'Instagram',
+      getStarted: 'Let’s get started!',
+      formInfo: 'Fill out the additional company information form below.',
+      companyInfo: 'Company information',
+      learnMore: 'Help potential applicants learn more about your company. This information will be public and you will be able to edit it later.',
     },
     dashboard: {
       greeting: 'Hi,',

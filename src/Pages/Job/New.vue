@@ -1,6 +1,5 @@
 <template>
   <div class="d-flex flex-column align-center mt-4 mt-md-12">
-    <h3 class="text-center h3-bold mb-3 color-primary">Post a job!</h3>
     <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
       <g-card>
         <template v-slot:card-header>
@@ -146,7 +145,7 @@ export default {
       const userController = new UserController();
       const { side } = userController.decodeUserToken();
 
-      if (side != 2) {
+      if (side != 20) {
         this.$toast.error(this.$t('toast.error.registeredCompany'));
         this.$router.push({
           name: 'New Company',
@@ -158,7 +157,7 @@ export default {
       try {
         this.company = await companyController.getByUserId('current');
       } catch (e) {
-        this.$toast.error('Something went wrong when retrieving company info');
+        this.$toast.error(this.$t('toast.error.retrieveCompanyInfo'));
       }
     },
     getPageInfo() {
@@ -176,7 +175,9 @@ export default {
     getPageDescripton(currentStep) {
       return this.getPageInfo()[currentStep].description;
     },
-    checkInputsAndFollowUp() {
+    async checkInputsAndFollowUp() {
+      const userController = new UserController();
+      await userController.update({ side: 22 })
       switch (this.currentStep) {
         case 0:
           if (
@@ -199,7 +200,7 @@ export default {
         case 2:
           for (const skill of Object.keys(this.job_.skills)) {
             const skillValidated = this.validateSkills(skill);
-            if (!skillValidated) {
+            if (skillValidated !== true) {
               return this.$toast.warning(skillValidated);
             }
           }
@@ -211,6 +212,7 @@ export default {
           break;
       }
     },
+
     validateSkills(skill) {
       if (this.job_.skills[skill].length < Settings.skills[skill].min) {
         return this.$t(

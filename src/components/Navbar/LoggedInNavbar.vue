@@ -81,10 +81,10 @@ export default {
     };
   },
   methods: {
-    checkIfCompany() {
+    async checkIfCompany() {
       const userController = new UserController();
       const userInfo = userController.decodeUserToken();
-      this.isCompany = userInfo.side === 2;
+      this.isCompany = userInfo.side >= 20;
     },
     async getUserProfilePic() {
       const userController = new UserController();

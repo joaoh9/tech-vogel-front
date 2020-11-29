@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-center flex-column">
+  <div class="d-flex align-center flex-column" id="aboutUs">
     <h3 class="h3-bold text-capitalize color-secondary">{{ $t('about') + ' ' + $t('tv') }}</h3>
     <v-row class="ma-6 mt-12">
       <v-col cols="12" md="6">

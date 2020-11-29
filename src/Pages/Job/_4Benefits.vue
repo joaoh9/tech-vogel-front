@@ -1,22 +1,25 @@
 <template>
   <div>
-    <form-input :title="$t('job.new.salary.title')" />
+    <form-input :title="$t('job.new.salary.title')" required />
     <div class="d-flex justify-space-between">
       <v-select
         v-model="salary.currency"
         @change="$emit('salary-currency', salary.currency)"
+        :rules="[rules.required(salary.currency)]"
         placeholder="Currency"
-        title="Payment Currency"
+        label="Payment currency"
+        title="Payment currency"
         outlined
         :items="$t('enums.currencies')"
         class="mr-2"
       />
-      <g-autocomplete
+      <v-select
         v-model="salary.timeFrame"
-        @input="$emit('salary-time-frame', salary.timeFrame)"
-        :multiple="false"
-        label="Time Frame"
-        title="Time Frame"
+        @change="$emit('salary-time-frame', salary.timeFrame)"
+        :rules="[rules.required(salary.timeFrame)]"
+        label="Time frame"
+        title="Time frame"
+        placeholder="Time frame"
         outlined
         :items="$t('enums.payCheckTimeFrame')"
         class="mr-2"
@@ -29,6 +32,7 @@
         :label="range ? 'From' : 'Price'"
         :title="range ? 'From' : 'Price'"
         outlined
+        v-mask="salaryMask(this.salary.min)"
         :class="range ? 'mr-2' : ''"
       />
       <v-text-field
@@ -38,6 +42,7 @@
         :rules="[rules.isNumber(salary.max)]"
         :label="range ? 'To' : 'Price'"
         :title="range ? 'To' : 'Price'"
+        v-mask="salaryMask(this.salary.max)"
         outlined
         v-if="range"
       />
@@ -86,12 +91,35 @@ export default {
         range: false,
       },
       rules: {
+        required: () => true,
         isNumber: () => true,
       },
       range: false,
     };
   },
   methods: {
+    salaryMask(value) {
+      const masks = {
+        2: '#,##',
+        5: '##,##',
+        6: '###,##',
+        7: '####,##',
+        8: '##.###,##',
+        10: '###.###,##',
+        11: '#.###.###,##',
+        12: '##.###.###,##',
+        13: '###.###.###,##',
+        14: '###.###.###,##',
+        15: '###.###.###,##',
+        16: '###.###.###,##',
+      };
+
+      if (value) {
+        value = masks[value.length];
+      }
+
+      return value;
+    },
     getPriceMask(value) {
       switch (this.salary.currency) {
         case 'USD':

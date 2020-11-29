@@ -26,6 +26,10 @@ export default {
           name: 'Education',
           identifier: 'education',
         },
+        {
+          name: 'Social Links',
+          identifier: 'links',
+        },
       ],
       start: {
         title: 'Register your CV',
@@ -138,6 +142,10 @@ export default {
           to: 'To',
         },
       },
+      links: {
+        title: 'Links',
+        description: 'Some description to place here',
+      },
       extras: {
         title: 'Anything else?',
         description:
@@ -150,11 +158,21 @@ export default {
         inputHint: 'Select the skills according to your years of experience',
       },
     },
+    revise: 'Revise your CV!',
+    edit: 'You will be able to edit it at any time',
+    post: 'Post CV',
+    aboutMe: 'About me',
+    workExperience: 'Work experience',
+    education: 'Education',
+    skills: 'Skills',
+    techSkills: 'Tech skills',
+    softSkills: 'Soft skills',
+    langSkills: 'Language skills',
   },
   user: {
     findMe: 'Where to find me',
-    githubSignup: 'Signup with Github',
-    linkedInSignup: 'Signup with LinkedIn',
+    githubSignup: 'Sign up with Github',
+    linkedInSignup: 'Sign up with LinkedIn',
     dashboard: {
       greeting: 'Hi,',
       actions: {
@@ -231,5 +249,15 @@ export default {
         },
       ],
     },
+    github: {
+      stats: 'Github Stats',
+      publicRepo: 'Public Repositories',
+      contributions: 'Contributions in the last year',
+      forkedRepo: 'Forked Repositories',
+      starsCount: 'Stars Count',
+      confirmAuth: 'Confirm GitHub authorization?',
+    },
+    skills: 'Skill',
+    yearsExperience: 'Years of Experience',
   },
 };

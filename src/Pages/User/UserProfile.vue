@@ -2,8 +2,8 @@
   <div>
     <PrimaryHeader
       v-if="editMode"
-      title="Revise your CV!"
-      description="You will be able to edit it at any time"
+      :title="$t('user.resume.revise')"
+      :description="$t('user.resume.edit')"
       :cols="true"
     >
       <div :class="!$vuetify.breakpoint.mobile && 'd-flex align-center justify-center mt-8'">
@@ -11,7 +11,7 @@
           :class="$vuetify.breakpoint.mobile ? 'mr-6 mb-4' : 'mr-6'"
           type="outline"
           color="light"
-          label="Go back & edit"
+          :label="$t('common.backEdit')"
         />
         <g-btn type="filled" color="light" textColor="primary" label="Post CV" />
       </div>
@@ -25,19 +25,19 @@
           </div>
         </v-col>
         <v-col cols="12" md="6">
-          <h5 class="h5-bold color-primary mb-4">About me</h5>
+          <h5 class="h5-bold color-primary mb-4">{{ $t('user.aboutMe') }}</h5>
           <bdy-1>{{ $t('user.aboutMe') }}</bdy-1>
           <v-divider class="my-10 orange-color"></v-divider>
-          <UserInformation title="Work experience" job />
+          <UserInformation :title="$t('user.workExperience')" job />
           <v-divider class="my-10 orange-color"></v-divider>
 
-          <h5 class="h5-bold color-secondary">Skills</h5>
-          <Skills skillTitle="Tech skills" skill="JavaScript" skillLevel="5+" />
-          <Skills skillTitle="Soft skills" />
-          <Skills skillTitle="Language skills" />
+          <h5 class="h5-bold color-secondary">{{ $t('user.skills') }}</h5>
+          <Skills :skillTitle="$t('user.techSkills')" skill="JavaScript" skillLevel="5+" />
+          <Skills :skillTitle="$t('user.softSkills')" />
+          <Skills :skillTitle="$t('user.langSkills')" />
 
           <v-divider class="my-10 orange-color"></v-divider>
-          <UserInformation title="Education" company />
+          <UserInformation :title="$t('user.education')" company />
         </v-col>
       </v-row>
     </v-container>

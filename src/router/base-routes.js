@@ -29,7 +29,7 @@ const routes = [
     component: NotFound,
   },
   {
-    path: '/aboutus',
+    path: '/about-us',
     name: 'About us',
     component: AboutUs, // TODO
   },

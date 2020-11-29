@@ -2,7 +2,7 @@
   <div>
     <v-expansion-panels class="mt-6">
       <v-expansion-panel
-        class="bs-none my-2"
+        class="bs-none my-2 rounded-lg"
         style="background-color: #fcfcff;"
         v-for="(item, i) in getFAQ()"
         :key="i"

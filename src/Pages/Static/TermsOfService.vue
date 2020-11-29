@@ -3,7 +3,12 @@
     <PrimaryHeader
       :title="$t('termsOfService.title')"
       :subtitle="$t('termsOfService.description')"
-    />
+      :cols="true"
+    >
+      <div class="d-flex justify-center mt-8">
+        <g-btn @click="$router.go(-1)" class="mx-12" type="outline" color="light" label="Go back" />
+      </div>
+    </PrimaryHeader>
 
     <SubHeader
       :subtitle="$t('termsOfService.subtitle')"

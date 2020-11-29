@@ -20,8 +20,8 @@ export default {
   },
   skills: {
     techSkills: { min: 3, max: 12 },
-    softSkills: { min: 0, max: 5 },
-    languages: { min: 0, max: 7 },
+    softSkills: { min: 1, max: 10 },
+    languages: { min: 1, max: 7 },
   },
   frontURL: process.env.VUE_APP_FRONT_URL || 'http://localhost:5100',
   // 4 hours

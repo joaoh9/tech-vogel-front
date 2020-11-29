@@ -4,7 +4,9 @@
       <g-card :md="500" :lg="500">
         <template v-slot:card-content>
           <div class="d-flex justify-center ma-12 flex-column">
-            <h4 class="h4-bold align-self-center text-center">{{ $t('signup.confirmEmail.title') }}</h4>
+            <h4 class="h4-bold align-self-center text-center">
+              {{ $t('signup.confirmEmail.title') }}
+            </h4>
             <span class="bdy-1 align-self-center color-cinza-lighten-1 mt-4">
               {{ $t('signup.confirmEmail.description') }}
             </span>
@@ -22,7 +24,7 @@
               v-if="resendCode"
               class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap"
             >
-              <form-input title="Your email" />
+              <form-input :title="$t('signup.email.title')" />
               <v-text-field :rules="[rules.email(email)]" outlined v-model="email" />
               <g-btn
                 class="float-right"
@@ -91,7 +93,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

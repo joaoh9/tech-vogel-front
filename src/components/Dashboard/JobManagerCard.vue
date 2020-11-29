@@ -16,8 +16,8 @@
       </v-col>
       <v-col cols="3">
         <div class="d-flex justify-center flex-column align-center">
-          <g-btn type="text" color="primary" label="See Job >" @click="goToJobDetails" />
-          <g-btn type="text" color="primary" label="Edit Job" @click="editJob" />
+          <g-btn type="text" color="primary" :label="$t('job.see')" @click="goToJobDetails" />
+          <g-btn type="text" color="primary" :label="$t('job.edit')" @click="editJob" />
         </div>
       </v-col>
     </v-row>

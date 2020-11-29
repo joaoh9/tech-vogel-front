@@ -96,7 +96,7 @@ export default {
       },
     },
     confirmJob: {
-      title: 'Revise your job ad!',
+      title: 'Review your job ad!',
       subtitle: 'You will only be able to edit it for 24 hours after posting.',
     },
     posted: 'Posted',
@@ -104,5 +104,8 @@ export default {
     timePosted: 'Posted {time}',
     selectAtLeast: 'Please select at least',
     selectMaximum: 'Please select a maximum of',
+    see: 'See Job >',
+    edit: 'Edit Job',
+    list: 'Go to Job List',
   },
 };

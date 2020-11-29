@@ -1,6 +1,14 @@
 <template>
-  <div class="mb-6">
-    <PrimaryHeader :title="$t('privacyPolicy.title')" :subtitle="$t('privacyPolicy.description')" />
+  <div>
+    <PrimaryHeader
+      :title="$t('privacyPolicy.title')"
+      :subtitle="$t('privacyPolicy.description')"
+      :cols="true"
+    >
+      <div class="d-flex justify-center mt-8">
+        <g-btn @click="$router.go(-1)" class="mx-12" type="outline" color="light" label="Go back" />
+      </div>
+    </PrimaryHeader>
     <div class="mt-4">
       <SubHeader :subtitle="$t('privacyPolicy.subtitle')" :buttons="$t('privacyPolicy.buttons')" />
     </div>

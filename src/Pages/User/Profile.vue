@@ -2,8 +2,8 @@
   <div>
     <PrimaryHeader
       v-if="editMode"
-      title="Revise your CV!"
-      subtitle="You will be able to edit it at any time"
+      :title="$t('resume.revise')"
+      :subtitle="$t('resume.edit')"
       :cols="true"
     >
       <div :class="!$vuetify.breakpoint.mobile && 'd-flex align-center justify-center mt-8'">
@@ -13,7 +13,7 @@
           color="light"
           label="Go back & edit"
         />
-        <g-btn type="filled" color="light" textColor="primary" label="Post CV" />
+        <g-btn type="filled" color="light" textColor="primary" :label="$t('resume.post')" />
       </div>
     </PrimaryHeader>
     <v-container>
@@ -31,12 +31,11 @@
         </v-col>
         <v-col cols="1" md="1"></v-col>
         <v-col cols="11" md="7">
-          <h5 class="h5-bold color-primary mb-4">About me</h5>
+          <h5 class="h5-bold color-primary mb-4">{{ $t('resume.aboutMe') }}</h5>
           <div class="bdy-1 color-dark" v-html="resume.personalBio"></div>
 
           <v-divider class="my-8" />
-          <!-- TODO: internacionlização de textos work experience -->
-          <h5 class="h5-bold color-secondary">Work experience</h5>
+          <h5 class="h5-bold color-secondary">{{ $t('resume.workExperience') }}</h5>
           <UserInformation
             v-for="(work, i) in resume.workHistory"
             :key="i"
@@ -62,9 +61,7 @@
           </div>
 
           <v-divider class="my-10 orange-color" />
-          <!-- TODO: internacionlização de textos education -->
-
-          <h5 class="h5-bold color-secondary">Education</h5>
+          <h5 class="h5-bold color-secondary">{{ $t('resume.education') }}</h5>
           <UserInformation
             v-for="(edu, i) in resume.education"
             :key="i + 'edu'"

@@ -1,8 +1,6 @@
 {
-  "student": "Student",
+  "intern": "Intern",
   "junior": "Junior",
   "midLevel": "Mid-Level",
-  "senior": "Senior",
-  "lead": "Lead",
-  "manager": "Manager"
+  "senior": "Senior"
 }

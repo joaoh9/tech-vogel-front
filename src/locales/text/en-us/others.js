@@ -5,7 +5,7 @@ export default {
   techVogel: 'Tech Vogel',
   home: {
     title1: 'Find remote',
-    title2: '<programmers>',
+    title2: '<programmers/>',
     title3: 'for your company!',
     subtitle1: 'Get your projects off the ground with the help of the',
     subtitle2: 'programmers that best fit your needs!',

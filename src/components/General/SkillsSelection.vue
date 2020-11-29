@@ -4,14 +4,15 @@
       type="h6"
       :title="$t('job.new.techSkills.title')"
       :description="$t('job.new.techSkills.description')"
+      required
     />
-    <g-autocomplete
+    <v-select
       autofocus
-      :hint="$t('job.new.techSkills.inputHint')"
       @input="e => (techSkills = e)"
       :items="$t('skills.techSkills')"
+      outlined
+      :multiple="true"
     />
-    <sub-1>{{ $t(`${form}.new.techSkills.inputHint`) }}</sub-1>
 
     <SkillExperienceLevel
       :key="`XP-LVL-${techSkills.length}`"
@@ -25,21 +26,24 @@
       type="h6"
       :title="$t('job.new.otherSkills.title')"
       :description="$t('job.new.otherSkills.description')"
+      required
     />
     <form-input
       class="mt-8"
       :title="$t('job.new.softSkills.title')"
       :description="$t('job.new.softSkills.inputHint')"
     />
-    <g-autocomplete @input="e => (softSkills = e)" :items="$t('skills.softSkills')" />
+    <v-select @input="e => (softSkills = e)" :items="$t('skills.softSkills')" outlined :multiple="true" />
 
     <form-input class="mt-6" :title="$t('job.new.languages.title')" />
 
-    <g-autocomplete
+    <v-select
       class="mb-10"
       :hint="$t('job.new.languages.inputHint')"
       @input="e => (languages = e)"
       :items="$t('skills.languages')"
+      outlined
+      :multiple="true"
     />
 
     <SkillExperienceLevel

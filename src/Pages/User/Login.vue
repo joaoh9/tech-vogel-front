@@ -111,28 +111,29 @@ export default {
 
         userController.saveUserToken(userInfo.token);
         this.$emit('login');
-        if (userInfo.side === 2) {
+
+        if (userInfo.side === 20) {
+          this.goToRegisterCompany();
+        } else if (userInfo.side === 21 || userInfo.side === 22) {
           return this.goToCompanyDashboard();
-        } else if (userInfo.side === 1) {
+        } else if (userInfo.side === 10 || userInfo.side === 11) {
           return this.goToUserDashboard();
         } else {
           return this.goToSidePick();
         }
       } catch (e) {
-        // TODO: internacionlização
-
         if (e.response.status === 422) {
           const validEmail = await userController.emailExists(this.user.email);
           console.log('🚀 ~ file: Login.vue ~ line 112 ~ login ~ validEmail', validEmail);
           if (!validEmail) {
-            return this.$toast.warning(this.$t('toast.warning.wrongEmailLogine'));
+            return this.$toast.warning(this.$t('toast.warning.wrongEmailLogin'));
           }
           return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
         }
         if (e.response.status === 404) {
           return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
         }
-        return this.$toast.error('Something went wrong on your login');
+        return this.$toast.error(this.$t('toast.error.loginFailed'));
       }
     },
 
@@ -145,6 +146,12 @@ export default {
     goToCompanyDashboard() {
       this.$router.push({
         name: 'Company Dashboard',
+      });
+    },
+
+    goToRegisterCompany() {
+      this.$router.push({
+        name: 'New Company',
       });
     },
 

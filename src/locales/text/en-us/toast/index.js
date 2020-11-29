@@ -2,7 +2,7 @@ export default {
   toast: {
     error: {
       fileExceeds: 'File {filename} exceeds {fileSize} MB limit',
-      somethingWrong: 'There was something wrong when processing the file {filename}',
+      fileProcessWrong: 'There was something wrong when processing the file {filename}',
       companyInfo: 'Could not retrieve company info. Make sure you have a registered company',
       companyInfoLogged: 'Could not retrieve company info. Please make sure you are logged in',
       jobApplying: 'An error occured when applying for this job',
@@ -18,13 +18,15 @@ export default {
       jobData: 'Something went wrong when retrieving job {jobId} data',
       saveCompany: 'An error occurred when saving the company',
       saveResume: 'There was an error saving your resume',
-      writeNames: 'Please write a company name and a represetative name',
+      writeNames: 'Please write the company name and a description',
       saveJob: 'There was an error when saving the job',
       jobList: 'Something went wrong when retrieving the jobs from the Database',
       registeredCompany: 'You must have a registered company in order to post a job!',
       githubRetrieve: 'Something went wrong when retrieving your github data',
       userOrPassword: 'Please insert a correct email or password',
       notAllowed: 'You are not allowed to access this page',
+      loginFailed: 'Something went wrong on your login',
+      somethingWrong: 'Something went wrong. Try again later',
     },
     success: {
       jobApplied: 'Successfully applied for job',
@@ -46,6 +48,7 @@ export default {
       wrongEmailLogin:
         'The email you entered doesn\'t belong to an account. Please check your email and try again.',
       wrongPasswordLogin: 'Sorry, your password was incorrect. Please double-check your password.',
+      nameGreater: 'Name must be greater than 3 characters',
     },
     open: {
       login: 'Login successfull',
