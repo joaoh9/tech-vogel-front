@@ -15,6 +15,7 @@
       :rules="[rules.min(3, name), rules.required(name)]"
       v-model="name"
       @input="$emit('company-name', name)"
+      data-cy="register-company-name"
     />
 
     <form-input :title="$t('company.new.aboutYourCompany.title')" required />
@@ -50,6 +51,8 @@
       v-model="twitter"
       @input="$emit('twitter', twitter)"
       outlined
+      :rules="[rules.required(description)]"
+      data-cy="register-company-desc"
     />
   </div>
 </template>

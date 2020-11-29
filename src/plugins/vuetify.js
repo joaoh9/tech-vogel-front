@@ -5,9 +5,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 Vue.use(Vuetify);
 
-Vue.component('primary-card', {
-  template: '<v-card class="primary-card"> </v-card>',
-});
 
 export default new Vuetify({
   theme: {

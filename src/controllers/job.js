@@ -70,4 +70,11 @@ export default class JobController {
     const { data } = await axios.post(`/v1/jobs/${jobId}/apply/${userId}`);
     return data;
   }
+
+  async getReport(jobId) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const { data } = await axios.post(`/v1/jobs/${jobId}/report`);
+    return data;
+  }
 }

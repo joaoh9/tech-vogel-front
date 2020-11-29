@@ -5,7 +5,10 @@
         <div class="d-flex flex-column">
           <span class="overline">{{ $t('job.posted') }} {{ getDaysAgo() }}</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
-          <span class="caption-1 color-primary"> {{ $t('job.seeReport') }} ></span>
+          <div>
+          <g-btn type="text" color="primary" :label="$t('job.seeReport')" @click="goToReport" />
+
+          </div>
         </div>
       </v-col>
       <v-col cols="1">
@@ -39,6 +42,11 @@ export default {
     goToJobDetails() {
       this.$router.push({
         path: `/jobs/${this.company.id}/${this.job.id}`,
+      });
+    },
+    goToReport() {
+      this.$router.push({
+        path: `/report/${this.company.id}/${this.job.id}`,
       });
     },
     editJob() {
