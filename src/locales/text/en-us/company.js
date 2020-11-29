@@ -34,6 +34,18 @@ export default {
       },
       manageAccountInfo: 'Manage my account information',
     },
+    planCard: {
+      token: '{quantity} token(s) for',
+      currency: '$',
+      price: '499',
+      cents: ',99',
+      installments: '{quantity}x',
+      paymentMethod: 'with credit card',
+      planDays: '{days} days',
+      planJobAd: '{quantity} job ad',
+      planApplicants: '{quantity} applicants in the candidate report',
+      getStarted: 'Get started',
+    },
     report: {
       title: 'Candidate Report',
       postedOn: 'Posted on',
