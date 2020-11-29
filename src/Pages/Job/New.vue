@@ -121,9 +121,10 @@ export default {
         benefits: '',
         salary: {
           currency: 'USD',
-          timeFrame: 'MONTHS',
+          timeFrame: '',
           min: 0,
           max: 0,
+          range: false,
         },
       },
       company: {},
@@ -177,20 +178,18 @@ export default {
     },
     async checkInputsAndFollowUp() {
       const userController = new UserController();
-      await userController.update({ side: 22 })
+      await userController.update({ side: 22 });
       switch (this.currentStep) {
         case 0:
-          if (
-            this.job_.title &&
-            this.job_.experienceLevel &&
-            this.job_.contractType
-          ) {
+          window.scroll(0);
+          if (this.job_.title && this.job_.experienceLevel && this.job_.contractType) {
             this.currentStep++;
           } else {
             this.$toast.warning(this.$t('toast.warning.fillAll'));
           }
           break;
         case 1:
+          window.scroll(0);
           if (this.job_.description) {
             this.currentStep++;
           } else {
@@ -198,6 +197,7 @@ export default {
           }
           break;
         case 2:
+          window.scroll(0);
           for (const skill of Object.keys(this.job_.skills)) {
             const skillValidated = this.validateSkills(skill);
             if (skillValidated !== true) {
@@ -207,8 +207,12 @@ export default {
           this.currentStep++;
           break;
         case 3:
-          // TODO: regras de validação para "Salary and perks"
-          this.previewJob();
+          window.scroll(0);
+          if (this.job_.salary.timeFrame && this.job_.salary.min) {
+            this.previewJob();
+          } else {
+            this.$toast.warning(this.$t('toast.warning.fillAll'));
+          }
           break;
       }
     },

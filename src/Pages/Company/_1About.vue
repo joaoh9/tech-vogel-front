@@ -18,7 +18,11 @@
     />
 
     <form-input :title="$t('company.new.aboutYourCompany.title')" required />
-    <v-textarea outlined :rules="[rules.required(description)]" v-model="description" />
+    <v-textarea
+      outlined
+      :rules="[rules.min(3, description), rules.required(description)]"
+      v-model="description"
+    />
 
     <form-input :title="$t('common.links.webpage.title')" />
     <v-text-field

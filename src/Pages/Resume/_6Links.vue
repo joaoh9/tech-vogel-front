@@ -2,6 +2,7 @@
   <div>
     <form-input :title="$t('common.links.website.title')" />
     <v-text-field
+      autofocus
       :placeholder="$t('common.links.website.placeholder')"
       v-model="website"
       @input="$emit('website', website)"
@@ -10,7 +11,6 @@
 
     <form-input :title="$t('common.links.github.title')" />
     <v-text-field
-      autofocus
       :placeholder="$t('common.links.github.placeholder')"
       v-model="github"
       @input="$emit('github', github)"

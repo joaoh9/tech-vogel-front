@@ -8,15 +8,27 @@
       @change="handleFileUpload"
     >
     </v-file-input>
-    <form-input required class="mt-0" :title="$t('resume.register.mainRole.title')" />
+
+  <form-input class="mt-0" :title="$t('resume.register.personalInfo.fullName.title')" required />
     <v-text-field
       autofocus
-      :placeholder="$t('resume.register.mainRole.placeholder')"
+      v-model="fullName"
+      @input="$emit('full-name', fullName)"
+      outlined
+      :rules="[rules.required(fullName)]"
+    />
+
+    <form-input class="mt-0" :title="$t('resume.register.personalInfo.mainRole.title')" required />
+    <v-text-field
+      autofocus
+      :placeholder="$t('resume.register.personalInfo.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
       outlined
+      :rules="[rules.required(mainRole)]"
     />
-    <form-input class="mt-0" :title="$t('resume.register.personalInfo.location.title')" />
+
+    <form-input class="mt-0" :title="$t('resume.register.personalInfo.location.title')" required />
     <v-row>
       <v-col cols="12" md="8">
         <v-text-field
@@ -25,8 +37,10 @@
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.city')"
+          :rules="[rules.required(location.city)]"
         />
       </v-col>
+
       <v-col cols="12" md="4">
         <v-text-field
           v-model="location.country"
@@ -34,12 +48,12 @@
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.country')"
+          :rules="[rules.required(location.country)]"
         />
       </v-col>
     </v-row>
     <form-input required :title="$t('resume.register.personalInfo.personalBio.title')" />
     <vue-editor
-      placeholder="TODO"
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="personalBio"
     />
@@ -85,7 +99,11 @@ export default {
       },
       personalBio: '',
       profilePicture: null,
+      fullName: '',
       mainRole: '',
+      rules: {
+        required: () => true,
+      },
     };
   },
   methods: {

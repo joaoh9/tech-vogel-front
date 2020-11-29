@@ -112,9 +112,9 @@ export default {
 
         if (userInfo.side === 20) {
           this.goToRegisterCompany();
-        } else if (userInfo.side === 21 || userInfo.side === 22) {
+        } else if (userInfo.side >= 21) {
           return this.goToCompanyDashboard();
-        } else if (userInfo.side === 10 || userInfo.side === 11) {
+        } else if (userInfo.side >= 10) {
           return this.goToUserDashboard();
         } else {
           return this.goToSidePick();

@@ -9,6 +9,7 @@
         :key="index"
         :label="option.text"
         :value="option.value"
+        :rules="[rules.required(jobInterests)]"
       />
     </div>
     <form-input class="mt-6" :title="$t('resume.register.preferences.jobType.title')" />
@@ -20,6 +21,7 @@
         :label="option.text"
         :value="option.value"
         :key="index"
+        :rules="[rules.required(contractType)]"
       />
     </div>
     <slot />
@@ -27,17 +29,18 @@
 </template>
 
 <script>
-
 export default {
   name: 'Preferences',
   data() {
     return {
       jobInterests: [],
       contractType: [],
+      rules: {
+        required: () => true,
+      },
     };
   },
 };
-
 </script>
 
 <style></style>
