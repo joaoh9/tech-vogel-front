@@ -8,6 +8,8 @@ import skills from './skills.json'
 import languages from './languages.json';
 import yearsOfExperience from './yearsOfExperience.json';
 import priorities from './priorities.json';
+import fluencyLevel from './fluencyLevel.json';
+import experienceOptions from './experienceOptions.json';
 
 function textValueFormat(data) {
   return Object.entries(data).map(([ value, text ]) => ({ text, value }));
@@ -25,6 +27,8 @@ export default {
     jobInterests: textValueFormat(jobInterests),
     payCheckTimeFrame: textValueFormat(payCheckTimeFrame),
     currencies: textValueFormat(currencies),
+    fluencyLevel: textValueFormat(fluencyLevel),
+    experienceOptions: textValueFormat(experienceOptions),
 
     languages: textValueNumberFormat(languages),
     yearsOfExperience: textValueNumberFormat(yearsOfExperience),

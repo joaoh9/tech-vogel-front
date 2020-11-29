@@ -3,8 +3,14 @@
     <g-card :lg="600" :md="500">
       <template v-slot:card-content>
         <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
-        <form-input class="mt-6" :title="$t('common.username.label')" />
-        <v-text-field outlined v-model="user.username" :rules="[rules.required(user.username)]" />
+        <form-input class="mt-6" :title="$t('common.email.label')" />
+        <v-text-field
+          outlined
+          v-model="user.email"
+          :rules="[rules.required(user.email)]"
+          autofocus
+          data-cy="login-email"
+        />
         <form-input :title="$t('common.password.label')" />
         <v-text-field
           v-model="user.password"
@@ -12,7 +18,9 @@
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
           :type="showPassword ? 'text' : 'password'"
+          v-on:keyup.enter="login"
           outlined
+          data-cy="login-password"
         />
         <div class="d-flex justify-start ">
           <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
@@ -25,7 +33,7 @@
           <v-btn to="/signup" color="secondary" tile outlined text large>
             {{ $t('common.signup') }}
           </v-btn>
-          <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()">
+          <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()" data-cy="login">
             {{ $t('login.title') }}
           </v-btn>
         </div>
@@ -36,9 +44,8 @@
 
 <script>
 import UserController from 'Controllers/user';
-import ResumeController from 'Controllers/resume';
-
 import RulesHelper from 'Helpers/rules';
+
 import StorageHelper from 'Helpers/storage';
 
 export default {
@@ -51,7 +58,7 @@ export default {
     userEmail: {
       type: String,
     },
-    username: {
+    email: {
       type: String,
     },
     firstLogin: {
@@ -62,15 +69,16 @@ export default {
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.rulesLoaded = true;
-    if (this.username) {
-      this.user.username = this.username;
+    if (this.email) {
+      this.user.email = this.email;
     }
+    this.retrieveUserDataFromLocalStorage();
   },
   data() {
     return {
       showPassword: false,
       user: {
-        username: '',
+        email: '',
         password: '',
       },
       loading: {
@@ -83,82 +91,66 @@ export default {
     };
   },
   methods: {
-    async login() {
+    retrieveUserDataFromLocalStorage() {
       const userController = new UserController();
-      if (!this.user.username || !this.user.password) {
+      const trashedToken = StorageHelper.loadState('trashedToken');
+      if (!trashedToken) {
         return;
       }
-      this.loading.login = true;
+      const userInfo = userController.decodeUserToken(trashedToken);
+
+      this.user.email = userInfo.email;
+    },
+    async login() {
+      const userController = new UserController();
       try {
-        const statusCode = await userController.login({
-          username: this.user.username,
+        const { data: userInfo } = await userController.auth({
+          email: this.user.email,
           password: this.user.password,
         });
-        if (statusCode === 200) {
-          return this.saveUserCredentials();
-        }
-        this.$toast.error(this.errorMessage);
-        this.loading.login = false;
-      } catch (e) {
-        if (e.response.status === 500) {
-          this.errorMessage = this.$t('errors.500');
-        }
-        this.loading.login = false;
-        this.$toast.error(this.errorMessage);
-      }
-      this.loading.login = false;
-    },
-    async saveUserCredentials() {
-      const userController = new UserController();
 
-      const userInfo = await userController.getByUsername(this.user.username);
-
-      StorageHelper.saveState('user', userInfo);
-
-      this.seeIfUserIsACompanyOwner();
-    },
-    async seeIfUserIsACompanyOwner() {
-      const userController = new UserController();
-
-      const company = await userController.getCompany(this.user.username);
-      if (company) {
-        StorageHelper.saveState('companyId', company[0]);
-        this.goToNextRoute('/company/dashboard');
-      } else {
-        this.seeIfUserHasSavedResume();
-      }
-    },
-    async seeIfUserHasSavedResume() {
-      const resumeController = new ResumeController();
-
-      try {
-        const resume = await resumeController.getByUsername(this.user.username);
-
-        if (!resume || (resume && resume.length === 0)) {
+        userController.saveUserToken(userInfo.token);
+        this.$emit('login');
+        if (userInfo.side === 2) {
+          return this.goToCompanyDashboard();
+        } else if (userInfo.side === 1) {
+          return this.goToUserDashboard();
+        } else {
           return this.goToSidePick();
         }
       } catch (e) {
+        // TODO: internacionlização
+
+        if (e.response.status === 422) {
+          const validEmail = await userController.emailExists(this.user.email);
+          console.log('🚀 ~ file: Login.vue ~ line 112 ~ login ~ validEmail', validEmail);
+          if (!validEmail) {
+            return this.$toast.warning(this.$t('toast.warning.wrongEmailLogine'));
+          }
+          return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
+        }
         if (e.response.status === 404) {
-          return this.goToSidePick();
+          return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
         }
+        return this.$toast.error('Something went wrong on your login');
       }
-
-      this.goToNextRoute('/dashboard');
     },
+
     goToSidePick() {
-      this.$emit('login');
       this.$router.push({
         name: 'Side Pick',
       });
     },
 
-    goToNextRoute(route) {
-      route = this.nextRoute ? this.nextRoute : route;
-      route = this.firstLogin ? '/onboarding' : route;
-      this.$toast.open('Login successfull');
-      this.$emit('login');
+    goToCompanyDashboard() {
       this.$router.push({
-        path: route,
+        name: 'Company Dashboard',
+      });
+    },
+
+    goToUserDashboard() {
+      this.$router.push({
+        name: 'User Dashboard',
       });
     },
   },

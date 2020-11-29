@@ -90,16 +90,17 @@ export default {
       try {
         this.user = StorageHelper.loadState('user');
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving user ${this.userId} data`);
+        this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: this.userId }));
       }
     },
     async getUserResume() {
       const resumeController = new ResumeController();
 
       try {
-        this.resume = await resumeController.getByUsername(this.userId);
+        this.resume = await resumeController.getByUserId(this.userId);
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving user resume ${this.userId} data`);
+        this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
+
       }
     },
   },

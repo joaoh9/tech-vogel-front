@@ -2,10 +2,10 @@
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
       <UserCard :user="user" v-if="user" :key="loaded.user" />
-      <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" />
+      <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" :icon="'mdi-plus-circle-outline'" />
       <g-btn
         class="mt-4"
-        type="outlined"
+        type="disabled"
         color="secondary"
         block
         xl
@@ -30,15 +30,14 @@ import CompanyCard from 'Components/Dashboard/CompanyCard';
 
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
-
-import StorageHelper from 'Helpers/storage';
+import UserController from 'Controllers/user';
 
 export default {
   name: 'CompanyDashboard',
-  mounted() {
-    this.getUserInfo();
-    this.getCompanyInfo();
-    this.getCompanyJobs();
+  async mounted() {
+    await this.getUserInfo();
+    await this.getCompanyInfo();
+    await this.getCompanyJobs();
   },
   components: {
     CompanyCard,
@@ -58,31 +57,22 @@ export default {
   },
   methods: {
     async getCompanyInfo() {
-      const companyId = StorageHelper.loadState('companyId');
-      if (!companyId) {
-        this.$toast.error(
-          'Could not retrieve company info. Make sure you have a registered company',
-        );
-        this.$router.push({
-          name: 'New Company',
-        });
-      }
       const companyController = new CompanyController();
 
       try {
-        this.company = await companyController.getById(companyId);
+        this.company = await companyController.getByUserId('current');
         this.loaded.company = true;
       } catch (e) {
-        this.$toast.error(
-          'Could not retrieve company info. Make sure you have a registered company',
-        );
+        this.$toast.error(this.$t('toast.error.companyInfo'));
       }
     },
     async getUserInfo() {
-      this.user = StorageHelper.loadState('user');
+      const userController = new UserController();
+      this.user = userController.decodeUserToken();
+
       this.loaded.user = false;
       if (!this.user) {
-        this.$toast('Could not retrieve user info. Please login again');
+        this.$toast(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
@@ -90,11 +80,10 @@ export default {
     },
     async getCompanyJobs() {
       const jobController = new JobController();
-
       try {
-        this.jobs = await jobController.getCompanyJobs(this.company && this.company.companyId);
+        this.jobs = await jobController.getCompanyJobs(this.company.id);
       } catch (e) {
-        this.$toast.error('An error occured when retrieving jobs from the database');
+        this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
     },
     getFistColInfo() {
@@ -118,7 +107,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style>

@@ -69,7 +69,6 @@ export default {
       email: '',
       resendLoad: false,
       userEmail: '',
-      userUsername: '',
       rules: {
         email: () => true,
       },
@@ -83,7 +82,6 @@ export default {
         const user = await userController.confirmAccount(this.confirmationId);
         this.saveUserCredentials(user);
         this.userEmail = user.email;
-        this.username = user.username;
 
         this.goToLogin();
       } catch (e) {
@@ -124,7 +122,6 @@ export default {
         name: 'User Login',
         params: {
           userEmail: this.userEmail,
-          username: this.username,
         },
       });
     },

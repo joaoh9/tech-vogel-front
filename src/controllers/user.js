@@ -1,72 +1,81 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import jwtDecode from 'jwt-decode';
 
 export default class UserController {
-  async saveUser({ name, username, email, password, birthDate = '1990-12-12' }) {
-    const axios = Axios.GetInstance({ api: '/api' });
+  async saveUser({ name, email, password }) {
+    const axios = Axios.GetInstance();
 
-    const { data } = await axios.post('/users', {
-      username,
+    const res = await axios.post('/v1/users', {
       name,
       email,
       password,
-      birthDate,
     });
 
-    return data;
+    return res.data;
   }
 
   async getByEmail(email) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.get(`/users/byEmail/${email}`);
+    const axios = Axios.GetInstance();
+    const { data } = await axios.get(`/v1/users/email/${email}`);
 
     return data;
   }
 
-  getById(id) {
-    return this.getByUsername(id);
+  async emailExists(email) {
+    try {
+      await this.getByEmail(email);
+      return true;
+    } catch (e) {
+      if (e.response.status === 404) {
+        return false;
+      }
+      return true;
+    }
   }
 
-  async getByUsername(username) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.get(`/users/${username}`);
+  decodeUserToken(_token) {
+    const token = _token || StorageHelper.loadState('userToken');
+
+    return jwtDecode(token);
+  }
+
+  saveUserToken(token) {
+    StorageHelper.saveState('userToken', token);
+  }
+
+  async update(updates) {
+    const userToken = StorageHelper.loadState('userToken');
+    const userInfo = this.decodeUserToken();
+    const userId = updates.id || updates.userId || userInfo.id;
+
+    const axios = Axios.GetInstance(userToken);
+    const { data } = await axios.put(`/v1/users/${userId}`, updates);
 
     return data;
   }
 
-  async getCompany(username) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.get(`/users/companies/${username}`);
-
+  async getById(userId) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/v1/users/${userId}`);
     return data;
   }
 
-  async login({ username, password }) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { status } = await axios.post('login', {
-      username,
+  async auth({ email, password }) {
+    const axios = Axios.GetInstance();
+    const { data, status } = await axios.post('/v1/users/auth', {
+      email,
       password,
     });
 
-    return status;
+    return { data, statusCode: status };
   }
 
-  async logout() {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { status } = await axios.post('logout');
-    if (status === 200) {
-      StorageHelper.removeState('user');
-      StorageHelper.removeState('company');
-    }
-
-    return status;
-  }
-
-  async getProfilePicture(username) {
-    const axios = Axios.GetInstance({ api: '/serve' });
+  async getProfilePicture(userId) {
+    const axios = Axios.GetInstance();
 
     try {
-      const { data } = await axios.get(`/v1/profile-picture/${username}`);
+      const { data } = await axios.get(`/v1/profile-picture/${userId}`);
 
       return data;
     } catch (e) {
@@ -75,33 +84,5 @@ export default class UserController {
       }
       throw e;
     }
-  }
-
-  async emailLogin({ email, password }) {
-    const axios = Axios.GetInstance({ api: '/api' });
-    const { data } = await axios.post('/emailLogin', {
-      email,
-      password,
-    });
-
-    return data;
-  }
-
-  async resendConfirmationEmail(email) {
-    const user = await this.getByEmail(email);
-
-    const axios = Axios.GetInstance();
-
-    const { data } = await axios.get(`/users/sendConfirmationEmail/${user.username}`);
-
-    return { ...data, email };
-  }
-
-  async confirmAccount(confirmationId) {
-    const axios = Axios.GetInstance();
-
-    const { data } = await axios.get(`/users/confirmAccount/${confirmationId}`);
-
-    return data;
   }
 }

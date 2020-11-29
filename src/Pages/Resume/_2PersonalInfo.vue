@@ -10,6 +10,7 @@
     </v-file-input>
     <form-input required class="mt-0" :title="$t('resume.register.mainRole.title')" />
     <v-text-field
+      autofocus
       :placeholder="$t('resume.register.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
@@ -89,9 +90,9 @@ export default {
   },
   methods: {
     getUserInfo() {
-      const user = StorageHelper.loadState('user');
+      const user = StorageHelper.loadState('userToken');
+
       if (!user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
         this.$router.push({
           path: '/login',
         });

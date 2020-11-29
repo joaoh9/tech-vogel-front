@@ -21,7 +21,11 @@
 import Navbar from 'Components/Navbar/Navbar';
 import LoggedInNavbar from 'Components/Navbar/LoggedInNavbar';
 import Footer from 'Components/Footer';
+
+import UserController from 'Controllers/user';
+
 import StorageHelper from 'Helpers/storage';
+
 import 'Public/css';
 
 export default {
@@ -49,8 +53,11 @@ export default {
       return this.$router.history.current.name !== 'LandingPage';
     },
     logout() {
-      StorageHelper.removeState('user');
-      StorageHelper.removeState('companyId');
+      const userToken = StorageHelper.loadState('userToken');
+      const [ , payload  ] = userToken.split('.');
+      const trashedToken = [ '', payload, '' ].join('.');
+      StorageHelper.saveState('trashedToken', trashedToken);
+      StorageHelper.removeState('userToken');
       StorageHelper.removeState('access_token');
       StorageHelper.removeState('github_username');
 
@@ -73,15 +80,19 @@ export default {
       return pageStyle;
     },
     async checkIfLoggedIn() {
-      if (StorageHelper.loadState('user')) {
-        this.loggedIn.logged = true;
-      } else {
-        this.loggedIn.logged = false;
-      }
+      const userController = new UserController();
+      try {
+        const user = userController.decodeUserToken();
+        console.log(
+          '🚀 ~ file: App.vue ~ line 80 ~ checkIfLoggedIn ~ userController',
+          userController,
+        );
+        console.log('🚀 ~ file: App.vue ~ line 81 ~ checkIfLoggedIn ~ user', user);
 
-      if (StorageHelper.loadState('companyId')) {
-        this.loggedIn.company = true;
-      } else {
+        this.loggedIn.logged = true;
+        this.loggedIn.company = user.side == 2 ? true : false;
+      } catch (e) {
+        this.loggedIn.logged = false;
         this.loggedIn.company = false;
       }
     },

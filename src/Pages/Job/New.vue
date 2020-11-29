@@ -1,5 +1,6 @@
 <template>
-  <div class="d-flex justify-center mt-4 mt-md-12">
+  <div class="d-flex flex-column align-center mt-4 mt-md-12">
+    <h3 class="text-center h3-bold mb-3 color-primary">Post a job!</h3>
     <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
       <g-card>
         <template v-slot:card-header>
@@ -15,10 +16,8 @@
                 title: (job && job.title) || '',
                 experienceLevel: (job && job.experienceLevel) || '',
                 contractType: (job && job.contractType) || '',
-                id: (job && job.id) || '',
               }"
               v-on:title="r => (job_.title = r)"
-              v-on:id="r => (job_.id = r)"
               v-on:experience-level="r => (job_.experienceLevel = r)"
               v-on:contract-type="r => (job_.contractType = r)"
             />
@@ -77,8 +76,8 @@ import About from './_2About';
 import Skills from 'Components/General/SkillsSelection';
 import Benefits from './_4Benefits';
 import CompanyController from 'Controllers/company';
+import UserController from 'Controllers/user';
 import Settings from '@config';
-import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'NewJob',
@@ -103,6 +102,7 @@ export default {
     if (this.job) {
       this.job_ = this.job;
     }
+    // this.isCompanyValidation();
     this.getCompanyInfo();
   },
   data() {
@@ -111,7 +111,6 @@ export default {
       step: 1,
       job_: {
         title: '',
-        id: '',
         experienceLevel: '',
         contractType: '',
         description: '',
@@ -143,16 +142,24 @@ export default {
         },
       });
     },
-    async getCompanyInfo() {
-      const companyController = new CompanyController();
-      const companyId = StorageHelper.loadState('companyId');
-      if (!companyId) {
-        this.$toast.error('You must have a registered company in order to post a job!');
+    async isCompanyValidation() {
+      const userController = new UserController();
+      const { side } = userController.decodeUserToken();
+
+      if (side != 2) {
+        this.$toast.error(this.$t('toast.error.registeredCompany'));
         this.$router.push({
-          name: 'Home',
+          name: 'New Company',
         });
       }
-      this.company = await companyController.getById(companyId);
+    },
+    async getCompanyInfo() {
+      const companyController = new CompanyController();
+      try {
+        this.company = await companyController.getByUserId('current');
+      } catch (e) {
+        this.$toast.error('Something went wrong when retrieving company info');
+      }
     },
     getPageInfo() {
       return [
@@ -174,28 +181,25 @@ export default {
         case 0:
           if (
             this.job_.title &&
-            this.job_.id &&
             this.job_.experienceLevel &&
             this.job_.contractType
           ) {
             this.currentStep++;
           } else {
-            this.$toast.warning('You should fill all required information!');
+            this.$toast.warning(this.$t('toast.warning.fillAll'));
           }
           break;
         case 1:
           if (this.job_.description) {
             this.currentStep++;
           } else {
-            this.$toast.warning(
-              'Please give your appplicants a more detailed information about your job',
-            );
+            this.$toast.warning(this.$t('toast.warning.detailedInfo'));
           }
           break;
         case 2:
           for (const skill of Object.keys(this.job_.skills)) {
             const skillValidated = this.validateSkills(skill);
-            if (skillValidated !== true) {
+            if (!skillValidated) {
               return this.$toast.warning(skillValidated);
             }
           }
@@ -209,20 +213,23 @@ export default {
     },
     validateSkills(skill) {
       if (this.job_.skills[skill].length < Settings.skills[skill].min) {
-        return `Please select at least ${Settings.skills[skill].min} ${this.$t(
-          `enums.skills.${skill}`,
-        )}!`;
+        return this.$t(
+          'job.selectAtLeast',
+          Settings.skills[skill].min,
+          this.$t(`enums.skills.${skill}`),
+        );
       }
       if (this.job_.skills[skill].length > Settings.skills[skill].max) {
-        return `Please select a maximum of ${Settings.skills[skill].max} ${this.$t(
-          `enums.skills.${skill}`,
-        )}!`;
+        return this.$t(
+          'job.selectMaximum',
+          Settings.skills[skill].max,
+          this.$t(`enums.skills.${skill}`),
+        );
       }
       return true;
     },
   },
 };
-
 </script>
 
 <style>

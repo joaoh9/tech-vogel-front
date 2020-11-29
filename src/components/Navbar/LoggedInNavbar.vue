@@ -60,8 +60,6 @@ import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 
 import UserController from 'Controllers/user';
 
-import StorageHelper from 'Helpers/storage';
-
 import MobileDrawer from './MobileDrawer';
 
 export default {
@@ -84,18 +82,21 @@ export default {
   },
   methods: {
     checkIfCompany() {
-      this.company = StorageHelper.loadState('companyId');
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+      this.isCompany = userInfo.side === 2;
     },
     async getUserProfilePic() {
-      const user = StorageHelper.loadState('user');
       const userController = new UserController();
-
-      const profilePicData = await userController.getProfilePicture(user.username);
-      console.log('profilePic');
-      console.log(profilePicData);
-
-      this.profilePic = profilePicData?.data64 || profilePicData?.srcLink;
-      console.log(this.profilePic);
+      const user = userController.decodeUserToken();
+      try {
+        const profilePicData = await userController.getProfilePicture(user.id);
+        this.profilePic = profilePicData.data64 || profilePicData.srcLink;
+      } catch (e) {
+        if (e.status === 404) {
+          this.profilePic = null;
+        }
+      }
     },
     goToDashboard() {
       this.$router.push({
@@ -103,7 +104,7 @@ export default {
       });
     },
     getDashboardRoute() {
-      return this.company ? '/company/dashboard' : '/dashboard';
+      return this.isCompany ? '/company/dashboard' : '/dashboard';
     },
     getMenuList() {
       return [
@@ -121,13 +122,13 @@ export default {
         this.$router.push({
           path: '/',
         });
-        this.$toast.success('Logout successfull');
+        this.$toast.success(this.$t('toast.success.logout'));
       } catch (e) {
         this.$emit('logout');
         this.$router.push({
           path: '/',
         });
-        this.$toast.success('Logout successfull');
+        this.$toast.success(this.$t('toast.success.logout'));
       }
     },
     goToNewJob() {
@@ -149,8 +150,8 @@ export default {
     getPrimaryButtons() {
       return [
         {
-          text: this.company ? this.$t('common.postAJob') : this.$t('common.findAJob'),
-          goTo: this.company ? this.goToNewJob : this.goToJobList,
+          text: this.isCompany ? this.$t('common.postAJob') : this.$t('common.findAJob'),
+          goTo: this.isCompany ? this.goToNewJob : this.goToJobList,
         },
         { text: this.$t('common.dashboard'), goTo: this.goToDashboard },
       ];

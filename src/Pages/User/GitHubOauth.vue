@@ -44,7 +44,7 @@ export default {
         this.$toast.success(this.$t('oAuth.github.accessSuccess'));
 
         if (hasAccessToken) {
-          this.$toast.success('You can close this tab and retry your request on the other page');
+          this.$toast.success(this.$t('toast.success.closeTab'));
           return;
         }
 
@@ -52,13 +52,11 @@ export default {
           name: 'User Signup',
           params: {
             _email: data.email,
-            _username: data.username,
             _name: data.name,
           },
         });
       } catch (e) {
         this.$toast.error(this.$t('oAuth.github.accessError'));
-        console.log(e);
       }
     },
   },

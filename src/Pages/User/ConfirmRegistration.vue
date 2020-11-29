@@ -56,13 +56,9 @@ import RulesHelper from 'Helpers/rules';
 export default {
   name: 'Login',
   props: {
-    _username: String,
     _email: String,
   },
   mounted() {
-    if (this._username) {
-      this.username = this._username;
-    }
     if (this._email) {
       this.email = this._email;
     }

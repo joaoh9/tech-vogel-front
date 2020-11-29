@@ -26,13 +26,16 @@ export default {
     SubHeader,
     BigTextSection,
   },
+  mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+  },
   methods: {
     getBigText() {
       return Object.entries(this.$t('privacyPolicy.bigText'));
     },
   },
 };
-
 </script>
 
 <style></style>

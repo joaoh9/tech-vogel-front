@@ -1,29 +1,44 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import UserController from './user';
 
 export default class {
   async save(resume) {
-    const axios = await Axios.GetInstance({ api: '/serve' });
-    const user = StorageHelper.loadState('user');
+    const token = StorageHelper.loadState('userToken');
+    const userInfo = new UserController().decodeUserToken(token);
+    const axios = await Axios.GetInstance(token);
+    const userId = resume.id || resume.userId || userInfo.id;
 
     const finalObj = {
       ...resume,
+      userId,
     };
-    const { data } = await axios.post(`/v1/resume/${user.username}`, finalObj);
+
+    const { data } = await axios.post('/v1/resume/', finalObj);
+
     return data;
   }
 
-  async getByUsername(username) {
-    const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.get(`/v1/resume/${username}`);
+  async getByUserId(userId) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = Axios.GetInstance(userToken);
+    const { data } = await axios.get(`/v1/resume/${userId}`);
+
     return data;
   }
 
-  async editByUsername(edits) {
-    const user = StorageHelper.loadState('user');
+  async updateByUserId(userId, updates) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = Axios.GetInstance(userToken);
+    const { data } = await axios.put(`/v1/resume/${userId}`, updates);
 
-    const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.put(`/v1/resume/${user.username}`, edits);
+    return data;
+  }
+
+  async removeByUserId(userId) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = Axios.GetInstance(userToken);
+    const { data } = await axios.delete(`/v1/resume/${userId}`);
 
     return data;
   }

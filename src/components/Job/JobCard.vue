@@ -50,7 +50,7 @@ export default {
   methods: {
     goToJobDetails() {
       this.$router.push({
-        path: `/jobs/${this.company.companyId}/${this.job.id}`,
+        path: `/jobs/${this.job.companyId}/${this.job.id}`,
       });
     },
     getMinWidth() {
@@ -82,7 +82,7 @@ export default {
       try {
         this.company = await companyController.getById(this.job.companyId);
       } catch (e) {
-        this.$toast.error('Something when wrong when getting company info for a job');
+        this.$toast.error(this.$t('toast.error.getCompany'));
       }
     },
     getDaysAgo() {

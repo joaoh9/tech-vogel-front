@@ -1,30 +1,43 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import UserController from 'Controllers/user';
 
 export default class {
   async save(resume) {
-    const axios = await Axios.GetInstance({ api: '/serve' });
-    const user = StorageHelper.loadState('user');
+    const token = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(token);
+
+    const userController = new UserController();
+    const userId = userController.decodeUserToken().id;
 
     const finalObj = {
       ...resume,
+      userId,
     };
-    const { data } = await axios.post(`/v1/profile-picture/${user.username}`, finalObj);
-    return data;
-  }
-
-  async getByUsername(username) {
-    const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.get(`/v1/profile-picture/${username}`);
+    const { data } = await axios.post('/v1/profile-picture/', finalObj);
 
     return data;
   }
 
-  async editByUsername(edits) {
-    const user = StorageHelper.loadState('user');
+  async getByUserId(userId) {
+    const axios = Axios.GetInstance();
+    const { data } = await axios.get(`/v1/profile-picture/${userId}`);
 
-    const axios = Axios.GetInstance({ api: '/serve' });
-    const { data } = await axios.put(`/v1/profile-picture/${user.username}`, edits);
+    return data;
+  }
+
+  async updateByUserId(userId, updates) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = Axios.GetInstance(userToken);
+    const { data } = await axios.put(`/v1/profile-picture/${userId}`, updates);
+
+    return data;
+  }
+
+  async removeByUserId(userId) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = Axios.GetInstance(userToken);
+    const { data } = await axios.delete(`/v1/profile-picture/${userId}`);
 
     return data;
   }

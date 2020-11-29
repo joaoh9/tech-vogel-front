@@ -153,6 +153,8 @@ export default {
   },
   user: {
     findMe: 'Where to find me',
+    githubSignup: 'Signup with Github',
+    linkedInSignup: 'Signup with LinkedIn',
     dashboard: {
       greeting: 'Hi,',
       actions: {

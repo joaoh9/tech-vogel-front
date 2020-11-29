@@ -49,18 +49,16 @@ export default {
         const githubInfo = await githubOauthController.getUserInfo();
         this.$emit('update-profile-picture')
 
-        console.log(githubInfo);
-
         this.loading = false;
-        this.$toast.success('Github data retrieved successfully!');
+        this.$toast.success(this.$t('toast.success.githubRetrieve'));
         this.$emit('github-info', githubInfo);
       } catch (e) {
         if (e.status === 403) {
+          this.$toast.error(this.$t('oAuth.github.accessFirst'));
           this.goToAuthGithubLink();
         }
         this.loading = false;
-        this.$toast.error('Something went wrong when retrieving your github data');
-        console.log(e);
+        this.$toast.error(this.$t('toast.error.githubRetrieve'));
       }
     },
     goToAuthGithubLink() {

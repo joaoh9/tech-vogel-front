@@ -9,10 +9,8 @@
       <template v-slot:card-content>
         <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
           <About
-            v-on:owner-id="e => (company.ownerId = e)"
             v-on:company-name="e => (company.name = e)"
-            v-on:representative-name="e => (company.representative = e)"
-            v-on:company-description="e => (company.companyDescription = e)"
+            v-on:company-description="e => (company.description = e)"
           />
         </div>
         <!--
@@ -43,7 +41,7 @@
             type="secondary"
             @click="manageStepBack"
           />
-          <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" />
+          <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" data-cy="register-next" />
         </div>
       </template>
     </g-card>
@@ -58,7 +56,6 @@ import About from 'Pages/Company/_1About';
 // import New3 from 'Pages/Company/New3';
 import CompanyController from 'Controllers/company';
 import RulesHelper from 'Helpers/rules';
-import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'New',
@@ -76,10 +73,8 @@ export default {
     return {
       currentStep: 0,
       company: {
-        ownerId: '',
         name: '',
-        representative: '',
-        companyDescription: '',
+        description: '',
       },
     };
   },
@@ -99,35 +94,21 @@ export default {
     },
     async register() {
       const companyController = new CompanyController();
-      if (
-        this.rules.min(3, this.company.name) !== true ||
-        this.rules.min(3, this.company.representative) !== true
-      ) {
-        this.$toast.error('Please write a company name and a represetative name');
+      if (this.rules.min(3, this.company.name) !== true) {
+        this.$toast.error(this.$t('toast.error.writeNames'));
         return;
       }
       try {
-        const companyId =
-          this.company.name.replace(/ /g, '-').replace(/[A-Z]/g, match => match.toLowerCase()) +
-          Math.round(Math.random() * 10 ** 6).toString();
+        await companyController.save(this.company);
+        this.$toast.success(this.$t('toast.success.savedCompany'));
 
-        await companyController.save({
-          ...this.company,
-          companyId,
-        });
-        this.$toast.success('Company saved successfully');
-        StorageHelper.saveState('companyId', companyId);
         this.$router.push({
-          path: '/jobs/new',
+          path: '/jobs/new', // TODO: mudar pra pricing depois
         });
       } catch (e) {
-        if (e.response.status === 409) {
-          this.$toast.warn('There is already a saved company for this user name');
-        }
-        this.$toast.error('An error occurred when saving the company');
+        this.$toast.error(this.$t('toast.error.saveCompany'));
       }
     },
   },
 };
-
 </script>

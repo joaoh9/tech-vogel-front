@@ -43,7 +43,6 @@ export default {
     notNumber: 'Not a number',
     requiredField: 'Field Required',
     emailAlreadyRegistered: 'Email already registered!',
-    usernameUnavaliable: 'Username not avaliable!',
     weakPassword: 'Password too weak!',
     emailsDontMatch: 'Emails do not match',
     passwordsDontMatch: 'Passwords do not match',
@@ -82,8 +81,10 @@ export default {
       confirm: 'Confirm GitHub acces to Tech Vogel?',
       accessSuccess: 'Github account successfully linked to Tech Vogel',
       accessError: 'An error occurred when authorizing the application. Please try again later.',
+      accessFirst: 'You must grant github access first!',
     },
   },
   lorem:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quibusdam nihil deserunt modi cupiditate ut, incidunt ducimus architecto impedit, atque magni amet suscipit autem ad, inventore quas consequuntur repellendus temporibus?',
+  inactivity: 'You have been logged out for inactivity. Please login again',
 };

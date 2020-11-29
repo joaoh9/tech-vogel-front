@@ -44,7 +44,7 @@ class Rules {
   }
 
   min(min, v) {
-    return v ? v.length >= min : this.localeObj['rules']['lessThanXCharacters'].replace('X', min);
+    return v.length >= min || this.localeObj['rules']['lessThanXCharacters'].replace('X', min);
   }
 
   validateLetterOrNumber(letter) {
@@ -64,7 +64,7 @@ class Rules {
   year(value) {
     if (value.toString().length === 4) {
       value = parseInt(value);
-      if (value <= new Date().getFullYear() && value >= 1970) {
+      if (value <= new Date().getFullYear() + 10 && value >= 1970) {
         return true;
       } else {
         return this.localeObj['rules']['yearOutOfRange'];

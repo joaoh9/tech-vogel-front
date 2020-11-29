@@ -1,11 +1,5 @@
 <template>
   <div>
-    <v-parallax
-      style="opacity: 60%; background-color: black"
-      height="250"
-      v-if="!editMode"
-      src="https://suzanadeoliveira.com/wp-content/uploads/2017/06/Google-Office-HD-Wallpapers-Backgrounds-Wallpaper-Abyss-scaled.jpg"
-    />
     <PrimaryHeader
       v-if="editMode"
       :title="$t('job.confirmJob.title')"
@@ -39,6 +33,16 @@
             <v-card color="bg" :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-primary pa-6'">
               <SkillPresentation :skills="job.skills" />
             </v-card>
+            <div class="d-flex align-center justify-center">
+              <span v-for="(item, index) in getIcons()" :key="index" class="mx-4 mt-6">
+                <v-avatar color="orange" size="40">
+                  <v-icon color="white">
+                    {{ item.icon }}
+                  </v-icon>
+                </v-avatar>
+                {{ item.text }}
+              </span>
+            </div>
           </div>
           <h4 class="h4-bold-alternative">Job Description</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.description"></div>
@@ -65,6 +69,7 @@ import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 export default {
   name: 'JobDescription',
   props: {
+    selectedJob: Object,
     confirm: Boolean,
     job_: Object,
     company_: Object,
@@ -111,7 +116,7 @@ export default {
       try {
         this.company = await companyController.getById(this.companyId);
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving company ${this.companyId} data`);
+        this.$toast.error(this.$t('toast.error.companyData', { companyId: this.companyId }));
       }
     },
     async getJobData() {
@@ -120,12 +125,12 @@ export default {
       try {
         this.job = await jobController.getById(this.jobId);
       } catch (e) {
-        this.$toast.error(`Something went wrong when retrieving job ${this.jobId} data`);
+        this.$toast.error(this.$t('toast.error.jobData', { jobId: this.jobId }));
       }
     },
     getTimePosted() {
       if (this.editMode) {
-        return 'Posted just now';
+        return this.$t('common.postedNow');
       } else {
         return DateHelper.format(this.job.createdAt);
       }
@@ -138,12 +143,12 @@ export default {
 
       try {
         await jobController.save(this.job);
-        this.$toast.success('Job saved successfully');
+        this.$toast.success(this.$t('toast.success.jobSaved'));
         this.$router.push({
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.error('There was an error when saving the job');
+        this.$toast.error(this.$t('toast.error.saveJob'));
       }
     },
     async editJob() {
@@ -151,12 +156,12 @@ export default {
 
       try {
         await jobController.patch(this.job);
-        this.$toast.success('Job edited successfully');
+        this.$toast.success(this.$t('toast.success.jobEdit'));
         this.$router.push({
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.error('There was an error when saving the job');
+        this.$toast.error(this.$t('toast.error.saveJob'));
       }
     },
     goBackAndEdit() {
@@ -167,9 +172,24 @@ export default {
         },
       });
     },
+    currencyConverter() {
+      return this.$t(`dictionary.currency.${this.selectedJob.salary.currency}`);
+    },
+    getJobInformation() {
+      return (
+        this.$n(`${this.selectedJob.salary.min}`, 'currency', this.currencyConverter()) +
+        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.selectedJob.salary.timeFrame}`)}`
+      );
+    },
+    getIcons() {
+      return [
+        { icon: 'mdi-currency-usd', text: this.getJobInformation()},
+        { icon: 'mdi-clock', text: this.$t(`enums.contractType.${this.selectedJob.contractType}`) },
+        { icon: 'mdi-message-outline', text: this.$t('skills.dictionary.techSkills.javaScript') },
+      ];
+    },
   },
 };
-
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <v-card :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-none pa-8'" color="bg">
+  <v-card v-if="job" :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-none pa-8'" color="bg">
     <IconText
       v-for="(item, i) in getIconInfo()"
       :key="i"
@@ -69,8 +69,7 @@
 import IconText from 'Components/Interface/IconText';
 
 import JobController from 'Controllers/job';
-
-import StorageHelper from 'Helpers/storage';
+import UserController from 'Controllers/user';
 
 export default {
   name: 'JobApplicationCard',
@@ -97,6 +96,10 @@ export default {
   },
   methods: {
     getIconInfo() {
+      if (!this.job || !this.job.salary) {
+        return [];
+      }
+      const currencySymbol = this.getPrefix(this.job.salary.currency);
       return [
         {
           icon: 'fa fa-briefcase',
@@ -106,30 +109,51 @@ export default {
           icon: 'far fa-clock',
           text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
         },
+        {
+          icon: 'fa fa-money-bill-wave',
+          text:
+            currencySymbol +
+            this.job.salary.min +
+            (this.job.salary.max ? ' - ' + currencySymbol + this.job.salary.max : '') +
+            ' ' +
+            this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`),
+        },
       ];
     },
     getApplicationButtonType() {
-      return StorageHelper.loadState('companyId') ? 'disabled' : 'primary';
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+      return userInfo.side === 2 ? 'disabled' : 'primary';
     },
     async applyForJob() {
       const jobController = new JobController();
-      const user = StorageHelper.loadState('user');
-      if (!user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+
+      if (!userInfo) {
+        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
       }
 
-      console.log(this.jobId);
-      console.log(this.companyId);
-      console.log(user.username);
-
       try {
-        await jobController.apply(user.username, this.jobId);
-        this.$toast.success('Successfully applied for job');
+        await jobController.apply(userInfo.id, this.jobId);
+        this.$toast.success(this.$t('toast.success.jobApplied'));
       } catch (e) {
-        this.$toast.error('An error occured when applying for this job');
+        this.$toast.error(this.$t('toast.error.jobApplying'));
+      }
+    },
+    getPrefix(currency) {
+      switch (currency) {
+        case 'USD':
+          return '$';
+        case 'GBP':
+          return '£';
+        case 'EUR':
+          return '€';
+        case 'BRL':
+          return 'R$';
       }
     },
   },

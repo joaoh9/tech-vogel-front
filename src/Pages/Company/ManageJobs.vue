@@ -10,6 +10,7 @@
 import JobManagerCard from 'Components/Dashboard/JobManagerCard';
 import StorageHelper from 'Helpers/storage';
 import CompanyController from 'Controllers/company';
+import UserController from 'Controllers/user';
 import JobController from 'Controllers/job';
 
 export default {
@@ -33,14 +34,14 @@ export default {
     };
   },
   methods: {
-    async getCompanyInfo(companyId) {
+    async getCompanyInfo() {
       const companyController = new CompanyController();
 
       try {
-        this.company = await companyController.getById(companyId);
+        this.company = await companyController.getByUserId('current');
         this.loading.company = false;
       } catch (e) {
-        this.$toast.error('Could not retrieve company info from database');
+        this.$toast.error(this.$t('toast.error.retrieveCompany'));
       }
     },
     async getUserInfo() {
@@ -49,20 +50,22 @@ export default {
       this.user = StorageHelper.loadState('user');
       this.loading.user = false;
       if (!this.user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
       }
 
-      const companyId = StorageHelper.loadState('companyId');
-      if (!companyId) {
-        this.$toast.error('Could not retrieve company info. Please make sure you are logged in');
+      const userController = new UserController();
+      const userInfo = userController.decodeUserToken();
+
+      if (userInfo.side !== 2) {
+        this.$toast.error(this.$t('toast.error.companyInfoLogged'));
       }
       try {
-        await this.getCompanyInfo(companyId);
+        await this.getCompanyInfo();
       } catch (e) {
-        this.$toast.error('Could not retrieve company info from database');
+        this.$toast.error(this.$t('toast.error.retrieveCompany'));
       }
     },
     async getCompanyJobs() {
@@ -71,12 +74,11 @@ export default {
       try {
         this.jobs = await jobController.getAll();
       } catch (e) {
-        this.$toast.error('An error occured when retrieving jobs from the database');
+        this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
     },
   },
 };
-
 </script>
 
 <style></style>

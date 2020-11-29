@@ -35,7 +35,7 @@
               v-on:profile-picture="e => (profilePicture = e)"
               v-on:main-role="e => (resume.mainRole = e)"
               v-on:location="e => (resume.location = e)"
-              v-on:personal-bio="e => (resume.biography.personalBio = e)"
+              v-on:personal-bio="e => (resume.personalBio = e)"
             >
             </PersonalInfo>
           </div>
@@ -85,8 +85,7 @@ import Skills from 'Components/General/SkillsSelection';
 
 import ResumeController from 'Controllers/resume';
 import ProfilePictureController from 'Controllers/profilePic';
-
-import StorageHelper from 'Helpers/storage';
+import UserController from 'Controllers/user';
 
 import Start from './_0Start';
 import Preferences from './_1Preferences';
@@ -109,10 +108,11 @@ export default {
     Education,
   },
   mounted() {
-    const company = StorageHelper.loadState('companyId');
-    if (company) {
+    const userController = new UserController();
+    const company = userController.decodeUserToken();
+
+    if (company.side === 2) {
       this.$router.push('/404');
-      // De propósito
     }
   },
   data() {
@@ -159,26 +159,16 @@ export default {
     async saveResume() {
       const resumeController = new ResumeController();
       const profilePictureController = new ProfilePictureController();
-      const validResume = this.validateResume();
 
-      if (validResume) {
-        try {
-          if (this.editMode) {
-            await resumeController.editByUsername(this.resume);
-          } else {
-            await profilePictureController.save(this.profilePicture);
-          }
-          if (Object.keys(this.profilePicture).length) {
-            await resumeController.save(this.resume);
-          } else if (this.editMode && Object.keys(this.profilePicture).length) {
-            await profilePictureController.editByUsername(this.profilePicture);
-          }
-          this.$router.push({
-            path: '/dashboard',
-          });
-        } catch (e) {
-          this.$toast.error('There was an error saving your resume');
-        }
+      try {
+        await resumeController.save(this.resume);
+        await profilePictureController.save(this.profilePicture);
+        this.$toast.success(this.$t('toast.success.saveResume'));
+        this.$router.push({
+          path: '/dashboard',
+        });
+      } catch (e) {
+        this.$toast.error(this.$t('toast.error.saveResume'));
       }
     },
     validateResume() {

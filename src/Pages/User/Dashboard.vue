@@ -9,7 +9,7 @@
         :picture="profilePic"
       />
       <div class="d-flex flex-column align-center">
-        <UserTokens class="mt-8" tokens="15" />
+        <UserTokens class="mt-8" :tokens="user.tokens" />
         <capt-1 class="mt-4">{{ $t('user.dashboard.tokenExplanation') }}</capt-1>
         <g-btn
           block
@@ -31,25 +31,28 @@
     <template template v-slot:second-col>
       <div class="d-flex align-center flex-column">
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
-        <NoJobsApplied v-if="!appliedJobs.length" />
-        <UserApplications v-else :jobs="appliedJobs" />
+        <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
+        <div v-for="(job, i) in appliedJobs" :key="i">
+          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.mdAndUp" />
+          <JobCardMobile :job="job" class="mb-4" v-else-if="loaded.jobs" />
+        </div>
       </div>
     </template>
   </g-bootstrap>
 </template>
 
 <script>
-import StorageHelper from 'Helpers/storage';
-import InactivityHelper from 'Helpers/inactivity';
-
 import NoJobsApplied from 'Components/Dashboard/NoJobsApplied';
 import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
-import UserApplications from './UserApplications';
+import JobCard from 'Components/Job/JobCard';
+import JobCardMobile from 'Components/Job/JobCardMobile';
 
-import ResumeController from 'Controllers/resume';
 import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
+import UserController from 'Controllers/user';
+import CompanyController from 'Controllers/company';
+import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'ProfessionalDashboard',
@@ -57,14 +60,18 @@ export default {
     NoJobsApplied,
     UserCard,
     UserTokens,
-    UserApplications,
+    JobCard,
+    JobCardMobile,
   },
   mounted() {
-    const company = StorageHelper.loadState('companyId');
-    if (company) {
+    const userController = new UserController();
+    const userInfo = userController.decodeUserToken();
+
+    if (userInfo.side === 2) {
       this.$router.push('/company/dashboard');
     }
     this.loadUserInfo();
+    this.loadResume();
     this.getAppliedJobs();
     this.getProfilePicture();
   },
@@ -76,19 +83,27 @@ export default {
       profilePic: null,
       loaded: {
         user: false,
+        jobs: false,
       },
     };
   },
   methods: {
     loadUserInfo() {
-      this.user = StorageHelper.loadState('user');
+      const userController = new UserController();
+      this.user = userController.decodeUserToken();
+
       if (!this.user) {
-        this.$toast.error('Could not retrieve user info. Please login again');
+        this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
           path: '/login',
         });
       }
       this.loaded.user = true;
+    },
+
+    async loadResume() {
+      const resumeController = new ResumeController();
+      this.resume = await resumeController.getByUserId(this.user.id);
     },
     goToApplications: function() {
       this.$router.push('/applications');
@@ -120,28 +135,37 @@ export default {
     },
     async getAppliedJobs() {
       const jobController = new JobController();
+      const companyController = new CompanyController();
 
       try {
-        this.appliedJobs = await jobController.getAppliedJobs(this.user.username);
+        this.appliedJobs = await jobController.getAppliedJobs(this.user.id);
+        for (let i = 0; i < this.appliedJobs.length; i++) {
+          this.appliedJobs[i].company = await companyController.getById(
+            this.appliedJobs[i].companyId,
+          );
+          this.appliedJobs[i].createdAt = this.appliedJobs[i].appliedAt;
+        }
+        this.loaded.jobs = true;
       } catch (e) {
-        this.$toast.error('Something went wrong when retrieving applied jobs');
+        this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
       }
     },
     async getProfilePicture() {
       const profilePictureController = new ProfilePictureController();
 
       try {
-        this.profilePic = await profilePictureController.getByUsername(this.user.username);
+        this.profilePic = await profilePictureController.getByUserId(this.user.id);
       } catch (e) {
         if (e.response.status === 404) {
           this.profilePic = null;
+          return;
         }
-        this.$toast.info('Error when retrieving profile picture');
+        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
     goToUserProfile() {
       this.$router.push({
-        path: `/user/id/${this.user.username}`,
+        path: `/user/id/${this.user.id}`,
       });
     },
   },

@@ -1,9 +1,10 @@
 import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
+import UserController from './user';
 
-export default class JobController {
+export default class GithubOauthController {
   async confirmAccess(code) {
-    const axios = await Axios.GetInstance({ api: '/serve' });
+    const axios = await Axios.GetInstance();
     const { data } = await axios.get(`/v1/github-signup?code=${code}`);
 
     return data;
@@ -14,10 +15,9 @@ export default class JobController {
     if (!accessToken) {
       throw {
         status: 403,
-        message: 'You must grant github acces first!',
       };
     }
-    const axios = await Axios.GetInstance({ api: '/serve', token: accessToken });
+    const axios = await Axios.GetInstance(accessToken);
 
     const { data } = await axios.get('/v1/github-info');
 
@@ -27,18 +27,18 @@ export default class JobController {
   async getRepoInfo() {
     const accessToken = StorageHelper.loadState('access_token');
     const githubUsername = StorageHelper.loadState('github_username');
-    const userInfo = StorageHelper.loadState('user');
+    const userController = new UserController();
+    const userInfo = userController.decodeUserToken();
 
     if (!accessToken || !githubUsername) {
       throw {
         status: 403,
-        message: 'You must grant github acces first!',
       };
     }
 
-    const axios = await Axios.GetInstance({ api: '/serve', token: accessToken });
+    const axios = await Axios.GetInstance(accessToken);
 
-    const { data } = await axios.get(`/v1/repo-info/${userInfo.username}/${githubUsername}`);
+    const { data } = await axios.get(`/v1/repo-info/${userInfo.id}/${githubUsername}`);
 
     return data;
   }

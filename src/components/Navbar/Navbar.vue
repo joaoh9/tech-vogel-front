@@ -41,7 +41,7 @@
         :label="$t('common.postAJob')"
       />
       <g-btn
-        dataCy="nav-login"
+        data-cy="go-to-login"
         type="outlined"
         :color="isHome() ? 'bg' : 'dark'"
         to="/login"

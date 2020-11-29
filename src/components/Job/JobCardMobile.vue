@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex">
-    <v-card class="px-16 job-card-mobile" max-width="450">
+    <v-card class="px-16 job-card-mobile" max-width="450" color="bg">
       <div class="d-flex align-center justify-center flex-column mt-6">
         <span class="overline primary--text">{{ getJobInformation() }}</span>
         <h5 class="pa-0 my-2 text-center">{{ job.title }}</h5>
@@ -52,16 +52,14 @@ export default {
     getJobInformation() {
       return (
         this.$n(`${this.job.salary.min}`, 'currency', this.currencyConverter()) +
-        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}` +
-        ' | ' +
-        this.$t('job.jobType.title').toUpperCase()
+        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}`
       );
     },
     getIconInfo() {
       return [
         {
           icon: 'mdi-domain',
-          text: this.job.companyName,
+          text: this.job.company.name,
         },
         {
           icon: 'mdi-wallet-travel',
@@ -74,7 +72,7 @@ export default {
       try {
         this.company = await companyController.getById(this.job.companyId);
       } catch (e) {
-        this.$toast.error('Something when wrong when getting company info for a job');
+        this.$toast.error(this.$t('toast.error.getCompany'));
       }
     },
     goToJobDetails() {
@@ -84,7 +82,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

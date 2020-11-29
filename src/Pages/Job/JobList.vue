@@ -50,7 +50,7 @@ export default {
         await this.getCompanyInfo();
         this.finishedRequests = true;
       } catch (e) {
-        this.$toast.error(this.$t('job.list.error'));
+        this.$toast.error(this.$t('toast.error.jobList'));
       }
     },
     async getCompanyInfo() {
@@ -60,7 +60,7 @@ export default {
           this.jobs[i].company = await companyController.getById(this.jobs[i].companyId);
         }
       } catch (e) {
-        this.$toast.error('Something when wrong when getting company info for a job');
+        this.$toast.error(this.$t('toast.error.getCompany'));
       }
     },
   },

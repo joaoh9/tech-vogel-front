@@ -7,14 +7,8 @@ module.exports = {
   devServer: {
     proxy: {
       '^/api': {
-        target: 'http://localhost:5000',
-        pathRewrite: { '^/api': '' },
-        ws: true,
-        changeOrigin: true,
-      },
-      '^/serve': {
         target: 'http://localhost:5200',
-        pathRewrite: { '^/serve': '' },
+        pathRewrite: { '^/api': '' },
         ws: true,
         changeOrigin: true,
       },
@@ -36,7 +30,6 @@ module.exports = {
         Helpers: path.resolve(__dirname, 'src/helpers/'),
         Assets: path.resolve(__dirname, 'src/assets/'),
         Data: path.resolve(__dirname, 'src/data/'),
-        Oficiona: path.resolve(__dirname, 'oficiona'),
         '@': path.resolve(__dirname, 'src'),
         '@config': path.resolve(__dirname, 'src/config'),
         Public: path.resolve(__dirname, 'public'),

@@ -7,9 +7,6 @@ export default {
     name: {
       title: 'Your name',
     },
-    username: {
-      title: 'Pick a username',
-    },
     email: {
       title: 'Your Email',
     },
@@ -91,7 +88,7 @@ export default {
     ],
     aboutUsInfo: [
       { text: 'Our story', to: '/aboutus' },
-      { text: 'How it works', to: '/howitworks' },
+      { text: 'How it works', to: '/how-it-works' },
       { text: 'Pricing', to: '/pricing' },
     ],
   },

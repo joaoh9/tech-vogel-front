@@ -11,16 +11,18 @@
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCompany')"
-              @click="crateCompany()"
+              @click="updateCompanySide()"
               block
+              data-cy="side-company"
             />
 
             <g-btn
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCV')"
-              @click="crateCV()"
+              @click="updateUserSide()"
               block
+              data-cy="side-pro"
             />
           </div>
         </div>
@@ -30,6 +32,8 @@
 </template>
 
 <script>
+import UserController from 'Controllers/user';
+
 export default {
   name: 'RegistrationConfirmed',
   props: {
@@ -45,15 +49,29 @@ export default {
   },
   methods: {
     getHeaderTitle() {
-      // TODO: internacionalização
-      return 'Choose your side';
+      return this.$t('common.chooseSide');
     },
-    crateCompany() {
+    async updateCompanySide() {
+      const userController = new UserController();
+
+      try {
+        await userController.update({ side: 2 });
+      } catch (e) {
+        this.$toast.error('Something went wrong. Try again later');
+      }
+
       this.$router.push({
         path: '/company/new',
       });
     },
-    crateCV() {
+    async updateUserSide() {
+      const userController = new UserController();
+
+      try {
+        await userController.update({ side: 1 });
+      } catch (e) {
+        this.$toast.error('Something went wrong. Try again later');
+      }
       this.$router.push({
         path: '/resume/new',
       });

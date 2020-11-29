@@ -21,7 +21,7 @@
         class="bg-color-bg flex-fill"
         outlined
         :value="fluency"
-        v-for="(fluency, index) in fluencyOptions"
+        v-for="(fluency, index) in $t('enums.dictionary.fluencyLevel')"
         :key="index"
       >
         {{ fluency }}
@@ -41,7 +41,6 @@ export default {
         language: '',
         fluency: '',
       },
-      fluencyOptions: [ 'Basic', 'Intermediate', 'Fluent', 'Native' ],
     };
   },
   methods: {

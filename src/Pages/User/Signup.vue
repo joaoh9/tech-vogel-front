@@ -9,16 +9,7 @@
           outlined
           :rules="[rules.min(3, user.name)]"
           v-model="user.name"
-        />
-        <form-input v-if="askForUsername" :title="$t('signup.username.title')" />
-        <v-text-field
-          data-cy="username"
-          v-if="askForUsername"
-          outlined
-          :rules="[rules.min(3, user.username)]"
-          :error-messages="localRules.usernameUnavaliable"
-          @input="localRules.usernameUnavaliable = null"
-          v-model="user.username"
+          autofocus
         />
         <form-input :title="$t('signup.email.title')" />
         <v-text-field
@@ -59,22 +50,23 @@
         <g-btn
           @click="goToAuthGithubLink()"
           block
-          v-if="!_username"
-          type="primary"
-          label="Signup with Github"
+          v-if="!_email"
+          type="disabled"
+          :title="$t('common.comingSoon')"
+          :label="$t('user.githubSignup')"
         />
         <g-btn
           class="mt-4"
           disabled
           block
-          v-if="!_username"
-          type="primary"
-          label="Signup with Linkedin"
+          v-if="!_email"
+          type="disabled"
+          :label="$t('user.linkedInSignup')"
         />
         <v-checkbox
           data-cy="terms-and-conditions"
           v-model="termsAndConditions"
-          :rules="[rules.termsAndConditions]"
+          :rules="[rules.required(termsAndConditions)]"
           :error-messages="localRules.termsAndConditions"
         >
           <template v-slot:label>
@@ -99,7 +91,7 @@
           <v-btn
             data-cy="signup"
             :loading="loading.register"
-            @click="signup"
+            @click="validateForm"
             color="primary"
             elevation="0"
             large
@@ -123,18 +115,15 @@ export default {
   name: 'Login',
   props: {
     _email: String,
-    _username: String,
     _name: String,
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.user.email = this._email || '';
-    this.user.username = this._username || '';
     this.user.name = this._name || '';
   },
   data() {
     return {
-      askForUsername: true,
       requestError: false,
       showPassword: false,
       showConfirmPassword: false,
@@ -144,18 +133,16 @@ export default {
         equalPassword: () => true,
         equalEmail: () => true,
         email: () => true,
-        termsAndConditions: () => true,
+        required: () => true,
       },
       localRules: {
         emailAlreadyRegistered: null,
-        usernameUnavaliable: null,
         termsAndConditions: null,
       },
       user: {
         name: '',
         email: '',
         confirmEmail: '',
-        username: '',
         password: '',
         confirmPassword: '',
       },
@@ -166,48 +153,53 @@ export default {
     };
   },
   methods: {
-    async signup() {
-      const userController = new UserController();
-
+    async validateForm() {
       if (!this.termsAndConditions) {
         this.localRules.termsAndConditions = this.$t('rules.termsAndConditions');
-        return false;
+      } else {
+        this.localRules.termsAndConditions = '';
       }
-      if (!this.askForUsername) {
-        this.user.username =
-          this.user.email.split('@')[0] +
-          Math.random()
-            .toString()
-            .slice(3, 10);
+      const emailRuleOk = this.rules.email(this.user.email) === true;
+      if (!emailRuleOk) {
+        // TODO: internacionlização
+        this.localRules.emailAlreadyRegistered = 'Email required';
       }
 
       const validEmail = await this.validEmail();
-      const validUsername = await this.validUsername();
       if (!validEmail) {
-        this.$toast.warning('Email already registered!');
+        this.$toast.warning(this.$t('toast.warning.emailRegistered'));
       }
-      if (!validUsername) {
-        this.$toast.warning('Username already registered');
-      }
-      if (!validEmail || !validUsername) {
-        return;
+      if (emailRuleOk && validEmail) {
+        this.localRules.emailAlreadyRegistered = '';
       }
 
+      const nameRuleOk = this.rules.min(3, this.user.name) === true;
+      if (!nameRuleOk) {
+        // TODO: internacionlização
+        this.user.name = '';
+        // this.$toast.warning('Name must be greater than 3 characters');
+      }
+
+      if (!this.termsAndConditions || !emailRuleOk || !validEmail || !nameRuleOk) {
+        return false;
+      }
+
+      this.signup();
+    },
+    async signup() {
+      const userController = new UserController();
       this.loading.register = true;
       try {
         await userController.saveUser({
           name: this.user.name,
-          username: this.user.username,
           email: this.user.email,
           password: this.user.password,
-          birthDate: '1990-12-12',
         });
         this.loading.register = false;
 
         this.$router.push({
           path: '/confirm-registration',
           params: {
-            _username: this.user.username,
             _email: this.user.email,
           },
         });
@@ -222,33 +214,11 @@ export default {
     },
     async validEmail() {
       const userController = new UserController();
-      if (this.rules.email(this.user.email) !== true) {
-        return false;
-      }
       try {
         const user = await userController.getByEmail(this.user.email);
 
         if (user.email) {
           this.localRules.emailAlreadyRegistered = this.$t('rules.emailAlreadyRegistered');
-          return false;
-        }
-        return true;
-      } catch (e) {
-        return true;
-      }
-    },
-    async validUsername() {
-      const userController = new UserController();
-
-      if (this.rules.min(3, this.user.username) !== true) {
-        this.localRules.usernameUnavaliable = this.$t('rules.lessThanXCharacters').replace('X', 4);
-        return false;
-      }
-
-      try {
-        const user = await userController.getByUsername(this.user.username);
-        if (user) {
-          this.localRules.usernameUnavaliable = this.$t('rules.usernameUnavaliable');
           return false;
         }
         return true;

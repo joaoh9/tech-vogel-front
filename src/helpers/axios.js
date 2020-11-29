@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default class Axios {
-  static GetInstance({ api = '/api', token = null } = {}) {
+  static GetInstance(token = null) {
     const contentType = 'application/json;charset=UTF-8';
     const headers = {
       'Content-Type': contentType,
@@ -15,13 +15,8 @@ export default class Axios {
       headers['Authorization'] = `Bearer ${token}`;
     }
 
-    console.log(
-      `[AxiosHelper] Creating Axios with Header:
-       ${JSON.stringify(headers)} and baseURL: ${api}`,
-    );
-
     return axios.create({
-      baseURL: api,
+      baseURL: '/api',
       timeout: 30 * 1000,
       headers,
       maxContentLength: 20 * 1000 * 1000,
