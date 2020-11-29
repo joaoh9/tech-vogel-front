@@ -6,6 +6,7 @@
       :rules="[rules.min(3, name)]"
       v-model="name"
       @input="$emit('company-name', name)"
+      data-cy="register-company-name"
     />
     <form-input :title="$t('company.new.aboutYourCompany.title')" />
     <v-textarea
@@ -13,6 +14,7 @@
       :placeholder="$t('company.new.aboutYourCompany.placeholder')"
       :rules="[rules.required(description)]"
       v-model="description"
+      data-cy="register-company-desc"
     />
   </div>
 </template>

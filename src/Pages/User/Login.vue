@@ -9,6 +9,7 @@
           v-model="user.email"
           :rules="[rules.required(user.email)]"
           autofocus
+          data-cy="login-email"
         />
         <form-input :title="$t('common.password.label')" />
         <v-text-field
@@ -19,6 +20,7 @@
           :type="showPassword ? 'text' : 'password'"
           v-on:keyup.enter="login"
           outlined
+          data-cy="login-password"
         />
         <div class="d-flex justify-start ">
           <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
@@ -31,7 +33,7 @@
           <v-btn to="/signup" color="secondary" tile outlined text large>
             {{ $t('common.signup') }}
           </v-btn>
-          <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()">
+          <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()" data-cy="login">
             {{ $t('login.title') }}
           </v-btn>
         </div>
