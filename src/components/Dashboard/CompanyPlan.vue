@@ -1,28 +1,36 @@
 <template>
-  <g-card-outlined>
+  <v-card
+    class="pa-10 rounded-20"
+    color="bg"
+    outlined
+    style="border-color: #1a193c !important"
+    width="400"
+  >
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">
-        <sub-2 color="secondary" class="d-flex justify-center">
+        <h5 class="color-secondary d-flex justify-center">
           {{ $t('company.planCard.token', { quantity: 1 }) }}
-        </sub-2>
+        </h5>
         <div class="d-flex">
-          <sub-1 class="mr-2" color="primary">{{ $t('company.planCard.currency') }}</sub-1>
+          <h5 class="mr-2 color-primary">{{ $t('company.planCard.currency') }}</h5>
           <h1 class="h2-bold color-primary mt-2">
             {{ $t('company.planCard.price') }}
           </h1>
-          <span class="d-flex align-end color-primary">{{ $t('company.planCard.cents') }}</span>
+          <bdy-1 class="d-flex align-end" color="primary">{{ $t('company.planCard.cents') }}</bdy-1>
         </div>
+        <sub-1>{{ $t('howItWorks.forEachReport') }}</sub-1>
         <bdy-2 class="mt-2">
           <sub-2 color="secondary mr-1">
-            {{ $t('company.planCard.installments', { quantity: 3 }) }}
+            <!-- TODO: internacionalização de moeda -->
+            {{ $t('howItWorks.BRL.installments').toString() + ' x R$ ' + eachInstallment() }}
           </sub-2>
           {{ $t('company.planCard.paymentMethod') }}
         </bdy-2>
         <div class="mt-10">
           <IconText
-            v-for="(item, index) in getIconText()"
+            v-for="(item, index) in $t('howItWorks.pricing')"
             :key="index"
-            :icon="item.icon"
+            icon="mdi-check-circle"
             :text="item.text"
             type="bdy-2"
             class="color-cinza-lighten-1 mb-4"
@@ -32,12 +40,12 @@
           class="mt-6"
           style="height: 56px; width: 270px;"
           type="primary"
-          :label="$t('company.planCard.getStarted')"
+          :label="$t('home.postForFree')"
           to="/"
         />
       </div>
     </div>
-  </g-card-outlined>
+  </v-card>
 </template>
 
 <script>
@@ -59,17 +67,21 @@ export default {
         },
       ];
     },
+    eachInstallment() {
+      return (
+        parseFloat(this.$t('howItWorks.BRL.fullPrice')) /
+        parseFloat(this.$t('howItWorks.BRL.installments'))
+      )
+        .toFixed(2)
+        .toString();
+    },
   },
 };
 </script>
 
-
 <style>
 .theme--light.v-sheet--outlined {
   border: 1px solid #1a193c !important;
-}
-.v-application .bg {
-  border-color: #1a193c !important;
 }
 .rounded-20 {
   border-radius: 20px !important;

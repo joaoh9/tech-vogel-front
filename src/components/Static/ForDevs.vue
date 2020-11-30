@@ -1,14 +1,7 @@
 <template>
   <v-container class="d-flex align-center flex-column">
-    <h2 class="h2-bold color-secondary">{{ $t('common.howItWorks') }}</h2>
-    <h4>{{ $t('howItWorks.forCompanies') }}</h4>
+    <h4>{{ $t('devs.subtitle') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
-      <v-col cols="12" md="6">
-        <div class="d-flex align-center flex-column">
-          <v-img :src="HowItWorks" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
-          <v-img class="mt-4" :src="whatIsReport" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 400" />
-        </div>
-      </v-col>
       <v-col cols="12" md="6">
         <div v-for="(item, i) in getSteps()" :key="i">
           <v-row align="center" justify="center">
@@ -24,25 +17,31 @@
           </v-row>
         </div>
       </v-col>
+      <v-col cols="12" md="6">
+        <div class="d-flex align-center flex-column">
+          <v-img :src="devs" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
+          <v-img class="mt-4" :src="vogel" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 400" />
+        </div>
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import HowItWorks from 'Assets/how-it-works.svg';
-import whatIsReport from 'Assets/what-is-report.svg';
+import devs from 'Assets/devs.svg';
+import vogel from 'Assets/vogel.svg';
 
 export default {
-  name: 'HowItWorks',
+  name: 'devs',
   data() {
     return {
-      HowItWorks,
-      whatIsReport,
+      devs,
+      vogel,
     };
   },
   methods: {
     getSteps() {
-      return this.$t('howItWorks.steps');
+      return this.$t('devs.steps');
     },
     getMinWidth() {
       return window.innerWidth;

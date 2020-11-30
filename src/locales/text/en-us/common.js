@@ -14,6 +14,7 @@ export default {
     learnMore: 'Learn more',
     logout: 'Logout',
     from: 'From',
+    free: 'free',
     to: 'To',
     settings: 'Settings',
     dashboard: 'Dashboard',

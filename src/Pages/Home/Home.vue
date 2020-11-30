@@ -35,48 +35,75 @@
         </div>
       </v-img>
     </div>
-    <div class="my-6">
-      <HowItWorks />
-    </div>
-    <div class="pb-16">
-      <Report />
-    </div>
-    <div class="d-flex justify-center mb-10">
-      <PlanCard />
-    </div>
-    <div class="bg-color-secondary">
-      <MainJobs />
-    </div>
-    <div>
-      <AboutUs />
+    <div class="mx-md-16 md-4">
+      <div class="my-6">
+        <HowItWorks />
+      </div>
+      <div class="mx-md-n16 md-n4">
+        <v-card
+          color="secondary"
+          class="px-16 pt-4 pb-4"
+          flat
+          style="border-radius: 0px !important"
+        >
+          <div class="d-flex justify-center">
+            <h2 class="h2-bold-alternative color-light text-center my-12">
+              {{ $t('home.timeWasted') }}
+            </h2>
+          </div>
+        </v-card>
+      </div>
+      <div class="my-6">
+        <ForDevs />
+      </div>
+      <div class="d-flex justify-center flex-wrap mb-10">
+        <CompanyPlan class="mx-3 my-3" />
+        <DevsPlan class="mx-3 my-3" />
+      </div>
+      <div class="bg-color-secondary mx-md-n12 md-n4">
+        <MainJobs />
+      </div>
+      <div class="mt-10">
+        <AboutUs />
+      </div>
+      <div class="mt-10">
+        <TypesOfProgrammers />
+      </div>
+      <div class="mt-10">
+        <Questions />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import MainJobs from 'Components/Job/MainJobs';
 import homeBg from 'Assets/home-bg-op-20c.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
-import PlanCard from 'Components/Dashboard/PlanCard';
-import Report from 'Components/Static/Report';
+import ForDevs from 'Components/Static/ForDevs';
+import CompanyPlan from 'Components/Dashboard/CompanyPlan';
+import DevsPlan from 'Components/Dashboard/DevsPlan';
 import AboutUs from 'Components/Static/AboutUs';
+import Questions from 'Components/Static/Questions.vue';
+import TypesOfProgrammers from 'Components/Static/TypesOfProgrammers.vue';
 
 export default {
   name: 'Home',
   components: {
     MainJobs,
-    PlanCard,
+    CompanyPlan,
+    DevsPlan,
+    ForDevs,
     HowItWorks,
-    Report,
     AboutUs,
+    Questions,
+    TypesOfProgrammers,
   },
   data() {
     return {
       homeBg,
     };
   },
-
 };
 </script>
 
