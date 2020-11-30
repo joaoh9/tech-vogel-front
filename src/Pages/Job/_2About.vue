@@ -6,6 +6,7 @@
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="description"
     />
+    {{ description }}
   </div>
 </template>
 
@@ -34,7 +35,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style>

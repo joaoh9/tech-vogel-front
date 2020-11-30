@@ -181,7 +181,7 @@ export default {
       await userController.update({ side: 22 });
       switch (this.currentStep) {
         case 0:
-          window.scroll(0);
+          window.scroll(0, 0);
           if (this.job_.title && this.job_.experienceLevel && this.job_.contractType) {
             this.currentStep++;
           } else {
@@ -189,7 +189,7 @@ export default {
           }
           break;
         case 1:
-          window.scroll(0);
+          window.scroll(0, 0);
           if (this.job_.description) {
             this.currentStep++;
           } else {
@@ -197,7 +197,7 @@ export default {
           }
           break;
         case 2:
-          window.scroll(0);
+          window.scroll(0, 0);
           for (const skill of Object.keys(this.job_.skills)) {
             const skillValidated = this.validateSkills(skill);
             if (skillValidated !== true) {
@@ -207,7 +207,7 @@ export default {
           this.currentStep++;
           break;
         case 3:
-          window.scroll(0);
+          window.scroll(0, 0);
           if (this.job_.salary.timeFrame && this.job_.salary.min) {
             this.previewJob();
           } else {
