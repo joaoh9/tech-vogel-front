@@ -2,8 +2,8 @@
   <div>
     <v-expansion-panels class="mt-6">
       <v-expansion-panel
-        class="bs-none my-2 rounded-lg"
-        style="background-color: #fcfcff;"
+        class="bs-primary rounded"
+        style="background-color: #fcfcff"
         v-for="(item, i) in getFAQ()"
         :key="i"
       >
@@ -11,7 +11,7 @@
           <h6 class="color-primary mb-0">{{ item.question }}</h6>
         </v-expansion-panel-header>
         <v-expansion-panel-content class="my-3">
-          <bdy-1 color="dark" v-for="(text, j) in item.answer.split('\n')" :key="j" class="mb-2" >
+          <bdy-1 color="dark" v-for="(text, j) in item.answer.split('\n')" :key="j" class="mb-2">
             {{ text }}
           </bdy-1>
         </v-expansion-panel-content>
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'FAQComponent',
   props: {
@@ -36,6 +35,15 @@ export default {
     },
   },
 };
-
 </script>
-<style></style>
+<style>
+.v-expansion-panel {
+  bottom: inherit;
+}
+.v-expansion-panel::after {
+  bottom: inherit !important;
+}
+.v-expansion-panel::before {
+  bottom: inherit !important;
+}
+</style>

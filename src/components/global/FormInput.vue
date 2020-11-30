@@ -9,7 +9,7 @@
       <span v-if="required" class="color-primary ml-1">*</span>
     </h6>
     <div class="mb-3">
-      <capt-1>{{ description }}</capt-1>
+      <capt-1 color="cinza-lighten-1">{{ description }}</capt-1>
     </div>
   </div>
 </template>

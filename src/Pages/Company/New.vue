@@ -106,7 +106,7 @@ export default {
         this.$toast.success(this.$t('toast.success.savedCompany'));
 
         this.$router.push({
-          path: '/jobs/new', // TODO: mudar pra pricing depois
+          path: '/jobs/new',
         });
       } catch (e) {
         this.$toast.error(this.$t('toast.error.saveCompany'));

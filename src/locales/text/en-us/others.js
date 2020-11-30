@@ -14,11 +14,24 @@ export default {
     title: 'How It Works',
     forCompanies: 'For companies',
     step: {
-      '1': 'Log in to your account, fill your job description and press "post Job”',
-      '2':
-        'Your job will be running in our platform for 15 days collecting as many applications as possible',
-      '3': 'Receive your report with the fitest Devs for your Job.',
-      '4': 'Start your inside process and hire the best Dev for your project growth!',
+      '1': {
+        title: 'Post your job',
+        description: 'Log in to your account, fill your job description and press "post Job"',
+      },
+      '2': {
+        title: 'Collect applications',
+        description:
+          'Your job will be running in our platform por 15 days collecting as many applications  as possible',
+      },
+      '3': {
+        title: 'Receive reports',
+        description: 'Receive your report with the fittest devs for your job.',
+      },
+      '4': {
+        title: 'Hire the best devs!',
+        description:
+          'Start your inside process and hire the best developer for your project growth!',
+      },
     },
   },
   report: {

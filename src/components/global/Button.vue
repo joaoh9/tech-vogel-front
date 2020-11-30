@@ -11,7 +11,7 @@
     :max-width="maxwidth"
     class="button-text px-7"
   >
-    <v-icon left>
+    <v-icon v-if="icon" left>
       {{ icon }}
     </v-icon>
     {{ label }}
@@ -48,7 +48,7 @@
   >
     {{ label }}
 
-    <v-icon right>
+    <v-icon v-if="icon" right>
       {{ icon }}
     </v-icon>
   </v-btn>

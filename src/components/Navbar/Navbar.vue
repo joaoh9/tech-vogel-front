@@ -1,6 +1,6 @@
 <template>
   <div class="mx-16">
-    <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile class="mx-16 mt-4">
+    <v-app-bar app :color="getBgColor()" elevation="0" tile class="mx-16 mt-4">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.mobile"
         @click="drawer = true"

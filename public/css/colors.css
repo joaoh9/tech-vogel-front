@@ -167,3 +167,13 @@
 .bg-color-cinza-border {
   background-color: #9c9c9e;
 }
+
+.secondary-gradient {
+  background: linear-gradient(
+      231.9deg,
+      rgba(0, 41, 77, 0.375) 0%,
+      rgba(67, 54, 147, 0.375) 71.67%
+    ),
+    #1a193c;
+  border-radius: 6px;
+}

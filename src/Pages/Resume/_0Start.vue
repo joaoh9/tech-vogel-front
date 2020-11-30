@@ -8,21 +8,8 @@
         @click="$emit('manual-register', 'manual-register')"
         :label="$t('resume.register.start.registerManually.title')"
       />
-      <g-btn
-        type="primary"
-        :minwidth="300"
-        class="mt-4"
-        disabled
-        :loading="loading"
-        :label="$t('resume.register.start.linkGithub.title')"
-        @click="getRepoInfo()"
-      />
-      <g-btn
-        type="disabled"
-        :minwidth="300"
-        class="mt-4"
-        :label="$t('resume.register.start.linkLinkedIn.title')"
-      />
+      <overline class="mt-10" color="primary">{{ $t('common.comingSoon') }}</overline>
+      <sub-2 color="primary">GitHub and LinkedIn integration</sub-2>
     </div>
     <slot />
   </div>
@@ -47,7 +34,7 @@ export default {
       try {
         await githubOauthController.getRepoInfo();
         const githubInfo = await githubOauthController.getUserInfo();
-        this.$emit('update-profile-picture')
+        this.$emit('update-profile-picture');
 
         this.loading = false;
         this.$toast.success(this.$t('toast.success.githubRetrieve'));

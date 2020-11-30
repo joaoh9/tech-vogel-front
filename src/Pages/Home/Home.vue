@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-color-bg ">
+  <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column">
       <v-img :src="homeBg" style="min-height:100vh" class="bg-color-secondary mt-n16">
         <div
@@ -41,15 +41,11 @@
     <div class="pb-16">
       <Report />
     </div>
+    <div class="d-flex justify-center mb-10">
+      <PlanCard />
+    </div>
     <div class="bg-color-secondary">
-      <div class="mx-12 my-10 d-flex justify-center flex-wrap">
-        <div class="my-12">
-          <div v-for="(job, i) in jobs" :key="i" class="color-white">
-            <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
-            <JobCardMobile :job="job" class="mb-4" v-else />
-          </div>
-        </div>
-      </div>
+      <MainJobs />
     </div>
     <div>
       <AboutUs />
@@ -58,54 +54,29 @@
 </template>
 
 <script>
-import JobController from 'Controllers/job';
-import CompanyController from 'Controllers/company';
-import JobCard from 'Components/Job/JobCard';
-import JobCardMobile from 'Components/Job/JobCardMobile';
+
+import MainJobs from 'Components/Job/MainJobs';
 import homeBg from 'Assets/home-bg-op-20c.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
+import PlanCard from 'Components/Dashboard/PlanCard';
 import Report from 'Components/Static/Report';
 import AboutUs from 'Components/Static/AboutUs';
 
 export default {
   name: 'Home',
   components: {
-    JobCardMobile,
+    MainJobs,
+    PlanCard,
     HowItWorks,
-    JobCard,
     Report,
     AboutUs,
   },
-  mounted() {
-    this.getJobs();
-  },
   data() {
     return {
-      jobs: [],
       homeBg,
     };
   },
-  methods: {
-    async getJobs() {
-      const jobController = new JobController();
-      try {
-        this.jobs = await jobController.getAll({ limit: 6 });
-        await this.getCompanyInfo();
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveJob'));
-      }
-    },
-    async getCompanyInfo() {
-      const companyController = new CompanyController();
-      try {
-        for (let i = 0; i < this.jobs.length; i++) {
-          this.jobs[i].company = await companyController.getById(this.jobs[i].companyId);
-        }
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveCompanyInfo'));
-      }
-    },
-  },
+
 };
 </script>
 
