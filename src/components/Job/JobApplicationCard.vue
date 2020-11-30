@@ -92,6 +92,7 @@ export default {
       apply: false,
       showConfirmationDialog2: false,
       showConfirmationDialog1: false,
+      unloggedUser: false,
     };
   },
   methods: {
@@ -122,10 +123,20 @@ export default {
     },
     getApplicationButtonType() {
       const userController = new UserController();
-      const userInfo = userController.decodeUserToken();
-      return userInfo.side === 2 ? 'disabled' : 'primary';
+      try {
+        const userInfo = userController.decodeUserToken();
+        return userInfo.side === 2 ? 'disabled' : 'primary';
+      } catch (e) {
+        if (e.message == 'Invalid token specified') {
+          this.unloggedUser = true;
+          return 'primary';
+        }
+      }
     },
     async applyForJob() {
+      if (this.unloggedUser) {
+        this.$router.push('/signup');
+      }
       const jobController = new JobController();
       const userController = new UserController();
       const userInfo = userController.decodeUserToken();

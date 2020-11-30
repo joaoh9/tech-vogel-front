@@ -56,12 +56,24 @@
       <div class="my-6">
         <ForDevs />
       </div>
-      <div class="d-flex justify-center flex-wrap mb-10">
-        <CompanyPlan class="mx-3 my-3" />
-        <DevsPlan class="mx-3 my-3" />
+      <div class="d-flex align-center flex-column flex-wrap">
+        <h2 class="h2-bold color-secondary">{{ $t('common.ourPricing') }}</h2>
+        <h5 class="h5 mt-4 color-cinza-lighten-1">
+          {{ $t('common.startPostingJobsForFreeToday') }}
+        </h5>
+        <div class="d-flex mt-14 justify-center flex-wrap mb-10">
+          <CompanyPlan class="mx-3 my-3" />
+          <DevsPlan class="mx-3 my-3" />
+        </div>
       </div>
-      <div class="bg-color-secondary mx-md-n12 md-n4">
-        <MainJobs />
+      <div class="bg-color-secondary mx-md-n16" style="margin-top: -268px">
+        <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
+          <h2 class="h2-bold mt-4 color-light">{{ $t('common.areYouLookingForAJob') }}</h2>
+          <h5 class="h5 mt-4 color-light">
+            {{ $t('common.freedomWork') }}
+          </h5>
+          <MainJobs />
+        </div>
       </div>
       <div class="mt-10">
         <AboutUs />

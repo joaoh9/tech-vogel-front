@@ -4,7 +4,7 @@
     color="bg"
     outlined
     style="border-color: #1a193c !important"
-    width="400"
+    width="375"
   >
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">
@@ -41,7 +41,7 @@
           style="height: 56px; width: 270px;"
           type="primary"
           :label="$t('home.postForFree')"
-          to="/"
+          to="/signup"
         />
       </div>
     </div>

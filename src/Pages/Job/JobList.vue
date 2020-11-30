@@ -25,6 +25,8 @@ export default {
   name: 'JobDescription',
   mounted() {
     this.getJobs();
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
   },
   props: {
     job: Object,

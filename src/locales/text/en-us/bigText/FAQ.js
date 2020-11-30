@@ -12,10 +12,6 @@ export default {
         'No, Tech Vogel does not take part at any relation between users. Our platform is for connections only.',
     },
     {
-      question: 'What are data bases and why is it important to list on my job?',
-      answer: 'TODO',
-    },
-    {
       question:
         'Does Tech Vogel interfeer with the payment process between the company and the professional ?',
       answer:

@@ -6,7 +6,11 @@
       <v-col cols="12" md="6">
         <div class="d-flex align-center flex-column">
           <v-img :src="HowItWorks" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
-          <v-img class="mt-4" :src="whatIsReport" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 400" />
+          <v-img
+            class="mt-4"
+            :src="whatIsReport"
+            :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 400"
+          />
         </div>
       </v-col>
       <v-col cols="12" md="6">
@@ -18,7 +22,7 @@
               </v-btn>
             </v-col>
             <v-col>
-              <h5 class="h5-bold">{{ item.title }}</h5>
+              <h5 class="h5-bold color-secondary">{{ item.title }}</h5>
               <bdy-1>{{ item.description }}</bdy-1>
             </v-col>
           </v-row>

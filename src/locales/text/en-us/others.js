@@ -5,10 +5,10 @@ export default {
   techVogel: 'Tech Vogel',
   home: {
     title1: 'Find remote',
-    title2: '<programmers/>',
+    title2: '<developer/>',
     title3: 'for your company!',
     subtitle1: 'Get your projects off the ground with the help of the',
-    subtitle2: 'programmers that best fit your needs!',
+    subtitle2: 'developer that best fit your needs!',
     timeWasted: 'No more time wasted selecting hundreds of CVs!',
     postForFree: 'Post for free',
     startApplying: 'Start applying',

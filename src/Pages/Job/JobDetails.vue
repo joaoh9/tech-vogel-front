@@ -33,16 +33,6 @@
             <v-card color="bg" :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-primary pa-6'">
               <SkillPresentation :skills="job.skills" />
             </v-card>
-            <div class="d-flex align-center justify-center">
-              <span v-for="(item, index) in getIcons()" :key="index" class="mx-4 mt-6">
-                <v-avatar color="orange" size="40">
-                  <v-icon color="white">
-                    {{ item.icon }}
-                  </v-icon>
-                </v-avatar>
-                {{ item.text }}
-              </span>
-            </div>
           </div>
           <h4 class="h4-bold-alternative">Job Description</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.description"></div>
@@ -171,22 +161,6 @@ export default {
           job: this.job,
         },
       });
-    },
-    currencyConverter() {
-      return this.$t(`dictionary.currency.${this.selectedJob.salary.currency}`);
-    },
-    getJobInformation() {
-      return (
-        this.$n(`${this.selectedJob.salary.min}`, 'currency', this.currencyConverter()) +
-        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.selectedJob.salary.timeFrame}`)}`
-      );
-    },
-    getIcons() {
-      return [
-        { icon: 'mdi-currency-usd', text: this.getJobInformation()},
-        { icon: 'mdi-clock', text: this.$t(`enums.contractType.${this.selectedJob.contractType}`) },
-        { icon: 'mdi-message-outline', text: this.$t('skills.dictionary.techSkills.javaScript') },
-      ];
     },
   },
 };
