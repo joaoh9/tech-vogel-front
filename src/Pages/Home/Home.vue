@@ -1,7 +1,7 @@
 <template>
   <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column">
-      <v-img :src="homeBg" style="min-height:100vh" class="bg-color-secondary mt-n16">
+      <v-img :src="homeBg" style="min-height: 100vh" class="bg-color-secondary mt-n16">
         <div
           :style="
             `margin-top: 156px; ${

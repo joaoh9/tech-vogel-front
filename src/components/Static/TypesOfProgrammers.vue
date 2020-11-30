@@ -6,7 +6,6 @@
         <v-icon x-small color="primary">mdi-brightness-1</v-icon> {{ item }}
       </h6>
     </div>
-    <capt-1>{{ $t('typesOfProgrammers.more') }}</capt-1>
   </div>
 </template>
 

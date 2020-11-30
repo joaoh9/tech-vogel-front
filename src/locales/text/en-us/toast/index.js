@@ -40,6 +40,8 @@ export default {
     info: {
       sessionExpired: 'Your session has expired. Please login again',
       retrieveProfilePicture: 'Error when retrieving profile picture',
+      senior: 'Attention! You may receive less applications for a senior position!',
+      // senior: 'Attention! There might not be that many applications for a senior job',
     },
     warning: {
       fillAll: 'You should fill all required information!',

@@ -5,7 +5,7 @@ export default {
   techVogel: 'Tech Vogel',
   home: {
     title1: 'Find remote',
-    title2: '<developer/>',
+    title2: '<developers/>',
     title3: 'for your company!',
     subtitle1: 'Get your projects off the ground with the help of the',
     subtitle2: 'developer that best fit your needs!',
@@ -28,7 +28,7 @@ export default {
     },
   },
   typesOfProgrammers: {
-    title: 'What types of developers are there?',
+    title: 'Examples of developers can you find here',
     data: [
       'Frontend Developer',
       'Backend Developer',
