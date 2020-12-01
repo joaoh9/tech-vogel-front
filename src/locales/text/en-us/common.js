@@ -49,7 +49,7 @@ export default {
     minimum: 'Minimum',
     characters: 'Characters',
     finish: 'I\'m done!',
-    copywright: '©2020 Tech Vogel. All rights reserved.',
+    copyright: '©2020 Tech Vogel. All rights reserved.',
     termsAndConditions: 'Terms and conditions',
     termsOfService: 'Terms of service',
     privacyPolicy: 'Privacy policy',
