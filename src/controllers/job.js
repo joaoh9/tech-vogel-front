@@ -24,8 +24,14 @@ export default class JobController {
   async getAll({ limit = 15, skip = 0 } = {}) {
     const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get('/v1/jobs' + query);
-    return data;
+    const { data: jobs } = await axios.get('/v1/jobs' + query);
+
+    const companyController = new CompanyController();
+    for (let i = 0; i < jobs.length; i++) {
+      jobs[i].company = await companyController.getById(jobs[i].companyId);
+    }
+
+    return jobs;
   }
 
   async getCompanyJobs(companyId, { limit = 15, skip = 0 } = {}) {
@@ -68,6 +74,13 @@ export default class JobController {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.post(`/v1/jobs/${jobId}/apply/${userId}`);
+    return data;
+  }
+
+  async getReport(jobId) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const { data } = await axios.post(`/v1/jobs/${jobId}/report`);
     return data;
   }
 }

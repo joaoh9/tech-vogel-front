@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-color-bg ">
+  <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column">
-      <v-img :src="homeBg" style="min-height:100vh" class="bg-color-secondary mt-n16">
+      <v-img :src="homeBg" style="min-height: 100vh" class="bg-color-secondary mt-n16">
         <div
           :style="
             `margin-top: 156px; ${
@@ -35,76 +35,86 @@
         </div>
       </v-img>
     </div>
-    <div class="my-6">
-      <HowItWorks />
-    </div>
-    <div class="pb-16">
-      <Report />
-    </div>
-    <div class="bg-color-secondary">
-      <div class="mx-12 my-10 d-flex justify-center flex-wrap">
-        <div class="my-12">
-          <div v-for="(job, i) in jobs" :key="i" class="color-white">
-            <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
-            <JobCardMobile :job="job" class="mb-4" v-else />
+    <div class="mx-md-16 md-4">
+      <div class="my-6">
+        <HowItWorks />
+      </div>
+      <div class="mx-md-n16 md-n4">
+        <v-card
+          color="secondary"
+          class="px-16 pt-4 pb-4"
+          flat
+          style="border-radius: 0px !important"
+        >
+          <div class="d-flex justify-center">
+            <h2 class="h2-bold-alternative color-light text-center my-12">
+              {{ $t('home.timeWasted') }}
+            </h2>
           </div>
+        </v-card>
+      </div>
+      <div class="my-6">
+        <ForDevs />
+      </div>
+      <div class="d-flex align-center flex-column flex-wrap">
+        <h2 class="h2-bold color-secondary">{{ $t('common.ourPricing') }}</h2>
+        <h5 class="h5 mt-4 color-cinza-lighten-1">
+          {{ $t('common.startPostingJobsForFreeToday') }}
+        </h5>
+        <div class="d-flex mt-14 justify-center flex-wrap mb-10">
+          <CompanyPlan class="mx-3 my-3" />
+          <DevsPlan class="mx-3 my-3" />
         </div>
       </div>
-    </div>
-    <div>
-      <AboutUs />
+      <div class="bg-color-secondary mx-md-n16" style="margin-top: -268px">
+        <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
+          <h2 class="h2-bold mt-4 color-light">{{ $t('common.areYouLookingForAJob') }}</h2>
+          <h5 class="h5 mt-4 color-light">
+            {{ $t('common.freedomWork') }}
+          </h5>
+          <MainJobs />
+        </div>
+      </div>
+      <div class="mt-10">
+        <AboutUs />
+      </div>
+      <div class="mt-10">
+        <TypesOfProgrammers />
+      </div>
+      <div class="mt-10">
+        <Questions />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import JobController from 'Controllers/job';
-import CompanyController from 'Controllers/company';
-import JobCard from 'Components/Job/JobCard';
-import JobCardMobile from 'Components/Job/JobCardMobile';
+import MainJobs from 'Components/Job/MainJobs';
 import homeBg from 'Assets/home-bg-op-20c.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
-import Report from 'Components/Static/Report';
+import ForDevs from 'Components/Static/ForDevs';
+import CompanyPlan from 'Components/Dashboard/CompanyPlan';
+import DevsPlan from 'Components/Dashboard/DevsPlan';
 import AboutUs from 'Components/Static/AboutUs';
+import Questions from 'Components/Static/Questions.vue';
+import TypesOfProgrammers from 'Components/Static/TypesOfProgrammers.vue';
 
 export default {
   name: 'Home',
   components: {
-    JobCardMobile,
+    MainJobs,
+    CompanyPlan,
+    DevsPlan,
+    ForDevs,
     HowItWorks,
-    JobCard,
-    Report,
     AboutUs,
-  },
-  mounted() {
-    this.getJobs();
+    Questions,
+    TypesOfProgrammers,
   },
   data() {
     return {
-      jobs: [],
       homeBg,
     };
-  },
-  methods: {
-    async getJobs() {
-      const jobController = new JobController();
-      try {
-        this.jobs = await jobController.getAll({ limit: 6 });
-        await this.getCompanyInfo();
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveJob'));
-      }
-    },
-    async getCompanyInfo() {
-      const companyController = new CompanyController();
-      try {
-        for (let i = 0; i < this.jobs.length; i++) {
-          this.jobs[i].company = await companyController.getById(this.jobs[i].companyId);
-        }
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveCompanyInfo'));
-      }
-    },
   },
 };
 </script>

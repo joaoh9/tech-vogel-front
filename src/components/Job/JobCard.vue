@@ -25,8 +25,6 @@
 <script>
 import IconText from 'Components/Interface/IconText';
 
-import CompanyController from 'Controllers/company';
-
 import DateHelper from 'Helpers/date';
 
 export default {
@@ -38,14 +36,6 @@ export default {
   },
   components: {
     IconText,
-  },
-  mounted() {
-    this.getCompanyInfo();
-  },
-  data() {
-    return {
-      company: {},
-    };
   },
   methods: {
     goToJobDetails() {
@@ -69,7 +59,7 @@ export default {
       return [
         {
           icon: 'mdi-office-building',
-          text: this.company.name,
+          text: this.job.company.name,
         },
         {
           icon: 'mdi-briefcase-variant-outline',
@@ -77,14 +67,7 @@ export default {
         },
       ];
     },
-    async getCompanyInfo() {
-      const companyController = new CompanyController();
-      try {
-        this.company = await companyController.getById(this.job.companyId);
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.getCompany'));
-      }
-    },
+
     getDaysAgo() {
       return DateHelper.format(new Date(this.job.createdAt));
     },

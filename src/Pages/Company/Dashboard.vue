@@ -2,7 +2,15 @@
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
       <UserCard :user="user" v-if="user" :key="loaded.user" :picture="logo" />
-      <g-btn to="/jobs/new" class="mt-4" type="primary" block xl :label="$t('common.postAJob')" />
+      <g-btn
+        to="/jobs/new"
+        class="mt-4"
+        type="primary"
+        block
+        xl
+        :label="$t('common.postAJob')"
+        :icon="'mdi-plus-circle-outline'"
+      />
       <g-btn
         class="mt-4"
         type="disabled"

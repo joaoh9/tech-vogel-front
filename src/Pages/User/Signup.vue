@@ -8,8 +8,9 @@
           block
           v-if="!_email"
           type="disabled"
-          :title="$t('common.comingSoon')"
-          :label="$t('common.comingSoon')"
+          :title="`${$t('common.loginGithub')} (${$t('common.comingSoon')})`"
+          :label="`${$t('common.loginGithub')} (${$t('common.comingSoon')})`"
+          icon="fab fa-github"
         />
 
         <!-- <g-btn

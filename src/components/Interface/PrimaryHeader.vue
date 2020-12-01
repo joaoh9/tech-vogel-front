@@ -1,8 +1,9 @@
 <template>
   <v-card
+    :color="color || 'primary'"
     class="px-16 py-12"
     flat
-    style="border-radius: 0px !important; background: linear-gradient(0deg, rgba(255, 146, 0, 0.7), rgba(255, 146, 0, 0.7)), linear-gradient(112.55deg, #FFD500 0%, rgba(255, 213, 0, 0.5) 72.92%), #FF9200;"
+    style="border-radius: 0px !important;"
   >
     <v-row v-if="cols">
       <v-col cols="12" md="6">
@@ -49,6 +50,10 @@ export default {
     subtitle: String,
     description: String,
     cols: Boolean,
+    color: {
+      type: String,
+      default: 'primary',
+    },
   },
 };
 </script>

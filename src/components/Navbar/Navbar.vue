@@ -1,21 +1,21 @@
 <template>
-  <div class="mx-16">
-    <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile class="mx-16 mt-4">
+  <div>
+    <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile class="px-n12"  height="88">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.mobile"
         @click="drawer = true"
-        :color="isHome() ? 'bg' : 'dark'"
+        color="bg"
         class="mx-16"
       />
       <v-btn text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
-          <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
+          <v-img contain height="60" width="1" :src="logoHome" />
         </v-avatar>
       </v-btn>
       <g-btn
         class="cursor-pointer mx-n2 button-text text-buttons"
         type="text"
-        :color="isHome() ? 'bg' : 'dark'"
+        color="bg"
         v-for="(item, index) in getTextButtons()"
         :key="index"
         @click="item.goTo()"
@@ -24,7 +24,13 @@
 
       <v-spacer />
 
-      <v-btn dataCy="nav-login" to="/login" class="mx-4 py-5" :color="isHome() ? 'white' : 'dark'" text>
+      <v-btn
+        dataCy="nav-login"
+        to="/login"
+        class="mx-4 py-5"
+        color="white"
+        text
+      >
         {{ $t('common.login') }}
       </v-btn>
 

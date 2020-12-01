@@ -24,6 +24,7 @@ export default {
       registeredCompany: 'You must have a registered company in order to post a job!',
       githubRetrieve: 'Something went wrong when retrieving your github data',
       userOrPassword: 'Please insert a correct email or password',
+      notAllowed: 'You are not allowed to access this page',
       loginFailed: 'Something went wrong on your login',
       somethingWrong: 'Something went wrong. Try again later',
     },
@@ -39,6 +40,8 @@ export default {
     info: {
       sessionExpired: 'Your session has expired. Please login again',
       retrieveProfilePicture: 'Error when retrieving profile picture',
+      senior: 'Attention! You may receive less applications for a senior position!',
+      // senior: 'Attention! There might not be that many applications for a senior job',
     },
     warning: {
       fillAll: 'You should fill all required information!',

@@ -13,6 +13,7 @@
               :label="$t('signup.buttons.createCompany')"
               @click="updateCompanySide()"
               block
+              data-cy="side-company"
             />
 
             <g-btn
@@ -21,6 +22,7 @@
               :label="$t('signup.buttons.createCV')"
               @click="updateUserSide()"
               block
+              data-cy="side-pro"
             />
           </div>
         </div>

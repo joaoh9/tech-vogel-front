@@ -15,6 +15,7 @@
       :rules="[rules.min(3, name), rules.required(name)]"
       v-model="name"
       @input="$emit('company-name', name)"
+      data-cy="register-company-name"
     />
 
     <form-input :title="$t('company.new.aboutYourCompany.title')" required />
@@ -54,6 +55,8 @@
       v-model="twitter"
       @input="$emit('twitter', twitter)"
       outlined
+      :rules="[rules.required(description)]"
+      data-cy="register-company-desc"
     />
   </div>
 </template>
@@ -75,10 +78,10 @@ export default {
       logo: null,
       name: '',
       description: '',
-      website: '',
-      linkedin: '',
-      instagram: '',
-      twitter: '',
+      website: this.$t('common.links.webpage.placeholder'),
+      linkedin: this.$t('common.links.linkedin.placeholder'),
+      instagram: this.$t('common.links.instagram.placeholder'),
+      twitter: this.$t('common.links.twitter.placeholder'),
       rules: {
         min: () => true,
         required: () => true,

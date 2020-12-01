@@ -1,5 +1,6 @@
 {
   "YEARS": "Yearly", 
   "MONTHS": "Monthly", 
+  "WEEKS": "Weekly",
   "HOURS": "Hourly"
 }

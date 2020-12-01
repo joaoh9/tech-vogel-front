@@ -59,6 +59,7 @@ import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 export default {
   name: 'JobDescription',
   props: {
+    selectedJob: Object,
     confirm: Boolean,
     job_: Object,
     company_: Object,

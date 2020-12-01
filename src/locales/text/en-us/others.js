@@ -5,21 +5,105 @@ export default {
   techVogel: 'Tech Vogel',
   home: {
     title1: 'Find remote',
-    title2: '<programmers/>',
+    title2: '<developers/>',
     title3: 'for your company!',
     subtitle1: 'Get your projects off the ground with the help of the',
-    subtitle2: 'programmers that best fit your needs!',
+    subtitle2: 'developer that best fit your needs!',
+    timeWasted: 'No more time wasted selecting hundreds of CVs!',
+    postForFree: 'Post for free',
+    startApplying: 'Start applying',
+  },
+  questions: {
+    reachUs: {
+      title: 'Reach us',
+      description: 'Tell us your company name, email and question via our contact form.',
+      buttonText: 'WRITE QUESTION',
+      click: 'https://forms.gle/1qZm7PDGZPeUQuW87',
+    },
+    call: {
+      title: 'Schedule a call',
+      description: 'Select a date and time for a one on one video call with us.',
+      buttonText: 'BOOK NOW',
+      click: 'https://forms.gle/1qZm7PDGZPeUQuW87', // TODO: atualizar
+    },
+  },
+  typesOfProgrammers: {
+    title: 'Examples of developers can you find here',
+    data: [
+      'Frontend Developer',
+      'Backend Developer',
+      'Full Stack Developer',
+      'Mobile Developer',
+      'Data Scientist',
+      'Devops',
+      'Blockchain Developer',
+    ],
+    more: 'With many more to come!',
   },
   howItWorks: {
     title: 'How It Works',
     forCompanies: 'For companies',
-    step: {
-      '1': 'Log in to your account, fill your job description and press "post Job”',
-      '2':
-        'Your job will be running in our platform for 15 days collecting as many applications as possible',
-      '3': 'Receive your report with the fitest Devs for your Job.',
-      '4': 'Start your inside process and hire the best Dev for your project growth!',
+    steps: [
+      {
+        title: 'Post your job',
+        description: 'Log in to your account, fill your job description and press "post Job"',
+      },
+      {
+        title: 'Collect applications',
+        description:
+          'Your job will be running in our platform por 15 days collecting as many applications  as possible',
+      },
+      {
+        title: 'Receive reports',
+        description: 'Receive your report with the fittest devs for your job.',
+      },
+      {
+        title: 'Hire the best devs!',
+        description:
+          'Start your inside process and hire the best developer for your project growth!',
+      },
+    ],
+    pricing: [
+      { text: 'Post your job for free' },
+      { text: 'Get your report in 15 working days' },
+      { text: 'Know the 3 fittest applicants for your job' },
+      { text: 'Get access to our toolset to help you with remote hiring' },
+    ],
+    forEachReport: 'For each report',
+    BRL: {
+      fullPrice: '499.99',
+      installments: '3',
     },
+  },
+  devs: {
+    subtitle: 'For developers',
+    steps: [
+      {
+        title: 'Find the best Job',
+        description:
+          'We are freedom lovers so all the jobs posted at Tech Vogel are for remote positions, so search and find the one that fits you the best! ',
+      },
+      {
+        title: 'Sign up or log in ',
+        description:
+          'Get your Vogels so you can apply to Jobs! Don\'t worry is fast and you can show exactly who you are! ',
+      },
+      {
+        title: 'Apply for the best job',
+        description:
+          'After registering and signing up you can browse for the best jobs and get to work remotely. \nPs: we don\'t charge any fee from you!',
+      },
+      {
+        title: 'Get selected! ',
+        description: 'Be part of the most liberating work model and code wherever you want!',
+      },
+    ],
+    pricing: [
+      { text: 'Save money by working wherever you please', comingSoon: false },
+      { text: 'Apply to jobs that fit your skills ', comingSoon: false },
+      { text: 'Get to know the company hiring', comingSoon: false },
+      { text: 'Gain access to our Discord group', comingSoon: true },
+    ],
   },
   report: {
     title: 'How can a report help me?',
