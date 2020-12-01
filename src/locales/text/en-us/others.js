@@ -118,6 +118,7 @@ export default {
   rules: {
     nameTooShort: 'Please write your full name',
     wrongFormatEmail: 'Email with wrong format!',
+    wrongFormatPassword: 'Password with wrong format!',
     lessThanXCharacters: 'Please write at least X characters',
     greaterThanXCharacters: 'Please write up to maximum X characters',
     letterOrNumber: 'Please write only letters or numbers',

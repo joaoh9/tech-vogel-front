@@ -43,6 +43,13 @@ class Rules {
     return re.test(v) || this.localeObj['rules']['wrongFormatEmail'];
   }
 
+  // If necessary
+  password(v) {
+    const re = /[0-9a-zA-Z]{6,}/;
+
+    return re.test(v) || this.localeObj['rules']['wrongFormatPassword'];
+  }
+
   min(min, v) {
     return v.length >= min || this.localeObj['rules']['lessThanXCharacters'].replace('X', min);
   }

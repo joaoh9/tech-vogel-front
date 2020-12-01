@@ -52,12 +52,13 @@
         <form-input :title="$t('common.password.label')" />
         <v-text-field
           data-cy="password"
-          :rules="[rules.min(8, user.password)]"
+          :rules="rules.min(6, user.password)"
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
           :type="showPassword ? 'text' : 'password'"
           outlined
           v-model="user.password"
+          :error-messages="localRules.passwordRequired"
         />
 
         <form-input :title="$t('common.confirmPassword.label')" />
@@ -69,6 +70,7 @@
           :type="showConfirmPassword ? 'text' : 'password'"
           outlined
           v-model="user.confirmPassword"
+          :error-messages="localRules.passwordRequired"
         />
 
         <v-checkbox
@@ -146,6 +148,7 @@ export default {
       localRules: {
         emailAlreadyRegistered: null,
         termsAndConditions: null,
+        passwordRequired: null,
       },
       user: {
         name: '',
@@ -180,6 +183,18 @@ export default {
         this.localRules.emailAlreadyRegistered = '';
       }
 
+      let validPassword = this.user.password;
+      if (!validPassword) {
+        this.localRules.passwordRequired = this.$t('common.passwordRequired');
+      } else {
+        validPassword = this.rules.min(6, this.user.password) === true;
+        this.localRules.passwordRequired = this.rules.min(6, this.user.password);
+      }
+
+      if (validPassword) {
+        this.localRules.passwordRequired = '';
+      }
+
       const nameRuleOk = this.rules.min(3, this.user.name) === true;
       if (!nameRuleOk) {
         this.user.name = '';
@@ -193,7 +208,6 @@ export default {
 
       const equalPassword =
         this.rules.equalPassword(this.user.password, this.user.confirmPassword) === true;
-      console.log(equalPassword);
       if (!equalPassword) {
         this.$toast.warning(this.$t('toast.warning.passwordValidation'));
       }
