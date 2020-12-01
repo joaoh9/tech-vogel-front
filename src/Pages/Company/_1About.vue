@@ -55,7 +55,6 @@
       v-model="twitter"
       @input="$emit('twitter', twitter)"
       outlined
-      :rules="[rules.required(description)]"
       data-cy="register-company-desc"
     />
   </div>
@@ -84,6 +83,7 @@ export default {
       twitter: this.$t('common.links.twitter.placeholder'),
       rules: {
         min: () => true,
+        max: () => true,
         required: () => true,
       },
     };

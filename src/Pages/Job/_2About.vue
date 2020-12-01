@@ -5,18 +5,12 @@
       v-model="description"
       :placeholder="$t('job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
-      :rules="[
-        rules.required(description),
-        rules.min(10, description),
-        rules.max(1000, description),
-      ]"
     />
   </div>
 </template>
 
 <script>
 import { VueEditor } from 'vue2-editor';
-
 export default {
   name: 'NewJob2',
   props: {
@@ -31,11 +25,6 @@ export default {
   data() {
     return {
       description: '',
-      rules: {
-        required: () => true,
-        min: () => true,
-        max: () => true,
-      },
     };
   },
   watch: {

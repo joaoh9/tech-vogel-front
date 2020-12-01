@@ -78,6 +78,8 @@ import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
 import Settings from '@config';
 
+import RulesHelper from 'Helpers/rules';
+
 export default {
   name: 'NewJob',
   props: {
@@ -98,6 +100,8 @@ export default {
     Stepper,
   },
   mounted() {
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+
     if (this.job) {
       this.job_ = this.job;
     }
@@ -192,10 +196,7 @@ export default {
         case 1:
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
-          if (
-            this.rules.min(10, this.job_.description) &&
-            this.rules.max(1000, this.job_.description)
-          ) {
+          if (this.job_.description) {
             this.currentStep++;
           } else {
             this.$toast.warning(this.$t('toast.warning.detailedInfo'));
@@ -215,7 +216,7 @@ export default {
         case 3:
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
-          if (this.job_.salary.timeFrame && this.job_.salary.min) {
+          if (this.job_.salary.timeFrame && this.rules.isNumber(this.job_.salary.min)) {
             this.previewJob();
           } else {
             this.$toast.warning(this.$t('toast.warning.fillAll'));
