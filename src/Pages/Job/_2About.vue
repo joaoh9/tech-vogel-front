@@ -2,9 +2,14 @@
   <div class="mb-12">
     <form-input :title="$t('job.new.aboutTheRole.title')" required />
     <vue-editor
+      v-model="description"
       :placeholder="$t('job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
-      v-model="description"
+      :rules="[
+        rules.required(description),
+        rules.min(10, description),
+        rules.max(1000, description),
+      ]"
     />
   </div>
 </template>
@@ -26,6 +31,11 @@ export default {
   data() {
     return {
       description: '',
+      rules: {
+        required: () => true,
+        min: () => true,
+        max: () => true,
+      },
     };
   },
   watch: {
@@ -34,7 +44,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style>

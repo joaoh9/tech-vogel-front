@@ -15,6 +15,10 @@ export default {
           identifier: 'personalInfo',
         },
         {
+          name: 'Social Links',
+          identifier: 'links',
+        },
+        {
           name: 'Work Experience',
           identifier: 'workExperience',
         },
@@ -25,10 +29,6 @@ export default {
         {
           name: 'Education',
           identifier: 'education',
-        },
-        {
-          name: 'Social Links',
-          identifier: 'links',
         },
       ],
       start: {
@@ -43,10 +43,6 @@ export default {
         registerManually: {
           title: 'Register CV Manually',
         },
-      },
-      mainRole: {
-        title: 'Your main role as a developer',
-        placeholder: 'Ex: Junior Full Stack Developer',
       },
       preferences: {
         title: 'Select your preferences',
@@ -67,6 +63,10 @@ export default {
           'You’ll be able to edit these later on. This information will be\nvisible to everyone.',
         fullName: {
           title: 'Your full name',
+        },
+        mainRole: {
+          title: 'Your main role as a developer',
+          placeholder: 'Ex: Junior Full Stack Developer',
         },
         location: {
           title: 'Your location',

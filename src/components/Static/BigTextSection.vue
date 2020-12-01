@@ -2,7 +2,7 @@
   <div class="mx-16 mb-12">
     <div class="d-flex align-center">
       <h5 class="color-primary mr-4">{{ name }}</h5>
-      <h5 class="color-black">{{ text.title }}</h5>
+      <h5 class="color-black text-uppercase">{{ text.title }}</h5>
     </div>
     <div class="mt-4">
       <p v-html="paragraphContent"></p>

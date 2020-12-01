@@ -1,4 +1,5 @@
 {
+  "ajax": "Ajax",
   "angular": "Angular",
   "node-js": "Node.js",
   "express": "Express.js",
@@ -19,6 +20,7 @@
   "react-js": "React.js",
   "polymer": "Polymer",
   "jest": "Jest",
+  "jquery": "JQuery",
   "knockout": "Knockout",
   "socket": "Socket",
   "mobx": "MobX",

@@ -1,5 +1,20 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-md-12">
+    <PrimaryHeader
+      :title="$t('privacyPolicy.title')"
+      :subtitle="$t('privacyPolicy.description')"
+      :cols="true"
+    >
+      <div class="d-flex justify-center mt-8">
+        <g-btn
+          @click="this.$router.push('/side-pick')"
+          class="mx-12"
+          type="outline"
+          color="light"
+          :label="$t('common.back')"
+        />
+      </div>
+    </PrimaryHeader>
     <Stepper :stepsNames="$t('resume.register.tabs').map(s => s.name)" v-model="currentStep">
       <g-card>
         <template v-slot:card-header>
@@ -33,6 +48,7 @@
               :_locationCity="resume.location.city"
               :_locationCountry="resume.location.country"
               v-on:profile-picture="e => (profilePicture = e)"
+              v-on:full-name="e => (resume.fullName = e)"
               v-on:main-role="e => (resume.mainRole = e)"
               v-on:location="e => (resume.location = e)"
               v-on:personal-bio="e => (resume.personalBio = e)"
@@ -40,21 +56,21 @@
             </PersonalInfo>
           </div>
           <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-            <WorkExperience v-on:update-item="e => (resume.workHistory = e)" />
-          </div>
-          <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
-            <Skills form="resume" v-on:skills="e => (resume.skills = e)" />
-          </div>
-          <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
-            <Education v-on:update-item="e => (resume.education = e)" />
-          </div>
-          <div v-bind:style="{ display: currentStep == 6 ? 'block' : 'none' }">
             <Links
               v-on:website="e => (resume.links.website = e)"
               v-on:linkedin="e => (resume.links.linkedin = e)"
               v-on:github="e => (resume.links.github = e)"
               v-on:behance="e => (resume.links.behance = e)"
             />
+          </div>
+          <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
+            <WorkExperience v-on:update-item="e => (resume.workHistory = e)" />
+          </div>
+          <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
+            <Skills form="resume" v-on:skills="e => (resume.skills = e)" />
+          </div>
+          <div v-bind:style="{ display: currentStep == 6 ? 'block' : 'none' }">
+            <Education v-on:update-item="e => (resume.education = e)" />
           </div>
         </template>
         <template v-slot:buttons>
@@ -135,6 +151,7 @@ export default {
         personalBio: '',
         jobInterests: [],
         contractType: [],
+        fullName: '',
         mainRole: '',
         location: {
           city: '',

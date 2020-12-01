@@ -7,19 +7,8 @@
       :rules="[rules.required(title)]"
       @input="$emit('title', title)"
     />
-    <form-input required :title="$t('job.new.experienceLevel.title')" />
-    <g-autocomplete
-      @input="
-        e => {
-          experienceLevel = e;
-          $emit('experience-level', experienceLevel);
-        }
-      "
-      :multiple="false"
-      :rules="[rules.required(experienceLevel)]"
-      :items="$t('enums.experienceLevel')"
-    />
-    <form-input required :title="$t('job.new.contractType.title')" />
+
+    <form-input :title="$t('job.new.contractType.title')" required />
     <g-autocomplete
       @input="
         e => {
@@ -30,6 +19,19 @@
       :multiple="false"
       :rules="[rules.required(contractType)]"
       :items="$t('enums.contractType')"
+    />
+
+     <form-input :title="$t('job.new.experienceLevel.title')" required />
+    <g-autocomplete
+      @input="
+        e => {
+          experienceLevel = e;
+          $emit('experience-level', experienceLevel);
+        }
+      "
+      :multiple="false"
+      :rules="[rules.required(experienceLevel)]"
+      :items="$t('enums.experienceLevel')"
     />
   </div>
 </template>

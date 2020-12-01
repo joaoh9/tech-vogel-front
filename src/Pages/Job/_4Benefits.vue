@@ -28,7 +28,7 @@
         :prefix="getPrefix()"
         @input="checkInput('salary-min', salary.min)"
         v-model="salary.min"
-        :rules="[rules.isNumber(salary.min)]"
+        :rules="[rules.isNumber(salary.min), rules.required(salary.min)]"
         :label="range ? 'From' : 'Price'"
         :title="range ? 'From' : 'Price'"
         outlined

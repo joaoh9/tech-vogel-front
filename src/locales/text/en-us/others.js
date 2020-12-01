@@ -119,6 +119,7 @@ export default {
     nameTooShort: 'Please write your full name',
     wrongFormatEmail: 'Email with wrong format!',
     lessThanXCharacters: 'Please write at least X characters',
+    greaterThanXCharacters: 'Please write up to maximum X characters',
     letterOrNumber: 'Please write only letters or numbers',
     onlyNumber: 'Only numbers allowed',
     yearValidation: 'Year must contain 4 digits',

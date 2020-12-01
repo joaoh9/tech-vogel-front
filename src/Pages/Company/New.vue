@@ -4,7 +4,13 @@
       :title="$t('company.new.getStarted')"
       :subtitle="$t('company.new.formInfo')"
       :cols="true"
-    />
+      style="background: linear-gradient(0deg, rgba(255, 146, 0, 0.7), rgba(255, 146, 0, 0.7)), linear-gradient(112.55deg, #FFD500 0%, rgba(255, 213, 0, 0.5) 72.92%), #FF9200;"
+    >
+      <div class="d-flex justify-center mt-8">
+        <g-btn @click="$router.go(-1)" class="mx-12" type="outline" color="light" :label="$t('common.back')" />
+      </div>
+    </PrimaryHeader>
+
     <div class="d-flex justify-center mt-4 mt-md-12">
       <g-card>
         <template v-slot:card-header>

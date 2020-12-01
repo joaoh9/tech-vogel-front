@@ -1,14 +1,16 @@
 <template>
   <v-card
     :color="color || 'primary'"
-    class="px-16 pt-4 pb-4"
+    class="px-16 py-12"
     flat
-    style="border-radius: 0px !important"
+    style="border-radius: 0px !important;"
   >
     <v-row v-if="cols">
       <v-col cols="12" md="6">
+        <div class="ml-12">
         <h3 class="h3-bold color-light">{{ title }}</h3>
         <h5 class="color-light mt-4">{{ subtitle }}</h5>
+        </div>
         <div v-if="description">
           <sub-1
             v-for="(item, i) in description.split('\n')"

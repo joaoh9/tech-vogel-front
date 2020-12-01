@@ -47,6 +47,10 @@ class Rules {
     return v.length >= min || this.localeObj['rules']['lessThanXCharacters'].replace('X', min);
   }
 
+  max(max, v) {
+    return v.length <= max || this.localeObj['rules']['greaterThanXCharacters'].replace('X', max);
+  }
+
   validateLetterOrNumber(letter) {
     const c = letter.charCodeAt(0);
 
