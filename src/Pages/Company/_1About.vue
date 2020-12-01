@@ -21,7 +21,7 @@
     <form-input :title="$t('company.new.aboutYourCompany.title')" required />
     <v-textarea
       outlined
-      :rules="[rules.min(10, description), rules.max(100, description), rules.required(description)]"
+      :rules="[rules.min(10, description), rules.max(1000, description), rules.required(description)]"
       v-model="description"
     />
 
