@@ -5,7 +5,11 @@
       v-model="description"
       :placeholder="$t('job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
-      :rules="[rules.min(10, description), rules.max(1000, description)]"
+      :rules="[
+        rules.required(description),
+        rules.min(10, description),
+        rules.max(1000, description),
+      ]"
     />
   </div>
 </template>
@@ -29,6 +33,8 @@ export default {
       description: '',
       rules: {
         required: () => true,
+        min: () => true,
+        max: () => true,
       },
     };
   },
