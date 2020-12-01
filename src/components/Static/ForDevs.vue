@@ -1,18 +1,18 @@
 <template>
   <v-container class="d-flex align-center flex-column">
-    <h4>{{ $t('devs.subtitle') }}</h4>
+    <h4 class="color-secondary my-10">{{ $t('devs.subtitle') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
       <v-col cols="12" md="6">
         <div v-for="(item, i) in getSteps()" :key="i">
-          <v-row align="center" justify="center">
+          <v-row>
             <v-col cols="2">
-              <v-btn class="mx-2 rounded-circle" outlined fab color="secondary">
+              <span class="circle">
                 {{ i + 1 }}
-              </v-btn>
+              </span>
             </v-col>
             <v-col>
-              <h5 class="h5-bold">{{ item.title }}</h5>
-              <bdy-1>{{ item.description }}</bdy-1>
+              <h5 class="h5-bold color-secondary">{{ item.title }}</h5>
+              <bdy-1 color="color-dark my-4">{{ item.description }}</bdy-1>
             </v-col>
           </v-row>
         </div>
@@ -50,4 +50,22 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.circle {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  background: #fff;
+  border: 1px solid #ff9200;
+  border-radius: 50%;
+
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #ff9200;
+}
+</style>
