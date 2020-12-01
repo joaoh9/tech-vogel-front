@@ -6,7 +6,13 @@
       :cols="true"
     >
       <div class="d-flex justify-center mt-8">
-        <g-btn @click="$router.go(-1)" class="mx-12" type="outline" color="light" label="Go back" />
+        <g-btn
+          @click="this.$router.push('/side-pick')"
+          class="mx-12"
+          type="outline"
+          color="light"
+          :label="$t('common.back')"
+        />
       </div>
     </PrimaryHeader>
     <div class="mt-4">

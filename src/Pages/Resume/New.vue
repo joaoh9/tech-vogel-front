@@ -1,5 +1,20 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-md-12">
+    <PrimaryHeader
+      :title="$t('privacyPolicy.title')"
+      :subtitle="$t('privacyPolicy.description')"
+      :cols="true"
+    >
+      <div class="d-flex justify-center mt-8">
+        <g-btn
+          @click="this.$router.push('/side-pick')"
+          class="mx-12"
+          type="outline"
+          color="light"
+          :label="$t('common.back')"
+        />
+      </div>
+    </PrimaryHeader>
     <Stepper :stepsNames="$t('resume.register.tabs').map(s => s.name)" v-model="currentStep">
       <g-card>
         <template v-slot:card-header>

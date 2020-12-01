@@ -4,7 +4,12 @@
       :title="$t('company.new.getStarted')"
       :subtitle="$t('company.new.formInfo')"
       :cols="true"
-    />
+    >
+      <div class="d-flex justify-center mt-8">
+        <g-btn @click="$router.go(-1)" class="mx-12" type="outline" color="light" :label="$t('common.back')" />
+      </div>
+    </PrimaryHeader>
+
     <div class="d-flex justify-center mt-4 mt-md-12">
       <g-card>
         <template v-slot:card-header>

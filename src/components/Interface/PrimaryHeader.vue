@@ -1,9 +1,15 @@
 <template>
-  <v-card color="primary" class="px-16 pt-4 pb-4" flat style="border-radius: 0px !important">
+  <v-card
+    class="px-16 py-12"
+    flat
+    style="border-radius: 0px !important; background: linear-gradient(0deg, rgba(255, 146, 0, 0.7), rgba(255, 146, 0, 0.7)), linear-gradient(112.55deg, #FFD500 0%, rgba(255, 213, 0, 0.5) 72.92%), #FF9200;"
+  >
     <v-row v-if="cols">
       <v-col cols="12" md="6">
+        <div class="ml-12">
         <h3 class="h3-bold color-light">{{ title }}</h3>
         <h5 class="color-light mt-4">{{ subtitle }}</h5>
+        </div>
         <div v-if="description">
           <sub-1
             v-for="(item, i) in description.split('\n')"
@@ -36,7 +42,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'PrimaryHeader',
   props: {
@@ -46,7 +51,6 @@ export default {
     cols: Boolean,
   },
 };
-
 </script>
 
 <style></style>

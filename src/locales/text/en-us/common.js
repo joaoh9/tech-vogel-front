@@ -99,7 +99,7 @@ export default {
       },
       website: {
         title: 'Your website',
-        placeholder: 'http://',
+        placeholder: 'https://',
       },
       webpage: {
         title: 'Company webpage',

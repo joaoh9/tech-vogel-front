@@ -1,7 +1,7 @@
 // TODO: Finish it
 export default {
   '1': {
-    title: 'INTRODUCTION',
+    title: 'Introduction',
     description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
       <br>
       A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
@@ -24,7 +24,7 @@ export default {
       <br>`,
   },
   '2': {
-    title: 'DATA PROCESSING',
+    title: 'Data Processing',
     description: `When you register on the Tech Vogel platform, we collect information about you. This may include your name and contact information such as e-mail, data on your resume or data on vacancies and financial information to make or receive payments for services obtained through Tech Vogel or information to help us complete feedback forms.
     <br>
     2.1.1 For the purposes of this policy, the Client or company is any individual or legal entity that registers with Tech Vogel in order to "post a job".

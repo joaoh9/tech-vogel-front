@@ -190,7 +190,7 @@ export default {
           break;
         case 1:
           window.scroll(0, 0);
-          if (this.job_.description) {
+          if (this.rules.min(10, this.job_.description) && this.rules.max(100, this.job_.description)) {
             this.currentStep++;
           } else {
             this.$toast.warning(this.$t('toast.warning.detailedInfo'));
