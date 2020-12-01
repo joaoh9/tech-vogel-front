@@ -51,6 +51,8 @@ export default {
         'The email you entered doesn\'t belong to an account. Please check your email and try again.',
       wrongPasswordLogin: 'Sorry, your password was incorrect. Please double-check your password.',
       nameGreater: 'Name must be greater than 3 characters',
+      emailValidation: 'Email and confirmation must be equals',
+      passwordValidation: 'Password and confirmation must be equals',
     },
     open: {
       login: 'Login successfull',

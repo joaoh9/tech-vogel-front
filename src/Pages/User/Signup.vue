@@ -186,7 +186,26 @@ export default {
         this.$toast.warning(this.$t('toast.warning.nameGreater'));
       }
 
-      if (!this.termsAndConditions || !emailRuleOk || !validEmail || !nameRuleOk) {
+      const equalEmail = this.rules.equalEmail(this.user.email, this.user.confirmEmail) === true;
+      if (!equalEmail) {
+        this.$toast.warning(this.$t('toast.warning.emailValidation'));
+      }
+
+      const equalPassword =
+        this.rules.equalPassword(this.user.password, this.user.confirmPassword) === true;
+      console.log(equalPassword);
+      if (!equalPassword) {
+        this.$toast.warning(this.$t('toast.warning.passwordValidation'));
+      }
+
+      if (
+        !this.termsAndConditions ||
+        !emailRuleOk ||
+        !validEmail ||
+        !nameRuleOk ||
+        !equalEmail ||
+        !equalPassword
+      ) {
         return false;
       }
 

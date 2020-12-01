@@ -5,12 +5,14 @@
       v-model="description"
       :placeholder="$t('job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
+      :rules="[rules.required(description), rules.max(10000, description)]"
     />
   </div>
 </template>
 
 <script>
 import { VueEditor } from 'vue2-editor';
+import RulesHelper from 'Helpers/rules';
 export default {
   name: 'NewJob2',
   props: {
@@ -20,11 +22,16 @@ export default {
     VueEditor,
   },
   mounted() {
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.description = this.job.description;
   },
   data() {
     return {
       description: '',
+      rules: {
+        required: () => true,
+        max: () => true,
+      },
     };
   },
   watch: {
