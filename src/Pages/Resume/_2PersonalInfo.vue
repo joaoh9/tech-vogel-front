@@ -9,13 +9,13 @@
     >
     </v-file-input>
 
-  <form-input class="mt-0" :title="$t('resume.register.personalInfo.fullName.title')" required />
+    <form-input class="mt-0" :title="$t('resume.register.personalInfo.fullName.title')" required />
     <v-text-field
       autofocus
       v-model="fullName"
       @input="$emit('full-name', fullName)"
       outlined
-      :rules="[rules.required(fullName)]"
+      :rules="[rules.required(fullName), rules.max(200, fullName)]"
     />
 
     <form-input class="mt-0" :title="$t('resume.register.personalInfo.mainRole.title')" required />
@@ -25,7 +25,7 @@
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
       outlined
-      :rules="[rules.required(mainRole)]"
+      :rules="[rules.required(mainRole), rules.max(200, mainRole)]"
     />
 
     <form-input class="mt-0" :title="$t('resume.register.personalInfo.location.title')" required />
@@ -37,7 +37,7 @@
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.city')"
-          :rules="[rules.required(location.city)]"
+          :rules="[rules.required(location.city), rules.max(200, location.city)]"
         />
       </v-col>
 
@@ -48,7 +48,7 @@
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.country')"
-          :rules="[rules.required(location.country)]"
+          :rules="[rules.required(location.country), rules.max(200, location.country)]"
         />
       </v-col>
     </v-row>
@@ -56,6 +56,7 @@
     <vue-editor
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="personalBio"
+      :rules="rules.max(20000, personalBio)"
     />
     <slot />
   </div>
@@ -103,6 +104,7 @@ export default {
       mainRole: '',
       rules: {
         required: () => true,
+        max: () => true,
       },
     };
   },

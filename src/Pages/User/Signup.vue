@@ -26,7 +26,7 @@
         <v-text-field
           data-cy="name"
           outlined
-          :rules="[rules.min(3, user.name)]"
+          :rules="[rules.min(3, user.name), rules.max(200, user.name)]"
           v-model="user.name"
           autofocus
         />

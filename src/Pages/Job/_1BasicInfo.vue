@@ -4,7 +4,7 @@
     <v-text-field
       outlined
       v-model="title"
-      :rules="[rules.required(title)]"
+      :rules="[rules.required(title), rules.max(50, title)]"
       @input="$emit('title', title)"
     />
 
@@ -61,6 +61,7 @@ export default {
       company: '',
       rules: {
         required: () => true,
+        max: () => true,
       },
     };
   },

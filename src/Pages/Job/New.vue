@@ -196,7 +196,7 @@ export default {
         case 1:
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
-          if (this.job_.description && this.rules.max(1000, this.job_.description) === true) {
+          if (this.job_.description && this.rules.max(20000, this.job_.description) === true) {
             this.currentStep++;
           } else {
             this.$toast.warning(this.$t('toast.warning.detailedInfo'));

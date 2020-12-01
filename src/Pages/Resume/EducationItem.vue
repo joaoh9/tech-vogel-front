@@ -9,6 +9,7 @@
           :placeholder="$t('resume.register.education.courseTitle.placeholder')"
           @input="$emit('course-title', education.courseTitle)"
           outlined
+          :rules="rules.max(200, education.courseTitle)"
         />
       </v-col>
       <v-col cols="12" md="4">
@@ -18,6 +19,7 @@
           :placeholder="$t('resume.register.education.degree.placeholder')"
           @input="$emit('institution-type', education.degree)"
           outlined
+          :rules="rules.max(200, education.degree)"
         />
       </v-col>
     </v-row>
@@ -28,6 +30,7 @@
       :placeholder="$t('resume.register.education.placeholders.institution')"
       @input="$emit('institution-name', education.institutionName)"
       outlined
+      :rules="rules.max(200, education.institutionName)"
     />
 
     <v-row>
@@ -58,6 +61,7 @@
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="education.description"
       class="mb-6"
+      :rules="rules.max(20000, education.description)"
     />
   </div>
 </template>
@@ -88,6 +92,7 @@ export default {
       rules: {
         year: () => true,
         onlyNumber: () => true,
+        max: () => true,
       },
     };
   },

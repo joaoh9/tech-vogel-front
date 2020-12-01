@@ -4,7 +4,7 @@
     <v-text-field
       autofocus
       v-model="job.companyName"
-      :rules="[rules.required(job.companyName)]"
+      :rules="[rules.required(job.companyName), rules.max(200, job.companyName)]"
       @input="$emit('company-name', job.companyName)"
       :placeholder="$t('resume.register.workExperience.placeholders.company.title')"
       outlined
@@ -12,7 +12,7 @@
     <form-input required :title="$t('resume.register.workExperience.position')" />
     <v-text-field
       v-model="job.role"
-      :rules="[rules.required(job.role)]"
+      :rules="[rules.required(job.role), rules.max(200, job.role)]"
       @input="$emit('role', job.role)"
       :placeholder="$t('resume.register.workExperience.placeholders.position')"
       outlined
@@ -54,6 +54,7 @@
       placeholder="TODO"
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="job.jobDescription"
+      :rules="rules.max(20000, job.jobDescription)"
     />
   </div>
 </template>
@@ -85,6 +86,7 @@ export default {
         year: () => true,
         onlyNumber: () => true,
         required: () => true,
+        max: () => true,
       },
     };
   },

@@ -5,7 +5,7 @@
       v-model="description"
       :placeholder="$t('job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
-      :rules="[rules.required(description), rules.max(10000, description)]"
+      :rules="[rules.required(description), rules.max(20000, description)]"
     />
   </div>
 </template>
