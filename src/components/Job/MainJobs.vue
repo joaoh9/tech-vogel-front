@@ -48,7 +48,7 @@ export default {
     JobCardMobile,
   },
   mounted() {
-    this.getJobs();
+    // this.getJobs();
   },
   data() {
     return {

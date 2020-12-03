@@ -1,14 +1,22 @@
 <template>
   <div>
-    <form-input :title="$t('job.new.jobTitle.title')" required />
+    <form-input
+      :title="$t('job.new.jobTitle.title')"
+      :description="$t('job.new.jobTitle.inputHint')"
+      required
+    />
     <v-text-field
       outlined
       v-model="title"
-      :rules="[rules.required(title)]"
+      :rules="[rules.required(title), rules.max(50, title)]"
       @input="$emit('title', title)"
     />
 
-    <form-input :title="$t('job.new.contractType.title')" required />
+    <form-input
+      :title="$t('job.new.contractType.title')"
+      :description="$t('job.new.contractType.inputHint')"
+      required
+    />
     <g-autocomplete
       @input="
         e => {
@@ -19,9 +27,14 @@
       :multiple="false"
       :rules="[rules.required(contractType)]"
       :items="$t('enums.contractType')"
+      :label="$t('job.new.contractType.label')"
     />
 
-     <form-input :title="$t('job.new.experienceLevel.title')" required />
+    <form-input
+      :title="$t('job.new.experienceLevel.title')"
+      :description="$t('job.new.experienceLevel.inputHint')"
+      required
+    />
     <g-autocomplete
       @input="
         e => {
@@ -32,6 +45,7 @@
       :multiple="false"
       :rules="[rules.required(experienceLevel)]"
       :items="$t('enums.experienceLevel')"
+      :label="$t('job.new.experienceLevel.label')"
     />
   </div>
 </template>
@@ -61,6 +75,7 @@ export default {
       company: '',
       rules: {
         required: () => true,
+        max: () => true,
       },
     };
   },

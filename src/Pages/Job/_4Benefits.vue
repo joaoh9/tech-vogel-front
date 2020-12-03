@@ -56,6 +56,7 @@
       :placeholder="$t('job.new.perks.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="benefits"
+      :rules="rules.max(20000, benefits)"
     />
   </div>
 </template>
@@ -93,6 +94,7 @@ export default {
       rules: {
         required: () => true,
         isNumber: () => true,
+        max: () => true,
       },
       range: false,
     };

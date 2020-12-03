@@ -128,6 +128,7 @@ export default {
   rules: {
     nameTooShort: 'Please write your full name',
     wrongFormatEmail: 'Email with wrong format!',
+    wrongFormatPassword: 'Password with wrong format!',
     lessThanXCharacters: 'Please write at least X characters',
     greaterThanXCharacters: 'Please write up to maximum X characters',
     letterOrNumber: 'Please write only letters or numbers',
@@ -142,6 +143,11 @@ export default {
     emailsDontMatch: 'Emails do not match',
     passwordsDontMatch: 'Passwords do not match',
     termsAndConditions: 'Your must accept our Terms and Conditions',
+    emailRequired: 'Email required',
+    passwordRequired: 'Password required',
+    wrongEmailLogin:
+    'Sorry, your email is incorrect. Please double-check your email.',
+    wrongPasswordLogin: 'Sorry, your password is incorrect. Please double-check your password.',
   },
   quill: {
     defaultToolbar: [

@@ -20,7 +20,6 @@
       skillTitle="techSkills"
       :experienceLevel="form === 'job' ? $t('enums.priorities') : $t('enums.yearsOfExperience')"
     />
-
     <form-input
       class="mt-6"
       type="h6"
@@ -33,13 +32,22 @@
       :title="$t('job.new.softSkills.title')"
       :description="$t('job.new.softSkills.inputHint')"
     />
-    <v-select @input="e => (softSkills = e)" :items="$t('skills.softSkills')" outlined :multiple="true" />
+    <v-select
+      @input="e => (softSkills = e)"
+      :items="$t('skills.softSkills')"
+      outlined
+      :multiple="true"
+    />
 
-    <form-input class="mt-6" :title="$t('job.new.languages.title')" />
+    <form-input
+      class="mt-6"
+      :title="$t('job.new.languages.title')"
+      :description="$t('job.new.language.inputHint')"
+    />
 
     <v-select
       class="mb-10"
-      :hint="$t('job.new.languages.inputHint')"
+      :label="$t('job.new.languages.inputHint')"
       @input="e => (languages = e)"
       :items="$t('skills.languages')"
       outlined
@@ -107,7 +115,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style>

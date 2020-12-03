@@ -9,23 +9,22 @@
     >
     </v-file-input>
 
-  <form-input class="mt-0" :title="$t('resume.register.personalInfo.fullName.title')" required />
+    <form-input class="mt-0" :title="$t('resume.register.personalInfo.fullName.title')" required />
     <v-text-field
       autofocus
       v-model="fullName"
       @input="$emit('full-name', fullName)"
       outlined
-      :rules="[rules.required(fullName)]"
+      :rules="[rules.required(fullName), rules.max(200, fullName)]"
     />
 
     <form-input class="mt-0" :title="$t('resume.register.personalInfo.mainRole.title')" required />
     <v-text-field
-      autofocus
       :placeholder="$t('resume.register.personalInfo.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
       outlined
-      :rules="[rules.required(mainRole)]"
+      :rules="[rules.required(mainRole), rules.max(200, mainRole)]"
     />
 
     <form-input class="mt-0" :title="$t('resume.register.personalInfo.location.title')" required />
@@ -37,7 +36,7 @@
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.city')"
-          :rules="[rules.required(location.city)]"
+          :rules="[rules.required(location.city), rules.max(200, location.city)]"
         />
       </v-col>
 
@@ -48,7 +47,7 @@
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.country')"
-          :rules="[rules.required(location.country)]"
+          :rules="[rules.required(location.country), rules.max(200, location.country)]"
         />
       </v-col>
     </v-row>
@@ -56,6 +55,44 @@
     <vue-editor
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="personalBio"
+      :rules="[rules.required(personalBio), rules.max(20000, personalBio)]"
+    />
+
+    <form-input class="mt-7" :title="$t('common.links.website.title')" />
+    <v-text-field
+      autofocus
+      :placeholder="$t('common.links.website.placeholder')"
+      v-model="website"
+      @input="$emit('website', website)"
+      outlined
+      :rules="[rules.max(200, website)]"
+    />
+
+    <form-input :title="$t('common.links.github.title')" />
+    <v-text-field
+      :placeholder="$t('common.links.github.placeholder')"
+      v-model="github"
+      @input="$emit('github', github)"
+      outlined
+      :rules="[rules.max(200, github)]"
+    />
+
+    <form-input :title="$t('common.links.linkedin.title')" />
+    <v-text-field
+      :placeholder="$t('common.links.linkedin.placeholder')"
+      v-model="linkedin"
+      @input="$emit('linkedin', linkedin)"
+      outlined
+      :rules="[rules.max(200, linkedin)]"
+    />
+
+    <form-input :title="$t('common.links.behance.title')" />
+    <v-text-field
+      :placeholder="$t('common.links.behance.placeholder')"
+      v-model="behance"
+      @input="$emit('behance', behance)"
+      outlined
+      :rules="[rules.max(200, behance)]"
     />
     <slot />
   </div>
@@ -101,8 +138,13 @@ export default {
       profilePicture: null,
       fullName: '',
       mainRole: '',
+      github: '',
+      linkedin: '',
+      behance: '',
+      website: '',
       rules: {
         required: () => true,
+        max: () => true,
       },
     };
   },

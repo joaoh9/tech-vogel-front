@@ -2,37 +2,40 @@
   <div>
     <v-row>
       <v-col cols="12" md="8">
-        <form-input required :title="$t('resume.register.education.courseTitle.title')" />
+        <form-input :title="$t('resume.register.education.courseTitle.title')" />
         <v-text-field
           autofocus
           v-model="education.courseTitle"
           :placeholder="$t('resume.register.education.courseTitle.placeholder')"
           @input="$emit('course-title', education.courseTitle)"
           outlined
+          :rules="[rules.max(200, education.courseTitle)]"
         />
       </v-col>
       <v-col cols="12" md="4">
-        <form-input required :title="$t('resume.register.education.degree.title')" />
+        <form-input :title="$t('resume.register.education.degree.title')" />
         <v-text-field
           v-model="education.degree"
           :placeholder="$t('resume.register.education.degree.placeholder')"
           @input="$emit('institution-type', education.degree)"
           outlined
+          :rules="[rules.max(200, education.degree)]"
         />
       </v-col>
     </v-row>
 
-    <form-input required :title="$t('resume.register.education.institution')" />
+    <form-input :title="$t('resume.register.education.institution')" />
     <v-text-field
       v-model="education.institutionName"
       :placeholder="$t('resume.register.education.placeholders.institution')"
       @input="$emit('institution-name', education.institutionName)"
       outlined
+      :rules="[rules.max(200, education.institutionName)]"
     />
 
     <v-row>
       <v-col cols="6" md="3">
-        <form-input required :title="$t('resume.register.education.from')" />
+        <form-input :title="$t('resume.register.education.from')" />
         <v-text-field
           v-model="education.startDate"
           @input="checkYearRules(education.startDate, 'start-date')"
@@ -42,7 +45,7 @@
         />
       </v-col>
       <v-col cols="6" md="3">
-        <form-input required :title="$t('resume.register.education.to')" />
+        <form-input :title="$t('resume.register.education.to')" />
         <v-text-field
           v-model="education.endDate"
           @input="checkYearRules(education.endDate, 'end-date')"
@@ -58,6 +61,7 @@
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="education.description"
       class="mb-6"
+      :rules="[rules.max(20000, education.description)]"
     />
   </div>
 </template>
@@ -88,6 +92,7 @@ export default {
       rules: {
         year: () => true,
         onlyNumber: () => true,
+        max: () => true,
       },
     };
   },

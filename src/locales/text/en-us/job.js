@@ -17,21 +17,23 @@ export default {
       },
       experienceLevel: {
         title: 'Experience Level',
-        inputHint: 'TODO',
+        inputHint: 'Select the experience level you expect applicants to have.',
+        label: 'Select',
       },
       contractType: {
         title: 'Contract Type',
         inputHint: 'This should let applicants know how they will potentially be hired.',
+        label: 'Select',
       },
       aboutTheRole: {
         title: 'About the role',
+        title2: 'Describe the role',
         description:
-          'Describe in a captivating way what that professional role will be. And talk about the project itself so that candidates can see if they are fit for the Job or not.',
-        placeholder: 'At this position your job will be...',
+          'Let potential applicants know what this job position entails. This information will be visible to everyone on Tech Vogel.',
       },
       languages: {
         title: 'Language(s)',
-        inputHint: 'TODO',
+        inputHint: 'Language',
       },
       skillRequirements: {
         title: 'Skill requirements',
@@ -52,7 +54,7 @@ export default {
       },
       softSkills: {
         title: 'Soft Skills',
-        inputHint: 'Soft skills have a lower weigth on your matches',
+        inputHint: 'Type the skill you wish to include above and select from the list.',
       },
       language: {
         title: 'Language',
@@ -67,7 +69,7 @@ export default {
         title: 'Salary',
       },
       perks: {
-        title: 'Perks and Benefits',
+        title: 'Additional perks and benefits',
         placeholder: 'Working at Criptorocket you can expect to have:\n  - Gym pas\n  - Food stamp\n  - Free Netflix\n  - A pationate team ready to rock ',
       },
       steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
