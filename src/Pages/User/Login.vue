@@ -22,8 +22,12 @@
           outlined
           data-cy="login-password"
         />
-        <div class="d-flex justify-start ">
-          <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
+        <div class="d-flex justify-start">
+          <p
+            @click="goToPasswordReset"
+            color="secondary"
+            class="button-text align-self-center bdy-2 color-cinza-lighten-1 cursor-pointer"
+          >
             {{ $t('login.forgotPassword') }}
           </p>
         </div>
@@ -33,7 +37,14 @@
           <v-btn to="/signup" color="secondary" tile outlined text large>
             {{ $t('common.signup') }}
           </v-btn>
-          <v-btn :loading="loading.login" color="primary" elevation="0" large @click="login()" data-cy="login">
+          <v-btn
+            :loading="loading.login"
+            color="primary"
+            elevation="0"
+            large
+            @click="login()"
+            data-cy="login"
+          >
             {{ $t('login.title') }}
           </v-btn>
         </div>
@@ -158,6 +169,12 @@ export default {
     goToUserDashboard() {
       this.$router.push({
         name: 'User Dashboard',
+      });
+    },
+
+    goToPasswordReset() {
+      this.$router.push({
+        name: 'Password Reset',
       });
     },
   },

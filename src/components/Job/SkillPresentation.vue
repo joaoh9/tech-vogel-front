@@ -4,7 +4,7 @@
       <h6 class="mr-4 my-4 color-secondary">{{ $t(`enums.skills.${skillType}`) }}</h6>
       <v-row>
         <v-chip
-          :class="`ml-2 align-self-center ${j < skills[skillType] ? 'mb-4' : ''}`"
+          :class="`ml-2 my-2 align-self-center ${j < skills[skillType] ? 'mb-4' : ''}`"
           v-for="(skill, j) in skills[skillType]"
           :style="getStyle(skill, skillType)"
           :key="j"

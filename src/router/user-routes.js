@@ -9,6 +9,7 @@ import UserLogin from 'Pages/User/Login';
 import UserProfile from 'Pages/User/Profile';
 import UserSignup from 'Pages/User/Signup';
 import Onboarding from 'Pages/User/Onboarding';
+import PasswordReset from 'Pages/User/PasswordReset';
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     name: 'User Signup',
     component: UserSignup,
     props: true,
+  },
+  {
+    path: '/password-reset',
+    name: 'Password Reset',
+    component: PasswordReset,
   },
   {
     path: '/confirm-registration',

@@ -1,7 +1,8 @@
 .cursor-pointer {
   cursor: pointer;
 }
-.cursor-alias, .cursor-default {
+.cursor-alias,
+.cursor-default {
   cursor: default;
 }
 
