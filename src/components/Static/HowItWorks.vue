@@ -38,6 +38,10 @@ import whatIsReport from 'Assets/what-is-report.svg';
 
 export default {
   name: 'HowItWorks',
+  mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+  },
   data() {
     return {
       HowItWorks,

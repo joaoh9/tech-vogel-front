@@ -68,11 +68,15 @@ export default {
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+
     this.rulesLoaded = true;
     if (this.email) {
       this.user.email = this.email;
     }
     this.retrieveUserDataFromLocalStorage();
+
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
   },
   data() {
     return {

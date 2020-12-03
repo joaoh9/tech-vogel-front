@@ -52,7 +52,7 @@
         <form-input :title="$t('common.password.label')" />
         <v-text-field
           data-cy="password"
-          :rules="rules.min(6, user.password)"
+          :rules="[rules.min(6, user.password)]"
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
           :type="showPassword ? 'text' : 'password'"
@@ -70,7 +70,6 @@
           :type="showConfirmPassword ? 'text' : 'password'"
           outlined
           v-model="user.confirmPassword"
-          :error-messages="localRules.passwordRequired"
         />
 
         <v-checkbox
@@ -140,6 +139,7 @@ export default {
       termsAndConditions: false,
       rules: {
         min: () => true,
+        max: () => true,
         equalPassword: () => true,
         equalEmail: () => true,
         email: () => true,
@@ -183,22 +183,21 @@ export default {
         this.localRules.emailAlreadyRegistered = '';
       }
 
-      let validPassword = this.user.password;
-      if (!validPassword) {
-        this.localRules.passwordRequired = this.$t('common.passwordRequired');
-      } else {
-        validPassword = this.rules.min(6, this.user.password) === true;
-        this.localRules.passwordRequired = this.rules.min(6, this.user.password);
-      }
-
-      if (validPassword) {
-        this.localRules.passwordRequired = '';
-      }
-
       const nameRuleOk = this.rules.min(3, this.user.name) === true;
       if (!nameRuleOk) {
         this.user.name = '';
         this.$toast.warning(this.$t('toast.warning.nameGreater'));
+      }
+
+      const validPassword = this.rules.min(6, this.user.password) === true;
+      if (!validPassword) {
+        this.localRules.passwordRequired = this.rules.min(6, this.user.password);
+      } else {
+        this.localRules.passwordRequired = this.$t('common.passwordRequired');
+      }
+
+      if (validPassword) {
+        this.localRules.passwordRequired = '';
       }
 
       const equalEmail = this.rules.equalEmail(this.user.email, this.user.confirmEmail) === true;
@@ -216,6 +215,7 @@ export default {
         !this.termsAndConditions ||
         !emailRuleOk ||
         !validEmail ||
+        !validPassword ||
         !nameRuleOk ||
         !equalEmail ||
         !equalPassword

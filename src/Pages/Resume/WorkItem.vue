@@ -1,18 +1,18 @@
 <template>
   <div class="mb-6">
-    <form-input required class="mt-6" :title="$t('resume.register.workExperience.company.title')" />
+    <form-input class="mt-6" :title="$t('resume.register.workExperience.company.title')" />
     <v-text-field
       autofocus
       v-model="job.companyName"
-      :rules="[rules.required(job.companyName), rules.max(200, job.companyName)]"
+      :rules="[rules.max(200, job.companyName)]"
       @input="$emit('company-name', job.companyName)"
       :placeholder="$t('resume.register.workExperience.placeholders.company.title')"
       outlined
     />
-    <form-input required :title="$t('resume.register.workExperience.position')" />
+    <form-input :title="$t('resume.register.workExperience.position')" />
     <v-text-field
       v-model="job.role"
-      :rules="[rules.required(job.role), rules.max(200, job.role)]"
+      :rules="[rules.max(200, job.role)]"
       @input="$emit('role', job.role)"
       :placeholder="$t('resume.register.workExperience.placeholders.position')"
       outlined
@@ -50,27 +50,21 @@
       />
     </div>
     <form-input :title="$t('resume.register.workExperience.jobDescription.title')" />
-    <vue-editor
-      placeholder="TODO"
-      :editorToolbar="$t('quill.defaultToolbar')"
+    <v-textarea
       v-model="job.jobDescription"
-      :rules="rules.max(20000, job.jobDescription)"
+      outlined
+      :rules="[rules.max(5000, job.jobDescription)]"
     />
   </div>
 </template>
 
 <script>
-import { VueEditor } from 'vue2-editor';
-
 import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'WorkItem',
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-  },
-  components: {
-    VueEditor,
   },
   data() {
     return {

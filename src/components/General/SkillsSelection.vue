@@ -20,7 +20,6 @@
       skillTitle="techSkills"
       :experienceLevel="form === 'job' ? $t('enums.priorities') : $t('enums.yearsOfExperience')"
     />
-
     <form-input
       class="mt-6"
       type="h6"

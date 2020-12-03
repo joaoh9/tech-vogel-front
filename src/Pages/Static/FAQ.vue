@@ -11,6 +11,10 @@ import FAQ from 'Components/Static/FAQ';
 
 export default {
   name: 'FAQPage',
+  mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+  },
   props: {
     items: Array,
   },

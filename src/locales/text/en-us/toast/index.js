@@ -32,6 +32,7 @@ export default {
       jobApplied: 'Successfully applied for job',
       logout: 'Logout successfull',
       savedCompany: 'Company saved successfully',
+      savedResume: 'Resume saved successfully',
       jobSaved: 'Job saved successfully',
       jobEdit: 'Job edited successfully',
       githubRetrieve: 'Github data retrieved successfully!',
