@@ -4,6 +4,7 @@
       <g-card>
         <template v-slot:card-header>
           <g-card-header
+            class="color-secondary"
             :title="getPageTitle(currentStep)"
             :description="getPageDescripton(currentStep)"
           />

@@ -1,9 +1,8 @@
 <template>
   <div class="mb-12">
-    <form-input :title="$t('job.new.aboutTheRole.title')" required />
+    <form-input :title="$t('job.new.aboutTheRole.title2')" required />
     <vue-editor
       v-model="description"
-      :placeholder="$t('job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
       :rules="[rules.required(description), rules.max(20000, description)]"
     />

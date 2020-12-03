@@ -39,7 +39,7 @@ export default {
     aboutUs: 'About Us',
     about: 'About',
     content: 'Content',
-    next: 'Continue',
+    next: 'Next',
     confirm: 'Confirm',
     back: 'Go back',
     backChange: 'Go back & change',
