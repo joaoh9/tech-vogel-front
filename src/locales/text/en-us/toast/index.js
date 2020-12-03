@@ -27,6 +27,7 @@ export default {
       notAllowed: 'You are not allowed to access this page',
       loginFailed: 'Something went wrong on your login',
       somethingWrong: 'Something went wrong. Try again later',
+      fillOut: 'Please fill out fields correctly',
     },
     success: {
       jobApplied: 'Successfully applied for job',
@@ -48,9 +49,6 @@ export default {
       fillAll: 'You should fill all required information!',
       detailedInfo: 'Please give to your appplicants a more detailed information about your job',
       emailRegistered: 'Email already registered',
-      wrongEmailLogin:
-        'The email you entered doesn\'t belong to an account. Please check your email and try again.',
-      wrongPasswordLogin: 'Sorry, your password was incorrect. Please double-check your password.',
       nameGreater: 'Name must be greater than 3 characters',
       emailValidation: 'Email and confirmation must be equals',
       passwordValidation: 'Password and confirmation must be equals',
