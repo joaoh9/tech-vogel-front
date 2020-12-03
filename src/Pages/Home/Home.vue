@@ -54,8 +54,8 @@
         </v-card>
       </div>
         <ForDevs />
-      <div class="d-flex align-center flex-column flex-wrap">
-        <h2 class="h2-bold color-secondary">{{ $t('common.ourPricing') }}</h2>
+      <div class="d-flex align-center flex-column flex-wrap mt-16">
+        <h2 class="h2-bold color-secondary mt-16">{{ $t('common.ourPricing') }}</h2>
         <h5 class="h5 mt-4 color-cinza-lighten-1">
           {{ $t('common.startPostingJobsForFreeToday') }}
         </h5>
@@ -69,8 +69,8 @@
         style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); margin-top: -268px"
       >
         <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
-          <h2 class="h2-bold mt-4 color-light">{{ $t('common.areYouLookingForAJob') }}</h2>
-          <h5 class="h5 mt-4 color-light">
+          <h2 class="h2-bold mt-4 color-light mt-16 mx-16">{{ $t('common.areYouLookingForAJob') }}</h2>
+          <h5 class="h5 mt-4 color-light mx-16">
             {{ $t('common.freedomWork') }}
           </h5>
           <MainJobs />
@@ -82,7 +82,8 @@
       <div class="mt-10">
         <TypesOfProgrammers />
       </div>
-      <div class="mt-10">
+      <div class="mt-10 mb-16">
+        <h5 class="d-flex justify-center mb-6 mt-16">{{$t('questions.title')}}</h5>
         <Questions />
       </div>
     </div>
