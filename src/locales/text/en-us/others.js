@@ -133,6 +133,11 @@ export default {
     emailsDontMatch: 'Emails do not match',
     passwordsDontMatch: 'Passwords do not match',
     termsAndConditions: 'Your must accept our Terms and Conditions',
+    emailRequired: 'Email required',
+    passwordRequired: 'Password required',
+    wrongEmailLogin:
+    'Sorry, your email is incorrect. Please double-check your email.',
+    wrongPasswordLogin: 'Sorry, your password is incorrect. Please double-check your password.',
   },
   quill: {
     defaultToolbar: [

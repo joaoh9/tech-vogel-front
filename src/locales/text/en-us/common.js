@@ -76,8 +76,6 @@ export default {
       placeholder: 'Password',
       label: 'Password',
     },
-    emailRequired: 'Email required',
-    passwordRequired: 'Password required',
     comingSoon: 'Coming soon!',
     confirmPassword: {
       placeholder: 'Confirm password',
