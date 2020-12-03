@@ -57,20 +57,7 @@ export default {
 
 <style scoped>
 .circle {
-  width: 60px;
-  height: 60px;
-  min-width: 60px;
-  min-height: 60px;
-  background: #fff;
   border: 1px solid #1a193c;
-  border-radius: 50%;
-
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-
-  font-size: 1.5em;
-  font-weight: 600;
   color: #1a193c;
 }
 </style>

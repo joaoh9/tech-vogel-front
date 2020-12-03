@@ -12,7 +12,7 @@
           <h1 class="h1-bold-alternative color-light">{{ $t('home.title1') }}</h1>
           <h1 class="h1-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
           <h1 class="h1-bold-alternative color-light">{{ $t('home.title3') }}</h1>
-          <h5 class="h5 mt-12 color-bg subtitle">{{ $t('home.subtitle') }}</h5>
+          <h5 class="h5 mt-12 color-bg line-break">{{ $t('home.subtitle') }}</h5>
           <div class="d-flex mt-14">
             <g-btn
               class="font-details"
@@ -127,12 +127,7 @@ h6 {
   color: white;
 }
 
-.font-details {
-  font-size: 1em;
-  font-weight: 400;
-}
-
-.subtitle {
+.line-break {
   max-width: 600px;
 }
 </style>

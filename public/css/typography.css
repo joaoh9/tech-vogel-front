@@ -394,3 +394,8 @@ input {
 div {
   word-wrap: break-word;
 }
+
+.font-details {
+  font-size: 1em;
+  font-weight: 400;
+}

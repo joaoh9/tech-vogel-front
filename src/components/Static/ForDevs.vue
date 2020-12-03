@@ -50,22 +50,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.circle {
-  width: 60px;
-  height: 60px;
-  min-width: 60px;
-  min-height: 60px;
-  background: #fff;
-  border: 1px solid #ff9200;
-  border-radius: 50%;
-
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #ff9200;
-}
-</style>
+<style></style>
