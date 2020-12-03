@@ -20,7 +20,14 @@
       <v-col cols="12" md="6">
         <div class="d-flex align-center flex-column">
           <v-img :src="devs" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
-          <v-img class="mt-4" :src="vogel" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 400" />
+          <HelpCard
+            :title="$t('home.helpCard.whatsVogel.title')"
+            :description="$t('home.helpCard.whatsVogel.description')"
+            :howDoesWork="$t('home.helpCard.whatsVogel.vogelsLimited')"
+            :modalText="$t('home.helpCard.whatsVogel.modalText')"
+            :btnText="$t('home.helpCard.whatsVogel.btnText')"
+            style="background: linear-gradient(0deg, rgba(255, 146, 0, 0.7), rgba(255, 146, 0, 0.7)), linear-gradient(112.55deg, #FFD500 0%, rgba(255, 213, 0, 0.5) 72.92%), #FF9200;"
+          />
         </div>
       </v-col>
     </v-row>
@@ -29,14 +36,16 @@
 
 <script>
 import devs from 'Assets/devs.svg';
-import vogel from 'Assets/vogel.svg';
+import HelpCard from 'Components/Dashboard/HelpCard';
 
 export default {
   name: 'devs',
+  components: {
+    HelpCard,
+  },
   data() {
     return {
       devs,
-      vogel,
     };
   },
   methods: {

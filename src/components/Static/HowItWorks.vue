@@ -6,10 +6,14 @@
       <v-col cols="12" md="6">
         <div class="d-flex align-center flex-column">
           <v-img :src="HowItWorks" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
-          <v-img
-            class="mt-4"
-            :src="whatIsReport"
-            :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 400"
+          <HelpCard
+            :title="$t('home.helpCard.howItWorks.title')"
+            :class="spacing"
+            :description="$t('home.helpCard.howItWorks.description')"
+            :howDoesWork="$t('home.helpCard.howItWorks.howDoesWork')"
+            :modalText="$t('home.helpCard.howItWorks.modalText')"
+            :btnText="$t('home.helpCard.howItWorks.btnText')"
+            style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%);"
           />
         </div>
       </v-col>
@@ -34,10 +38,13 @@
 
 <script>
 import HowItWorks from 'Assets/how-it-works.svg';
-import whatIsReport from 'Assets/what-is-report.svg';
+import HelpCard from 'Components/Dashboard/HelpCard';
 
 export default {
   name: 'HowItWorks',
+  components: {
+    HelpCard,
+  },
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
@@ -45,7 +52,6 @@ export default {
   data() {
     return {
       HowItWorks,
-      whatIsReport,
     };
   },
   methods: {
