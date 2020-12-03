@@ -56,14 +56,14 @@
         </template>
         <template v-slot:buttons>
           <div
-            :class="`d-flex ${currentStep === 0 ? 'justify-end' : 'justify-space-between'}  my-6`"
+            class="d-flex justify-space-between my-6"
             style="z-index: -1"
           >
             <g-btn
               :label="$t('common.back')"
-              v-if="currentStep > 0"
+              v-if="currentStep >= 0"
               type="secondary"
-              @click="currentStep--"
+              @click="currentStep === 0 ? $router.push({ name: 'Side Pick' }) : currentStep--"
             />
             <g-btn
               v-if="currentStep > 0"

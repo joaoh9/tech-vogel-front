@@ -172,13 +172,10 @@ export default {
       }
       const emailRuleOk = this.rules.email(this.user.email) === true;
       if (!emailRuleOk) {
-        this.localRules.emailAlreadyRegistered = this.$t('common.emailRequired');
+        this.localRules.emailAlreadyRegistered = this.$t('rules.emailRequired');
       }
 
       const validEmail = await this.validEmail();
-      if (!validEmail) {
-        this.$toast.warning(this.$t('toast.warning.emailRegistered'));
-      }
       if (emailRuleOk && validEmail) {
         this.localRules.emailAlreadyRegistered = '';
       }
@@ -186,14 +183,13 @@ export default {
       const nameRuleOk = this.rules.min(3, this.user.name) === true;
       if (!nameRuleOk) {
         this.user.name = '';
-        this.$toast.warning(this.$t('toast.warning.nameGreater'));
       }
 
       const validPassword = this.rules.min(6, this.user.password) === true;
       if (!validPassword) {
         this.localRules.passwordRequired = this.rules.min(6, this.user.password);
       } else {
-        this.localRules.passwordRequired = this.$t('common.passwordRequired');
+        this.localRules.passwordRequired = this.$t('rules.passwordRequired');
       }
 
       if (validPassword) {
@@ -201,15 +197,9 @@ export default {
       }
 
       const equalEmail = this.rules.equalEmail(this.user.email, this.user.confirmEmail) === true;
-      if (!equalEmail) {
-        this.$toast.warning(this.$t('toast.warning.emailValidation'));
-      }
 
       const equalPassword =
         this.rules.equalPassword(this.user.password, this.user.confirmPassword) === true;
-      if (!equalPassword) {
-        this.$toast.warning(this.$t('toast.warning.passwordValidation'));
-      }
 
       if (
         !this.termsAndConditions ||
