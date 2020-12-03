@@ -4,7 +4,7 @@
     <h4 class="color-secondary my-16">{{ $t('howItWorks.forCompanies') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
       <v-col cols="12" md="5">
-        <div class="d-flex align-center flex-column">
+        <div class="d-flex align-center flex-column mb-12">
           <v-img :src="HowItWorks" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
           <v-img
             class="mt-4"
