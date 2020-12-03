@@ -7,11 +7,21 @@ export default {
     title1: 'Find remote',
     title2: '<developers/>',
     title3: 'for your company!',
-    subtitle1: 'Get your projects off the ground with the help of the',
-    subtitle2: 'developer that best fit your needs!',
+    subtitle: 'Achieve your goals with Devs that best fit your project needs! ',
     timeWasted: 'No more time wasted selecting hundreds of CVs!',
     postForFree: 'Post for free',
     startApplying: 'Start applying',
+    fastEasy: 'Fast, Easy & Practical',
+    withOur: 'With our',
+    report: 'report',
+    fittestDevs: 'of the fittest Devs for your project you get:',
+    tips: [
+      { text: 'No time wasted searching thousands of CVs' },
+      { text: 'The best matched devs to your project needs' },
+      { text: 'To pay once after you receive your report' },
+    ],
+    primaryBtn: 'Post jobs for free',
+    secondaryBtn: 'Find jobs for free',
   },
   questions: {
     reachUs: {
@@ -45,13 +55,13 @@ export default {
     forCompanies: 'For companies',
     steps: [
       {
-        title: 'Post your job',
-        description: 'Log in to your account, fill your job description and press "post Job"',
+        title: 'Post your job for free',
+        description: 'Log in to your account, fill your job description and press "post Job”.',
       },
       {
         title: 'Collect applications',
         description:
-          'Your job will be running in our platform por 15 days collecting as many applications  as possible',
+          'Your job will be running in our platform for 15 working days collecting as many interested candidates as possible.',
       },
       {
         title: 'Receive reports',

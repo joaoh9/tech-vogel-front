@@ -1,7 +1,7 @@
 <template>
   <v-container class="d-flex align-center flex-column">
-    <h2 class="h2-bold color-secondary">{{ $t('common.howItWorks') }}</h2>
-    <h4>{{ $t('howItWorks.forCompanies') }}</h4>
+    <h2 class="h2-bold-alternative color-secondary mt-6">{{ $t('common.howItWorks') }}</h2>
+    <h4 class="color-secondary my-16">{{ $t('howItWorks.forCompanies') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
       <v-col cols="12" md="6">
         <div class="d-flex align-center flex-column">
@@ -15,15 +15,15 @@
       </v-col>
       <v-col cols="12" md="6">
         <div v-for="(item, i) in getSteps()" :key="i">
-          <v-row align="center" justify="center">
+          <v-row>
             <v-col cols="2">
-              <v-btn class="mx-2 rounded-circle" outlined fab color="secondary">
+              <span class="circle">
                 {{ i + 1 }}
-              </v-btn>
+              </span>
             </v-col>
             <v-col>
               <h5 class="h5-bold color-secondary">{{ item.title }}</h5>
-              <bdy-1>{{ item.description }}</bdy-1>
+              <bdy-1 color="color-dark my-4">{{ item.description }}</bdy-1>
             </v-col>
           </v-row>
         </div>
@@ -55,4 +55,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.circle {
+  border: 1px solid #1a193c;
+  color: #1a193c;
+}
+</style>

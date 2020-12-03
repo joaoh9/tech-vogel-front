@@ -25,7 +25,7 @@
               :key="index"
               icon="mdi-check-circle"
               :text="item.text"
-              type="bdy-2"
+              type="bdy-1"
               class="color-cinza-lighten-1 mb-4"
             />
           </div>
