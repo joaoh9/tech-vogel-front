@@ -12,6 +12,9 @@
 <script>
 export default {
   name: 'g-card-outlined',
+  props: {
+    borderColor: String,
+  },
 };
 </script>
 
