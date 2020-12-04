@@ -18,8 +18,6 @@
         @change="$emit('salary-time-frame', salary.timeFrame)"
         :rules="[rules.required(salary.timeFrame)]"
         label="Time frame"
-        title="Time frame"
-        placeholder="Time frame"
         outlined
         :items="$t('enums.payCheckTimeFrame')"
         class="mr-2"

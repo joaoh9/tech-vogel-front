@@ -63,9 +63,14 @@ export default class UserController {
     const userId = updates.id || updates.userId || userInfo.id;
 
     const axios = Axios.GetInstance(userToken);
-    const { data } = await axios.put(`/v1/users/${userId}`, updates);
+    await axios.put(`/v1/users/${userId}`, updates);
 
-    return data;
+    const { data: newUserData } = await axios.post('/v1/users/me/token');
+    this.saveUserToken(newUserData.token);
+
+    delete newUserData.token;
+
+    return newUserData;
   }
 
   async getById(userId) {

@@ -19,7 +19,7 @@
         </v-avatar>
       </v-btn>
       <v-spacer />
-      <div v-if="!$vuetify.breakpoint.mobile" class="d-flex">
+      <div v-if="!$vuetify.breakpoint.mobile && handlePrevent()" class="d-flex">
         <g-btn
           v-for="(item, i) in getPrimaryButtons()"
           :key="i"
@@ -143,10 +143,15 @@ export default {
       });
     },
     getBgColor() {
-      return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
+      return this.$router.currentRoute.name === 'Home' ? 'secondary' : 'bg';
     },
     isHome() {
       return this.$router.currentRoute.name === 'Home';
+    },
+    handlePrevent() {
+      const routes = this.$router.currentRoute.name !== 'Side Pick' && this.$router.currentRoute.name !== 'New Company'
+
+      return routes;
     },
     getPrimaryButtons() {
       return [

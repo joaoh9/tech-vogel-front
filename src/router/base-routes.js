@@ -3,8 +3,9 @@ import PrivacyPolicy from 'Pages/Static/PrivacyPolicy';
 import TermsOfService from 'Pages/Static/TermsOfService';
 import NotFound from 'Pages/Static/NotFound';
 import AboutUs from 'Components/Static/AboutUs';
-import HowItWorks from 'Components/Static/HowItWorks';
 import FAQ from 'Pages/Static/FAQ'
+import Tips from 'Pages/Static/Tips';
+import Pricing from 'Pages/Static/Pricing';
 
 const routes = [
   {
@@ -36,7 +37,12 @@ const routes = [
   {
     path: '/how-it-works',
     name: 'How it works',
-    component: HowItWorks,
+    component: Tips,
+  },
+  {
+    path: '/pricing',
+    name: 'Pricing',
+    component: Pricing,
   },
   {
     path: '/FAQ',
