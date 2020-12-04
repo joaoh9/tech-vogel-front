@@ -6,13 +6,13 @@
 
       <v-dialog v-model="dialog" width="600" scrollable>
         <template v-slot:activator="{ on }">
-          <g-btn
+          <v-btn
             color="transparent"
-            :label="howDoesWork"
             dark
             v-on="on"
-            style="text-decoration: underline"
-          />
+            style="text-decoration: underline">
+          {{ howDoesWork }}
+          </v-btn>
         </template>
 
         <v-card>
