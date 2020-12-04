@@ -4,18 +4,25 @@
       <v-img :src="homeBg" style="height: 95vh" class="bg-color-secondary">
         <div
           :style="
-            `margin-top: 156px; ${
+            `margin-top: 64px; ${
               $vuetify.breakpoint.mobile ? 'margin-left: 50px' : 'margin-left: 150px'
             }`
           "
         >
-          <h1 class="h1-bold-alternative color-light">{{ $t('home.title1') }}</h1>
-          <h1 class="h1-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
-          <h1 class="h1-bold-alternative color-light">{{ $t('home.title3') }}</h1>
+          <div v-if="$vuetify.breakpoint.mdAndUp">
+            <h1 class="h1-bold-alternative color-light">{{ $t('home.title1') }}</h1>
+            <h1 class="h1-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
+            <h1 class="h1-bold-alternative color-light">{{ $t('home.title3') }}</h1>
+          </div>
+          <div v-else>
+            <h1 class="h3-bold-alternative color-light">{{ $t('home.title1') }}</h1>
+            <h1 class="h3-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
+            <h1 class="h3-bold-alternative color-light">{{ $t('home.title3') }}</h1>
+          </div>
           <h5 class="h5 mt-12 color-bg line-break">{{ $t('home.subtitle') }}</h5>
-          <div class="d-flex mt-14">
+          <div class="d-flex mt-14 flex-wrap">
             <g-btn
-              class="font-details"
+              class="font-details mx-2 my-2"
               style="height: 56px; width: 270px;"
               type="primary"
               :label="$t('common.startHiring')"
@@ -23,7 +30,7 @@
               data-cy="home-signup"
             />
             <g-btn
-              class="ml-8 font-details"
+              class="mx-2 my-2 font-details"
               style="height: 56px; width: 270px;"
               type="outline"
               color="light"
@@ -53,7 +60,7 @@
           </div>
         </v-card>
       </div>
-        <ForDevs />
+      <ForDevs />
       <div class="d-flex align-center flex-column flex-wrap mt-16">
         <h2 class="h2-bold color-secondary mt-16">{{ $t('common.ourPricing') }}</h2>
         <h5 class="h5 mt-4 color-cinza-lighten-1">
@@ -69,7 +76,9 @@
         style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); margin-top: -268px"
       >
         <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
-          <h2 class="h2-bold mt-4 color-light mt-16 mx-16">{{ $t('common.areYouLookingForAJob') }}</h2>
+          <h2 class="h2-bold mt-4 color-light mt-16 mx-16">
+            {{ $t('common.areYouLookingForAJob') }}
+          </h2>
           <h5 class="h5 mt-4 color-light mx-16">
             {{ $t('common.freedomWork') }}
           </h5>
@@ -83,7 +92,7 @@
         <TypesOfProgrammers />
       </div>
       <div class="mt-10 mb-16">
-        <h5 class="d-flex justify-center mb-6 mt-16">{{$t('questions.title')}}</h5>
+        <h5 class="d-flex justify-center mb-6 mt-16">{{ $t('questions.title') }}</h5>
         <Questions />
       </div>
     </div>

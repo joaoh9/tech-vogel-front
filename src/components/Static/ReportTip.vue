@@ -1,6 +1,6 @@
 <template>
   <v-container class="d-flex align-center flex-column">
-    <h2 class="h2-bold-alternative color-primary mt-16">{{ $t('home.fastEasy') }}</h2>
+    <h2 class="h2-bold-alternative text-center color-primary mt-16">{{ $t('home.fastEasy') }}</h2>
     <div style="display: inline; font-size: 1.5em;" class="mt-12">
       <span class="color-secondary">{{ $t('home.withOur') }}</span>
       <span class="color-primary">&emsp;{{ $t('home.report') }}&emsp;</span>

@@ -1,6 +1,6 @@
 <template>
   <v-container class="d-flex align-center flex-column">
-    <h2 class="h2-bold-alternative color-secondary mt-6">{{ $t('common.howItWorks') }}</h2>
+    <h2 class="h2-bold-alternative text-center color-secondary mt-6">{{ $t('common.howItWorks') }}</h2>
     <h4 class="color-secondary my-16">{{ $t('howItWorks.forCompanies') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
       <v-col cols="12" md="5">
