@@ -1,5 +1,8 @@
 export default {
-  next: 'Próximo',
-  finish: 'Finalizar',
-  preview: 'Visualizar',
+  common: {
+    next: 'Próximo',
+    finish: 'Finalizar',
+    preview: 'Visualizar',
+    seeMoreJobs: 'Visualizar mais vagas',
+  },
 };
