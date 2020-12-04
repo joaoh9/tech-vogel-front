@@ -78,6 +78,8 @@ export default {
     JobApplicationCard,
   },
   mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
     this.companyId = this.$route.params.companyId;
     this.jobId = this.$route.params.jobId;
     if (this.job_ && this.company_) {
@@ -87,8 +89,6 @@ export default {
       this.getJobData();
       this.getCompanyData();
     }
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0;
   },
   data() {
     return {

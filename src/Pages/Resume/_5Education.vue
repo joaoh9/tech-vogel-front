@@ -75,6 +75,10 @@ export default {
   components: {
     EducationItem,
   },
+  mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+  },
   data() {
     return {
       educationComponent: EducationItem,

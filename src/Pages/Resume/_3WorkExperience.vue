@@ -69,6 +69,10 @@ export default {
   components: {
     WorkItem,
   },
+  mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+  },
   data() {
     return {
       workComponent: WorkItem,
@@ -112,7 +116,6 @@ export default {
     };
   },
 };
-
 </script>
 
 <style scoped>

@@ -17,9 +17,9 @@
             <h1 class="h2-bold color-primary mt-2">
               {{ $t('company.planCard.price') }}
             </h1>
-            <bdy-1 class="d-flex align-end" color="primary">{{
-              $t('company.planCard.cents')
-            }}</bdy-1>
+            <bdy-1 class="d-flex align-end" color="primary">
+              {{ $t('company.planCard.cents') }}
+            </bdy-1>
           </div>
           <sub-1>{{ $t('howItWorks.forEachReport') }}</sub-1>
           <bdy-2 class="mt-2">

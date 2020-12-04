@@ -31,7 +31,7 @@ const routes = [
   {
     path: '/about-us',
     name: 'About us',
-    component: AboutUs, // TODO
+    component: AboutUs,
   },
   {
     path: '/how-it-works',

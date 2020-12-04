@@ -123,6 +123,8 @@ export default {
     VueEditor,
   },
   mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
     this.personalBio = this._personalBio || '';
     this.location.country = this._locationCountry || '';
     this.location.city = this._locationCity || '';
