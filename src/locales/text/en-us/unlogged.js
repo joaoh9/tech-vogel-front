@@ -94,6 +94,8 @@ export default {
       { text: 'How it works', to: '/how-it-works' },
       { text: 'Pricing', to: '/pricing' },
       { text: 'FAQ', to: '/faq' },
+      { text: 'Terms of Service', to: '/terms-of-service' },
+      { text: 'Privacy Policy', to: '/privacy-policy' },
     ],
   },
   login: {

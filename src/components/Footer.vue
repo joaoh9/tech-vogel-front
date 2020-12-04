@@ -62,8 +62,6 @@ export default {
       logo: Logo,
       footerInfo: [
         this.$t('common.copyright'),
-        this.$t('common.termsOfService'),
-        this.$t('common.privacyPolicy'),
         this.$t('common.cnpj') + ': ' + this.$t('common.cnpjNumber'),
         this.$t('common.phone'),
         this.$t('common.contactEmail'),
