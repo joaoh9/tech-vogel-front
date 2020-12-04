@@ -3,20 +3,22 @@
     class="pa-10 rounded-20"
     color="bg"
     outlined
-    style="border-color: #1a193c !important"
+    style="border-color: #FF9200 !important"
     width="375"
   >
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">
-        <h5 class="color-secondary d-flex justify-center">
-          {{ $t('devs.subtitle') }}
-        </h5>
-        <div class="d-flex">
-          <h2 class="h2-bold color-primary mt-2 text-uppercase">
-            {{ $t('common.free') }}
-          </h2>
+        <div style="height: 150px">
+          <h5 class="color-secondary d-flex justify-center">
+            {{ $t('devs.subtitle') }}
+          </h5>
+          <div class="d-flex">
+            <h2 class="h2-bold color-primary mt-2 text-uppercase">
+              {{ $t('common.free') }}
+            </h2>
+          </div>
         </div>
-        <div class="mt-10">
+        <div class="mt-10 d-flex flex-column justify-center" style="height: 290px">
           <div v-for="(item, index) in $t('devs.pricing')" :key="index">
             <capt-1 color="primary" class="mt-10" v-if="item.comingSoon">
               {{ $t('common.comingSoon') }}

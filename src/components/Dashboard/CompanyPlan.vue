@@ -8,25 +8,29 @@
   >
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">
-        <h5 class="color-secondary d-flex justify-center">
-          {{ $t('company.planCard.token', { quantity: 1 }) }}
-        </h5>
-        <div class="d-flex">
-          <h5 class="mr-2 color-primary">{{ $t('company.planCard.currency') }}</h5>
-          <h1 class="h2-bold color-primary mt-2">
-            {{ $t('company.planCard.price') }}
-          </h1>
-          <bdy-1 class="d-flex align-end" color="primary">{{ $t('company.planCard.cents') }}</bdy-1>
+        <div style="height: 150px">
+          <h5 class="color-secondary d-flex justify-center">
+            {{ $t('company.planCard.token', { quantity: 1 }) }}
+          </h5>
+          <div class="d-flex">
+            <h5 class="mr-2 color-primary">{{ $t('company.planCard.currency') }}</h5>
+            <h1 class="h2-bold color-primary mt-2">
+              {{ $t('company.planCard.price') }}
+            </h1>
+            <bdy-1 class="d-flex align-end" color="primary">{{
+              $t('company.planCard.cents')
+            }}</bdy-1>
+          </div>
+          <sub-1>{{ $t('howItWorks.forEachReport') }}</sub-1>
+          <bdy-2 class="mt-2">
+            <sub-2 color="secondary mr-1">
+              <!-- TODO: internacionalização de moeda -->
+              {{ $t('howItWorks.BRL.installments').toString() + ' x R$ ' + eachInstallment() }}
+            </sub-2>
+            {{ $t('company.planCard.paymentMethod') }}
+          </bdy-2>
         </div>
-        <sub-1>{{ $t('howItWorks.forEachReport') }}</sub-1>
-        <bdy-2 class="mt-2">
-          <sub-2 color="secondary mr-1">
-            <!-- TODO: internacionalização de moeda -->
-            {{ $t('howItWorks.BRL.installments').toString() + ' x R$ ' + eachInstallment() }}
-          </sub-2>
-          {{ $t('company.planCard.paymentMethod') }}
-        </bdy-2>
-        <div class="mt-10">
+        <div class="mt-10 d-flex flex-column justify-center" style="height: 290px">
           <IconText
             v-for="(item, index) in $t('howItWorks.pricing')"
             :key="index"
@@ -80,9 +84,6 @@ export default {
 </script>
 
 <style>
-.theme--light.v-sheet--outlined {
-  border: 1px solid #1a193c !important;
-}
 .rounded-20 {
   border-radius: 20px !important;
 }

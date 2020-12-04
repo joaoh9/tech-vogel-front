@@ -1,5 +1,5 @@
 <template>
-  <v-card max-height="300" width="470" class="mt-8">
+  <v-card max-height="300" width="470" class="mt-8" elevation="0">
     <div class="ma-8">
       <h5 class="h5-bold color-white">{{ title }}</h5>
       <sub-1 color="white" class="my-4">{{ description }}</sub-1>
