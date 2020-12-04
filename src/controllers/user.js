@@ -34,6 +34,19 @@ export default class UserController {
     }
   }
 
+  async resendConfirmationEmail(email) {
+    const axios = await Axios.GetInstance();
+
+    await axios.post(`/v1/users/notification/welcome/${email}`);
+  }
+
+  async confirmUser(userId, confirmationKey) {
+    const axios = await Axios.GetInstance();
+
+    const { data } = await axios.post(`/v1/users/${userId}/confirm/${confirmationKey}`);
+    return data;
+  }
+
   decodeUserToken(_token) {
     const token = _token || StorageHelper.loadState('userToken');
 

@@ -22,8 +22,11 @@ export default {
       errorSavingUser: 'There was an error when saving the user',
     },
     confirmEmail: {
-      title: 'A confirmation link was sent to your email!',
+      title: 'A confirmation email was sent to {email}',
       description: 'Click on it to confirm your registration',
+    },
+    confirmationCode: {
+      title: 'Paste the code you received in the box below',
     },
     termsAndConditions: {
       text: 'I have read and agree to the',

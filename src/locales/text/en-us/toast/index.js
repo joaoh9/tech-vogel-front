@@ -38,6 +38,7 @@ export default {
       jobEdit: 'Job edited successfully',
       githubRetrieve: 'Github data retrieved successfully!',
       closeTab: 'You can close this tab and retry your request on the other page',
+      emailConfirmation: 'Email confirmed successfully!',
     },
     info: {
       sessionExpired: 'Your session has expired. Please login again',
