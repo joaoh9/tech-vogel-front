@@ -25,6 +25,7 @@
       </div>
 
       <v-spacer />
+      <ChangeLanguage chooseLanguageText="" />
 
       <v-btn
         v-if="!$vuetify.breakpoint.mobile"
@@ -56,6 +57,7 @@
 <script>
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
+import ChangeLanguage from 'Components/Static/ChangeLanguage';
 
 export default {
   name: 'Navbar',
@@ -65,6 +67,9 @@ export default {
       logo: Logo,
       logoHome: LogoHome,
     };
+  },
+  components: {
+    ChangeLanguage,
   },
   methods: {
     goToSignup() {
