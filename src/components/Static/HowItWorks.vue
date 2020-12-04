@@ -3,8 +3,8 @@
     <h2 class="h2-bold-alternative color-secondary mt-6">{{ $t('common.howItWorks') }}</h2>
     <h4 class="color-secondary my-16">{{ $t('howItWorks.forCompanies') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
-      <v-col cols="12" md="6">
-        <div class="d-flex align-center flex-column">
+      <v-col cols="12" md="5">
+        <div class="d-flex align-center flex-column mb-12">
           <v-img :src="HowItWorks" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
           <v-img
             class="mt-4"
@@ -13,7 +13,8 @@
           />
         </div>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="0" md="1" />
+      <v-col cols="12" md="6" :class="$vuetify.breakpoint.mdAndUp ? 'mt-n16' : 'mt-0'">
         <div v-for="(item, i) in getSteps()" :key="i">
           <v-row>
             <v-col cols="2">

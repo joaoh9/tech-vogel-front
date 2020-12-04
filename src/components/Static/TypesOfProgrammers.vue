@@ -1,8 +1,10 @@
 <template>
-  <div class="d-flex align-center flex-column mx-md-16 mx-4">
-    <h4 class="text-center" color="secondary">{{ $t('typesOfProgrammers.title') }}</h4>
+  <div class="d-flex align-center flex-column mx-md-16 mx-4 mt-16">
+    <h4 :class="`text-center color-secondary ${$vuetify.breakpoint.mdAndUp ? 'mt-16' : 'mt-0'}`">
+      {{ $t('typesOfProgrammers.title') }}
+    </h4>
     <div class="d-flex justify-center flex-wrap mt-6">
-      <h6 v-for="(item, i) in $t('typesOfProgrammers.data')" :key="i" class="ma-6">
+      <h6 v-for="(item, i) in $t('typesOfProgrammers.data')" :key="i" class="ma-6 color-secondary">
         <v-icon x-small color="primary">mdi-brightness-1</v-icon> {{ item }}
       </h6>
     </div>

@@ -24,8 +24,9 @@ export default {
     secondaryBtn: 'Find jobs for free',
   },
   questions: {
+    title: 'Any questions? Get in touch!',
     reachUs: {
-      title: 'Reach us',
+      title: 'Send us a question',
       description: 'Tell us your company name, email and question via our contact form.',
       buttonText: 'WRITE QUESTION',
       click: 'https://forms.gle/1qZm7PDGZPeUQuW87',
@@ -38,7 +39,7 @@ export default {
     },
   },
   typesOfProgrammers: {
-    title: 'Examples of developers can you find here',
+    title: 'What types of developers are there?',
     data: [
       'Frontend Developer',
       'Backend Developer',
@@ -65,12 +66,12 @@ export default {
       },
       {
         title: 'Receive reports',
-        description: 'Receive your report with the fittest devs for your job.',
+        description: 'Receive your report with the fittest devs for your job. Only pay if you like their profile.',
       },
       {
         title: 'Hire the best devs!',
         description:
-          'Start your inside process and hire the best developer for your project growth!',
+          'Get to know your 3 fittest devs and start your inside process to hire the best developer for your project growth!',
       },
     ],
     pricing: [

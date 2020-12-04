@@ -10,7 +10,7 @@
       :company="loggedIn.company"
       @logout="() => logout()"
     />
-    <v-main :key="loggedIn.logged.toString() + 'main'">
+    <v-main class="bg-color-bg" :key="loggedIn.logged.toString() + 'main'">
       <router-view @login="() => checkIfLoggedIn()" @logout="() => logout()" class="view" />
     </v-main>
     <Footer />

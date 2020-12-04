@@ -12,23 +12,23 @@
       :class="
         `d-flex ${
           $vuetify.breakpoint.mdAndUp ? 'justify-center' : 'align-center flex-column'
-        } mt-10`
+        } mt-10 my-16`
       "
     >
       <g-btn
-        :class="`${$vuetify.breakpoint.mdAndUp ? 'mx-2 mb-10' : 'my-2'}`"
+        :class="`${$vuetify.breakpoint.mdAndUp ? 'mx-2 my-16' : 'my-12 mb-4'}`"
         style="height: 56px; width: 270px;"
         type="primary"
-        :label="$t('common.hireCTA')"
+        :label="$t('common.seeMoreJobs')"
         to="/signup"
         data-cy="home-signup"
       />
       <g-btn
-        :class="`${$vuetify.breakpoint.mdAndUp ? 'mx-2 mb-10' : 'my-2 mb-10'}`"
+        :class="`${$vuetify.breakpoint.mdAndUp ? 'mx-2 my-16' : 'my-2'} mb-16`"
         style="height: 56px; width: 270px;"
         type="outline"
         color="light"
-        :label="$t('common.applyCTA')"
+        :label="$t('common.postAJob')"
         to="/signup"
         data-cy="home-signup"
       />

@@ -67,6 +67,7 @@ export default {
     addNewInput: 'Add new input',
     findAJob: 'Find a job',
     postAJob: 'Post a job',
+    seeMoreJobs: 'See more jobs',
     language: 'Language',
     languages: 'Languages',
     fluency: 'Fluency',
