@@ -26,7 +26,7 @@
         <v-text-field
           data-cy="name"
           outlined
-          :rules="[rules.min(3, user.name)]"
+          :rules="[rules.min(3, user.name), rules.max(200, user.name)]"
           v-model="user.name"
           autofocus
         />
@@ -52,12 +52,13 @@
         <form-input :title="$t('common.password.label')" />
         <v-text-field
           data-cy="password"
-          :rules="[rules.min(8, user.password)]"
+          :rules="[rules.min(6, user.password)]"
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
           :type="showPassword ? 'text' : 'password'"
           outlined
           v-model="user.password"
+          :error-messages="localRules.passwordRequired"
         />
 
         <form-input :title="$t('common.confirmPassword.label')" />
@@ -138,6 +139,7 @@ export default {
       termsAndConditions: false,
       rules: {
         min: () => true,
+        max: () => true,
         equalPassword: () => true,
         equalEmail: () => true,
         email: () => true,
@@ -146,6 +148,7 @@ export default {
       localRules: {
         emailAlreadyRegistered: null,
         termsAndConditions: null,
+        passwordRequired: null,
       },
       user: {
         name: '',
@@ -169,13 +172,10 @@ export default {
       }
       const emailRuleOk = this.rules.email(this.user.email) === true;
       if (!emailRuleOk) {
-        this.localRules.emailAlreadyRegistered = this.$t('common.emailRequired');
+        this.localRules.emailAlreadyRegistered = this.$t('rules.emailRequired');
       }
 
       const validEmail = await this.validEmail();
-      if (!validEmail) {
-        this.$toast.warning(this.$t('toast.warning.emailRegistered'));
-      }
       if (emailRuleOk && validEmail) {
         this.localRules.emailAlreadyRegistered = '';
       }
@@ -183,10 +183,33 @@ export default {
       const nameRuleOk = this.rules.min(3, this.user.name) === true;
       if (!nameRuleOk) {
         this.user.name = '';
-        this.$toast.warning(this.$t('toast.warning.nameGreater'));
       }
 
-      if (!this.termsAndConditions || !emailRuleOk || !validEmail || !nameRuleOk) {
+      const validPassword = this.rules.min(6, this.user.password) === true;
+      if (!validPassword) {
+        this.localRules.passwordRequired = this.rules.min(6, this.user.password);
+      } else {
+        this.localRules.passwordRequired = this.$t('rules.passwordRequired');
+      }
+
+      if (validPassword) {
+        this.localRules.passwordRequired = '';
+      }
+
+      const equalEmail = this.rules.equalEmail(this.user.email, this.user.confirmEmail) === true;
+
+      const equalPassword =
+        this.rules.equalPassword(this.user.password, this.user.confirmPassword) === true;
+
+      if (
+        !this.termsAndConditions ||
+        !emailRuleOk ||
+        !validEmail ||
+        !validPassword ||
+        !nameRuleOk ||
+        !equalEmail ||
+        !equalPassword
+      ) {
         return false;
       }
 

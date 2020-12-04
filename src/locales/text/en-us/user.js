@@ -15,10 +15,6 @@ export default {
           identifier: 'personalInfo',
         },
         {
-          name: 'Social Links',
-          identifier: 'links',
-        },
-        {
           name: 'Work Experience',
           identifier: 'workExperience',
         },

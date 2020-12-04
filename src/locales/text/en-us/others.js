@@ -7,15 +7,26 @@ export default {
     title1: 'Find remote',
     title2: '<developers/>',
     title3: 'for your company!',
-    subtitle1: 'Get your projects off the ground with the help of the',
-    subtitle2: 'developer that best fit your needs!',
+    subtitle: 'Achieve your goals with Devs that best fit your project needs! ',
     timeWasted: 'No more time wasted selecting hundreds of CVs!',
     postForFree: 'Post for free',
     startApplying: 'Start applying',
+    fastEasy: 'Fast, Easy & Practical',
+    withOur: 'With our',
+    report: 'report',
+    fittestDevs: 'of the fittest Devs for your project you get:',
+    tips: [
+      { text: 'No time wasted searching thousands of CVs' },
+      { text: 'The best matched devs to your project needs' },
+      { text: 'To pay once after you receive your report' },
+    ],
+    primaryBtn: 'Post jobs for free',
+    secondaryBtn: 'Find jobs for free',
   },
   questions: {
+    title: 'Any questions? Get in touch!',
     reachUs: {
-      title: 'Reach us',
+      title: 'Send us a question',
       description: 'Tell us your company name, email and question via our contact form.',
       buttonText: 'WRITE QUESTION',
       click: 'https://forms.gle/1qZm7PDGZPeUQuW87',
@@ -28,7 +39,7 @@ export default {
     },
   },
   typesOfProgrammers: {
-    title: 'Examples of developers can you find here',
+    title: 'What types of developers are there?',
     data: [
       'Frontend Developer',
       'Backend Developer',
@@ -45,22 +56,22 @@ export default {
     forCompanies: 'For companies',
     steps: [
       {
-        title: 'Post your job',
-        description: 'Log in to your account, fill your job description and press "post Job"',
+        title: 'Post your job for free',
+        description: 'Log in to your account, fill your job description and press "post Job”.',
       },
       {
         title: 'Collect applications',
         description:
-          'Your job will be running in our platform por 15 days collecting as many applications  as possible',
+          'Your job will be running in our platform for 15 working days collecting as many interested candidates as possible.',
       },
       {
         title: 'Receive reports',
-        description: 'Receive your report with the fittest devs for your job.',
+        description: 'Receive your report with the fittest devs for your job. Only pay if you like their profile.',
       },
       {
         title: 'Hire the best devs!',
         description:
-          'Start your inside process and hire the best developer for your project growth!',
+          'Get to know your 3 fittest devs and start your inside process to hire the best developer for your project growth!',
       },
     ],
     pricing: [
@@ -118,6 +129,7 @@ export default {
   rules: {
     nameTooShort: 'Please write your full name',
     wrongFormatEmail: 'Email with wrong format!',
+    wrongFormatPassword: 'Password with wrong format!',
     lessThanXCharacters: 'Please write at least X characters',
     greaterThanXCharacters: 'Please write up to maximum X characters',
     letterOrNumber: 'Please write only letters or numbers',
@@ -132,6 +144,11 @@ export default {
     emailsDontMatch: 'Emails do not match',
     passwordsDontMatch: 'Passwords do not match',
     termsAndConditions: 'Your must accept our Terms and Conditions',
+    emailRequired: 'Email required',
+    passwordRequired: 'Password required',
+    wrongEmailLogin:
+    'Sorry, your email is incorrect. Please double-check your email.',
+    wrongPasswordLogin: 'Sorry, your password is incorrect. Please double-check your password.',
   },
   quill: {
     defaultToolbar: [

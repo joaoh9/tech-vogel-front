@@ -1,30 +1,33 @@
 <template>
   <div>
-    <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile class="px-n12"  height="88">
+    <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile class="" height="88">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.mobile"
         @click="drawer = true"
         color="bg"
-        class="mx-16"
+        class=""
       />
       <v-btn text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="logoHome" />
         </v-avatar>
       </v-btn>
-      <g-btn
-        class="cursor-pointer mx-n2 button-text text-buttons"
-        type="text"
-        color="bg"
-        v-for="(item, index) in getTextButtons()"
-        :key="index"
-        @click="item.goTo()"
-        :label="item.text"
-      />
+      <div v-if="$vuetify.breakpoint.mdAndUp" class="d-flex">
+        <g-btn
+          class="cursor-pointer mx-n2 button-text text-buttons"
+          type="text"
+          color="bg"
+          v-for="(item, index) in getTextButtons()"
+          :key="index"
+          @click="item.goTo()"
+          :label="item.text"
+        />
+      </div>
 
       <v-spacer />
 
       <v-btn
+        v-if="!$vuetify.breakpoint.mobile"
         dataCy="nav-login"
         to="/login"
         class="mx-4 py-5"
@@ -34,18 +37,18 @@
         {{ $t('common.login') }}
       </v-btn>
 
-      <v-btn
-        v-if="!$vuetify.breakpoint.mobile"
-        color="primary"
-        dataCy="nav-new-company"
-        class="py-5 px-12"
-        to="/signup"
-      >
+      <v-btn color="primary" dataCy="nav-new-company" class="py-5 px-12" to="/signup">
         {{ $t('common.signup') }}
       </v-btn>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary class="">
-      <MobileDrawer :items="getTextButtons().concat(getPrimaryButtons())" />
+      <v-list nav dense>
+        <v-list-item-group v-model="drawer">
+          <v-list-item v-for="(item, i) in getAllButtons()" :key="i" @click="item.goTo">
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
     </v-navigation-drawer>
   </div>
 </template>
@@ -53,13 +56,9 @@
 <script>
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
-import MobileDrawer from './MobileDrawer';
 
 export default {
   name: 'Navbar',
-  components: {
-    MobileDrawer,
-  },
   data() {
     return {
       drawer: false,
@@ -119,6 +118,9 @@ export default {
         { text: this.$t('common.login'), goTo: this.goToSignup },
         { text: this.$t('common.signup'), goTo: this.goToSignup },
       ];
+    },
+    getAllButtons() {
+      return this.getTextButtons().concat(this.getPrimaryButtons());
     },
   },
 };

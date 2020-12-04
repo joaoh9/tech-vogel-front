@@ -1,22 +1,17 @@
 <template>
   <div class="mb-12">
-    <form-input :title="$t('job.new.aboutTheRole.title')" required />
+    <form-input :title="$t('job.new.aboutTheRole.title2')" required />
     <vue-editor
       v-model="description"
-      :placeholder="$t('job.new.aboutTheRole.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
-      :rules="[
-        rules.required(description),
-        rules.min(10, description),
-        rules.max(1000, description),
-      ]"
+      :rules="[rules.required(description), rules.max(20000, description)]"
     />
   </div>
 </template>
 
 <script>
 import { VueEditor } from 'vue2-editor';
-
+import RulesHelper from 'Helpers/rules';
 export default {
   name: 'NewJob2',
   props: {
@@ -26,6 +21,7 @@ export default {
     VueEditor,
   },
   mounted() {
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.description = this.job.description;
   },
   data() {
@@ -33,7 +29,6 @@ export default {
       description: '',
       rules: {
         required: () => true,
-        min: () => true,
         max: () => true,
       },
     };

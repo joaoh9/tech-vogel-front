@@ -49,7 +49,13 @@
       </v-menu>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
-      <MobileDrawer :items="getPrimaryButtons()" />
+      <v-list nav dense>
+        <v-list-item-group v-model="drawer">
+          <v-list-item v-for="(item, i) in getPrimaryButtons()" :key="i" @click="item.goTo">
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
     </v-navigation-drawer>
   </div>
 </template>
@@ -60,13 +66,8 @@ import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 
 import UserController from 'Controllers/user';
 
-import MobileDrawer from './MobileDrawer';
-
 export default {
   name: 'LoggedInNavbar',
-  components: {
-    MobileDrawer,
-  },
   mounted() {
     this.checkIfCompany();
     this.getUserProfilePic();

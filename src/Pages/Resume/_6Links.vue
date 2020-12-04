@@ -7,6 +7,7 @@
       v-model="website"
       @input="$emit('website', website)"
       outlined
+      :rules="rules.max(200, website)"
     />
 
     <form-input :title="$t('common.links.github.title')" />
@@ -15,6 +16,7 @@
       v-model="github"
       @input="$emit('github', github)"
       outlined
+      :rules="rules.max(200, github)"
     />
 
     <form-input :title="$t('common.links.linkedin.title')" />
@@ -23,6 +25,7 @@
       v-model="linkedin"
       @input="$emit('linkedin', linkedin)"
       outlined
+      :rules="rules.max(200, linkedin)"
     />
 
     <form-input :title="$t('common.links.behance.title')" />
@@ -31,6 +34,7 @@
       v-model="behance"
       @input="$emit('behance', behance)"
       outlined
+      :rules="rules.max(200, behance)"
     />
   </div>
 </template>
@@ -44,6 +48,9 @@ export default {
       linkedin: '',
       behance: '',
       website: '',
+      rules: {
+        max: () => true,
+      },
     };
   },
 };

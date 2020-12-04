@@ -39,7 +39,12 @@ export default {
   props: {
     user: Object,
   },
-  async mounted() {},
+  async mounted() {
+    history.pushState(null, null, location.href);
+    window.onpopstate = () => {
+      history.go(1);
+    };
+  },
   data() {
     return {
       confirmationStatus: 0,

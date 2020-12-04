@@ -7,7 +7,13 @@
       style="background: linear-gradient(0deg, rgba(255, 146, 0, 0.7), rgba(255, 146, 0, 0.7)), linear-gradient(112.55deg, #FFD500 0%, rgba(255, 213, 0, 0.5) 72.92%), #FF9200;"
     >
       <div class="d-flex justify-center mt-8">
-        <g-btn @click="$router.go(-1)" class="mx-12" type="outline" color="light" :label="$t('common.back')" />
+        <g-btn
+          @click="$router.go(-1)"
+          class="mx-12"
+          type="outline"
+          color="light"
+          :label="$t('common.back')"
+        />
       </div>
     </PrimaryHeader>
 
@@ -101,10 +107,14 @@ export default {
       const userController = new UserController();
       const profilePictureController = new ProfilePictureController();
 
-      if (this.rules.min(3, this.company.name) !== true || !this.company.description) {
+      if (!this.company.name || !this.company.description) {
         this.$toast.error(this.$t('toast.error.writeNames'));
         return;
+      } else if (!this.validateRules()) {
+        this.$toast.error(this.$t('toast.error.fillOut'));
+        return;
       }
+
       try {
         await companyController.save(this.company);
         await profilePictureController.save(this.logo);
@@ -117,6 +127,16 @@ export default {
       } catch (e) {
         this.$toast.error(this.$t('toast.error.saveCompany'));
       }
+    },
+    validateRules() {
+      const rules = [
+        this.rules.min(3, this.company.name) !== true,
+        this.rules.max(200, this.company.name) !== true,
+        this.rules.min(10, this.company.description) !== true,
+        this.rules.max(5000, this.company.description) !== true,
+      ];
+
+      return rules.every(rule => !rule);
     },
   },
 };

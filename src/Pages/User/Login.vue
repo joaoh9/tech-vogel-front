@@ -10,6 +10,7 @@
           :rules="[rules.required(user.email)]"
           autofocus
           data-cy="login-email"
+          :error-messages="localRules.checkEmail"
         />
         <form-input :title="$t('common.password.label')" />
         <v-text-field
@@ -21,6 +22,7 @@
           v-on:keyup.enter="login"
           outlined
           data-cy="login-password"
+          :error-messages="localRules.checkPassword"
         />
         <div class="d-flex justify-start">
           <p
@@ -79,11 +81,15 @@ export default {
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+
     this.rulesLoaded = true;
     if (this.email) {
       this.user.email = this.email;
     }
     this.retrieveUserDataFromLocalStorage();
+
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
   },
   data() {
     return {
@@ -97,6 +103,10 @@ export default {
       },
       rules: {
         required: () => true,
+      },
+      localRules: {
+        checkEmail: null,
+        checkPassword: null,
       },
       errorMessage: this.$t('login.error'),
     };
@@ -135,15 +145,24 @@ export default {
       } catch (e) {
         if (e.response.status === 422) {
           const validEmail = await userController.emailExists(this.user.email);
-          console.log('🚀 ~ file: Login.vue ~ line 112 ~ login ~ validEmail', validEmail);
+
           if (!validEmail) {
-            return this.$toast.warning(this.$t('toast.warning.wrongEmailLogin'));
+            return this.localRules.checkEmail = this.$t('rules.wrongEmailLogin');
+          } else if (!this.user.email) {
+            return this.localRules.checkEmail = this.$t('rules.emailRequired');
+          } else {
+            this.localRules.checkEmail = '';
           }
-          return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
+
+          if (!this.user.password) {
+            return this.localRules.checkPassword = this.$t('rules.passwordRequired');
+          }
         }
+
         if (e.response.status === 404) {
-          return this.$toast.warning(this.$t('toast.warning.wrongPasswordLogin'));
+          return this.localRules.checkPassword = this.$t('rules.wrongPasswordLogin');
         }
+
         return this.$toast.error(this.$t('toast.error.loginFailed'));
       }
     },

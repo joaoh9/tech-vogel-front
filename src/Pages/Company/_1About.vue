@@ -12,7 +12,7 @@
     <form-input :title="$t('company.new.companyName')" required />
     <v-text-field
       outlined
-      :rules="[rules.min(3, name), rules.required(name)]"
+      :rules="[rules.min(3, name), rules.required(name), rules.max(200, name)]"
       v-model="name"
       @input="$emit('company-name', name)"
       data-cy="register-company-name"
@@ -20,9 +20,13 @@
 
     <form-input :title="$t('company.new.aboutYourCompany.title')" required />
     <v-textarea
-      outlined
-      :rules="[rules.min(10, description), rules.max(1000, description), rules.required(description)]"
       v-model="description"
+      outlined
+      :rules="[
+        rules.min(10, description),
+        rules.max(5000, description),
+        rules.required(description),
+      ]"
     />
 
     <form-input :title="$t('common.links.webpage.title')" />
@@ -31,6 +35,7 @@
       v-model="website"
       @input="$emit('website', website)"
       outlined
+      :rules="[rules.max(200, website)]"
     />
 
     <form-input :title="$t('common.links.linkedin.title')" />
@@ -39,6 +44,7 @@
       v-model="linkedin"
       @input="$emit('linkedin', linkedin)"
       outlined
+      :rules="[rules.max(200, linkedin)]"
     />
 
     <form-input :title="$t('common.links.instagram.title')" />
@@ -47,6 +53,7 @@
       v-model="instagram"
       @input="$emit('instagram', instagram)"
       outlined
+      :rules="[rules.max(200, instagram)]"
     />
 
     <form-input :title="$t('common.links.twitter.title')" />
@@ -55,8 +62,8 @@
       v-model="twitter"
       @input="$emit('twitter', twitter)"
       outlined
-      :rules="[rules.required(description)]"
       data-cy="register-company-desc"
+      :rules="[rules.max(200, twitter)]"
     />
   </div>
 </template>
@@ -84,6 +91,7 @@ export default {
       twitter: this.$t('common.links.twitter.placeholder'),
       rules: {
         min: () => true,
+        max: () => true,
         required: () => true,
       },
     };
