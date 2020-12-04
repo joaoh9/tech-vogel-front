@@ -41,7 +41,7 @@
         {{ $t('common.signup') }}
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary class="">
+    <v-navigation-drawer v-model="drawer" absolute temporary v-if="!$vuetify.breakpoint.mdAndUp">
       <v-list nav dense>
         <v-list-item-group v-model="drawer">
           <v-list-item v-for="(item, i) in getAllButtons()" :key="i" @click="item.goTo">

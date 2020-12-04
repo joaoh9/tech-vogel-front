@@ -8,6 +8,8 @@
         <template v-slot:activator="{ on }">
           <v-btn
             color="transparent"
+            tile
+            elevation="0"
             dark
             v-on="on"
             style="text-decoration: underline">
