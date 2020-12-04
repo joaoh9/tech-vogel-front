@@ -85,8 +85,16 @@ export default {
       if (!this.user) {
         this.$toast(this.$t('toast.error.retrieveUser'));
         this.$router.push({
-          path: '/login',
+          name: 'User Login',
         });
+      }
+
+      if (this.user.side < 20) {
+        if (this.user.side >= 10) {
+          this.$router.push({
+            name: 'User Dashboard',
+          });
+        }
       }
     },
     async getCompanyJobs() {

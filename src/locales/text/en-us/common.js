@@ -52,7 +52,7 @@ export default {
     characters: 'Characters',
     finish: 'Finish',
     preview: 'Preview',
-    copywright: '©2020 Tech Vogel. All rights reserved.',
+    copyright: '©2020 Tech Vogel. All rights reserved.',
     termsAndConditions: 'Terms and conditions',
     termsOfService: 'Terms of service',
     privacyPolicy: 'Privacy policy',

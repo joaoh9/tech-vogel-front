@@ -67,7 +67,7 @@ export default {
     const userController = new UserController();
     const userInfo = userController.decodeUserToken();
 
-    if (userInfo.side === 2) {
+    if (userInfo.side >= 20) {
       this.$router.push('/company/dashboard');
     }
     this.loadUserInfo();
@@ -95,10 +95,16 @@ export default {
       if (!this.user) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
-          path: '/login',
+          name: 'User Login',
         });
       }
       this.loaded.user = true;
+
+      if (this.user.side >= 20) {
+        this.$router.push({
+          name: 'Company Dashboard',
+        });
+      }
     },
 
     async loadResume() {
