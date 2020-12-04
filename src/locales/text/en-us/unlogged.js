@@ -87,7 +87,7 @@ export default {
       },
     ],
     aboutUsInfo: [
-      { text: 'Our story', to: '/aboutus' },
+      { text: 'Our story', to: '/about-us' },
       { text: 'How it works', to: '/how-it-works' },
       { text: 'Pricing', to: '/pricing' },
       { text: 'FAQ', to: '/faq' },
