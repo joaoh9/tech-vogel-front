@@ -44,9 +44,12 @@
     </div>
     <div class="mx-md-16 md-4 mt-16">
       <ReportTip />
-      <div class="mt-16">
-        <HowItWorks />
+      <div class="mt-16 d-flex justify-center">
+        <h2 class="h2-bold-alternative text-center color-secondary mt-6">
+          {{ $t('common.howItWorks') }}
+        </h2>
       </div>
+      <HowItWorks />
       <div class="mx-md-n16 md-n4 my-16">
         <v-card
           class="px-16 pt-4 pb-4"
@@ -67,7 +70,9 @@
           </div>
         </v-card>
       </div>
-      <ForDevs />
+      <div class="mt-16">
+        <ForDevs />
+      </div>
       <div class="d-flex align-center flex-column flex-wrap mt-16">
         <h2 class="h2-bold color-secondary mt-16">{{ $t('common.ourPricing') }}</h2>
         <h5 class="h5 mt-4 color-cinza-lighten-1 text-center">

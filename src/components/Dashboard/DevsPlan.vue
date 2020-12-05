@@ -9,11 +9,11 @@
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">
         <div style="height: 150px">
-          <h5 class="color-secondary d-flex justify-center">
+          <h5 class="color-secondary d-flex text-center justify-center">
             {{ $t('devs.subtitle') }}
           </h5>
           <div class="d-flex">
-            <h2 class="h2-bold color-primary mt-2 text-uppercase">
+            <h2 class="h2-bold color-primary mt-2 text-center text-uppercase">
               {{ $t('common.free') }}
             </h2>
           </div>

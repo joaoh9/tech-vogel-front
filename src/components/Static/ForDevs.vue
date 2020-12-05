@@ -2,20 +2,8 @@
   <v-container class="d-flex align-center flex-column">
     <h4 class="color-secondary my-10">{{ $t('devs.subtitle') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
-     <v-col cols="12" md="6" :class="$vuetify.breakpoint.mdAndUp ? 'mt-n16' : 'mt-0'">
-        <div v-for="(item, i) in getSteps()" :key="i">
-          <v-row>
-            <v-col cols="2" class="mx-2">
-              <span class="circle">
-                {{ i + 1 }}
-              </span>
-            </v-col>
-            <v-col>
-              <h5 class="h5-bold color-secondary">{{ item.title }}</h5>
-              <bdy-1 color="color-dark my-4">{{ item.description }}</bdy-1>
-            </v-col>
-          </v-row>
-        </div>
+      <v-col cols="12" md="6" :class="$vuetify.breakpoint.mdAndUp ? 'mt-n16' : 'mt-0'">
+        <NumberedSteps :steps="getSteps()" titleColor="secondary" textColor="dark" />
       </v-col>
       <v-col cols="0" md="1" />
       <v-col cols="12" md="5">
@@ -38,11 +26,13 @@
 <script>
 import devs from 'Assets/devs.svg';
 import HelpCard from 'Components/Dashboard/HelpCard';
+import NumberedSteps from './NumberedSteps';
 
 export default {
   name: 'devs',
   components: {
     HelpCard,
+    NumberedSteps,
   },
   data() {
     return {

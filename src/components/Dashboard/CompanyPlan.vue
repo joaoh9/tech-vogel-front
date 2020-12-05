@@ -9,12 +9,12 @@
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">
         <div style="height: 150px">
-          <h5 class="color-secondary d-flex justify-center">
+          <h5 class="text-center color-secondary d-flex justify-center">
             {{ $t('company.planCard.token', { quantity: 1 }) }}
           </h5>
           <div class="d-flex">
-            <h5 class="mr-2 color-primary">{{ $t('company.planCard.currency') }}</h5>
-            <h1 class="h2-bold color-primary mt-2">
+            <h5 class="text-center mr-2 color-primary">{{ $t('company.planCard.currency') }}</h5>
+            <h1 class="text-center h2-bold color-primary mt-2">
               {{ $t('company.planCard.price') }}
             </h1>
             <bdy-1 class="d-flex align-end" color="primary">
