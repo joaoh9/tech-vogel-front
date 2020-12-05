@@ -38,7 +38,13 @@
         {{ $t('common.login') }}
       </v-btn>
 
-      <v-btn color="primary" dataCy="nav-new-company" class="py-5 px-12" to="/signup">
+      <v-btn
+        v-if="!$vuetify.breakpoint.mobile"
+        color="primary"
+        dataCy="nav-new-company"
+        class="py-5 px-12"
+        to="/signup"
+      >
         {{ $t('common.signup') }}
       </v-btn>
     </v-app-bar>

@@ -1,10 +1,10 @@
 <template>
   <v-card
-    class="pa-10 rounded-20"
+    class="pa-8 rounded-20"
     color="bg"
     outlined
     style="border-color: #FF9200 !important"
-    width="375"
+    max-width="350"
   >
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">

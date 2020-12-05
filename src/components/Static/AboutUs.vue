@@ -1,15 +1,19 @@
 <template>
   <div class="d-flex align-center flex-column mx-md-16 mx-4" id="aboutUs">
-    <v-row class="ma-6 mt-12" align="center" justify="center">
+    <v-row class="ma-md-6 ma-2 mt-12" align="center" justify="center">
       <v-col cols="12" md="6">
-        <div class="d-flex justify-end mr-12">
+        <div class="d-flex justify-center align-center">
           <v-img max-width="335" :src="logoEscritaPreto" />
         </div>
       </v-col>
       <v-col cols="12" md="6" class="px-10">
-        <h3 class="h3 text-capitalize color-secondary mb-8">{{ $t('about') + ' ' + $t('tv') }}</h3>
-        <bdy-1 class="break-line">{{ $t('aboutUs.text1') }}</bdy-1>
-        <bdy-1 class="mt-4 break-line-another-text">{{ $t('aboutUs.text2') }}</bdy-1>
+        <div class="d-flex justify-center align-center">
+          <h3 class="h3 text-capitalize text-center color-secondary mb-8">
+            {{ $t('common.aboutUs') }}
+          </h3>
+        </div>
+        <bdy-1 class="break-line text-justify">{{ $t('aboutUs.text1') }}</bdy-1>
+        <bdy-1 class="mt-4 break-line-another-text text-justify">{{ $t('aboutUs.text2') }}</bdy-1>
       </v-col>
     </v-row>
   </div>

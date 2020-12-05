@@ -1,7 +1,7 @@
 <template>
   <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column">
-      <v-img :src="homeBg" style="height: 95vh" class="bg-color-secondary">
+      <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="1000">
         <div
           :style="
             `margin-top: 64px; ${
@@ -54,7 +54,14 @@
           style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); border-radius: 0px !important;"
         >
           <div class="d-flex justify-center">
-            <h2 class="h2-bold-alternative color-light text-center my-12" style="max-width: 950px;">
+            <h2
+              :class="
+                $vuetify.breakpoint.mobile
+                  ? 'h3-bold-alternative color-light text-center my-12'
+                  : 'h2-bold-alternative color-light text-center my-12'
+              "
+              style="max-width: 950px;"
+            >
               {{ $t('home.timeWasted') }}
             </h2>
           </div>
@@ -63,12 +70,12 @@
       <ForDevs />
       <div class="d-flex align-center flex-column flex-wrap mt-16">
         <h2 class="h2-bold color-secondary mt-16">{{ $t('common.ourPricing') }}</h2>
-        <h5 class="h5 mt-4 color-cinza-lighten-1">
+        <h5 class="h5 mt-4 color-cinza-lighten-1 text-center">
           {{ $t('common.startPostingJobsForFreeToday') }}
         </h5>
         <div class="d-flex mt-14 justify-center flex-wrap mb-10">
-          <CompanyPlan class="mx-3 my-3" />
-          <DevsPlan class="mx-3 my-3" />
+          <CompanyPlan class="my-3 mx-0 mx-md-2" />
+          <DevsPlan class="my-3 mx-0 mx-md-2" />
         </div>
       </div>
       <div
@@ -76,10 +83,10 @@
         style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); margin-top: -268px"
       >
         <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
-          <h2 class="h2-bold mt-4 color-light mt-16 mx-16">
+          <h2 class="h2-bold text-center mt-4 color-light mt-16 mx-16">
             {{ $t('common.areYouLookingForAJob') }}
           </h2>
-          <h5 class="h5 mt-4 color-light mx-16">
+          <h5 class="h5 text-center mt-4 color-light mx-16">
             {{ $t('common.freedomWork') }}
           </h5>
           <MainJobs />

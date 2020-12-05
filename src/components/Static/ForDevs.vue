@@ -2,10 +2,10 @@
   <v-container class="d-flex align-center flex-column">
     <h4 class="color-secondary my-10">{{ $t('devs.subtitle') }}</h4>
     <v-row align="center" class="mt-4" justify="center">
-      <v-col cols="12" md="5">
+     <v-col cols="12" md="6" :class="$vuetify.breakpoint.mdAndUp ? 'mt-n16' : 'mt-0'">
         <div v-for="(item, i) in getSteps()" :key="i">
           <v-row>
-            <v-col cols="2">
+            <v-col cols="2" class="mx-2">
               <span class="circle">
                 {{ i + 1 }}
               </span>
@@ -18,7 +18,7 @@
         </div>
       </v-col>
       <v-col cols="0" md="1" />
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="5">
         <div class="d-flex align-center flex-column">
           <v-img :src="devs" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
           <HelpCard
