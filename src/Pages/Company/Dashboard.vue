@@ -22,7 +22,13 @@
     </template>
     <template template v-slot:second-col>
       <div>
-        <CompanyCard :company="company" v-if="company" :key="loaded.company" :picture="logo" />
+        <CompanyCard
+          :company="company"
+          v-if="company"
+          :key="loaded.company"
+          :jobsPosted="jobsPosted"
+          :picture="logo"
+        />
         <div v-for="(job, i) in jobs" :key="i">
           <JobManagerCard :job="job" :company="company" />
         </div>
@@ -46,6 +52,7 @@ export default {
   async mounted() {
     await this.getUserInfo();
     await this.getCompanyInfo();
+    await this.getJobsPostedCount();
     await this.getCompanyJobs();
     await this.getLogo();
   },
@@ -64,6 +71,7 @@ export default {
         user: false,
       },
       jobs: [],
+      jobsPosted: -1,
     };
   },
   methods: {
@@ -73,6 +81,19 @@ export default {
       try {
         this.company = await companyController.getByUserId('current');
         this.loaded.company = true;
+      } catch (e) {
+        this.$toast.error(this.$t('toast.error.companyInfo'));
+      }
+    },
+    async getJobsPostedCount() {
+      const jobController = new JobController();
+
+      try {
+        this.jobsPosted = await jobController.getJobsPostedCount(this.company.id);
+        console.log(
+          '🚀 ~ file: Dashboard.vue ~ line 105 ~ getJobsPostedCount ~ this.jobsPosted',
+          this.jobsPosted,
+        );
       } catch (e) {
         this.$toast.error(this.$t('toast.error.companyInfo'));
       }
