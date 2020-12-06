@@ -60,7 +60,7 @@ export default {
       title: 'Schedule a call',
       description: 'Select a date and time for a one on one video call with us.',
       buttonText: 'BOOK NOW',
-      click: 'https://calendly.com/lauratechvogel/call-tech-vogel', // TODO: atualizar
+      click: 'https://calendly.com/lauratechvogel/call-tech-vogel',
     },
   },
   typesOfProgrammers: {

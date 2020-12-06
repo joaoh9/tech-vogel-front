@@ -29,7 +29,7 @@ export default {
       ],
       start: {
         title: 'Register your CV',
-        description: 'TODO',
+        description: 'Your CV is how the companies will see your info and how you will get matched for the best job oportunities! Fill it carefully!',
         linkLinkedIn: {
           title: 'Link your LinkedIn account',
         },
@@ -90,7 +90,7 @@ export default {
         },
         jobDescription: {
           title: 'Description',
-          placeholder: 'TODO',
+          placeholder: 'What were your biggest accomplishments?',
         },
         button: {
           addMore: 'ADDMORE',

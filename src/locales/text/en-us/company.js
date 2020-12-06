@@ -14,7 +14,7 @@ export default {
       confirmPassword: 'Confirm password',
       page2: 'Build your company page',
       location: 'Location',
-      aboutYourCompany: { title: 'About your company', placeholder: 'TODO' },
+      aboutYourCompany: { title: 'About your company', placeholder: 'Give us a short presentation of your company!' },
       page3: 'Add your links',
       webpage: 'Webpage',
       linkedin: 'LinkedIn',

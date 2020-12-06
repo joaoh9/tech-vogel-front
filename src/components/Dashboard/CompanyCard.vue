@@ -7,7 +7,6 @@
         <div class="d-flex">
           <div class="d-flex align-center mr-6">
             <h5 class="align-self-center h5-bold color-primary mr-2">
-              <!-- TODO: pegar quantidade de jobs posted do back -->
               {{ jobsPosted }}
             </h5>
             <span>
