@@ -76,6 +76,7 @@ export default {
   props: {
     job: Object,
     company: Object,
+    editMode: Boolean,
   },
   components: {
     IconText,
@@ -122,10 +123,13 @@ export default {
       ];
     },
     getApplicationButtonType() {
+      if (this.editMode) {
+        return 'disabled';
+      }
       const userController = new UserController();
       try {
         const userInfo = userController.decodeUserToken();
-        return userInfo.side === 2 ? 'disabled' : 'primary';
+        return userInfo.side >= 20 ? 'disabled' : 'primary';
       } catch (e) {
         if (e.message == 'Invalid token specified') {
           this.unloggedUser = true;

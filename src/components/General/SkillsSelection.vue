@@ -8,6 +8,7 @@
     />
     <v-select
       autofocus
+      v-model="techSkills"
       @input="e => (techSkills = e)"
       :items="$t('skills.techSkills')"
       outlined
@@ -33,6 +34,7 @@
       :description="$t('job.new.softSkills.inputHint')"
     />
     <v-select
+      v-model="softSkills"
       @input="e => (softSkills = e)"
       :items="$t('skills.softSkills')"
       outlined
@@ -48,6 +50,7 @@
     <v-select
       class="mb-10"
       :label="$t('job.new.languages.inputHint')"
+      v-model="languages"
       @input="e => (languages = e)"
       :items="$t('skills.languages')"
       outlined

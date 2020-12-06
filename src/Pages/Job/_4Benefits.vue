@@ -78,6 +78,8 @@ export default {
     this.benefits = this.job.benefits;
     if (this.job.salary) {
       this.salary = this.job.salary;
+      this.salary.min = this.job.salary.min;
+      this.salary.max = this.job.salary.max;
       this.salary.range = false;
     }
   },
@@ -86,8 +88,8 @@ export default {
       benefits: '',
       salary: {
         currency: 'USD',
-        min: '',
-        max: '',
+        min: undefined,
+        max: undefined,
         timeFrame: '',
         range: false,
       },

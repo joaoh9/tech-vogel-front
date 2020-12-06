@@ -40,7 +40,7 @@
           <div class="bdy-1 d-block mt-4" v-html="job.benefits"></div>
         </v-col>
         <v-col cols="12" lg="4" xl="3" class="mt-6">
-          <JobApplicationCard :job="job" :company="company" />
+          <JobApplicationCard :editMode="editMode" :job="job" :company="company" />
         </v-col>
       </v-row>
     </div>

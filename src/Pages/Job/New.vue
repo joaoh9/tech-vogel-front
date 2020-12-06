@@ -56,7 +56,9 @@
               :label="$t('common.back')"
               v-if="currentStep >= 0"
               type="secondary"
-              @click="currentStep === 0 ? $router.push({ name: 'Company Dashboard' }) : currentStep--"
+              @click="
+                currentStep === 0 ? $router.push({ name: 'Company Dashboard' }) : currentStep--
+              "
             />
             <g-btn
               :label="currentStep === 3 ? $t('common.preview') : $t('common.next')"
@@ -78,7 +80,7 @@ import Skills from 'Components/General/SkillsSelection';
 import Benefits from './_4Benefits';
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
-import Settings from '@config';
+import config from '@config';
 import RulesHelper from 'Helpers/rules';
 
 export default {
@@ -218,19 +220,17 @@ export default {
     },
 
     validateSkills(skill) {
-      if (this.job_.skills[skill].length < Settings.skills[skill].min) {
-        return this.$t(
-          'job.selectAtLeast',
-          Settings.skills[skill].min,
-          this.$t(`enums.skills.${skill}`),
-        );
+      if (this.job_.skills[skill].length < config.skills[skill].min) {
+        return this.$t('job.selectAtLeast', {
+          min: config.skills[skill].min,
+          skillName: this.$t(`enums.skills.${skill}`),
+        });
       }
-      if (this.job_.skills[skill].length > Settings.skills[skill].max) {
-        return this.$t(
-          'job.selectMaximum',
-          Settings.skills[skill].max,
-          this.$t(`enums.skills.${skill}`),
-        );
+      if (this.job_.skills[skill].length > config.skills[skill].max) {
+        return this.$t('job.selectMaximum', {
+          max: config.skills[skill].max,
+          skillName: this.$t(`enums.skills.${skill}`),
+        });
       }
       return true;
     },

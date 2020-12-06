@@ -19,6 +19,7 @@
     />
     <v-select
       outlined
+      v-model="contractType"
       @input="
         e => {
           contractType = e;
@@ -38,6 +39,7 @@
     />
     <v-select
       outlined
+      v-model="experienceLevel"
       @input="
         e => {
           experienceLevel = e;
