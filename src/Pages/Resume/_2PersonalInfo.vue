@@ -103,6 +103,8 @@ import { VueEditor } from 'vue2-editor';
 
 import StorageHelper from 'Helpers/storage';
 
+import config from '@config'
+
 export default {
   name: 'ResumePersonalInfo',
   props: {
@@ -161,15 +163,22 @@ export default {
       }
     },
     async handleFileUpload() {
-      const data64 = await this.getBase64(this.profilePicture);
+      if (this.logo.size > config.maxFileSize) {
+        this.$toast.error(
+          this.$t('toast.error.fileExceeds', { filename: this.logo.name, fileSize: config.maxFileSize }),
+        );
+        this.logo = null;
+        return;
+      }
+      const data64 = await this.getBase64(this.logo);
       const file = {
         data64,
-        name: this.profilePicture.name,
-        size: this.profilePicture.size,
-        type: this.profilePicture.type,
+        name: this.logo.name,
+        size: this.logo.size,
+        type: this.logo.type,
       };
 
-      this.$emit('profile-picture', file);
+      this.$emit('company-logo', file);
     },
     getBase64(file) {
       return new Promise(resolve => {

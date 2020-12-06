@@ -22,7 +22,7 @@
           :label="$t('user.linkedInSignup')"
         /> -->
 
-        <form-input class="mt-6" :title="$t('signup.name.title')" />
+        <form-input required class="mt-6" :title="$t('signup.name.title')" />
         <v-text-field
           data-cy="name"
           outlined
@@ -31,7 +31,7 @@
           autofocus
         />
 
-        <form-input :title="$t('signup.email.title')" />
+        <form-input required :title="$t('signup.email.title')" />
         <v-text-field
           data-cy="email"
           outlined
@@ -40,7 +40,7 @@
           :error-messages="localRules.emailAlreadyRegistered"
         />
 
-        <form-input :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
+        <form-input required :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
         <v-text-field
           data-cy="confirm-email"
           outlined
@@ -49,7 +49,7 @@
           :error-messages="localRules.emailAlreadyRegistered"
         />
 
-        <form-input :title="$t('common.password.label')" />
+        <form-input required :title="$t('common.password.label')" />
         <v-text-field
           data-cy="password"
           :rules="[rules.min(6, user.password)]"
