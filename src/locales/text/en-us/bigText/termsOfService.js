@@ -22,7 +22,7 @@ export default {
     <br>
     1.4. Amendment of Terms. Tech Vogel reserves the right to make changes and updates to the Terms at any time, in which case the user will be notified.
     <br>
-    1.5. Communication with the User. The user authorizes the sending of notifications by e-mail or by any other means of communication available with content of an informative and promotional nature related to the Services.
+    1.5. Communication with the User. The user authorizes the sending of notifications by email or by any other means of communication available with content of an informative and promotional nature related to the Services.
     <br>`,
   },
   '2': {

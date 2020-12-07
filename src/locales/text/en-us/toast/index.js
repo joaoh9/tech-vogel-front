@@ -6,7 +6,7 @@ export default {
       companyInfo: 'Could not retrieve company info. Make sure you have a registered company',
       companyInfoLogged: 'Could not retrieve company info. Please make sure you are logged in',
       jobApplying: 'An error occured when applying for this job',
-      getCompany: 'Something when wrong when getting company info for a job',
+      getCompany: 'Something went wrong when getting company info for a job',
       retrieveJob: 'An error occured when retrieving jobs from the database',
       retrieveCompany: 'Could not retrieve company info from database',
       retrieveUser: 'Could not retrieve user info. Please login again',
@@ -31,7 +31,7 @@ export default {
     },
     success: {
       jobApplied: 'Successfully applied for job',
-      logout: 'Logout successfull',
+      logout: 'Logout successful',
       savedCompany: 'Company saved successfully',
       savedResume: 'Resume saved successfully',
       jobSaved: 'Job saved successfully',
@@ -48,14 +48,14 @@ export default {
     },
     warning: {
       fillAll: 'You should fill all required information!',
-      detailedInfo: 'Please give to your appplicants a more detailed information about your job',
+      detailedInfo: 'Please give to your applicants a more detailed information about your job',
       emailRegistered: 'Email already registered',
       nameGreater: 'Name must be greater than 3 characters',
       emailValidation: 'Email and confirmation must be equals',
       passwordValidation: 'Password and confirmation must be equals',
     },
     open: {
-      login: 'Login successfull',
+      login: 'Login successful',
     },
   },
 };

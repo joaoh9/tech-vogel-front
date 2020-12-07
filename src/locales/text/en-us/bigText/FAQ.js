@@ -9,23 +9,23 @@ export default {
     {
       question: 'Is the contract made through Tech Vogel?',
       answer:
-        'No, Tech Vogel does not take part at any relation between users. Our platform is for connections only.',
+        'No, Tech Vogel does not take part in any relation between users. Our platform is for connections only.',
     },
     {
       question:
-        'Does Tech Vogel interfeer with the payment process between the company and the professional ?',
+        'Does Tech Vogel interfere with the payment process between the company and the professional ?',
       answer:
-        'No, Tech Vogel does not interfeer or work with contracts and payments between the company and hired professional.',
+        'No, Tech Vogel does not interfere or work with contracts and payments between the company and hired professional.',
     },
     {
       question: 'Why this platform is just for programers?',
       answer:
-        'We want to offer the best service as possible for our users. And focusing in one cathegory is the best way we found out to get more proximity and knowhow to offer more quality and positive results.',
+        'We want to offer the best service possible for our users. And focusing in one category is the best way we found out to get more proximity and knowhow to offer more quality and positive results.',
     },
     {
       question: 'I don\'t know what type of programer I need for my project how can I choose one?',
       answer:
-        'No problem! Just send us an e-mail that we are going to skedule a meeting with you to understand your project and sugest the type of dev your project demands.\nSend an email to: contact@techvogel.com',
+        'No problem! Just send us an email that we are going to schedule a meeting with you to understand your project and suggest the type of dev your project demands.\nSend an email to: contact@techvogel.com',
     },
     {
       question: 'What is a token?',
@@ -58,7 +58,7 @@ export default {
     },
     {
       question: 'How can I pay if I don\'t live in Brazil?',
-      answer: 'If you don\'t live in Brazil, we ask you to send us an e-mail contact@techvogel.com',
+      answer: 'If you don\'t live in Brazil, we ask you to send us an email contact@techvogel.com',
     },
     {
       question: 'Does tokens and vogels have an expiration date?',
