@@ -75,7 +75,7 @@
       <div class="mt-16">
         <ForDevs />
       </div>
-      <div class="d-flex align-center flex-column flex-wrap mt-16">
+      <div class="d-flex align-center flex-column flex-wrap mt-2">
         <Pricing />
       </div>
       <div

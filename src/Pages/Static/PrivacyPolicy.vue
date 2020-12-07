@@ -15,7 +15,7 @@
         />
       </div>
     </PrimaryHeader>
-    <div class="mt-4">
+    <div class="my-4">
       <SubHeader :subtitle="$t('privacyPolicy.subtitle')" :buttons="$t('privacyPolicy.buttons')" />
     </div>
     <BigTextSection

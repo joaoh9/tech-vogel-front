@@ -74,6 +74,8 @@ import RulesHelper from 'Helpers/rules';
 import UserController from 'Controllers/user';
 import config from '@config';
 
+const MB = 1000 * 1000;
+
 export default {
   name: 'New',
   components: {},
@@ -119,7 +121,10 @@ export default {
     async handleFileUpload() {
       if (this.logo.size > config.maxFileSize) {
         this.$toast.error(
-          this.$t('toast.error.fileExceeds', { filename: this.logo.name, fileSize: config.maxFileSize }),
+          this.$t('toast.error.fileExceeds', {
+            filename: this.logo.name,
+            fileSize: config.maxFileSize / MB,
+          }),
         );
         this.logo = null;
         return;

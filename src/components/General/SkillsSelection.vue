@@ -16,6 +16,8 @@
     />
 
     <SkillExperienceLevel
+      :explanation="techSkills.length"
+      :explanationText="$t('resume.register.skills.explanation')"
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
       skillTitle="techSkills"
@@ -48,7 +50,6 @@
     />
 
     <v-select
-      class="mb-10"
       :label="$t('job.new.languages.inputHint')"
       v-model="languages"
       @input="e => (languages = e)"

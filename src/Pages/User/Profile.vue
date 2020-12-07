@@ -32,7 +32,7 @@
         <v-col cols="1" md="1"></v-col>
         <v-col cols="11" md="7">
           <h5 class="h5-bold color-primary mb-4">{{ $t('resume.aboutMe') }}</h5>
-          <div class="bdy-1 color-dark" v-html="resume.personalBio"></div>
+          <p class="bdy-1 color-dark" style="display: block" v-html="resume.personalBio"></p>
 
           <v-divider class="my-8" />
           <h5 class="h5-bold color-secondary">{{ $t('resume.workExperience') }}</h5>

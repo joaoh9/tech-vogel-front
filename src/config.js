@@ -22,7 +22,7 @@ export default {
   },
   skills: {
     techSkills: { min: 3, max: 12 },
-    softSkills: { min: 1, max: 10 },
+    softSkills: { min: 1, max: 7 },
     languages: { min: 1, max: 7 },
   },
   maxFileSize: 12 * MB,

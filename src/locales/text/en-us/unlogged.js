@@ -45,8 +45,8 @@ export default {
       error: 'Your code is invalid or has expired!',
     },
     buttons: {
-      createCompany: 'I want to post a job',
-      createCV: 'I want to get hired',
+      createCompany: 'Post a job',
+      createCV: 'Get hired',
     },
   },
   footer: {

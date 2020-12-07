@@ -10,9 +10,9 @@
             <th>
               <overline>{{ $t('user.skills') }}</overline>
             </th>
-            <th>
-              <overline>{{ $t('user.yearsExperience') }}</overline>
-            </th>
+            <!-- <th> -->
+            <!-- <overline>{{ $t('user.yearsExperience') }}</overline> -->
+            <!-- </th> -->
             <!-- <th v-if="skillTitle === 'Tech Skills'"><overline>Github Projects</overline></th> -->
           </tr>
         </thead>
@@ -23,9 +23,9 @@
                 {{ $t(`skills.dictionary.${skillType}.${item.skillId}`) }}
               </bdy-1>
             </td>
-            <td>
-              <bdy-1 class="text-center" color="secondary">{{ item.experienceLevel }} </bdy-1>
-            </td>
+            <!-- <td> -->
+            <!-- <bdy-1 class="text-center" color="secondary">{{ item.experienceLevel }} </bdy-1> -->
+            <!-- </td> -->
             <!-- <td> -->
             <!-- <bdy-1 v-if="skillTitle === 'Tech Skills'" class="text-center" color="secondary"> -->
             <!-- {{ githubLanguages[item.skillId] }} -->

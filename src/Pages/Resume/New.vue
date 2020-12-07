@@ -33,7 +33,6 @@
               :_locationCity="resume.location.city"
               :_locationCountry="resume.location.country"
               v-on:profile-picture="e => (profilePicture = e)"
-              v-on:full-name="e => (resume.fullName = e)"
               v-on:main-role="e => (resume.mainRole = e)"
               v-on:location="e => (resume.location = e)"
               v-on:personal-bio="e => (resume.personalBio = e)"
@@ -55,10 +54,7 @@
           </div>
         </template>
         <template v-slot:buttons>
-          <div
-            class="d-flex justify-space-between my-6"
-            style="z-index: -1"
-          >
+          <div class="d-flex justify-space-between my-6" style="z-index: -1">
             <g-btn
               :label="$t('common.back')"
               v-if="currentStep >= 0"
@@ -126,7 +122,6 @@ export default {
         personalBio: '',
         jobInterests: [],
         contractType: [],
-        fullName: '',
         mainRole: '',
         location: {
           city: '',
@@ -248,29 +243,25 @@ export default {
     },
     validateSkills(skill) {
       if (this.resume.skills[skill].length < Settings.skills[skill].min) {
-        return this.$t(
-          'job.selectAtLeast',
-          Settings.skills[skill].min,
-          this.$t(`enums.skills.${skill}`),
-        );
+        return this.$t('job.selectAtLeast', {
+          min: Settings.skills[skill].min,
+          skillName: this.$t(`enums.skills.${skill}`),
+        });
       }
       if (this.resume.skills[skill].length > Settings.skills[skill].max) {
-        return this.$t(
-          'job.selectMaximum',
-          Settings.skills[skill].max,
-          this.$t(`enums.skills.${skill}`),
-        );
+        return this.$t('job.selectMaximum', {
+          max: Settings.skills[skill].max,
+          skillName: this.$t(`enums.skills.${skill}`),
+        });
       }
       return true;
     },
     validateRules() {
       const rules = [
-        this.resume.fullName,
         this.resume.mainRole,
         this.resume.location.city,
         this.resume.location.country,
         this.resume.personalBio,
-        this.rules.max(200, this.resume.fullName) === true,
         this.rules.max(200, this.resume.mainRole) === true,
         this.rules.max(200, this.resume.location.city) === true,
         this.rules.max(200, this.resume.location.country) === true,

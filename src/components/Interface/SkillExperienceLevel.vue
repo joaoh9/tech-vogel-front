@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h6 v-if="explanation" class="color-cinza-lighten-1">{{ explanationText }}</h6>
     <v-row
       justify="center"
       align="center"
@@ -32,13 +33,17 @@
 </template>
 
 <script>
-
 export default {
   name: 'SkillExperienceLevel',
   props: {
     items: Array,
     experienceLevel: Array,
     skillTitle: String,
+    explanation: {
+      type: Boolean,
+      default: false,
+    },
+    explanationText: String,
   },
   methods: {
     deleteSkills(index) {
@@ -46,7 +51,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

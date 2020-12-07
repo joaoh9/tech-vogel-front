@@ -4,19 +4,10 @@
     <v-file-input
       outlined
       :placeholder="$t('resume.register.personalInfo.profilePicture.placeholder')"
-      v-model="profilePicture"
+      v-model="logo"
       @change="handleFileUpload"
     >
     </v-file-input>
-
-    <form-input class="mt-0" :title="$t('resume.register.personalInfo.fullName.title')" required />
-    <v-text-field
-      autofocus
-      v-model="fullName"
-      @input="$emit('full-name', fullName)"
-      outlined
-      :rules="[rules.required(fullName), rules.max(200, fullName)]"
-    />
 
     <form-input class="mt-0" :title="$t('resume.register.personalInfo.mainRole.title')" required />
     <v-text-field
@@ -68,7 +59,10 @@
       :rules="[rules.max(200, website)]"
     />
 
-    <form-input :title="$t('common.links.github.title')" />
+    <form-input
+      :description="$t('resume.register.important')"
+      :title="$t('common.links.github.title')"
+    />
     <v-text-field
       :placeholder="$t('common.links.github.placeholder')"
       v-model="github"
@@ -77,7 +71,10 @@
       :rules="[rules.max(200, github)]"
     />
 
-    <form-input :title="$t('common.links.linkedin.title')" />
+    <form-input
+      :description="$t('resume.register.important')"
+      :title="$t('common.links.linkedin.title')"
+    />
     <v-text-field
       :placeholder="$t('common.links.linkedin.placeholder')"
       v-model="linkedin"
@@ -103,7 +100,9 @@ import { VueEditor } from 'vue2-editor';
 
 import StorageHelper from 'Helpers/storage';
 
-import config from '@config'
+import config from '@config';
+
+const MB = 1000 * 1000;
 
 export default {
   name: 'ResumePersonalInfo',
@@ -139,8 +138,6 @@ export default {
         country: '',
       },
       personalBio: '',
-      profilePicture: null,
-      fullName: '',
       mainRole: '',
       github: '',
       linkedin: '',
@@ -150,6 +147,7 @@ export default {
         required: () => true,
         max: () => true,
       },
+      logo: null,
     };
   },
   methods: {
@@ -165,7 +163,10 @@ export default {
     async handleFileUpload() {
       if (this.logo.size > config.maxFileSize) {
         this.$toast.error(
-          this.$t('toast.error.fileExceeds', { filename: this.logo.name, fileSize: config.maxFileSize }),
+          this.$t('toast.error.fileExceeds', {
+            filename: this.logo.name,
+            fileSize: config.maxFileSize / MB,
+          }),
         );
         this.logo = null;
         return;
