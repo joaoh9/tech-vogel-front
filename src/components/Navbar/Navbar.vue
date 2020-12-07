@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile class="" height="88">
+    <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile height="88">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.mobile"
         @click="drawer = true"
@@ -24,7 +24,6 @@
         />
       </div>
 
-      <v-spacer />
       <ChangeLanguage chooseLanguageText="" />
 
       <v-btn

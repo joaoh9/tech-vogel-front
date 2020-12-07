@@ -8,7 +8,7 @@
       <v-col cols="0" md="1" />
       <v-col cols="12" md="5">
         <div class="d-flex align-center flex-column">
-          <v-img :src="devs" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 340" />
+          <v-img :src="devs" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 300" />
           <HelpCard
             :title="$t('home.helpCard.whatsVogel.title')"
             :description="$t('home.helpCard.whatsVogel.description')"

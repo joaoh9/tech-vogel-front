@@ -4,6 +4,7 @@
     color="bg"
     :style="`border-color: ${borderColor} !important`"
     outlined
+    :max-width="$vuetify.breakpoint.mobile ? '300' : '350'"
   >
     <slot name="default" />
   </v-card>

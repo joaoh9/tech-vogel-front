@@ -1,11 +1,13 @@
 <template>
   <div class="bg-color-bg">
-    <div class="container-fluid d-flex flex-column">
+    <div class="container-fluid d-flex flex-column flex-wrap">
       <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="1000">
         <div
           :style="
             `${
-              $vuetify.breakpoint.mobile ? 'margin-left: 32px; margin-top: 8px;' : 'margin-left: 100px; margin-top: 32px; '
+              $vuetify.breakpoint.mobile
+                ? 'margin-left: 32px; margin-top: 8px;'
+                : 'margin-left: 100px; margin-top: 32px; '
             }`
           "
         >
@@ -74,21 +76,14 @@
         <ForDevs />
       </div>
       <div class="d-flex align-center flex-column flex-wrap mt-16">
-        <h2 class="h2-bold color-secondary mt-16">{{ $t('common.ourPricing') }}</h2>
-        <h5 class="h5 mt-4 color-cinza-lighten-1 text-center">
-          {{ $t('common.startPostingJobsForFreeToday') }}
-        </h5>
-        <div class="d-flex mt-14 justify-center flex-wrap mb-10">
-          <CompanyPlan class="my-3 mx-0 mx-md-2" />
-          <DevsPlan class="my-3 mx-0 mx-md-2" />
-        </div>
+        <Pricing />
       </div>
       <div
         class="mx-md-n16"
         style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); margin-top: -268px"
       >
         <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
-          <h2 class="h2-bold text-center mt-4 color-light mt-16 mx-16">
+          <h2 class="h2-bold text-center mt-4 color-light mt-16 mx-2 mx-md-16">
             {{ $t('common.areYouLookingForAJob') }}
           </h2>
           <h5 class="h5 text-center mt-4 color-light mx-16">
@@ -116,8 +111,7 @@ import MainJobs from 'Components/Job/MainJobs';
 import homeBg from 'Assets/home-bg-op-20c.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
 import ForDevs from 'Components/Static/ForDevs';
-import CompanyPlan from 'Components/Dashboard/CompanyPlan';
-import DevsPlan from 'Components/Dashboard/DevsPlan';
+import Pricing from 'Pages/Static/Pricing'
 import AboutUs from 'Components/Static/AboutUs';
 import Questions from 'Components/Static/Questions.vue';
 import ReportTip from 'Components/Static/ReportTip';
@@ -127,8 +121,7 @@ export default {
   name: 'Home',
   components: {
     MainJobs,
-    CompanyPlan,
-    DevsPlan,
+    Pricing,
     ForDevs,
     HowItWorks,
     AboutUs,
