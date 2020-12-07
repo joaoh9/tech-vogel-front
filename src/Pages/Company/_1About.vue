@@ -29,7 +29,7 @@
       ]"
     />
 
-    <form-input :title="$t('common.links.webpage.title')" />
+    <form-input required :title="$t('common.links.webpage.title')" />
     <v-text-field
       :placeholder="$t('common.links.webpage.placeholder')"
       v-model="website"

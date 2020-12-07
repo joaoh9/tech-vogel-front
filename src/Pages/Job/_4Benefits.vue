@@ -150,6 +150,7 @@ export default {
     },
     checkInput(emitValue, variable) {
       if (this.rules.isNumber(variable) === true) {
+        emitValue = emitValue.replace(/./g, '');
         this.$emit(emitValue, parseFloat(variable));
       }
     },

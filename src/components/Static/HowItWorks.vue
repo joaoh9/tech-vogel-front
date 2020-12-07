@@ -4,7 +4,7 @@
     <v-row align="center" class="mt-4" justify="center">
       <v-col cols="12" md="5">
         <div class="d-flex align-center flex-column mb-12">
-          <v-img :src="HowItWorks" :max-width="$vuetify.breakpoint.mdAndUp ? 600 : 300" />
+          <v-img :src="HowItWorks" :max-width="$vuetify.breakpoint.smAndUp ? 600 : 300" />
           <HelpCard
             :title="$t('home.helpCard.howItWorks.title')"
             :description="$t('home.helpCard.howItWorks.description')"
@@ -16,7 +16,7 @@
         </div>
       </v-col>
       <v-col cols="0" md="1" />
-      <v-col cols="12" md="6" :class="$vuetify.breakpoint.mdAndUp ? 'mt-n16' : 'mt-0'">
+      <v-col cols="12" md="6" :class="$vuetify.breakpoint.smAndUp ? 'mt-n16' : 'mt-0'">
         <NumberedSteps :steps="getSteps()" titleColor="secondary" textColor="dark" />
       </v-col>
     </v-row>

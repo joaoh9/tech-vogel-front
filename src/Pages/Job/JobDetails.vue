@@ -30,7 +30,7 @@
           <h4 class="h4-bold text-capitalize">{{ job.title }}</h4>
           <h6 class="h6">{{ $t('common.at') + ' ' }} {{ company.name }}</h6>
           <div class="my-8">
-            <v-card color="bg" :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-primary pa-6'">
+            <v-card color="bg" :class="!$vuetify.breakpoint.smAndUp ? 'bs-none' : 'bs-primary pa-6'">
               <SkillPresentation :skills="job.skills" />
             </v-card>
           </div>

@@ -2,7 +2,7 @@
   <div>
     <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile height="88">
       <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.mobile"
+        v-if="!$vuetify.breakpoint.smAndUp"
         @click="drawer = true"
         color="bg"
         class=""
@@ -12,7 +12,7 @@
           <v-img contain height="60" width="1" :src="logoHome" />
         </v-avatar>
       </v-btn>
-      <div v-if="$vuetify.breakpoint.mdAndUp" class="d-flex">
+      <div v-if="$vuetify.breakpoint.smAndUp" class="d-flex">
         <g-btn
           class="cursor-pointer mx-n2 button-text text-buttons"
           type="text"
@@ -27,7 +27,7 @@
       <ChangeLanguage chooseLanguageText="" />
 
       <v-btn
-        v-if="!$vuetify.breakpoint.mobile"
+        v-if="$vuetify.breakpoint.smAndUp"
         dataCy="nav-login"
         to="/login"
         class="mx-4 py-5"
@@ -38,7 +38,7 @@
       </v-btn>
 
       <v-btn
-        v-if="!$vuetify.breakpoint.mobile"
+        v-if="$vuetify.breakpoint.smAndUp"
         color="primary"
         dataCy="nav-new-company"
         class="py-5 px-12"
@@ -47,7 +47,7 @@
         {{ $t('common.signup') }}
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary v-if="!$vuetify.breakpoint.mdAndUp">
+    <v-navigation-drawer v-model="drawer" absolute temporary v-if="!$vuetify.breakpoint.smAndUp">
       <v-list nav dense>
         <v-list-item-group v-model="drawer">
           <v-list-item v-for="(item, i) in getAllButtons()" :key="i" @click="item.goTo">

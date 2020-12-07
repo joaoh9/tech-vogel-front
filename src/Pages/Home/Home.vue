@@ -1,17 +1,17 @@
 <template>
   <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column flex-wrap">
-      <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="1000">
+      <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="800">
         <div
           :style="
             `${
-              $vuetify.breakpoint.mobile
+              !$vuetify.breakpoint.smAndUp
                 ? 'margin-left: 32px; margin-top: 8px;'
                 : 'margin-left: 100px; margin-top: 32px; '
             }`
           "
         >
-          <div v-if="$vuetify.breakpoint.mdAndUp">
+          <div v-if="$vuetify.breakpoint.smAndUp">
             <h1 class="h1-bold-alternative color-light">{{ $t('home.title1') }}</h1>
             <h1 class="h1-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
             <h1 class="h1-bold-alternative color-light">{{ $t('home.title3') }}</h1>
@@ -61,7 +61,7 @@
           <div class="d-flex justify-center">
             <h2
               :class="
-                $vuetify.breakpoint.mobile
+                !$vuetify.breakpoint.smAndUp
                   ? 'h3-bold-alternative color-light text-center my-12'
                   : 'h2-bold-alternative color-light text-center my-12'
               "
