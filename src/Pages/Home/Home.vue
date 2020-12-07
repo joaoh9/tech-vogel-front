@@ -4,8 +4,8 @@
       <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="1000">
         <div
           :style="
-            `margin-top: 64px; ${
-              $vuetify.breakpoint.mobile ? 'margin-left: 50px' : 'margin-left: 150px'
+            `${
+              $vuetify.breakpoint.mobile ? 'margin-left: 32px; margin-top: 8px;' : 'margin-left: 100px; margin-top: 32px; '
             }`
           "
         >
@@ -19,10 +19,10 @@
             <h1 class="h3-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
             <h1 class="h3-bold-alternative color-light">{{ $t('home.title3') }}</h1>
           </div>
-          <h5 class="h5 mt-12 color-bg line-break">{{ $t('home.subtitle') }}</h5>
-          <div class="d-flex mt-14 flex-wrap">
+          <h5 class="h5 mt-6 mt-md-12 color-bg line-break">{{ $t('home.subtitle') }}</h5>
+          <div class="d-flex mt-5 mt-md-10 flex-wrap">
             <g-btn
-              class="font-details mx-2 my-2"
+              class="font-details mr-4 my-2"
               style="height: 56px; width: 270px;"
               type="primary"
               :label="$t('common.startHiring')"
@@ -30,7 +30,7 @@
               data-cy="home-signup"
             />
             <g-btn
-              class="mx-2 my-2 font-details"
+              class="my-2 font-details"
               style="height: 56px; width: 270px;"
               type="outline"
               color="light"
