@@ -2,25 +2,19 @@
 export default {
   '1': {
     title: 'Introduction',
-    description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
+    description: `We need to collect some data to provide the best experience possible to ensure that you get the most out of our service.
       <br>
-      A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
+      Your privacy and the security of your personal data are of the utmost importance to us.
       <br>
-      Assim, gostaríamos de demonstrar de forma transparente como e porque coletamos e utilizamos os seus dados pessoaise informações.
+      Thus, we would like to demonstrate in a transparent way why and how we ask your data and information for using the platform.
       <br>
-      Queremos ajudar você a compreender nossas práticas de privacidade.
+      We want to help you understand our privacy policy
       <br>
-      Este é o nosso objetivo, e naPolítica de Privacidade (“Política”) serão fornecidos todos os esclarecimentos e detalhes necessários.
+      This is our objective, and in the Privacy Policy all clarifications and details will be provided.
       <br>
-      1.1.1. Para fins desta política, Cliente é toda pessoa física ou jurídica que se cadastra na Tech Vogel com intuito de ofertar uma vaga de trabalho remoto ("post a job").
+      Tech Vogel has designated a Data Protection Officer (DPO), who will be responsible for communicating with the data subject.
       <br>
-      1.1.2. Para fins desta política, Profissionais e ou freelancers é toda pessoa física que se cadastra na Tech Vogel com o intuito de aplicar a uma vaga de trabalho remoto ("apply for job").
-      <br>
-      1.1.3. Para fins desta política, Profissionais/freelancers e Clientes da Tech Vogel são denominados em conjunto (“usuários”).
-      <br>
-      A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
-      <br>
-      Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+      If you want to communicate with our DPO you can send an email to the following address: anacardoso@techvogel.com.
       <br>`,
   },
   '2': {
