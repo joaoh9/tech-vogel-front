@@ -11,6 +11,7 @@
 
     <form-input class="mt-0" :title="$t('resume.register.personalInfo.mainRole.title')" required />
     <v-text-field
+      autofocus
       :placeholder="$t('resume.register.personalInfo.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
@@ -51,7 +52,6 @@
 
     <form-input class="mt-7" :title="$t('common.links.website.title')" />
     <v-text-field
-      autofocus
       :placeholder="$t('common.links.website.placeholder')"
       v-model="website"
       @input="$emit('website', website)"

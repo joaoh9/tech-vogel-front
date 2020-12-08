@@ -6,13 +6,13 @@
       :description="$t('job.new.techSkills.description')"
       required
     />
-    <v-select
+    <g-autocomplete
       autofocus
       v-model="techSkills"
       @input="e => (techSkills = e)"
       :items="$t('skills.techSkills')"
       outlined
-      :multiple="true"
+      multiple
     />
 
     <SkillExperienceLevel
@@ -35,12 +35,12 @@
       :title="$t('job.new.softSkills.title')"
       :description="$t('job.new.softSkills.inputHint')"
     />
-    <v-select
+    <g-autocomplete
       v-model="softSkills"
       @input="e => (softSkills = e)"
       :items="$t('skills.softSkills')"
       outlined
-      :multiple="true"
+      multiple
     />
 
     <form-input
@@ -49,13 +49,13 @@
       :description="$t('job.new.language.inputHint')"
     />
 
-    <v-select
+    <g-autocomplete
       :label="$t('job.new.languages.inputHint')"
       v-model="languages"
       @input="e => (languages = e)"
       :items="$t('skills.languages')"
       outlined
-      :multiple="true"
+      multiple
     />
 
     <SkillExperienceLevel
