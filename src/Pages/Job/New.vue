@@ -127,7 +127,7 @@ export default {
         benefits: '',
         salary: {
           currency: 'USD',
-          timeFrame: '',
+          timeFrame: 'MONTHS',
           min: 0,
           max: 0,
           range: false,

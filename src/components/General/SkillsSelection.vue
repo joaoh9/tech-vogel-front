@@ -6,17 +6,24 @@
       :description="$t('job.new.techSkills.description')"
       required
     />
-    <g-autocomplete
+    <v-autocomplete
+      class="mb-8"
+      outlined
+      small-chips
+      deletable-chips
+      item-text="text"
+      item-value="value"
+      hide-selected
+      hide-details
       autofocus
       v-model="techSkills"
       @input="e => (techSkills = e)"
       :items="$t('skills.techSkills')"
-      outlined
       multiple
     />
 
     <SkillExperienceLevel
-      :explanation="techSkills.length"
+      :explanation="techSkills.length > 0"
       :explanationText="$t('resume.register.skills.explanation')"
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
@@ -35,11 +42,18 @@
       :title="$t('job.new.softSkills.title')"
       :description="$t('job.new.softSkills.inputHint')"
     />
-    <g-autocomplete
+    <v-autocomplete
+      class="mb-8"
+      outlined
+      small-chips
+      deletable-chips
+      item-text="text"
+      item-value="value"
+      hide-selected
+      hide-details
       v-model="softSkills"
       @input="e => (softSkills = e)"
       :items="$t('skills.softSkills')"
-      outlined
       multiple
     />
 
@@ -49,12 +63,19 @@
       :description="$t('job.new.language.inputHint')"
     />
 
-    <g-autocomplete
+    <v-autocomplete
+      class="mb-8"
+      outlined
+      small-chips
+      deletable-chips
+      item-text="text"
+      item-value="value"
+      hide-selected
+      hide-details
       :label="$t('job.new.languages.inputHint')"
       v-model="languages"
       @input="e => (languages = e)"
       :items="$t('skills.languages')"
-      outlined
       multiple
     />
 
@@ -69,6 +90,8 @@
 
 <script>
 import SkillExperienceLevel from 'Components/Interface/SkillExperienceLevel';
+
+import config from '@config';
 
 export default {
   name: 'NewJob3',
@@ -104,17 +127,36 @@ export default {
       },
     };
   },
+
+  methods: {
+    validateSkills(skill, skillName) {
+      if (skill.length > config.skills[skillName].max) {
+        this.$toast.warning(
+          this.$t('job.selectMaximum', {
+            max: config.skills[skillName].max,
+            skillName: this.$t(`enums.skills.${skillName}`),
+          }),
+        );
+        this[skillName].pop();
+      }
+      return true;
+    },
+  },
+
   watch: {
     techSkills() {
       this.skills.techSkills = this.techSkills;
+      this.validateSkills(this.skills.techSkills, 'techSkills');
       this.$emit('skills', this.skills);
     },
     softSkills() {
       this.skills.softSkills = this.softSkills;
+      this.validateSkills(this.skills.softSkills, 'softSkills');
       this.$emit('skills', this.skills);
     },
     languages() {
       this.skills.languages = this.languages;
+      this.validateSkills(this.skills.languages, 'languages');
       this.$emit('skills', this.skills);
     },
   },

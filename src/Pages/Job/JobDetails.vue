@@ -8,14 +8,14 @@
     >
       <div class="d-flex justify-center mt-8">
         <g-btn
-          @click="goBackAndEdit"
+          @click="goBackAndEdit()"
           class="mx-12"
           type="outline"
           color="light"
           :label="$t('common.backChange')"
         />
         <g-btn
-          @click="runAction"
+          @click="runAction()"
           type="filled"
           color="light"
           textColor="primary"

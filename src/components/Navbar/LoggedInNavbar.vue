@@ -12,7 +12,7 @@
         color="transparent"
         tile
         elevation="0"
-        :to="isCompany ? getDashboardRoute() : '/jobs'"
+        to="/"
       >
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
