@@ -12,18 +12,19 @@
             elevation="0"
             dark
             v-on="on"
-            style="text-decoration: underline">
-          {{ howDoesWork }}
+            style="text-decoration: underline"
+          >
+            {{ howDoesWork }}
           </v-btn>
         </template>
 
-        <v-card>
-          <g-card-header
-            :title="howDoesWork"
-            :description="modalText"
-            class="headline color-secondary"
-          />
-
+        <v-card clas="ma-10">
+          <div class="d-flex align-center flex-column px-4 py-6 px-sm-10">
+            <h4 class=" h4-bold mb-2 align-self-center text-center">{{ title }}</h4>
+            <span class=" sub-1 align-self-center text-center color-cinza-lighten-1">
+              {{ modalText || '' }}
+            </span>
+          </div>
           <v-divider></v-divider>
 
           <v-card-actions>

@@ -33,6 +33,7 @@ module.exports = {
         '@': path.resolve(__dirname, 'src'),
         '@config': path.resolve(__dirname, 'src/config'),
         Public: path.resolve(__dirname, 'public'),
+        'package.json': path.resolve(__dirname, 'package.json'),
       },
     },
   },

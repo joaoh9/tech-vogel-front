@@ -23,7 +23,7 @@
         />
       </div>
     </PrimaryHeader>
-    <div class="container mt-6 px-10 px-md-5">
+    <div class="container mt-6 px-10 px-sm-5">
       <v-row justify="center">
         <v-col cols="12" lg="8" xl="9" style="max-width: 1000px">
           <p class="overline">{{ getTimePosted() }}</p>

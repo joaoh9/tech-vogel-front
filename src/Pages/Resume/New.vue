@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-center mt-4 mt-md-12">
+  <div class="d-flex justify-center mt-4 mt-sm-12">
     <Stepper :stepsNames="$t('resume.register.tabs').map(s => s.name)" v-model="currentStep">
       <g-card>
         <template v-slot:card-header>

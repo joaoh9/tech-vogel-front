@@ -6,8 +6,8 @@
     </h5>
     <g-btn type="primary" class="mt-6" :label="$t('common.startForFree')" to="/signup" />
     <div class="d-flex mt-8 justify-center flex-wrap mb-10">
-      <CompanyPlan class="my-3 mx-0 mx-md-2" />
-      <DevsPlan class="my-3 mx-0 mx-md-2" />
+      <CompanyPlan class="my-3 mx-0 mx-sm-2" />
+      <DevsPlan class="my-3 mx-0 mx-sm-2" />
     </div>
   </div>
 </template>
