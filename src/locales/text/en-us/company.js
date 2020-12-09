@@ -31,7 +31,8 @@ export default {
         title: 'Your company',
         currentAds: 'Current ads',
         currentJobs: 'Jobs Posted',
-        remainingCredits: 'Remaining credits',
+        remainingCoins: 'Remaining system coins',
+        yourReports: 'Your reports',
       },
       actions: {
         title: 'What would you like to do today?',
@@ -56,7 +57,7 @@ export default {
     },
     report: {
       title: 'Candidate Report',
-      postedOn: 'Posted on',
+      postedOn: 'Job AD Posted on',
       createdOn: 'Report created on',
       totalApplicants: 'Total applicants',
       yourTopMatches: 'Your top %{count} matches',

@@ -3,37 +3,33 @@
     <template template v-slot:first-col>
       <g-btn
         @click="$router.back()"
-        class="mt-4"
+        class="mt-4 d-flex justify-start"
         type="primary"
         block
         tile
         text
         xl
-        :label="$t('common.back')"
+        :label="$t('common.return')"
       />
       <CompactCompanyCard :company="company" v-if="company" :key="loaded.company" />
     </template>
     <template template v-slot:second-col>
-      <div>
-        <h2 class="mb-5">Candidate Report</h2>
-        <h4>{{ job.title }}</h4>
-        <v-divider class="my-10"></v-divider>
-        <div class="d-flex flex-wrap justify-space-between">
-          <div class="d-flex flex-column flex-wrap mx-2 my-3">
-            <div style="font-weight:bold">{{ $t('company.report.postedOn') }}</div>
-            <div>{{ formatDate(job.creationDate || new Date()) }}</div>
-          </div>
-          <div class="d-flex flex-column flex-wrap mx-2 my-3">
-            <div style="font-weight:bold">{{ $t('company.report.createdOn') }}</div>
-            <div>{{ formatDate(job.creationDate || new Date()) }}</div>
-          </div>
-          <div class="d-flex flex-column flex-wrap mx-2 my-3">
-            <div style="font-weight:bold">{{ $t('company.report.totalApplicants') }}</div>
-            <div>{{ report_.totalApplicants }}</div>
+      <div class="color-secondary mx-16">
+        <h2 class="mb-4">{{ job.title }}</h2>
+        <h5>{{ $t('company.report.title') }}</h5>
+        <v-divider class="my-7" color="#1a193c" />
+        <div class="d-flex flex-wrap">
+          <div
+            class="d-flex flex-column flex-wrap mr-16 my-2"
+            v-for="(item, index) in getReportInfo()"
+            :key="index"
+          >
+            <p class="overline">{{ item.title }}</p>
+            <sub-1 color="secondary" class="sub-text">{{ item.description }}</sub-1>
           </div>
         </div>
-        <v-divider class="my-10"></v-divider>
-        <h4 class="my-5">{{ $tc('company.report.yourTopMatches', report_.totalMatches) }}</h4>
+        <v-divider class="mt-7 mb-9" color="#1a193c" />
+        <h4 class="mb-2">{{ $tc('company.report.yourTopMatches', report_.totalMatches) }}</h4>
         <bdy-1>{{ $t('company.report.matchesDisclaimer') }} </bdy-1>
         <CandidateCard
           v-for="(candidate, index) in report_.candidates"
@@ -141,7 +137,23 @@ export default {
       }
     },
     formatDate(date) {
-      return moment(date).format('ll');
+      return moment(date).format('MMMM Do, YYYY');
+    },
+    getReportInfo() {
+      return [
+        {
+          title: this.$t('company.report.postedOn'),
+          description: this.formatDate(this.job.creationDate || new Date()),
+        },
+        {
+          title: this.$t('company.report.createdOn'),
+          description: this.formatDate(this.job.creationDate || new Date()),
+        },
+        {
+          title: this.$t('company.report.totalApplicants'),
+          description: this.report_.totalApplicants,
+        },
+      ];
     },
   },
   watch: {
@@ -152,7 +164,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 p {
   display: inline;
 }

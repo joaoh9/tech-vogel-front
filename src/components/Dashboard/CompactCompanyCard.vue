@@ -1,26 +1,40 @@
 <template>
-  <v-card minWidth="0" class="pa-12 bs-primary" color="bg">
-    <div class="d-flex justify-space-between">
-      <div>
+  <div>
+    <v-card minWidth="0" class="pa-12 bs-primary" color="bg">
+      <div class="d-flex justify-space-between flex-column color-secondary">
         <p class="overline">{{ $t('company.dashboard.yourCompany.title') }}</p>
-        <h3 class="mb-5 mt-n2 h3-bold text-capitalize">{{ company.name }}</h3>
+        <h3 class="mb-5 mt-n2 text-capitalize">{{ company.name }}</h3>
         <div class="d-flex">
           <div class="d-flex align-center">
-            <h5 class="align-self-center h5-bold color-primary mr-2">
-              {{ company.remainingCredits || 16 }}
+            <h5 class="h5-bold color-primary mr-2">
+              {{ company.currentAds || 16 }}
             </h5>
-            <span>
-              {{ $t('company.dashboard.yourCompany.remainingCredits') }}
-            </span>
+            <bdy-1 color="secondary">
+              {{ $t('company.dashboard.yourCompany.currentAds') }}
+            </bdy-1>
           </div>
         </div>
       </div>
-    </div>
-  </v-card>
+    </v-card>
+
+    <h6 class="color-secondary mt-8 mb-4">{{ $t('company.dashboard.yourCompany.yourReports') }}</h6>
+    <v-card color="bg" outlined style="border-color: #1a193c !important" class="pa-6">
+      <div class="d-flex justify-space-between">
+        <div>
+          <!-- TODO: Fix report data -->
+          <h6 class="font-weight-regular">Fullstack Developer</h6>
+          <sub-2 class="font-weight-regular">Report created 2 days ago</sub-2>
+        </div>
+
+        <div class="color-secondary">
+          <g-btn :label="$t('common.view')" color="secondary" :icon="'fas fa-angle-right'" text/>
+        </div>
+      </div>
+    </v-card>
+  </div>
 </template>
 
 <script>
-
 export default {
   name: 'DashboardCompanyCard',
   props: {
@@ -28,7 +42,6 @@ export default {
     jobsPosted: [ Number, String ],
   },
 };
-
 </script>
 
 <style></style>

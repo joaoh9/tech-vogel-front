@@ -6,5 +6,7 @@ export default {
     seeMoreJobs: 'Visualizar mais vagas',
     startForFree: 'Start for free',
     chooseSide: 'Your Goal is to',
+    return: 'Voltar',
+    view: 'Visualizar',
   },
 };
