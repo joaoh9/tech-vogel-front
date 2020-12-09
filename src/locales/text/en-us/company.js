@@ -44,8 +44,8 @@ export default {
       manageAccountInfo: 'Manage my account information',
     },
     planCard: {
-      token: '{quantity} token(s) for',
-      currency: '$',
+      forCompanies: 'For companies',
+      currency: 'R$',
       price: '499',
       cents: ',99',
       installments: '{quantity}x',
@@ -77,6 +77,8 @@ export default {
         experienceLevel: 'Experience Level',
         memberSince: 'On Tech Vogel since',
       },
+      unlockReport: 'Unlock your report now!',
+      paymentProceed: 'Proceed to payment',
     },
   },
 };

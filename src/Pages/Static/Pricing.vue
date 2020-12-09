@@ -6,15 +6,36 @@
     </h5>
     <g-btn type="primary" class="mt-6" :label="$t('common.startForFree')" to="/signup" />
     <div class="d-flex mt-8 justify-center flex-wrap mb-10">
-      <CompanyPlan class="my-3 mx-0 mx-md-2" />
-      <DevsPlan class="my-3 mx-0 mx-md-2" />
+      <PlanCard
+        :width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
+        :style="'border-color: #1a193c !important'"
+        :title="$t('company.planCard.forCompanies')"
+        :texts="$t('howItWorks.pricing')"
+        :label="$t('home.postForFree')"
+        :to="'/signup'"
+        :margin="'mt-12'"
+        priceTitle
+        class="my-3 mx-0 mx-md-2"
+      />
+      <PlanCard
+        :width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
+        :style="'border-color: #FF9200 !important'"
+        :title="$t('devs.subtitle')"
+        :header="$t('common.free')"
+        :texts="$t('devs.pricing')"
+        :label="$t('home.startApplying')"
+        :to="'/jobs'"
+        :margin="'mt-5'"
+        devTitle
+        class="my-3 mx-0 mx-md-2"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import CompanyPlan from 'Components/Dashboard/CompanyPlan';
-import DevsPlan from 'Components/Dashboard/DevsPlan';
+import PlanCard from 'Components/Dashboard/PlanCard';
+
 export default {
   name: 'Pricing',
   mounted() {
@@ -22,8 +43,7 @@ export default {
     document.documentElement.scrollTop = 0;
   },
   components: {
-    CompanyPlan,
-    DevsPlan,
+    PlanCard,
   },
 };
 </script>

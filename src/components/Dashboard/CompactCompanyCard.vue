@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card minWidth="0" class="pa-12 bs-primary" color="bg">
+    <v-card class="pa-12 bs-primary" color="bg">
       <div class="d-flex justify-space-between flex-column color-secondary">
         <p class="overline">{{ $t('company.dashboard.yourCompany.title') }}</p>
         <h3 class="mb-5 mt-n2 text-capitalize">{{ company.name }}</h3>
@@ -27,16 +27,32 @@
         </div>
 
         <div class="color-secondary">
-          <g-btn :label="$t('common.view')" color="secondary" :icon="'fas fa-angle-right'" text/>
+          <g-btn :label="$t('common.view')" color="secondary" :icon="'fas fa-angle-right'" text />
         </div>
       </div>
     </v-card>
+
+    <PlanCard
+      :style="'border-color: #FF9200 !important'"
+      :title="$t('company.report.unlockReport')"
+      :texts="$t('report.pricing')"
+      :label="$t('company.report.paymentProceed')"
+      :to="'/jobs'"
+      :margin="'mt-10'"
+      priceTitle
+      class="my-3 mx-0 mx-md-2"
+    />
   </div>
 </template>
 
 <script>
+import PlanCard from 'Components/Dashboard/PlanCard';
+
 export default {
   name: 'DashboardCompanyCard',
+  components: {
+    PlanCard,
+  },
   props: {
     company: Object,
     jobsPosted: [ Number, String ],
