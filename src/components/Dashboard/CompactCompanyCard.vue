@@ -32,6 +32,7 @@
       </div>
     </v-card>
 
+    <div class="mt-12">
     <PlanCard
       :style="'border-color: #FF9200 !important'"
       :title="$t('company.report.unlockReport')"
@@ -42,6 +43,7 @@
       priceTitle
       class="my-3 mx-0 mx-md-2"
     />
+    </div>
   </div>
 </template>
 

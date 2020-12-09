@@ -37,7 +37,7 @@
     :outlined="getOutline()"
     :elevation="getElevation()"
     :text="getText()"
-    :class="`px-7  ${textColor ? `${textColor}--text` : ''} ${buttonClass}`"
+    :class="`button-text px-7  ${textColor ? `${textColor}--text` : ''} ${buttonClass}`"
     :to="to"
     :block="block"
     :dark="dark"
