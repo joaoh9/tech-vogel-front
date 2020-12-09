@@ -12,7 +12,7 @@
         >
         </g-btn>
       </div>
-      <ChangeLanguage :chooseLanguageText="$t('privacyPolicy.chooseLanguageText')" />
+      <ChangeLanguage class="my-2" :chooseLanguageText="$t('privacyPolicy.chooseLanguageText')" />
     </div>
   </div>
 </template>

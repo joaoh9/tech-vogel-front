@@ -17,7 +17,9 @@
       :description="$t('job.new.contractType.inputHint')"
       required
     />
-    <g-autocomplete
+    <v-select
+      outlined
+      v-model="contractType"
       @input="
         e => {
           contractType = e;
@@ -35,7 +37,9 @@
       :description="$t('job.new.experienceLevel.inputHint')"
       required
     />
-    <g-autocomplete
+    <v-select
+      outlined
+      v-model="experienceLevel"
       @input="
         e => {
           experienceLevel = e;

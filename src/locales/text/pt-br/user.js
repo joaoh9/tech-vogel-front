@@ -244,10 +244,6 @@ export default {
         },
       ],
     },
-    passwordReset: {
-      title: 'Password reset',
-      description: 'Insert your email to confirm your password change',
-    },
     github: {
       stats: 'Github Stats',
       publicRepo: 'Public Repositories',

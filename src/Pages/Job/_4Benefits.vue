@@ -18,8 +18,6 @@
         @change="$emit('salary-time-frame', salary.timeFrame)"
         :rules="[rules.required(salary.timeFrame)]"
         label="Time frame"
-        title="Time frame"
-        placeholder="Time frame"
         outlined
         :items="$t('enums.payCheckTimeFrame')"
         class="mr-2"
@@ -74,10 +72,14 @@ export default {
     VueEditor,
   },
   mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.benefits = this.job.benefits;
     if (this.job.salary) {
       this.salary = this.job.salary;
+      this.salary.min = this.job.salary.min;
+      this.salary.max = this.job.salary.max;
       this.salary.range = false;
     }
   },
@@ -86,8 +88,8 @@ export default {
       benefits: '',
       salary: {
         currency: 'USD',
-        min: '',
-        max: '',
+        min: undefined,
+        max: undefined,
         timeFrame: '',
         range: false,
       },
@@ -148,6 +150,7 @@ export default {
     },
     checkInput(emitValue, variable) {
       if (this.rules.isNumber(variable) === true) {
+        emitValue = emitValue.replace(/./g, '');
         this.$emit(emitValue, parseFloat(variable));
       }
     },

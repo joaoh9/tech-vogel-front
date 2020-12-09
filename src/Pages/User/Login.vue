@@ -80,6 +80,8 @@ export default {
     },
   },
   mounted() {
+    // const loggedInUser = StorageHelper.loadState('userToken');
+
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
 
     this.rulesLoaded = true;

@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+const MB = 1000000;
 export default class Axios {
   static GetInstance(token = null) {
     const contentType = 'application/json;charset=UTF-8';
@@ -19,7 +19,7 @@ export default class Axios {
       baseURL: '/api',
       timeout: 30 * 1000,
       headers,
-      maxContentLength: 20 * 1000 * 1000,
+      maxContentLength: 15 * MB,
       withCredentials: true,
     });
   }

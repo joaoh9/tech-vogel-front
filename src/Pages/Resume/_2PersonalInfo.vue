@@ -4,22 +4,14 @@
     <v-file-input
       outlined
       :placeholder="$t('resume.register.personalInfo.profilePicture.placeholder')"
-      v-model="profilePicture"
+      v-model="logo"
       @change="handleFileUpload"
     >
     </v-file-input>
 
-    <form-input class="mt-0" :title="$t('resume.register.personalInfo.fullName.title')" required />
-    <v-text-field
-      autofocus
-      v-model="fullName"
-      @input="$emit('full-name', fullName)"
-      outlined
-      :rules="[rules.required(fullName), rules.max(200, fullName)]"
-    />
-
     <form-input class="mt-0" :title="$t('resume.register.personalInfo.mainRole.title')" required />
     <v-text-field
+      autofocus
       :placeholder="$t('resume.register.personalInfo.mainRole.placeholder')"
       v-model="mainRole"
       @input="$emit('main-role', mainRole)"
@@ -60,7 +52,6 @@
 
     <form-input class="mt-7" :title="$t('common.links.website.title')" />
     <v-text-field
-      autofocus
       :placeholder="$t('common.links.website.placeholder')"
       v-model="website"
       @input="$emit('website', website)"
@@ -68,7 +59,10 @@
       :rules="[rules.max(200, website)]"
     />
 
-    <form-input :title="$t('common.links.github.title')" />
+    <form-input
+      :description="$t('resume.register.important')"
+      :title="$t('common.links.github.title')"
+    />
     <v-text-field
       :placeholder="$t('common.links.github.placeholder')"
       v-model="github"
@@ -77,7 +71,10 @@
       :rules="[rules.max(200, github)]"
     />
 
-    <form-input :title="$t('common.links.linkedin.title')" />
+    <form-input
+      :description="$t('resume.register.important')"
+      :title="$t('common.links.linkedin.title')"
+    />
     <v-text-field
       :placeholder="$t('common.links.linkedin.placeholder')"
       v-model="linkedin"
@@ -103,6 +100,10 @@ import { VueEditor } from 'vue2-editor';
 
 import StorageHelper from 'Helpers/storage';
 
+import config from '@config';
+
+const MB = 1000 * 1000;
+
 export default {
   name: 'ResumePersonalInfo',
   props: {
@@ -123,6 +124,8 @@ export default {
     VueEditor,
   },
   mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
     this.personalBio = this._personalBio || '';
     this.location.country = this._locationCountry || '';
     this.location.city = this._locationCity || '';
@@ -135,8 +138,6 @@ export default {
         country: '',
       },
       personalBio: '',
-      profilePicture: null,
-      fullName: '',
       mainRole: '',
       github: '',
       linkedin: '',
@@ -146,6 +147,7 @@ export default {
         required: () => true,
         max: () => true,
       },
+      logo: null,
     };
   },
   methods: {
@@ -159,15 +161,25 @@ export default {
       }
     },
     async handleFileUpload() {
-      const data64 = await this.getBase64(this.profilePicture);
+      if (this.logo.size > config.maxFileSize) {
+        this.$toast.error(
+          this.$t('toast.error.fileExceeds', {
+            filename: this.logo.name,
+            fileSize: config.maxFileSize / MB,
+          }),
+        );
+        this.logo = null;
+        return;
+      }
+      const data64 = await this.getBase64(this.logo);
       const file = {
         data64,
-        name: this.profilePicture.name,
-        size: this.profilePicture.size,
-        type: this.profilePicture.type,
+        name: this.logo.name,
+        size: this.logo.size,
+        type: this.logo.type,
       };
 
-      this.$emit('profile-picture', file);
+      this.$emit('company-logo', file);
     },
     getBase64(file) {
       return new Promise(resolve => {

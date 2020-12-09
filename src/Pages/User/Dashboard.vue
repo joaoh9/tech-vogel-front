@@ -33,7 +33,7 @@
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
         <div v-for="(job, i) in appliedJobs" :key="i">
-          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.mdAndUp" />
+          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.smAndUp" />
           <JobCardMobile :job="job" class="mb-4" v-else-if="loaded.jobs" />
         </div>
       </div>
@@ -67,7 +67,7 @@ export default {
     const userController = new UserController();
     const userInfo = userController.decodeUserToken();
 
-    if (userInfo.side === 2) {
+    if (userInfo.side >= 20) {
       this.$router.push('/company/dashboard');
     }
     this.loadUserInfo();
@@ -95,10 +95,16 @@ export default {
       if (!this.user) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));
         this.$router.push({
-          path: '/login',
+          name: 'User Login',
         });
       }
       this.loaded.user = true;
+
+      if (this.user.side >= 20) {
+        this.$router.push({
+          name: 'Company Dashboard',
+        });
+      }
     },
 
     async loadResume() {

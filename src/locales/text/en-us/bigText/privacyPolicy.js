@@ -20,12 +20,12 @@ export default {
       <br>
       A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
       <br>
-      Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+      Caso queira comunicar-se com nosso DPO poderá enviar email para o seguinte endereço: anacardoso@techvogel.com.
       <br>`,
   },
   '2': {
     title: 'Data Processing',
-    description: `When you register on the Tech Vogel platform, we collect information about you. This may include your name and contact information such as e-mail, data on your resume or data on vacancies and financial information to make or receive payments for services obtained through Tech Vogel or information to help us complete feedback forms.
+    description: `When you register on the Tech Vogel platform, we collect information about you. This may include your name and contact information such as email, data on your resume or data on vacancies and financial information to make or receive payments for services obtained through Tech Vogel or information to help us complete feedback forms.
     <br>
     2.1.1 For the purposes of this policy, the Client or company is any individual or legal entity that registers with Tech Vogel in order to "post a job".
     <br>
@@ -97,7 +97,7 @@ export default {
     <br>
     <p><strong>2.5 Communication</strong></p>
     <br>
-    The user authorizes the sending of notifications by e-mail or by any other means of communication available with content of an informative and promotional nature related to the Services.
+    The user authorizes the sending of notifications by email or by any other means of communication available with content of an informative and promotional nature related to the Services.
    `,
   },
   '3': {
@@ -120,7 +120,7 @@ export default {
     <br>
     A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Caso queira comunicar-se com nosso DPO poderá enviar email para o seguinte endereço: anacardoso@techvogel.com.
     <br>`,
   },
   '4': {
@@ -143,7 +143,7 @@ export default {
     <br>
     A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Caso queira comunicar-se com nosso DPO poderá enviar email para o seguinte endereço: anacardoso@techvogel.com.
     <br>`,
   },
   '5': {
@@ -166,7 +166,7 @@ export default {
     <br>
     A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Caso queira comunicar-se com nosso DPO poderá enviar email para o seguinte endereço: anacardoso@techvogel.com.
     <br>`,
   },
   '6': {
@@ -189,7 +189,7 @@ export default {
     <br>
     A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Caso queira comunicar-se com nosso DPO poderá enviar email para o seguinte endereço: anacardoso@techvogel.com.
     <br>`,
   },
   '7': {
@@ -212,7 +212,7 @@ export default {
     <br>
     A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Caso queira comunicar-se com nosso DPO poderá enviar email para o seguinte endereço: anacardoso@techvogel.com.
     <br>`,
   },
   '8': {
@@ -235,7 +235,7 @@ export default {
     <br>
     A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Caso queira comunicar-se com nosso DPO poderá enviar email para o seguinte endereço: anacardoso@techvogel.com.
     <br>`,
   },
 };

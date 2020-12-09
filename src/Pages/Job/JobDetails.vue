@@ -30,7 +30,7 @@
           <h4 class="h4-bold text-capitalize">{{ job.title }}</h4>
           <h6 class="h6">{{ $t('common.at') + ' ' }} {{ company.name }}</h6>
           <div class="my-8">
-            <v-card color="bg" :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-primary pa-6'">
+            <v-card color="bg" :class="!$vuetify.breakpoint.smAndUp ? 'bs-none' : 'bs-primary pa-6'">
               <SkillPresentation :skills="job.skills" />
             </v-card>
           </div>
@@ -40,7 +40,7 @@
           <div class="bdy-1 d-block mt-4" v-html="job.benefits"></div>
         </v-col>
         <v-col cols="12" lg="4" xl="3" class="mt-6">
-          <JobApplicationCard :job="job" :company="company" />
+          <JobApplicationCard :editMode="editMode" :job="job" :company="company" />
         </v-col>
       </v-row>
     </div>
@@ -78,6 +78,8 @@ export default {
     JobApplicationCard,
   },
   mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
     this.companyId = this.$route.params.companyId;
     this.jobId = this.$route.params.jobId;
     if (this.job_ && this.company_) {
@@ -87,8 +89,6 @@ export default {
       this.getJobData();
       this.getCompanyData();
     }
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0;
   },
   data() {
     return {

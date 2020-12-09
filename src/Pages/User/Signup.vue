@@ -22,7 +22,7 @@
           :label="$t('user.linkedInSignup')"
         /> -->
 
-        <form-input class="mt-6" :title="$t('signup.name.title')" />
+        <form-input required class="mt-6" :title="$t('signup.name.title')" />
         <v-text-field
           data-cy="name"
           outlined
@@ -31,7 +31,7 @@
           autofocus
         />
 
-        <form-input :title="$t('signup.email.title')" />
+        <form-input required :title="$t('signup.email.title')" />
         <v-text-field
           data-cy="email"
           outlined
@@ -40,7 +40,7 @@
           :error-messages="localRules.emailAlreadyRegistered"
         />
 
-        <form-input :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
+        <form-input required :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
         <v-text-field
           data-cy="confirm-email"
           outlined
@@ -49,7 +49,7 @@
           :error-messages="localRules.emailAlreadyRegistered"
         />
 
-        <form-input :title="$t('common.password.label')" />
+        <form-input required :title="$t('common.password.label')" />
         <v-text-field
           data-cy="password"
           :rules="[rules.min(6, user.password)]"
@@ -61,7 +61,7 @@
           :error-messages="localRules.passwordRequired"
         />
 
-        <form-input :title="$t('common.confirmPassword.label')" />
+        <!-- <form-input :title="$t('common.confirmPassword.label')" />
         <v-text-field
           data-cy="confirm-password"
           :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
@@ -70,7 +70,7 @@
           :type="showConfirmPassword ? 'text' : 'password'"
           outlined
           v-model="user.confirmPassword"
-        />
+        /> -->
 
         <v-checkbox
           data-cy="terms-and-conditions"
@@ -135,7 +135,7 @@ export default {
     return {
       requestError: false,
       showPassword: false,
-      showConfirmPassword: false,
+      // showConfirmPassword: false,
       termsAndConditions: false,
       rules: {
         min: () => true,
@@ -155,7 +155,7 @@ export default {
         email: '',
         confirmEmail: '',
         password: '',
-        confirmPassword: '',
+        // confirmPassword: '',
       },
       loading: {
         register: false,
@@ -198,8 +198,8 @@ export default {
 
       const equalEmail = this.rules.equalEmail(this.user.email, this.user.confirmEmail) === true;
 
-      const equalPassword =
-        this.rules.equalPassword(this.user.password, this.user.confirmPassword) === true;
+      // const equalPassword =
+      // this.rules.equalPassword(this.user.password, this.user.confirmPassword) === true;
 
       if (
         !this.termsAndConditions ||
@@ -207,8 +207,8 @@ export default {
         !validEmail ||
         !validPassword ||
         !nameRuleOk ||
-        !equalEmail ||
-        !equalPassword
+        !equalEmail
+        // !equalPassword
       ) {
         return false;
       }
@@ -219,7 +219,7 @@ export default {
       const userController = new UserController();
       this.loading.register = true;
       try {
-        await userController.saveUser({
+        const user = await userController.saveUser({
           name: this.user.name,
           email: this.user.email,
           password: this.user.password,
@@ -227,8 +227,9 @@ export default {
         this.loading.register = false;
 
         this.$router.push({
-          path: '/confirm-registration',
+          name: 'Confirm User Registration',
           params: {
+            userId: user.id,
             _email: this.user.email,
           },
         });

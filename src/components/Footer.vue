@@ -2,15 +2,14 @@
   <div class="bg-color-bg">
     <v-footer :class="`px-0 mt-12 pt-0`">
       <v-card
-        height="250"
         width="100%"
         color="secondary"
-        class="d-flex align-center"
+        class="d-flex align-center py-6"
         flat
         style="border-radius: 0px !important"
       >
         <v-row align="start" justify="center" class="mx-1 mt-2">
-          <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="2" class="align-self-start">
+          <v-col v-if="$vuetify.breakpoint.smAndUp" cols="2" class="align-self-start">
             <v-img height="75" contain :src="logo" />
           </v-col>
           <v-col>
@@ -29,11 +28,10 @@
         </v-row>
       </v-card>
       <v-card
-        height="100"
         width="100%"
         flat
         color="cinza-lighten-4"
-        class="d-flex justify-space-around flex-wrap"
+        class="d-flex justify-space-around flex-wrap py-4"
         style="border-radius: 0px !important"
       >
         <p
@@ -62,8 +60,6 @@ export default {
       logo: Logo,
       footerInfo: [
         this.$t('common.copyright'),
-        this.$t('common.termsOfService'),
-        this.$t('common.privacyPolicy'),
         this.$t('common.cnpj') + ': ' + this.$t('common.cnpjNumber'),
         this.$t('common.phone'),
         this.$t('common.contactEmail'),

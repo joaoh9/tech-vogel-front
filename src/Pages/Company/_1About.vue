@@ -29,7 +29,7 @@
       ]"
     />
 
-    <form-input :title="$t('common.links.webpage.title')" />
+    <form-input required :title="$t('common.links.webpage.title')" />
     <v-text-field
       :placeholder="$t('common.links.webpage.placeholder')"
       v-model="website"
@@ -72,6 +72,9 @@
 import RulesHelper from 'Helpers/rules';
 
 import UserController from 'Controllers/user';
+import config from '@config';
+
+const MB = 1000 * 1000;
 
 export default {
   name: 'New',
@@ -116,6 +119,16 @@ export default {
       });
     },
     async handleFileUpload() {
+      if (this.logo.size > config.maxFileSize) {
+        this.$toast.error(
+          this.$t('toast.error.fileExceeds', {
+            filename: this.logo.name,
+            fileSize: config.maxFileSize / MB,
+          }),
+        );
+        this.logo = null;
+        return;
+      }
       const data64 = await this.getBase64(this.logo);
       const file = {
         data64,

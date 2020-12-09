@@ -22,8 +22,11 @@ export default {
       errorSavingUser: 'There was an error when saving the user',
     },
     confirmEmail: {
-      title: 'A confirmation link was sent to your email!',
+      title: 'A confirmation email was sent to {email}',
       description: 'Click on it to confirm your registration',
+    },
+    confirmationCode: {
+      title: 'Paste the code you received in the box below',
     },
     termsAndConditions: {
       text: 'I have read and agree to the',
@@ -42,8 +45,8 @@ export default {
       error: 'Your code is invalid or has expired!',
     },
     buttons: {
-      createCompany: 'I want to post a job',
-      createCV: 'I want to get hired',
+      createCompany: 'Post a job',
+      createCV: 'Get hired',
     },
   },
   footer: {
@@ -87,10 +90,12 @@ export default {
       },
     ],
     aboutUsInfo: [
-      { text: 'Our story', to: '/aboutus' },
+      { text: 'Our story', to: '/about-us' },
       { text: 'How it works', to: '/how-it-works' },
       { text: 'Pricing', to: '/pricing' },
       { text: 'FAQ', to: '/faq' },
+      { text: 'Terms of Service', to: '/terms-of-service' },
+      { text: 'Privacy Policy', to: '/privacy-policy' },
     ],
   },
   login: {

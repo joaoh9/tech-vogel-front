@@ -7,8 +7,7 @@
         <div class="d-flex">
           <div class="d-flex align-center mr-6">
             <h5 class="align-self-center h5-bold color-primary mr-2">
-              <!-- TODO: pegar quantidade de jobs posted do back -->
-              {{ jobsPosted || 6 }}
+              {{ jobsPosted }}
             </h5>
             <span>
               {{ $t('company.dashboard.yourCompany.currentJobs') }}
@@ -16,7 +15,7 @@
           </div>
           <div class="d-flex align-center">
             <h5 class="align-self-center h5-bold color-primary mr-2">
-              {{ company.remainingCredits || 16 }}
+              {{ company.tokens }}
             </h5>
             <span>
               {{ $t('company.dashboard.yourCompany.remainingCredits') }}

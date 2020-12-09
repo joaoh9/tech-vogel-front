@@ -1,5 +1,5 @@
 <template>
-  <v-card v-if="job" :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-none pa-8'" color="bg">
+  <v-card v-if="job" :class="!$vuetify.breakpoint.smAndUp ? 'bs-none' : 'bs-none pa-8'" color="bg">
     <IconText
       v-for="(item, i) in getIconInfo()"
       :key="i"
@@ -59,7 +59,7 @@
     </div>
     <div class="d-flex align-center flex-column mt-4">
       <h6>{{ $t('job.details.aboutTheCompany') }}</h6>
-      <sub-1 style="display: block" v-html="company.companyDescription"></sub-1>
+      <sub-1 style="display: block" v-html="company.description"></sub-1>
     </div>
   </v-card>
 </template>
@@ -76,6 +76,7 @@ export default {
   props: {
     job: Object,
     company: Object,
+    editMode: Boolean,
   },
   components: {
     IconText,
@@ -122,10 +123,13 @@ export default {
       ];
     },
     getApplicationButtonType() {
+      if (this.editMode) {
+        return 'disabled';
+      }
       const userController = new UserController();
       try {
         const userInfo = userController.decodeUserToken();
-        return userInfo.side === 2 ? 'disabled' : 'primary';
+        return userInfo.side >= 20 ? 'disabled' : 'primary';
       } catch (e) {
         if (e.message == 'Invalid token specified') {
           this.unloggedUser = true;

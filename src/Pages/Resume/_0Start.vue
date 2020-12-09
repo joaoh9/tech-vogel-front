@@ -22,6 +22,10 @@ import settings from '@config';
 
 export default {
   name: 'Start',
+  mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+  },
   data() {
     return {
       loading: false,

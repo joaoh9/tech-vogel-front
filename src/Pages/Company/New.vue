@@ -8,7 +8,7 @@
     >
       <div class="d-flex justify-center mt-8">
         <g-btn
-          @click="$router.go(-1)"
+          @click="$router.push({ path: '/side-pick' })"
           class="mx-12"
           type="outline"
           color="light"
@@ -122,7 +122,7 @@ export default {
         this.$toast.success(this.$t('toast.success.savedCompany'));
 
         this.$router.push({
-          path: '/jobs/new',
+          name: 'Company Dashboard',
         });
       } catch (e) {
         this.$toast.error(this.$t('toast.error.saveCompany'));

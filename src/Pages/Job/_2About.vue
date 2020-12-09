@@ -21,6 +21,8 @@ export default {
     VueEditor,
   },
   mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.description = this.job.description;
   },

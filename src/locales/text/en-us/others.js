@@ -5,7 +5,7 @@ export default {
   techVogel: 'Tech Vogel',
   home: {
     title1: 'Find remote',
-    title2: '<developers/>',
+    title2: '<devs />',
     title3: 'for your company!',
     subtitle: 'Achieve your goals with Devs that best fit your project needs! ',
     timeWasted: 'No more time wasted selecting hundreds of CVs!',
@@ -22,6 +22,31 @@ export default {
     ],
     primaryBtn: 'Post jobs for free',
     secondaryBtn: 'Find jobs for free',
+    helpCard: {
+      howItWorks: {
+        title: 'How can a report help me?',
+        description: 'Our report is a solution for your company to save time and get better hiring results by showing you the three applicants that best fit your requirements.',
+        howDoesWork: 'How does it work',
+        modalText: `When potential applicants register to Tech Vogel, they are asked to select which
+        programming languages, frameworks and knowledge areas they are skilled on and for how
+        long they have been working with them. They can also select soft skills and foreign
+        language skills. When a company creates a job ad on Tech Vogel, they are also asked to
+        select a group of skills that are required for that position and rank them by priority.
+        Our algorithm compares the information on the job ad to the skills on the applicants’
+        CVs and, after just 15 working days of the job ad being up, your company will receive
+        the Report with the breakdown of the three fittest professionals for the job! All
+        candidates apply on their own accord and will.`,
+        btnText: 'Close',
+      },
+      whatsVogel: {
+        title: 'What is a Vogel?',
+        description: 'A Vogel is your credit you can use to apply for the jobs you want. You receive 5 Vogels when you first register to Tech Vogel and 1 Vogel after all sign ups you do between 24h.',
+        vogelsLimited: 'Why are Vogels limited?',
+        modalText: `Vogels are limited because it’s better for you to carefully choose the jobs you want to apply to, instead of wasting your time and energy with applications to positions that don’t fit your profile or skills.
+        This way, you are more likely to get a positive result out of your applications because you took care to consider them before applying!`,
+        btnText: 'Close',
+      },
+    },
   },
   questions: {
     title: 'Any questions? Get in touch!',
@@ -35,7 +60,7 @@ export default {
       title: 'Schedule a call',
       description: 'Select a date and time for a one on one video call with us.',
       buttonText: 'BOOK NOW',
-      click: 'https://forms.gle/1qZm7PDGZPeUQuW87', // TODO: atualizar
+      click: 'https://calendly.com/lauratechvogel/call-tech-vogel',
     },
   },
   typesOfProgrammers: {

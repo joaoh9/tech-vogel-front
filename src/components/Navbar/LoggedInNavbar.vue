@@ -2,7 +2,7 @@
   <div>
     <v-app-bar app :color="getBgColor()" hide-on-scroll elevation="0" tile>
       <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.mobile"
+        v-if="!$vuetify.breakpoint.smAndUp"
         @click="drawer = true"
         :color="isHome() ? 'bg' : 'dark'"
       />
@@ -12,14 +12,14 @@
         color="transparent"
         tile
         elevation="0"
-        :to="company ? getDashboardRoute() : '/jobs'"
+        :to="isCompany ? getDashboardRoute() : '/jobs'"
       >
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
         </v-avatar>
       </v-btn>
       <v-spacer />
-      <div v-if="!$vuetify.breakpoint.mobile" class="d-flex">
+      <div v-if="$vuetify.breakpoint.smAndUp && handlePrevent()" class="d-flex">
         <g-btn
           v-for="(item, i) in getPrimaryButtons()"
           :key="i"
@@ -34,10 +34,7 @@
           <v-icon :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs">
             mdi-chevron-down
           </v-icon>
-          <v-avatar size="30" v-if="profilePic" :key="profilePic">
-            <v-img contain :src="profilePic" />
-          </v-avatar>
-          <v-icon v-else :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs" large>
+          <v-icon :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs" large>
             mdi-account-circle
           </v-icon>
         </template>
@@ -143,10 +140,15 @@ export default {
       });
     },
     getBgColor() {
-      return this.$router.currentRoute.name === 'Home' ? 'transparent' : 'bg';
+      return this.$router.currentRoute.name === 'Home' ? 'secondary' : 'bg';
     },
     isHome() {
       return this.$router.currentRoute.name === 'Home';
+    },
+    handlePrevent() {
+      const routes = this.$router.currentRoute.name !== 'Side Pick' && this.$router.currentRoute.name !== 'New Company'
+
+      return routes;
     },
     getPrimaryButtons() {
       return [
