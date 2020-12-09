@@ -30,7 +30,8 @@ export default {
       ],
       start: {
         title: 'Register your CV',
-        description: 'Your CV is how the companies will see your info and how you will get matched for the best job oportunities! Fill it carefully!',
+        description:
+          'Your CV is how the companies will see your info and how you will get matched for the best job oportunities! Fill it carefully!',
         linkLinkedIn: {
           title: 'Link your LinkedIn account',
         },
@@ -247,6 +248,7 @@ export default {
     passwordReset: {
       title: 'Password reset',
       description: 'Insert your email to confirm your password change',
+      confirmationCode: 'Confirmation code',
     },
     github: {
       stats: 'Github Stats',

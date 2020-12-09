@@ -50,6 +50,8 @@
 import Logo from 'Assets/logo-redondo-amarelo-grad.svg';
 import FooterLinks from 'Components/Footer/Links';
 
+import packageJson from 'package.json';
+
 export default {
   name: 'Footer',
   components: {
@@ -63,11 +65,11 @@ export default {
         this.$t('common.cnpj') + ': ' + this.$t('common.cnpjNumber'),
         this.$t('common.phone'),
         this.$t('common.contactEmail'),
+        `version: ${packageJson.version}`,
       ],
     };
   },
 };
-
 </script>
 
 <style></style>
