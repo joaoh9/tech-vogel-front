@@ -59,9 +59,10 @@ export default {
       title: 'Candidate Report',
       postedOn: 'Job AD Posted on',
       createdOn: 'Report created on',
+      created: 'Report created',
       totalApplicants: 'Total applicants',
       yourTopMatches: 'Your top %{count} matches',
-      matchesDisclaimer: 'These are the candidates that bvest match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
+      matchesDisclaimer: 'These are the candidates that best match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
       yourCompany: {
         title: 'Your company',
         currentAds: 'Current ads',
