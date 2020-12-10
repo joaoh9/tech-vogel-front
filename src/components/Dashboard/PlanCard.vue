@@ -3,7 +3,7 @@
     :class="!$vuetify.breakpoint.smAndUp ? 'pa-4 rounded-20' : 'pa-8 rounded-20'"
     color="bg"
     outlined
-    :style="style"
+    :style="border"
     :max-width="width"
   >
     <div class="d-flex align-center justify-center">
@@ -85,12 +85,12 @@ export default {
     IconText,
   },
   props: {
-    style: String,
+    border: String,
     title: String,
     header: String,
     label: String,
     to: String,
-    texts: String,
+    texts: Array,
     width: String,
     margin: String,
     devTitle: {
