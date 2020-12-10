@@ -90,10 +90,6 @@ export default {
 
       try {
         this.jobsPosted = await jobController.getJobsPostedCount(this.company.id);
-        console.log(
-          '🚀 ~ file: Dashboard.vue ~ line 105 ~ getJobsPostedCount ~ this.jobsPosted',
-          this.jobsPosted,
-        );
       } catch (e) {
         this.$toast.error(this.$t('toast.error.companyInfo'));
       }

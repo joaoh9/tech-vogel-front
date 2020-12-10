@@ -87,7 +87,6 @@ export default {
     Skills,
   },
   data() {
-    console.log(this);
     return {
       dialog: false,
     };
