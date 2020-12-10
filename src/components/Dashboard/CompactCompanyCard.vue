@@ -21,9 +21,8 @@
     <v-card color="bg" outlined style="border-color: #1a193c !important" class="pa-6">
       <div class="d-flex justify-space-between">
         <div>
-          <!-- TODO: Fix report data -->
-          <h6 class="font-weight-regular">Fullstack Developer</h6>
-          <sub-2 class="font-weight-regular">Report created 2 days ago</sub-2>
+          <h6 class="font-weight-regular">{{ job.title }}</h6>
+          <sub-2 class="font-weight-regular">{{ getPostedInfo() }}</sub-2>
         </div>
 
         <div class="color-secondary">
@@ -33,21 +32,22 @@
     </v-card>
 
     <div class="mt-12">
-    <PlanCard
-      :style="'border-color: #FF9200 !important'"
-      :title="$t('company.report.unlockReport')"
-      :texts="$t('report.pricing')"
-      :label="$t('company.report.paymentProceed')"
-      :to="'/jobs'"
-      :margin="'mt-10'"
-      priceTitle
-      class="my-3 mx-0 mx-md-2"
-    />
+      <PlanCard
+        :border="'border-color: #FF9200 !important'"
+        :title="$t('company.report.unlockReport')"
+        :texts="$t('report.pricing')"
+        :label="$t('company.report.paymentProceed')"
+        :to="'/jobs'"
+        :margin="'mt-10'"
+        priceTitle
+        class="my-3 mx-0 mx-md-2"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment';
 import PlanCard from 'Components/Dashboard/PlanCard';
 
 export default {
@@ -56,8 +56,19 @@ export default {
     PlanCard,
   },
   props: {
+    job: Object,
     company: Object,
     jobsPosted: [ Number, String ],
+  },
+  methods: {
+    formatDate(date) {
+      return moment(date)
+        .startOf('hour')
+        .fromNow();
+    },
+    getPostedInfo() {
+      return `${this.$t('company.report.created')} ${this.formatDate(this.job.createdAt)}`;
+    },
   },
 };
 </script>
