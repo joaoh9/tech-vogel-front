@@ -8,7 +8,7 @@
     <div class="d-flex mt-8 justify-center flex-wrap mb-10">
       <PlanCard
         :width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
-        :style="'border-color: #1a193c !important'"
+        :border="'border-color: #1a193c !important'"
         :title="$t('company.planCard.forCompanies')"
         :texts="$t('howItWorks.pricing')"
         :label="$t('home.postForFree')"
@@ -19,7 +19,7 @@
       />
       <PlanCard
         :width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
-        :style="'border-color: #FF9200 !important'"
+        :border="'border-color: #FF9200 !important'"
         :title="$t('devs.subtitle')"
         :header="$t('common.free')"
         :texts="$t('devs.pricing')"
