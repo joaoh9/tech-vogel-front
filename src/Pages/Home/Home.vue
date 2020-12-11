@@ -1,7 +1,7 @@
 <template>
   <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column flex-wrap">
-      <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="800">
+      <v-img class="bg-color-secondary pb-16" max-height="800">
         <div
           :style="
             `${
@@ -44,7 +44,7 @@
         </div>
       </v-img>
     </div>
-    <div class="mx-sm-16 md-4 mt-16">
+    <div class="mx-sm-16 md-4">
       <ReportTip />
       <div class="mt-16 d-flex justify-center">
         <h2 class="h2-bold-alternative text-center color-secondary mt-6">
