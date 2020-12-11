@@ -7,7 +7,7 @@
         <div class="d-flex">
           <div class="d-flex align-center">
             <h5 class="align-self-center h5-bold color-primary mr-2">
-              {{ company.remainingCredits || 16 }}
+              {{ company.remainingCredits }}
             </h5>
             <span>
               {{ $t('company.dashboard.yourCompany.remainingCredits') }}
@@ -20,15 +20,13 @@
 </template>
 
 <script>
-
 export default {
-  name: 'DashboardCompanyCard',
+  name: 'CompactCompanyCard',
   props: {
     company: Object,
     jobsPosted: [ Number, String ],
   },
 };
-
 </script>
 
 <style></style>

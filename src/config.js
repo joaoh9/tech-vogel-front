@@ -1,6 +1,6 @@
 const language = window.navigator.userLanguage || window.navigator.language;
 
-let defaultLanguage = 'en-us';
+let defaultLanguage = 'pt-br';
 // let defaultCurrency = 'USD';
 
 if (language.toLowerCase() === 'pt-br') {
