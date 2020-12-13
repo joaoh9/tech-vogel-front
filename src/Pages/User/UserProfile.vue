@@ -6,9 +6,9 @@
       :description="$t('user.resume.edit')"
       :cols="true"
     >
-      <div :class="!$vuetify.breakpoint.mobile && 'd-flex align-center justify-center mt-8'">
+      <div :class="$vuetify.breakpoint.smAndUp && 'd-flex align-center justify-center mt-8'">
         <g-btn
-          :class="$vuetify.breakpoint.mobile ? 'mr-6 mb-4' : 'mr-6'"
+          :class="!$vuetify.breakpoint.smAndUp ? 'mr-6 mb-4' : 'mr-6'"
           type="outline"
           color="light"
           :label="$t('common.backEdit')"

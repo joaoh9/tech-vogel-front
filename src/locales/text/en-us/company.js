@@ -30,7 +30,7 @@ export default {
       yourCompany: {
         title: 'Your company',
         currentAds: 'Current ads',
-        currentJobs: 'Current Jobs Posted',
+        currentJobs: 'Jobs Posted',
         remainingCredits: 'Remaining credits',
       },
       actions: {

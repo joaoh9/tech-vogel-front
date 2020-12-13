@@ -47,7 +47,7 @@ export default {
       if (this.$vuetify.breakpoint.lgAndUp) {
         return 870;
       }
-      if (this.$vuetify.breakpoint.mdAndUp) {
+      if (this.$vuetify.breakpoint.smAndUp) {
         return 660;
       }
       if (this.$vuetify.breakpoint.smAndUp) {

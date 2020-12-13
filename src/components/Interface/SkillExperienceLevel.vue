@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h6 v-if="explanation" class="color-cinza-lighten-1">{{ explanationText }}</h6>
     <v-row
       justify="center"
       align="center"
@@ -15,11 +16,11 @@
           {{ $t(`skills.dictionary.${skillTitle}.${skill.skillId}`) }}
         </div>
       </v-col>
-      <v-col cols="12" md="8" class="mt-n6 mt-md-0 mb-4 mb-md-0">
-        <v-radio-group :row="$vuetify.breakpoint.mdAndUp" v-model="items[i]['experienceLevel']">
+      <v-col cols="12" md="8" class="mt-n6 mt-sm-0 mb-2 mb-sm-0">
+        <v-radio-group :row="$vuetify.breakpoint.smAndUp" v-model="items[i]['experienceLevel']">
           <v-radio
             color="primary"
-            :class="`mx-md-${experienceLevel.length >= 3 ? '3' : '6'} mx-0 my-2`"
+            :class="`mx-sm-${experienceLevel.length >= 3 ? '3' : '6'} mx-0 my-1`"
             v-for="(check, j) in experienceLevel"
             :key="j"
             :label="check.text"
@@ -32,13 +33,17 @@
 </template>
 
 <script>
-
 export default {
   name: 'SkillExperienceLevel',
   props: {
     items: Array,
     experienceLevel: Array,
     skillTitle: String,
+    explanation: {
+      type: Boolean,
+      default: false,
+    },
+    explanationText: String,
   },
   methods: {
     deleteSkills(index) {
@@ -46,7 +51,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

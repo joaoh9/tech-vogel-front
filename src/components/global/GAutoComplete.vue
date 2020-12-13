@@ -6,6 +6,7 @@
     :rules="rules"
     :multiple="multiple"
     :items="items"
+    :autofocus="autofocus"
     v-model="data"
     class="mb-8"
     outlined
@@ -32,6 +33,10 @@ export default {
       default: true,
     },
     items: Array,
+    autofocus: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {

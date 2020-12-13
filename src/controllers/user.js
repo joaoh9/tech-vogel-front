@@ -34,6 +34,37 @@ export default class UserController {
     }
   }
 
+  async checkCorrectCode(email, key) {
+    const axios = await Axios.GetInstance();
+
+    const { data } = await axios.post('/v1/users/email-key', {
+      email,
+      key,
+    });
+
+    return data;
+  }
+
+  async resetPasswordNotification(email) {
+    const axios = await Axios.GetInstance();
+
+    const { data } = await axios.post('/v1/users/reset-password', {
+      email,
+    });
+
+    return data;
+  }
+
+  async resetPassword(email, confirmationCode, password) {
+    const axios = await Axios.GetInstance();
+
+    const { data } = await axios.post(`/v1/users/${email}/reset-password/${confirmationCode}`, {
+      newPassword: password,
+    });
+
+    return data
+  }
+
   async resendConfirmationEmail(email) {
     const axios = await Axios.GetInstance();
 

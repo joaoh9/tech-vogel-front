@@ -1,12 +1,12 @@
 <template>
-  <div class="d-flex align-center flex-column mx-md-16 mx-4" id="aboutUs">
+  <div class="d-flex align-center flex-column mx-sm-16 mx-2" id="aboutUs">
     <v-row class="ma-md-6 ma-2 mt-12" align="center" justify="center">
       <v-col cols="12" md="6">
         <div class="d-flex justify-center align-center">
           <v-img max-width="335" :src="logoEscritaPreto" />
         </div>
       </v-col>
-      <v-col cols="12" md="6" class="px-10">
+      <v-col cols="12" md="6" class="px-4 px-sm-10">
         <div class="d-flex justify-center align-center">
           <h3 class="h3 text-capitalize text-center color-secondary mb-8">
             {{ $t('common.aboutUs') }}

@@ -33,7 +33,7 @@
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
         <div v-for="(job, i) in appliedJobs" :key="i">
-          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.mdAndUp" />
+          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.smAndUp" />
           <JobCardMobile :job="job" class="mb-4" v-else-if="loaded.jobs" />
         </div>
       </div>

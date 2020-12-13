@@ -19,7 +19,7 @@ export default {
   },
   '2': {
     title: 'Data Processing',
-    description: `When you register on the Tech Vogel platform, we collect information about you. This may include your name and contact information such as e-mail, data on your resume or data on vacancies and financial information to make or receive payments for services obtained through Tech Vogel or information to help us complete feedback forms.
+    description: `When you register on the Tech Vogel platform, we collect information about you. This may include your name and contact information such as email, data on your resume or data on vacancies and financial information to make or receive payments for services obtained through Tech Vogel or information to help us complete feedback forms.
     <br>
     <br>
     <strong>2.1.1</strong> For the purposes of this policy, the Client or company is any individual or legal entity that registers with Tech Vogel in order to "post a job".

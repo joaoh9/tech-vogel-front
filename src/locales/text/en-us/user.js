@@ -1,6 +1,7 @@
 export default {
   resume: {
     register: {
+      important: 'Important to have!',
       tabs: [
         {
           name: 'Start',
@@ -29,7 +30,8 @@ export default {
       ],
       start: {
         title: 'Register your CV',
-        description: 'Your CV is how the companies will see your info and how you will get matched for the best job oportunities! Fill it carefully!',
+        description:
+          'Your CV is how the companies will see your info and how you will get matched for the best job oportunities! Fill it carefully!',
         linkLinkedIn: {
           title: 'Link your LinkedIn account',
         },
@@ -57,9 +59,6 @@ export default {
         title: 'Let\'s build your profile',
         description:
           'You’ll be able to edit these later on. This information will be\nvisible to everyone.',
-        fullName: {
-          title: 'Your full name',
-        },
         mainRole: {
           title: 'Your main role as a developer',
           placeholder: 'Ex: Junior Full Stack Developer',
@@ -107,6 +106,7 @@ export default {
         title: 'Tell us about your skills',
         description:
           'You’ll be able to edit these later on. They will be displayed on\nyour profile and we’ll use the skills you pick to show you\npositions that fit your profile!',
+        explanation: 'Pick your experience Level in years',
       },
       education: {
         title: 'Education',
@@ -240,6 +240,11 @@ export default {
             'When you apply through Tech Vogel, you’ll never be left hanging. After the job ad finishes running, you will know in up to 1 day if you were included on the report to the company.',
         },
       ],
+    },
+    passwordReset: {
+      title: 'Password reset',
+      description: 'Insert your email to confirm your password change',
+      confirmationCode: 'Confirmation code',
     },
     github: {
       stats: 'Github Stats',

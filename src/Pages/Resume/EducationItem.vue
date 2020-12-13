@@ -111,7 +111,7 @@ export default {
     },
   },
   watch: {
-    'edication.description'() {
+    'education.description'() {
       this.$emit('description', this.education.description);
     },
   },

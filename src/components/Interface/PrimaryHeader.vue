@@ -1,15 +1,29 @@
 <template>
   <v-card
     :color="color || 'primary'"
-    class="px-16 py-12"
+    class="px-4 px-sm-16 py-12"
     flat
     style="border-radius: 0px !important;"
   >
     <v-row v-if="cols">
       <v-col cols="12" md="6">
-        <div class="ml-12">
-        <h3 class="h3-bold color-light">{{ title }}</h3>
-        <h5 class="color-light mt-4">{{ subtitle }}</h5>
+        <div>
+          <h3
+            :class="
+              $vuetify.breakpoint.smAndUp
+                ? 'text-center h3-bold color-light'
+                : 'h3-bold color-light'
+            "
+          >
+            {{ title }}
+          </h3>
+          <h5
+            :class="
+              $vuetify.breakpoint.smAndUp ? 'text-center color-light mt-4' : 'color-light mt-4'
+            "
+          >
+            {{ subtitle }}
+          </h5>
         </div>
         <div v-if="description">
           <sub-1

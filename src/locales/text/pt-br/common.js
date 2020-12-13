@@ -47,6 +47,7 @@ export default {
     backChange: 'Voltar e modificar',
     backEdit: 'Voltar e editar',
     pricing: 'Valor',
+    startForFree: 'Comece gratuitamente',
     maximum: 'Máximo',
     minimum: 'Mínimo',
     characters: 'Caracteres',

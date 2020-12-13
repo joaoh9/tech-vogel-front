@@ -1,10 +1,10 @@
 <template>
   <v-card
-    class="pa-8 rounded-20"
+    :class="!$vuetify.breakpoint.smAndUp ? 'pa-4 rounded-20' : 'pa-8 rounded-20'"
     color="bg"
     outlined
     style="border-color: #1a193c !important"
-    width="350"
+    :max-width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
   >
     <div class="d-flex align-center justify-center">
       <div class="d-flex align-center flex-column">

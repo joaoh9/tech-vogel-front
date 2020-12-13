@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :class="$vuetify.breakpoint.mobile ? 'bs-none' : 'bs-primary mx-1'"
+    :class="!$vuetify.breakpoint.smAndUp ? 'bs-none' : 'bs-primary mx-1'"
     color="bg"
     :loading="loading"
     :min-width="getMinWidth()"
@@ -60,7 +60,7 @@ export default {
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.lg || 1000;
       }
-      if (this.$vuetify.breakpoint.mdAndUp) {
+      if (this.$vuetify.breakpoint.smAndUp) {
         return this.md || 800;
       }
       if (this.$vuetify.breakpoint.smAndUp) {
@@ -74,7 +74,7 @@ export default {
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.maxlg || 1000;
       }
-      if (this.$vuetify.breakpoint.mdAndUp) {
+      if (this.$vuetify.breakpoint.smAndUp) {
         return this.maxmd || 800;
       }
       if (this.$vuetify.breakpoint.smAndUp) {
@@ -88,7 +88,7 @@ export default {
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.minheigthlg;
       }
-      if (this.$vuetify.breakpoint.mdAndUp) {
+      if (this.$vuetify.breakpoint.smAndUp) {
         return this.minheigthmd;
       }
       if (this.$vuetify.breakpoint.smAndUp) {
@@ -102,7 +102,7 @@ export default {
       if (this.$vuetify.breakpoint.lgAndUp) {
         return this.maxheightlg;
       }
-      if (this.$vuetify.breakpoint.mdAndUp) {
+      if (this.$vuetify.breakpoint.smAndUp) {
         return this.maxheightmd;
       }
       if (this.$vuetify.breakpoint.smAndUp) {

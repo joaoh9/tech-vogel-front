@@ -3,7 +3,7 @@
     <v-card color="bg" class="primary-card my-5" v-for="(job, index) in jobs" v-bind:key="index">
       <v-card-text>
         <v-row>
-          <v-col cols="2" v-if="!$vuetify.breakpoint.mobile">
+          <v-col cols="2" v-if="$vuetify.breakpoint.smAndUp">
             <v-avatar color="cinza-lighten-2" size="90">
               <v-img
                 v-if="job.company.profilePhoto"

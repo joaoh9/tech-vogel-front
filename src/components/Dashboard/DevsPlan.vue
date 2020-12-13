@@ -1,12 +1,12 @@
 <template>
   <v-card
-    class="pa-8 rounded-20"
+    :class="!$vuetify.breakpoint.smAndUp ? 'pa-4 rounded-20' : 'pa-8 rounded-20'"
     color="bg"
     outlined
     style="border-color: #FF9200 !important"
-    max-width="350"
+    :max-width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
   >
-    <div class="d-flex align-center justify-center">
+    <div class="d-flex justify-center">
       <div class="d-flex align-center flex-column">
         <div style="height: 150px">
           <h5 class="color-secondary d-flex text-center justify-center">

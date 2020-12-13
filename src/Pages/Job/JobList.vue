@@ -7,7 +7,7 @@
     </div>
     <div class="mx-12 my-10 d-flex justify-center flex-wrap">
       <div v-for="(job, i) in jobs" :key="i">
-        <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.mdAndUp" />
+        <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.smAndUp" />
         <JobCardMobile :job="job" class="mb-4" v-else />
       </div>
     </div>
