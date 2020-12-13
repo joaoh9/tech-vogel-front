@@ -138,10 +138,6 @@ export default {
           to: 'To',
         },
       },
-      links: {
-        title: 'Links',
-        description: 'Some description to place here',
-      },
       extras: {
         title: 'Anything else?',
         description:
@@ -234,7 +230,7 @@ export default {
             'Companies on Tech Vogel are required to fill out their job ad with every detail about the position, including compensation, perks and much more!',
         },
         {
-          title: 'Two-click application process',
+          title: 'Two-clicks application process',
           subtitle:
             'After you register your CV, you will be able to apply to jobs just with two clicks. No forms, no uploads, just clicks!',
         },

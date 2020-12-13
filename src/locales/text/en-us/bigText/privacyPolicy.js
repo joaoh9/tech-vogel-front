@@ -3,66 +3,99 @@ export default {
   '1': {
     title: 'Introduction',
     description: `We need to collect some data to provide the best experience possible to ensure that you get the most out of our service.
-      <br>
-      Your privacy and the security of your personal data are of the utmost importance to us.
-      <br>
-      Thus, we would like to demonstrate in a transparent way why and how we ask your data and information for using the platform.
-      <br>
-      We want to help you understand our privacy policy
-      <br>
-      This is our objective, and in the Privacy Policy all clarifications and details will be provided.
-      <br>
-      Tech Vogel has designated a Data Protection Officer (DPO), who will be responsible for communicating with the data subject.
-      <br>
-      If you want to communicate with our DPO you can send an email to the following address: anacardoso@techvogel.com.
-      <br>`,
+    <br>
+    Your privacy and the security of your personal data are of the utmost importance to us.
+    <br>
+    Thus, we would like to demonstrate in a transparent way why and how we ask your data and information for using the platform.
+    <br>
+    We want to help you understand our privacy policy.
+    <br>
+    This is our objective, and in the Privacy Policy all clarifications and details will be provided.
+    <br>
+    Tech Vogel has designated a Data Protection Officer (DPO), who will be responsible for communicating with the data subject.
+    <br>
+    If you want to communicate with our DPO you can send an email to the following address: <a href="mailto:anacardoso@techvogel.com">anacardoso@techvogel.com</a>.
+    <br>`,
   },
   '2': {
     title: 'Data Processing',
     description: `When you register on the Tech Vogel platform, we collect information about you. This may include your name and contact information such as e-mail, data on your resume or data on vacancies and financial information to make or receive payments for services obtained through Tech Vogel or information to help us complete feedback forms.
     <br>
-    2.1.1 For the purposes of this policy, the Client or company is any individual or legal entity that registers with Tech Vogel in order to "post a job".
     <br>
-    2.1.2. For the purposes of this policy, Professionals and or freelancers are all individuals who register with Tech Vogel in order to “apply for job".
+    <strong>2.1.1</strong> For the purposes of this policy, the Client or company is any individual or legal entity that registers with Tech Vogel in order to "post a job".
     <br>
-    2.1.3. For the purposes of this policy, Clients/companys and Professionals / freelancers are collectively referred to as “Users”.
+    <br>
+    <strong>2.1.2.</strong> For the purposes of this policy, Professionals and or freelancers are all individuals who register with Tech Vogel in order to "apply for job".
+    <br>
+    <br>
+    <strong>2.1.3.</strong> For the purposes of this policy, Clients/companys and Professionals / freelancers are collectively referred to as "Users".
     <br>
     <br>
     We ask to <strong>client/company</strong> for the following information:
     <br>
-    <strong>Company log in:</strong> email, password, representative name.
+    <strong><u>Company log in:</u></strong> Representative name, email and password.
     <br>
     <br>
     <strong><u>COMPANY DATA</u></strong>
     <br>
-    <b>Build company page:</b> name, city, country, picture, size company (startups, small, medium or large), job types (full time, part time, freelance);
+    <strong>Build company page:</strong> name, city, country, picture; size company (startups, small or medium, large); job types (full time, part time, freelance);
     <br>
-    <b>Company information:</b> about the company; company website; Linkedin; Instagram; Twitter.
+    <strong>Company information:</strong> about the company; company website; Linkedin; Instagram; Twitter.
     <br>
     <br>
-    <p><strong><u>JOB DATA</u></strong></p><p><br></p><p><strong>Post a job:&nbsp;Basic information: </strong><span>Job title; contract type; experience level;</span></p><p><br></p><p><strong>Role description: </strong><span>describe the role;</span></p><p><br></p><p><strong>Skill requirements: </strong><span>Tech Skills (Pryority, essential) Other skills: soft skills, language.</span></p><p><br></p><p><strong>Salary and perks: </strong><span>currency; salary; workload.</span></p>
+    <strong><u>JOB DATA</u></strong>
+    <br>
+    <strong><u>Post a job:</u></strong>
+    <br>
+    <strong>Basic information:</strong> Job title; contract type; experience level;
+    <br>
+    <strong>Role description:</strong> describe the role;
+    <br>
+    <strong>Skill requirements:</strong> Tech Skills (Pryority, essential) Other skills: soft skills, language.
+    <br>
+    <strong>Salary and perks:</strong> currency; salary; workload.
     <br>
     <br>
     This information is intended to build the profile of the company and the vacancy and is used only and with the intention of selecting professionals / freelancers for the vacancy.
     <br>
     <br>
-    <p><span>We ask </span><strong>professionals or freelancers</strong><span> for the following information:</span></p>
+    We ask <strong>professionals or freelancers</strong> for the following information:
     <br>
-    <p><strong><u>PROFESSIONAL PROFILE DATA</u></strong></p><p><br></p><p><strong>Professional log in: </strong><span>name, login, email, </span><span>Password.</span></p><p>
+    <strong><u>PROFESSIONAL PROFILE DATA</u></strong>
+    <br>
+    <strong><u>Professional log in:</u></strong> name, email, password.
+    <br>
+    <strong><u>CURRICULUM DATA</u></strong>
+    <br>
+    <strong><u>To Register your CV:</u></strong>
+    <br>
+    <strong>Preferences:</strong> size company (startups, small or medium, large); job types (full time, part time, freelance);
+    <br>
+    <strong>Basic information:</strong> full name, city, country, profile picture.
+    <br>
+    <strong>Work experience:</strong> company, position, description;
+    <br>
+    <strong>Tech skills:</strong> experience years;
+    <br>
+    <strong>Other skills:</strong> soft skills; languages
+    <br>
+    <strong>Education:</strong> degree; type degree; institution; country of attendance.
+    <br>
+    Links Github, Linkedin, Behance.
     <br>
     <br>
-    </p><p><strong><u>CURRICULUM DATA</u></strong></p><p><br></p><p><strong>To Register your CV:</strong></p><p><br></p><p><strong>Preferences:</strong><span> size company (startups, small or medium, large); job types (full time, part time, freelance);&nbsp;</span></p><p><br></p><p><strong>Basic information: </strong><span>full name, city, country, profile picture.</span></p><p><br></p><p><strong>Work experience: </strong><span>company, position, description;</span></p><p><br></p><p><strong>Tech skills: </strong><span>experience years;</span></p><p><br></p><p><strong>Other skills: </strong><span>soft skills; languages&nbsp;</span></p><p><br></p><p><strong>Education: </strong><span>degree; type degree; institution; country of attendance.Links Github, Linkedin, Behance.</span></p><p><br></p><p><br></p>
     This information is intended to build the profile of the professional / freelancer and is used only and with the intention of selecting professionals / freelancers for the vacancies.
     <br>
     The platform allows you to change, correct or delete any information quickly and simply.
     <br>
     The legal foundations on which we are based in order to legally process the data are expressed in the General Data Protection Law. We use the principles and purposes of Contract Execution; Legitimate Interest and Consent.
+    <br>
     Tech Vogel's platform is intended for users aged 18 and over. We do not knowingly collect Personal Information from anyone under the age of 18. If we become aware that a minor under 18 has provided us with personal information, we will use commercially reasonable efforts to delete that information from our files.
     <br>
-    If you are the parent or legal guardian of a child under 18 and believe that Tech Vogel has collected Personal    Information from your child, please contact us: email - anacardoso@techvogel.com.
+    If you are the parent or legal guardian of a child under 18 and believe that Tech Vogel has collected Personal Information from your child, please contact us: E-mail anacardoso@techvogel.com;
     <br>
     <br>
-    <p><strong>2.2 Collection of feedbacks and evaluations</strong></p>
+    <strong>2.2 Collection of feedbacks and evaluations</strong>
     <br>
     We do not collect information in the feedback, they are anonymous. You will be able to rate us with 5 stars, being 1 bad star and 5 stars great. You can also leave us an anonymous message.
     <br>
@@ -75,161 +108,129 @@ export default {
     In this case, if you authorize us, we can use your name and make the feedback public, so that it can be viewed by other Users.
     <br>
     <br>
-    <p><strong>2.3 Information received from third parties</strong></p>
+    <strong>2.3 Information received from third parties</strong>
     <br>
     Third parties may also provide us with information about you. If we combine this information with information collected by you through the Service, we will still treat that information combined, as set out in this Privacy Policy.
     <br>
     We may supplement the information we collect with external registrations or third parties may provide information related to a co-marketing contract or at your request (such as if you choose to enter a third party service). If we combine the information we receive from others with the information collected through the Service, we will treat the combined information as described in this Privacy Policy.
     <br>
     <br>
-    <p><strong>2.4 Consent</strong></p>
+    <strong>2.4 Consent</strong>
     <br>
     When you register with Tech Vogel you agree to the Terms of Service and Privacy Policy.
     <br>
     YOU EXPRESSLY CONSENT TO THE COLLECTION, STORAGE, USE, PROCESSING, ASSOCIATION, SHARING, DISSEMINATION AND OTHER WAYS OF TREATING YOUR INFORMATION, INCLUDING PERSONAL DATA, UNDER ANY OF THE FORMS AND FOR ALL PURPOSES PROVIDED IN THIS PRIVACY POLICY.
     <br>
     <br>
-    <p><strong>2.5 Communication</strong></p>
+    <strong>2.5 Communication</strong>
     <br>
     The user authorizes the sending of notifications by e-mail or by any other means of communication available with content of an informative and promotional nature related to the Services.
+    <br>
    `,
   },
   '3': {
-    title: 'Data sharing',
-    description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
+    title: 'Data Sharing',
+    description: `Tech Vogel doesn't share data to third parties, except for legal reasons to comply with legal obligations.
     <br>
-    A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
+    The information provided to Tech Vogel is for its own business purposes only, and will not be sold or shared with anyone.
     <br>
-    Assim, gostaríamos de demonstrar de forma transparente como e porque coletamos e utilizamos os seus dados pessoaise informações.
+    We share professional / freelancer data with clients and client data with professionals / freelancers within the platform. Shared data: name, email, professional profile data, curriculum data or company data, and job data.
     <br>
-    Queremos ajudar você a compreender nossas práticas de privacidade.
+    Job data are public.
     <br>
-    Este é o nosso objetivo, e naPolítica de Privacidade (“Política”) serão fornecidos todos os esclarecimentos e detalhes necessários.
+    We don't share your personal information with third parties for marketing purposes, unless we first provide you with the opportunity to enable or disable such sharing.
     <br>
-    1.1.1. Para fins desta política, Cliente é toda pessoa física ou jurídica que se cadastra na Tech Vogel com intuito de ofertar uma vaga de trabalho remoto ("post a job").
+    User information is shared with payment agencies when purchasing services.
     <br>
-    1.1.2. Para fins desta política, Profissionais e ou freelancers é toda pessoa física que se cadastra na Tech Vogel com o intuito de aplicar a uma vaga de trabalho remoto ("apply for job").
-    <br>
-    1.1.3. Para fins desta política, Profissionais/freelancers e Clientes da Tech Vogel são denominados em conjunto (“usuários”).
-    <br>
-    A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
-    <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    It will also be processed if there is a payment problem and a financial institution asks us for data to verify the existence of the people involved.
     <br>`,
   },
   '4': {
-    title: 'Data retention and storage',
-    description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
+    title: 'Data Retention and Erasure',
+    description: `Tech Vogel retains user profile data and other personal data as long as they maintain their account with us.
     <br>
-    A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
+    If users delete their profile, their data will be deleted from the platform.
     <br>
-    Assim, gostaríamos de demonstrar de forma transparente como e porque coletamos e utilizamos os seus dados pessoaise informações.
-    <br>
-    Queremos ajudar você a compreender nossas práticas de privacidade.
-    <br>
-    Este é o nosso objetivo, e naPolítica de Privacidade (“Política”) serão fornecidos todos os esclarecimentos e detalhes necessários.
-    <br>
-    1.1.1. Para fins desta política, Cliente é toda pessoa física ou jurídica que se cadastra na Tech Vogel com intuito de ofertar uma vaga de trabalho remoto ("post a job").
-    <br>
-    1.1.2. Para fins desta política, Profissionais e ou freelancers é toda pessoa física que se cadastra na Tech Vogel com o intuito de aplicar a uma vaga de trabalho remoto ("apply for job").
-    <br>
-    1.1.3. Para fins desta política, Profissionais/freelancers e Clientes da Tech Vogel são denominados em conjunto (“usuários”).
-    <br>
-    A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
-    <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Tech Vogel may retain some user data after receiving the request to delete the account if necessary, to comply with legal requirements.
     <br>`,
   },
   '5': {
     title: 'Protection and storage',
-    description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
-    <br>
-    A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
-    <br>
-    Assim, gostaríamos de demonstrar de forma transparente como e porque coletamos e utilizamos os seus dados pessoaise informações.
-    <br>
-    Queremos ajudar você a compreender nossas práticas de privacidade.
-    <br>
-    Este é o nosso objetivo, e naPolítica de Privacidade (“Política”) serão fornecidos todos os esclarecimentos e detalhes necessários.
-    <br>
-    1.1.1. Para fins desta política, Cliente é toda pessoa física ou jurídica que se cadastra na Tech Vogel com intuito de ofertar uma vaga de trabalho remoto ("post a job").
-    <br>
-    1.1.2. Para fins desta política, Profissionais e ou freelancers é toda pessoa física que se cadastra na Tech Vogel com o intuito de aplicar a uma vaga de trabalho remoto ("apply for job").
-    <br>
-    1.1.3. Para fins desta política, Profissionais/freelancers e Clientes da Tech Vogel são denominados em conjunto (“usuários”).
-    <br>
-    A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
-    <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    description: `Tech Vogel employs appropriate information security practices in all its systems and infrastructure, including physical and digital security measures to ensure the protection of your information and the information collected can be stored on servers located in Kansas (USA), Brazil or abroad, chosen by Tech Vogel.
     <br>`,
   },
   '6': {
     title: 'Policy changes',
-    description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
-    <br>
-    A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
-    <br>
-    Assim, gostaríamos de demonstrar de forma transparente como e porque coletamos e utilizamos os seus dados pessoaise informações.
-    <br>
-    Queremos ajudar você a compreender nossas práticas de privacidade.
-    <br>
-    Este é o nosso objetivo, e naPolítica de Privacidade (“Política”) serão fornecidos todos os esclarecimentos e detalhes necessários.
-    <br>
-    1.1.1. Para fins desta política, Cliente é toda pessoa física ou jurídica que se cadastra na Tech Vogel com intuito de ofertar uma vaga de trabalho remoto ("post a job").
-    <br>
-    1.1.2. Para fins desta política, Profissionais e ou freelancers é toda pessoa física que se cadastra na Tech Vogel com o intuito de aplicar a uma vaga de trabalho remoto ("apply for job").
-    <br>
-    1.1.3. Para fins desta política, Profissionais/freelancers e Clientes da Tech Vogel são denominados em conjunto (“usuários”).
-    <br>
-    A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
-    <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    description: `We may occasionally make changes to this Policy and when we make changes, you will be notified.
     <br>`,
   },
   '7': {
     title: 'Cookies',
-    description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
+    description: `To ensure that you have a pleasant experience while visiting our website, we use cookies, as do most websites. These small files allow our applications to remember you on the next visit. Without them, we can’t make multiple customizations and your browsing experience would be frustrating.
     <br>
-    A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
+    This Policy explains how we use cookies and the choices you have.
     <br>
-    Assim, gostaríamos de demonstrar de forma transparente como e porque coletamos e utilizamos os seus dados pessoaise informações.
+    This Privacy Policy will be applied in relation to the treatment of personal data that may be collected through cookies.
     <br>
-    Queremos ajudar você a compreender nossas práticas de privacidade.
     <br>
-    Este é o nosso objetivo, e naPolítica de Privacidade (“Política”) serão fornecidos todos os esclarecimentos e detalhes necessários.
+    <strong>Why do we find cookies?</strong>
     <br>
-    1.1.1. Para fins desta política, Cliente é toda pessoa física ou jurídica que se cadastra na Tech Vogel com intuito de ofertar uma vaga de trabalho remoto ("post a job").
+    We use cookies for many purposes, such as login, statistics, content personalization, relationship, marketing, integration with social networks and advertising. Third party cookies and business partners are also inserted for the purpose of tracking user behavior when accessing our website.
     <br>
-    1.1.2. Para fins desta política, Profissionais e ou freelancers é toda pessoa física que se cadastra na Tech Vogel com o intuito de aplicar a uma vaga de trabalho remoto ("apply for job").
     <br>
-    1.1.3. Para fins desta política, Profissionais/freelancers e Clientes da Tech Vogel são denominados em conjunto (“usuários”).
+    Although cookies change as we improve and update our website, they are used for the following purposes:
+    <ul>
+      <li>User authentication:</li>
+      We use cookies to verify your account and determine when you are logged on to our page. Cookies also help us remember your browser and keep you connected between browsing sessions, so you don't have to enter your password at all times.
+      <li>Statistics and content customization:</li>
+      We use cookies to understand which "jobs" are accessed the most and which features of our website should be improved.
+      <li>Publicity:</li>
+      We use cookies to help us "show ads and job recommendations". Cookies are also used to measure the performance of ad campaigns carried out.
+      <li>Performance:</li>
+      We use cookies to provide a better browsing experience for the user. Cookies help us to check traffic between servers and to know the page loading speed. They also help to record the dimensions of your screen and your browser windows to adapt the displayed content in order to improve the experience on our website.
+      <li>Integration with third party applications:</li>
+      Cookies also allow you to interact with the content available on our website, using your networks (Github, for example).
+    </ul>
     <br>
-    A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
+    <strong>Types of cookies we use:</strong>
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
-    <br>`,
+    We separate cookies by categories that help you better understand their purpose and functioning. See below the cookies that Tech Vogel uses:
+    <br>
+    <br>
+    Functional cookies:
+    <br>
+    They are responsible for making our website work properly, so we classify them as essential and cannot be disabled. These cookies are used to recognize visitors who access the site and allow registration, login, and page performance features.
+    <br>
+    Cookies in this category can be temporary or permanent.
+    <br>
+    <br>
+    <strong>How can you control and delete cookies?</strong>
+    <br>
+    Your browser settings
+    <br>
+    Many of the cookies used on our website can be enabled or disabled through our cookie management tool or by disabling cookies through your browser. To disable cookies on your browser, follow the instructions usually located in the "Help", "Tools" or "Edit" menus in your browser. Please note that disabling a cookie or category of cookies does not delete the cookie from your browser unless it is done manually through the browser function.
+    `,
   },
   '8': {
     title: 'Get in touch',
-    description: `Precisamos coletar alguns dados para proporcionar a melhor experiência possível para garantir que você desfrute ao máximo do nosso serviço.
+    description: `Thank you for reading our Policy.
     <br>
-    A sua privacidade e a segurança dos seus dados pessoais são de extrema importância para nós.
+    If you have any questions regarding the way we treat your Data, the User may contact you.
     <br>
-    Assim, gostaríamos de demonstrar de forma transparente como e porque coletamos e utilizamos os seus dados pessoaise informações.
+    If you want to update, change, correct or delete any information, the platform itself allows, if you have difficulties, you can contact us.
     <br>
-    Queremos ajudar você a compreender nossas práticas de privacidade.
+    If you wish to share your information with third parties, you may at your own risk ask us for such information via email and be responsible if such information arrives in the wrong hands.
     <br>
-    Este é o nosso objetivo, e naPolítica de Privacidade (“Política”) serão fornecidos todos os esclarecimentos e detalhes necessários.
+    If you have any questions, please contact us at <a href="mailto:anacardoso@techvogel.com">anacardoso@techvogel.com</a>;
     <br>
-    1.1.1. Para fins desta política, Cliente é toda pessoa física ou jurídica que se cadastra na Tech Vogel com intuito de ofertar uma vaga de trabalho remoto ("post a job").
     <br>
-    1.1.2. Para fins desta política, Profissionais e ou freelancers é toda pessoa física que se cadastra na Tech Vogel com o intuito de aplicar a uma vaga de trabalho remoto ("apply for job").
+    <strong>TECH VOGEL</strong>
     <br>
-    1.1.3. Para fins desta política, Profissionais/freelancers e Clientes da Tech Vogel são denominados em conjunto (“usuários”).
+    CNPJ (National Registry of Legal Entities): 38.216.987/0001-59
     <br>
-    A Tech Vogel designou um Encarregado de Proteção de Dados (DPO), que será responsável por intermediar o contato do titular dos dados com as empresas.
+    Cell phone number: +55 11 95052-7281
     <br>
-    Caso queira comunicar-se com nosso DPO poderá enviar e-mail para o seguinte endereço: anacardoso@techvogel.com.
+    Address: Tomé de Souza Street, 1065, Store 1, Savassi, Belo Horizonte/MG, Zip code: 30.140-138.
     <br>`,
   },
 };

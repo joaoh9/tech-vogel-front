@@ -40,7 +40,7 @@ export default {
       },
       whatsVogel: {
         title: 'What is a Vogel?',
-        description: 'A Vogel is your credit you can use to apply for the jobs you want. You receive 5 Vogels when you first register to Tech Vogel and 1 Vogel after all sign ups you do between 24h.',
+        description: 'A Vogel is your credit you can use to apply for the jobs you want. You receive 5 Vogels when you first register to Tech Vogel and 1 Vogel per day after Log In.',
         vogelsLimited: 'Why are Vogels limited?',
         modalText: `Vogels are limited because it’s better for you to carefully choose the jobs you want to apply to, instead of wasting your time and energy with applications to positions that don’t fit your profile or skills.
         This way, you are more likely to get a positive result out of your applications because you took care to consider them before applying!`,
@@ -205,7 +205,7 @@ export default {
   },
   oAuth: {
     github: {
-      confirm: 'Confirm GitHub acces to Tech Vogel?',
+      confirm: 'Confirm GitHub access to Tech Vogel?',
       accessSuccess: 'Github account successfully linked to Tech Vogel',
       accessError: 'An error occurred when authorizing the application. Please try again later.',
       accessFirst: 'You must grant github access first!',

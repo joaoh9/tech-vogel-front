@@ -1,5 +1,5 @@
 // // import bigText from './bigText';
-// // import company from './company';
+import company from './company';
 import job from './job';
 import others from './others';
 import unlogged from './unlogged';
@@ -12,7 +12,7 @@ import toast from './toast/index';
 export default {
   ...common,
   // ...bigText,
-  // ...company,
+  ...company,
   ...job,
   ...others,
   ...unlogged,
