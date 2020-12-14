@@ -29,6 +29,9 @@
           class="mr-6"
         />
       </div>
+      <ChangeLanguage chooseLanguageText="" class="mr-4"/>
+
+
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-icon :color="isHome() ? 'light' : 'secondary'" v-on="on" v-bind="attrs">
@@ -60,14 +63,17 @@
 <script>
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
-
 import UserController from 'Controllers/user';
+import ChangeLanguage from 'Components/Static/ChangeLanguage';
 
 export default {
   name: 'LoggedInNavbar',
   mounted() {
     this.checkIfCompany();
     this.getUserProfilePic();
+  },
+  components: {
+    ChangeLanguage,
   },
   data() {
     return {

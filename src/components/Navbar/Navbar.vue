@@ -23,7 +23,6 @@
         />
       </div>
       <v-spacer />
-      <ChangeLanguage chooseLanguageText="" />
 
       <v-btn
         v-if="$vuetify.breakpoint.smAndUp"
@@ -45,6 +44,7 @@
       >
         {{ $t('common.signup') }}
       </v-btn>
+      <ChangeLanguage chooseLanguageText="" class="mx-4" />
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary v-if="!$vuetify.breakpoint.smAndUp">
       <v-list nav dense>

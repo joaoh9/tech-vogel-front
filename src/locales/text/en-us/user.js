@@ -59,6 +59,9 @@ export default {
         title: 'Let\'s build your profile',
         description:
           'You’ll be able to edit these later on. This information will be\nvisible to everyone.',
+        fullName: {
+          title: 'Full name',
+        },
         mainRole: {
           title: 'Your main role as a developer',
           placeholder: 'Ex: Junior Full Stack Developer',
@@ -137,10 +140,6 @@ export default {
           from: 'From',
           to: 'To',
         },
-      },
-      links: {
-        title: 'Links',
-        description: 'Some description to place here',
       },
       extras: {
         title: 'Anything else?',
@@ -234,7 +233,7 @@ export default {
             'Companies on Tech Vogel are required to fill out their job ad with every detail about the position, including compensation, perks and much more!',
         },
         {
-          title: 'Two-click application process',
+          title: 'Two-clicks application process',
           subtitle:
             'After you register your CV, you will be able to apply to jobs just with two clicks. No forms, no uploads, just clicks!',
         },
