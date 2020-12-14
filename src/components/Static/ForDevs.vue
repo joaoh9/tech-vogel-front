@@ -1,6 +1,6 @@
 <template>
   <v-container class="d-flex align-center flex-column">
-    <h4 class="color-secondary my-10">{{ $t('devs.subtitle') }}</h4>
+    <h2 class="color-secondary">{{ $t('devs.subtitle') }}</h2>
     <v-row align="center" class="mt-4" justify="center">
       <v-col cols="12" md="6" :class="$vuetify.breakpoint.smAndUp ? 'mt-n16' : 'mt-0'">
         <NumberedSteps :steps="getSteps()" titleColor="secondary" textColor="dark" />
