@@ -87,8 +87,16 @@ export default class JobController {
 
   async getReport(jobId) {
     const userToken = StorageHelper.loadState('userToken');
-    const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.post(`/v1/jobs/${jobId}/report`);
+    const axios = await Axios.GetInstance(userToken)
+    const { data } = await axios.get(`/v1/reports/${jobId}/generate`);
+
+    return data;
+  }
+
+  async getApplicationCount(jobId) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/v1/jobs/${jobId}/applications/count`)
+
     return data;
   }
 }

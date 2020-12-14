@@ -31,7 +31,8 @@ export default {
         title: 'Your company',
         currentAds: 'Current ads',
         currentJobs: 'Jobs Posted',
-        remainingCredits: 'Remaining credits',
+        remainingCoins: 'Remaining system coins',
+        yourReports: 'Your reports',
       },
       actions: {
         title: 'What would you like to do today?',
@@ -43,8 +44,8 @@ export default {
       manageAccountInfo: 'Manage my account information',
     },
     planCard: {
-      token: '{quantity} token(s) for',
-      currency: '$',
+      forCompanies: 'For companies',
+      currency: 'R$',
       price: '499',
       cents: ',99',
       installments: '{quantity}x',
@@ -56,11 +57,12 @@ export default {
     },
     report: {
       title: 'Candidate Report',
-      postedOn: 'Posted on',
+      postedOn: 'Job AD Posted on',
       createdOn: 'Report created on',
+      created: 'Report created',
       totalApplicants: 'Total applicants',
       yourTopMatches: 'Your top %{count} matches',
-      matchesDisclaimer: 'These are the candidates that bvest match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
+      matchesDisclaimer: 'These are the candidates that best match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
       yourCompany: {
         title: 'Your company',
         currentAds: 'Current ads',
@@ -76,6 +78,8 @@ export default {
         experienceLevel: 'Experience Level',
         memberSince: 'On Tech Vogel since',
       },
+      unlockReport: 'Unlock your report now!',
+      paymentProceed: 'Proceed to payment',
     },
   },
 };

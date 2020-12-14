@@ -1,7 +1,15 @@
 <template>
   <v-card class="bs-primary" color="bg">
     <div class="d-flex align-center flex-column mx-12">
-      <v-img height="160" width="160" class="mt-10" :src="picture.data64 || ''" />
+      <v-img
+        height="160"
+        width="160"
+        class="mt-10"
+        :src="
+          picture.data64 ||
+            'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png'
+        "
+      />
       <h4 class="h4-bold mt-6 text-center">{{ user.name }}</h4>
       <sub-1 color="dark">{{ role }}</sub-1>
       <IconText

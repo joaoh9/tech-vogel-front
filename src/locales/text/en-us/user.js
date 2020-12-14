@@ -176,7 +176,7 @@ export default {
         applications: 'Check on my applications',
         findJobs: 'Search for more jobs',
         editProfile: 'Edit my profile',
-        manageCredits: 'Manage credits',
+        manageCoins: 'Manage system coins',
       },
       editCV: 'Edit my CV',
       registerCV: 'Register my CV',
@@ -195,7 +195,7 @@ export default {
       actions: {
         findJobs: 'Search for more jobs',
         editProfile: 'Edit my profile',
-        manageCredits: 'Manage credits',
+        manageCoins: 'Manage system coins',
         manageAccountInfo: 'Manage my account information',
       },
       job: {

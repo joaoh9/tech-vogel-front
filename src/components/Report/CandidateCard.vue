@@ -1,114 +1,84 @@
 <template>
-  <v-card class="border-primary bs-primary pa-4 px-12 mt-6" color="bg">
+  <v-card class="border-primary bs-primary pa-4 px-12 mt-10" color="bg">
     <div class="d-flex justify-start flex-wrap align-center">
       <v-avatar class="align-self-center mr-15" size="90" color="cinza-lighten-3">
-        <v-img v-if="profilePic" :src="profilePic.data64" />
+        <v-img
+          :src="
+            'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png' ||
+              profilePic.data64
+          "
+        />
       </v-avatar>
       <div class="d-flex flex-column flex-fill">
-        <h4 class="mt-2">{{ user.name }}</h4>
-        <h6 style="font-weight:normal; color:gray" class="mb-2">{{ resume.mainRole }}</h6>
-        <div class="d-flex flex-wrap">
-          <v-btn :disabled="resume.github" class="" text>
-            <v-icon left>
-              fab fa-github
-            </v-icon>
-            Github
-          </v-btn>
-          <v-btn :disabled="!resume.linkedin" class="" text>
-            <v-icon left>
-              fab fa-linkedin
-            </v-icon>
-            Linkedin
-          </v-btn>
+        <h5 class="h5-bold color-secondary text-capitalize">{{ userInfo.name }}</h5>
+        <sub-1 class="mb-2 text-capitalize">{{ resumeInfo.mainRole }}</sub-1>
+        <div class="d-flex align-center">
+          <div v-for="(item, index) in getIcons()" :key="index">
+            <v-btn
+              class="pa-0 text-capitalize"
+              color="secondary"
+              text
+              :to="item.link"
+              v-if="item.link"
+            >
+              <v-icon size="16" class="mr-2">
+                {{ item.icon }}
+              </v-icon>
+
+              <div class="mr-4">
+                {{ item.text }}
+              </div>
+            </v-btn>
+          </div>
         </div>
       </div>
-      <v-dialog v-model="dialog" width="800px">
-        <template v-slot:activator="{ on }">
-          <v-btn
-            outlined
-            color="secondary"
-            class="my-10 align-self-center flex-fill "
-            v-on="on"
-          >
-           {{ $t('company.report.candidates.viewCandidate')}}
-            </v-btn>
-        </template>
-        <CandidateProfile :user="user" :resume="resume" :profilePic="profilePic"></CandidateProfile>
-      </v-dialog>
+      <g-btn
+        color="secondary"
+        text
+        class="text-none"
+        :label="$t('company.report.candidates.viewCandidate')"
+      >
+        <!-- :icon="'fas fa-angle-down'" -->
+      </g-btn>
+      <!-- <CandidateProfile :user="user" :resume="resume" :profilePic="profilePic" /> -->
     </div>
   </v-card>
 </template>
 
 <script>
-import CandidateProfile from 'Components/Report/CandidateProfile';
-
-import UserController from 'Controllers/user';
-import ResumeController from 'Controllers/resume';
-import ProfilePictureController from 'Controllers/profilePic';
-
-import moment from 'moment';
-
 export default {
-  name: 'CandidateReport',
+  name: 'CandidateCard',
   props: {
-    candidate: [Object],
+    userInfo: Object,
+    resumeInfo: Object,
+    profilePic: Object,
   },
-  async mounted() {
-    this.userId = this.candidate.userId;
-    await this.getUser();
-    await this.getUserResume();
-    await this.getProfilePicture();
+  mounted() {
+    this.jobId = this.$route.params.jobId;
   },
   components: {
-    CandidateProfile,
-  },
-  data() {
-    return {
-      userId: '',
-      user: {},
-      resume: {},
-      profilePic: {},
-      dialog: false,
-    };
+    // CandidateProfile,
   },
   methods: {
-    async getUser() {
-      const userController = new UserController();
-      try {
-        this.user = await userController.getByUserId(this.userId);
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: this.userId }));
-      }
-    },
-    async getUserResume() {
-      const resumeController = new ResumeController();
-      try {
-        this.resume = await resumeController.getByUserId(this.userId);
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
-      }
-    },
-    async getProfilePicture() {
-      const profilePictureController = new ProfilePictureController();
-
-      try {
-        this.profilePic = await profilePictureController.getByUserId(this.userId);
-      } catch (e) {
-        if (e.response.status === 404) {
-          this.profilePic = null;
-          return;
-        }
-        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
-      }
-    },
-    formatDate(date) {
-      return moment(date).format('ll');
+    getIcons() {
+      return [
+        {
+          text: this.$t('common.links.github.title'),
+          icon: 'fas fa-external-link-alt',
+          link: this.resumeInfo.links.github,
+        },
+        {
+          text: this.$t('common.links.linkedin.title'),
+          icon: 'fas fa-external-link-alt',
+          link: this.resumeInfo.links.linkedin,
+        },
+      ];
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 p {
   display: inline;
 }
