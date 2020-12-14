@@ -5,7 +5,7 @@ export default {
     title: 'Sign Up',
     description: 'Sign up for Tech Vogel',
     name: {
-      title: 'Your name',
+      title: 'Full name',
     },
     email: {
       title: 'Your Email',

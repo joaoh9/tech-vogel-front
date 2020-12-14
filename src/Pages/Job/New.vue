@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column align-center mt-4 mt-md-12">
+  <div class="d-flex flex-column align-center mt-4 mt-sm-12">
     <Stepper :stepsNames="$t('job.new.steppers')" v-model="currentStep" class="mb-6">
       <g-card>
         <template v-slot:card-header>
@@ -127,7 +127,7 @@ export default {
         benefits: '',
         salary: {
           currency: 'USD',
-          timeFrame: '',
+          timeFrame: 'MONTHS',
           min: 0,
           max: 0,
           range: false,

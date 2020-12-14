@@ -7,7 +7,7 @@
         <div class="d-flex">
           <div class="d-flex align-center">
             <h5 class="h5-bold color-primary mr-2">
-              {{ company.currentAds || 16 }}
+              {{ company.currentAds }}
             </h5>
             <bdy-1 color="secondary">
               {{ $t('company.dashboard.yourCompany.currentAds') }}
@@ -51,7 +51,7 @@ import moment from 'moment';
 import PlanCard from 'Components/Dashboard/PlanCard';
 
 export default {
-  name: 'DashboardCompanyCard',
+  name: 'CompactCompanyCard',
   components: {
     PlanCard,
   },

@@ -30,9 +30,10 @@
         :label="range ? 'From' : 'Price'"
         :title="range ? 'From' : 'Price'"
         outlined
-        v-mask="salaryMask(this.salary.min)"
+        v-mask="minMask"
         :class="range ? 'mr-2' : ''"
       />
+
       <v-text-field
         @input="checkInput('salary-max', salary.max)"
         v-model="salary.max"
@@ -40,7 +41,7 @@
         :rules="[rules.isNumber(salary.max)]"
         :label="range ? 'To' : 'Price'"
         :title="range ? 'To' : 'Price'"
-        v-mask="salaryMask(this.salary.max)"
+        :v-mask="maxMask"
         outlined
         v-if="range"
       />
@@ -62,6 +63,18 @@
 <script>
 import { VueEditor } from 'vue2-editor';
 import RulesHelper from 'Helpers/rules';
+
+import createNumberMask from 'text-mask-addons/dist/createNumberMask';
+
+const currencyMask = createNumberMask({
+  prefix: '',
+  allowDecimal: true,
+  decimalLimit: 2,
+  decimalSymbol: '.',
+  thousandsSeparatorSymbol: ',',
+  includeThousandsSeparator: true,
+  allowNegative: false,
+});
 
 export default {
   name: 'NewJob4',
@@ -88,9 +101,9 @@ export default {
       benefits: '',
       salary: {
         currency: 'USD',
-        min: undefined,
-        max: undefined,
-        timeFrame: '',
+        min: '',
+        max: '',
+        timeFrame: 'MONTHS',
         range: false,
       },
       rules: {
@@ -99,43 +112,12 @@ export default {
         max: () => true,
       },
       range: false,
+      generatingMask: false,
+      maxMask: currencyMask,
+      minMask: currencyMask,
     };
   },
   methods: {
-    salaryMask(value) {
-      const masks = {
-        2: '#,##',
-        5: '##,##',
-        6: '###,##',
-        7: '####,##',
-        8: '##.###,##',
-        10: '###.###,##',
-        11: '#.###.###,##',
-        12: '##.###.###,##',
-        13: '###.###.###,##',
-        14: '###.###.###,##',
-        15: '###.###.###,##',
-        16: '###.###.###,##',
-      };
-
-      if (value) {
-        value = masks[value.length];
-      }
-
-      return value;
-    },
-    getPriceMask(value) {
-      switch (this.salary.currency) {
-        case 'USD':
-          return this.$n(value, 'currency', 'en-us');
-        case 'GBP':
-          return this.$n(value, 'currency', 'en-gb');
-        case 'EUR':
-          return this.$n(value, 'currency', 'ge');
-        case 'BRL':
-          return this.$n(value, 'currency', 'pt-br');
-      }
-    },
     getPrefix() {
       switch (this.salary.currency) {
         case 'USD':
@@ -149,8 +131,8 @@ export default {
       }
     },
     checkInput(emitValue, variable) {
+      variable = variable.replace(/,/g, '')
       if (this.rules.isNumber(variable) === true) {
-        emitValue = emitValue.replace(/./g, '');
         this.$emit(emitValue, parseFloat(variable));
       }
     },

@@ -1,7 +1,7 @@
 <template>
   <v-card
     :color="color || 'primary'"
-    class="px-4 px-md-16 py-12"
+    class="px-4 px-sm-16 py-12"
     flat
     style="border-radius: 0px !important;"
   >

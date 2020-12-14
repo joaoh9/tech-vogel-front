@@ -28,6 +28,8 @@ export default {
       loginFailed: 'Something went wrong on your login',
       somethingWrong: 'Something went wrong. Try again later',
       fillOut: 'Please fill out fields correctly',
+      userNotFound: 'User not found',
+      incorrectInternalKey: 'Incorrect code',
     },
     success: {
       jobApplied: 'Successfully applied for job',
@@ -39,6 +41,7 @@ export default {
       githubRetrieve: 'Github data retrieved successfully!',
       closeTab: 'You can close this tab and retry your request on the other page',
       emailConfirmation: 'Email confirmed successfully!',
+      passwordResetEmailSent: 'Passoword reset email sent!',
     },
     info: {
       sessionExpired: 'Your session has expired. Please login again',

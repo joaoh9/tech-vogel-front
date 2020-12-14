@@ -20,7 +20,8 @@ export default class ProfilePictureController {
   }
 
   async getByUserId(userId) {
-    const axios = Axios.GetInstance();
+    const token = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(token);
     const { data } = await axios.get(`/v1/profile-picture/${userId}`);
 
     return data;

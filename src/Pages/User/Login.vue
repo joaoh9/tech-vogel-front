@@ -24,8 +24,12 @@
           data-cy="login-password"
           :error-messages="localRules.checkPassword"
         />
-        <div class="d-flex justify-start ">
-          <p color="secondary" class="button-text align-self-center bdy-2 color-cinza-lighten-1">
+        <div class="d-flex justify-start">
+          <p
+            @click="goToPasswordReset"
+            color="secondary"
+            class="button-text align-self-center bdy-2 color-cinza-lighten-1 cursor-pointer"
+          >
             {{ $t('login.forgotPassword') }}
           </p>
         </div>
@@ -186,6 +190,12 @@ export default {
     goToUserDashboard() {
       this.$router.push({
         name: 'User Dashboard',
+      });
+    },
+
+    goToPasswordReset() {
+      this.$router.push({
+        name: 'Password Reset',
       });
     },
   },

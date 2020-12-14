@@ -1,7 +1,7 @@
 <template>
   <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column flex-wrap">
-      <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="800">
+      <v-img class="bg-color-secondary pb-16" max-height="800">
         <div
           :style="
             `${
@@ -21,8 +21,8 @@
             <h1 class="h3-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
             <h1 class="h3-bold-alternative color-light">{{ $t('home.title3') }}</h1>
           </div>
-          <h5 class="h5 mt-6 mt-md-12 color-bg line-break">{{ $t('home.subtitle') }}</h5>
-          <div class="d-flex mt-5 mt-md-10 flex-wrap">
+          <h5 class="h5 mt-6 mt-sm-12 color-bg line-break">{{ $t('home.subtitle') }}</h5>
+          <div class="d-flex mt-5 mt-sm-10 flex-wrap">
             <g-btn
               class="font-details mr-4 my-2"
               style="height: 56px; width: 270px;"
@@ -44,7 +44,7 @@
         </div>
       </v-img>
     </div>
-    <div class="mx-md-16 md-4 mt-16">
+    <div class="mx-sm-16 md-4">
       <ReportTip />
       <div class="mt-16 d-flex justify-center">
         <h2 class="h2-bold-alternative text-center color-secondary mt-6">
@@ -52,7 +52,7 @@
         </h2>
       </div>
       <HowItWorks />
-      <div class="mx-md-n16 md-n4 my-16">
+      <div class="mx-sm-n16 md-n4 my-16">
         <v-card
           class="px-16 pt-4 pb-4"
           flat
@@ -79,11 +79,11 @@
         <Pricing />
       </div>
       <div
-        class="mx-md-n16"
+        class="mx-sm-n16"
         style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); margin-top: -268px"
       >
         <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
-          <h2 class="h2-bold text-center mt-4 color-light mt-16 mx-2 mx-md-16">
+          <h2 class="h2-bold text-center mt-4 color-light mt-16 mx-2 mx-sm-16">
             {{ $t('common.areYouLookingForAJob') }}
           </h2>
           <h5 class="h5 text-center mt-4 color-light mx-16">

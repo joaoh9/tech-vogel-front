@@ -76,6 +76,7 @@ export default {
       logoHome: LogoHome,
       company: '',
       profilePic: null,
+      isCompany: false,
     };
   },
   methods: {
@@ -146,7 +147,9 @@ export default {
       return this.$router.currentRoute.name === 'Home';
     },
     handlePrevent() {
-      const routes = this.$router.currentRoute.name !== 'Side Pick' && this.$router.currentRoute.name !== 'New Company'
+      const routes =
+        this.$router.currentRoute.name !== 'Side Pick' &&
+        this.$router.currentRoute.name !== 'New Company';
 
       return routes;
     },
