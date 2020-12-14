@@ -81,6 +81,7 @@ export default {
       label: 'Password',
     },
     comingSoon: 'Coming soon!',
+    integration: 'GitHub and LinkedIn integration',
     confirmPassword: {
       placeholder: 'Confirm password',
       label: 'Confirm password',

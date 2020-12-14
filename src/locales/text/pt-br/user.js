@@ -16,7 +16,7 @@ export default {
           identifier: 'personalInfo',
         },
         {
-          name: 'Experiência',
+          name: 'Experiência profissional',
           identifier: 'workExperience',
         },
         {
@@ -24,12 +24,12 @@ export default {
           identifier: 'skills',
         },
         {
-          name: 'Escolaridade',
+          name: 'Ensino',
           identifier: 'education',
         },
       ],
       start: {
-        title: 'Cadastrar seu currículo',
+        title: 'Cadastre seu currículo',
         description:
           'Seu currículo na Tech Vogel é a forma como as empresas verão suas informações e como nosso algoritmo vai realizar o match com as vagas aplicadas. Preencha com atenção ;)',
         linkLinkedIn: {
@@ -39,7 +39,7 @@ export default {
           title: 'Link da sua conta do GitHub',
         },
         registerManually: {
-          title: 'Registrar currículo manualmente',
+          title: 'Cadastrar currículo',
         },
       },
       preferences: {
@@ -67,7 +67,7 @@ export default {
           placeholder: 'Ex: Desenvolvedor Junior Full Stack',
         },
         location: {
-          title: 'Local de residência.',
+          title: 'Local de residência',
           city: 'Cidade',
           country: 'País',
         },
@@ -81,8 +81,8 @@ export default {
         },
       },
       workExperience: {
-        title: 'Divida sua experiência no mercado de trabalho e programação',
-        description: 'Você pode alterar suas informações após salvar',
+        title: 'Divida sua experiência profissional',
+        description: 'Você poderá alterar suas informações após salvar.',
         company: {
           title: 'Nome da empresa em que atuou',
         },
@@ -106,7 +106,7 @@ export default {
         },
       },
       skills: {
-        title: 'Fale de suas habilidades como desenvolvedor!',
+        title: 'Fale sobre suas habilidades',
         description:
           'Você pode editar suas informações depois de salvá-las. Suas informações ficarão visíveis para os usuários da Tech Vogel!',
       },
@@ -115,9 +115,9 @@ export default {
         description:
           'Você pode editar suas informações depois de salvá-las. Suas informações ficarão visíveis para os usuários da Tech Vogel.',
 
-        school: 'Escolaridade',
+        school: 'Ensino',
         courseTitle: {
-          title: 'Caso possua curso superior preencha as informações abaixo',
+          title: 'Curso',
           placeholder: 'Nome do curso',
           options: [
             'Graduação ensino médio',
@@ -131,7 +131,7 @@ export default {
         },
         degree: {
           title: 'Formação',
-          placeholder: 'Ex: Formado em Ciências contábeis',
+          placeholder: 'Ex: Bacharelado',
         },
         about: {
           title: 'Descrição',
@@ -139,14 +139,14 @@ export default {
         },
         fieldOfStudy: 'Campo de estudo',
         institution: 'Instituição',
-        from: 'de',
-        to: 'até',
+        from: 'De',
+        to: 'Até',
         addMore: 'Adicionar mais',
         continue: 'Continuar',
         placeholders: {
           institution: 'Nome da instituição',
-          from: 'de',
-          to: 'até',
+          from: 'De',
+          to: 'Até',
         },
       },
       extras: {

@@ -9,7 +9,7 @@
         :label="$t('resume.register.start.registerManually.title')"
       />
       <overline class="mt-10" color="primary">{{ $t('common.comingSoon') }}</overline>
-      <sub-2 color="primary">GitHub and LinkedIn integration</sub-2>
+      <sub-2 color="primary">{{ $t('common.integration') }}</sub-2>
     </div>
     <slot />
   </div>
