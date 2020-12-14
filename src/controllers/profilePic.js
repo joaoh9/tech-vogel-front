@@ -2,7 +2,7 @@ import Axios from 'Helpers/axios';
 import StorageHelper from 'Helpers/storage';
 import UserController from 'Controllers/user';
 
-export default class {
+export default class ProfilePictureController {
   async save(resume) {
     const token = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(token);

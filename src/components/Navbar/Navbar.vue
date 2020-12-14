@@ -5,7 +5,6 @@
         v-if="!$vuetify.breakpoint.smAndUp"
         @click="drawer = true"
         color="bg"
-        class=""
       />
       <v-btn text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
