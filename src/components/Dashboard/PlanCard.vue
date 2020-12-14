@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :class="!$vuetify.breakpoint.smAndUp ? 'pa-4 rounded-20' : 'pa-8 rounded-20'"
+    :class="!$vuetify.breakpoint.smAndUp ? 'px-12 py-6 rounded-20' : 'pa-8 rounded-20'"
     color="bg"
     outlined
     :style="border"
@@ -24,16 +24,12 @@
           </div>
 
           <div v-if="priceTitle">
-            <sub-1 class="d-flex justify-center text-lowercase" color="secondary">{{
-              $t('howItWorks.forEachReport')
-            }}</sub-1>
+            <sub-1 class="d-flex justify-center text-lowercase" color="secondary">
+              {{ $t('howItWorks.forEachReport') }}
+            </sub-1>
             <bdy-2 class="mt-2">
               <sub-2 color="secondary mr-1">
-                {{
-                  $t('howItWorks.BRL.installments').toString() +
-                    'x ' +
-                    $n(eachInstallment(), 'currency', 'pt-br')
-                }}
+                {{ getInstallments() }}
               </sub-2>
               {{ $t('company.planCard.paymentMethod') }}
             </bdy-2>
@@ -63,13 +59,13 @@
           </div>
         </div>
         <div class="d-flex justify-center align-end">
-        <g-btn
-          :class="margin"
-          style="height: 56px; width: 270px;"
-          type="primary"
-          :label="label"
-          :to="to"
-        />
+          <g-btn
+            :class="margin"
+            style="height: 56px; width: 270px;"
+            type="primary"
+            :label="label"
+            :to="to"
+          />
         </div>
       </div>
     </div>
@@ -107,6 +103,13 @@ export default {
       return (+this.$t('howItWorks.BRL.fullPrice') / +this.$t('howItWorks.BRL.installments'))
         .toFixed(2)
         .toString();
+    },
+    getInstallments() {
+      return (
+        this.$t('howItWorks.BRL.installments').toString() +
+        'x ' +
+        this.$n(this.eachInstallment(), 'currency', 'pt-br')
+      );
     },
   },
 };

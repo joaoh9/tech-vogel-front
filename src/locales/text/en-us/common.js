@@ -88,7 +88,7 @@ export default {
     },
     youHave: 'You have',
     postedNow: 'Posted just now',
-    chooseSide: 'Your Goal is to:',
+    chooseSide: 'Your want to:',
     hi: 'Hi, ',
     confirmEdit: 'Confirm edit',
     postJob: 'Post job',
