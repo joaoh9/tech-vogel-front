@@ -14,16 +14,20 @@ export default {
       confirmPassword: 'Confirme a senha',
       page2: 'Criar página da empresa',
       location: 'Localização',
-      aboutYourCompany: { title: 'Sobre a empresa', placeholder: 'Ble' },
+      aboutYourCompany: {
+        title: 'Sobre a empresa',
+        placeholder: 'Nos dê uma breve apresentação da sua empresa!',
+      },
       page3: 'Adicionar links',
       webpage: 'Site',
       linkedin: 'LinkedIn',
       twitter: 'Twitter',
       instagram: 'Instagram',
       getStarted: 'Vamos começar!',
-      formInfo: ' Complete as informações adicionais da empresa abaixo.',
+      formInfo: 'Complete as informações adicionais da empresa abaixo.',
       companyInfo: 'Informações da empresa',
-      learnMore: 'Conte um pouco sobre sua empresa e mostre o por que é show trabalhar nela! Estas informações serão públicas no site e você pode modificar quando desejar.',
+      learnMore:
+        'Conte um pouco sobre sua empresa e mostre o por que é show trabalhar nela! Estas informações serão públicas no site e você pode modificar quando desejar.',
     },
     dashboard: {
       greeting: 'Olá,',
@@ -60,7 +64,8 @@ export default {
       createdOn: 'Relatório criado em',
       totalApplicants: 'Total de candidatos',
       yourTopMatches: 'Seu top %{count} matches',
-      matchesDisclaimer: 'Estes são os candidatos que deram maior match com os requisitos e habilidades descritos em sua vaga. Você poderá entrar em contato via e-mail ou mensagem para iniciar o processo de entrevista.',
+      matchesDisclaimer:
+        'Estes são os candidatos que deram maior match com os requisitos e habilidades descritos em sua vaga. Você poderá entrar em contato via e-mail ou mensagem para iniciar o processo de entrevista.',
       yourCompany: {
         title: 'Sua empresa',
         currentAds: 'Vagas no momento',

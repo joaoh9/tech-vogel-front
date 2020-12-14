@@ -74,7 +74,7 @@ export default {
         placeholder:
           'Trabalhando na Criptocoin você terá:\n  - Gympass\n  - Vale refeição\n  - Seguro saúde - Vale Coworking \n  - Um time fera para chamar de seu ',
       },
-      steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
+      steppers: [ 'Informações básicas', 'Descrição da vaga', 'Requisitos', 'Salário e benefícios' ],
     },
 
     details: {
@@ -96,7 +96,7 @@ export default {
       btnType: 'secondary',
       btnText: 'Procurar mais vagas',
       jobType: {
-        title: 'Vaga remota',
+        title: 'Totalmente remota',
       },
     },
     confirmJob: {

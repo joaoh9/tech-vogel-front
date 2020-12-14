@@ -1,6 +1,7 @@
 export default {
   resume: {
     register: {
+      important: 'Importante ter!',
       tabs: [
         {
           name: 'Início',
@@ -29,7 +30,8 @@ export default {
       ],
       start: {
         title: 'Cadastrar seu currículo',
-        description: 'Seu currículo na Tech Vogel é a forma como as empresas verão suas informações e como nosso algoritmo vai realizar o match com as vagas aplicadas. Preencha com atenção ;)',
+        description:
+          'Seu currículo na Tech Vogel é a forma como as empresas verão suas informações e como nosso algoritmo vai realizar o match com as vagas aplicadas. Preencha com atenção ;)',
         linkLinkedIn: {
           title: 'Link da sua conta do LinkedIn',
         },
@@ -193,10 +195,10 @@ export default {
       tokenExplanation:
         'Você receberá 1 Vogel por cada Log in que fazer na plataforma em dias diferentes. E toda vez que se candidatar a uma vaga e for selecionado para o relatório você utiliza um Vogel. Caso não seja escolhido para integrar o relatório você permanece com seu Vogel.',
     },
-    gotToDashboard: 'Ir para página inicial',
+    gotToDashboard: 'Ir para o painel de controle',
     applications: {
       title: 'Suas vagas',
-      returnToDashboard: 'Voltar para página inicial',
+      returnToDashboard: 'Voltar para o painel de controle',
       actions: {
         findJobs: 'Procurar mais vagas',
         editProfile: 'Editar perfil',
@@ -249,6 +251,11 @@ export default {
             'Quando você se candidata através da Tech Vogel, você não vai ficar no vácuo sem resposta. As vagas da plataforma possuem prazo de validade mínimo de 15 dias e você será notificado no mesmo dia de finalização se entrou para o relatório da vaga.',
         },
       ],
+    },
+    passwordReset: {
+      title: 'Resetar senha',
+      description: 'Insira seu e-mail para confirmar a mudança de senha',
+      confirmationCode: 'Código de confirmação',
     },
     github: {
       stats: 'Estastísticas do GitHub',

@@ -59,6 +59,9 @@ export default {
         title: 'Let\'s build your profile',
         description:
           'You’ll be able to edit these later on. This information will be\nvisible to everyone.',
+        fullName: {
+          title: 'Full name',
+        },
         mainRole: {
           title: 'Your main role as a developer',
           placeholder: 'Ex: Junior Full Stack Developer',

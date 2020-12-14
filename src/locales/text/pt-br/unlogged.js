@@ -127,7 +127,6 @@ export default {
       'A Tech Vogel foi criada por amantes da liberdade com responsabilidade, nós somos exploradores e ao mesmo tempo apaixonados em empreender.  Esta paixão por novas tendências nos fez visionar o trabalho remoto como sendo um modelo de trabalho promissor e Desenvolvedores como sendo a ponta para que mais empresas possam avançar com suas inovações sem se preocupar com escassez de mão de obra local e qualificada. ',
     text2:
       'Nós chegamos com a visão de conectar Devs com empresas para o trabalho remoto. Queremos ajudar o ambiente inovador permitindo com que empresas possam encontrar cada vez mais desenvolvedores Fits para seus projetos através de nosso Relatório!',
-    Text3: 'Como gostamos de dizer Go Remote and Go Beyond!',
   },
   termsOfService: {
     title: 'Sua privacidade é importante para nós.',
@@ -137,7 +136,6 @@ export default {
     buttons: [
       'Introdução e informações gerais',
       'Dados do usuário e privacidade',
-      'Registration',
       'Cadastro',
       'Serviços e custos',
       'Contrato de serviços',

@@ -74,7 +74,6 @@ export default {
       'Devops',
       'Blockchain Developer',
     ],
-    more: 'With many more to come!',
   },
   howItWorks: {
     title: 'How It Works',

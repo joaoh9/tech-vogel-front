@@ -1,3 +1,5 @@
+import FlagIcons from 'Data/flagIcons';
+
 export default {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
@@ -67,7 +69,6 @@ export default {
       'Devops',
       'Blockchain Developer',
     ],
-    more: 'With many more to come!',
   },
   howItWorks: {
     title: 'Como funciona',
@@ -168,6 +169,34 @@ export default {
     passwordRequired: 'Senha obrigatória',
     wrongEmailLogin: 'E-mail incorreto. Por favor, verifique-o e tente novamente.',
     wrongPasswordLogin: 'Senha incorreta. Por favor, verifique-a e tente novamente.',
+  },
+  quill: {
+    defaultToolbar: [
+      // [{ size: [ 'small', false, 'large', 'huge' ] }],
+      [ 'bold', 'italic', 'underline' ],
+      [ { list: 'ordered' }, { list: 'bullet' }, { list: 'check' } ],
+      [ { align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' } ],
+      ['code-block'],
+    ],
+  },
+  internationalization: {
+    data: [
+      {
+        i18n: 'en-us',
+        language: 'English',
+        country: 'usa',
+        flag: FlagIcons.usa,
+        disabledFlag: FlagIcons.usaDisabled,
+      },
+      {
+        i18n: 'pt-br',
+        language: 'Português',
+        country: 'brazil',
+        flag: FlagIcons.brazil,
+        disabledFlag: FlagIcons.brazilDisabled,
+      },
+    ],
+    icons: FlagIcons,
   },
   oAuth: {
     github: {
