@@ -96,6 +96,8 @@ export default {
     pageNotFound: '404 - Page not found',
     uhOh: 'Uh-oh',
     returnHome: 'Click here to return home',
+    return: 'Return',
+    view: 'View',
     links: {
       github: {
         title: 'GitHub',

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column flex-wrap">
-      <v-img :src="homeBg" class="bg-color-secondary pb-10" max-height="800">
+      <v-img class="bg-color-secondary pb-16" max-height="800">
         <div
           :style="
             `${
@@ -44,15 +44,15 @@
         </div>
       </v-img>
     </div>
-    <div class="mx-sm-16 md-4 mt-16">
+    <div class="mx-sm-16 md-4">
       <ReportTip />
       <div class="mt-16 d-flex justify-center">
-        <h2 class="h2-bold-alternative text-center color-secondary mt-6">
+        <h2 class="h2-bold-alternative text-center color-secondary">
           {{ $t('common.howItWorks') }}
         </h2>
       </div>
       <HowItWorks />
-      <div class="mx-sm-n16 md-n4 my-16">
+      <div class="mx-sm-n16 md-n4 mb-12">
         <v-card
           class="px-16 pt-4 pb-4"
           flat
@@ -72,10 +72,10 @@
           </div>
         </v-card>
       </div>
-      <div class="mt-16">
+      <div class="">
         <ForDevs />
       </div>
-      <div class="d-flex align-center flex-column flex-wrap mt-2">
+      <div class="d-flex align-center flex-column flex-wrap">
         <Pricing />
       </div>
       <div
@@ -83,10 +83,10 @@
         style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); margin-top: -268px"
       >
         <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
-          <h2 class="h2-bold text-center mt-4 color-light mt-16 mx-2 mx-sm-16">
+          <h2 class="h2-bold text-center color-light mx-2 mx-sm-16">
             {{ $t('common.areYouLookingForAJob') }}
           </h2>
-          <h5 class="h5 text-center mt-4 color-light mx-16">
+          <h5 class="h5 text-center mt-4 mb-2 color-light mx-16">
             {{ $t('common.freedomWork') }}
           </h5>
           <MainJobs />

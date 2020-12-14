@@ -14,12 +14,6 @@
             </span>
           </div>
           <div class="d-flex align-center">
-            <h5 class="align-self-center h5-bold color-primary mr-2">
-              {{ company.tokens }}
-            </h5>
-            <span>
-              {{ $t('company.dashboard.yourCompany.remainingCredits') }}
-            </span>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './App';
 
+import 'babel-polyfill'
 import i18n from './plugins/i18n';
 import vuetify from './plugins/vuetify';
 import VueMaskDirective from './plugins/v-mask';

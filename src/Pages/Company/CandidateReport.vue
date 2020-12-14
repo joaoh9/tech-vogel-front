@@ -3,43 +3,41 @@
     <template template v-slot:first-col>
       <g-btn
         @click="$router.back()"
-        class="mt-4"
+        class="mt-4 d-flex justify-start"
         type="primary"
         block
         tile
         text
         xl
-        :label="$t('common.back')"
+        :label="$t('common.return')"
       />
-      <CompactCompanyCard :company="company" v-if="company" :key="loaded.company" />
+      <CompactCompanyCard :company="company" :job="job" v-if="company" :key="loaded.company" />
     </template>
     <template template v-slot:second-col>
-      <div>
-        <h2 class="mb-5">Candidate Report</h2>
-        <h4>{{ job.title }}</h4>
-        <v-divider class="my-10"></v-divider>
-        <div class="d-flex flex-wrap justify-space-between">
-          <div class="d-flex flex-column flex-wrap mx-2 my-3">
-            <div style="font-weight:bold">{{ $t('company.report.postedOn') }}</div>
-            <div>{{ formatDate(job.creationDate || new Date()) }}</div>
-          </div>
-          <div class="d-flex flex-column flex-wrap mx-2 my-3">
-            <div style="font-weight:bold">{{ $t('company.report.createdOn') }}</div>
-            <div>{{ formatDate(job.creationDate || new Date()) }}</div>
-          </div>
-          <div class="d-flex flex-column flex-wrap mx-2 my-3">
-            <div style="font-weight:bold">{{ $t('company.report.totalApplicants') }}</div>
-            <div>{{ report_.totalApplicants }}</div>
+      <div class="color-secondary mx-16">
+        <h2 class="mb-4">{{ job.title }}</h2>
+        <h5>{{ $t('company.report.title') }}</h5>
+        <v-divider class="my-7" color="#1a193c" />
+        <div class="d-flex flex-wrap">
+          <div
+            class="d-flex flex-column flex-wrap mr-16 my-2"
+            v-for="(item, index) in getReportInfo()"
+            :key="index"
+          >
+            <p class="overline">{{ item.title }}</p>
+            <sub-1 color="secondary" class="sub-text">{{ item.description }}</sub-1>
           </div>
         </div>
-        <v-divider class="my-10"></v-divider>
-        <h4 class="my-5">{{ $tc('company.report.yourTopMatches', report_.totalMatches) }}</h4>
+        <v-divider class="mt-7 mb-9" color="#1a193c" />
+        <h4 class="mb-2">{{ $tc('company.report.yourTopMatches', 3) }}</h4>
         <bdy-1>{{ $t('company.report.matchesDisclaimer') }} </bdy-1>
         <CandidateCard
-          v-for="(candidate, index) in report_.candidates"
-          v-bind:key="index"
-          :candidate="candidate"
-        />
+          v-for="(user, index) in users"
+          :userInfo="user"
+          :resumeInfo="reports[index]"
+          :profilePic="profilePics[index]"
+          :key="index"
+s        />
       </div>
     </template>
   </g-bootstrap>
@@ -52,19 +50,25 @@ import CandidateCard from 'Components/Report/CandidateCard';
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
 import JobController from 'Controllers/job';
+import ResumeController from 'Controllers/resume';
+import ProfilePictureController from 'Controllers/profilePic';
 
 import moment from 'moment';
 
 export default {
   name: 'CandidateReport',
   async mounted() {
-    await this.getUserInfo();
     this.jobId = this.$route.params.jobId;
-    await this.getJob();
     this.companyId = this.$route.params.companyId;
+    await this.getLoggedUser();
+    await this.getJob();
     await this.getCompanyData();
     await this.checkPerm();
     await this.getReport();
+    await this.getUsers();
+    await this.getUserResume();
+    await this.getProfilePicture();
+    await this.getApplicationCount();
   },
   components: {
     CompactCompanyCard,
@@ -72,20 +76,14 @@ export default {
   },
   data() {
     return {
-      user: {},
+      users: [],
+      reports: [],
+      profilePics: [],
+      totalApplicants: 0,
       company: {},
       job: {},
-      report: [],
-      report_: {
-        totalApplicants: 13,
-        totalMatches: 3,
-        candidates: [
-          {
-            userId: '5fc075ddc153290396c87a38',
-          },
-        ],
-      },
       userId: null,
+      userIds: [],
       jobId: null,
       loaded: {
         company: false,
@@ -95,6 +93,39 @@ export default {
     };
   },
   methods: {
+    async getUsers() {
+      const userController = new UserController();
+
+      for (const userId of this.userIds) {
+        try {
+          this.users.push(await userController.getById(userId));
+        } catch (e) {
+          this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: userId }));
+        }
+      }
+    },
+    async getUserResume() {
+      const resumeController = new ResumeController();
+
+      for (const userId of this.userIds) {
+        try {
+          this.reports.push(await resumeController.getByUserId(userId));
+        } catch (e) {
+          this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: userId }));
+        }
+      }
+    },
+    async getProfilePicture() {
+      const profilePictureController = new ProfilePictureController();
+
+      for (const userId of this.userIds) {
+        try {
+          this.profilePics.push(await profilePictureController.getByUserId(userId));
+        } catch (e) {
+          this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: userId }));
+        }
+      }
+    },
     async getCompanyData() {
       const companyController = new CompanyController();
 
@@ -112,7 +143,7 @@ export default {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
     },
-    async getUserInfo() {
+    async getLoggedUser() {
       const userController = new UserController();
       this.user = userController.decodeUserToken();
 
@@ -126,8 +157,19 @@ export default {
     },
     async getReport() {
       const jobController = new JobController();
+
       try {
         this.report = await jobController.getReport(this.jobId);
+        this.userIds = this.report.result.map(result => result.userId);
+      } catch (e) {
+        // this.$toast.error(this.$t('toast.error.retrieveJob'));
+      }
+    },
+    async getApplicationCount() {
+      const jobController = new JobController();
+
+      try {
+        this.totalApplicants = await jobController.getApplicationCount(this.jobId);
       } catch (e) {
         // this.$toast.error(this.$t('toast.error.retrieveJob'));
       }
@@ -141,7 +183,23 @@ export default {
       }
     },
     formatDate(date) {
-      return moment(date).format('ll');
+      return moment(date).format('MMMM Do, YYYY');
+    },
+    getReportInfo() {
+      return [
+        {
+          title: this.$t('company.report.postedOn'),
+          description: this.formatDate(this.job.createdAt),
+        },
+        {
+          title: this.$t('company.report.createdOn'),
+          description: this.formatDate(this.job.createdAt),
+        },
+        {
+          title: this.$t('company.report.totalApplicants'),
+          description: this.totalApplicants.amount,
+        },
+      ];
     },
   },
   watch: {
@@ -152,7 +210,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 p {
   display: inline;
 }

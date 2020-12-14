@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mt-8" elevation="0" :max-width="!$vuetify.breakpoint.smAndUp ? '300' : '350'">
+  <v-card class="mt-8" :width="$vuetify.breakpoint.smAndUp ? 470 : 350" elevation="0">
     <div class="ma-8">
       <h5 class="h5-bold color-white">{{ title }}</h5>
       <sub-1 color="white" class="my-4">{{ description }}</sub-1>

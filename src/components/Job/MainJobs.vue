@@ -12,11 +12,11 @@
       :class="
         `d-flex ${
           $vuetify.breakpoint.smAndUp ? 'justify-center' : 'align-center flex-column'
-        } mt-10 my-16`
+        } mt-10 my-4`
       "
     >
       <g-btn
-        :class="`${$vuetify.breakpoint.smAndUp ? 'mx-2 my-16' : 'my-12 mb-4'}`"
+        :class="`${$vuetify.breakpoint.smAndUp ? 'mx-2 my-4' : 'my-12 mb-4'}`"
         style="height: 56px; width: 270px;"
         type="primary"
         :label="$t('common.seeMoreJobs')"
@@ -24,7 +24,7 @@
         data-cy="home-signup"
       />
       <g-btn
-        :class="`${$vuetify.breakpoint.smAndUp ? 'mx-2 my-16' : 'my-2'} mb-16`"
+        :class="`${$vuetify.breakpoint.smAndUp ? 'mx-2 my-4' : 'my-2'} mb-16`"
         style="height: 56px; width: 270px;"
         type="outline"
         color="light"

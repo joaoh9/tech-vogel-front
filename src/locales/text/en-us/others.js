@@ -145,6 +145,11 @@ export default {
     subtitle:
       'Our report is a solution for your company to save time and get better hiring results by showing you the three applicants that best fit your requirements.',
     card: 'How does it work?',
+    pricing: [
+      { text: 'See the top 3 matches to your job ad', comingSoon: false },
+      { text: 'Get in touch quickly with your 3 finalists ', comingSoon: false },
+      { text: 'Hire anyone from your report', comingSoon: false },
+    ],
   },
   errors: {
     '500':

@@ -399,3 +399,19 @@ div {
   font-size: 1em;
   font-weight: 400;
 }
+
+
+.v-toast-text {
+  overflow-wrap: break-word;
+  /* Body 1 */
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 150%;
+  /* or 24px */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+  font-feature-settings: 'liga' off;
+}
