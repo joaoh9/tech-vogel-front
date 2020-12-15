@@ -223,7 +223,7 @@ export default {
     <strong>4.8.1. EXTRAS.</strong> The customer / company that wishes to purchase more candidates in the report can contact Tech Vogel support.
     <br>
     <br>
-    <strong>4.8.2.</strong> DO NOT PAY. If the Client / company does not pay the Token value or if there are problems with payment, you will not receive the report until payment is in effect. For any difficulties, you can contact us by email: <a href="mailto:contato@techvogel.com">contato@techvogel.com</a>
+    <strong>4.8.2.</strong> DO NOT PAY. If the Client / company does not pay the Token value or if there are problems with payment, you will not receive the report until payment is in effect. For any difficulties, you can contact us by email: <a href="mailto:contact@techvogel.com">contact@techvogel.com</a>
     <br>
     <br>
     <strong>4.9.</strong> CANCELLATION OF YOUR ACCESS. Users agree that Tech Vogel, in its sole discretion, may cancel your use of the Service if it finds any irregular payment or breach of these terms.
@@ -238,7 +238,7 @@ export default {
     <br>
     Some feedbacks may be placed in the public eye, with the purpose of commercializing and validating our idea.
     <br>
-    You can also send us an email at <a href="mailto:contato@techvogel.com">contato@techvogel.com</a> with your feedback.
+    You can also send us an email at <a href="mailto:contact@techvogel.com">contact@techvogel.com</a> with your feedback.
     <br>
     In this case, if you authorize us, we can use your name and make the feedback public, so that it can be viewed by other Users.
     <br>`,
@@ -265,7 +265,7 @@ export default {
     <br>
     Thank you for reading our Terms.
     <br>
-    If you have any questions, please contact us at <a href="mailto:contato@techvogel.com">contato@techvogel.com</a>
+    If you have any questions, please contact us at <a href="mailto:contact@techvogel.com">contact@techvogel.com</a>
     <br>
     <br>
     <strong>TECH VOGEL</strong>

@@ -231,7 +231,7 @@ export default {
     <strong>4.8.1. EXTRAS.</strong> O cliente/empresa que desejar realizar a compra de mais candidatos no relatório poderá entrar em contato com o suporte da Tech Vogel.
     <br>
     <br>
-    <strong>4.8.2. NÃO PAGAMENTO.</strong> Se o Cliente/empresa não pagar o valor do Token ou caso haja problemas no pagamento, não receberá o relatório, até que haja de fato o pagamento. Para eventuais dificuldades, você poderá entrar em contato pelo e-mail: <a href="mailto:contato@techvogel.com">contato@techvogel.com</a>
+    <strong>4.8.2. NÃO PAGAMENTO.</strong> Se o Cliente/empresa não pagar o valor do Token ou caso haja problemas no pagamento, não receberá o relatório, até que haja de fato o pagamento. Para eventuais dificuldades, você poderá entrar em contato pelo e-mail: <a href="mailto:contact@techvogel.com">contact@techvogel.com</a>
     <br>
     <br>
     <strong>4.9. CANCELAMENTO DE SEU ACESSO.</strong> Os usuários concordam que a Tech Vogel, à sua livre discrição, poderá cancelar sua utilização do Serviço caso encontre alguma irregularidade de pagamento ou infringimento destes termos.
@@ -246,7 +246,7 @@ export default {
     <br>
     Alguns feedbacks poderão ser colocados ao olhar do público, com o intuito comercial e de validação de nossa ideia.
     <br>
-    Você poderá também nos enviar um e-mail no <a href="mailto:contato@techvogel.com">contato@techvogel.com</a> com seu feedback.
+    Você poderá também nos enviar um e-mail no <a href="mailto:contact@techvogel.com">contact@techvogel.com</a> com seu feedback.
     <br>
     Neste caso, se você nos autorizar, podemos usar seu nome e tornar público o feedback, para que possam ser visualizados por outros Usuários.
     <br>`,
@@ -273,7 +273,7 @@ export default {
     <br>
     Obrigado por ler a nossos Termos.
     <br>
-    Se tiver alguma dúvida entre em contato pelo e-mail <a href="mailto:contato@techvogel.com">contato@techvogel.com</a>
+    Se tiver alguma dúvida entre em contato pelo e-mail <a href="mailto:contact@techvogel.com">contact@techvogel.com</a>
     <br>
     <br>
     <strong>TECH VOGEL</strong>
