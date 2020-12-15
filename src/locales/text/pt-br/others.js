@@ -18,7 +18,7 @@ export default {
     tips: [
       { text: 'Ganho de tempo sem precisar analisar milhares de CVs' },
       { text: 'Os melhores match\'s de Devs para o seu projeto' },
-      { text: 'Segurança, pagando apenas se gostar das seleções do report' },
+      { text: 'Segurança, pagando apenas se gostar das seleções do relatório' },
     ],
     primaryBtn: 'Postar de graça',
     secondaryBtn: 'Procurar vagas de graça',
@@ -55,7 +55,7 @@ export default {
       title: 'Marque uma chamada!',
       description: 'Selecione uma data e hora para uma conversa com nosso time.',
       buttonText: 'Marcar chamada',
-      click: 'https://forms.gle/1qZm7PDGZPeUQuW87', // TODO: Update
+      click: 'https://calendly.com/contact-techvogel/home-calls',
     },
   },
   typesOfProgrammers: {

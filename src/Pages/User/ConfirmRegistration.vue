@@ -23,13 +23,16 @@
               </div>
             </div>
             <div class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap">
-              <g-btn
-                type="outline"
-                textColor="black"
+              <v-card
+                outlined
                 @click="resendConfirmationCode()"
-                class="bdy-1 cursor-pointer color-cinza-lighten-1"
-                :label="$t('signup.resendConfirmationCode.title')"
-              />
+                style="background-color: #FCFCFF"
+                class="pa-3 cursor-pointer"
+              >
+                <bdy-1 color="black" class="bdy-1  text-center">
+                  {{ $t('signup.resendConfirmationCode.title') }}
+                </bdy-1>
+              </v-card>
             </div>
           </div>
         </template>
