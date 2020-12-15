@@ -120,12 +120,12 @@ export default {
           'Receba seus Vogels de graça para candidatar às vagas de sua escolha! E não se preocupe pois será rápido! ',
       },
       {
-        title: 'Se aplicar para a melhor vaga',
+        title: 'Candidate para a vaga escolhida',
         description:
           'Após se registrar e acessar a plataforma, você pode buscar as vagas que são match com suas habilidades e interesses e desfrutar de trabalhar remotamente! \nPs: Não cobramos taxas de Devs!',
       },
       {
-        title: 'Seja selecionado! ',
+        title: 'Seja selecionado!',
         description:
           'Faça parte do modelo de trabalho mais libertador e comece a codar de onde desejar!',
       },
