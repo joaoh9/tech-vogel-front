@@ -10,6 +10,7 @@ import UserProfile from 'Pages/User/Profile';
 import UserSignup from 'Pages/User/Signup';
 import Onboarding from 'Pages/User/Onboarding';
 import PasswordReset from 'Pages/User/PasswordReset';
+import GetAccessCode from 'Pages/User/GetAccessCode';
 
 const routes = [
   {
@@ -46,6 +47,11 @@ const routes = [
     name: 'Registration Confirmed',
     component: RegistrationConfirmed,
     props: true,
+  },
+  {
+    path: '/receive-code',
+    name: 'Get Access Code',
+    component: GetAccessCode,
   },
   {
     path: '/side-pick',
