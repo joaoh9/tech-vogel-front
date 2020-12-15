@@ -6,8 +6,7 @@
           <span class="overline">{{ $t('job.posted') }} {{ getDaysAgo() }}</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
           <div>
-          <g-btn type="text" color="primary" :label="$t('job.seeReport')" @click="goToReport" />
-
+            <g-btn type="text" color="primary" :label="$t('job.seeReport')" @click="goToReport" />
           </div>
         </div>
       </v-col>
@@ -25,7 +24,6 @@
 </template>
 
 <script>
-
 import DateHelper from 'Helpers/date';
 
 export default {
@@ -80,11 +78,33 @@ export default {
       ];
     },
     getDaysAgo() {
-      return DateHelper.format(new Date(this.job.createdAt));
+      const localeFunc = (number, index) => {
+        return [
+          [ 'agora mesmo', 'agora' ],
+          [ 'há %s segundos', 'em %s segundos' ],
+          [ 'há um minuto', 'em um minuto' ],
+          [ 'há %s minutos', 'em %s minutos' ],
+          [ 'há uma hora', 'em uma hora' ],
+          [ 'há %s horas', 'em %s horas' ],
+          [ 'há um dia', 'em um dia' ],
+          [ 'há %s dias', 'em %s dias' ],
+          [ 'há uma semana', 'em uma semana' ],
+          [ 'há %s semanas', 'em %s semanas' ],
+          [ 'há um mês', 'em um mês' ],
+          [ 'há %s meses', 'em %s meses' ],
+          [ 'há um ano', 'em um ano' ],
+          [ 'há %s anos', 'em %s anos' ],
+        ][index];
+      };
+
+      DateHelper.register('pt_BR', localeFunc);
+
+      return this.$i18n.locale === 'pt-br'
+        ? DateHelper.format(this.job.createdAt, 'pt_BR')
+        : DateHelper.format(this.job.createdAt, 'en_US');
     },
   },
 };
-
 </script>
 
 <style></style>
