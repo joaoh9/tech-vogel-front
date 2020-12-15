@@ -12,7 +12,7 @@ export default {
       },
       id: {
         title: 'Seu link customizado',
-        description: ' Este link foi gerado caso você queira divulgar sua vaga',
+        description: 'Este link foi gerado caso você queira divulgar sua vaga',
         inputHint: 'http://techvogel.com/jobs/{company}/{id}',
       },
       experienceLevel: {
