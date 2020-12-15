@@ -105,6 +105,7 @@ export default {
     forgotPassword: 'Forgot your password?',
     getAccessCode: 'Do not received your token?',
     error: 'Wrong credentials',
+    resendConfirmationCode: 'Didn\'t received my code',
   },
   privacyPolicy: {
     title: 'Your privacy is important to us.',

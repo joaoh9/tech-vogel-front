@@ -47,6 +47,7 @@ export default {
       sessionExpired: 'Your session has expired. Please login again',
       retrieveProfilePicture: 'Error when retrieving profile picture',
       senior: 'Attention! You may receive less applications for a senior position!',
+      userAlreadyConfirmed: 'User already confirmed!',
       // senior: 'Attention! There might not be that many applications for a senior job',
     },
     warning: {

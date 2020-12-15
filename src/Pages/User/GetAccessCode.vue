@@ -12,14 +12,14 @@
       <template v-slot:card-content>
         <form-input class="mt-6" :title="$t('common.email.label')" />
         <v-text-field
-          v-model="user.email"
-          :rules="[rules.required(user.email), rules.email(user.email)]"
+          v-model="email"
+          :rules="[rules.required(email), rules.email(email)]"
           outlined
           autofocus
         />
       </template>
 
-       <template v-slot:buttons>
+      <template v-slot:buttons>
         <div class="d-flex justify-space-between my-6">
           <v-btn @click="$router.go(-1)" color="secondary" tile outlined text large>
             {{ $t('common.back') }}
@@ -29,7 +29,7 @@
             large
             :loading="loading"
             :label="$t('common.confirm')"
-            @click="getButtonAction()"
+            @click="resendConfirmationCode()"
           />
         </div>
       </template>
@@ -40,7 +40,7 @@
 <script>
 import RulesHelper from 'Helpers/rules';
 // import StorageHelper from 'Helpers/storage';
-// import UserController from 'Controllers/user';
+import UserController from 'Controllers/user';
 
 export default {
   name: 'GetAccessCode',
@@ -49,16 +49,41 @@ export default {
   },
   data() {
     return {
-      user: {
-        email: '',
-      },
+      email: '',
       rules: {
         required: () => true,
         email: () => true,
       },
-    }
+      loading: false,
+    };
   },
   methods: {
+    async resendConfirmationCode() {
+      const userController = new UserController();
+      this.loading = true;
+      try {
+        await userController.resendConfirmationEmail(this.email);
+
+        this.$toast.success(this.$t('signup.resendConfirmationCode.success'));
+
+        this.loading = false;
+      } catch (e) {
+        this.loading = false;
+        if (e.response.status === 404) {
+          this.$toast.error(this.$t('toast.error.userNotFound'));
+        } else if (e.response.status === 409) {
+          this.$toast.info(this.$t('toast.info.userAlreadyConfirmed'));
+          this.$router.push({
+            name: 'User Login',
+            params: {
+              email: this.email,
+            },
+          })
+        } else {
+          this.$toast.error(this.$t('signup.resendConfirmationCode.error'));
+        }
+      }
+    },
   },
 };
 </script>

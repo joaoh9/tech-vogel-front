@@ -38,7 +38,7 @@
             color="secondary"
             class="button-text align-self-center bdy-2 color-cinza-lighten-1 cursor-pointer"
           >
-            {{ 'Não recebi meu código' }}
+            {{ $t('login.resendConfirmationCode') }}
           </p>
         </div>
       </template>
@@ -76,9 +76,6 @@ export default {
       type: String,
       default: '',
     },
-    userEmail: {
-      type: String,
-    },
     email: {
       type: String,
     },
@@ -88,8 +85,6 @@ export default {
     },
   },
   mounted() {
-    // const loggedInUser = StorageHelper.loadState('userToken');
-
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
 
     this.rulesLoaded = true;
@@ -157,20 +152,20 @@ export default {
           const validEmail = await userController.emailExists(this.user.email);
 
           if (!validEmail) {
-            return this.localRules.checkEmail = this.$t('rules.wrongEmailLogin');
+            return (this.localRules.checkEmail = this.$t('rules.wrongEmailLogin'));
           } else if (!this.user.email) {
-            return this.localRules.checkEmail = this.$t('rules.emailRequired');
+            return (this.localRules.checkEmail = this.$t('rules.emailRequired'));
           } else {
             this.localRules.checkEmail = '';
           }
 
           if (!this.user.password) {
-            return this.localRules.checkPassword = this.$t('rules.passwordRequired');
+            return (this.localRules.checkPassword = this.$t('rules.passwordRequired'));
           }
         }
 
         if (e.response.status === 404) {
-          return this.localRules.checkPassword = this.$t('rules.wrongPasswordLogin');
+          return (this.localRules.checkPassword = this.$t('rules.wrongPasswordLogin'));
         }
 
         return this.$toast.error(this.$t('toast.error.loginFailed'));

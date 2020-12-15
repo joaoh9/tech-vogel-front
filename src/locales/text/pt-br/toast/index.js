@@ -29,6 +29,7 @@ export default {
       notAllowed: 'Você não possui permissão para acessar esta página',
       loginFailed: 'Algo de errado ocorreu no seu Log in',
       somethingWrong: 'Um erro ocorreu. Tente novamente mais tarde',
+      userNotFound: 'Usuário não encontrado',
       fillOut: 'Favor preencher os campos corretamente',
     },
     success: {
@@ -46,6 +47,7 @@ export default {
       sessionExpired: 'Sua sessão expirou. Faça Log in novamente.',
       retrieveProfilePicture: 'Erro ao acessar foto de perfil',
       senior: 'Atenção! Posições para Senior podem resultar em menos candidatos!',
+      userAlreadyConfirmed: 'Usuário já confirmado!',
       // senior: 'Attention! There might not be that many applications for a senior job',
     },
     warning: {

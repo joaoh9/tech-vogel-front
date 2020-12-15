@@ -104,6 +104,7 @@ export default {
     createAccount: 'Criar nova conta',
     forgotPassword: 'Esqueci minha senha',
     error: 'Informações erradas',
+    resendConfirmationCode: 'Não recebi meu código',
   },
   privacyPolicy: {
     title: 'Sua privacidade é importante para nós',
