@@ -98,8 +98,8 @@
       <div class="mt-10">
         <TypesOfProgrammers />
       </div>
-      <div class="mt-10 mb-16">
-        <h5 class="d-flex justify-center mb-6 mt-16">{{ $t('questions.title') }}</h5>
+      <div class="mt-10">
+        <h4 class="d-flex text-center justify-center mb-6 mt-16">{{ $t('questions.title') }}</h4>
         <Questions />
       </div>
     </div>

@@ -98,7 +98,7 @@ export default {
         this.$toast.success(this.$t('toast.success.emailConfirmation'));
         this.$router.push('/login');
       } catch (e) {
-        this.$toast.error(JSON.stringify(e));
+        this.$toast.error(this.$t('toast.warning.confirmationCode'));
       }
     },
   },

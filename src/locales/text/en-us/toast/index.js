@@ -50,6 +50,7 @@ export default {
       // senior: 'Attention! There might not be that many applications for a senior job',
     },
     warning: {
+      confirmationCode: 'Invalid confirmation code!',
       fillAll: 'You should fill all required information!',
       detailedInfo: 'Please give to your applicants a more detailed information about your job',
       emailRegistered: 'Email already registered',

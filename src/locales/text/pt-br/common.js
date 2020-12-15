@@ -89,7 +89,7 @@ export default {
     confirmEmail: 'Confirmar e-mail',
     youHave: 'Você possui',
     postedNow: 'Postado agora',
-    chooseSide: 'Você é:',
+    chooseSide: 'Você quer:',
     hi: 'Olá, ',
     confirmEdit: 'Confirmar alteração',
     postJob: 'Postar vaga',

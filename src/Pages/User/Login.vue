@@ -24,13 +24,21 @@
           data-cy="login-password"
           :error-messages="localRules.checkPassword"
         />
-        <div class="d-flex justify-start">
+        <div class="d-flex justify-space-between">
           <p
             @click="goToPasswordReset"
             color="secondary"
             class="button-text align-self-center bdy-2 color-cinza-lighten-1 cursor-pointer"
           >
             {{ $t('login.forgotPassword') }}
+          </p>
+
+          <p
+            @click="getAccessCode"
+            color="secondary"
+            class="button-text align-self-center bdy-2 color-cinza-lighten-1 cursor-pointer"
+          >
+            {{ 'Não recebi meu código' }}
           </p>
         </div>
       </template>
@@ -196,6 +204,12 @@ export default {
     goToPasswordReset() {
       this.$router.push({
         name: 'Password Reset',
+      });
+    },
+
+    getAccessCode() {
+      this.$router.push({
+        name: 'Get Access Code',
       });
     },
   },
