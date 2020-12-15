@@ -86,6 +86,7 @@ export default {
       placeholder: 'Confirm password',
       label: 'Confirm password',
     },
+    confirmEmail: 'Confirm email',
     youHave: 'You have',
     postedNow: 'Posted just now',
     chooseSide: 'Your want to:',
@@ -98,6 +99,7 @@ export default {
     returnHome: 'Click here to return home',
     return: 'Return',
     view: 'View',
+    viewDetails: 'View details',
     links: {
       github: {
         title: 'GitHub',

@@ -103,7 +103,7 @@ export default {
     <br>
     Some feedbacks can be placed in the public eye, with the commercial purpose and validation of our idea.
     <br>
-    You can also send us an email at contato@techvogel.com with your feedback.
+    You can also send us an email at <a href="mailto:contact@techvogel.com">contact@techvogel.com</a> with your feedback.
     <br>
     In this case, if you authorize us, we can use your name and make the feedback public, so that it can be viewed by other Users.
     <br>

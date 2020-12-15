@@ -1,6 +1,6 @@
-import databases from './databases.json';
-import frameworks from './frameworks';
-import programmingLanguages from './realProgrammingLanguages.json';
+import databases from '../../en-us/skills/databases.json';
+import frameworks from '../../en-us/skills/frameworks';
+import programmingLanguages from '../../en-us/skills/realProgrammingLanguages.json';
 import softSkills from './softSkills.json';
 import languages from './languages.json';
 

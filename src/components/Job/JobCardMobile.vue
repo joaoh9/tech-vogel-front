@@ -15,7 +15,7 @@
           />
         </div>
         <div class="d-flex justify-center align-center my-8">
-          <g-btn type="primary" label="View Details" @click="goToJobDetails" />
+          <g-btn type="primary" :label="$t('common.viewDetails')" @click="goToJobDetails" />
         </div>
       </div>
     </v-card>

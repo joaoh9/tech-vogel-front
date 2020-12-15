@@ -1,7 +1,7 @@
 export default {
   resume: {
     register: {
-      important: 'Importante ter!',
+      important: 'Importante colocar',
       tabs: [
         {
           name: 'Início',
@@ -256,6 +256,10 @@ export default {
       title: 'Resetar senha',
       description: 'Insira seu e-mail para confirmar a mudança de senha',
       confirmationCode: 'Código de confirmação',
+    },
+    getAccessCode: {
+      title: 'Código de acesso',
+      description: 'Insira seu e-mail para receber seu código de acesso',
     },
     github: {
       stats: 'Estastísticas do GitHub',
