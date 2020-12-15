@@ -249,6 +249,10 @@ export default {
       description: 'Insert your email to confirm your password change',
       confirmationCode: 'Confirmation code',
     },
+    getAccessCode: {
+      title: 'Access code',
+      description: 'Insert your email to get the access code',
+    },
     github: {
       stats: 'Github Stats',
       publicRepo: 'Public Repositories',

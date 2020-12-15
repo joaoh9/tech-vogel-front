@@ -68,8 +68,14 @@ export default {
       salary: {
         title: 'Salary',
       },
+      labels: {
+        paymentCurrency: 'Payment currency',
+        timeFrame: 'Time Frame',
+      },
+      price: 'Price',
+      salaryRange: 'Set salary range',
       perks: {
-        title: 'Additional perks and benefits',
+        title: 'Additional perks',
         placeholder: 'Working at Criptorocket you can expect to have:\n  - Gym pas\n  - Food stamp\n  - Free Netflix\n  - A pationate team ready to rock ',
       },
       steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],

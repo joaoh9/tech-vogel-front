@@ -5,10 +5,10 @@ export default {
     title: 'Registre-se',
     description: 'Registre-se na Tech Vogel',
     name: {
-      title: 'Seu nome',
+      title: 'Nome completo',
     },
     email: {
-      title: 'Seu e-mail',
+      title: 'E-mail',
     },
     password: {
       title: 'Criar senha',
@@ -99,7 +99,7 @@ export default {
     ],
   },
   login: {
-    title: 'Login',
+    title: 'Entrar',
     subtitle: 'Entrar para a Tech Vogel',
     createAccount: 'Criar nova conta',
     forgotPassword: 'Esqueci minha senha',

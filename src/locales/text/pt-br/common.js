@@ -86,6 +86,7 @@ export default {
       placeholder: 'Confirmar senha',
       label: 'Confirmar senha',
     },
+    confirmEmail: 'Confirmar e-mail',
     youHave: 'Você possui',
     postedNow: 'Postado agora',
     chooseSide: 'Você é:',
@@ -96,6 +97,9 @@ export default {
     pageNotFound: '404 - Página não encontrada',
     uhOh: 'Uh-oh',
     returnHome: 'Clique aqui para retornar à pagina principal',
+    return: 'Voltar',
+    view: 'Visualizar',
+    viewDetails: 'Ver detalhes',
     links: {
       github: {
         title: 'GitHub',

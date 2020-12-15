@@ -72,7 +72,7 @@ export default {
   },
   howItWorks: {
     title: 'Como funciona',
-    forCompanies: 'Para Empresas',
+    forCompanies: 'Para empresas',
     steps: [
       {
         title: 'Poste sua vaga',
@@ -107,7 +107,7 @@ export default {
     },
   },
   devs: {
-    subtitle: 'Para Programadores',
+    subtitle: 'Para programadores',
     steps: [
       {
         title: 'Encontre as melhores vagas',

@@ -8,7 +8,7 @@ export default {
       title: 'Full name',
     },
     email: {
-      title: 'Your Email',
+      title: 'Email',
     },
     password: {
       title: 'Create a password',
@@ -103,6 +103,7 @@ export default {
     subtitle: 'Enter Tech Vogel',
     createAccount: 'Create an account',
     forgotPassword: 'Forgot your password?',
+    getAccessCode: 'Do not received your token?',
     error: 'Wrong credentials',
   },
   privacyPolicy: {

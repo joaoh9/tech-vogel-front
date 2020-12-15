@@ -40,7 +40,7 @@
           :error-messages="localRules.emailAlreadyRegistered"
         />
 
-        <form-input required :title="$t('common.confirm') + ' ' + $t('signup.email.title')" />
+        <form-input required :title="$t('common.confirmEmail')" />
         <v-text-field
           data-cy="confirm-email"
           outlined

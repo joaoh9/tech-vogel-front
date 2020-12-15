@@ -2,7 +2,7 @@ export default {
   job: {
     new: {
       basicInfo: {
-        title: 'Informação básica',
+        title: 'Informações básicas',
         description:
           'Estas são as informações básicas sobre a vaga que você está abrindo e ficarão visíveis a todos usuários da Tech Vogel.',
       },
@@ -64,17 +64,23 @@ export default {
       salaryAndPerks: {
         title: 'Remuneração e benefícios',
         description:
-          'Candidatos potenciais querem saber a recompensa da vaga ofertada para que possam candidatar apenas nas vagas que fazem sentido para eles e evite perda de tempo de ambas partes. Esta informação será visível para os Usuários da Tech Vogel.',
+          'Candidatos potenciais querem saber a recompensa da vaga ofertada para que possam candidatar apenas nas vagas que fazem sentido para eles e evite perda de tempo de ambas partes. Esta informação será visível para os usuários da Tech Vogel.',
       },
       salary: {
         title: 'Remuneração',
       },
+      labels: {
+        paymentCurrency: 'Moeda',
+        timeFrame: 'Tempo de contrato',
+      },
+      price: 'Faixa salarial',
+      salaryRange: 'Definir faixa salarial',
       perks: {
         title: 'Benefícios',
         placeholder:
           'Trabalhando na Criptocoin você terá:\n  - Gympass\n  - Vale refeição\n  - Seguro saúde - Vale Coworking \n  - Um time fera para chamar de seu ',
       },
-      steppers: [ 'Informações básicas', 'Descrição da vaga', 'Requisitos', 'Salário e benefícios' ],
+      steppers: [ 'Informações básicas', 'Descrição', 'Requisitos', 'Salário/benefícios' ],
     },
 
     details: {
@@ -104,8 +110,8 @@ export default {
       subtitle:
         'Atenção! Você poderá alterar as informações apenas durante 24h após postar a vaga. Após 24h você poderá apenas excluir a vaga ou deixá-la rodar os 15 dias.',
     },
-    posted: 'Postado!',
-    seeReport: 'Acessar relatório!',
+    posted: 'Postado',
+    seeReport: 'Acessar relatório',
     timePosted: 'Postado {time}',
     selectAtLeast: 'Favor selecionar no mínimo {min} {skillName}',
     selectMaximum: 'Favor selecionar no máximo {max} {skillName}',

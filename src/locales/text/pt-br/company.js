@@ -47,6 +47,7 @@ export default {
       manageAccountInfo: 'Gerenciar informações da conta',
     },
     planCard: {
+      forCompanies: 'Para empresas',
       token: '{quantity} token(s) para',
       currency: '$',
       price: '499',
