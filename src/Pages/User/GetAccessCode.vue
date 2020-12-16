@@ -17,6 +17,15 @@
           outlined
           autofocus
         />
+
+        <div v-if="insertCode" :key="insertCode" class="d-flex flex-column align-center">
+          <span class="bdy-1 align-self-center color-cinza-lighten-1 mt-4 mb-3">
+            {{ $t('signup.confirmationCode.title') }}
+          </span>
+          <div style="max-width: 150px">
+            <v-text-field v-model="confirmationKey" outlined dense />
+          </div>
+        </div>
       </template>
 
       <template v-slot:buttons>
@@ -28,8 +37,8 @@
             type="primary"
             large
             :loading="loading"
-            :label="$t('common.confirm')"
-            @click="resendConfirmationCode()"
+            :label="insertCode ? $t('common.confirm') : $t('common.confirm')"
+            @click="insertCode ? confirmUser() : resendConfirmationCode()"
           />
         </div>
       </template>
@@ -39,7 +48,6 @@
 
 <script>
 import RulesHelper from 'Helpers/rules';
-// import StorageHelper from 'Helpers/storage';
 import UserController from 'Controllers/user';
 
 export default {
@@ -55,6 +63,8 @@ export default {
         email: () => true,
       },
       loading: false,
+      insertCode: false,
+      confirmationKey: '',
     };
   },
   methods: {
@@ -65,7 +75,7 @@ export default {
         await userController.resendConfirmationEmail(this.email);
 
         this.$toast.success(this.$t('signup.resendConfirmationCode.success'));
-
+        this.insertCode = true;
         this.loading = false;
       } catch (e) {
         this.loading = false;
@@ -78,10 +88,21 @@ export default {
             params: {
               email: this.email,
             },
-          })
+          });
         } else {
           this.$toast.error(this.$t('signup.resendConfirmationCode.error'));
         }
+      }
+    },
+    async confirmUser() {
+      const userController = new UserController();
+
+      try {
+        await userController.confirmUser(this.id, this.confirmationKey);
+        this.$toast.success(this.$t('toast.success.emailConfirmation'));
+        this.$router.push('/login');
+      } catch (e) {
+        this.$toast.error(this.$t('toast.warning.confirmationCode'));
       }
     },
   },

@@ -27,6 +27,7 @@ export default {
     },
     confirmationCode: {
       title: 'Cole o código recebido na caixa abaixo',
+      confirming: 'Aguarde um instante, estamos confirmando seu email...',
     },
     termsAndConditions: {
       text: 'Eu li e concordo com',
@@ -39,7 +40,7 @@ export default {
       resend: 'Reenviar',
     },
     registrationConfirmed: {
-      clickToConfirm: 'Clique no botão para confirmar a conta',
+      clickToConfirm: 'Clique no botão para confirmar sua conta',
       title: 'Seu e-mail foi confirmado!',
       description: 'Prosseguir para a página principal',
       error: 'Seu código expirou ou é inválido!',

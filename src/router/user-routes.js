@@ -43,7 +43,7 @@ const routes = [
     props: true,
   },
   {
-    path: '/confirm-registration/:id',
+    path: '/confirm',
     name: 'Registration Confirmed',
     component: RegistrationConfirmed,
     props: true,

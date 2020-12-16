@@ -22,7 +22,10 @@
                 />
               </div>
             </div>
-            <div class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap">
+            <div
+              class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap"
+              v-if="showResendButton"
+            >
               <v-card
                 outlined
                 @click="resendConfirmationCode()"
@@ -46,17 +49,18 @@ import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
 
 export default {
-  name: 'Login',
+  name: 'ConfirmRegistration',
   props: {
     userId: String,
     _email: String,
+    showResendButton: Boolean,
   },
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
     if (this._email) {
       this.email = this._email;
-    } else {
+    } else if(!this._) {
       this.$router.push('/login');
     }
     if (this.userId) {

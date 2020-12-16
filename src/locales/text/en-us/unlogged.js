@@ -27,6 +27,7 @@ export default {
     },
     confirmationCode: {
       title: 'Paste the code you received in the box below',
+      confirming: 'Hold on, we are confirming your email!',
     },
     termsAndConditions: {
       text: 'I have read and agree to the',

@@ -1,44 +1,10 @@
 <template>
   <div class="d-flex justify-center mt-12">
-    <g-card :sm="400" :md="500" :lg="600">
+    <g-card :sm="400" :md="500" :lg="600" :loading="true">
       <template v-slot:card-header>
         <g-card-header :title="getHeaderTitle()" />
       </template>
       <template v-slot:card-content>
-        <div clas="d-flex justify-center ma-12 flex-column">
-          <div v-if="confirmationStatus === 0" class="d-flex justify-center">
-            <g-btn type="primary" :label="$t('common.confirm')" await @click="confirmAccount()" />
-          </div>
-
-          <v-row justify="center" v-if="confirmationStatus === 2">
-            <v-col>
-              <div class="d-flex justify-center">
-                <g-btn
-                  type="outlined"
-                  textColor="black"
-                  @click="resendCode = !resendCode"
-                  class="bdy-1 cursor-pointer color-cinza-lighten-1"
-                  :label="$t('signup.resendConfirmationCode.title')"
-                />
-              </div>
-            </v-col>
-          </v-row>
-          <v-row justify="center">
-            <v-col>
-              <div v-if="resendCode" style="min-width: 100%" class="mt-6">
-                <form-input class="mt-6" :title="$t('signup.email.title')" />
-                <v-text-field :rules="[rules.email(email)]" outlined v-model="email" />
-                <g-btn
-                  class="float-right"
-                  @click="resendConfirmationCode()"
-                  type="primary"
-                  :loading="resendLoad"
-                  :label="$t('signup.resendConfirmationCode.resend')"
-                />
-              </div>
-            </v-col>
-          </v-row>
-        </div>
       </template>
     </g-card>
   </div>
@@ -48,18 +14,18 @@
 import UserController from 'Controllers/user';
 
 import StorageHelper from 'Helpers/storage';
-import RulesHelper from 'Helpers/rules';
 
 export default {
-  name: 'RegistrationConfirmed',
+  name: 'ConfirmUser',
   props: {
     user: Object,
     _code: Number,
     _text: String,
   },
   async mounted() {
-    this.confirmationId = this.$route.params.id;
-    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    this.userId = this.$route.query.id;
+    this.confirmationKey = this.$route.query.key;
+    this.confirmUser();
     this.confirmationStatus = this._code || 0;
   },
   data() {
@@ -75,44 +41,28 @@ export default {
     };
   },
   methods: {
-    async confirmAccount() {
+    async confirmUser() {
       const userController = new UserController();
 
       try {
-        const user = await userController.confirmAccount(this.confirmationId);
-        this.saveUserCredentials(user);
-        this.userEmail = user.email;
-
-        this.goToLogin();
+        await userController.confirmUser(this.userId, this.confirmationKey);
+        this.$toast.success(this.$t('toast.success.emailConfirmation'));
+        this.confirmationStatus = 1;
+        this.$router.push('/login');
       } catch (e) {
         this.confirmationStatus = 2;
+        this.$toast.error(this.$t('toast.warning.confirmationCode'));
       }
     },
     saveUserCredentials(user) {
       StorageHelper.saveState('user', user);
     },
-    async resendConfirmationCode() {
-      this.resendLoad = true;
-      const userController = new UserController();
-
-      try {
-        const success = await userController.resendConfirmationEmail(this.email);
-
-        if (success.success) {
-          this.$toast.success(this.$t('signup.resendConfirmationCode.success'));
-        }
-        this.resendLoad = false;
-      } catch (e) {
-        this.resendLoad = true;
-        this.$toast.error(this.$t('signup.resendConfirmationCode.error'));
-      }
-    },
     getHeaderTitle() {
       switch (this.confirmationStatus) {
         case 0:
-          return this.$t('signup.registrationConfirmed.clickToConfirm');
+          return this.$t('signup.confirmationCode.confirming');
         case 1:
-          return this._text || this.$t('signup.registrationConfirmed.title');
+          return this.$t('signup.registrationConfirmed.title');
         case 2:
           return this.$t('signup.registrationConfirmed.error');
       }
