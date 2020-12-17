@@ -45,6 +45,7 @@
               :label="$t('common.back')"
               v-if="currentStep > 0"
               type="secondary"
+              :loading="loading"
               @click="manageStepBack"
             />
             <g-btn :label="$t('common.next')" type="primary" @click="manageNextStep" />
@@ -86,6 +87,7 @@ export default {
           twitter: '',
         },
       },
+      loading: false,
     };
   },
   methods: {
@@ -107,6 +109,8 @@ export default {
       const userController = new UserController();
       const profilePictureController = new ProfilePictureController();
 
+      this.loading = true;
+
       if (!this.company.name || !this.company.description) {
         this.$toast.error(this.$t('toast.error.writeNames'));
         return;
@@ -126,6 +130,8 @@ export default {
         });
       } catch (e) {
         this.$toast.error(this.$t('toast.error.saveCompany'));
+      } finally {
+        this.loading = false;
       }
     },
     validateRules() {

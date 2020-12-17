@@ -1,7 +1,7 @@
 export default {
   toast: {
     error: {
-      fileExceeds: 'Campo {filename} ultrapassa {fileSize} o limite de caracteres',
+      fileExceeds: 'Arquivo {filename} excede o tamanho limite de {fileSize} MB',
       fileProcessWrong: 'Encontramos um erro com o documento {filename}',
       companyInfo:
         'Não foi possível encontrar as informações da empresa. Certifique-se que sua empresa está registrada.',
