@@ -101,7 +101,6 @@ export default {
       if (!this.job || !this.job.salary) {
         return [];
       }
-      const currencySymbol = this.getPrefix(this.job.salary.currency);
       return [
         {
           icon: 'fa fa-briefcase',
@@ -114,9 +113,8 @@ export default {
         {
           icon: 'fa fa-money-bill-wave',
           text:
-            currencySymbol +
-            this.job.salary.min +
-            (this.job.salary.max ? ' - ' + currencySymbol + this.job.salary.max : '') +
+          new Intl.NumberFormat(this.$i18n.locale, { style: 'currency', currency: this.job.salary.currency }).format(this.job.salary.min) +
+          (this.job.salary.max ? ' - ' + new Intl.NumberFormat(this.$i18n.locale, { style: 'currency', currency: this.job.salary.currency }).format(this.job.salary.max) : '') +
             ' ' +
             this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`),
         },
@@ -157,18 +155,6 @@ export default {
         this.$toast.success(this.$t('toast.success.jobApplied'));
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobApplying'));
-      }
-    },
-    getPrefix(currency) {
-      switch (currency) {
-        case 'USD':
-          return '$';
-        case 'GBP':
-          return '£';
-        case 'EUR':
-          return '€';
-        case 'BRL':
-          return 'R$';
       }
     },
   },
