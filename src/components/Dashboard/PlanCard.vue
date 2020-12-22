@@ -42,7 +42,7 @@
           </div>
         </div>
 
-        <div class="mt-10 d-flex flex-column justify-center">
+        <div class="mt-10 mb-16 d-flex flex-column justify-center">
           <div>
             <div v-for="(item, index) in texts" :key="index">
               <capt-1 color="primary" class="mt-10" v-if="item.comingSoon">
@@ -58,14 +58,16 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-center align-end">
-          <g-btn
-            :class="margin"
+        <div class="d-flex align-center justify-center">
+          <v-btn
+            absolute
+            bottom="0"
             style="height: 56px; width: 270px;"
-            type="primary"
-            :label="label"
-            :to="to"
-          />
+            color="primary"
+            class="font-weight-bold"
+            :to="to">
+          {{ label }}
+          </v-btn>
         </div>
       </div>
     </div>
@@ -88,7 +90,6 @@ export default {
     to: String,
     texts: Array,
     width: String,
-    margin: String,
     devTitle: {
       type: Boolean,
       default: false,

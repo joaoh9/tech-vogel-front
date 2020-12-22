@@ -15,7 +15,7 @@
         :to="'/signup'"
         :margin="'mt-12'"
         priceTitle
-        class="my-3 mx-0 mx-md-4 mx-sm-4"
+        class="mx-md-4 mx-sm-4 my-sm-8"
       />
       <PlanCard
         :width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
@@ -27,7 +27,7 @@
         :to="'/jobs'"
         :margin="'mt-5'"
         devTitle
-        class="my-3 mx-0 mx-md-2"
+        class="my-sm-8"
       />
     </div>
   </div>
