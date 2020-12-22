@@ -3,7 +3,7 @@
     <div class="mx-12 d-flex justify-center flex-wrap">
       <div class="mt-10" v-if="finishedRequests" :key="finishedRequests">
         <div v-for="(job, i) in jobs" :key="i" class="color-white">
-          <JobCard :job="job" class="mb-6" v-if="$vuetify.breakpoint.smAndUp" />
+          <JobCard :job="job" class="mb-6" v-if="$vuetify.breakpoint.lgAndUp" />
           <JobCardMobile :job="job" class="mb-6" v-else />
         </div>
       </div>

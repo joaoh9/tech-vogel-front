@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex">
-    <v-card class="px-0 px-sm-8 job-card-mobile" max-width="450" color="bg">
+    <v-card class="px-0 px-sm-8 job-card-mobile" :min-width="getMinWidth()" max-width="450" color="bg">
       <div class="d-flex align-center justify-center flex-column mt-6">
         <span class="overline primary--text">{{ getJobInformation() }}</span>
         <h5 class="pa-0 my-2 text-center">{{ job.title }}</h5>
@@ -63,9 +63,21 @@ export default {
         },
         {
           icon: 'mdi-wallet-travel',
-          text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
+          text: this.$t('enums.contractType').find(ct => ct.value === this.job.contractType).text,
         },
       ];
+    },
+    getMinWidth() {
+      if (this.$vuetify.breakpoint.lgAndUp) {
+        return 870;
+      }
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        return 660;
+      }
+      if (this.$vuetify.breakpoint.smAndUp) {
+        return 500;
+      }
+      return 450;
     },
     async getCompanyInfo() {
       const companyController = new CompanyController();

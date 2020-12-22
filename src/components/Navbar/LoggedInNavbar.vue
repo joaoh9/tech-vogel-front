@@ -70,7 +70,7 @@ export default {
   name: 'LoggedInNavbar',
   mounted() {
     this.checkIfCompany();
-    this.getUserProfilePic();
+    // this.getUserProfilePic();
   },
   components: {
     ChangeLanguage,

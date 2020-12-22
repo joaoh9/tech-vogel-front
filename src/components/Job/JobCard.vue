@@ -1,25 +1,28 @@
 '<template>
-  <v-card class="pa-4 px-12 bs-primary" color="bg" :min-width="getMinWidth()">
-    <div class="d-flex justify-space-between">
-      <div>
-        <div class="d-flex flex-column">
-          <span class="overline">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</span>
-          <h5 class="h5-bold mt-1">{{ job.title }}</h5>
-          <div class="d-flex justify-space-between ml-n2 mt-2">
-            <IconText
-              v-for="(item, i) in getIconInfo()"
-              :key="i"
-              :icon="item.icon"
-              :text="item.text"
-            />
+  <div>
+    <v-card class="pa-4 px-12 bs-primary" color="bg" :min-width="getMinWidth()">
+      <div class="d-flex justify-space-between">
+        <div>
+          <div class="d-flex flex-column" style="width: 400px">
+            <span class="overline">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</span>
+            <h5 class="mt-1">{{ job.title }}</h5>
+            <div class="d-flex justify-space-between mt-4">
+              <IconText
+                v-for="(item, i) in getIconInfo()"
+                :key="i"
+                :icon="item.icon"
+                :text="item.text"
+                style="margin: 0 !important;"
+              />
+            </div>
           </div>
         </div>
+        <div class="d-flex justify-center align-center">
+          <g-btn type="primary" :label="$t('common.viewDetails')" @click="goToJobDetails" />
+        </div>
       </div>
-      <div class="d-flex justify-center align-center">
-        <g-btn type="primary" :label="$t('common.viewDetails')" @click="goToJobDetails" />
-      </div>
-    </div>
-  </v-card>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -47,11 +50,11 @@ export default {
       if (this.$vuetify.breakpoint.lgAndUp) {
         return 870;
       }
-      if (this.$vuetify.breakpoint.smAndUp) {
-        return 660;
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        return 600;
       }
       if (this.$vuetify.breakpoint.smAndUp) {
-        return 500;
+        return 450;
       }
       return 500;
     },
