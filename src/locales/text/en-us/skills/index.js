@@ -3,6 +3,7 @@ import frameworks from './frameworks';
 import programmingLanguages from './realProgrammingLanguages.json';
 import softSkills from './softSkills.json';
 import languages from './languages.json';
+import softwares from './softwares.json';
 
 function skillValueFormat(skillArray, xpLvl = 0) {
   return Object.entries(skillArray).map(([ skillId, text ]) => ({
@@ -20,6 +21,7 @@ const _skills = {
   softSkills: skillValueFormat(softSkills, 1),
   languages: skillValueFormat(languages),
   frameworks, // Already formatted
+  softwares: skillValueFormat(softwares),
 };
 
 export default {
@@ -28,8 +30,13 @@ export default {
     allSkills: _skills.programmingLanguages
       .concat(_skills.databases)
       .concat(frameworks.all)
-      .concat(_skills.softSkills),
-    techSkills: _skills.programmingLanguages.concat(_skills.databases).concat(frameworks.all),
+      .concat(_skills.softSkills)
+      .concat(_skills.softwares),
+
+    techSkills: _skills.programmingLanguages
+      .concat(_skills.databases)
+      .concat(frameworks.all)
+      .concat(_skills.softwares),
 
     dictionary: {
       databases,
@@ -41,6 +48,7 @@ export default {
         ...programmingLanguages,
         ...databases,
         ...frameworks.dictionary,
+        ...softwares,
       },
       allSkills: {
         ...programmingLanguages,

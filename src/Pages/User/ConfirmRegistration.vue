@@ -53,16 +53,20 @@ export default {
   props: {
     userId: String,
     _email: String,
-    showResendButton: Boolean,
+    showResendButton: {
+      type: Boolean,
+      default: true,
+    },
   },
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
     if (this._email) {
       this.email = this._email;
-    } else if(!this._) {
+    } else if(!this._email) {
       this.$router.push('/login');
     }
+
     if (this.userId) {
       this.id = this.userId;
     } else {
