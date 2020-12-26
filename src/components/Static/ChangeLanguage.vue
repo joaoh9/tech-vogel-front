@@ -8,7 +8,7 @@
       :src="currentLanguage === language.i18n ? language.flag : language.disabledFlag"
       width="32"
       height="32"
-      :class="`${!(currentLanguage === language.i18n) ? 'cursor-pointer' : 'orange-border'} mx-1`"
+      :class="`${!(currentLanguage === language.i18n) ? 'cursor-pointer' : 'orange-border'} ml-2`"
     />
   </div>
 </template>

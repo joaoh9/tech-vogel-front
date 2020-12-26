@@ -1,7 +1,7 @@
 <template>
   <div class="bg-color-bg">
     <div class="container-fluid d-flex flex-column flex-wrap">
-      <v-img class="bg-color-secondary pb-16" max-height="800">
+      <v-img class="bg-color-secondary pb-16">
         <div
           :style="
             `${
@@ -11,15 +11,10 @@
             }`
           "
         >
-          <div v-if="$vuetify.breakpoint.smAndUp">
+          <div>
             <h1 class="h1-bold-alternative color-light">{{ $t('home.title1') }}</h1>
             <h1 class="h1-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
             <h1 class="h1-bold-alternative color-light">{{ $t('home.title3') }}</h1>
-          </div>
-          <div v-else>
-            <h1 class="h3-bold-alternative color-light">{{ $t('home.title1') }}</h1>
-            <h1 class="h3-bold-alternative color-primary">{{ $t('home.title2') }}</h1>
-            <h1 class="h3-bold-alternative color-light">{{ $t('home.title3') }}</h1>
           </div>
           <h5 class="h5 mt-6 mt-sm-12 color-bg line-break">{{ $t('home.subtitle') }}</h5>
           <div class="d-flex mt-5 mt-sm-10 flex-wrap">
@@ -52,7 +47,7 @@
         </h2>
       </div>
       <HowItWorks />
-      <div class="mx-sm-n16 md-n4 mb-12">
+      <div class="mx-sm-n16 mb-12">
         <v-card
           class="px-16 pt-4 pb-4"
           flat
