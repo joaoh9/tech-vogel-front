@@ -34,6 +34,16 @@ export default class UserController {
     }
   }
 
+  async getMyProfilePicture() {
+    const userToken = StorageHelper.loadState('userToken');
+
+    const axios = await Axios.GetInstance(userToken);
+
+    const { data } = await axios.get('/v1/users/me/profile-pic');
+
+    return data;
+  }
+
   async checkCorrectCode(email, key) {
     const axios = await Axios.GetInstance();
 
@@ -62,7 +72,7 @@ export default class UserController {
       newPassword: password,
     });
 
-    return data
+    return data;
   }
 
   async resendConfirmationEmail(email) {

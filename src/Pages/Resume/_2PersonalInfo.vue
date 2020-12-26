@@ -179,7 +179,7 @@ export default {
         type: this.logo.type,
       };
 
-      this.$emit('company-logo', file);
+      this.$emit('profile-picture', file);
     },
     getBase64(file) {
       return new Promise(resolve => {

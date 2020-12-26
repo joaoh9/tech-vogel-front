@@ -6,7 +6,6 @@
         v-if="loaded.user"
         :key="loaded.user"
         @click="goToUserProfile()"
-        :picture="profilePic"
       />
       <div class="d-flex flex-column align-center">
         <UserTokens class="mt-8" :tokens="user.tokens" />
@@ -46,7 +45,6 @@ import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
 import JobCard from 'Components/Job/JobCard';
 
-import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
 import CompanyController from 'Controllers/company';
@@ -70,14 +68,12 @@ export default {
     this.loadUserInfo();
     this.loadResume();
     this.getAppliedJobs();
-    this.getProfilePicture();
   },
   data() {
     return {
       user: {},
       resume: null,
       appliedJobs: [],
-      profilePic: null,
       loaded: {
         user: false,
         jobs: false,
@@ -151,19 +147,6 @@ export default {
         this.loaded.jobs = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
-      }
-    },
-    async getProfilePicture() {
-      const profilePictureController = new ProfilePictureController();
-
-      try {
-        this.profilePic = await profilePictureController.getByUserId(this.user.id);
-      } catch (e) {
-        if (e.response.status === 404) {
-          this.profilePic = null;
-          return;
-        }
-        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
     goToUserProfile() {

@@ -1,7 +1,7 @@
 <template>
   <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
     <template template v-slot:first-col>
-      <UserCard :user="user" v-if="user" :key="loaded.user" :picture="logo" />
+      <UserCard :user="user" v-if="user" :key="loaded.user" :picture="company.logo" />
       <g-btn
         to="/jobs/new"
         class="mt-4"
@@ -27,7 +27,6 @@
           v-if="company"
           :key="loaded.company"
           :jobsPosted="jobsPosted"
-          :picture="logo"
         />
         <div v-for="(job, i) in jobs" :key="i">
           <JobManagerCard :job="job" :company="company" />
@@ -45,7 +44,6 @@ import CompanyCard from 'Components/Dashboard/CompanyCard';
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
-import ProfilePictureController from 'Controllers/profilePic';
 
 export default {
   name: 'CompanyDashboard',
@@ -54,7 +52,6 @@ export default {
     await this.getCompanyInfo();
     await this.getJobsPostedCount();
     await this.getCompanyJobs();
-    await this.getLogo();
   },
   components: {
     CompanyCard,
@@ -120,19 +117,6 @@ export default {
         this.jobs = await jobController.getCompanyJobs(this.company.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
-      }
-    },
-    async getLogo() {
-      const profilePictureController = new ProfilePictureController();
-
-      try {
-        this.logo = await profilePictureController.getByUserId(this.user.id);
-      } catch (e) {
-        if (e.response.status === 404) {
-          this.logo = null;
-          return;
-        }
-        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
     getFistColInfo() {

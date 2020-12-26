@@ -5,7 +5,7 @@
         <v-img
           :src="
             'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png' ||
-              profilePic.data64
+              userInfo.profilePicture
           "
         />
       </v-avatar>
@@ -38,9 +38,7 @@
         class="text-none"
         :label="$t('company.report.candidates.viewCandidate')"
       >
-        <!-- :icon="'fas fa-angle-down'" -->
       </g-btn>
-      <!-- <CandidateProfile :user="user" :resume="resume" :profilePic="profilePic" /> -->
     </div>
   </v-card>
 </template>
@@ -51,7 +49,6 @@ export default {
   props: {
     userInfo: Object,
     resumeInfo: Object,
-    profilePic: Object,
   },
   mounted() {
     this.jobId = this.$route.params.jobId;
