@@ -34,6 +34,14 @@ export default class JobController {
     return jobs;
   }
 
+  async getCardJobs({ limit, skip }) {
+    const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get('/v1/jobs/cards' + query);
+
+    return data
+  }
+
   async getJobsPostedCount(companyId) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
@@ -87,7 +95,7 @@ export default class JobController {
 
   async getReport(jobId) {
     const userToken = StorageHelper.loadState('userToken');
-    const axios = await Axios.GetInstance(userToken)
+    const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.get(`/v1/reports/${jobId}/generate`);
 
     return data;
@@ -95,7 +103,7 @@ export default class JobController {
 
   async getApplicationCount(jobId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/jobs/${jobId}/applications/count`)
+    const { data } = await axios.get(`/v1/jobs/${jobId}/applications/count`);
 
     return data;
   }

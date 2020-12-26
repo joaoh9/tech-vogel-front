@@ -33,8 +33,7 @@
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
         <div v-for="(job, i) in appliedJobs" :key="i">
-          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.smAndUp" />
-          <JobCardMobile :job="job" class="mb-4" v-else-if="loaded.jobs" />
+          <JobCard :job="job" class="mb-4" v-if="loaded.jobs" />
         </div>
       </div>
     </template>
@@ -46,7 +45,6 @@ import NoJobsApplied from 'Components/Dashboard/NoJobsApplied';
 import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
 import JobCard from 'Components/Job/JobCard';
-import JobCardMobile from 'Components/Job/JobCardMobile';
 
 import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
@@ -61,7 +59,6 @@ export default {
     UserCard,
     UserTokens,
     JobCard,
-    JobCardMobile,
   },
   mounted() {
     const userController = new UserController();

@@ -7,8 +7,7 @@
     </div>
     <div class="mx-12 my-10 d-flex justify-center flex-wrap">
       <div v-for="(job, i) in jobs" :key="i">
-        <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.smAndUp" />
-        <JobCardMobile :job="job" class="mb-4" v-else />
+        <JobCard :job="job" class="mb-4" />
       </div>
     </div>
   </div>
@@ -19,7 +18,6 @@ import JobController from 'Controllers/job';
 import CompanyController from 'Controllers/company';
 
 import JobCard from 'Components/Job/JobCard';
-import JobCardMobile from 'Components/Job/JobCardMobile';
 
 export default {
   name: 'JobDescription',
@@ -35,7 +33,6 @@ export default {
   },
   components: {
     JobCard,
-    JobCardMobile,
   },
   data() {
     return {

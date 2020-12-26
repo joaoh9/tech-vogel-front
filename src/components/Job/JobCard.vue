@@ -1,24 +1,44 @@
 '<template>
-  <v-card class="pa-4 px-12 bs-primary" color="bg" :min-width="getMinWidth()">
-    <div class="d-flex justify-space-between">
-      <div>
+  <v-card
+    class="bs-primary pa-4 px-6 px-md-12"
+    color="bg"
+    :min-width="getMinWidth()"
+    @click="!$vuetify.breakpoint.mdAndUp && goToJobDetails()"
+  >
+    <v-row align="center" justify="center">
+      <v-col :cols="$vuetify.breakpoint.mdAndUp ? '9' : '12'">
         <div class="d-flex flex-column">
-          <span class="overline">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</span>
-          <h5 class="h5-bold mt-1">{{ job.title }}</h5>
-          <div class="d-flex justify-space-between ml-n2 mt-2">
+          <div class="d-flex justify-space-between">
+            <span class="overline color-primary" style="font-size: 1.4rem">
+              {{ getSalaryInfo() }}
+            </span>
+          </div>
+          <h5 class="h5-bold">{{ job.title }}</h5>
+          <span class="mt-n1 bdy-2 color-cinza-lighten-1">
+            {{ $t('job.timePosted', { time: getDaysAgo() }) }}
+          </span>
+          <div
+            :class="
+              $vuetify.breakpoint.mdAndUp
+                ? 'd-flex justify-start ml-n2 mt-2'
+                : 'd-flex flex-column ml-n2'
+            "
+          >
             <IconText
+              color="primary"
               v-for="(item, i) in getIconInfo()"
+              :class="$vuetify.breakpoint.mdAndUp ? 'mr-2' : 'mt-2'"
               :key="i"
               :icon="item.icon"
               :text="item.text"
             />
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-center align-center">
+      </v-col>
+      <v-col cols="0" sm="3" v-if="$vuetify.breakpoint.mdAndUp">
         <g-btn type="primary" :label="$t('common.viewDetails')" @click="goToJobDetails" />
-      </div>
-    </div>
+      </v-col>
+    </v-row>
   </v-card>
 </template>
 
@@ -44,22 +64,27 @@ export default {
       });
     },
     getMinWidth() {
-      if (this.$vuetify.breakpoint.lgAndUp) {
-        return 870;
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        return 770;
       }
-      if (this.$vuetify.breakpoint.smAndUp) {
-        return 660;
-      }
-      if (this.$vuetify.breakpoint.smAndUp) {
-        return 500;
-      }
-      return 500;
+
+      return this.$vuetify.breakpoint.width * 0.6;
     },
+    currencyConverter() {
+      return this.$t(`dictionary.currency.${this.job.salary.currency}`);
+    },
+    getSalaryInfo() {
+      return (
+        this.$n(`${this.job.salary.min}`, 'currency', this.currencyConverter()) +
+        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}`
+      );
+    },
+
     getIconInfo() {
       return [
         {
           icon: 'mdi-office-building',
-          text: this.job.company.name,
+          text: this.job.companyName,
         },
         {
           icon: 'mdi-briefcase-variant-outline',
@@ -98,4 +123,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.overline {
+  font-size: 0.95rem !important;
+}
+</style>

@@ -8,7 +8,6 @@
     :disableDecline="true"
     :transitionName="'slideFromBottom'"
     :showPostponeButton="true"
-    @clicked-decline="cookieClickedDecline"
   >
     >
     <!-- Optional -->
