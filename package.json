@@ -23,6 +23,7 @@
     "timeago.js": "^4.0.2",
     "v-mask": "^2.2.3",
     "vue": "^2.6.11",
+    "vue-cookie-accept-decline": "^5.4.0",
     "vue-cookies": "^1.7.4",
     "vue-i18n": "^8.22.2",
     "vue-router": "^3.4.9",

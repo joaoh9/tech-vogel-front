@@ -28,7 +28,7 @@ import IconText from 'Components/Interface/IconText';
 import DateHelper from 'Helpers/date';
 
 export default {
-  name: 'listJobs',
+  name: 'JobCard',
   props: {
     job: {
       type: Object,
@@ -63,7 +63,7 @@ export default {
         },
         {
           icon: 'mdi-briefcase-variant-outline',
-          text: this.$t('enums.contractType').find(ct => ct.value === this.job.contractType).text,
+          text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
         },
       ];
     },

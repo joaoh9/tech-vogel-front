@@ -102,6 +102,7 @@
         <h4 class="d-flex text-center justify-center mb-6 mt-16">{{ $t('questions.title') }}</h4>
         <Questions />
       </div>
+      <CookiesAcceptDecline />
     </div>
   </div>
 </template>
@@ -111,11 +112,12 @@ import MainJobs from 'Components/Job/MainJobs';
 import homeBg from 'Assets/home-bg-op-20c.svg';
 import HowItWorks from 'Components/Static/HowItWorks';
 import ForDevs from 'Components/Static/ForDevs';
-import Pricing from 'Pages/Static/Pricing'
+import Pricing from 'Pages/Static/Pricing';
 import AboutUs from 'Components/Static/AboutUs';
 import Questions from 'Components/Static/Questions.vue';
 import ReportTip from 'Components/Static/ReportTip';
 import TypesOfProgrammers from 'Components/Static/TypesOfProgrammers.vue';
+import CookiesAcceptDecline from 'Components/Static/CookiesAcceptDecline'
 
 export default {
   name: 'Home',
@@ -128,6 +130,7 @@ export default {
     Questions,
     TypesOfProgrammers,
     ReportTip,
+    CookiesAcceptDecline,
   },
   data() {
     return {
