@@ -5,11 +5,23 @@ import Axios from 'Helpers/axios';
 export default class CompanyController {
   async save(details) {
     const userToken = StorageHelper.loadState('userToken');
-    const userInfo = this.decodeUserToken(userToken);
 
     const axios = Axios.GetInstance(userToken);
 
-    const { data } = await axios.post('/v1/companies', { ...details, userId: userInfo.id });
+    const { data } = await axios.post('/v1/companies', details);
+
+    StorageHelper.saveState('userToken', data.token);
+
+    return data;
+  }
+
+  async getByCurrentUser() {
+    const userToken = StorageHelper.loadState('userToken');
+
+    const axios = Axios.GetInstance(userToken);
+
+    const { data } = await axios.get('/v1/company/me');
+
     return data;
   }
 

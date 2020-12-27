@@ -52,7 +52,7 @@ export default {
   name: 'ConfirmRegistration',
   props: {
     _email: String,
-    showResendButton: {
+    _showResendButton: {
       type: Boolean,
       default: true,
     },
@@ -66,7 +66,7 @@ export default {
       this.$router.push('/login');
     }
 
-    this._showResendButton = this.showResendButton
+    this.showResendButton = this._showResendButton
 
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
@@ -79,6 +79,7 @@ export default {
       },
       resendLoad: false,
       confirmationKey: '',
+      showResendButton: false,
     };
   },
   methods: {

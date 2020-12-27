@@ -103,11 +103,9 @@ export default class UserController {
 
   async update(updates) {
     const userToken = StorageHelper.loadState('userToken');
-    const userInfo = this.decodeUserToken();
-    const userId = updates.id || updates.userId || userInfo.id;
 
     const axios = Axios.GetInstance(userToken);
-    await axios.put(`/v1/users/${userId}`, updates);
+    await axios.put('/v1/users/me', updates);
 
     const { data: newUserData } = await axios.post('/v1/users/me/token');
     this.saveUserToken(newUserData.token);

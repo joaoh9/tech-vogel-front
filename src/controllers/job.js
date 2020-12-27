@@ -8,7 +8,7 @@ export default class JobController {
     const userToken = StorageHelper.loadState('userToken');
 
     const companyController = new CompanyController();
-    const companyInfo = await companyController.getByUserId('current');
+    const companyInfo = await companyController.getByCurrentUser();
 
     const finalObj = {
       ...jobDetails,

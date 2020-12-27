@@ -59,10 +59,10 @@ export default {
     async updateUserSide(side) {
       let path = '';
       if (side === 'professional') {
-        side = 20;
+        side = 10;
         path = '/resume/new';
       } else if (side === 'company') {
-        side = 21;
+        side = 20;
         path = '/company/new';
       }
 
