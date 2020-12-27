@@ -20,7 +20,7 @@ export default class CompanyController {
 
     const axios = Axios.GetInstance(userToken);
 
-    const { data } = await axios.get('/v1/company/me');
+    const { data } = await axios.get('/v1/companies/me');
 
     return data;
   }

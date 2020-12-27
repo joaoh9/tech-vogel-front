@@ -62,7 +62,6 @@ export default {
     return {
       user: {},
       company: null,
-      logo: null,
       loaded: {
         company: false,
         user: false,
