@@ -59,6 +59,7 @@ export default {
       nameGreater: 'O nome deve obter mais de 3 caracteres',
       emailValidation: 'Ambos e-mails devem ser iguais',
       passwordValidation: 'As senhas devem ser iguais',
+      imageFileFormat: 'Apenas formatos .jpeg, .jpg e .png possíveis!',
     },
     open: {
       login: 'Olá! Login realizado com sucesso!',

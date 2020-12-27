@@ -60,8 +60,9 @@
 import About from 'Pages/Company/_1About';
 import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 import CompanyController from 'Controllers/company';
-import UserController from 'Controllers/user';
 import RulesHelper from 'Helpers/rules';
+
+import config from '@config'
 
 export default {
   name: 'New',
@@ -105,7 +106,6 @@ export default {
     },
     async register() {
       const companyController = new CompanyController();
-      const userController = new UserController();
 
       this.loading = true;
 
@@ -119,7 +119,6 @@ export default {
 
       try {
         await companyController.save(this.company);
-        await userController.update({ side: 21 });
         this.$toast.success(this.$t('toast.success.savedCompany'));
 
         this.$router.push({
@@ -138,6 +137,9 @@ export default {
         this.rules.min(10, this.company.description) !== true,
         this.rules.max(5000, this.company.description) !== true,
       ];
+      if (!config.imageFileFormats.find(el => el === this.company.logo.type)) {
+        return this.$toast.warning(this.$t('toast.warning.imageFileFormat'));
+      }
 
       return rules.every(rule => !rule);
     },

@@ -137,6 +137,11 @@ export default {
         type: this.logo.type,
       };
 
+      if (!config.imageFileFormats.find(el => el === this.logo.type)) {
+        this.logo = {};
+        return this.$toast.warning(this.$t('toast.warning.imageFileFormat'));
+      }
+
       this.$emit('company-logo', file);
     },
   },

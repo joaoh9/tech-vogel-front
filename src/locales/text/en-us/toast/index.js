@@ -59,6 +59,7 @@ export default {
       nameGreater: 'Name must be greater than 3 characters',
       emailValidation: 'Email and confirmation must be equals',
       passwordValidation: 'Password and confirmation must be equals',
+      imageFileFormat: 'Only .jpeg, .jpg and .png file formats!',
     },
     open: {
       login: 'Login successful',

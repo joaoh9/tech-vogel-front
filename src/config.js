@@ -29,4 +29,5 @@ export default {
   frontURL: process.env.VUE_APP_FRONT_URL || 'http://localhost:5100',
   // 4 hours
   storageExpiry: parseInt(process.env.VUE_APP_STORAGE_EXPIRY) || 4 * 60 * 60 * 1000,
+  imageFileFormats: [ 'image/png', 'image/jpeg' ],
 };
