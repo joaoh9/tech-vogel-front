@@ -45,10 +45,10 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.confirmUser(this.userId, this.confirmationKey);
+        await userController.confirmUser(this.email, this.confirmationKey);
         this.$toast.success(this.$t('toast.success.emailConfirmation'));
         this.confirmationStatus = 1;
-        this.$router.push('/login');
+        this.$router.push('/side-pick');
       } catch (e) {
         this.confirmationStatus = 2;
         this.$toast.error(this.$t('toast.warning.confirmationCode'));

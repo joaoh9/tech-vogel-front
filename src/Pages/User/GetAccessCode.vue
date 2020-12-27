@@ -98,9 +98,9 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.confirmUser(this.id, this.confirmationKey);
+        await userController.confirmUser(this.email, this.confirmationKey);
         this.$toast.success(this.$t('toast.success.emailConfirmation'));
-        this.$router.push('/login');
+        this.$router.push('/side-pick');
       } catch (e) {
         this.$toast.error(this.$t('toast.warning.confirmationCode'));
       }

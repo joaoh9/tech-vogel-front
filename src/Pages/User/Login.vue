@@ -168,6 +168,10 @@ export default {
           return (this.localRules.checkPassword = this.$t('rules.wrongPasswordLogin'));
         }
 
+        if (e.response.data.message === 'USER_NOT_CONFIRMED') {
+          return this.$toast.info(this.$t('toast.info.USER_NOT_CONFIRMED'));
+        }
+
         return this.$toast.error(this.$t('toast.error.loginFailed'));
       }
     },

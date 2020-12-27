@@ -2,7 +2,7 @@ import AccountSettings from 'Pages/User/AccountSettings';
 import GitHubOauth from 'Pages/User/GitHubOauth';
 import RegistrationConfirmed from 'Pages/User/RegistrationConfirmed';
 import UserApplications from 'Pages/User/UserApplications';
-import UserConfirmRegistration from 'Pages/User/ConfirmRegistration';
+import ConfirmRegistration from 'Pages/User/ConfirmRegistration';
 import SidePick from 'Pages/User/SidePick';
 import UserDashboard from 'Pages/User/Dashboard';
 import UserLogin from 'Pages/User/Login';
@@ -39,7 +39,7 @@ const routes = [
   {
     path: '/confirm-registration',
     name: 'Confirm User Registration',
-    component: UserConfirmRegistration,
+    component: ConfirmRegistration,
     props: true,
   },
   {

@@ -81,10 +81,13 @@ export default class UserController {
     await axios.post(`/v1/users/notification/welcome/${email}`);
   }
 
-  async confirmUser(userId, confirmationKey) {
+  async confirmUser(email, confirmationKey) {
     const axios = await Axios.GetInstance();
 
-    const { data } = await axios.post(`/v1/users/${userId}/confirm/${confirmationKey}`);
+    const { data } = await axios.post(`/v1/users/${email}/confirm/${confirmationKey}`);
+
+    this.saveUserToken(data.token);
+
     return data;
   }
 

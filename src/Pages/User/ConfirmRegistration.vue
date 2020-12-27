@@ -24,7 +24,7 @@
             </div>
             <div
               class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap"
-              v-if="showResendButton"
+              v-if="_showResendButton"
             >
               <v-card
                 outlined
@@ -51,7 +51,6 @@ import RulesHelper from 'Helpers/rules';
 export default {
   name: 'ConfirmRegistration',
   props: {
-    userId: String,
     _email: String,
     showResendButton: {
       type: Boolean,
@@ -67,18 +66,14 @@ export default {
       this.$router.push('/login');
     }
 
-    if (this.userId) {
-      this.id = this.userId;
-    } else {
-      this.$router.push('/login');
-    }
+    this._showResendButton = this.showResendButton
+
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
   data() {
     return {
       resendCode: false,
       email: '',
-      id: '',
       rules: {
         email: () => true,
       },
@@ -105,9 +100,9 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.confirmUser(this.id, this.confirmationKey);
+        await userController.confirmUser(this.email, this.confirmationKey);
         this.$toast.success(this.$t('toast.success.emailConfirmation'));
-        this.$router.push('/login');
+        this.$router.push('/side-pick');
       } catch (e) {
         this.$toast.error(this.$t('toast.warning.confirmationCode'));
       }
