@@ -86,7 +86,7 @@ export default {
       logo: null,
       name: '',
       description: '',
-      website: this.$t('common.links.webpage.placeholder'),
+      website: '',
       linkedin: this.$t('common.links.linkedin.placeholder'),
       instagram: this.$t('common.links.instagram.placeholder'),
       twitter: this.$t('common.links.twitter.placeholder'),

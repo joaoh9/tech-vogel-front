@@ -57,6 +57,7 @@ export default {
       return this.$t('common.chooseSide');
     },
     async updateUserSide(side) {
+      // TODO: Refatorar - fazer o update validando no banco se usuário corrente já não tem empresa ou resume salvo
       let path = '';
       if (side === 'professional') {
         side = 10;
