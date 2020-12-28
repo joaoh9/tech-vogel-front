@@ -1,7 +1,7 @@
 <template>
-  <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
-    <template template v-slot:first-col>
-      <UserCard :user="user" v-if="user" :key="loaded.user" :picture="company.logo" />
+  <v-row class="container">
+    <v-col cols="4">
+      <UserCard :user="user" v-if="user && company" :key="loaded.user" :picture="company.logo" />
       <g-btn
         to="/jobs/new"
         class="mt-4"
@@ -19,8 +19,8 @@
         xl
         :label="$t('user.dashboard.manageAccount')"
       />
-    </template>
-    <template template v-slot:second-col>
+    </v-col>
+    <v-col cols="8">
       <div>
         <CompanyCard
           :company="company"
@@ -32,8 +32,8 @@
           <JobManagerCard :job="job" :company="company" />
         </div>
       </div>
-    </template>
-  </g-bootstrap>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
