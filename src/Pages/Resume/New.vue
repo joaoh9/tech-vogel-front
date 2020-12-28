@@ -103,13 +103,6 @@ export default {
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-
-    const userController = new UserController();
-    const company = userController.decodeUserToken();
-
-    if (company.side === 20) {
-      this.$router.push('/404');
-    }
   },
   data() {
     return {

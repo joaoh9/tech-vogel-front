@@ -113,8 +113,17 @@ export default {
         {
           icon: 'fa fa-money-bill-wave',
           text:
-          new Intl.NumberFormat(this.$i18n.locale, { style: 'currency', currency: this.job.salary.currency }).format(this.job.salary.min) +
-          (this.job.salary.max ? ' - ' + new Intl.NumberFormat(this.$i18n.locale, { style: 'currency', currency: this.job.salary.currency }).format(this.job.salary.max) : '') +
+            new Intl.NumberFormat(this.$i18n.locale, {
+              style: 'currency',
+              currency: this.job.salary.currency,
+            }).format(this.job.salary.min) +
+            (this.job.salary.max
+              ? ' - ' +
+                new Intl.NumberFormat(this.$i18n.locale, {
+                  style: 'currency',
+                  currency: this.job.salary.currency,
+                }).format(this.job.salary.max)
+              : '') +
             ' ' +
             this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`),
         },
@@ -140,19 +149,11 @@ export default {
         this.$router.push('/signup');
       }
       const jobController = new JobController();
-      const userController = new UserController();
-      const userInfo = userController.decodeUserToken();
-
-      if (!userInfo) {
-        this.$toast.error(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          path: '/login',
-        });
-      }
 
       try {
-        await jobController.apply(userInfo.id, this.jobId);
+        await jobController.apply(this.jobId);
         this.$toast.success(this.$t('toast.success.jobApplied'));
+        this.editMode = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobApplying'));
       }

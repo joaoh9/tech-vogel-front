@@ -12,7 +12,7 @@ const userController = new UserController();
 
 const routes = [
   {
-    path: '/company/dashbord',
+    path: '/company/dashboard',
     name: 'Company Dashboard',
     component: Dashboard,
     beforeEnter: auth.requireCompany,

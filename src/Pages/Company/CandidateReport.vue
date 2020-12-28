@@ -133,12 +133,6 @@ export default {
       this.user = userController.decodeUserToken();
 
       this.loaded.user = false;
-      if (!this.user) {
-        this.$toast(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          path: '/login',
-        });
-      }
     },
     async getReport() {
       const jobController = new JobController();

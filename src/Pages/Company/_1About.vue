@@ -71,7 +71,6 @@
 <script>
 import RulesHelper from 'Helpers/rules';
 
-import UserController from 'Controllers/user';
 import config from '@config';
 
 const MB = 1000 * 1000;
@@ -81,7 +80,6 @@ export default {
   components: {},
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-    this.loadUserFromStorage();
   },
   data() {
     return {
@@ -100,17 +98,6 @@ export default {
     };
   },
   methods: {
-    loadUserFromStorage() {
-      const userController = new UserController();
-      const userInfo = userController.decodeUserToken();
-
-      if (!userInfo) {
-        this.$toast.error(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          path: '/login',
-        });
-      }
-    },
     getBase64(file) {
       return new Promise(resolve => {
         const reader = new FileReader();

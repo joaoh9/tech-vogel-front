@@ -12,24 +12,33 @@ function requireCompany(to, from, next) {
     });
   }
 
-  if (userInfo.side >= 20 && userInfo.side <= 29) {
-    return next();
+  switch (userInfo.side) {
+    case 10:
+      return next({
+        name: 'Resume Form',
+      });
+    case 11:
+      return next({
+        name: 'User Dashboard',
+      });
+    case 20:
+      return next({
+        name: 'New Company',
+      });
+    case 21:
+      return next(
+        // name: 'Company Dashboard',
+      );
+    default:
+      return next({
+        name: 'Side Pick',
+      });
   }
-
-  if (userInfo.side >= 10 && userInfo.side <= 19) {
-    return next({
-      name: 'User Dashboard',
-    });
-  }
-
-  return next({
-    name: 'Side Pick',
-  });
 }
 
 function requireProfessional(to, from, next) {
   const userInfo = userController.decodeUserToken();
-  console.log('🚀 ~ file: auth.js ~ line 32 ~ requireProfessional ~ userInfo', userInfo)
+  console.log('🚀 ~ file: auth.js ~ line 32 ~ requireProfessional ~ userInfo', userInfo);
 
   if (!userInfo) {
     return next({

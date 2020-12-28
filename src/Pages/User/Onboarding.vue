@@ -39,7 +39,7 @@
       />
       <g-btn
         v-if="index === 3"
-        :to="getDashboardRoute()"
+        to="/company/dashboard"
         type="text"
         class="mt-2"
         color="primary"
@@ -57,8 +57,6 @@ import pic4 from 'Assets/Onboarding/4.svg';
 
 import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 
-import UserController from 'Controllers/user'
-
 export default {
   name: 'Onboarding',
   components: {
@@ -74,14 +72,6 @@ export default {
   methods: {
     getData() {
       return this.$t('user.onboarding.data').map((el, i) => ({ ...el, img: this.images[i] }));
-    },
-    checkIfCompany() {
-      const userController = new UserController();
-      const userInfo = userController.decodeUserToken();
-      return userInfo.side === 2;
-    },
-    getDashboardRoute() {
-      return this.checkIfCompany() ? '/company/dashboard' : '/dashboard';
     },
   },
 };

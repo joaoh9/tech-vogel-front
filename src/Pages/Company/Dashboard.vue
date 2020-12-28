@@ -93,22 +93,6 @@ export default {
     async getUserInfo() {
       const userController = new UserController();
       this.user = userController.decodeUserToken();
-
-      this.loaded.user = false;
-      if (!this.user) {
-        this.$toast(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          name: 'User Login',
-        });
-      }
-
-      if (this.user.side < 20) {
-        if (this.user.side >= 10) {
-          this.$router.push({
-            name: 'User Dashboard',
-          });
-        }
-      }
     },
     async getCompanyJobs() {
       const jobController = new JobController();

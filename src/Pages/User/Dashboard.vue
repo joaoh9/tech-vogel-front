@@ -59,12 +59,6 @@ export default {
     JobCard,
   },
   mounted() {
-    const userController = new UserController();
-    const userInfo = userController.decodeUserToken();
-
-    if (userInfo.side >= 20) {
-      this.$router.push('/company/dashboard');
-    }
     this.loadUserInfo();
     this.loadResume();
     this.getAppliedJobs();
@@ -85,19 +79,7 @@ export default {
       const userController = new UserController();
       this.user = userController.decodeUserToken();
 
-      if (!this.user) {
-        this.$toast.error(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          name: 'User Login',
-        });
-      }
       this.loaded.user = true;
-
-      if (this.user.side >= 20) {
-        this.$router.push({
-          name: 'Company Dashboard',
-        });
-      }
     },
 
     async loadResume() {
