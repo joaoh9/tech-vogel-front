@@ -86,10 +86,10 @@ export default class JobController {
     return data;
   }
 
-  async apply(userId, jobId) {
+  async apply(jobId) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.post(`/v1/jobs/${jobId}/apply/${userId}`);
+    const { data } = await axios.post(`/v1/jobs/${jobId}/apply/me`);
     return data;
   }
 

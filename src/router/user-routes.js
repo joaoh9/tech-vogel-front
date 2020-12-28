@@ -1,5 +1,4 @@
-import AccountSettings from 'Pages/User/AccountSettings';
-import GitHubOauth from 'Pages/User/GitHubOauth';
+// import GitHubOauth from 'Pages/User/GitHubOauth';
 import RegistrationConfirmed from 'Pages/User/RegistrationConfirmed';
 import UserApplications from 'Pages/User/UserApplications';
 import ConfirmRegistration from 'Pages/User/ConfirmRegistration';
@@ -25,63 +24,68 @@ const routes = [
     name: 'User Profile',
     component: UserProfile,
     props: true,
+    beforeEnter: auth.savedUser,
   },
   {
     path: '/signup',
     name: 'User Signup',
     component: UserSignup,
     props: true,
+    beforeEnter: auth.unlogged,
   },
   {
     path: '/password-reset',
     name: 'Password Reset',
     component: PasswordReset,
+    beforeEnter: auth.unlogged,
   },
   {
     path: '/confirm-registration',
     name: 'Confirm User Registration',
     component: ConfirmRegistration,
     props: true,
+    beforeEnter: auth.unlogged,
   },
   {
     path: '/confirm',
     name: 'Registration Confirmed',
     component: RegistrationConfirmed,
     props: true,
+    beforeEnter: auth.unlogged,
   },
   {
     path: '/receive-code',
     name: 'Get Access Code',
     component: GetAccessCode,
+    beforeEnter: auth.unlogged,
   },
   {
     path: '/side-pick',
     name: 'Side Pick',
     component: SidePick,
     props: true,
+    beforeEnter: auth.sidePick,
   },
   {
     path: '/user/dashboard',
     name: 'User Dashboard',
     component: UserDashboard,
-    beforeEnter: auth.requireProfessional,
+    beforeEnter: auth.userDashboard,
   },
   {
     path: '/applications',
     name: 'User Applications',
     component: UserApplications,
+    // TODO: beforeEnter
   },
+  /*
   {
     path: '/github/oauth',
     name: 'GitHub OAuth',
     component: GitHubOauth,
     props: true,
   },
-  {
-    path: '/account/settings',
-    name: 'Account settings',
-    component: AccountSettings,
-  },
+  */
   {
     path: '/onboarding',
     name: 'Onbarding',
