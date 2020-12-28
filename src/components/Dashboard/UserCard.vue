@@ -4,7 +4,7 @@
       <h5 class="text-center">{{ $t('common.hi') + name }}</h5>
       <div class="d-flex my-4">
         <v-avatar color="grey" size="40">
-          <v-img v-if="user.profilePicture" :src="user.profilePicture" />
+          <v-img v-if="picture" :src="picture" />
         </v-avatar>
       </div>
     </div>
@@ -16,6 +16,7 @@ export default {
   name: 'UserCard',
   props: {
     user: Object,
+    picture: String,
   },
   async mounted() {
     this.getDisplayName();
