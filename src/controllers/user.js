@@ -94,7 +94,11 @@ export default class UserController {
   decodeUserToken(_token) {
     const token = _token || StorageHelper.loadState('userToken');
 
-    return jwtDecode(token);
+    try {
+      return jwtDecode(token);
+    } catch (e) {
+      return null;
+    }
   }
 
   saveUserToken(token) {

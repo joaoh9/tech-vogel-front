@@ -11,6 +11,7 @@ import UserSignup from 'Pages/User/Signup';
 import Onboarding from 'Pages/User/Onboarding';
 import PasswordReset from 'Pages/User/PasswordReset';
 import GetAccessCode from 'Pages/User/GetAccessCode';
+import auth from './auth';
 
 const routes = [
   {
@@ -60,10 +61,10 @@ const routes = [
     props: true,
   },
   {
-    path: '/dashboard',
+    path: '/user/dashboard',
     name: 'User Dashboard',
     component: UserDashboard,
-    props: true,
+    beforeEnter: auth.requireProfessional,
   },
   {
     path: '/applications',
