@@ -7,16 +7,8 @@ export default class JobController {
   async save(jobDetails) {
     const userToken = StorageHelper.loadState('userToken');
 
-    const companyController = new CompanyController();
-    const companyInfo = await companyController.getByCurrentUser();
-
-    const finalObj = {
-      ...jobDetails,
-      companyId: companyInfo.id,
-    };
-
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.post('/v1/jobs', finalObj);
+    const { data } = await axios.post('/v1/jobs', jobDetails);
 
     return data;
   }

@@ -26,6 +26,7 @@ function sidePick(to, from, next) {
         name: 'New Company',
       });
     case 21:
+    case 22:
       return next({
         name: 'Company Dashboard',
       });
@@ -55,6 +56,7 @@ function resumeForm(to, from, next) {
         name: 'New Company',
       });
     case 21:
+    case 22:
       return next({
         name: 'Company Dashboard',
       });
@@ -86,6 +88,7 @@ function userDashboard(to, from, next) {
         name: 'New Company',
       });
     case 21:
+    case 22:
       return next({
         name: 'Company Dashboard',
       });
@@ -117,6 +120,7 @@ function newCompany(to, from, next) {
     case 20:
       return next();
     case 21:
+    case 22:
       return next({
         name: 'Company Dashboard',
       });
@@ -150,6 +154,7 @@ function companyDashboard(to, from, next) {
         name: 'New Company',
       });
     case 21:
+    case 22:
       return next();
     default:
       return next({
@@ -217,7 +222,7 @@ function savedCompany(to, from, next) {
     });
   }
 
-  if (userInfo.side == 21) {
+  if (userInfo.side == 21 || userInfo.side === 22) {
     return next();
   }
 
