@@ -3,19 +3,19 @@
     <g-card :lg="600" :md="500">
       <template v-slot:card-content>
         <g-card-header :title="$t('common.login')" :description="$t('login.subtitle')" />
-        <form-input class="mt-6" :title="$t('common.email.label')" />
+        <form-input required class="mt-6" :title="$t('common.email.label')" />
         <v-text-field
           outlined
           v-model="user.email"
-          :rules="[rules.required(user.email)]"
+          :rules="[rule.required(user.email)]"
           autofocus
           data-cy="login-email"
           :error-messages="localRules.checkEmail"
         />
-        <form-input :title="$t('common.password.label')" />
+        <form-input required :title="$t('common.password.label')" />
         <v-text-field
           v-model="user.password"
-          :rules="[rules.required(user.password)]"
+          :rules="[rule.required(user.password)]"
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
           :type="showPassword ? 'text' : 'password'"
@@ -85,7 +85,7 @@ export default {
     },
   },
   mounted() {
-    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    this.rule = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
 
     this.rulesLoaded = true;
     if (this.email) {
@@ -106,7 +106,7 @@ export default {
       loading: {
         login: false,
       },
-      rules: {
+      rule: {
         required: () => true,
       },
       localRules: {

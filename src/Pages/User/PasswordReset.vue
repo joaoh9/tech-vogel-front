@@ -169,7 +169,6 @@ export default {
           this.user.email,
           this.user.confirmationCode,
         );
-        console.log('🚀 ~ file: PasswordReset.vue ~ line 159 ~ checkCorrectCode ~ exists', exists);
         if (!exists) {
           this.$toast.error(this.$t('toast.error.passwordReset.incorrectInternalKey'));
           this.loading = false;

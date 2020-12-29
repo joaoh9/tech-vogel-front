@@ -10,13 +10,16 @@ if (language.toLowerCase() === 'pt-br') {
 
 const MB = 1000000;
 
-export default {
+const config = {
   defaultLocale: defaultLanguage,
   github: {
-    client_id: window.serverConfig.github.client_id,
+    client_id: (window.serverConfig && window.serverConfig.github.client_id) || '',
   },
-  skills: window.serverConfig.skills,
+  skills: window.serverConfig && window.serverConfig.skills,
   maxFileSize: 12 * MB,
-  storageExpiry: window.serverConfig.storageExpiry,
-  imageFileFormats: window.serverConfig.imageFileFormats,
+  storageExpiry: (window.serverConfig && window.serverConfig.storageExpiry) || 4 * 60 * 60 * 1000,
+  imageFileFormats: window.serverConfig && window.serverConfig.imageFileFormats,
 };
+console.log('🚀 ~ file: config.js ~ line 25 ~ config', config);
+
+module.exports = config;

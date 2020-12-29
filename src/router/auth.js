@@ -8,7 +8,7 @@ function sidePick(to, from, next) {
 
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -40,7 +40,7 @@ function resumeForm(to, from, next) {
 
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -72,7 +72,7 @@ function userDashboard(to, from, next) {
 
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -104,7 +104,7 @@ function newCompany(to, from, next) {
 
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -136,7 +136,7 @@ function companyDashboard(to, from, next) {
 
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -184,7 +184,7 @@ function company(to, from, next) {
   const userInfo = userController.decodeUserToken();
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -201,7 +201,7 @@ function user(to, from, next) {
   const userInfo = userController.decodeUserToken();
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -218,7 +218,7 @@ function savedCompany(to, from, next) {
   const userInfo = userController.decodeUserToken();
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 
@@ -235,7 +235,7 @@ function savedUser(to, from, next) {
   const userInfo = userController.decodeUserToken();
   if (!userInfo) {
     return next({
-      name: 'User Login',
+      name: 'User Signup',
     });
   }
 

@@ -1,5 +1,6 @@
 <template>
   <div class="bg-color-bg">
+    <!-- {{ window.localeSkills }} -->
     <div class="container-fluid d-flex flex-column flex-wrap">
       <v-img class="bg-color-secondary pb-16">
         <div
@@ -112,7 +113,7 @@ import AboutUs from 'Components/Static/AboutUs';
 import Questions from 'Components/Static/Questions.vue';
 import ReportTip from 'Components/Static/ReportTip';
 import TypesOfProgrammers from 'Components/Static/TypesOfProgrammers.vue';
-import CookiesAcceptDecline from 'Components/Static/CookiesAcceptDecline'
+import CookiesAcceptDecline from 'Components/Static/CookiesAcceptDecline';
 
 export default {
   name: 'Home',
