@@ -28,7 +28,8 @@
           :key="loaded.company"
           :jobsPosted="jobsPosted"
         />
-        <div v-for="(job, i) in jobs" :key="i">
+        <v-skeleton-loader v-if="loadingJobs" v-bind="attrs" type="article, actions" />
+        <div v-else v-for="(job, i) in jobs" :key="i">
           <JobManagerCard :job="job" :company="company" />
         </div>
       </div>
@@ -68,6 +69,7 @@ export default {
       },
       jobs: [],
       jobsPosted: -1,
+      loadingJobs: false,
     };
   },
   methods: {
@@ -96,10 +98,13 @@ export default {
     },
     async getCompanyJobs() {
       const jobController = new JobController();
+      this.loadingJobs = true;
       try {
         this.jobs = await jobController.getCompanyJobs(this.company.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
+      } finally {
+        this.loadingJobs = false;
       }
     },
     getFistColInfo() {
