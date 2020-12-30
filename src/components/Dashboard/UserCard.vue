@@ -1,6 +1,6 @@
 <template>
-  <v-card class="bs-primary" color="bg" :loading="!loaded" @click="$emit('click')">
-    <div v-if="user" :key="loaded" class="d-flex justify-space-between py-2 mx-12">
+  <v-card class="bs-primary" color="bg" :loading="loading" @click="$emit('click')">
+    <div v-if="user" class="d-flex justify-space-between py-2 mx-12">
       <h5 class="text-center">{{ $t('common.hi') + name }}</h5>
       <div class="d-flex my-4">
         <v-avatar color="grey" size="40">
@@ -17,19 +17,18 @@ export default {
   props: {
     user: Object,
     picture: String,
+    loading: Boolean,
   },
   async mounted() {
     this.getDisplayName();
   },
   data() {
     return {
-      loaded: false,
       name: '',
     };
   },
   methods: {
     async getDisplayName() {
-      await new Promise(resolve => setTimeout(resolve, 1 * 1000));
       const names = this.user.name.split(' ');
       const singlename = names[0] === names[names.length - 1];
       if (singlename) {
@@ -37,7 +36,6 @@ export default {
       } else {
         this.name = names[0] + ' ' + names[names.length - 1];
       }
-      this.loaded = true;
     },
   },
 };

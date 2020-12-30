@@ -26,7 +26,7 @@ export default class JobController {
     return jobs;
   }
 
-  async getCardJobs({ limit, skip }) {
+  async getCardJobs({ limit, skip } = {}) {
     const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
     const axios = await Axios.GetInstance();
     const { data } = await axios.get('/v1/jobs/cards' + query);

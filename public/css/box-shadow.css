@@ -23,3 +23,8 @@
   top: 0px;
   width: 2px;
 }
+
+.v-pagination__item,
+.v-pagination__navigation {
+  box-shadow: 3px 3px 7px 0px rgba(20, 14, 192, 0.1) !important;
+}
