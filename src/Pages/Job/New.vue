@@ -151,7 +151,7 @@ export default {
     async getCompanyInfo() {
       const companyController = new CompanyController();
       try {
-        this.company = await companyController.getByUserId('current');
+        this.company = await companyController.getByCurrentUser();
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveCompanyInfo'));
       }

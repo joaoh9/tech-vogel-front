@@ -109,6 +109,7 @@ export default {
         title: 'Fale sobre suas habilidades',
         description:
           'Você pode editar suas informações depois de salvá-las. Suas informações ficarão visíveis para os usuários da Tech Vogel!',
+        explanation: 'Escolha seu nível de experiência em anos',
       },
       education: {
         title: 'Ensino',

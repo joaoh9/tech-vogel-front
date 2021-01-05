@@ -44,7 +44,7 @@
       >
         {{ $t('common.signup') }}
       </v-btn>
-      <ChangeLanguage chooseLanguageText="" class="mx-4" />
+      <ChangeLanguage chooseLanguageText="" />
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary v-if="!$vuetify.breakpoint.smAndUp">
       <v-list nav dense>

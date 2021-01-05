@@ -169,7 +169,6 @@ export default {
           this.user.email,
           this.user.confirmationCode,
         );
-        console.log('🚀 ~ file: PasswordReset.vue ~ line 159 ~ checkCorrectCode ~ exists', exists);
         if (!exists) {
           this.$toast.error(this.$t('toast.error.passwordReset.incorrectInternalKey'));
           this.loading = false;
@@ -235,15 +234,7 @@ export default {
         userController.saveUserToken(userInfo.token);
         this.$emit('login');
 
-        if (userInfo.side === 20) {
-          this.goToRegisterCompany();
-        } else if (userInfo.side >= 21) {
-          return this.goToCompanyDashboard();
-        } else if (userInfo.side >= 10) {
-          return this.goToUserDashboard();
-        } else {
-          return this.goToSidePick();
-        }
+        return this.goToCompanyDashboard();
       } catch (e) {
         if (e.response.status === 404) {
           return (this.localRules.checkPassword = this.$t('rules.wrongPasswordLogin'));

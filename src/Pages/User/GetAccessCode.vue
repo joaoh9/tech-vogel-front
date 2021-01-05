@@ -16,6 +16,7 @@
           :rules="[rules.required(email), rules.email(email)]"
           outlined
           autofocus
+          v-on:keyup.enter="insertCode ? confirmUser() : resendConfirmationCode()"
         />
 
         <div v-if="insertCode" :key="insertCode" class="d-flex flex-column align-center">
@@ -23,7 +24,7 @@
             {{ $t('signup.confirmationCode.title') }}
           </span>
           <div style="max-width: 150px">
-            <v-text-field v-model="confirmationKey" outlined dense />
+            <v-text-field v-model="confirmationKey" outlined dense v-on:keyup.enter="confirmUser()" />
           </div>
         </div>
       </template>
@@ -98,9 +99,9 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.confirmUser(this.id, this.confirmationKey);
+        await userController.confirmUser(this.email, this.confirmationKey);
         this.$toast.success(this.$t('toast.success.emailConfirmation'));
-        this.$router.push('/login');
+        this.$router.push('/side-pick');
       } catch (e) {
         this.$toast.error(this.$t('toast.warning.confirmationCode'));
       }

@@ -71,7 +71,6 @@
 <script>
 import RulesHelper from 'Helpers/rules';
 
-import UserController from 'Controllers/user';
 import config from '@config';
 
 const MB = 1000 * 1000;
@@ -81,14 +80,13 @@ export default {
   components: {},
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-    this.loadUserFromStorage();
   },
   data() {
     return {
       logo: null,
       name: '',
       description: '',
-      website: this.$t('common.links.webpage.placeholder'),
+      website: '',
       linkedin: this.$t('common.links.linkedin.placeholder'),
       instagram: this.$t('common.links.instagram.placeholder'),
       twitter: this.$t('common.links.twitter.placeholder'),
@@ -100,17 +98,6 @@ export default {
     };
   },
   methods: {
-    loadUserFromStorage() {
-      const userController = new UserController();
-      const userInfo = userController.decodeUserToken();
-
-      if (!userInfo) {
-        this.$toast.error(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          path: '/login',
-        });
-      }
-    },
     getBase64(file) {
       return new Promise(resolve => {
         const reader = new FileReader();
@@ -136,6 +123,11 @@ export default {
         size: this.logo.size,
         type: this.logo.type,
       };
+
+      if (!config.imageFileFormats.find(el => el === this.logo.type)) {
+        this.logo = {};
+        return this.$toast.warning(this.$t('toast.warning.imageFileFormat'));
+      }
 
       this.$emit('company-logo', file);
     },

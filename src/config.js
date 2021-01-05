@@ -10,23 +10,16 @@ if (language.toLowerCase() === 'pt-br') {
 
 const MB = 1000000;
 
-export default {
+const config = {
   defaultLocale: defaultLanguage,
   github: {
-    client_id: process.env.VUE_APP_GITHUB_CLIENT_ID || 'Iv1.3d3580c2a8b96f5c',
-    skills: {
-      techSkills: { min: 3, max: 12 },
-      softSkills: { min: 0, max: 3 },
-      languages: { min: 0, max: 7 },
-    },
+    client_id: (window.serverConfig && window.serverConfig.github.client_id) || '',
   },
-  skills: {
-    techSkills: { min: 3, max: 12 },
-    softSkills: { min: 1, max: 7 },
-    languages: { min: 1, max: 7 },
-  },
+  skills: window.serverConfig && window.serverConfig.skills,
   maxFileSize: 12 * MB,
-  frontURL: process.env.VUE_APP_FRONT_URL || 'http://localhost:5100',
-  // 4 hours
-  storageExpiry: parseInt(process.env.VUE_APP_STORAGE_EXPIRY) || 4 * 60 * 60 * 1000,
+  storageExpiry: (window.serverConfig && window.serverConfig.storageExpiry) || 4 * 60 * 60 * 1000,
+  imageFileFormats: window.serverConfig && window.serverConfig.imageFileFormats,
 };
+console.log('🚀 ~ file: config.js ~ line 25 ~ config', config);
+
+module.exports = config;

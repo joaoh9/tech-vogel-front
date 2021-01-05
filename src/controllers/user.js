@@ -34,6 +34,16 @@ export default class UserController {
     }
   }
 
+  async getMyProfilePicture() {
+    const userToken = StorageHelper.loadState('userToken');
+
+    const axios = await Axios.GetInstance(userToken);
+
+    const { data } = await axios.get('/v1/users/me/profile-pic');
+
+    return data;
+  }
+
   async checkCorrectCode(email, key) {
     const axios = await Axios.GetInstance();
 
@@ -62,7 +72,7 @@ export default class UserController {
       newPassword: password,
     });
 
-    return data
+    return data;
   }
 
   async resendConfirmationEmail(email) {
@@ -71,17 +81,24 @@ export default class UserController {
     await axios.post(`/v1/users/notification/welcome/${email}`);
   }
 
-  async confirmUser(userId, confirmationKey) {
+  async confirmUser(email, confirmationKey) {
     const axios = await Axios.GetInstance();
 
-    const { data } = await axios.post(`/v1/users/${userId}/confirm/${confirmationKey}`);
+    const { data } = await axios.post(`/v1/users/${email}/confirm/${confirmationKey}`);
+
+    this.saveUserToken(data.token);
+
     return data;
   }
 
   decodeUserToken(_token) {
     const token = _token || StorageHelper.loadState('userToken');
 
-    return jwtDecode(token);
+    try {
+      return jwtDecode(token);
+    } catch (e) {
+      return null;
+    }
   }
 
   saveUserToken(token) {
@@ -90,11 +107,9 @@ export default class UserController {
 
   async update(updates) {
     const userToken = StorageHelper.loadState('userToken');
-    const userInfo = this.decodeUserToken();
-    const userId = updates.id || updates.userId || userInfo.id;
 
     const axios = Axios.GetInstance(userToken);
-    await axios.put(`/v1/users/${userId}`, updates);
+    await axios.put('/v1/users/me', updates);
 
     const { data: newUserData } = await axios.post('/v1/users/me/token');
     this.saveUserToken(newUserData.token);

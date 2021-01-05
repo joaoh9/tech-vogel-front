@@ -35,7 +35,6 @@
           v-for="(user, index) in users"
           :userInfo="user"
           :resumeInfo="reports[index]"
-          :profilePic="profilePics[index]"
           :key="index"
 s        />
       </div>
@@ -51,7 +50,6 @@ import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
 import JobController from 'Controllers/job';
 import ResumeController from 'Controllers/resume';
-import ProfilePictureController from 'Controllers/profilePic';
 
 import moment from 'moment';
 
@@ -67,7 +65,6 @@ export default {
     await this.getReport();
     await this.getUsers();
     await this.getUserResume();
-    await this.getProfilePicture();
     await this.getApplicationCount();
   },
   components: {
@@ -78,7 +75,6 @@ export default {
     return {
       users: [],
       reports: [],
-      profilePics: [],
       totalApplicants: 0,
       company: {},
       job: {},
@@ -115,17 +111,6 @@ export default {
         }
       }
     },
-    async getProfilePicture() {
-      const profilePictureController = new ProfilePictureController();
-
-      for (const userId of this.userIds) {
-        try {
-          this.profilePics.push(await profilePictureController.getByUserId(userId));
-        } catch (e) {
-          this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: userId }));
-        }
-      }
-    },
     async getCompanyData() {
       const companyController = new CompanyController();
 
@@ -148,12 +133,6 @@ export default {
       this.user = userController.decodeUserToken();
 
       this.loaded.user = false;
-      if (!this.user) {
-        this.$toast(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          path: '/login',
-        });
-      }
     },
     async getReport() {
       const jobController = new JobController();

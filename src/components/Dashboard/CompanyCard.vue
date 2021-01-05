@@ -18,7 +18,7 @@
         </div>
       </div>
       <v-avatar class="align-self-center" size="90" color="cinza-lighten-3">
-        <v-img v-if="picture" :src="picture.data64" />
+        <v-img v-if="company.logo" :src="company.logo" />
       </v-avatar>
     </div>
   </v-card>
@@ -30,7 +30,6 @@ export default {
   name: 'DashboardCompanyCard',
   props: {
     company: Object,
-    picture: Object,
     jobsPosted: [ Number, String ],
   },
   data() {

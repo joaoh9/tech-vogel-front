@@ -1,7 +1,7 @@
 <template>
-  <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
-    <template template v-slot:first-col>
-      <UserCard :user="user" v-if="user" :key="loaded.user" :picture="logo" />
+  <v-row class="container">
+    <v-col cols="4">
+      <UserCard :user="user" v-if="user && company" :key="loaded.user" :picture="company.logo" />
       <g-btn
         to="/jobs/new"
         class="mt-4"
@@ -19,22 +19,22 @@
         xl
         :label="$t('user.dashboard.manageAccount')"
       />
-    </template>
-    <template template v-slot:second-col>
+    </v-col>
+    <v-col cols="8">
       <div>
         <CompanyCard
           :company="company"
           v-if="company"
           :key="loaded.company"
           :jobsPosted="jobsPosted"
-          :picture="logo"
         />
-        <div v-for="(job, i) in jobs" :key="i">
+        <v-skeleton-loader v-if="loadingJobs" v-bind="attrs" type="article, actions" />
+        <div v-else v-for="(job, i) in jobs" :key="i">
           <JobManagerCard :job="job" :company="company" />
         </div>
       </div>
-    </template>
-  </g-bootstrap>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -45,7 +45,6 @@ import CompanyCard from 'Components/Dashboard/CompanyCard';
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
-import ProfilePictureController from 'Controllers/profilePic';
 
 export default {
   name: 'CompanyDashboard',
@@ -54,7 +53,6 @@ export default {
     await this.getCompanyInfo();
     await this.getJobsPostedCount();
     await this.getCompanyJobs();
-    await this.getLogo();
   },
   components: {
     CompanyCard,
@@ -65,13 +63,13 @@ export default {
     return {
       user: {},
       company: null,
-      logo: null,
       loaded: {
         company: false,
         user: false,
       },
       jobs: [],
       jobsPosted: -1,
+      loadingJobs: false,
     };
   },
   methods: {
@@ -79,7 +77,7 @@ export default {
       const companyController = new CompanyController();
 
       try {
-        this.company = await companyController.getByUserId('current');
+        this.company = await companyController.getByCurrentUser();
         this.loaded.company = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.companyInfo'));
@@ -97,42 +95,16 @@ export default {
     async getUserInfo() {
       const userController = new UserController();
       this.user = userController.decodeUserToken();
-
-      this.loaded.user = false;
-      if (!this.user) {
-        this.$toast(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          name: 'User Login',
-        });
-      }
-
-      if (this.user.side < 20) {
-        if (this.user.side >= 10) {
-          this.$router.push({
-            name: 'User Dashboard',
-          });
-        }
-      }
     },
     async getCompanyJobs() {
       const jobController = new JobController();
+      this.loadingJobs = true;
       try {
         this.jobs = await jobController.getCompanyJobs(this.company.id);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveJob'));
-      }
-    },
-    async getLogo() {
-      const profilePictureController = new ProfilePictureController();
-
-      try {
-        this.logo = await profilePictureController.getByUserId(this.user.id);
-      } catch (e) {
-        if (e.response.status === 404) {
-          this.logo = null;
-          return;
-        }
-        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
+      } finally {
+        this.loadingJobs = false;
       }
     },
     getFistColInfo() {

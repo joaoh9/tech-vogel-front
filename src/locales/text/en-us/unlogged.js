@@ -146,4 +146,9 @@ export default {
     ],
     bigText: bigText.termsOfService,
   },
+  cookies: {
+    bannerText: 'We use cookies to ensure you get the best experience on our website.',
+    learnMoreText: 'Learn More...',
+    accept: 'Got it',
+  },
 };

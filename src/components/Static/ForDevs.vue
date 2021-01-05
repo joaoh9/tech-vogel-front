@@ -2,8 +2,8 @@
   <v-container class="d-flex align-center flex-column">
     <h2 class="color-secondary text-center my-10">{{ $t('devs.subtitle') }}</h2>
     <v-row align="center" class="mt-4" justify="center">
-      <v-col cols="12" md="6" :class="$vuetify.breakpoint.smAndUp ? 'mt-4' : 'mt-0'">
-        <NumberedSteps :steps="getSteps()" titleColor="secondary" textColor="dark" />
+      <v-col cols="12" md="6" :class="$vuetify.breakpoint.smAndUp ? 'mt-n16' : 'mt-0'">
+        <NumberedSteps :steps="getSteps()" titleColor="secondary" class="mx-2" textColor="dark" />
       </v-col>
       <v-col cols="0" md="1" />
       <v-col cols="12" md="5">

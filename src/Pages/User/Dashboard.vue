@@ -6,7 +6,6 @@
         v-if="loaded.user"
         :key="loaded.user"
         @click="goToUserProfile()"
-        :picture="profilePic"
       />
       <div class="d-flex flex-column align-center">
         <UserTokens class="mt-8" :tokens="user.tokens" />
@@ -33,8 +32,7 @@
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
         <div v-for="(job, i) in appliedJobs" :key="i">
-          <JobCard :job="job" class="mb-4" v-if="loaded.jobs && $vuetify.breakpoint.smAndUp" />
-          <JobCardMobile :job="job" class="mb-4" v-else-if="loaded.jobs" />
+          <JobCard :job="job" class="mb-4" v-if="loaded.jobs" />
         </div>
       </div>
     </template>
@@ -46,9 +44,7 @@ import NoJobsApplied from 'Components/Dashboard/NoJobsApplied';
 import UserCard from 'Components/Dashboard/UserCard';
 import UserTokens from 'Components/Dashboard/UserTokens';
 import JobCard from 'Components/Job/JobCard';
-import JobCardMobile from 'Components/Job/JobCardMobile';
 
-import ProfilePictureController from 'Controllers/profilePic';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
 import CompanyController from 'Controllers/company';
@@ -61,26 +57,17 @@ export default {
     UserCard,
     UserTokens,
     JobCard,
-    JobCardMobile,
   },
   mounted() {
-    const userController = new UserController();
-    const userInfo = userController.decodeUserToken();
-
-    if (userInfo.side >= 20) {
-      this.$router.push('/company/dashboard');
-    }
     this.loadUserInfo();
     this.loadResume();
     this.getAppliedJobs();
-    this.getProfilePicture();
   },
   data() {
     return {
       user: {},
       resume: null,
       appliedJobs: [],
-      profilePic: null,
       loaded: {
         user: false,
         jobs: false,
@@ -92,19 +79,7 @@ export default {
       const userController = new UserController();
       this.user = userController.decodeUserToken();
 
-      if (!this.user) {
-        this.$toast.error(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          name: 'User Login',
-        });
-      }
       this.loaded.user = true;
-
-      if (this.user.side >= 20) {
-        this.$router.push({
-          name: 'Company Dashboard',
-        });
-      }
     },
 
     async loadResume() {
@@ -154,19 +129,6 @@ export default {
         this.loaded.jobs = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
-      }
-    },
-    async getProfilePicture() {
-      const profilePictureController = new ProfilePictureController();
-
-      try {
-        this.profilePic = await profilePictureController.getByUserId(this.user.id);
-      } catch (e) {
-        if (e.response.status === 404) {
-          this.profilePic = null;
-          return;
-        }
-        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
     goToUserProfile() {

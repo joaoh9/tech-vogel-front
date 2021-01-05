@@ -23,7 +23,7 @@
             v-if="user"
             :user="user"
             :key="loading.user"
-            :picture="profilePic"
+            :picture="user.profilePicture"
             :role="resume.mainRole"
             :location="resume.location"
           />
@@ -83,7 +83,6 @@ import Skills from 'Components/User/Skills';
 // import GithubStats from 'Components/User/GithubStats';
 
 import UserController from 'Controllers/user';
-import ProfilePictureController from 'Controllers/profilePic';
 import ResumeController from 'Controllers/resume';
 
 export default {
@@ -108,7 +107,6 @@ export default {
       this.getUser();
       this.getUserResume();
     }
-    this.getProfilePicture();
   },
   data() {
     return {
@@ -116,7 +114,6 @@ export default {
       user: {},
       resume: {},
       loading: { user: false },
-      profilePic: null,
     };
   },
   methods: {
@@ -135,19 +132,6 @@ export default {
         this.resume = await resumeController.getByUserId(this.userId);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
-      }
-    },
-    async getProfilePicture() {
-      const profilePictureController = new ProfilePictureController();
-
-      try {
-        this.profilePic = await profilePictureController.getByUserId(this.userId);
-      } catch (e) {
-        if (e.response.status === 404) {
-          this.profilePic = null;
-          return;
-        }
-        this.$toast.info(this.$t('toast.info.retrieveProfilePicture'));
       }
     },
   },

@@ -44,6 +44,7 @@ export default {
       emailConfirmation: 'E-mail confirmado com sucesso',
     },
     info: {
+      USER_NOT_CONFIRMED: 'Usuário ainda não confirmado!',
       sessionExpired: 'Sua sessão expirou. Faça Log in novamente.',
       retrieveProfilePicture: 'Erro ao acessar foto de perfil',
       senior: 'Atenção! Posições para Senior podem resultar em menos candidatos!',
@@ -58,6 +59,7 @@ export default {
       nameGreater: 'O nome deve obter mais de 3 caracteres',
       emailValidation: 'Ambos e-mails devem ser iguais',
       passwordValidation: 'As senhas devem ser iguais',
+      imageFileFormat: 'Apenas formatos .jpeg, .jpg e .png possíveis!',
     },
     open: {
       login: 'Olá! Login realizado com sucesso!',

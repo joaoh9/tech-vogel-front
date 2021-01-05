@@ -1,32 +1,46 @@
 <template>
   <div>
-    <div class="d-flex justify-center justify-md-space-center align-center flex-wrap">
-      <h1 class="h1-bold ml-6 mr-4 text-center">
+    <v-row class="container" justify="center" align="center">
+      <h1 class="h1-bold">
         {{ $t('common.jobs') }}
       </h1>
-    </div>
-    <div class="mx-12 my-10 d-flex justify-center flex-wrap">
-      <div v-for="(job, i) in jobs" :key="i">
-        <JobCard :job="job" class="mb-4" v-if="$vuetify.breakpoint.smAndUp" />
-        <JobCardMobile :job="job" class="mb-4" v-else />
-      </div>
-    </div>
+      <v-col cols="0" md="2" />
+      <v-col cols="12" md="8" justify="center" align="center">
+        <div v-if="loadingJobs">
+          <v-skeleton-loader
+            v-for="i in [1, 2, 3, 4, 5]"
+            :key="i"
+            class="mb-4"
+            type="article, actions"
+          />
+        </div>
+        <div v-else v-for="(job, i) of jobs" :key="i">
+          <JobCard :job="job" class="mb-4" />
+        </div>
+        <v-pagination
+          circle
+          prev-icon="mdi-menu-left"
+          next-icon="mdi-menu-right"
+          v-model="page"
+          :length="3"
+        />
+      </v-col>
+      <v-col cols="0" md="0" />
+    </v-row>
   </div>
 </template>
 
 <script>
 import JobController from 'Controllers/job';
-import CompanyController from 'Controllers/company';
 
 import JobCard from 'Components/Job/JobCard';
-import JobCardMobile from 'Components/Job/JobCardMobile';
 
 export default {
   name: 'JobDescription',
   mounted() {
-    this.getJobs();
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
+    this.getJobs();
   },
   props: {
     job: Object,
@@ -35,34 +49,28 @@ export default {
   },
   components: {
     JobCard,
-    JobCardMobile,
   },
   data() {
     return {
-      finishedRequests: false,
       skills: [],
       jobs: [],
+      loadingJobs: false,
+      page: 1,
     };
   },
   methods: {
     async getJobs() {
       const jobController = new JobController();
+      this.loadingJobs = true;
+      console.log('🚀 ~ file: JobList.vue ~ line 57 ~ getJobs ~ loadingJobs');
+
       try {
-        this.jobs = await jobController.getAll();
-        await this.getCompanyInfo();
-        this.finishedRequests = true;
+        this.jobs = await jobController.getCardJobs();
+        console.log('🚀 ~ file: JobList.vue ~ line 57 ~ getJobs ~ loadingJob2');
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobList'));
-      }
-    },
-    async getCompanyInfo() {
-      const companyController = new CompanyController();
-      try {
-        for (let i = 0; i < this.jobs.length; i++) {
-          this.jobs[i].company = await companyController.getById(this.jobs[i].companyId);
-        }
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.getCompany'));
+      } finally {
+        this.loadingJobs = false;
       }
     },
   },

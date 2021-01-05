@@ -83,11 +83,6 @@ export default {
       const userController = new UserController();
       try {
         const user = userController.decodeUserToken();
-        console.log(
-          '🚀 ~ file: App.vue ~ line 80 ~ checkIfLoggedIn ~ userController',
-          userController,
-        );
-        console.log('🚀 ~ file: App.vue ~ line 81 ~ checkIfLoggedIn ~ user', user);
 
         this.loggedIn.logged = true;
         this.loggedIn.company = user.side == 2 ? true : false;

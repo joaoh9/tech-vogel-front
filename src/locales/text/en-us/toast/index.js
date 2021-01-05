@@ -44,6 +44,7 @@ export default {
       passwordResetEmailSent: 'Passoword reset email sent!',
     },
     info: {
+      USER_NOT_CONFIRMED: 'User not confirmed yet!',
       sessionExpired: 'Your session has expired. Please login again',
       retrieveProfilePicture: 'Error when retrieving profile picture',
       senior: 'Attention! You may receive less applications for a senior position!',
@@ -58,6 +59,7 @@ export default {
       nameGreater: 'Name must be greater than 3 characters',
       emailValidation: 'Email and confirmation must be equals',
       passwordValidation: 'Password and confirmation must be equals',
+      imageFileFormat: 'Only .jpeg, .jpg and .png file formats!',
     },
     open: {
       login: 'Login successful',

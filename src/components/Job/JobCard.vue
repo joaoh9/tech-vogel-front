@@ -31,7 +31,7 @@ import IconText from 'Components/Interface/IconText';
 import DateHelper from 'Helpers/date';
 
 export default {
-  name: 'listJobs',
+  name: 'JobCard',
   props: {
     job: {
       type: Object,
@@ -47,26 +47,31 @@ export default {
       });
     },
     getMinWidth() {
-      if (this.$vuetify.breakpoint.lgAndUp) {
-        return 870;
-      }
       if (this.$vuetify.breakpoint.mdAndUp) {
-        return 600;
+        return 770;
       }
-      if (this.$vuetify.breakpoint.smAndUp) {
-        return 450;
-      }
-      return 500;
+
+      return this.$vuetify.breakpoint.width * 0.6;
     },
+    currencyConverter() {
+      return this.$t(`dictionary.currency.${this.job.salary.currency}`);
+    },
+    getSalaryInfo() {
+      return (
+        this.$n(`${this.job.salary.min}`, 'currency', this.currencyConverter()) +
+        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}`
+      );
+    },
+
     getIconInfo() {
       return [
         {
           icon: 'mdi-office-building',
-          text: this.job.company.name,
+          text: this.job.companyName,
         },
         {
           icon: 'mdi-briefcase-variant-outline',
-          text: this.$t('enums.contractType').find(ct => ct.value === this.job.contractType).text,
+          text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
         },
       ];
     },
@@ -101,4 +106,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.overline {
+  font-size: 0.95rem !important;
+}
+</style>

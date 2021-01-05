@@ -7,16 +7,8 @@ export default class JobController {
   async save(jobDetails) {
     const userToken = StorageHelper.loadState('userToken');
 
-    const companyController = new CompanyController();
-    const companyInfo = await companyController.getByUserId('current');
-
-    const finalObj = {
-      ...jobDetails,
-      companyId: companyInfo.id,
-    };
-
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.post('/v1/jobs', finalObj);
+    const { data } = await axios.post('/v1/jobs', jobDetails);
 
     return data;
   }
@@ -32,6 +24,14 @@ export default class JobController {
     }
 
     return jobs;
+  }
+
+  async getCardJobs({ limit, skip } = {}) {
+    const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get('/v1/jobs/cards' + query);
+
+    return data
   }
 
   async getJobsPostedCount(companyId) {
@@ -78,16 +78,16 @@ export default class JobController {
     return data;
   }
 
-  async apply(userId, jobId) {
+  async apply(jobId) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.post(`/v1/jobs/${jobId}/apply/${userId}`);
+    const { data } = await axios.post(`/v1/jobs/${jobId}/apply/me`);
     return data;
   }
 
   async getReport(jobId) {
     const userToken = StorageHelper.loadState('userToken');
-    const axios = await Axios.GetInstance(userToken)
+    const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.get(`/v1/reports/${jobId}/generate`);
 
     return data;
@@ -95,7 +95,7 @@ export default class JobController {
 
   async getApplicationCount(jobId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/jobs/${jobId}/applications/count`)
+    const { data } = await axios.get(`/v1/jobs/${jobId}/applications/count`);
 
     return data;
   }

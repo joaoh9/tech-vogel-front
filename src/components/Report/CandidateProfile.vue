@@ -2,7 +2,7 @@
   <v-card class="border-primary bs-primary pa-4 px-12 " color="bg">
     <div class="d-flex justify-start flex-wrap align-center">
       <v-avatar class="align-self-center mr-15" size="90" color="cinza-lighten-3">
-        <v-img v-if="profilePic" :src="profilePic.data64" />
+        <v-img v-if="user.profilePicture" :src="user.profilePicture" />
       </v-avatar>
       <div class="d-flex flex-column flex-fill">
         <h4 class="mt-2">{{ user.name }}</h4>
@@ -81,7 +81,6 @@ export default {
     userId: String,
     user: Object,
     resume: Object,
-    profilePic: Object,
   },
   components: {
     Skills,

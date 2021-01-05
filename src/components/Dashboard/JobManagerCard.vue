@@ -1,12 +1,12 @@
 '<template>
-  <v-card class="border-primary bs-primary pa-4 px-12 mt-6" color="bg" :min-width="getMinWidth()">
+  <v-card class="border-primary bs-primary pa-4 px-12 mt-6" color="bg">
     <v-row>
       <v-col cols="8">
         <div class="d-flex flex-column">
           <span class="overline">{{ $t('job.posted') }} {{ getDaysAgo() }}</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
           <div>
-            <g-btn type="text" color="primary" :label="$t('job.seeReport')" @click="goToReport" />
+            <g-btn class="mt-2" type="outlined" dense color="primary" :label="$t('job.seeReport')" @click="goToReport" />
           </div>
         </div>
       </v-col>

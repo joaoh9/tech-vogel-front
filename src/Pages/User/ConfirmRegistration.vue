@@ -24,7 +24,7 @@
             </div>
             <div
               class="d-flex flex-column justify-space-around align-center mt-12 flex-wrap"
-              v-if="showResendButton"
+              v-if="_showResendButton"
             >
               <v-card
                 outlined
@@ -51,35 +51,35 @@ import RulesHelper from 'Helpers/rules';
 export default {
   name: 'ConfirmRegistration',
   props: {
-    userId: String,
     _email: String,
-    showResendButton: Boolean,
+    _showResendButton: {
+      type: Boolean,
+      default: true,
+    },
   },
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
     if (this._email) {
       this.email = this._email;
-    } else if(!this._) {
+    } else if(!this._email) {
       this.$router.push('/login');
     }
-    if (this.userId) {
-      this.id = this.userId;
-    } else {
-      this.$router.push('/login');
-    }
+
+    this.showResendButton = this._showResendButton
+
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
   data() {
     return {
       resendCode: false,
       email: '',
-      id: '',
       rules: {
         email: () => true,
       },
       resendLoad: false,
       confirmationKey: '',
+      showResendButton: false,
     };
   },
   methods: {
@@ -101,9 +101,9 @@ export default {
       const userController = new UserController();
 
       try {
-        await userController.confirmUser(this.id, this.confirmationKey);
+        await userController.confirmUser(this.email, this.confirmationKey);
         this.$toast.success(this.$t('toast.success.emailConfirmation'));
-        this.$router.push('/login');
+        this.$router.push('/side-pick');
       } catch (e) {
         this.$toast.error(this.$t('toast.warning.confirmationCode'));
       }

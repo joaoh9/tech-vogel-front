@@ -26,7 +26,7 @@
         <template v-slot:card-content>
           <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }" class="mt-12">
             <About
-              v-on:company-logo="e => (logo = e)"
+              v-on:company-logo="e => (company.logo = e)"
               v-on:company-name="e => (company.name = e)"
               v-on:company-description="e => (company.description = e)"
               v-on:website="e => (company.links.website = e)"
@@ -60,9 +60,9 @@
 import About from 'Pages/Company/_1About';
 import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 import CompanyController from 'Controllers/company';
-import UserController from 'Controllers/user';
-import ProfilePictureController from 'Controllers/profilePic';
 import RulesHelper from 'Helpers/rules';
+
+import config from '@config'
 
 export default {
   name: 'New',
@@ -76,7 +76,6 @@ export default {
   data() {
     return {
       currentStep: 0,
-      logo: {},
       company: {
         name: '',
         description: '',
@@ -86,6 +85,7 @@ export default {
           instagram: '',
           twitter: '',
         },
+        logo: {},
       },
       loading: false,
     };
@@ -106,8 +106,6 @@ export default {
     },
     async register() {
       const companyController = new CompanyController();
-      const userController = new UserController();
-      const profilePictureController = new ProfilePictureController();
 
       this.loading = true;
 
@@ -121,8 +119,6 @@ export default {
 
       try {
         await companyController.save(this.company);
-        await profilePictureController.save(this.logo);
-        await userController.update({ side: 21 });
         this.$toast.success(this.$t('toast.success.savedCompany'));
 
         this.$router.push({
@@ -141,6 +137,9 @@ export default {
         this.rules.min(10, this.company.description) !== true,
         this.rules.max(5000, this.company.description) !== true,
       ];
+      if (!config.imageFileFormats.find(el => el === this.company.logo.type)) {
+        return this.$toast.warning(this.$t('toast.warning.imageFileFormat'));
+      }
 
       return rules.every(rule => !rule);
     },

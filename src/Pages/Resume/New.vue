@@ -78,7 +78,6 @@
 import Stepper from 'Components/Interface/Stepper';
 import Skills from 'Components/General/SkillsSelection';
 import ResumeController from 'Controllers/resume';
-import ProfilePictureController from 'Controllers/profilePic';
 import UserController from 'Controllers/user';
 import Start from './_0Start';
 import Preferences from './_1Preferences';
@@ -104,13 +103,6 @@ export default {
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-
-    const userController = new UserController();
-    const company = userController.decodeUserToken();
-
-    if (company.side === 20) {
-      this.$router.push('/404');
-    }
   },
   data() {
     return {
@@ -161,13 +153,11 @@ export default {
   methods: {
     async saveResume() {
       const resumeController = new ResumeController();
-      const profilePictureController = new ProfilePictureController();
       const userController = new UserController();
 
       try {
         await resumeController.save(this.resume);
-        await profilePictureController.save(this.profilePicture);
-        await userController.update({ side: 11 });
+        await userController.update({ side: 11, profilePicture: this.profilePicture });
         this.$toast.success(this.$t('toast.success.saveResume'));
         this.$router.push({
           path: '/dashboard',
@@ -179,7 +169,6 @@ export default {
 
     async checkInputsAndFollowUp() {
       const resumeController = new ResumeController();
-      const profilePictureController = new ProfilePictureController();
       const userController = new UserController();
 
       switch (this.currentStep) {
@@ -228,8 +217,7 @@ export default {
 
           try {
             await resumeController.save(this.resume);
-            await profilePictureController.save(this.profilePicture);
-            await userController.update({ side: 11 });
+            await userController.update({ side: 11, profilePicture: this.profilePicture });
             this.$toast.success(this.$t('toast.success.saveResume'));
             this.$router.push({
               path: '/dashboard',

@@ -400,7 +400,6 @@ div {
   font-weight: 400;
 }
 
-
 .v-toast-text {
   overflow-wrap: break-word;
   /* Body 1 */
@@ -414,4 +413,120 @@ div {
   align-items: center;
   letter-spacing: 0.5px;
   font-feature-settings: 'liga' off;
+}
+
+@media only screen and (max-width: 800px) {
+  h1,
+  h2 {
+    overflow-wrap: break-word;
+    /* H3 */
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3rem;
+    line-height: 120%;
+    /* or 58px */
+    display: flex;
+    align-items: center;
+  }
+
+  .h1-bold,
+  .h2-bold {
+    overflow-wrap: break-word;
+    /* H3 Bold */
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 120%;
+    /* or 58px */
+    display: flex;
+    align-items: center;
+  }
+
+  .h1-alternative,
+  .h2-alternative {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3rem;
+    line-height: 120%;
+    /* or 58px */
+    display: flex;
+    align-items: center;
+  }
+
+  .h1-bold-alternative,
+  .h2-bold-alternative {
+    overflow-wrap: break-word;
+    /* H3 Bold alternativo */
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 120%;
+    /* or 58px */
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1,
+  h2 {
+    overflow-wrap: break-word;
+    /* H4 */
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.125rem;
+    line-height: 150%;
+    /* or 51px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.25px;
+  }
+
+  .h1-bold,
+  .h2-bold {
+    overflow-wrap: break-word;
+    /* H4 Bold */
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.125rem;
+    line-height: 150%;
+    /* or 51px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.25px;
+  }
+
+  .h1-alternative,
+  .h2-alternative {
+    overflow-wrap: break-word;
+    /* H4 alternativo */
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.125rem;
+    line-height: 150%;
+    /* or 51px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.25px;
+  }
+
+  .h1-bold-alternative,
+  .h2-bold-alternative {
+    overflow-wrap: break-word;
+    /* H3 Bold alternativo */
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 120%;
+    /* or 58px */
+    display: flex;
+    align-items: center;
+  }
 }

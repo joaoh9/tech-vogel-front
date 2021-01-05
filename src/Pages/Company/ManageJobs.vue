@@ -38,7 +38,7 @@ export default {
       const companyController = new CompanyController();
 
       try {
-        this.company = await companyController.getByUserId('current');
+        this.company = await companyController.getByCurrentUser();
         this.loading.company = false;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveCompany'));
@@ -49,19 +49,7 @@ export default {
       this.loading.company = true;
       this.user = StorageHelper.loadState('user');
       this.loading.user = false;
-      if (!this.user) {
-        this.$toast.error(this.$t('toast.error.retrieveUser'));
-        this.$router.push({
-          path: '/login',
-        });
-      }
 
-      const userController = new UserController();
-      const userInfo = userController.decodeUserToken();
-
-      if (userInfo.side !== 2) {
-        this.$toast.error(this.$t('toast.error.companyInfoLogged'));
-      }
       try {
         await this.getCompanyInfo();
       } catch (e) {

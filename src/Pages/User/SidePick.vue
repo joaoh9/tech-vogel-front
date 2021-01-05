@@ -11,7 +11,7 @@
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCompany')"
-              @click="updateCompanySide()"
+              @click="updateUserSide('company')"
               block
               data-cy="side-company"
             />
@@ -20,7 +20,7 @@
               type="primary"
               class="mb-4"
               :label="$t('signup.buttons.createCV')"
-              @click="updateUserSide()"
+              @click="updateUserSide('professional')"
               block
               data-cy="side-pro"
             />
@@ -56,29 +56,27 @@ export default {
     getHeaderTitle() {
       return this.$t('common.chooseSide');
     },
-    async updateCompanySide() {
+    async updateUserSide(side) {
+      // TODO: Refatorar - fazer o update validando no banco se usuário corrente já não tem empresa ou resume salvo
+      let path = '';
+      if (side === 'professional') {
+        side = 10;
+        path = '/resume/new';
+      } else if (side === 'company') {
+        side = 20;
+        path = '/company/new';
+      }
+
       const userController = new UserController();
 
       try {
-        await userController.update({ side: 20 });
+        await userController.update({ side });
       } catch (e) {
         this.$toast.error(this.$t('toast.error.somethingWrong'));
       }
 
       this.$router.push({
-        path: '/company/new',
-      });
-    },
-    async updateUserSide() {
-      const userController = new UserController();
-
-      try {
-        await userController.update({ side: 10 });
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.somethingWrong'));
-      }
-      this.$router.push({
-        path: '/resume/new',
+        path,
       });
     },
   },
