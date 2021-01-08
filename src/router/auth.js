@@ -163,6 +163,16 @@ function companyDashboard(to, from, next) {
   }
 }
 
+function loggedIn(to, from, next) {
+  const userInfo = userController.decodeUserToken();
+
+  if (userInfo) {
+    return next();
+  }
+
+  return next({ name: 'Home' })
+}
+
 function unlogged(to, from, next) {
   const userToken = StorageHelper.loadState('userToken');
 
@@ -255,6 +265,7 @@ export default {
   newCompany,
   companyDashboard,
   unlogged,
+  loggedIn,
   company,
   user,
   savedCompany,
