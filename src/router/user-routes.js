@@ -65,7 +65,7 @@ const routes = [
     name: 'Side Pick',
     component: SidePick,
     props: true,
-    beforeEnter: auth.sidePick,
+    // beforeEnter: auth.sidePick,
   },
   {
     path: '/user/dashboard',
