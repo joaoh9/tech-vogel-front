@@ -91,13 +91,13 @@ export default {
 
       try {
         await companyController.update(obj);
-        this.$toast.success(this.$t()); // TODO: Update that messages
+        this.$toast.success(this.$t('toast.success.updatedData'));
 
         this.$router.push({
           name: 'Company Dashboard',
         });
       } catch (e) {
-        this.$toast.error(this.$t());
+        this.$toast.error(this.$t('toast.error.updateCompany'));
       } finally {
         this.loading = false;
       }
