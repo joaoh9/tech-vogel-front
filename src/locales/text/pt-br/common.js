@@ -53,6 +53,7 @@ export default {
     characters: 'Caracteres',
     finish: 'Finalizar',
     preview: 'Visualizar',
+    update: 'Atualizar',
     copyright: '©2020 Tech Vogel. Todos os direitos reservados',
     termsAndConditions: 'Termos e condições',
     termsOfService: 'Termos de serviço',

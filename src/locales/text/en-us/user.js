@@ -211,7 +211,7 @@ export default {
       title: 'Settings',
       subtitle: 'Change your account and payment settings.',
       buttons: [
-        { text: 'Account', icon: 'far fa-user' },
+        { text: 'Profile', icon: 'far fa-user' },
       ],
     },
     onboarding: {
