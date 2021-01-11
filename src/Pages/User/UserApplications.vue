@@ -55,16 +55,15 @@ export default {
     IconText,
   },
   methods: {
-    goToFindJobs: function() {
+    goToFindJobs() {
       this.$router.push('/jobs/new');
     },
-    goToEditProfile: function() {
+    goToEditProfile() {
       this.$router.push('/resume/new');
     },
-    goToManageCredits: function() {},
+    goToManageCredits() {},
   },
 };
-
 </script>
 
 <style>

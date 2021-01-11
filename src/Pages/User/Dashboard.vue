@@ -1,11 +1,12 @@
 <template>
-  <g-bootstrap :firtsCol="getFistColInfo()" :secondCol="getSecondColInfo()">
-    <template template v-slot:first-col>
+  <v-row class="container">
+    <v-col cols="4">
       <UserCard
         :user="user"
         v-if="loaded.user"
         :key="loaded.user"
         @click="goToUserProfile()"
+        :picture="user.profilePicture"
       />
       <div class="d-flex flex-column align-center">
         <UserTokens class="mt-8" :tokens="user.tokens" />
@@ -15,7 +16,7 @@
           @click="getResumeRoute()"
           class="mt-8"
           type="primary"
-          :label="resume ? $t('user.dashboard.editCV') : $t('user.dashboard.registerCV')"
+          :label="user.side === 11 ? $t('user.dashboard.editCV') : $t('user.dashboard.registerCV')"
         />
         <g-btn
           block
@@ -26,17 +27,23 @@
           :label="$t('user.dashboard.manageAccount')"
         />
       </div>
-    </template>
-    <template template v-slot:second-col>
+    </v-col>
+    <v-col cols="8">
       <div class="d-flex align-center flex-column">
         <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
         <div v-for="(job, i) in appliedJobs" :key="i">
-          <JobCard :job="job" class="mb-4" v-if="loaded.jobs" />
+          <JobCard
+            :applyButton="false"
+            :job="job"
+            class="mb-4"
+            v-if="loaded.jobs"
+            :minWidth="600"
+          />
         </div>
       </div>
-    </template>
-  </g-bootstrap>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -47,8 +54,6 @@ import JobCard from 'Components/Job/JobCard';
 
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
-import CompanyController from 'Controllers/company';
-import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'ProfessionalDashboard',
@@ -60,13 +65,11 @@ export default {
   },
   mounted() {
     this.loadUserInfo();
-    this.loadResume();
     this.getAppliedJobs();
   },
   data() {
     return {
       user: {},
-      resume: null,
       appliedJobs: [],
       loaded: {
         user: false,
@@ -75,57 +78,32 @@ export default {
     };
   },
   methods: {
-    loadUserInfo() {
+    async loadUserInfo() {
       const userController = new UserController();
-      this.user = userController.decodeUserToken();
+      this.user = await userController.getDashboardInfo();
 
       this.loaded.user = true;
     },
 
-    async loadResume() {
-      const resumeController = new ResumeController();
-      this.resume = await resumeController.getByUserId(this.user.id);
-    },
-    goToApplications: function() {
+    goToApplications() {
       this.$router.push('/applications');
     },
-    goToFindJobs: function() {
+    goToFindJobs() {
       this.$router.push('/jobs');
     },
-    goToEditProfile: function() {
+    goToEditProfile() {
       this.$router.push('/resume/new');
     },
     getResumeRoute() {
-      return this.resume
+      return this.user.side === 11
         ? this.$router.push({ name: 'Resume Form', params: { editMode: true } })
         : this.$router.push('/resume/new');
     },
-    getFistColInfo() {
-      return {
-        md: 4,
-        cols: 12,
-        condition: true,
-      };
-    },
-    getSecondColInfo() {
-      return {
-        md: 8,
-        cols: 12,
-        condition: true,
-      };
-    },
     async getAppliedJobs() {
       const jobController = new JobController();
-      const companyController = new CompanyController();
 
       try {
-        this.appliedJobs = await jobController.getAppliedJobs(this.user.id);
-        for (let i = 0; i < this.appliedJobs.length; i++) {
-          this.appliedJobs[i].company = await companyController.getById(
-            this.appliedJobs[i].companyId,
-          );
-          this.appliedJobs[i].createdAt = this.appliedJobs[i].appliedAt;
-        }
+        this.appliedJobs = await jobController.getCurrentUserAppliedJobsCardInfo();
         this.loaded.jobs = true;
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));

@@ -10,6 +10,7 @@ import UserSignup from 'Pages/User/Signup';
 import Onboarding from 'Pages/User/Onboarding';
 import PasswordReset from 'Pages/User/PasswordReset';
 import GetAccessCode from 'Pages/User/GetAccessCode';
+import NewResume from 'Pages/Resume/New';
 import auth from './auth';
 
 const routes = [
@@ -77,6 +78,13 @@ const routes = [
     name: 'User Applications',
     component: UserApplications,
     // TODO: beforeEnter
+  },
+  {
+    path: '/resume/new',
+    name: 'Resume Form',
+    component: NewResume,
+    props: true,
+    // beforeEnter: auth.login,
   },
   /*
   {

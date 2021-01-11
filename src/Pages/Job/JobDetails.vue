@@ -30,7 +30,10 @@
           <h4 class="h4-bold text-capitalize">{{ job.title }}</h4>
           <h6 class="h6">{{ $t('common.at') + ' ' }} {{ company.name }}</h6>
           <div class="my-8">
-            <v-card color="bg" :class="!$vuetify.breakpoint.smAndUp ? 'bs-none' : 'bs-primary pa-6'">
+            <v-card
+              color="bg"
+              :class="!$vuetify.breakpoint.smAndUp ? 'bs-none' : 'bs-primary pa-6'"
+            >
               <SkillPresentation :skills="job.skills" />
             </v-card>
           </div>
@@ -40,7 +43,12 @@
           <div class="bdy-1 d-block mt-4" v-html="job.perks"></div>
         </v-col>
         <v-col cols="12" lg="4" xl="3" class="mt-6">
-          <JobApplicationCard :editMode="editMode" :job="job" :company="company" />
+          <JobApplicationCard
+            :applyButton="applyButton"
+            :editMode="editMode"
+            :job="job"
+            :company="company"
+          />
         </v-col>
       </v-row>
     </div>
@@ -70,6 +78,10 @@ export default {
     editingJobPosted: {
       type: Boolean,
       default: false,
+    },
+    applyButton: {
+      type: Boolean,
+      default: true,
     },
   },
   components: {
