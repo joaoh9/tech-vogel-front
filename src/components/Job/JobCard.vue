@@ -35,8 +35,10 @@
           </div>
         </div>
       </v-col>
-      <v-col cols="0" sm="3" v-if="$vuetify.breakpoint.mdAndUp">
-        <g-btn type="primary" :label="$t('common.viewDetails')" @click="goToJobDetails" />
+      <v-col :cols="$vuetify.breakpoint.mdAndUp ? 3 : 0" v-if="$vuetify.breakpoint.mdAndUp">
+        <v-btn @click="goToJobDetails" color="primary" elevation="0" class="button-text">
+          {{ $t('common.viewDetails') }}
+        </v-btn>
       </v-col>
     </v-row>
   </v-card>
@@ -53,6 +55,11 @@ export default {
     job: {
       type: Object,
     },
+    minWidth: Number,
+    applyButton: {
+      type: Boolean,
+      default: true,
+    },
   },
   components: {
     IconText,
@@ -60,10 +67,19 @@ export default {
   methods: {
     goToJobDetails() {
       this.$router.push({
-        path: `/jobs/${this.job.companyId}/${this.job.id}`,
+        name: 'Job Description',
+        params: {
+          companyId: this.job.companyId,
+          jobId: this.job.id,
+          applyButton: this.applyButton,
+        },
       });
     },
     getMinWidth() {
+      if (this.minWidth) {
+        return this.minWidth;
+      }
+
       if (this.$vuetify.breakpoint.mdAndUp) {
         return 770;
       }

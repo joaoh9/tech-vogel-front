@@ -157,7 +157,7 @@ export default {
         await resumeController.save(this.resume);
         this.$toast.success(this.$t('toast.success.saveResume'));
         this.$router.push({
-          path: '/dashboard',
+          path: '/user/dashboard',
         });
       } catch (e) {
         this.$toast.error(this.$t('toast.error.saveResume'));
@@ -215,7 +215,7 @@ export default {
             await resumeController.save(this.resume);
             this.$toast.success(this.$t('toast.success.saveResume'));
             this.$router.push({
-              path: '/dashboard',
+              path: '/user/dashboard',
             });
           } catch (e) {
             this.$toast.error(this.$t('toast.error.saveResume'));

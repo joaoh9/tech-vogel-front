@@ -15,7 +15,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'g-bootstrap',
   props: {
@@ -52,7 +51,7 @@ export default {
     this.thirdColumn = colsSize.thirdColumn;
   },
   methods: {
-    getColsSize: function() {
+    getColsSize() {
       const fc = Boolean(this.$slots['first-col']);
       const sc = Boolean(this.$slots['second-col']);
       const tc = Boolean(this.$slots['third-col']);
@@ -114,7 +113,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>
