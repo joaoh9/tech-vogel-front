@@ -1,4 +1,4 @@
-'<template>
+<template>
   <v-card
     class="bs-primary pa-4 px-6 px-md-12"
     color="bg"
