@@ -31,7 +31,7 @@ export default class JobController {
     const axios = await Axios.GetInstance();
     const { data } = await axios.get('/v1/jobs/cards' + query);
 
-    return data
+    return data;
   }
 
   async getJobsPostedCount(companyId) {
@@ -39,6 +39,7 @@ export default class JobController {
     const axios = await Axios.GetInstance(userToken);
 
     const { data } = await axios.get(`/v1/jobs/company/${companyId}/count`);
+
     return data.amount;
   }
 
@@ -47,6 +48,7 @@ export default class JobController {
     const axios = await Axios.GetInstance(userToken);
     const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
     const { data } = await axios.get(`/v1/jobs/company/${companyId}` + query);
+
     return data;
   }
 
@@ -55,12 +57,23 @@ export default class JobController {
     const axios = await Axios.GetInstance(userToken);
     const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
     const { data } = await axios.get(`/v1/jobs/user/${userId}` + query);
+
+    return data;
+  }
+
+  async getCurrentUserAppliedJobsCardInfo({ limit = 15, skip = 0 } = {}) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
+    const { data } = await axios.get(`/v1/jobs/card/user/me${query}`);
+
     return data;
   }
 
   async getById(jobId) {
     const axios = await Axios.GetInstance();
     const { data } = await axios.get(`/v1/jobs/${jobId}`);
+
     return data;
   }
 
@@ -68,6 +81,7 @@ export default class JobController {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/jobs/${jobId}`, updates);
+
     return data;
   }
 
@@ -75,6 +89,7 @@ export default class JobController {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.put(`/v1/jobs/${jobId}`);
+
     return data;
   }
 
@@ -82,6 +97,7 @@ export default class JobController {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.post(`/v1/jobs/${jobId}/apply/me`);
+
     return data;
   }
 

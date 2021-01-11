@@ -23,7 +23,7 @@
           v-if="secBtnType"
           :type="secBtnType"
           :label="secBtnText"
-          to="/dashboard"
+          to="/user/dashboard"
           class="mt-4 mb-8 btn-primary"
         />
       </div>

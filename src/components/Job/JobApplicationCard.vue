@@ -9,6 +9,7 @@
     />
     <v-row justify="center" class="mt-6">
       <g-btn
+        v-if="applyButton"
         :type="getApplicationButtonType()"
         @click="applyForJob()"
         :label="$t('job.details.apply')"
@@ -50,7 +51,7 @@
       </v-dialog>
         -->
     </v-row>
-    <v-divider class="mt-4" />
+    <v-divider :class="applyButton ? 'mt-4' : 'mt-0'" />
     <div class="d-flex align-center flex-column mt-4">
       <h6 class="text-capitalize">{{ company.name }}</h6>
       <bdy-2>
@@ -77,6 +78,10 @@ export default {
     job: Object,
     company: Object,
     editMode: Boolean,
+    applyButton: {
+      type: Boolean,
+      default: true,
+    },
   },
   components: {
     IconText,

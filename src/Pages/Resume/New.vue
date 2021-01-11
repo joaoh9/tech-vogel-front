@@ -78,7 +78,6 @@
 import Stepper from 'Components/Interface/Stepper';
 import Skills from 'Components/General/SkillsSelection';
 import ResumeController from 'Controllers/resume';
-import UserController from 'Controllers/user';
 import Start from './_0Start';
 import Preferences from './_1Preferences';
 import PersonalInfo from './_2PersonalInfo';
@@ -153,14 +152,12 @@ export default {
   methods: {
     async saveResume() {
       const resumeController = new ResumeController();
-      const userController = new UserController();
 
       try {
         await resumeController.save(this.resume);
-        await userController.update({ side: 11, profilePicture: this.profilePicture });
         this.$toast.success(this.$t('toast.success.saveResume'));
         this.$router.push({
-          path: '/dashboard',
+          path: '/user/dashboard',
         });
       } catch (e) {
         this.$toast.error(this.$t('toast.error.saveResume'));
@@ -169,7 +166,6 @@ export default {
 
     async checkInputsAndFollowUp() {
       const resumeController = new ResumeController();
-      const userController = new UserController();
 
       switch (this.currentStep) {
         case 1:
@@ -217,10 +213,9 @@ export default {
 
           try {
             await resumeController.save(this.resume);
-            await userController.update({ side: 11, profilePicture: this.profilePicture });
             this.$toast.success(this.$t('toast.success.saveResume'));
             this.$router.push({
-              path: '/dashboard',
+              path: '/user/dashboard',
             });
           } catch (e) {
             this.$toast.error(this.$t('toast.error.saveResume'));

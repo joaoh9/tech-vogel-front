@@ -34,9 +34,17 @@ export default class UserController {
     }
   }
 
+  async getDashboardInfo() {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+
+    const { data } = await axios.get('/v1/users/me/dashboard');
+
+    return data;
+  }
+
   async getMyProfilePicture() {
     const userToken = StorageHelper.loadState('userToken');
-
     const axios = await Axios.GetInstance(userToken);
 
     const { data } = await axios.get('/v1/users/me/profile-pic');

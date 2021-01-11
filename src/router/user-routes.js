@@ -11,6 +11,7 @@ import Onboarding from 'Pages/User/Onboarding';
 import ManageAccount from 'Components/User/Settings/Overview'
 import PasswordReset from 'Pages/User/PasswordReset';
 import GetAccessCode from 'Pages/User/GetAccessCode';
+import NewResume from 'Pages/Resume/New';
 import auth from './auth';
 
 const routes = [
@@ -83,6 +84,13 @@ const routes = [
     path: '/settings',
     name: 'User Settings',
     component: ManageAccount,
+  },
+  {
+    path: '/resume/new',
+    name: 'Resume Form',
+    component: NewResume,
+    props: true,
+    // beforeEnter: auth.login,
   },
   /*
   {
