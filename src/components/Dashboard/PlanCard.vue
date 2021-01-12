@@ -62,6 +62,7 @@
           <v-btn
             absolute
             bottom="0"
+            elevation="0"
             style="height: 56px; width: 270px;"
             color="primary"
             class="font-weight-bold"
