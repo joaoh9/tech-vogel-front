@@ -31,6 +31,7 @@ export default {
       somethingWrong: 'Um erro ocorreu. Tente novamente mais tarde',
       userNotFound: 'Usuário não encontrado',
       fillOut: 'Favor preencher os campos corretamente',
+      update: 'Ocorreu um erro ao atualizar os dados',
     },
     success: {
       jobApplied: 'Uhuuu! Sucesso na aplicação da vaga!',
@@ -42,6 +43,7 @@ export default {
       githubRetrieve: ' Dados do Github recuperados com sucesso!',
       closeTab: 'Você pode fechar esta página e tentar novamente na próxima pagina',
       emailConfirmation: 'E-mail confirmado com sucesso',
+      updatedData: 'Dados atualizados com sucesso!',
     },
     info: {
       USER_NOT_CONFIRMED: 'Usuário ainda não confirmado!',
