@@ -1,37 +1,44 @@
 <template>
-  <v-card
-    class="bs-primary pa-4 px-6 px-md-12"
-    color="bg"
-    :min-width="getMinWidth()"
-    @click="!$vuetify.breakpoint.mdAndUp && goToJobDetails()"
-  >
+  <v-card class="bs-primary pa-4 px-6 px-md-12" color="bg" :min-width="getMinWidth()">
     <v-row align="center" justify="center">
       <v-col :cols="$vuetify.breakpoint.mdAndUp ? '9' : '12'">
-        <div class="d-flex flex-column">
-          <div class="d-flex justify-space-between">
-            <span class="overline color-primary" style="font-size: 1.4rem">
-              {{ getSalaryInfo() }}
+        <div class="d-flex align-center">
+          <v-avatar size="90" color="cinza-lighten-3">
+            <v-img
+              :src="
+                !job.companyLogo
+                  ? 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fkhppu.com%2Fassets%2Fdefault_user_company_logo-3058b28cca9e293f85b78add4842bc64.png&f=1&nofb=1'
+                  : job.companyLogo.data64
+              "
+              alt="Company logo"
+            ></v-img>
+          </v-avatar>
+          <div class="d-flex flex-column ml-8">
+            <div class="d-flex justify-space-between">
+              <span class="color-cinza-lighten-2" style="font-weight: bold">
+                {{ getSalaryInfo() }}
+              </span>
+            </div>
+            <h5 class="h5-bold">{{ job.title }}</h5>
+            <span class="mt-n1 bdy-2 color-cinza-lighten-1">
+              {{ $t('job.timePosted', { time: getDaysAgo() }) }}
             </span>
-          </div>
-          <h5 class="h5-bold">{{ job.title }}</h5>
-          <span class="mt-n1 bdy-2 color-cinza-lighten-1">
-            {{ $t('job.timePosted', { time: getDaysAgo() }) }}
-          </span>
-          <div
-            :class="
-              $vuetify.breakpoint.mdAndUp
-                ? 'd-flex justify-start ml-n2 mt-2'
-                : 'd-flex flex-column ml-n2'
-            "
-          >
-            <IconText
-              color="primary"
-              v-for="(item, i) in getIconInfo()"
-              :class="$vuetify.breakpoint.mdAndUp ? 'mr-2' : 'mt-2'"
-              :key="i"
-              :icon="item.icon"
-              :text="item.text"
-            />
+            <div
+              :class="
+                $vuetify.breakpoint.mdAndUp
+                  ? 'd-flex justify-start ml-n2 mt-2'
+                  : 'd-flex flex-column ml-n2'
+              "
+            >
+              <IconText
+                color="primary"
+                v-for="(item, index) in getIconInfo()"
+                :class="$vuetify.breakpoint.mdAndUp ? 'mr-2' : 'mt-2'"
+                :key="index"
+                :icon="item.icon"
+                :text="item.text"
+              />
+            </div>
           </div>
         </div>
       </v-col>
@@ -46,7 +53,6 @@
 
 <script>
 import IconText from 'Components/Interface/IconText';
-
 import DateHelper from 'Helpers/date';
 
 export default {
@@ -92,7 +98,7 @@ export default {
     getSalaryInfo() {
       return (
         this.$n(`${this.job.salary.min}`, 'currency', this.currencyConverter()) +
-        `/${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}`
+        ` / ${this.$t(`enums.dictionary.payCheckTimeFrame.${this.job.salary.timeFrame}`)}`
       );
     },
 
@@ -108,7 +114,6 @@ export default {
         },
       ];
     },
-
     getDaysAgo() {
       const localeFunc = (number, index) => {
         return [

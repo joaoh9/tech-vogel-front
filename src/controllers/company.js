@@ -25,19 +25,10 @@ export default class CompanyController {
     return data;
   }
 
-  async getByUserId(userId) {
-    if (userId === 'current' || !userId) {
-      userId = this.decodeUserToken().id;
-    }
-    const axios = Axios.GetInstance();
-    const { data } = await axios.get(`/v1/companies/user/${userId}`);
-
-    return data;
-  }
-
-  async getById(companyId) {
+  async getById(id) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/companies/${companyId}`);
+    const { data } = await axios.get(`/v1/companies/${id}`);
+
     return data;
   }
 

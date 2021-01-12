@@ -2,7 +2,7 @@
   <div>
     <div class="mx-12 d-flex justify-center flex-wrap">
       <div class="mt-10" v-if="finishedRequests" :key="finishedRequests">
-        <div v-for="(job, i) in jobs" :key="i" class="color-white">
+        <div v-for="(job, index) in jobs" :key="index" class="color-white">
           <JobCard :job="job" class="mb-6" />
         </div>
       </div>
@@ -56,6 +56,7 @@ export default {
   methods: {
     async getJobs() {
       const jobController = new JobController();
+
       try {
         this.jobs = await jobController.getCardJobs({ limit: 6 });
         this.finishedRequests = true;
