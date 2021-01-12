@@ -1,25 +1,42 @@
 '<template>
-  <v-card class="pa-4 px-12 bs-primary" color="bg" :min-width="getMinWidth()">
-    <v-row>
-      <v-col :cols="$vuetify.breakpoint.mdAndUp ? 9 : 12" class="d-flex justify-space-between">
-        <div>
-          <div class="d-flex flex-column" style="width: 400px">
-            <span class="overline">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</span>
-            <h5 class="mt-1">{{ job.title }}</h5>
-            <div class="d-flex justify-space-between mt-4">
-              <IconText
-                v-for="(item, i) in getIconInfo()"
-                :key="i"
-                :icon="item.icon"
-                :text="item.text"
-                style="margin: 0 !important;"
-              />
-            </div>
+  <v-card
+    class="bs-primary pa-4 px-6 px-md-12"
+    color="bg"
+    :min-width="getMinWidth()"
+    @click="!$vuetify.breakpoint.mdAndUp && goToJobDetails()"
+  >
+    <v-row align="center" justify="center">
+      <v-col :cols="$vuetify.breakpoint.mdAndUp ? '9' : '12'">
+        <div class="d-flex flex-column">
+          <div class="d-flex justify-space-between">
+            <span class="overline color-primary" style="font-size: 1.4rem">
+              {{ getSalaryInfo() }}
+            </span>
+          </div>
+          <h5 class="h5-bold">{{ job.title }}</h5>
+          <span class="mt-n1 bdy-2 color-cinza-lighten-1">
+            {{ $t('job.timePosted', { time: getDaysAgo() }) }}
+          </span>
+          <div
+            :class="
+              $vuetify.breakpoint.mdAndUp
+                ? 'd-flex justify-start ml-n2 mt-2'
+                : 'd-flex flex-column ml-n2'
+            "
+          >
+            <IconText
+              color="primary"
+              v-for="(item, i) in getIconInfo()"
+              :class="$vuetify.breakpoint.mdAndUp ? 'mr-2' : 'mt-2'"
+              :key="i"
+              :icon="item.icon"
+              :text="item.text"
+            />
           </div>
         </div>
       </v-col>
       <v-col :cols="$vuetify.breakpoint.mdAndUp ? 3 : 0" v-if="$vuetify.breakpoint.mdAndUp">
-        <v-btn @click="goToJobDetails" color="primary" elevation="0" class="button-text">
+        <v-btn large @click="goToJobDetails" color="primary" elevation="0" class="button-text">
           {{ $t('common.viewDetails') }}
         </v-btn>
       </v-col>
