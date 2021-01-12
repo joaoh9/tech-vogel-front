@@ -41,10 +41,11 @@ export default class CompanyController {
     return data;
   }
 
-  async update(companyId, updates) {
+  async update(updates) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.put(`/v1/companies/${companyId}`, updates);
+    const { data } = await axios.put('/v1/companies/me', updates);
+
     return data;
   }
 

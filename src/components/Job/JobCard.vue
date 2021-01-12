@@ -1,7 +1,7 @@
 '<template>
-  <div>
-    <v-card class="pa-4 px-12 bs-primary" color="bg" :min-width="getMinWidth()">
-      <div class="d-flex justify-space-between">
+  <v-card class="pa-4 px-12 bs-primary" color="bg" :min-width="getMinWidth()">
+    <v-row>
+      <v-col :cols="$vuetify.breakpoint.mdAndUp ? 9 : 12" class="d-flex justify-space-between">
         <div>
           <div class="d-flex flex-column" style="width: 400px">
             <span class="overline">{{ $t('job.timePosted', { time: getDaysAgo() }) }}</span>
@@ -17,12 +17,14 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-center align-center">
-          <g-btn type="primary" :label="$t('common.viewDetails')" @click="goToJobDetails" />
-        </div>
-      </div>
-    </v-card>
-  </div>
+      </v-col>
+      <v-col :cols="$vuetify.breakpoint.mdAndUp ? 3 : 0" v-if="$vuetify.breakpoint.mdAndUp">
+        <v-btn @click="goToJobDetails" color="primary" elevation="0" class="button-text">
+          {{ $t('common.viewDetails') }}
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-card>
 </template>
 
 <script>
@@ -36,6 +38,11 @@ export default {
     job: {
       type: Object,
     },
+    minWidth: Number,
+    applyButton: {
+      type: Boolean,
+      default: true,
+    },
   },
   components: {
     IconText,
@@ -43,10 +50,19 @@ export default {
   methods: {
     goToJobDetails() {
       this.$router.push({
-        path: `/jobs/${this.job.companyId}/${this.job.id}`,
+        name: 'Job Description',
+        params: {
+          companyId: this.job.companyId,
+          jobId: this.job.id,
+          applyButton: this.applyButton,
+        },
       });
     },
     getMinWidth() {
+      if (this.minWidth) {
+        return this.minWidth;
+      }
+
       if (this.$vuetify.breakpoint.mdAndUp) {
         return 770;
       }

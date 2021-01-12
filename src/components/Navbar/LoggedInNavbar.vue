@@ -95,7 +95,7 @@ export default {
       });
     },
     getDashboardRoute() {
-      return this.isCompany ? '/company/dashboard' : '/dashboard';
+      return this.isCompany ? '/company/dashboard' : '/user/dashboard';
     },
     getMenuList() {
       return [
