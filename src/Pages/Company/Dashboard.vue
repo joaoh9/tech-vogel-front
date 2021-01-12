@@ -11,12 +11,14 @@
         :label="$t('common.postAJob')"
         :icon="'mdi-plus-circle-outline'"
       />
+
       <g-btn
         class="mt-4"
-        type="disabled"
-        color="secondary"
+        type="outlined"
+        color="primary"
         block
         xl
+        to="/settings"
         :label="$t('user.dashboard.manageAccount')"
       />
     </v-col>
@@ -28,7 +30,7 @@
           :key="loaded.company"
           :jobsPosted="jobsPosted"
         />
-        <v-skeleton-loader v-if="loadingJobs" v-bind="attrs" type="article, actions" />
+        <v-skeleton-loader v-if="loadingJobs" type="article, actions" />
         <div v-else v-for="(job, i) in jobs" :key="i">
           <JobManagerCard :job="job" :company="company" />
         </div>

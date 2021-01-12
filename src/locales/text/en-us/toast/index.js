@@ -30,6 +30,7 @@ export default {
       fillOut: 'Please fill out fields correctly',
       userNotFound: 'User not found',
       incorrectInternalKey: 'Incorrect code',
+      update: 'An error occurred when updating data',
     },
     success: {
       jobApplied: 'Successfully applied for job',
@@ -42,6 +43,7 @@ export default {
       closeTab: 'You can close this tab and retry your request on the other page',
       emailConfirmation: 'Email confirmed successfully!',
       passwordResetEmailSent: 'Passoword reset email sent!',
+      updatedData: 'Data updated successfully!',
     },
     info: {
       USER_NOT_CONFIRMED: 'User not confirmed yet!',

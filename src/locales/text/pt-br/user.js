@@ -221,8 +221,6 @@ export default {
       subtitle: 'Gerenciar plano e pagamento.',
       buttons: [
         { text: 'Perfil', icon: 'far fa-user' },
-        { text: 'Senha', icon: 'fas fa-lock' },
-        { text: 'Pagamento', icon: 'far fa-credit-card' },
       ],
     },
     onboarding: {

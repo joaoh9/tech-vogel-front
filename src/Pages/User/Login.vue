@@ -138,7 +138,7 @@ export default {
         userController.saveUserToken(userInfo.token);
         this.$emit('login');
 
-        return this.goToCompanyDashboard();
+        return this.goToSidePick();
       } catch (e) {
         if (e.response.status === 422) {
           const validEmail = await userController.emailExists(this.user.email);
