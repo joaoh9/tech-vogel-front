@@ -68,17 +68,17 @@
           </div>
         </v-card>
       </div>
-      <div class="">
+      <div class="d-flex align-center flex-column">
         <ForDevs />
       </div>
-      <div class="d-flex align-center flex-column flex-wrap">
+      <div class="d-flex align-center flex-column">
         <Pricing />
       </div>
       <div
         class="mx-sm-n16"
         style="background: linear-gradient(231.9deg, #264981 0%, #29245D 71.67%); margin-top: -268px"
       >
-        <div class="d-flex align-center flex-column flex-wrap" style="padding-top: 268px">
+        <div class="d-flex align-center flex-column" style="padding-top: 268px">
           <h2 class="h2-bold text-center color-light mx-2 mx-sm-16">
             {{ $t('common.areYouLookingForAJob') }}
           </h2>

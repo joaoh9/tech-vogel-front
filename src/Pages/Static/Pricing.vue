@@ -13,9 +13,8 @@
         :texts="$t('howItWorks.pricing')"
         :label="$t('home.postForFree')"
         :to="'/signup'"
-        :margin="'mt-12'"
         priceTitle
-        class="my-3 mx-0 mx-md-2"
+        :class="$vuetify.breakpoint.xsOnly ? 'mb-8' : 'ma-4'"
       />
       <PlanCard
         :width="!$vuetify.breakpoint.smAndUp ? '300' : '350'"
@@ -25,9 +24,8 @@
         :texts="$t('devs.pricing')"
         :label="$t('home.startApplying')"
         :to="'/jobs'"
-        :margin="'mt-5'"
         devTitle
-        class="my-3 mx-0 mx-md-2"
+        :class="$vuetify.breakpoint.xsOnly ? 'mb-8' : 'ma-4'"
       />
     </div>
   </div>
