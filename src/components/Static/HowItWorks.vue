@@ -16,7 +16,7 @@
         </div>
       </v-col>
       <v-col cols="0" md="1" />
-      <v-col cols="12" md="6" :class="$vuetify.breakpoint.smAndUp && 'mt-0'">
+      <v-col cols="12" md="6" :class="!$vuetify.breakpoint.smAndUp && 'mt-n10'">
         <NumberedSteps :steps="getSteps()" titleColor="secondary" textColor="dark" />
       </v-col>
     </v-row>
