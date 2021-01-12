@@ -15,7 +15,7 @@
           </v-avatar>
           <div class="d-flex flex-column ml-8">
             <div class="d-flex justify-space-between">
-              <span class="color-cinza-lighten-2" style="font-weight: bold">
+              <span class="color-primary" style="font-weight: bold">
                 {{ getSalaryInfo() }}
               </span>
             </div>
@@ -31,7 +31,7 @@
               "
             >
               <IconText
-                color="primary"
+                color="secondary"
                 v-for="(item, index) in getIconInfo()"
                 :class="$vuetify.breakpoint.mdAndUp ? 'mr-2' : 'mt-2'"
                 :key="index"
