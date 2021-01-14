@@ -43,7 +43,7 @@
         </div>
       </v-col>
       <v-col :cols="$vuetify.breakpoint.mdAndUp ? 3 : 0" v-if="$vuetify.breakpoint.mdAndUp">
-        <v-btn @click="goToJobDetails" color="primary" elevation="0" class="button-text">
+        <v-btn large @click="goToJobDetails" color="primary" elevation="0" class="button-text">
           {{ $t('common.viewDetails') }}
         </v-btn>
       </v-col>

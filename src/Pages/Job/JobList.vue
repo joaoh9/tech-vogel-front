@@ -25,7 +25,7 @@
           :length="3"
         />
       </v-col>
-      <v-col cols="0" md="0" />
+      <v-col cols="0" md="2" />
     </v-row>
   </div>
 </template>

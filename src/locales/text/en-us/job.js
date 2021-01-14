@@ -28,7 +28,7 @@ export default {
       aboutTheRole: {
         title: 'About the role',
         title2: 'Describe the role',
-        description:
+        placeholder:
           'Let potential applicants know what this job position entails. This information will be visible to everyone on Tech Vogel.',
       },
       languages: {

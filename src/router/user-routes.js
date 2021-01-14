@@ -8,6 +8,7 @@ import UserLogin from 'Pages/User/Login';
 import UserProfile from 'Pages/User/Profile';
 import UserSignup from 'Pages/User/Signup';
 import Onboarding from 'Pages/User/Onboarding';
+import ManageAccount from 'Components/User/Settings/Overview'
 import PasswordReset from 'Pages/User/PasswordReset';
 import GetAccessCode from 'Pages/User/GetAccessCode';
 import NewResume from 'Pages/Resume/New';
@@ -65,7 +66,7 @@ const routes = [
     name: 'Side Pick',
     component: SidePick,
     props: true,
-    beforeEnter: auth.sidePick,
+    // beforeEnter: auth.sidePick,
   },
   {
     path: '/user/dashboard',
@@ -78,6 +79,11 @@ const routes = [
     name: 'User Applications',
     component: UserApplications,
     // TODO: beforeEnter
+  },
+  {
+    path: '/settings',
+    name: 'User Settings',
+    component: ManageAccount,
   },
   {
     path: '/resume/new',

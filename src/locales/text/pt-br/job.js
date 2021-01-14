@@ -29,8 +29,8 @@ export default {
       aboutTheRole: {
         title: 'Sobre a posição',
         title2: 'Sobre a vaga',
-        description:
-          'Descreva de um modo cativante qual será o papel do Dev e fale mais sobre o projeto para que o candidato realmente entenda se ele será o fit ideal para a vaga ou não.',
+        placeholder:
+          'O que nós buscamos Procuramos por um desenvolvedor(a) Front-End Jr. que seja apaixonado(a) por Javascript, tecnologia móveis e, claro,tenha vontade de fazer parte de algo grandioso.\n\nSuas responsabilidades:\n- Programar em Javascript utilizando boas práticas de desenvolvimento.\n- Aprimoramento de usabilidade e performance das interfaces de nossos produtos.',
       },
       languages: {
         title: 'Idiomas',

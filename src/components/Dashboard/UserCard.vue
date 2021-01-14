@@ -1,9 +1,14 @@
 <template>
-  <v-card class="bs-primary" color="bg" :loading="loading" @click="$emit('click')">
+  <v-card
+    class="bs-primary"
+    color="bg"
+    :loading="loading"
+    @click="getSide() && $router.push({ name: 'User Settings' })"
+  >
     <div v-if="user" class="d-flex justify-space-between py-2 mx-12">
       <h5 class="text-center">{{ $t('common.hi') + name }}</h5>
       <div class="d-flex my-4">
-        <v-avatar color="grey" size="40">
+        <v-avatar color="cinza-lighten-3" size="40">
           <v-img v-if="picture" :src="picture" />
         </v-avatar>
       </div>
@@ -12,6 +17,8 @@
 </template>
 
 <script>
+import UserController from 'Controllers/user';
+
 export default {
   name: 'UserCard',
   props: {
@@ -36,6 +43,12 @@ export default {
       } else {
         this.name = names[0] + ' ' + names[names.length - 1];
       }
+    },
+    getSide() {
+      const userController = new UserController();
+      const { side } = userController.decodeUserToken();
+
+      return side >= 20;
     },
   },
 };

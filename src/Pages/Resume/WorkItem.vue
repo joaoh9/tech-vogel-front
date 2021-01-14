@@ -29,7 +29,7 @@
         />
       </v-col>
       <v-col cols="12" md="3">
-        <form-input :title="$t('common.to')" />
+        <form-input :title="$t('common.until')" />
         <v-text-field
           v-model="job.endDate"
           @input="checkYearRules(job.endDate, 'end-date')"
