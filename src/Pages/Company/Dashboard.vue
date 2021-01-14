@@ -11,7 +11,6 @@
         :label="$t('common.postAJob')"
         :icon="'mdi-plus-circle-outline'"
       />
-
       <g-btn
         class="mt-4"
         type="outlined"
@@ -20,6 +19,15 @@
         xl
         to="/settings"
         :label="$t('user.dashboard.manageAccount')"
+      />
+      <PlanCard
+        :border="'border-color: #1a193c !important'"
+        :title="$t('company.planCard.forCompanies')"
+        :texts="$t('howItWorks.pricing')"
+        :label="$t('company.dashboard.buyReport')"
+        @click="goToPagarme()"
+        priceTitle
+        class="mt-4"
       />
     </v-col>
     <v-col cols="8">
@@ -40,6 +48,7 @@
 </template>
 
 <script>
+import PlanCard from 'Components/Dashboard/PlanCard';
 import JobManagerCard from 'Components/Dashboard/JobManagerCard';
 import UserCard from 'Components/Dashboard/UserCard';
 import CompanyCard from 'Components/Dashboard/CompanyCard';
@@ -47,6 +56,8 @@ import CompanyCard from 'Components/Dashboard/CompanyCard';
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
+
+import config from '@config'
 
 export default {
   name: 'CompanyDashboard',
@@ -60,6 +71,7 @@ export default {
     CompanyCard,
     UserCard,
     JobManagerCard,
+    PlanCard,
   },
   data() {
     return {
@@ -122,6 +134,12 @@ export default {
         cols: 12,
         condition: true,
       };
+    },
+    goToPagarme() {
+      window.open(
+        config.paymentLink,
+        '_blank',
+      );
     },
   },
   watch: {

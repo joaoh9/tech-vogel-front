@@ -19,6 +19,8 @@ const config = {
   maxFileSize: 12 * MB,
   storageExpiry: (window.serverConfig && window.serverConfig.storageExpiry) || 4 * 60 * 60 * 1000,
   imageFileFormats: window.serverConfig && window.serverConfig.imageFileFormats,
+  paymentLink: window.serverConfig && window.serverConfig.pagarme.paymentLink,
 };
+console.log('🚀 ~ file: config.js ~ line 24 ~ config', config)
 
 module.exports = config;
