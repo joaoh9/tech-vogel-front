@@ -37,13 +37,13 @@
                 languages: (job && job.skills.languages) || null,
               }"
               v-on:skills="r => (job_.skills = r)"
-              from='job'
+              from="job"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
             <Benefits
-              :job="{ benefits: (job && job.benefits) || '', salary: (job && job.salary) || null }"
-              v-on:benefits="r => (job_.benefits = r)"
+              :job="{ perks: (job && job.perks) || '', salary: (job && job.salary) || null }"
+              v-on:perks="r => (job_.perks = r)"
               v-on:salary-currency="r => (job_.salary.currency = r)"
               v-on:salary-time-frame="r => (job_.salary.timeFrame = r)"
               v-on:salary-min="r => (job_.salary.min = r)"
@@ -125,7 +125,7 @@ export default {
           softSkills: [],
           languages: [],
         },
-        benefits: '',
+        perks: '',
         salary: {
           currency: 'USD',
           timeFrame: 'MONTHS',
@@ -199,8 +199,8 @@ export default {
           document.documentElement.scrollTop = 0;
           for (const skill of Object.keys(this.job_.skills)) {
             const skillValidated = this.validateSkills(skill);
-            if (skillValidated !== true) {
-              return this.$toast.warning(skillValidated);
+            if (!skillValidated) {
+              return;
             }
           }
           this.currentStep++;
@@ -223,17 +223,22 @@ export default {
     validateSkills(skill) {
       let validated = true;
       if (this.job_.skills[skill].length < config.skills[skill].min) {
-        this.$t('job.selectAtLeast', {
-          min: config.skills[skill].min,
-          skillName: this.$t(`enums.skills.${skill}`),
-        });
+        this.$toast.warning(
+          this.$t('job.selectAtLeast', {
+            min: config.skills[skill].min,
+            skillName: this.$t(`enums.skills.${skill}`),
+          }),
+        );
+
         validated = false;
       }
       if (this.job_.skills[skill].length > config.skills[skill].max) {
-        this.$t('job.selectMaximum', {
-          max: config.skills[skill].max,
-          skillName: this.$t(`enums.skills.${skill}`),
-        });
+        this.$toast.warning(
+          this.$t('job.selectMaximum', {
+            max: config.skills[skill].max,
+            skillName: this.$t(`enums.skills.${skill}`),
+          }),
+        );
         validated = false;
       }
       return validated;

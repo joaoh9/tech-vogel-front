@@ -55,7 +55,7 @@ export default {
       },
       softSkills: {
         title: 'Soft Skills',
-        inputHint: 'Selecione no máximo 10 soft skills desejáveis.',
+        inputHint: 'Selecione no máximo {max} soft skills desejáveis.',
       },
       language: {
         title: 'Idioma',

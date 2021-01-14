@@ -54,7 +54,7 @@ export default {
       },
       softSkills: {
         title: 'Soft Skills',
-        inputHint: 'Type the skill you wish to include above and select from the list.',
+        inputHint: 'Select {max} skills maximum.',
       },
       language: {
         title: 'Language',
