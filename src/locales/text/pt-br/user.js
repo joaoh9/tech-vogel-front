@@ -41,6 +41,7 @@ export default {
         registerManually: {
           title: 'Cadastrar currículo',
         },
+        goToDashboard: 'Preencher depois, ir para Dashboard',
       },
       preferences: {
         title: 'Selecione suas preferências',

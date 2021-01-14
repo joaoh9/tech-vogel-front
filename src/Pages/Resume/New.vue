@@ -17,6 +17,7 @@
                   dataUpdated = !dataUpdated;
                 }
               "
+              v-on:go-to-dashboard="goToDashboard()"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
@@ -62,7 +63,6 @@
               @click="currentStep === 0 ? $router.push({ name: 'Side Pick' }) : currentStep--"
             />
             <g-btn
-              v-if="currentStep > 0"
               :label="currentStep === 5 ? $t('common.finish') : $t('common.next')"
               type="primary"
               @click="checkInputsAndFollowUp()"
@@ -168,6 +168,12 @@ export default {
       const resumeController = new ResumeController();
 
       switch (this.currentStep) {
+        case 0:
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0;
+
+          this.currentStep++;
+          break;
         case 1:
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
@@ -264,6 +270,11 @@ export default {
           this.$t('resume.register.tabs')[this.currentStep]['identifier']
         }.description`,
       );
+    },
+    goToDashboard() {
+      this.$router.push({
+        name: 'User Dashboard',
+      });
     },
   },
 };

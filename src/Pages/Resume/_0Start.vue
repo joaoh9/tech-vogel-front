@@ -8,6 +8,14 @@
         @click="$emit('manual-register', 'manual-register')"
         :label="$t('resume.register.start.registerManually.title')"
       />
+      <g-btn
+        class="mt-4"
+        type="outlined"
+        color="primary"
+        :minwidth="300"
+        @click="$emit('go-to-dashboard')"
+        :label="$t('resume.register.start.goToDashboard')"
+      />
       <overline class="mt-10" color="primary">{{ $t('common.comingSoon') }}</overline>
       <sub-2 color="primary">{{ $t('common.integration') }}</sub-2>
     </div>

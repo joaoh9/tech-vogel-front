@@ -17,6 +17,7 @@ export default {
     logout: 'Sair',
     from: 'De',
     to: 'Para',
+    close: 'Fechar',
     until: 'Até',
     free: 'Grátis',
     ourPricing: 'Planos',

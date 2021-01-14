@@ -5,68 +5,88 @@
       :key="i"
       :icon="item.icon"
       :text="item.text"
+      color="secondary-lighten-1"
       class="mb-2 ml-n3"
     />
     <v-row justify="center" class="mt-6">
-      <g-btn
-        v-if="applyButton"
-        :type="getApplicationButtonType()"
-        @click="applyForJob()"
-        :label="$t('job.details.apply')"
-      />
-      <!--
       <v-dialog v-model="apply">
         <template v-slot:activator="{ on, attrs }">
+          <g-btn
+            v-on="on"
+            v-bind="attrs"
+            v-if="applyButton"
+            :type="getApplicationButtonType()"
+            @click="
+              apply = true;
+              showConfirmationDialog1 = true;
+            "
+            :label="$t('job.details.apply')"
+          />
         </template>
-        <DefaultDialog
-          v-if="showConfirmationDialog1"
-          :title="$t('Job.apply.title')"
-          :subtitle="$t('Job.apply.subtitle')"
-          :btnType="$t('Job.apply.btnType')"
-          :btnText="$t('Job.apply.btnText')"
-          @close="showConfirmationDialog1 = false"
-          @confirm="
-            showConfirmationDialog1 = false;
-            showConfirmationDialog2 = true;
-            applyForJob();
-          "
-        />
-        <DefaultDialog
-          :img="applicationConfirmedImg"
-          :title="$t('Job.applicationConfirmed.title')"
-          :subtitle="$t('Job.applicationConfirmed.subtitle')"
-          :btnType="$t('Job.applicationConfirmed.btnType')"
-          :btnText="$t('Job.applicationConfirmed.btnText')"
-          v-if="showConfirmationDialog2"
-          @confirm="
-            showConfirmationDialog1 = false;
-            showConfirmationDialog2 = false;
-            apply = true;
-          "
-          @close="
-            showConfirmationDialog2 = false;
-            apply = false;
-          "
-        />
+        <div>
+          <DefaultDialog
+            v-if="showConfirmationDialog1"
+            :key="showConfirmationDialog1"
+            :title="$t('job.apply.title')"
+            :subtitle="$t('job.apply.subtitle')"
+            :btnType="$t('job.apply.btnType')"
+            :btnText="$t('job.apply.btnText')"
+            :secBtnText="$t('common.close')"
+            @close="
+              showConfirmationDialog1 = false;
+              apply = false;
+            "
+            v-on:primary-button-click="
+              showConfirmationDialog1 = false;
+              showConfirmationDialog2 = true;
+              applyForJob();
+            "
+            v-on:secondary-button-click="
+              showConfirmationDialog1 = false;
+              apply = false;
+            "
+          />
+          <DefaultDialog
+            :title="$t('job.applicationConfirmed.title')"
+            :subtitle="$t('job.applicationConfirmed.subtitle', { companyName: company.name })"
+            :btnType="$t('job.applicationConfirmed.btnType')"
+            :btnText="$t('job.applicationConfirmed.btnText')"
+            :secBtnText="$t('common.close')"
+            v-if="showConfirmationDialog2"
+            @close="
+              showConfirmationDialog2 = false;
+              apply = false;
+            "
+            v-on:primary-button-click="
+              showConfirmationDialog1 = false;
+              showConfirmationDialog2 = false;
+              apply = true;
+            "
+            v-on:secondary-button-click="
+              showConfirmationDialog2 = false;
+              apply = false;
+            "
+          />
+        </div>
       </v-dialog>
-        -->
     </v-row>
     <v-divider :class="applyButton ? 'mt-4' : 'mt-0'" />
-    <div class="d-flex align-center flex-column mt-4">
-      <h6 class="text-capitalize">{{ company.name }}</h6>
+    <div class="d-flex align-center flex-column mt-2">
       <bdy-2>
         {{ $t('job.details.managedBy', { user: company.representative }) }}
       </bdy-2>
+      <h6 class="text-capitalize">{{ company.name }}</h6>
     </div>
-    <div class="d-flex align-center flex-column mt-4">
+    <v-divider />
+    <div class="d-flex align-center flex-column mt-1">
       <h6>{{ $t('job.details.aboutTheCompany') }}</h6>
-      <sub-1 style="display: block" v-html="company.description"></sub-1>
+      <sub-1 class="text-justify" style="display: block" v-html="company.description"></sub-1>
     </div>
   </v-card>
 </template>
 
 <script>
-// import DefaultDialog from 'Components/Dialogs/Default';
+import DefaultDialog from 'Components/Dialogs/Default';
 import IconText from 'Components/Interface/IconText';
 
 import JobController from 'Controllers/job';
@@ -85,7 +105,7 @@ export default {
   },
   components: {
     IconText,
-    // DefaultDialog,
+    DefaultDialog,
   },
   mounted() {
     this.jobId = this.$route.params.jobId;
@@ -116,7 +136,7 @@ export default {
           text: this.$t(`enums.dictionary.contractType.${this.job.contractType}`),
         },
         {
-          icon: 'fa fa-money-bill-wave',
+          icon: 'fa fa-money-bill',
           text:
             new Intl.NumberFormat(this.$i18n.locale, {
               style: 'currency',
@@ -167,4 +187,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.v-dialog {
+  box-shadow: none;
+}
+</style>

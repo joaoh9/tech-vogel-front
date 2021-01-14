@@ -78,9 +78,6 @@ function userDashboard(to, from, next) {
 
   switch (userInfo.side) {
     case 10:
-      return next({
-        name: 'Resume Form',
-      });
     case 11:
       return next();
     case 20:
@@ -170,7 +167,7 @@ function loggedIn(to, from, next) {
     return next();
   }
 
-  return next({ name: 'Home' })
+  return next({ name: 'Home' });
 }
 
 function unlogged(to, from, next) {

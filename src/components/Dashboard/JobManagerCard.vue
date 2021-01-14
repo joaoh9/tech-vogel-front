@@ -6,7 +6,14 @@
           <span class="overline">{{ $t('job.posted') }} {{ getDaysAgo() }}</span>
           <h5 class="h5-bold">{{ job.title }}</h5>
           <div>
-            <g-btn class="mt-2" type="outlined" dense color="primary" :label="$t('job.seeReport')" @click="goToReport" />
+            <g-btn
+              class="mt-2"
+              type="outlined"
+              dense
+              color="primary"
+              :label="$t('job.seeReport')"
+              @click="goToReport"
+            />
           </div>
         </div>
       </v-col>

@@ -39,10 +39,10 @@
           </div>
           <h4 class="h4-bold-alternative">Job Description</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.description"></div>
-          <h4 class="h4-bold-alternative mt-4">Perks & benefits</h4>
+          <h4 v-if="job.perks" class="h4-bold-alternative mt-4">Perks & benefits</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.perks"></div>
         </v-col>
-        <v-col cols="12" lg="4" xl="3" class="mt-6">
+        <v-col cols="12" lg="4" xl="3">
           <JobApplicationCard
             :applyButton="applyButton"
             :editMode="editMode"

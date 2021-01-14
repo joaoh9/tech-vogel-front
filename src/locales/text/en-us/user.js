@@ -41,6 +41,7 @@ export default {
         registerManually: {
           title: 'Register CV Manually',
         },
+        goToDashboard: 'Skip and go to Dashboard',
       },
       preferences: {
         title: 'Select your preferences',

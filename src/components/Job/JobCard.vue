@@ -10,7 +10,7 @@
                   'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fkhppu.com%2Fassets%2Fdefault_user_company_logo-3058b28cca9e293f85b78add4842bc64.png&f=1&nofb=1'
               "
               alt="Company logo"
-            ></v-img>
+            />
           </v-avatar>
           <div class="d-flex flex-column ml-8">
             <div class="d-flex justify-space-between">
@@ -18,8 +18,8 @@
                 {{ getSalaryInfo() }}
               </span>
             </div>
-            <h5 class="h5-bold">{{ job.title }}</h5>
-            <span class="mt-n1 bdy-2 color-cinza-lighten-1">
+            <h5 class="h5-bold color-secondary text-start">{{ job.title }}</h5>
+            <span class="mt-1 bdy-2 color-cinza-lighten-1">
               {{ $t('job.timePosted', { time: getDaysAgo() }) }}
             </span>
             <div
@@ -30,7 +30,7 @@
               "
             >
               <IconText
-                color="secondary"
+                color="secondary-lighten-1"
                 v-for="(item, index) in getIconInfo()"
                 :class="$vuetify.breakpoint.mdAndUp ? 'mr-2' : 'mt-2'"
                 :key="index"

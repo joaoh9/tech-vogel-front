@@ -1,6 +1,6 @@
 <template>
-  <v-container class="d-flex justify-center">
-    <v-card width="700" max-height="700" class="d-flex flex-column pa-6">
+  <div class="d-flex justify-center container">
+    <v-card width="700" max-height="700" class="d-flex flex-column pa-6" elevation="0">
       <v-btn class="align-self-end" color="primary" text large @click="$emit('close')">
         X
       </v-btn>
@@ -15,20 +15,19 @@
           v-if="btnType"
           :type="btnType"
           :label="btnText"
-          to="/resume/new"
+          @click="$emit('primary-button-click')"
           class="btn-primary"
-          @click="$emit('confirm')"
         />
         <g-btn
           v-if="secBtnType"
           :type="secBtnType"
           :label="secBtnText"
-          to="/user/dashboard"
+          @click="$emit('secondary-button-click')"
           class="mt-4 mb-8 btn-primary"
         />
       </div>
     </v-card>
-  </v-container>
+  </div>
 </template>
 
 <script>

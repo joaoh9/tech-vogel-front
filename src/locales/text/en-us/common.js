@@ -17,6 +17,7 @@ export default {
     logout: 'Logout',
     from: 'From',
     to: 'To',
+    close: 'Close',
     until: 'Until',
     free: 'free',
     ourPricing: 'Our pricing',

@@ -2,7 +2,7 @@
   <g-bootstrap>
     <template template v-slot:first-col>
       <g-btn
-        @click="$router.back()"
+        @click="$router.go(-1)"
         class="mt-4 d-flex justify-start"
         type="primary"
         block
@@ -36,7 +36,7 @@
           :userInfo="user"
           :resumeInfo="reports[index]"
           :key="index"
-s        />
+        />
       </div>
     </template>
   </g-bootstrap>

@@ -220,19 +220,22 @@ export default {
     },
 
     validateSkills(skill) {
+      let validated = true;
       if (this.job_.skills[skill].length < config.skills[skill].min) {
         this.$t('job.selectAtLeast', {
           min: config.skills[skill].min,
           skillName: this.$t(`enums.skills.${skill}`),
         });
+        validated = false;
       }
       if (this.job_.skills[skill].length > config.skills[skill].max) {
         this.$t('job.selectMaximum', {
           max: config.skills[skill].max,
           skillName: this.$t(`enums.skills.${skill}`),
         });
+        validated = false;
       }
-      return true;
+      return validated;
     },
   },
 };
