@@ -1,4 +1,4 @@
-'<template>
+<template>
   <v-card class="border-primary bs-primary pa-4 px-12 mt-6" color="bg">
     <v-row>
       <v-col cols="8">
@@ -44,10 +44,6 @@ import config from '@config';
 
 export default {
   name: 'JobManagerCard',
-  mounted() {
-    console.log(this.company);
-    console.log(this.job);
-  },
   props: {
     job: {
       type: Object,
