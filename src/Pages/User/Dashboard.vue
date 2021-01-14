@@ -30,7 +30,7 @@
     </v-col>
     <v-col cols="8">
       <div class="d-flex align-center flex-column">
-        <h4 class="h4-bold text-center">{{ $t('user.applications.title') }}</h4>
+        <h4 class="h4-bold text-center mb-3">{{ $t('user.applications.title') }}</h4>
         <NoJobsApplied v-if="!appliedJobs.length && loaded.jobs" />
         <div v-for="(job, i) in appliedJobs" :key="i">
           <JobCard

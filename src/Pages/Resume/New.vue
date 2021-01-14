@@ -48,7 +48,7 @@
             <WorkExperience v-on:update-item="e => (resume.workHistory = e)" />
           </div>
           <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
-            <Skills form="resume" v-on:skills="e => (resume.skills = e)" />
+            <Skills from="resume" v-on:skills="e => (resume.skills = e)" />
           </div>
           <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
             <Education v-on:update-item="e => (resume.education = e)" />

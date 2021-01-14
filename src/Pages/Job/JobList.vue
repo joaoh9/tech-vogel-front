@@ -62,11 +62,9 @@ export default {
     async getJobs() {
       const jobController = new JobController();
       this.loadingJobs = true;
-      console.log('🚀 ~ file: JobList.vue ~ line 57 ~ getJobs ~ loadingJobs');
 
       try {
         this.jobs = await jobController.getCardJobs();
-        console.log('🚀 ~ file: JobList.vue ~ line 57 ~ getJobs ~ loadingJob2');
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobList'));
       } finally {

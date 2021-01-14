@@ -95,7 +95,6 @@ export default {
       return moment(date).format(format || 'll');
     },
     copyToClipboard(text) {
-      console.log(text);
       const dummy = document.createElement('input');
       document.body.appendChild(dummy);
       dummy.value = text;

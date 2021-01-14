@@ -103,7 +103,7 @@ export default {
     SkillExperienceLevel,
   },
   props: {
-    form: {
+    from: {
       type: String,
       default: 'job',
     },

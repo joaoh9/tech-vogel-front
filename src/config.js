@@ -20,6 +20,5 @@ const config = {
   storageExpiry: (window.serverConfig && window.serverConfig.storageExpiry) || 4 * 60 * 60 * 1000,
   imageFileFormats: window.serverConfig && window.serverConfig.imageFileFormats,
 };
-console.log('🚀 ~ file: config.js ~ line 25 ~ config', config);
 
 module.exports = config;

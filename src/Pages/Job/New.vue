@@ -37,6 +37,7 @@
                 languages: (job && job.skills.languages) || null,
               }"
               v-on:skills="r => (job_.skills = r)"
+              from='job'
             />
           </div>
           <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">

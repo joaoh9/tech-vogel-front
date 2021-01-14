@@ -84,14 +84,14 @@ export default {
   data() {
     return {
       company: {
-        logo: null,
+        logo: {},
         name: '',
         description: '',
         links: {
           website: '',
-          linkedin: this.$t('common.links.linkedin.placeholder'),
-          instagram: this.$t('common.links.instagram.placeholder'),
-          twitter: this.$t('common.links.twitter.placeholder'),
+          linkedin: '',
+          instagram: '',
+          twitter: '',
         },
       },
       rules: {
@@ -106,7 +106,13 @@ export default {
 
       try {
         const data = await companyController.getByCurrentUser();
-        this.company = data;
+        this.company.logo = data.logo || {};
+        this.company.name = data.name || '';
+        this.company.description = data.description || '';
+        this.company.links.website = data.links.website || '';
+        this.company.links.linkedin = data.links.linkedin || '';
+        this.company.links.instagram = data.links.instagram || '';
+        this.company.links.twitter = data.links.twitter || '';
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveCompany'));
       }
