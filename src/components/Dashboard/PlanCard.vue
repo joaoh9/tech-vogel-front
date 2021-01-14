@@ -66,8 +66,22 @@
             style="height: 56px; width: 270px;"
             color="primary"
             class="font-weight-bold"
-            :to="to">
-          {{ label }}
+            :to="to"
+            v-if="to"
+          >
+            {{ label }}
+          </v-btn>
+          <v-btn
+            absolute
+            bottom="0"
+            elevation="0"
+            style="height: 56px; width: 270px;"
+            color="primary"
+            class="font-weight-bold"
+            @click="$emit('click')"
+            v-else
+          >
+            {{ label }}
           </v-btn>
         </div>
       </div>

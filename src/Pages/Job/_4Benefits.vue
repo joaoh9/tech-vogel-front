@@ -50,8 +50,8 @@
       class="mb-6"
       :placeholder="$t('job.new.perks.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
-      v-model="benefits"
-      :rules="rules.max(20000, benefits)"
+      v-model="perks"
+      :rules="rules.max(20000, perks)"
     />
   </div>
 </template>
@@ -84,7 +84,7 @@ export default {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-    this.benefits = this.job.benefits;
+    this.perks = this.job.perks;
     if (this.job.salary) {
       this.salary = this.job.salary;
       this.salary.min = this.job.salary.min;
@@ -94,7 +94,7 @@ export default {
   },
   data() {
     return {
-      benefits: '',
+      perks: '',
       salary: {
         currency: 'USD',
         min: '',
@@ -127,7 +127,7 @@ export default {
       }
     },
     checkInput(emitValue, variable) {
-      variable = variable.replace(/,/g, '')
+      variable = variable.replace(/,/g, '');
       if (this.rules.isNumber(variable) === true) {
         this.$emit(emitValue, parseFloat(variable));
       }
@@ -137,8 +137,8 @@ export default {
     range() {
       this.$emit('salary-range', this.range);
     },
-    benefits() {
-      this.$emit('benefits', this.benefits);
+    perks() {
+      this.$emit('perks', this.perks);
     },
     'salary.min'() {
       if (!this.range) {
@@ -149,4 +149,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.ql-editor {
+  min-height: 300px !important;
+}
+</style>

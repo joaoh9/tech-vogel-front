@@ -38,6 +38,7 @@ export default {
         managePayment: 'Manage payment',
       },
       manageAccountInfo: 'Manage my account information',
+      buyReport: 'Buy Report',
     },
     planCard: {
       forCompanies: 'For companies',

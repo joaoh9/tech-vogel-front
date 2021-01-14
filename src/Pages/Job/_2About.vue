@@ -52,4 +52,8 @@ export default {
 h6 {
   color: black;
 }
+
+.ql-editor {
+  min-height: 300px !important;
+}
 </style>

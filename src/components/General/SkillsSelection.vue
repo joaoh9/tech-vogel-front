@@ -44,7 +44,7 @@
     <form-input
       class="mt-8"
       :title="$t('job.new.softSkills.title')"
-      :description="$t('job.new.softSkills.inputHint')"
+      :description="$t('job.new.softSkills.inputHint', { max: config.skills.softSkills.max })"
     />
     <v-autocomplete
       class="mb-8"
@@ -103,7 +103,7 @@ export default {
     SkillExperienceLevel,
   },
   props: {
-    from: {
+    form: {
       type: String,
       default: 'job',
     },
@@ -129,6 +129,7 @@ export default {
         softSkills: [],
         languages: [],
       },
+      config: config,
     };
   },
 

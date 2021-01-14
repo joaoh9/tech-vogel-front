@@ -41,6 +41,7 @@ export default {
         managePayment: 'Gerenciar pagamento',
       },
       manageAccountInfo: 'Gerenciar informações da conta',
+      buyReport: 'Comprar Relatório',
     },
     planCard: {
       forCompanies: 'Para empresas',
