@@ -6,9 +6,8 @@
           <v-avatar size="90" color="cinza-lighten-3">
             <v-img
               :src="
-                !job.companyLogo
-                  ? 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fkhppu.com%2Fassets%2Fdefault_user_company_logo-3058b28cca9e293f85b78add4842bc64.png&f=1&nofb=1'
-                  : job.companyLogo.data64
+                job.companyLogo ||
+                  'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fkhppu.com%2Fassets%2Fdefault_user_company_logo-3058b28cca9e293f85b78add4842bc64.png&f=1&nofb=1'
               "
               alt="Company logo"
             ></v-img>
