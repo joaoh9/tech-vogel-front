@@ -1,6 +1,6 @@
 <template>
   <v-card minWidth="0" class="pa-12 bs-primary" color="bg">
-    <div v-if="company" :key="loaded" class="d-flex justify-space-between">
+    <div v-if="company" :key="loaded" class="d-flex justify-space-between flex-wrap">
       <div>
         <p class="overline">{{ $t('company.dashboard.yourCompany.title') }}</p>
         <h3 class="mb-5 mt-n2 h3-bold text-capitalize">{{ company.name }}</h3>
@@ -11,6 +11,12 @@
             </h5>
             <span>
               {{ $t('company.dashboard.yourCompany.currentJobs') }}
+            </span>
+            <h5 class="align-self-center h5-bold color-primary ml-3 mr-2">
+              {{ company.wallet }}
+            </h5>
+            <span>
+              {{ $t('company.dashboard.walletBalance') }}
             </span>
           </div>
           <div class="d-flex align-center">

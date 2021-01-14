@@ -30,7 +30,7 @@ export default {
       yourCompany: {
         title: 'Sua empresa',
         currentAds: 'Vagas no momento',
-        currentJobs: 'Vagas rodando',
+        currentJobs: 'Vagas no ar',
         remainingCredits: 'Tokens disponíveis',
       },
       actions: {
@@ -42,6 +42,7 @@ export default {
       },
       manageAccountInfo: 'Gerenciar informações da conta',
       buyReport: 'Comprar Relatório',
+      walletBalance: 'Relatórios comprados',
     },
     planCard: {
       forCompanies: 'Para empresas',

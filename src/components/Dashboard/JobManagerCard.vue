@@ -40,6 +40,8 @@
 <script>
 import DateHelper from 'Helpers/date';
 
+import config from '@config';
+
 export default {
   name: 'JobManagerCard',
   mounted() {
@@ -56,16 +58,16 @@ export default {
   },
   methods: {
     editJobVerification() {
-      const createdInMs = new Date(this.job.createdAt).getTime();
-      const dayInMs = 1000 * 60 * 60 * 24;
+      const createdAt = new Date(this.job.createdAt);
+      const now = new Date();
 
-      return createdInMs < dayInMs;
+      return now - createdAt <= config.dayInMs;
     },
     accessReportVerification() {
-      const createdInMs = new Date(this.job.createdAt).getTime();
-      const dayInMs = (1000 * 60 * 60 * 24) * 15;
+      const createdAt = new Date(this.job.createdAt);
+      const now = new Date();
 
-      return createdInMs > dayInMs;
+      return now - createdAt >= config.dayInMs * 15;
     },
     goToJobDetails() {
       this.$router.push({
