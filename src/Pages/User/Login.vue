@@ -138,7 +138,7 @@ export default {
         userController.saveUserToken(userInfo.token);
         this.$emit('login');
 
-        return this.goToSidePick();
+        return this.goToCompanyDashboard();
       } catch (e) {
         if (e.response.status === 422) {
           const validEmail = await userController.emailExists(this.user.email);
@@ -167,28 +167,9 @@ export default {
         return this.$toast.error(this.$t('toast.error.loginFailed'));
       }
     },
-
-    goToSidePick() {
-      this.$router.push({
-        name: 'Side Pick',
-      });
-    },
-
     goToCompanyDashboard() {
       this.$router.push({
         name: 'Company Dashboard',
-      });
-    },
-
-    goToRegisterCompany() {
-      this.$router.push({
-        name: 'New Company',
-      });
-    },
-
-    goToUserDashboard() {
-      this.$router.push({
-        name: 'User Dashboard',
       });
     },
 
