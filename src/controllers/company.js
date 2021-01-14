@@ -32,6 +32,14 @@ export default class CompanyController {
     return data;
   }
 
+  async getDashboardInfo() {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const { data } = await axios.get('/v1/companies/me/dashboard');
+
+    return data;
+  }
+
   async update(updates) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);

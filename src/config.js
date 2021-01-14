@@ -20,6 +20,7 @@ const config = {
   storageExpiry: (window.serverConfig && window.serverConfig.storageExpiry) || 4 * 60 * 60 * 1000,
   imageFileFormats: window.serverConfig && window.serverConfig.imageFileFormats,
   paymentLink: window.serverConfig && window.serverConfig.pagarme.paymentLink,
+  dayInMs: 1000 * 60 * 60 * 24,
 };
 console.log('🚀 ~ file: config.js ~ line 24 ~ config', config)
 

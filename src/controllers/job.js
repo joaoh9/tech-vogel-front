@@ -52,6 +52,15 @@ export default class JobController {
     return data;
   }
 
+  async getCurrentCompanyJobs({ limit = 15, skip = 0 } = {}) {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const query = qs.stringify({ limit, skip }, { addQueryPrefix: true });
+    const { data } = await axios.get('/v1/jobs/company/me' + query);
+
+    return data;
+  }
+
   async getAppliedJobs(userId, { limit = 15, skip = 0 } = {}) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);

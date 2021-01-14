@@ -1,4 +1,4 @@
-'<template>
+<template>
   <v-card class="border-primary bs-primary pa-4 px-12 mt-6" color="bg">
     <v-row>
       <v-col cols="8">
@@ -7,6 +7,7 @@
           <h5 class="h5-bold">{{ job.title }}</h5>
           <div>
             <g-btn
+              v-if="accessReportVerification()"
               class="mt-2"
               type="outlined"
               dense
@@ -23,7 +24,13 @@
       <v-col cols="3">
         <div class="d-flex justify-center flex-column align-center">
           <g-btn type="text" color="primary" :label="$t('job.see')" @click="goToJobDetails" />
-          <g-btn type="text" color="primary" :label="$t('job.edit')" @click="editJob" />
+          <g-btn
+            v-if="editJobVerification()"
+            type="text"
+            color="primary"
+            :label="$t('job.edit')"
+            @click="editJob"
+          />
         </div>
       </v-col>
     </v-row>
@@ -32,6 +39,8 @@
 
 <script>
 import DateHelper from 'Helpers/date';
+
+import config from '@config';
 
 export default {
   name: 'JobManagerCard',
@@ -44,6 +53,18 @@ export default {
     },
   },
   methods: {
+    editJobVerification() {
+      const createdAt = new Date(this.job.createdAt);
+      const now = new Date();
+
+      return now - createdAt <= config.dayInMs;
+    },
+    accessReportVerification() {
+      const createdAt = new Date(this.job.createdAt);
+      const now = new Date();
+
+      return now - createdAt >= config.dayInMs * 15;
+    },
     goToJobDetails() {
       this.$router.push({
         path: `/jobs/${this.company.id}/${this.job.id}`,
