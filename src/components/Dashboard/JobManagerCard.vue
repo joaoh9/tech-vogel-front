@@ -7,6 +7,7 @@
           <h5 class="h5-bold">{{ job.title }}</h5>
           <div>
             <g-btn
+              v-if="accessReportVerification()"
               class="mt-2"
               type="outlined"
               dense
@@ -23,7 +24,13 @@
       <v-col cols="3">
         <div class="d-flex justify-center flex-column align-center">
           <g-btn type="text" color="primary" :label="$t('job.see')" @click="goToJobDetails" />
-          <g-btn type="text" color="primary" :label="$t('job.edit')" @click="editJob" />
+          <g-btn
+            v-if="editJobVerification()"
+            type="text"
+            color="primary"
+            :label="$t('job.edit')"
+            @click="editJob"
+          />
         </div>
       </v-col>
     </v-row>
@@ -35,6 +42,10 @@ import DateHelper from 'Helpers/date';
 
 export default {
   name: 'JobManagerCard',
+  mounted() {
+    console.log(this.company);
+    console.log(this.job);
+  },
   props: {
     job: {
       type: Object,
@@ -44,6 +55,18 @@ export default {
     },
   },
   methods: {
+    editJobVerification() {
+      const createdInMs = new Date(this.job.createdAt).getTime();
+      const dayInMs = 1000 * 60 * 60 * 24;
+
+      return createdInMs < dayInMs;
+    },
+    accessReportVerification() {
+      const createdInMs = new Date(this.job.createdAt).getTime();
+      const dayInMs = (1000 * 60 * 60 * 24) * 15;
+
+      return createdInMs > dayInMs;
+    },
     goToJobDetails() {
       this.$router.push({
         path: `/jobs/${this.company.id}/${this.job.id}`,
