@@ -45,7 +45,7 @@
         />
       </v-col>
       <v-col cols="6" md="3">
-        <form-input :title="$t('resume.register.education.to')" />
+        <form-input :title="$t('common.until')" />
         <v-text-field
           v-model="education.endDate"
           @input="checkYearRules(education.endDate, 'end-date')"
@@ -57,7 +57,6 @@
     </v-row>
     <form-input :title="$t('resume.register.education.about.title')" />
     <vue-editor
-      :placeholder="$t('resume.register.education.about.placeholder')"
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="education.description"
       class="mb-6"

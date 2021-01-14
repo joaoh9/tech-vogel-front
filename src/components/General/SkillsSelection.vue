@@ -3,7 +3,11 @@
     <form-input
       type="h6"
       :title="$t('job.new.techSkills.title')"
-      :description="$t('job.new.techSkills.description')"
+      :description="
+        from === 'job'
+          ? $t('job.new.techSkills.description')
+          : $t('resume.register.skills.techSkillsDescription')
+      "
       required
     />
     <v-autocomplete

@@ -17,6 +17,7 @@ export default {
     logout: 'Logout',
     from: 'From',
     to: 'To',
+    until: 'Until',
     free: 'free',
     ourPricing: 'Our pricing',
     startPostingJobsForFreeToday: 'Start posting jobs for free today!',

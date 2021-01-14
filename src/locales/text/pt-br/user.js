@@ -1,7 +1,7 @@
 export default {
   resume: {
     register: {
-      important: 'Importante colocar',
+      important: 'Importante colocar!',
       tabs: [
         {
           name: 'Início',
@@ -107,6 +107,8 @@ export default {
       },
       skills: {
         title: 'Fale sobre suas habilidades',
+        techSkillsDescription: 'Nesta sessão você pode selecionar as linguagens de programação e frameworks de seu conhecimento. Lembre-se que suas informações serão levadas em consideração para o cruzamento dos dados entre currículo e descrição do Job.',
+        otherSkillsDescription: 'Selecione os soft skills que possui e os idiomas de seu conhecimento.',
         description:
           'Você pode editar suas informações depois de salvá-las. Suas informações ficarão visíveis para os usuários da Tech Vogel!',
         explanation: 'Escolha seu nível de experiência em anos',

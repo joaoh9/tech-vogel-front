@@ -37,7 +37,7 @@ export default {
       jobApplied: 'Uhuuu! Sucesso na aplicação da vaga!',
       logout: 'Logout realizado com sucesso',
       savedCompany: 'Empresa salva com sucesso',
-      savedResume: 'Seu currículo foi salvo com sucesso!',
+      saveResume: 'Seu currículo foi salvo com sucesso!',
       jobSaved: 'Vaga salva com sucesso',
       jobEdit: 'Vaga editada com sucesso',
       githubRetrieve: ' Dados do Github recuperados com sucesso!',

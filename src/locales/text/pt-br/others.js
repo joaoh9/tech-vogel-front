@@ -34,7 +34,7 @@ export default {
         btnText: 'Fechar',
       },
       whatsVogel: {
-        title: 'Oque é um Vogel?',
+        title: 'O que é um Vogel?',
         description: 'Vogel é o crédito que você recebe para se candidatar para as vagas que desejar. Você recebe 5 Vogels quando se registra pela primeira vez na plataforma, e recebe 1 Vogel por dia após Log In.',
         vogelsLimited: 'Por que Vogels são limitados?',
         modalText: 'Vogels são limitados porque os profissionais devem selecionar as vagas que desejam aplicar com mais cautela, evitando assim perda de tempo e energia com cadastros que não são fit com as habilidades. Desta forma, ao aplicar para uma vaga que realmente deseja e possui as habilidades necessárias a probabilidade de entrar para o relatório é maior',

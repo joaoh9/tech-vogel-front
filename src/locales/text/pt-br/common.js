@@ -17,6 +17,7 @@ export default {
     logout: 'Sair',
     from: 'De',
     to: 'Para',
+    until: 'Até',
     free: 'Grátis',
     ourPricing: 'Planos',
     startPostingJobsForFreeToday: 'Comece a postar vagas de graça!',
