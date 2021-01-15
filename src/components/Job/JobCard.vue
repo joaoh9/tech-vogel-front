@@ -1,9 +1,14 @@
 <template>
-  <v-card class="bs-primary pa-4 px-6 px-md-12" color="bg" :min-width="getMinWidth()">
+  <v-card
+    class="bs-primary pa-4 px-6 px-md-12"
+    color="bg"
+    :min-width="getMinWidth()"
+    @click="goToJobDetails"
+  >
     <v-row align="center" justify="center">
       <v-col :cols="$vuetify.breakpoint.mdAndUp ? '9' : '12'">
         <div class="d-flex align-center">
-          <v-avatar size="90" color="cinza-lighten-3">
+          <v-avatar v-if="$vuetify.breakpoint.smAndUp" size="90" color="cinza-lighten-3">
             <v-img
               :src="
                 job.companyLogo ||
