@@ -127,9 +127,11 @@ export default class UserController {
     return newUserData;
   }
 
-  async getById(userId) {
-    const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/users/${userId}`);
+  async getById() {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
+    const { data } = await axios.get('/v1/users/me');
+
     return data;
   }
 
