@@ -211,9 +211,7 @@ export default {
     settings: {
       title: 'Settings',
       subtitle: 'Change your account and payment settings.',
-      buttons: [
-        { text: 'Profile', icon: 'far fa-user' },
-      ],
+      buttons: [ 'Account', 'Password', 'Company' ],
     },
     onboarding: {
       title: 'Welcome to Tech Vogel',

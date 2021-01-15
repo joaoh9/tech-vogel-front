@@ -48,6 +48,7 @@ export default {
     back: 'Go back',
     backChange: 'Go back & change',
     backEdit: 'Go back & edit',
+    backDashboard: 'Go back to dashboard',
     pricing: 'Pricing',
     startForFree: 'Start for free',
     maximum: 'Maximum',
@@ -75,6 +76,7 @@ export default {
     language: 'Language',
     languages: 'Languages',
     fluency: 'Fluency',
+    account: 'Account',
     email: {
       placeholder: 'Email',
       label: 'Email',
@@ -82,6 +84,14 @@ export default {
     password: {
       placeholder: 'Password',
       label: 'Password',
+    },
+    currentPassword: {
+      placeholder: 'Current password',
+      label: 'Current password',
+    },
+    newPassword: {
+      placeholder: 'New password',
+      label: 'New password',
     },
     comingSoon: 'Coming soon!',
     integration: 'GitHub and LinkedIn integration',

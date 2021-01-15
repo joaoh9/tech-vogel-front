@@ -9,7 +9,7 @@ export default {
       getCompany: 'Something went wrong when getting company info for a job',
       retrieveJob: 'An error occured when retrieving jobs from the database',
       retrieveCompany: 'Could not retrieve company info from database',
-      retrieveUser: 'Could not retrieve user info. Please login again',
+      retrieveUser: 'Could not retrieve user info.',
       retrieveAppliedJobs: 'Something went wrong when retrieving applied jobs',
       retrieveCompanyInfo: 'An error has occurred when retrieving company information on a job',
       retrieveUserData: 'Something went wrong when retrieving user {userId} data',

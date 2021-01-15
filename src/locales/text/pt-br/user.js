@@ -199,10 +199,10 @@ export default {
       tokenExplanation:
         'Você receberá 1 Vogel por cada Log in que fazer na plataforma em dias diferentes. E toda vez que se candidatar a uma vaga e for selecionado para o relatório você utiliza um Vogel. Caso não seja escolhido para integrar o relatório você permanece com seu Vogel.',
     },
-    gotToDashboard: 'Ir para o painel de controle',
+    goToDashboard: 'Ir para o painel',
     applications: {
       title: 'Suas vagas',
-      returnToDashboard: 'Voltar para o painel de controle',
+      returnToDashboard: 'Voltar para o painel',
       actions: {
         findJobs: 'Procurar mais vagas',
         editProfile: 'Editar perfil',
@@ -222,9 +222,7 @@ export default {
     settings: {
       title: 'Configurações',
       subtitle: 'Gerenciar plano e pagamento.',
-      buttons: [
-        { text: 'Perfil', icon: 'far fa-user' },
-      ],
+      buttons: [ 'Conta', 'Senha', 'Empresa' ],
     },
     onboarding: {
       title: 'Bem-vindo(a) à Tech Vogel!',

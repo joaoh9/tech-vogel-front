@@ -48,6 +48,7 @@ export default {
     back: 'Voltar',
     backChange: 'Voltar e modificar',
     backEdit: 'Voltar e editar',
+    backDashboard: 'Voltar para o painel',
     pricing: 'Valor',
     startForFree: 'Comece gratuitamente',
     maximum: 'Máximo',
@@ -75,6 +76,7 @@ export default {
     language: 'Língua',
     languages: 'Línguas',
     fluency: 'Fluência',
+    account: 'Conta',
     email: {
       placeholder: 'E-mail',
       label: 'E-mail',
@@ -82,6 +84,14 @@ export default {
     password: {
       placeholder: 'Senha',
       label: 'Senha',
+    },
+    currentPassword: {
+      placeholder: 'Senha atual',
+      label: 'Senha atual',
+    },
+    newPassword: {
+      placeholder: 'Nova senha',
+      label: 'Nova senha',
     },
     comingSoon: 'Em breve!',
     integration: 'Integração com GitHub e LinkedIn',

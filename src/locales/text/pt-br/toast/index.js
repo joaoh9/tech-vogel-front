@@ -11,7 +11,7 @@ export default {
       getCompany: 'Algo de errado ocorreu ao obter as informações para a Vaga',
       retrieveJob: 'Um erro ocorreu ao recuperar a vaga do banco de dados',
       retrieveCompany: 'Erro ao recuperar informações do banco de dados',
-      retrieveUser: 'Erro ao recuperar informações do usuário. Favor logar novamente',
+      retrieveUser: 'Erro ao recuperar informações do usuário.',
       retrieveAppliedJobs: ' Algo de errado ocorreu ao recuperar vagas registradas',
       retrieveCompanyInfo: 'Um erro ocorreu ao recuperar as informações da vaga',
       retrieveUserData: 'Um erro ocorreu ao acessar os dados do usuário',

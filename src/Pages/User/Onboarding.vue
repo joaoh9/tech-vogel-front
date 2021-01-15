@@ -43,7 +43,7 @@
         type="text"
         class="mt-2"
         color="primary"
-        :label="$t('user.gotToDashboard')"
+        :label="$t('user.goToDashboard')"
       />
     </div>
   </div>
