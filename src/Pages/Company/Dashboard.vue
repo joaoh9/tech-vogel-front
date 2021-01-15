@@ -62,6 +62,9 @@ import config from '@config'
 export default {
   name: 'CompanyDashboard',
   async mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+
     await this.getUserInfo();
     await this.getCompanyInfo();
     await this.getJobsPostedCount();
