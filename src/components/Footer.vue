@@ -24,6 +24,7 @@
               :title="$t('footer.socialMedia.title')"
               :items="$t('footer.socialMedia.links')"
             />
+            <ChangeLanguage class="mt-2" chooseLanguageText="" />
           </v-col>
         </v-row>
       </v-card>
@@ -49,6 +50,7 @@
 <script>
 import Logo from 'Assets/logo-redondo-amarelo-grad.svg';
 import FooterLinks from 'Components/Footer/Links';
+import ChangeLanguage from 'Components/Static/ChangeLanguage';
 
 import packageJson from 'package.json';
 
@@ -56,6 +58,7 @@ export default {
   name: 'Footer',
   components: {
     FooterLinks,
+    ChangeLanguage,
   },
   data() {
     return {

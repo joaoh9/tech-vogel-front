@@ -1,11 +1,7 @@
 <template>
   <div>
     <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile height="88">
-      <v-app-bar-nav-icon
-        v-if="!$vuetify.breakpoint.smAndUp"
-        @click="drawer = true"
-        color="bg"
-      />
+      <v-app-bar-nav-icon v-if="!$vuetify.breakpoint.smAndUp" @click="drawer = true" color="bg" />
       <v-btn text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="logoHome" />
@@ -44,7 +40,6 @@
       >
         {{ $t('common.signup') }}
       </v-btn>
-      <ChangeLanguage chooseLanguageText="" />
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary v-if="!$vuetify.breakpoint.smAndUp">
       <v-list nav dense>
@@ -61,7 +56,7 @@
 <script>
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
-import ChangeLanguage from 'Components/Static/ChangeLanguage';
+
 
 export default {
   name: 'Navbar',
@@ -71,9 +66,6 @@ export default {
       logo: Logo,
       logoHome: LogoHome,
     };
-  },
-  components: {
-    ChangeLanguage,
   },
   methods: {
     goToSignup() {
