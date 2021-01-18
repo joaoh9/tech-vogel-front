@@ -10,7 +10,6 @@
 import JobManagerCard from 'Components/Dashboard/JobManagerCard';
 import StorageHelper from 'Helpers/storage';
 import CompanyController from 'Controllers/company';
-import UserController from 'Controllers/user';
 import JobController from 'Controllers/job';
 
 export default {

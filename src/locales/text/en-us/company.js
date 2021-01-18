@@ -11,7 +11,10 @@ export default {
       password: 'Password',
       confirmPassword: 'Confirm password',
       location: 'Location',
-      aboutYourCompany: { title: 'About your company', placeholder: 'Give us a short presentation of your company!' },
+      aboutYourCompany: {
+        title: 'About your company',
+        placeholder: 'Give us a short presentation of your company!',
+      },
       webpage: 'Webpage',
       linkedin: 'LinkedIn',
       twitter: 'Twitter',
@@ -19,7 +22,8 @@ export default {
       getStarted: 'Let’s get started!',
       formInfo: 'Fill out the additional company information form below.',
       companyInfo: 'Company information',
-      learnMore: 'Help potential applicants learn more about your company. This information will be public and you will be able to edit it later.',
+      learnMore:
+        'Help potential applicants learn more about your company. This information will be public and you will be able to edit it later.',
     },
     dashboard: {
       greeting: 'Hi,',
@@ -39,6 +43,7 @@ export default {
       },
       manageAccountInfo: 'Manage my account information',
       buyReport: 'Buy Report',
+      walletBalance: 'Bought report(s)',
     },
     planCard: {
       forCompanies: 'For companies',
@@ -59,7 +64,8 @@ export default {
       created: 'Report created',
       totalApplicants: 'Total applicants',
       yourTopMatches: 'Your top %{count} matches',
-      matchesDisclaimer: 'These are the candidates that best match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
+      matchesDisclaimer:
+        'These are the candidates that best match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
       yourCompany: {
         title: 'Your company',
         currentAds: 'Current ads',
