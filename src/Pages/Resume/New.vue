@@ -60,7 +60,7 @@
               :label="$t('common.back')"
               v-if="currentStep >= 0"
               type="secondary"
-              @click="currentStep === 0 ? $router.push({ name: 'Side Pick' }) : currentStep--"
+              @click="currentStep === 0 ? $router.go(-1) : currentStep--"
             />
             <g-btn
               :label="currentStep === 5 ? $t('common.finish') : $t('common.next')"
@@ -204,9 +204,10 @@ export default {
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
 
-          for (const skill of Object.keys(this.resume.skills)) {
+          for (const skill in this.resume.skills) {
             const skillValidated = this.validateSkills(skill);
-            if (skillValidated !== true) {
+
+            if (!skillValidated) {
               return this.$toast.warning(skillValidated);
             }
           }
