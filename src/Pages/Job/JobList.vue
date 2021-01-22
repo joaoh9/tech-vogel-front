@@ -17,13 +17,13 @@
         <div v-else v-for="(job, i) of jobs" :key="i">
           <JobCard :job="job" class="mb-4" />
         </div>
-        <v-pagination
-          circle
-          prev-icon="mdi-menu-left"
-          next-icon="mdi-menu-right"
-          v-model="page"
-          :length="3"
-        />
+        <!-- <v-pagination -->
+          <!-- circle -->
+          <!-- prev-icon="mdi-menu-left" -->
+          <!-- next-icon="mdi-menu-right" -->
+          <!-- v-model="page" -->
+          <!-- :length="0" -->
+        <!-- /> -->
       </v-col>
       <v-col cols="0" md="2" />
     </v-row>
