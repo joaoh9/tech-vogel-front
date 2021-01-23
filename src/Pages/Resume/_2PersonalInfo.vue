@@ -1,15 +1,13 @@
 <template>
   <div>
-    <form-input :title="$t('resume.register.personalInfo.profilePicture.title')" />
-    <v-file-input
-      outlined
-      :placeholder="$t('resume.register.personalInfo.profilePicture.placeholder')"
-      v-model="profilePicture"
-      @change="handleFileUpload"
-    >
-    </v-file-input>
+    <!-- <form-input :title="$t('resume.register.personalInfo.profilePicture.title')" /> -->
 
-    <form-input class="mt-0" :title="$t('resume.register.personalInfo.mainRole.title')" required />
+    <ImageUploader
+      :message="$t('resume.register.personalInfo.profilePicture.title')"
+      v-on:image-data="e => (profilePicture = e)"
+    />
+
+    <form-input class="mt-4" :title="$t('resume.register.personalInfo.mainRole.title')" required />
     <v-text-field
       autofocus
       :placeholder="$t('resume.register.personalInfo.mainRole.placeholder')"
@@ -103,14 +101,14 @@ import UserController from 'Controllers/user';
 import ResumeController from 'Controllers/resume';
 import { VueEditor } from 'vue2-editor';
 import StorageHelper from 'Helpers/storage';
-import config from '@config';
+import ImageUploader from 'Components/Interface/ImageUploader';
 
-const MB = 1000 * 1000;
 
 export default {
   name: 'ResumePersonalInfo',
   components: {
     VueEditor,
+    ImageUploader,
   },
   mounted() {
     document.body.scrollTop = 0; // For Safari
@@ -176,38 +174,13 @@ export default {
       this.$emit('updates', this.resume);
       this.$emit('profile-picture', this.profilePicture);
     },
-    async handleFileUpload() {
-      if (this.profilePicture.size > config.maxFileSize) {
-        this.$toast.error(
-          this.$t('toast.error.fileExceeds', {
-            filename: this.profilePicture.name,
-            fileSize: config.maxFileSize / MB,
-          }),
-        );
-        this.profilePicture = null;
-        return;
-      }
-      const data64 = await this.getBase64(this.profilePicture);
-      const file = {
-        data64,
-        name: this.profilePicture.name,
-        size: this.profilePicture.size,
-        type: this.profilePicture.type,
-      };
-
-      this.$emit('profile-picture', file);
-    },
-    getBase64(file) {
-      return new Promise(resolve => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-      });
-    },
   },
   watch: {
     personalBio() {
       this.$emit('updates', this.resume);
+    },
+    profilePicture() {
+      this.$emit('profile-picture', this.profilePicture);
     },
   },
 };

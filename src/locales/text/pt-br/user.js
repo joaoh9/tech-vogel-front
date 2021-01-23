@@ -57,7 +57,7 @@ export default {
         },
       },
       personalInfo: {
-        title: 'Bora construir seu perfil',
+        title: 'Bora construir seu perfil!',
         description:
           'Você pode editar suas informações depois de salvá-las. Suas informações ficarão visíveis para os usuários da Tech Vogel.',
         fullName: {

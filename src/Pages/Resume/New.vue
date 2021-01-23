@@ -139,9 +139,13 @@ export default {
   methods: {
     async saveResume() {
       const resumeController = new ResumeController();
+      const userController = new UserController();
 
       try {
         await resumeController.save(this.resume);
+        if (Object.keys(this.profilePicture).length > 0) {
+          await userController.update({ profilePicture: this.profilePicture });
+        }
         this.$toast.success(this.$t('toast.success.saveResume'));
         this.$router.push({
           name: 'User Dashboard',
@@ -152,9 +156,13 @@ export default {
     },
     async updateResume() {
       const resumeController = new ResumeController();
+      const userController = new UserController();
 
       try {
         await resumeController.update(this.resume);
+        if (Object.keys(this.profilePicture).length > 0) {
+          await userController.update({ profilePicture: this.profilePicture });
+        }
         this.$toast.success(this.$t('toast.success.updatedData'));
         this.$router.push({
           name: 'User Dashboard',
