@@ -2,7 +2,14 @@
   <div>
     <v-app-bar app color="secondary" hide-on-scroll elevation="0" tile height="88">
       <v-app-bar-nav-icon v-if="!$vuetify.breakpoint.smAndUp" @click="drawer = true" color="bg" />
-      <v-btn text color="transparent" tile elevation="0" to="/">
+      <v-btn
+        text
+        color="transparent"
+        tile
+        elevation="0"
+        :style="$vuetify.breakpoint.smAndUp ? 'margin-left: 70px' : ''"
+        to="/"
+      >
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="logoHome" />
         </v-avatar>
@@ -56,7 +63,6 @@
 <script>
 import LogoHome from 'Assets/logo-escrita-branco-amarelo.svg';
 import Logo from 'Assets/logo-escrita-preto-amarelo.svg';
-
 
 export default {
   name: 'Navbar',
