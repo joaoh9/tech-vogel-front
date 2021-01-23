@@ -110,7 +110,7 @@ export default {
         this.appliedJobs = await jobController.getCurrentUserAppliedJobsCardInfo();
         this.loaded.jobs = true;
       } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
+        this.$toast.error(this.$t('toast.error.retrieveAppliedJobs'));
       }
     },
   },
