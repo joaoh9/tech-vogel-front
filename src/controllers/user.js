@@ -143,11 +143,12 @@ export default class UserController {
     return { data, statusCode: status };
   }
 
-  async getProfilePicture(userId) {
-    const axios = Axios.GetInstance();
+  async getProfilePicture() {
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = Axios.GetInstance(userToken);
 
     try {
-      const { data } = await axios.get(`/v1/profile-picture/${userId}`);
+      const { data } = await axios.get('/v1/users/me/profile-picture');
 
       return data;
     } catch (e) {
