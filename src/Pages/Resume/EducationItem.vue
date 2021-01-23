@@ -3,11 +3,13 @@
     <v-row>
       <v-col cols="12" md="8">
         <form-input :title="$t('resume.register.education.courseTitle.title')" />
+        {{ education }}
+        {{ _education }}
         <v-text-field
           autofocus
           v-model="education.courseTitle"
           :placeholder="$t('resume.register.education.courseTitle.placeholder')"
-          @input="$emit('course-title', education.courseTitle)"
+          @input="$emit('update', education)"
           outlined
           :rules="[rules.max(200, education.courseTitle)]"
         />
@@ -17,7 +19,7 @@
         <v-text-field
           v-model="education.degree"
           :placeholder="$t('resume.register.education.degree.placeholder')"
-          @input="$emit('institution-type', education.degree)"
+          @input="$emit('update', education)"
           outlined
           :rules="[rules.max(200, education.degree)]"
         />
@@ -28,7 +30,7 @@
     <v-text-field
       v-model="education.institutionName"
       :placeholder="$t('resume.register.education.placeholders.institution')"
-      @input="$emit('institution-name', education.institutionName)"
+      @input="$emit('update', education)"
       outlined
       :rules="[rules.max(200, education.institutionName)]"
     />
@@ -72,11 +74,17 @@ import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'EducationItem',
+  props: {
+    _education: Object,
+  },
   components: {
     VueEditor,
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    if (this._education) {
+      this.education = this._education;
+    }
   },
   data() {
     return {
@@ -100,10 +108,10 @@ export default {
       if (this.rules.onlyNumber(variable) === true && this.rules.year(variable) === true) {
         if (date === 'start-date') {
           this.education.startDate = parseInt(variable);
-          this.$emit(date, this.education.startDate);
+          this.$emit('update', this.education);
         } else if (date === 'end-date') {
           this.education.endDate = parseInt(variable);
-          this.$emit(date, this.education.endDate);
+          this.$emit('update', this.education);
         }
       }
       return;
@@ -111,7 +119,7 @@ export default {
   },
   watch: {
     'education.description'() {
-      this.$emit('description', this.education.description);
+      this.$emit('update', this.education);
     },
   },
 };

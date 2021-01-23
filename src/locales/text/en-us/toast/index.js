@@ -13,7 +13,6 @@ export default {
       retrieveAppliedJobs: 'Something went wrong when retrieving applied jobs',
       retrieveCompanyInfo: 'An error has occurred when retrieving company information on a job',
       retrieveUserData: 'Something went wrong when retrieving user {userId} data',
-      retrieveUserResume: 'Something went wrong when retrieving resume data',
       companyData: 'Something went wrong when retrieving company {companyId} data',
       jobData: 'Something went wrong when retrieving job {jobId} data',
       saveCompany: 'An error occurred when saving the company',
@@ -46,6 +45,7 @@ export default {
       updatedData: 'Data updated successfully!',
     },
     info: {
+      retrieveUserResume: 'Something went wrong when retrieving resume data',
       USER_NOT_CONFIRMED: 'User not confirmed yet!',
       sessionExpired: 'Your session has expired. Please login again',
       retrieveProfilePicture: 'Error when retrieving profile picture',

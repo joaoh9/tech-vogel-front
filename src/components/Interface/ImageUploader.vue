@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="header-image"></div>
-
     <v-row justify="center">
       <v-dialog v-model="cropPhoto" width="700px">
         <v-card class="pa-6">
@@ -32,6 +31,7 @@
         id="profilePhoto"
         ref="input"
         type="file"
+        :key="form.loading"
         name="image"
         accept="image/*"
         @change="setImage"
@@ -61,6 +61,13 @@ export default {
   name: 'ImageUploader',
   props: {
     message: String,
+    _data64: String,
+  },
+  mounted() {
+    if (this._data64) {
+      this.form.image.data64 = this._data64;
+      this.loading = !this.loading;
+    }
   },
   components: {
     VueCropper,

@@ -1,5 +1,6 @@
 <template>
   <div class="d-flex justify-center mt-4 mt-sm-12">
+    {{ resume }}
     <Stepper :stepsNames="$t('resume.register.tabs').map(s => s.name)" v-model="currentStep">
       <g-card>
         <template v-slot:card-header>
@@ -21,24 +22,57 @@
           </div>
           <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
             <Preferences
+              :key="dataUpdated"
+              :_jobInterests="resume.jobInterests"
+              :_contractType="resume.contractType"
               v-on:job-interests="e => (resume.jobInterests = e)"
               v-on:contract-type="e => (resume.contractType = e)"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
             <PersonalInfo
+              :key="dataUpdated"
+              :_data64="currentProfilePic64"
+              :_mainRole="resume.mainRole"
+              :_personalBio="resume.personalBio"
+              :_location="{ city: resume.location.city, country: resume.location.country }"
+              :_links="{
+                website: resume.links.website,
+                github: resume.links.github,
+                linkedin: resume.links.linkedin,
+                behance: resume.links.behance,
+              }"
+              v-on:main-role="e => (resume.mainRole = e)"
+              v-on:location="e => (resume.location = e)"
+              v-on:links="e => (resume.links = e)"
               v-on:profile-picture="e => (profilePicture = e)"
-              v-on:updates="e => (resume = e)"
+              v-on:personal-bio="e => (resume.personalBio = e)"
+              v-on:updates-location="e => (resume.location = e)"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
-            <WorkExperience v-on:update-item="e => (resume.workHistory = e)" />
+            <WorkExperience
+              :key="dataUpdated"
+              :_workHistory="resume.workHistory"
+              v-on:update-item="e => (resume.workHistory = e)"
+            />
           </div>
           <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
-            <Skills from="resume" v-on:skills="e => (resume.skills = e)" />
+            <Skills
+              :_techSkills="resume.skills.techSkills"
+              :_softSkills="resume.skills.softSkills"
+              :_languages="resume.skills.languages"
+              :key="dataUpdated"
+              from="resume"
+              v-on:skills="e => (resume.skills = e)"
+            />
           </div>
           <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
-            <Education v-on:update-item="e => (resume.education = e)" />
+            <Education
+              :key="dataUpdated"
+              :_education="resume.education"
+              v-on:update-item="e => (resume.education = e)"
+            />
           </div>
         </template>
         <template v-slot:buttons>
@@ -88,13 +122,15 @@ export default {
     Skills,
     Education,
   },
-  mounted() {
+  async mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
+    await this.getCurrentResume();
   },
   data() {
     return {
       educationComponent: Education,
       currentStep: 0,
+      currentProfilePic64: '',
       profilePicture: {},
       resume: {
         personalBio: '',
@@ -129,6 +165,7 @@ export default {
           behance: '',
         },
       },
+      dataUpdated: false,
     };
   },
   computed: {
@@ -137,13 +174,29 @@ export default {
     },
   },
   methods: {
+    async getCurrentResume() {
+      const userController = new UserController();
+      try {
+        const user = userController.decodeUserToken();
+        if (user.side === 11) {
+          const resumeController = new ResumeController();
+          const data = await resumeController.getCurrentResume();
+          this.resume = data;
+          this.resume.personalBio = data.personalBio;
+          this.currentProfilePic64 = (await userController.getProfilePicture()).profilePicture;
+          this.dataUpdated = !this.dataUpdated;
+        }
+      } catch (e) {
+        this.$toast.info(this.$t('toast.info.retrieveUserResume'))
+      }
+    },
     async saveResume() {
       const resumeController = new ResumeController();
       const userController = new UserController();
 
       try {
         await resumeController.save(this.resume);
-        if (Object.keys(this.profilePicture).length > 0) {
+        if (this.profilePicture && Object.keys(this.profilePicture).length > 0) {
           await userController.update({ profilePicture: this.profilePicture });
         }
         this.$toast.success(this.$t('toast.success.saveResume'));
@@ -160,7 +213,11 @@ export default {
 
       try {
         await resumeController.update(this.resume);
-        if (Object.keys(this.profilePicture).length > 0) {
+        if (
+          this.profilePicture &&
+          Object.keys(this.profilePicture).length > 0 &&
+          this.profilePicture.data64
+        ) {
           await userController.update({ profilePicture: this.profilePicture });
         }
         this.$toast.success(this.$t('toast.success.updatedData'));
@@ -168,6 +225,7 @@ export default {
           name: 'User Dashboard',
         });
       } catch (e) {
+        console.log('🚀 ~ file: New.vue ~ line 247 ~ updateResume ~ e', e);
         this.$toast.error(this.$t('toast.error.update'));
       }
     },

@@ -2,39 +2,11 @@
   <div>
     <div v-for="(job, i) in workHistory" :key="i">
       <WorkItem
-        v-on:company-name="
+        :key="updatedData"
+        :_workHistory="workHistory[i]"
+        v-on:update="
           e => {
-            workHistory[i].companyName = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:role="
-          e => {
-            workHistory[i].role = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:current-job="
-          e => {
-            workHistory[i].currentJob = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:start-date="
-          e => {
-            workHistory[i].startDate = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:end-date="
-          e => {
-            workHistory[i].endDate = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:job-description="
-          e => {
-            workHistory[i].description = e;
+            workHistory[i] = e;
             $emit('update-item', workHistory);
           }
         "
@@ -62,11 +34,13 @@
 </template>
 
 <script>
-import ResumeController from 'Controllers/resume';
 import WorkItem from './WorkItem';
 
 export default {
   name: 'WorkExperience',
+  props: {
+    _workHistory: Array,
+  },
   components: {
     WorkItem,
   },
@@ -74,7 +48,10 @@ export default {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
 
-    this.getResumeInfo();
+    if (this._workHistory && this._workHistory.length > 0) {
+      this.workHistory = this._workHistory;
+      this.updatedData = !this.updatedData;
+    }
   },
   data() {
     return {
@@ -89,29 +66,8 @@ export default {
           currentJob: false,
         },
       ],
+      updatedData: false,
     };
-  },
-  methods: {
-    async getResumeInfo() {
-      const resumeController = new ResumeController();
-
-      try {
-        const data = await resumeController.getCurrentResume();
-
-        for (const index in this.workHistory) {
-          this.workHistory[index].companyName = data.workHistory[index].companyName || '';
-          this.workHistory[index].role = data.workHistory[index].role || '';
-          this.workHistory[index].startDate = data.workHistory[index].startDate || '';
-          this.workHistory[index].endDate = data.workHistory[index].endDate || '';
-          this.workHistory[index].description = data.workHistory[index].description || '';
-          this.workHistory[index].currentJob = data.workHistory[index].currentJob || false;
-        }
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveUserResume'));
-      }
-
-      this.$emit('update-item', this.workHistory);
-    },
   },
 };
 </script>

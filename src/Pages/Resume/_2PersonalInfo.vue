@@ -1,9 +1,8 @@
 <template>
   <div>
-    <!-- <form-input :title="$t('resume.register.personalInfo.profilePicture.title')" /> -->
-
     <ImageUploader
       :message="$t('resume.register.personalInfo.profilePicture.title')"
+      :_data64="_data64"
       v-on:image-data="e => (profilePicture = e)"
     />
 
@@ -12,7 +11,7 @@
       autofocus
       :placeholder="$t('resume.register.personalInfo.mainRole.placeholder')"
       v-model="resume.mainRole"
-      @input="$emit('updates', resume)"
+      @input="$emit('main-role', resume.mainRole)"
       outlined
       :rules="[rules.required(resume.mainRole), rules.max(200, resume.mainRole)]"
     />
@@ -22,7 +21,7 @@
       <v-col cols="12" md="8">
         <v-text-field
           v-model="resume.location.city"
-          @input="$emit('updates', resume)"
+          @input="$emit('location', resume.location)"
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.city')"
@@ -33,7 +32,7 @@
       <v-col cols="12" md="4">
         <v-text-field
           v-model="resume.location.country"
-          @input="$emit('updates', resume)"
+          @input="$emit('location', resume.location)"
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.country')"
@@ -55,7 +54,7 @@
     <v-text-field
       :placeholder="$t('common.links.website.placeholder')"
       v-model="resume.links.website"
-      @input="$emit('updates', resume)"
+      @input="$emit('links', resume.links)"
       outlined
       :rules="[rules.max(200, resume.links.website)]"
     />
@@ -67,7 +66,7 @@
     <v-text-field
       :placeholder="$t('common.links.github.placeholder')"
       v-model="resume.links.github"
-      @input="$emit('updates', resume)"
+      @input="$emit('links', resume.links)"
       outlined
       :rules="[rules.max(200, resume.links.github)]"
     />
@@ -79,7 +78,7 @@
     <v-text-field
       :placeholder="$t('common.links.linkedin.placeholder')"
       v-model="resume.links.linkedin"
-      @input="$emit('updates', resume)"
+      @input="$emit('links', resume.links)"
       outlined
       :rules="[rules.max(200, resume.links.linkedin)]"
     />
@@ -88,7 +87,7 @@
     <v-text-field
       :placeholder="$t('common.links.behance.placeholder')"
       v-model="resume.links.behance"
-      @input="$emit('updates', resume)"
+      @input="$emit('links', resume.links)"
       outlined
       :rules="[rules.max(200, resume.links.behance)]"
     />
@@ -97,15 +96,19 @@
 </template>
 
 <script>
-import UserController from 'Controllers/user';
-import ResumeController from 'Controllers/resume';
 import { VueEditor } from 'vue2-editor';
 import StorageHelper from 'Helpers/storage';
 import ImageUploader from 'Components/Interface/ImageUploader';
 
-
 export default {
   name: 'ResumePersonalInfo',
+  props: {
+    _mainRole: String,
+    _personalBio: String,
+    _data64: String,
+    _location: Object,
+    _links: Object,
+  },
   components: {
     VueEditor,
     ImageUploader,
@@ -113,9 +116,18 @@ export default {
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
-
-    this.getUserInfo();
-    this.getResumeInfo();
+    if (this._mainRole) {
+      this.resume.mainRole = this._mainRole;
+    }
+    if (this._personalBio.length) {
+      this.resume.personalBio = this._personalBio;
+    }
+    if (this._location) {
+      this.resume.location = this._location;
+    }
+    if (this._links) {
+      this.resume.links = this._links;
+    }
   },
   data() {
     return {
@@ -150,34 +162,10 @@ export default {
         });
       }
     },
-    async getResumeInfo() {
-      const userController = new UserController();
-      const resumeController = new ResumeController();
-
-      try {
-        const data = await resumeController.getCurrentResume();
-        const { profilePicture } = await userController.getProfilePicture();
-
-        this.profilePicture = profilePicture || { name: '' };
-        this.resume.mainRole = data.mainRole || '';
-        this.resume.personalBio = data.personalBio || '';
-        this.resume.location.city = data.location.city || '';
-        this.resume.location.country = data.location.country || '';
-        this.resume.links.website = data.links.website || '';
-        this.resume.links.github = data.links.github || '';
-        this.resume.links.linkedin = data.links.linkedin || '';
-        this.resume.links.instagram = data.links.instagram || '';
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveUserResume'));
-      }
-
-      this.$emit('updates', this.resume);
-      this.$emit('profile-picture', this.profilePicture);
-    },
   },
   watch: {
-    personalBio() {
-      this.$emit('updates', this.resume);
+    'resume.personalBio'() {
+      this.$emit('personal-bio', this.resume.personalBio);
     },
     profilePicture() {
       this.$emit('profile-picture', this.profilePicture);

@@ -33,6 +33,20 @@ import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'Preferences',
+  props: {
+    _jobInterests: Array,
+    _contractType: Array,
+  },
+  mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+    if (this._jobInterests) {
+      this.jobInterests = this._jobInterests;
+    }
+    if (this._contractType) {
+      this.contractType = this._contractType;
+    }
+  },
   data() {
     return {
       jobInterests: [],
@@ -41,29 +55,6 @@ export default {
         required: () => true,
       },
     };
-  },
-  mounted() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0;
-
-    this.getResumeInfo();
-  },
-  methods: {
-    async getResumeInfo() {
-      const resumeController = new ResumeController();
-
-      try {
-        const data = await resumeController.getCurrentResume();
-
-        this.jobInterests = data.jobInterests;
-        this.contractType = data.contractType;
-      } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveUserResume'));
-      }
-
-      this.$emit('job-interests', this.jobInterests);
-      this.$emit('contract-type', this.contractType);
-    },
   },
 };
 </script>

@@ -32,7 +32,7 @@
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
       skillTitle="techSkills"
-      :experienceLevel="form === 'job' ? $t('enums.priorities') : $t('enums.yearsOfExperience')"
+      :experienceLevel="from === 'job' ? $t('enums.priorities') : $t('enums.yearsOfExperience')"
     />
     <form-input
       class="mt-6"
@@ -103,13 +103,16 @@ export default {
     SkillExperienceLevel,
   },
   props: {
-    form: {
+    from: {
       type: String,
       default: 'job',
     },
     job: {
       type: Object,
     },
+    _techSkills: Array,
+    _softSkills: Array,
+    _languages: Array,
   },
   mounted() {
     if (this.job && this.job.skills) {
@@ -117,6 +120,18 @@ export default {
       this.techSkills = this.job.techSkills;
       this.softSkills = this.job.softSkills;
       this.languages = this.job.languages;
+    }
+    if (this._techSkills) {
+      this.techSkills = this._techSkills;
+      this.skills.techSkills = this._techSkills;
+    }
+    if (this._softSkills) {
+      this.softSkills = this._softSkills;
+      this.skills.softSkills = this._softSkills;
+    }
+    if (this._languages) {
+      this.languages = this._languages;
+      this.skills.languages = this._languages;
     }
   },
   data() {
