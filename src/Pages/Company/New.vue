@@ -62,7 +62,7 @@ import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 import CompanyController from 'Controllers/company';
 import RulesHelper from 'Helpers/rules';
 
-import config from '@config'
+import config from '@config';
 
 export default {
   name: 'New',

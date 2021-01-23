@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import ResumeController from 'Controllers/resume';
+
 export default {
   name: 'Preferences',
   data() {
@@ -43,6 +45,25 @@ export default {
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
+
+    this.getResumeInfo();
+  },
+  methods: {
+    async getResumeInfo() {
+      const resumeController = new ResumeController();
+
+      try {
+        const data = await resumeController.getCurrentResume();
+
+        this.jobInterests = data.jobInterests;
+        this.contractType = data.contractType;
+      } catch (e) {
+        this.$toast.error(this.$t('toast.error.retrieveUserResume'));
+      }
+
+      this.$emit('job-interests', this.jobInterests);
+      this.$emit('contract-type', this.contractType);
+    },
   },
 };
 </script>

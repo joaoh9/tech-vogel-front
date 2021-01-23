@@ -13,7 +13,7 @@ export default {
       retrieveAppliedJobs: 'Something went wrong when retrieving applied jobs',
       retrieveCompanyInfo: 'An error has occurred when retrieving company information on a job',
       retrieveUserData: 'Something went wrong when retrieving user {userId} data',
-      retrieveUserResume: 'Something went wrong when retrieving user resume {userId} data',
+      retrieveUserResume: 'Something went wrong when retrieving resume data',
       companyData: 'Something went wrong when retrieving company {companyId} data',
       jobData: 'Something went wrong when retrieving job {jobId} data',
       saveCompany: 'An error occurred when saving the company',

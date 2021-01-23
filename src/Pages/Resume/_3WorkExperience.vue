@@ -62,6 +62,7 @@
 </template>
 
 <script>
+import ResumeController from 'Controllers/resume';
 import WorkItem from './WorkItem';
 
 export default {
@@ -72,6 +73,8 @@ export default {
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
+
+    this.getResumeInfo();
   },
   data() {
     return {
@@ -86,34 +89,29 @@ export default {
           currentJob: false,
         },
       ],
-      j: [
-        { companyName: '', role: '', startDate: '', endDate: '', description: '', currentJob: '' },
-        {
-          companyName: '',
-          role: '',
-          startDate: 0,
-          endDate: {
-            companyName: '',
-            role: '',
-            startDate: 2020,
-            endDate: 2020,
-            description: '',
-            currentJob: true,
-            jobDescription: '<p>rafae</p>',
-          },
-          description: {
-            companyName: '',
-            role: '',
-            startDate: 2020,
-            endDate: 2020,
-            description: '',
-            currentJob: true,
-            jobDescription: '<p>rafae</p>',
-          },
-          currentJob: '',
-        },
-      ],
     };
+  },
+  methods: {
+    async getResumeInfo() {
+      const resumeController = new ResumeController();
+
+      try {
+        const data = await resumeController.getCurrentResume();
+
+        for (const index in this.workHistory) {
+          this.workHistory[index].companyName = data.workHistory[index].companyName || '';
+          this.workHistory[index].role = data.workHistory[index].role || '';
+          this.workHistory[index].startDate = data.workHistory[index].startDate || '';
+          this.workHistory[index].endDate = data.workHistory[index].endDate || '';
+          this.workHistory[index].description = data.workHistory[index].description || '';
+          this.workHistory[index].currentJob = data.workHistory[index].currentJob || false;
+        }
+      } catch (e) {
+        this.$toast.error(this.$t('toast.error.retrieveUserResume'));
+      }
+
+      this.$emit('update-item', this.workHistory);
+    },
   },
 };
 </script>

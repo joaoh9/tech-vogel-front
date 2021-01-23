@@ -1,6 +1,7 @@
 <template>
   <div>
     <form-input :title="$t('company.new.logo.title')" />
+
     <v-file-input
       outlined
       :placeholder="$t('company.new.logo.placeholder')"
@@ -70,14 +71,14 @@
 
 <script>
 import RulesHelper from 'Helpers/rules';
-
 import config from '@config';
+
+import 'cropperjs/dist/cropper.css';
 
 const MB = 1000 * 1000;
 
 export default {
   name: 'New',
-  components: {},
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
