@@ -44,7 +44,7 @@
     <form-input
       class="mt-8"
       :title="$t('job.new.softSkills.title')"
-      :description="$t('job.new.softSkills.inputHint', { max: config.skills.softSkills.max })"
+      :description="$t('job.new.softSkills.inputHint', { max: 7 })"
     />
     <v-autocomplete
       class="mb-8"

@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import ResumeController from 'Controllers/resume';
 import EducationItem from './EducationItem';
 
 export default {
@@ -78,6 +79,8 @@ export default {
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
+
+    this.getResumeInfo();
   },
   data() {
     return {
@@ -93,6 +96,28 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    async getResumeInfo() {
+      const resumeController = new ResumeController();
+
+      try {
+        const data = await resumeController.getCurrentResume();
+
+        for (const index in this.education) {
+          this.education[index].courseTitle = data.education[index].courseTitle || '';
+          this.education[index].degree = data.education[index].degree || '';
+          this.education[index].description = data.education[index].description || '';
+          this.education[index].institutionName = data.education[index].institutionName || '';
+          this.education[index].startDate = data.education[index].startDate || 0;
+          this.education[index].endDate = data.education[index].endDate || 0;
+        }
+      } catch (e) {
+        this.$toast.error(this.$t('toast.error.retrieveUserResume'));
+      }
+
+      this.$emit('update-item', this.education);
+    },
   },
 };
 </script>
