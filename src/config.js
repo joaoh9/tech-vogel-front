@@ -35,6 +35,6 @@ const config = {
   paymentLink: window.serverConfig && window.serverConfig.pagarme.paymentLink,
   dayInMs: 1000 * 60 * 60 * 24,
 };
-console.log('🚀 ~ file: config.js ~ line 24 ~ config', config);
+// console.log('🚀 ~ file: config.js ~ line 24 ~ config', config);
 
 module.exports = config;

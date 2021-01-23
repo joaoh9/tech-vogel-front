@@ -225,7 +225,6 @@ export default {
           name: 'User Dashboard',
         });
       } catch (e) {
-        console.log('🚀 ~ file: New.vue ~ line 247 ~ updateResume ~ e', e);
         this.$toast.error(this.$t('toast.error.update'));
       }
     },
