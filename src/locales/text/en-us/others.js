@@ -102,7 +102,6 @@ export default {
       { text: 'Post your job for free' },
       { text: 'Get your report in 15 working days' },
       { text: 'Know the 3 fittest applicants for your job' },
-      { text: 'Get access to our toolset to help you with remote hiring' },
     ],
     forEachReport: 'For each report',
     BRL: {

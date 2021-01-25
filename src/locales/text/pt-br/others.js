@@ -98,7 +98,6 @@ export default {
       { text: 'Poste sua vaga de graça' },
       { text: 'Receba seu relatório em 15 dias úteis' },
       { text: 'Tenha acesso aos 3 finalistas para sua vaga' },
-      { text: 'Ganhe acesso ao nosso Toolset com ferramentas para contratação' },
     ],
     forEachReport: 'Por cada Relatório',
     BRL: {
@@ -134,7 +133,6 @@ export default {
       { text: 'Economize dinheiro trabalhando de onde desejar', comingSoon: false },
       { text: 'Candidate para vagas que são seu match', comingSoon: false },
       { text: 'Descubra a empresa que está contratando', comingSoon: false },
-      { text: 'Ganhe acesso ao nosso grupo no Discord', comingSoon: true },
     ],
   },
   report: {
