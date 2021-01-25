@@ -1,14 +1,9 @@
 <template>
   <div>
-    <form-input :title="$t('company.new.logo.title')" />
-
-    <v-file-input
-      outlined
-      :placeholder="$t('company.new.logo.placeholder')"
-      v-model="logo"
-      @change="handleFileUpload"
-    >
-    </v-file-input>
+    <ImageUploader
+      :message="$t('company.new.logo.placeholder')"
+      v-on:image-data="e => (logo = e)"
+    />
 
     <form-input :title="$t('company.new.companyName')" required />
     <v-text-field
@@ -71,14 +66,15 @@
 
 <script>
 import RulesHelper from 'Helpers/rules';
-import config from '@config';
+import ImageUploader from 'Components/Interface/ImageUploader';
 
 import 'cropperjs/dist/cropper.css';
 
-const MB = 1000 * 1000;
-
 export default {
   name: 'New',
+  components: {
+    ImageUploader,
+  },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
@@ -98,44 +94,12 @@ export default {
       },
     };
   },
-  methods: {
-    getBase64(file) {
-      return new Promise(resolve => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-      });
-    },
-    async handleFileUpload() {
-      if (this.logo.size > config.maxFileSize) {
-        this.$toast.error(
-          this.$t('toast.error.fileExceeds', {
-            filename: this.logo.name,
-            fileSize: config.maxFileSize / MB,
-          }),
-        );
-        this.logo = null;
-        return;
-      }
-      const data64 = await this.getBase64(this.logo);
-      const file = {
-        data64,
-        name: this.logo.name,
-        size: this.logo.size,
-        type: this.logo.type,
-      };
-
-      if (!config.imageFileFormats.find(el => el === this.logo.type)) {
-        this.logo = {};
-        return this.$toast.warning(this.$t('toast.warning.imageFileFormat'));
-      }
-
-      this.$emit('company-logo', file);
-    },
-  },
   watch: {
     description() {
       this.$emit('company-description', this.description);
+    },
+    logo() {
+      this.$emit('company-logo', this.logo);
     },
   },
 };

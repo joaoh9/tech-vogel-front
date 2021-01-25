@@ -62,8 +62,6 @@ import PrimaryHeader from 'Components/Interface/PrimaryHeader';
 import CompanyController from 'Controllers/company';
 import RulesHelper from 'Helpers/rules';
 
-import config from '@config';
-
 export default {
   name: 'New',
   mounted() {
@@ -110,10 +108,10 @@ export default {
       this.loading = true;
 
       if (!this.company.name || !this.company.description) {
-        this.$toast.error(this.$t('toast.error.writeNames'));
+        this.$toast.warning(this.$t('toast.error.writeNames'));
         return;
       } else if (!this.validateRules()) {
-        this.$toast.error(this.$t('toast.error.fillOut'));
+        this.$toast.warning(this.$t('toast.error.fillOut'));
         return;
       }
 
@@ -137,9 +135,6 @@ export default {
         this.rules.min(10, this.company.description) !== true,
         this.rules.max(5000, this.company.description) !== true,
       ];
-      if (!config.imageFileFormats.find(el => el === this.company.logo.type)) {
-        return this.$toast.warning(this.$t('toast.warning.imageFileFormat'));
-      }
 
       return rules.every(rule => !rule);
     },
