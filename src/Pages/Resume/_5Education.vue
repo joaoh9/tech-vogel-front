@@ -2,45 +2,11 @@
   <div>
     <div v-for="(edu, i) in education" :key="i">
       <EducationItem
-        v-on:course-title="
+        :key="updatedData"
+        :_education="education[i]"
+        v-on:update="
           e => {
-            education[i].courseTitle = e;
-            $emit('update-item', education);
-          }
-        "
-        v-on:institution-type="
-          e => {
-            education[i].institutionType = e;
-            $emit('update-item', education);
-          }
-        "
-        v-on:institution-name="
-          e => {
-            education[i].institutionName = e;
-            $emit('update-item', education);
-          }
-        "
-        v-on:start-date="
-          e => {
-            education[i].startDate = e;
-            $emit('update-item', education);
-          }
-        "
-        v-on:end-date="
-          e => {
-            education[i].endDate = e;
-            $emit('update-item', education);
-          }
-        "
-        v-on:degree="
-          e => {
-            education[i].degree = e;
-            $emit('update-item', education);
-          }
-        "
-        v-on:description="
-          e => {
-            education[i].description = e;
+            education[i] = e;
             $emit('update-item', education);
           }
         "
@@ -72,12 +38,20 @@ import EducationItem from './EducationItem';
 
 export default {
   name: 'Education',
+  props: {
+    _education: Array,
+  },
   components: {
     EducationItem,
   },
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
+
+    if (this._education && this._education.length > 0) {
+      this.education = this._education;
+      this.updatedData = !this.updatedData;
+    }
   },
   data() {
     return {
@@ -92,8 +66,10 @@ export default {
           endDate: 0,
         },
       ],
+      updatedData: false,
     };
   },
+  methods: {},
 };
 </script>
 

@@ -2,39 +2,11 @@
   <div>
     <div v-for="(job, i) in workHistory" :key="i">
       <WorkItem
-        v-on:company-name="
+        :key="updatedData"
+        :_workHistory="workHistory[i]"
+        v-on:update="
           e => {
-            workHistory[i].companyName = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:role="
-          e => {
-            workHistory[i].role = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:current-job="
-          e => {
-            workHistory[i].currentJob = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:start-date="
-          e => {
-            workHistory[i].startDate = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:end-date="
-          e => {
-            workHistory[i].endDate = e;
-            $emit('update-item', workHistory);
-          }
-        "
-        v-on:job-description="
-          e => {
-            workHistory[i].description = e;
+            workHistory[i] = e;
             $emit('update-item', workHistory);
           }
         "
@@ -66,12 +38,20 @@ import WorkItem from './WorkItem';
 
 export default {
   name: 'WorkExperience',
+  props: {
+    _workHistory: Array,
+  },
   components: {
     WorkItem,
   },
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
+
+    if (this._workHistory && this._workHistory.length > 0) {
+      this.workHistory = this._workHistory;
+      this.updatedData = !this.updatedData;
+    }
   },
   data() {
     return {
@@ -86,33 +66,7 @@ export default {
           currentJob: false,
         },
       ],
-      j: [
-        { companyName: '', role: '', startDate: '', endDate: '', description: '', currentJob: '' },
-        {
-          companyName: '',
-          role: '',
-          startDate: 0,
-          endDate: {
-            companyName: '',
-            role: '',
-            startDate: 2020,
-            endDate: 2020,
-            description: '',
-            currentJob: true,
-            jobDescription: '<p>rafae</p>',
-          },
-          description: {
-            companyName: '',
-            role: '',
-            startDate: 2020,
-            endDate: 2020,
-            description: '',
-            currentJob: true,
-            jobDescription: '<p>rafae</p>',
-          },
-          currentJob: '',
-        },
-      ],
+      updatedData: false,
     };
   },
 };

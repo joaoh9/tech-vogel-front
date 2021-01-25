@@ -5,7 +5,7 @@
         :user="user"
         v-if="loaded.user"
         :key="loaded.user"
-        @click="goToUserProfile()"
+        @click="user.side > 10 && goToUserProfile()"
         :picture="user.profilePicture"
       />
       <div class="d-flex flex-column align-center">
@@ -84,7 +84,11 @@ export default {
 
       this.loaded.user = true;
     },
-
+    goToUserProfile() {
+      this.$router.push({
+        path: `/user/id/${this.user.id}`,
+      });
+    },
     goToApplications() {
       this.$router.push('/applications');
     },
@@ -105,14 +109,10 @@ export default {
       try {
         this.appliedJobs = await jobController.getCurrentUserAppliedJobsCardInfo();
         this.loaded.jobs = true;
+
       } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveAppliedJob'));
+        this.$toast.error(this.$t('toast.error.retrieveAppliedJobs'));
       }
-    },
-    goToUserProfile() {
-      this.$router.push({
-        path: `/user/id/${this.user.id}`,
-      });
     },
   },
 };

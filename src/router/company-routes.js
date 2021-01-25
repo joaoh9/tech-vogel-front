@@ -1,7 +1,7 @@
-import NewCompany from 'Pages/Company/New';
-import Dashboard from 'Pages/Company/Dashboard';
-import ManageJobs from 'Pages/Company/ManageJobs';
-import CandidateReport from 'Pages/Company/CandidateReport';
+import NewCompany from 'Pages/Company/New.vue';
+import Dashboard from 'Pages/Company/Dashboard.vue';
+import ManageJobs from 'Pages/Company/ManageJobs.vue';
+import CandidateReport from 'Pages/Company/CandidateReport.vue';
 import auth from './auth';
 
 const routes = [

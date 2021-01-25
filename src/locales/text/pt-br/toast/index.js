@@ -15,7 +15,6 @@ export default {
       retrieveAppliedJobs: ' Algo de errado ocorreu ao recuperar vagas registradas',
       retrieveCompanyInfo: 'Um erro ocorreu ao recuperar as informações da vaga',
       retrieveUserData: 'Um erro ocorreu ao acessar os dados do usuário',
-      retrieveUserResume: 'Um erro ocorreu ao recuperar os dados do currículo',
       companyData: 'Um erro ocorreu ao recuperar as informações da empresa {companyId}',
       jobData: 'Um erro ocorreu ao recuperar as informações da data da  vaga {jobId}',
       saveCompany: 'Um erro ocorreu ao salvar os dados da empresa',
@@ -46,6 +45,7 @@ export default {
       updatedData: 'Dados atualizados com sucesso!',
     },
     info: {
+      retrieveUserResume: 'Um erro ocorreu ao recuperar os dados do currículo',
       USER_NOT_CONFIRMED: 'Usuário ainda não confirmado!',
       sessionExpired: 'Sua sessão expirou. Faça Log in novamente.',
       retrieveProfilePicture: 'Erro ao acessar foto de perfil',

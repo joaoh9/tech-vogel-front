@@ -1,8 +1,7 @@
-import JobDetails from 'Pages/Job/JobDetails';
-import NewJob from 'Pages/Job/New'
-import Jobs from 'Pages/Job/JobList'
-import auth from './auth'
-
+import JobDetails from 'Pages/Job/JobDetails.vue';
+import NewJob from 'Pages/Job/New.vue';
+import Jobs from 'Pages/Job/JobList.vue';
+import auth from './auth';
 
 const routes = [
   {

@@ -107,7 +107,7 @@ export default {
       }
     },
     goToPagarme() {
-      window.open(config.paymentLink, '_blank');
+      window.open(this.company.pagarmeLink, '_blank');
     },
   },
   watch: {

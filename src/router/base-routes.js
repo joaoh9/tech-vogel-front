@@ -1,11 +1,11 @@
-import Home from 'Pages/Home/Home';
-import PrivacyPolicy from 'Pages/Static/PrivacyPolicy';
-import TermsOfService from 'Pages/Static/TermsOfService';
-import NotFound from 'Pages/Static/NotFound';
-import AboutUs from 'Components/Static/AboutUs';
-import FAQ from 'Pages/Static/FAQ'
-import Tips from 'Pages/Static/Tips';
-import Pricing from 'Pages/Static/Pricing';
+import Home from 'Pages/Home/Home.vue';
+import PrivacyPolicy from 'Pages/Static/PrivacyPolicy.vue';
+import TermsOfService from 'Pages/Static/TermsOfService.vue';
+import NotFound from 'Pages/Static/NotFound.vue';
+import AboutUs from 'Components/Static/AboutUs.vue';
+import FAQ from 'Pages/Static/FAQ.vue';
+import Tips from 'Pages/Static/Tips.vue';
+import Pricing from 'Pages/Static/Pricing.vue';
 
 const routes = [
   {

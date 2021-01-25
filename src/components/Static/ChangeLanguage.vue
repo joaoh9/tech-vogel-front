@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-center justify-center ">
+  <div class="d-flex align-center justify-center" style="display: -webkit-box !important">
     <p class="bdy-2 color-black">{{ chooseLanguageText }}</p>
     <v-img
       v-for="(language, index) in getLanguagesData()"
@@ -8,7 +8,7 @@
       :src="currentLanguage === language.i18n ? language.flag : language.disabledFlag"
       width="32"
       height="32"
-      :class="`${!(currentLanguage === language.i18n) ? 'cursor-pointer' : 'orange-border'} ml-2`"
+      :class="`${!(currentLanguage === language.i18n) ? 'cursor-pointer' : 'orange-border'} mr-2`"
     />
   </div>
 </template>

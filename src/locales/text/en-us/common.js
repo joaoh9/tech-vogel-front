@@ -143,5 +143,10 @@ export default {
         placeholder: 'https://twitter.com/',
       },
     },
+    imageUpload: {
+      cropImage: 'Crop image',
+      crop: 'Crop',
+      notImg: 'The selected file is not an image',
+    },
   },
 };

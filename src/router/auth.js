@@ -229,7 +229,7 @@ function savedCompany(to, from, next) {
     });
   }
 
-  if (userInfo.side == 21 || userInfo.side === 22) {
+  if (userInfo.side === 21 || userInfo.side === 22) {
     return next();
   }
 
