@@ -271,5 +271,6 @@ export default {
     },
     skills: 'Habilidades',
     yearsExperience: 'Anos de experiência',
+    deleteAccount: 'Deletar minha conta',
   },
 };
