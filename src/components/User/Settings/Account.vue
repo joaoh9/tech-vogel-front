@@ -8,14 +8,6 @@
       @input="$emit('updates', user)"
       autofocus
     />
-
-    <form-input :title="$t('signup.email.title')" />
-    <v-text-field
-      outlined
-      :rules="[rules.email(user.email)]"
-      v-model="user.email"
-      @input="$emit('updates', user)"
-    />
   </div>
 </template>
 
@@ -31,12 +23,10 @@ export default {
     return {
       user: {
         name: '',
-        email: '',
       },
       rules: {
         min: () => true,
         max: () => true,
-        email: () => true,
       },
     };
   },
@@ -45,9 +35,8 @@ export default {
       const userController = new UserController();
 
       try {
-        const { name, email } = await userController.getById();
-        this.name = name || '';
-        this.email = email || '';
+        const { name } = await userController.getById();
+        this.user.name = name || '';
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));
       }
