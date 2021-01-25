@@ -55,11 +55,12 @@ import CompanyCard from 'Components/Dashboard/CompanyCard';
 import CompanyController from 'Controllers/company';
 import JobController from 'Controllers/job';
 
-import config from '@config';
-
 export default {
   name: 'CompanyDashboard',
   async mounted() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+
     await this.getDashboardInfo();
     await this.getCurrentCompanyJobs();
   },
