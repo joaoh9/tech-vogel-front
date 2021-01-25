@@ -29,12 +29,22 @@
           </template>
 
           <template v-slot:buttons>
-            <div class="d-flex justify-space-between my-6" style="z-index: -1">
+            <div style="z-index: -1">
+              <g-btn
+                class="mb-12"
+                :label="$t('user.deleteAccount')"
+                type="error"
+                style="width: 100%;"
+              />
+            </div>
+
+            <div class="d-flex justify-space-between">
               <g-btn
                 :label="$t('common.backDashboard')"
                 type="secondary"
                 @click="$router.push({ name: 'Company Dashboard' })"
               />
+
               <g-btn :label="$t('common.update')" type="primary" @click="update" />
             </div>
           </template>
@@ -65,7 +75,6 @@ export default {
       currentStep: 0,
       user: {
         name: '',
-        email: '',
       },
       company: {
         logo: {},
@@ -98,7 +107,7 @@ export default {
 
       const obj = this.user;
 
-      for (const key of [ 'name', 'email' ]) {
+      for (const key of ['name']) {
         if (!obj[key]) {
           delete obj[key];
         }

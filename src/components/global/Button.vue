@@ -99,6 +99,7 @@ export default {
         case 'secondary':
         case 'filled':
         case 'outlined':
+        case 'error':
           return 0;
         case 'shadow':
           return 6;
@@ -110,6 +111,8 @@ export default {
           return 'primary';
         case 'secondary':
           return 'secondary';
+        case 'error':
+          return 'error';
         default:
           return this.color;
       }
@@ -119,9 +122,9 @@ export default {
         case 'primary':
           return false;
         case 'secondary':
-          return true;
         case 'outlined':
         case 'outline':
+        case 'error':
           return true;
         default:
           return false;
