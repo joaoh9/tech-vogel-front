@@ -186,7 +186,7 @@ export default {
           this.dataUpdated = !this.dataUpdated;
         }
       } catch (e) {
-        this.$toast.info(this.$t('toast.info.retrieveUserResume'))
+        this.$toast.info(this.$t('toast.info.retrieveUserResume'));
       }
     },
     async saveResume() {
@@ -203,6 +203,7 @@ export default {
           name: 'User Dashboard',
         });
       } catch (e) {
+        console.log('🚀 ~ file: New.vue ~ line 220 ~ saveResume ~ e', e);
         this.$toast.error(this.$t('toast.error.saveResume'));
       }
     },
