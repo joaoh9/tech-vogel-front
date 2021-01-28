@@ -110,6 +110,7 @@ export default {
     pageNotFound: '404 - Página não encontrada',
     uhOh: 'Uh-oh',
     returnHome: 'Clique aqui para retornar à pagina principal',
+    clickSend: 'Clique aqui para enviar',
     return: 'Voltar',
     view: 'Visualizar',
     viewDetails: 'Ver detalhes',

@@ -108,8 +108,10 @@ export default {
       },
       skills: {
         title: 'Fale sobre suas habilidades',
-        techSkillsDescription: 'Nesta sessão você pode selecionar as linguagens de programação e frameworks de seu conhecimento. Lembre-se que suas informações serão levadas em consideração para o cruzamento dos dados entre currículo e descrição do Job.',
-        otherSkillsDescription: 'Selecione os soft skills que possui e os idiomas de seu conhecimento.',
+        techSkillsDescription:
+          'Nesta sessão você pode selecionar as linguagens de programação e frameworks de seu conhecimento. Lembre-se que suas informações serão levadas em consideração para o cruzamento dos dados entre currículo e descrição do Job.',
+        otherSkillsDescription:
+          'Selecione os soft skills que possui e os idiomas de seu conhecimento.',
         description:
           'Você pode editar suas informações depois de salvá-las. Suas informações ficarão visíveis para os usuários da Tech Vogel!',
         explanation: 'Escolha seu nível de experiência em anos',
@@ -271,6 +273,13 @@ export default {
     },
     skills: 'Habilidades',
     yearsExperience: 'Anos de experiência',
-    deleteAccount: 'Deletar minha conta',
+    account: {
+      delete: {
+        title: 'Você tem certeza que deseja deletar sua conta?',
+        subtitle:
+          'Caso clique em "deletar minha conta", um código de confirmação será enviado para seu e-mail.',
+        text: 'Deletar minha conta',
+      },
+    },
   },
 };

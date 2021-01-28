@@ -260,6 +260,12 @@ export default {
     },
     skills: 'Skill',
     yearsExperience: 'Years of Experience',
-    deleteAccount: 'Delete my account',
+    account: {
+      delete: {
+        title: 'Are you sure you want to delete your account?',
+        subtitle: 'Something to put here',
+        text: 'Delete my account',
+      },
+    },
   },
 };

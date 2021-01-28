@@ -25,6 +25,8 @@ export default {
       registeredCompany: 'Para postar em nossa plataforma você deve realizar o Sign up primeiro',
       githubRetrieve: 'Algo de errado ocorreu ao acessar seus dados do GitHub',
       userOrPassword: 'Favor inserir um e-mail e senha válidos',
+      password: 'Algo de errado ocorreu ao atualizar a senha',
+      invalidPassword: 'Por favor, verifique as senhas e tente novamente',
       notAllowed: 'Você não possui permissão para acessar esta página',
       loginFailed: 'Algo de errado ocorreu no seu Log in',
       somethingWrong: 'Um erro ocorreu. Tente novamente mais tarde',
@@ -43,6 +45,7 @@ export default {
       closeTab: 'Você pode fechar esta página e tentar novamente na próxima pagina',
       emailConfirmation: 'E-mail confirmado com sucesso',
       updatedData: 'Dados atualizados com sucesso!',
+      passwordUpdated: 'Senha atualizada com sucesso',
     },
     info: {
       retrieveUserResume: 'Um erro ocorreu ao recuperar os dados do currículo',

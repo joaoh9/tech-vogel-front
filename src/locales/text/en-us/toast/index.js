@@ -23,6 +23,8 @@ export default {
       registeredCompany: 'You must have a registered company in order to post a job!',
       githubRetrieve: 'Something went wrong when retrieving your github data',
       userOrPassword: 'Please insert a correct email or password',
+      password: 'Something went wrong when updating password',
+      invalidPassword: 'Please verify passwords and try again',
       notAllowed: 'You are not allowed to access this page',
       loginFailed: 'Something went wrong on your login',
       somethingWrong: 'Something went wrong. Try again later',
@@ -43,6 +45,7 @@ export default {
       emailConfirmation: 'Email confirmed successfully!',
       passwordResetEmailSent: 'Passoword reset email sent!',
       updatedData: 'Data updated successfully!',
+      passwordUpdated: 'Password updated succesfully',
     },
     info: {
       retrieveUserResume: 'Something went wrong when retrieving resume data',
