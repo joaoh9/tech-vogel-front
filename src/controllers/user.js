@@ -136,7 +136,7 @@ export default class UserController {
   }
 
   async auth({ email, password }) {
-    const axios = Axios.GetInstance();
+    const axios = await Axios.GetInstance();
     const { data, status } = await axios.post('/v1/users/auth', {
       email,
       password,
