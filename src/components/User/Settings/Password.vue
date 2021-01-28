@@ -9,6 +9,7 @@
       @click:append="showPassword = !showPassword"
       :type="showPassword ? 'text' : 'password'"
       @input="$emit('updates', user)"
+      :error-messages="localRules.requiredPassword"
     />
 
     <form-input :title="$t('common.newPassword.label')" />
@@ -20,27 +21,29 @@
       @click:append="showNewPassword = !showNewPassword"
       :type="showNewPassword ? 'text' : 'password'"
       @input="$emit('updates', user)"
+      :error-messages="localRules.equalPassword"
     />
 
     <form-input :title="$t('common.confirmPassword.label')" />
     <v-text-field
       outlined
-      :rules="[rules.equalPassword(user.password, user.confirmPassword)]"
+      :rules="[rules.equalPassword(user.newPassword, user.confirmPassword)]"
       v-model="user.confirmPassword"
       :append-icon="showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
       @click:append="showConfirmPassword = !showConfirmPassword"
       :type="showConfirmPassword ? 'text' : 'password'"
+      :error-messages="localRules.equalPassword"
     />
   </div>
 </template>
 
 <script>
-import UserController from 'Controllers/user';
+import RulesHelper from 'Helpers/rules';
 
 export default {
   name: 'Password',
   mounted() {
-    this.getUserInfo();
+    this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
   data() {
     return {
@@ -52,6 +55,10 @@ export default {
         newPassword: '',
         confirmPassword: '',
       },
+      localRules: {
+        requiredPassword: '',
+        equalPassword: '',
+      },
       rules: {
         min: () => true,
         equalPassword: () => true,
@@ -59,11 +66,24 @@ export default {
     };
   },
   methods: {
-    async getUserInfo() {
-      const userController = new UserController();
-      const { password } = await userController.getById();
+    validatePassword() {
+      const requiredPassword = this.rules.min(6, this.user.password) === true;
 
-      this.password = password || '';
+      if (!requiredPassword) {
+        this.localRules.requiredPassword = this.rules.min(6, this.user.password);
+        return;
+      }
+
+      const equalPassword =
+        this.rules.equalPassword(this.user.newPassword, this.user.confirmPassword) === true;
+
+      if (!equalPassword) {
+        this.localRules.equalPassword = this.rules.equalPassword(
+          this.user.newPassword,
+          this.user.confirmPassword,
+        );
+        return;
+      }
     },
   },
 };
