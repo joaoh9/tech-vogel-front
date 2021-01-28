@@ -18,7 +18,7 @@
               <Account v-on:updates="e => (user = e)" />
             </div>
             <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
-              <Password />
+              <Password v-on:updates="e => (user = e)" />
             </div>
             <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
               <Personal
@@ -30,12 +30,76 @@
 
           <template v-slot:buttons>
             <div style="z-index: -1">
-              <g-btn
-                class="mb-12"
-                :label="$t('user.deleteAccount')"
-                type="error"
-                style="width: 100%;"
-              />
+              <v-dialog v-model="dialog">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    v-on="on"
+                    v-bind="attrs"
+                    class="mb-12 font-weight-bold"
+                    style="width: 100%;"
+                    depressed
+                    outlined
+                    color="error"
+                    @click="
+                      dialog = true;
+                      showFirstDialog = true;
+                    "
+                  >
+                    {{ $t('user.account.delete.text') }}
+                  </v-btn>
+                </template>
+                <div>
+                  <DefaultDialog
+                    v-if="showFirstDialog"
+                    :key="showFirstDialog"
+                    :title="$t('user.account.delete.title')"
+                    :subtitle="$t('user.account.delete.subtitle')"
+                    btnType="error"
+                    :btnText="$t('user.account.delete.text')"
+                    :secBtnText="$t('common.close')"
+                    @close="
+                      showFirstDialog = false;
+                      dialog = false;
+                    "
+                    v-on:primary-button-click="
+                      showFirstDialog = false;
+                      keepDialog = true;
+                      deleteAccount();
+                    "
+                    v-on:secondary-button-click="
+                      showFirstDialog = false;
+                      dialog = false;
+                    "
+                  />
+                  <DefaultDialog
+                    :title="$t('TODO')"
+                    :subtitle="
+                      $t('TODO')
+                    "
+                    btnType="secondary"
+                    :btnText="$t('TODO')"
+                    :secBtnText="$t('common.close')"
+                    emailCode
+                    v-if="keepDialog"
+                    @close="
+                      keepDialog = false;
+                      dialog = false;
+                    "
+                    v-on:code-button-click="
+                      keepDialog = true;
+                      deleteAccount();
+                    "
+                    v-on:primary-button-click="
+                      keepDialog = false;
+                      dialog = false;
+                    "
+                    v-on:secondary-button-click="
+                      keepDialog = false;
+                      dialog = false;
+                    "
+                  />
+                </div>
+              </v-dialog>
             </div>
 
             <div class="d-flex justify-space-between">
@@ -57,10 +121,12 @@
 <script>
 import CompanyController from 'Controllers/company';
 import UserController from 'Controllers/user';
+import NotificationController from 'Controllers/notification';
 import Stepper from 'Components/Interface/Stepper';
 import Account from './Account';
 import Password from './Password';
 import Personal from './Personal';
+import DefaultDialog from 'Components/Dialogs/Default';
 
 export default {
   name: 'SettingsOverview',
@@ -69,12 +135,16 @@ export default {
     Account,
     Password,
     Personal,
+    DefaultDialog,
   },
   data() {
     return {
       currentStep: 0,
       user: {
         name: '',
+        password: '',
+        newPassword: '',
+        confirmPassword: '',
       },
       company: {
         logo: {},
@@ -87,6 +157,10 @@ export default {
           twitter: '',
         },
       },
+      dialog: false,
+      confirmationKey: '',
+      showFirstDialog: false,
+      keepDialog: false,
     };
   },
   methods: {
@@ -94,6 +168,9 @@ export default {
       switch (this.currentStep) {
         case 0:
           await this.updateUserAccount();
+          break;
+        case 1:
+          await this.updatePassword();
           break;
         case 2:
           await this.updateCompany();
@@ -164,6 +241,43 @@ export default {
         this.$toast.error(this.$t('toast.error.updateCompany'));
       } finally {
         this.loading = false;
+      }
+    },
+    async updatePassword() {
+      const userController = new UserController();
+      const { email } = await userController.getById();
+
+      try {
+        const data = await userController.auth({
+          email,
+          password: this.user.password,
+        });
+
+        if (data && this.user.newPassword && this.user.confirmPassword) {
+          this.user.password = this.user.newPassword;
+
+          const response = await userController.update(this.user);
+
+          if (response) {
+            this.$toast.success(this.$t('toast.success.passwordUpdated'));
+
+            this.$router.push({
+              name: 'User Dashboard',
+            });
+          }
+        } else {
+          this.$toast.error(this.$t('toast.error.invalidPassword'));
+        }
+      } catch (e) {
+        this.$toast.error(this.$t('toast.error.password'));
+      }
+    },
+    async deleteAccount() {
+      const notificationController = new NotificationController();
+      try {
+        await notificationController.deleteAccount();
+      } catch (e) {
+        this.$toast.error(this.$t('toast.error.somethingWrong'));
       }
     },
   },
