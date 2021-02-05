@@ -23,7 +23,7 @@ export default {
     _text: String,
   },
   async mounted() {
-    this.userId = this.$route.query.id;
+    this.email = this.$route.query.email;
     this.confirmationKey = this.$route.query.key;
     this.confirmUser();
     this.confirmationStatus = this._code || 0;
