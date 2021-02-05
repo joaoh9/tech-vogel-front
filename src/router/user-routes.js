@@ -36,7 +36,7 @@ const routes = [
     beforeEnter: auth.unlogged,
   },
   {
-    path: '/password-reset',
+    path: '/reset-password/:email',
     name: 'Password Reset',
     component: PasswordReset,
     beforeEnter: auth.unlogged,

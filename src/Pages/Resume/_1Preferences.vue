@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import ResumeController from 'Controllers/resume';
 
 export default {
   name: 'Preferences',

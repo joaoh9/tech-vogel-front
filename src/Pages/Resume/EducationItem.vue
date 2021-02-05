@@ -3,8 +3,6 @@
     <v-row>
       <v-col cols="12" md="8">
         <form-input :title="$t('resume.register.education.courseTitle.title')" />
-        {{ education }}
-        {{ _education }}
         <v-text-field
           autofocus
           v-model="education.courseTitle"

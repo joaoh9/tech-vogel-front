@@ -97,7 +97,14 @@ export default {
       return this.$vuetify.breakpoint.width * 0.6;
     },
     currencyConverter() {
-      return this.$t(`dictionary.currency.${this.job.salary.currency}`);
+      const converter = {
+        'USD': 'en-us',
+        'GBP': 'en-gb',
+        'EUR': 'de-de',
+        'BRL': 'pt-br',
+      }
+
+      return converter[this.job.salary.currency]
     },
     getSalaryInfo() {
       return (

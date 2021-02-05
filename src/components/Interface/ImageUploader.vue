@@ -4,9 +4,10 @@
     <v-row justify="center">
       <v-dialog v-model="cropPhoto" width="700px">
         <v-card class="pa-6">
-          <v-card-title>
+          <div class="d-flex justify-space-between mx-6 mb-4">
             <span class="headline">{{ $t('common.imageUpload.cropImage') }}</span>
-          </v-card-title>
+            <g-btn type="primary" @click="cropImage()" :label="$t('common.imageUpload.crop')" />
+          </div>
           <v-card-text>
             <vue-cropper
               class="cropper"
@@ -18,9 +19,6 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn x-large depressed color="blue" class="mr-4 white--text" @click="cropImage()">
-              {{ $t('common.imageUpload.crop') }}
-            </v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
