@@ -65,6 +65,7 @@ export default {
       emailValidation: 'Email and confirmation must be equals',
       passwordValidation: 'Password and confirmation must be equals',
       imageFileFormat: 'Only .jpeg, .jpg and .png file formats!',
+      wrongPasswordAuth: 'We could not validate your current password. Please make sure it is right!',
     },
     open: {
       login: 'Login successful',

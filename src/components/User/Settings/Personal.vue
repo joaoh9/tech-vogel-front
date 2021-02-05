@@ -1,18 +1,17 @@
 <template>
   <div>
-    <form-input :title="$t('company.new.logo.title')" />
-    <v-file-input
-      outlined
-      :placeholder="$t('company.new.logo.placeholder')"
-      v-model="company.logo"
-      @change="handleFileUpload"
-    >
-    </v-file-input>
+   <ImageUploader
+      :message="$t('company.new.logo.placeholder')"
+      :_data64="currentLogo"
+      :key="loading"
+      v-on:image-data="e => (company.logo = e)"
+    />
 
     <form-input :title="$t('company.new.companyName')" />
     <v-text-field
       outlined
       :rules="[rules.min(3, company.name), rules.max(200, company.name)]"
+      counter="200"
       v-model="company.name"
       @input="$emit('updates', company)"
       data-cy="register-company-name"
@@ -22,8 +21,11 @@
     <v-textarea
       v-model="company.description"
       outlined
-      :rules="[rules.min(10, company.description), rules.max(5000, company.description)]"
-      @input="$emit('updates', company)"
+      counter="5000"
+      :rules="[
+        rules.min(10, company.description),
+        rules.max(5000, company.description),
+      ]"
     />
 
     <form-input :title="$t('common.links.webpage.title')" />
@@ -32,6 +34,7 @@
       v-model="company.links.website"
       @input="$emit('updates', company)"
       outlined
+      counter="200"
       :rules="[rules.max(200, company.links.website)]"
     />
 
@@ -41,6 +44,7 @@
       v-model="company.links.linkedin"
       @input="$emit('updates', company)"
       outlined
+      counter="200"
       :rules="[rules.max(200, company.links.linkedin)]"
     />
 
@@ -50,6 +54,7 @@
       v-model="company.links.instagram"
       @input="$emit('updates', company)"
       outlined
+      counter="200"
       :rules="[rules.max(200, company.links.instagram)]"
     />
 
@@ -59,6 +64,7 @@
       v-model="company.links.twitter"
       @input="$emit('updates', company)"
       outlined
+      counter="200"
       data-cy="register-company-desc"
       :rules="[rules.max(200, company.links.twitter)]"
     />
@@ -69,11 +75,15 @@
 import RulesHelper from 'Helpers/rules';
 import config from '@config';
 import CompanyController from 'Controllers/company';
-
+import ImageUploader from 'Components/Interface/ImageUploader';
+import 'cropperjs/dist/cropper.css';
 const MB = 1000 * 1000;
 
 export default {
-  name: 'Personal',
+  name: 'CompanyUpdate',
+  components: {
+    ImageUploader,
+  },
   mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
@@ -94,6 +104,8 @@ export default {
           twitter: '',
         },
       },
+      loading: true,
+      currentLogo: '',
       rules: {
         min: () => true,
         max: () => true,
@@ -104,9 +116,11 @@ export default {
     async getCompanyInfo() {
       const companyController = new CompanyController();
 
+      this.loading = true;
+
       try {
         const data = await companyController.getByCurrentUser();
-        this.company.logo = data.logo || {};
+        this.currentLogo = data.logo || {};
         this.company.name = data.name || '';
         this.company.description = data.description || '';
         this.company.links.website = data.links.website || '';
@@ -115,6 +129,8 @@ export default {
         this.company.links.twitter = data.links.twitter || '';
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveCompany'));
+      } finally {
+        this.loading = false;
       }
 
       this.$emit('updates', this.company);

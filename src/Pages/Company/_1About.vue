@@ -10,6 +10,7 @@
       outlined
       :rules="[rules.min(3, name), rules.required(name), rules.max(200, name)]"
       v-model="name"
+      counter="200"
       @input="$emit('company-name', name)"
       data-cy="register-company-name"
     />
@@ -18,6 +19,7 @@
     <v-textarea
       v-model="description"
       outlined
+      counter="5000"
       :rules="[
         rules.min(10, description),
         rules.max(5000, description),
@@ -31,6 +33,7 @@
       v-model="website"
       @input="$emit('website', website)"
       outlined
+      counter="200"
       :rules="[rules.max(200, website)]"
     />
 
@@ -40,6 +43,7 @@
       v-model="linkedin"
       @input="$emit('linkedin', linkedin)"
       outlined
+      counter="200"
       :rules="[rules.max(200, linkedin)]"
     />
 
@@ -49,6 +53,7 @@
       v-model="instagram"
       @input="$emit('instagram', instagram)"
       outlined
+      counter="200"
       :rules="[rules.max(200, instagram)]"
     />
 
@@ -58,6 +63,7 @@
       v-model="twitter"
       @input="$emit('twitter', twitter)"
       outlined
+      counter="200"
       data-cy="register-company-desc"
       :rules="[rules.max(200, twitter)]"
     />

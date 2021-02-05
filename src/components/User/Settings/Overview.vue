@@ -266,10 +266,10 @@ export default {
             });
           }
         } else {
-          this.$toast.error(this.$t('toast.error.invalidPassword'));
+          this.$toast.warning(this.$t('toast.error.wrongPasswordAuth'));
         }
       } catch (e) {
-        this.$toast.error(this.$t('toast.error.password'));
+        this.$toast.error('');
       }
     },
     async deleteAccount() {

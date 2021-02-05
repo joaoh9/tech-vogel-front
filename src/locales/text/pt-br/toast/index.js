@@ -65,6 +65,7 @@ export default {
       emailValidation: 'Ambos e-mails devem ser iguais',
       passwordValidation: 'As senhas devem ser iguais',
       imageFileFormat: 'Apenas formatos .jpeg, .jpg e .png possíveis!',
+      wrongPasswordAuth: 'Erro ao validar sua senha atual. Confira se ela está certa!',
     },
     open: {
       login: 'Olá! Login realizado com sucesso!',
