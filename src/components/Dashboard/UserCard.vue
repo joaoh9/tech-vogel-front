@@ -13,6 +13,9 @@
         </v-avatar>
       </div>
     </div>
+    <div v-else>
+      Carregando...
+    </div>
   </v-card>
 </template>
 

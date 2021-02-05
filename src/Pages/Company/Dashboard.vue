@@ -1,7 +1,7 @@
 <template>
   <v-row class="container">
     <v-col cols="12" md="4">
-      <UserCard :user="user" v-if="user && company" :key="loaded.user" :picture="company.logo" />
+      <UserCard :user="user" v-if="user && company" :key="loaded.user" :loading="loaded.user" :picture="company.logo" />
       <g-btn
         to="/jobs/new"
         class="mt-4"
@@ -60,9 +60,10 @@ export default {
   async mounted() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
-
+    this.loaded.user = false;
     await this.getDashboardInfo();
     await this.getCurrentCompanyJobs();
+    this.loaded.user = true;
   },
   components: {
     CompanyCard,
