@@ -102,6 +102,14 @@ export default {
     this.rulesLoaded = true;
     if (this.email) {
       this.user.email = this.email;
+      this.$route.params.email = this.email
+    }
+    else if (this.$route.params.email) {
+      this.user.email = this.$route.params.email;
+    }
+    if (this.$route.query.key) {
+      this.user.confirmationCode = this.$route.query.key;
+      this.step = 3
     }
     this.retrieveUserDataFromLocalStorage();
   },
