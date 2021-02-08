@@ -94,6 +94,7 @@ export default {
     document.documentElement.scrollTop = 0;
     this.companyId = this.$route.params.companyId;
     this.jobId = this.$route.params.jobId;
+
     if (this.job_ && this.company_) {
       this.job = this.job_;
       this.company = this.company_;
@@ -157,7 +158,7 @@ export default {
       const jobController = new JobController();
 
       try {
-        await jobController.patch(this.job);
+        await jobController.update(this.job.id, this.job);
         this.$toast.success(this.$t('toast.success.jobEdit'));
         this.$router.push({
           path: '/company/dashboard',

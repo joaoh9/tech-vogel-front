@@ -89,7 +89,7 @@ export default class JobController {
   async update(jobId, updates) {
     const userToken = StorageHelper.loadState('userToken');
     const axios = await Axios.GetInstance(userToken);
-    const { data } = await axios.put(`/v1/jobs/${jobId}`, updates);
+    const { data } = await axios.put(`/v1/jobs/me/${jobId}`, updates);
 
     return data;
   }

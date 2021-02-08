@@ -96,7 +96,7 @@ export default {
     return {
       perks: '',
       salary: {
-        currency: 'USD',
+        currency: 'BRL',
         min: '',
         max: '',
         timeFrame: 'MONTHS',

@@ -31,6 +31,7 @@
     </v-col>
     <v-col cols="12" md="8">
       <div>
+        <v-skeleton-loader v-if="loadingJobs" type="article, actions" />
         <CompanyCard
           :company="company"
           v-if="company"
@@ -75,13 +76,13 @@ export default {
     return {
       user: {},
       company: null,
+      loadingJobs: true,
       loaded: {
         company: false,
         user: false,
       },
       jobs: [],
       jobsPosted: -1,
-      loadingJobs: false,
     };
   },
   methods: {

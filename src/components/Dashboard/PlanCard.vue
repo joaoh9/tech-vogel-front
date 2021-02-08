@@ -61,7 +61,7 @@
         <div class="d-flex align-center justify-center">
           <v-btn
             absolute
-            bottom="0"
+            :bottom="true"
             elevation="0"
             style="height: 56px; width: 270px;"
             color="primary"
@@ -73,7 +73,7 @@
           </v-btn>
           <v-btn
             absolute
-            bottom="0"
+            :bottom="true"
             elevation="0"
             style="height: 56px; width: 270px;"
             color="primary"

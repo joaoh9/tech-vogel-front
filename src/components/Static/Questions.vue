@@ -6,7 +6,7 @@
         <sub-1 class="text-center my-4">{{ $t('questions.reachUs.description') }}</sub-1>
         <v-btn
           absolute
-          bottom="0"
+          :bottom="true"
           color="primary"
           outlined
           large
@@ -23,7 +23,7 @@
         <sub-1 class="text-center mt-4 mb-8">{{ $t('questions.call.description') }}</sub-1>
         <v-btn
           absolute
-          bottom="0"
+          :bottom="true"
           color="secondary"
           outlined
           large
