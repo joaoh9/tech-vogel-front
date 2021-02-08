@@ -39,12 +39,13 @@
           </div>
           <h4 class="h4-bold-alternative">Job Description</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.description"></div>
-          <h4 v-if="job.perks" class="h4-bold-alternative mt-4">Perks & benefits</h4>
+          <h4 v-if="job.perks" class="h4-bold-alternative mt-4">{{ $t('job.details.perks') }}</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.perks"></div>
         </v-col>
         <v-col cols="12" lg="4" xl="3">
           <JobApplicationCard
             :applyButton="applyButton"
+            :userApplied="job.applied"
             :editMode="editMode"
             :job="job"
             :company="company"
@@ -127,6 +128,7 @@ export default {
 
       try {
         this.job = await jobController.getById(this.jobId);
+        console.log('🚀 ~ file: JobDetails.vue ~ line 130 ~ getJobData ~ this.job', this.job);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobData', { jobId: this.jobId }));
       }

@@ -20,7 +20,7 @@
               apply = true;
               showConfirmationDialog1 = true;
             "
-            :label="$t('job.details.apply')"
+            :label="getApplyButtonText()"
           />
         </template>
         <div>
@@ -84,7 +84,9 @@
     </div>
     <div class="d-flex justify-center align-center flex-wrap mt-2">
       <div v-for="(icon, i) in getSocialMediaLinks()" :key="i">
-        <v-icon color="secondary-lighten-2" class="mx-2" @click="newWindow(icon.link)"> {{ icon.icon }}</v-icon>
+        <v-icon color="secondary-lighten-2" class="mx-2" @click="newWindow(icon.link)">
+          {{ icon.icon }}
+        </v-icon>
       </div>
     </div>
   </v-card>
@@ -106,6 +108,9 @@ export default {
     applyButton: {
       type: Boolean,
       default: true,
+    },
+    userApplied: {
+      type: Boolean,
     },
   },
   components: {
@@ -176,6 +181,13 @@ export default {
 
       return data;
     },
+    getApplyButtonText() {
+      if (!this.userApplied) {
+        return this.$t('job.details.apply');
+      } else {
+        return this.$t('job.details.alreadyApplied');
+      }
+    },
     getLinkIcon(link) {
       console.log('🚀 ~ file: JobApplicationCard.vue ~ line 179 ~ getLinkIcon ~ link', link);
       switch (link) {
@@ -192,7 +204,7 @@ export default {
       }
     },
     getApplicationButtonType() {
-      if (this.editMode) {
+      if (this.editMode || this.userApplied) {
         return 'disabled';
       }
       const userController = new UserController();

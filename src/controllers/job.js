@@ -80,7 +80,8 @@ export default class JobController {
   }
 
   async getById(jobId) {
-    const axios = await Axios.GetInstance();
+    const userToken = StorageHelper.loadState('userToken');
+    const axios = await Axios.GetInstance(userToken);
     const { data } = await axios.get(`/v1/jobs/${jobId}`);
 
     return data;

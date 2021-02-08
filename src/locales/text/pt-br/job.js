@@ -85,7 +85,9 @@ export default {
 
     details: {
       apply: 'Se candidate para esta vaga!',
+      perks: 'Benefícios',
       managedBy: 'Vaga gerenciada por {user}',
+      alreadyApplied: 'Você Já se aplicou!',
       aboutTheCompany: 'Sobre a empresa',
     },
     apply: {

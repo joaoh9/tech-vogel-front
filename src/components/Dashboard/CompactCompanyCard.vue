@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="pa-12 bs-primary" color="bg">
+    <v-card class="pa-6 bs-primary" color="bg">
       <div class="d-flex justify-space-between flex-column color-secondary">
         <p class="overline">{{ $t('company.dashboard.yourCompany.title') }}</p>
         <h3 class="mb-5 mt-n2 text-capitalize">{{ company.name }}</h3>
