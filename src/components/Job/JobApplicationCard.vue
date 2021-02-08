@@ -82,6 +82,11 @@
       <h6>{{ $t('job.details.aboutTheCompany') }}</h6>
       <sub-1 class="text-justify" style="display: block" v-html="company.description"></sub-1>
     </div>
+    <div class="d-flex justify-center align-center flex-wrap mt-2">
+      <div v-for="(icon, i) in getSocialMediaLinks()" :key="i">
+        <v-icon color="secondary-lighten-2" class="mx-2" @click="newWindow(icon.link)"> {{ icon.icon }}</v-icon>
+      </div>
+    </div>
   </v-card>
 </template>
 
@@ -154,6 +159,38 @@ export default {
         },
       ];
     },
+    getSocialMediaLinks() {
+      const data = [];
+      if (!this.company || !this.company.links) {
+        return [];
+      }
+
+      for (const key of Object.keys(this.company.links)) {
+        if (this.company.links[key]) {
+          data.push({
+            link: this.company.links[key],
+            icon: this.getLinkIcon(key),
+          });
+        }
+      }
+
+      return data;
+    },
+    getLinkIcon(link) {
+      console.log('🚀 ~ file: JobApplicationCard.vue ~ line 179 ~ getLinkIcon ~ link', link);
+      switch (link) {
+        case 'website':
+          return 'mdi-web';
+        case 'linkedin':
+          return 'mdi-twitter';
+        case 'twitter':
+          return 'mdi-linkedin';
+        case 'instagram':
+          return 'mdi-instagram';
+        default:
+          return 'mdi-account';
+      }
+    },
     getApplicationButtonType() {
       if (this.editMode) {
         return 'disabled';
@@ -182,6 +219,9 @@ export default {
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobApplying'));
       }
+    },
+    newWindow(link) {
+      window.open(link, '_blank');
     },
   },
 };
