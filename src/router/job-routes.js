@@ -12,6 +12,13 @@ const routes = [
     beforeEnter: auth.savedCompany,
   },
   {
+    path: '/jobs/edit/:id',
+    name: 'Edit Job',
+    component: NewJob,
+    props: true,
+    beforeEnter: auth.savedCompany,
+  },
+  {
     path: '/jobs/:companyId/:jobId',
     name: 'Job Description',
     component: JobDetails,

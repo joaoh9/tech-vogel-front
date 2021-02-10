@@ -24,13 +24,7 @@
       <v-col cols="3">
         <div class="d-flex justify-center flex-column align-center">
           <g-btn type="text" color="primary" :label="$t('job.see')" @click="goToJobDetails" />
-          <g-btn
-            v-if="editJobVerification()"
-            type="text"
-            color="primary"
-            :label="$t('job.edit')"
-            @click="editJob"
-          />
+          <g-btn type="text" color="primary" :label="$t('job.edit')" @click="editJob" />
         </div>
       </v-col>
     </v-row>
@@ -76,10 +70,7 @@ export default {
       });
     },
     editJob() {
-      this.$router.push({
-        name: 'New Job',
-        params: { job: this.job, editingJobPosted: true },
-      });
+      this.$router.push(`/jobs/edit/${this.job.id}`);
     },
     getMinWidth() {
       if (this.$vuetify.breakpoint.lgAndUp) {

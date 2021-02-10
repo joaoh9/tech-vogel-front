@@ -189,7 +189,6 @@ export default {
       }
     },
     getLinkIcon(link) {
-      console.log('🚀 ~ file: JobApplicationCard.vue ~ line 179 ~ getLinkIcon ~ link', link);
       switch (link) {
         case 'website':
           return 'mdi-web';

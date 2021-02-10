@@ -64,19 +64,31 @@ export default {
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-    this.company = this.job.company;
-    this.title = this.job.title;
-    this.experienceLevel = this.job.experienceLevel;
-    this.contractType = this.job.contractType;
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
   },
+  computed: {
+    title() {
+      if (this.job.title) {
+        return this.job.title;
+      }
+      return '';
+    },
+    experienceLevel() {
+      if (this.job.experienceLevel) {
+        return this.job.experienceLevel;
+      }
+      return '';
+    },
+    contractType() {
+      if (this.job.contractType) {
+        return this.job.contractType;
+      }
+      return '';
+    },
+  },
   data() {
     return {
-      title: '',
-      experienceLevel: '',
-      contractType: '',
-      company: '',
       rules: {
         required: () => true,
         max: () => true,

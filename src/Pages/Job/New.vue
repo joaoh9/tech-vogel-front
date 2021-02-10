@@ -12,6 +12,7 @@
         <template v-slot:card-content>
           <div v-bind:style="{ display: currentStep == 0 ? 'block' : 'none' }">
             <BasicInfo
+              :key="loaded"
               :job="{
                 title: (job && job.title) || '',
                 experienceLevel: (job && job.experienceLevel) || '',
@@ -24,17 +25,19 @@
           </div>
           <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
             <About
+              :key="loaded"
               :job="{ description: (job && job.description) || '' }"
               v-on:description="r => (job_.description = r)"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
             <Skills
+              :key="loaded"
               :job="{
                 skills: (job && job.skills) || null,
-                techSkills: (job && job.skills.techSkills) || null,
-                softSkills: (job && job.skills.softSkills) || null,
-                languages: (job && job.skills.languages) || null,
+                techSkills: (job && job.skills && job.skills.techSkills) || null,
+                softSkills: (job && job.skills && job.skills.softSkills) || null,
+                languages: (job && job.skills && job.skills.languages) || null,
               }"
               v-on:skills="r => (job_.skills = r)"
               from="job"
@@ -42,7 +45,11 @@
           </div>
           <div v-bind:style="{ display: currentStep == 3 ? 'block' : 'none' }">
             <Benefits
-              :job="{ perks: (job && job.perks) || '', salary: (job && job.salary) || null }"
+              :key="loaded"
+              :job="{
+                perks: (job && job.perks) || '',
+                salary: (job && job.salary) || null,
+              }"
               v-on:perks="r => (job_.perks = r)"
               v-on:salary-currency="r => (job_.salary.currency = r)"
               v-on:salary-time-frame="r => (job_.salary.timeFrame = r)"
@@ -80,6 +87,7 @@ import About from './_2About';
 import Skills from 'Components/General/SkillsSelection';
 import Benefits from './_4Benefits';
 import CompanyController from 'Controllers/company';
+import JobController from 'Controllers/job';
 import UserController from 'Controllers/user';
 import config from '@config';
 import RulesHelper from 'Helpers/rules';
@@ -87,10 +95,6 @@ import RulesHelper from 'Helpers/rules';
 export default {
   name: 'NewJob',
   props: {
-    job: {
-      type: Object,
-      default: () => {},
-    },
     editingJobPosted: {
       type: Boolean,
       default: false,
@@ -103,11 +107,12 @@ export default {
     Benefits,
     Stepper,
   },
-  mounted() {
+  async mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
-
-    if (this.job) {
+    if (this.$route.params.id) {
+      this.job = await new JobController().getById(this.$route.params.id);
       this.job_ = this.job;
+      this.loaded = true;
     }
     this.getCompanyInfo();
   },
@@ -115,6 +120,8 @@ export default {
     return {
       currentStep: 0,
       step: 1,
+      job: {},
+      loaded: false,
       job_: {
         title: '',
         experienceLevel: '',
@@ -145,7 +152,7 @@ export default {
           job_: this.job_,
           company_: this.company,
           editMode: true,
-          editingJobPosted: this.editingJobPosted,
+          savedJobId: this.$route.params.id || '',
         },
       });
     },

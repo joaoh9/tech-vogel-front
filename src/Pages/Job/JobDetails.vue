@@ -19,7 +19,7 @@
           type="filled"
           color="light"
           textColor="primary"
-          :label="editingJobPosted ? $t('common.confirmEdit') : $t('common.postJob')"
+          :label="savedJobId ? $t('common.confirmEdit') : $t('common.postJob')"
         />
       </div>
     </PrimaryHeader>
@@ -76,9 +76,8 @@ export default {
       type: Boolean,
       default: false,
     },
-    editingJobPosted: {
-      type: Boolean,
-      default: false,
+    savedJobId: {
+      type: String,
     },
     applyButton: {
       type: Boolean,
@@ -128,7 +127,6 @@ export default {
 
       try {
         this.job = await jobController.getById(this.jobId);
-        console.log('🚀 ~ file: JobDetails.vue ~ line 130 ~ getJobData ~ this.job', this.job);
       } catch (e) {
         this.$toast.error(this.$t('toast.error.jobData', { jobId: this.jobId }));
       }
@@ -141,7 +139,7 @@ export default {
       }
     },
     runAction() {
-      return this.editingJobPosted ? this.editJob() : this.saveJob();
+      return this.savedJobId ? this.editJob() : this.saveJob();
     },
     async saveJob() {
       const jobController = new JobController();
@@ -160,7 +158,7 @@ export default {
       const jobController = new JobController();
 
       try {
-        await jobController.update(this.job.id, this.job);
+        await jobController.update(this.savedJobId, this.job);
         this.$toast.success(this.$t('toast.success.jobEdit'));
         this.$router.push({
           path: '/company/dashboard',
@@ -170,12 +168,7 @@ export default {
       }
     },
     goBackAndEdit() {
-      this.$router.push({
-        name: 'New Job',
-        params: {
-          job: this.job,
-        },
-      });
+      this.$router.push(`/jobs/edit/${this.savedJobId}`);
     },
   },
 };

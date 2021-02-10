@@ -203,7 +203,6 @@ export default {
           name: 'User Dashboard',
         });
       } catch (e) {
-        console.log('🚀 ~ file: New.vue ~ line 220 ~ saveResume ~ e', e);
         this.$toast.error(this.$t('toast.error.saveResume'));
       }
     },

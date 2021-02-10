@@ -22,9 +22,9 @@
       />
       <v-text-field
         :prefix="getPrefix()"
-        @input="checkInput('salary-min', salary.min)"
+        @change="checkInput('salary-min', salary.min)"
         v-model="salary.min"
-        :rules="[rules.isNumber(salary.min), rules.required(salary.min)]"
+        :rules="[rules.isNumber(salary.min)]"
         :label="range ? $t('common.from') : $t('job.new.price')"
         outlined
         v-mask="minMask"
@@ -32,13 +32,13 @@
       />
 
       <v-text-field
-        @input="checkInput('salary-max', salary.max)"
-        v-model="salary.max"
         :prefix="getPrefix()"
+        @change="checkInput('salary-max', salary.max)"
+        v-model="salary.max"
         :rules="[rules.isNumber(salary.max)]"
         :label="range ? $t('common.to') : $t('job.new.price')"
-        :v-mask="maxMask"
         outlined
+        v-mask="maxMask"
         v-if="range"
       />
     </div>
@@ -85,23 +85,30 @@ export default {
     document.documentElement.scrollTop = 0;
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     this.perks = this.job.perks;
-    if (this.job.salary) {
-      this.salary = this.job.salary;
-      this.salary.min = this.job.salary.min;
-      this.salary.max = this.job.salary.max;
-      this.salary.range = false;
-    }
   },
-  data() {
-    return {
-      perks: '',
-      salary: {
+  computed: {
+    salary() {
+      if (this.job.salary) {
+        return {
+          currency: this.job.salary.currency || 'BRL',
+          min: this.job.salary.min,
+          max: this.job.salary.max,
+          timeFrame: this.job.salary.timeFrame,
+          range: this.job.salary.range,
+        };
+      }
+      return {
         currency: 'BRL',
         min: '',
         max: '',
         timeFrame: 'MONTHS',
         range: false,
-      },
+      };
+    },
+  },
+  data() {
+    return {
+      perks: '',
       rules: {
         required: () => true,
         isNumber: () => true,
@@ -134,17 +141,12 @@ export default {
     },
   },
   watch: {
-    range() {
-      this.$emit('salary-range', this.range);
-    },
-    perks() {
-      this.$emit('perks', this.perks);
-    },
-    'salary.min'() {
-      if (!this.range) {
-        this.salary.max = this.salary.min;
-      }
-    },
+    // range() {
+    // this.$emit('salary-range', this.range);
+    // },
+    // perks() {
+    // this.$emit('perks', this.perks);
+    // },
   },
 };
 </script>
