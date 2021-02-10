@@ -82,6 +82,7 @@ export default {
     },
 
     details: {
+      description: 'Job details',
       perks: 'Perks and benefits',
       apply: 'Apply for this position',
       alreadyApplied: 'Arleady applied!',

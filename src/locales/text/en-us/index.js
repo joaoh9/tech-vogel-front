@@ -7,8 +7,7 @@ import user from './user';
 import enums from './enums';
 import common from './common';
 import toast from './toast/index';
-
-const skill = window.localeSkills;
+import skills from './skills';
 
 export default {
   ...common,
@@ -19,6 +18,6 @@ export default {
   ...unlogged,
   ...user,
   ...enums,
-  ...skill,
+  ...skills,
   ...toast,
 };

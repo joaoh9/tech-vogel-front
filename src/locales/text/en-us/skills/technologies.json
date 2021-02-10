@@ -1,0 +1,21 @@
+{
+  "wordpress": "Word Press",
+  "node": "Node.js",
+  "git": "GitHub",
+  "gitLab": "GitLab",
+  "aws": "AWS",
+  "agile": "Metodologia ágil",
+  "MVC": "Padrão MVC",
+  "TDD": "Test Driven Development",
+  "solid": "Solid",
+  "webAPI": "WebAPI",
+  "scrum": "Scrum",
+  "documentation": "Documentação",
+  "swagger": "Swagger",
+  "tableless": "Tableless",
+  "semantica": "Semântica",
+  "crossbrowser": "CrossBrowser",
+  "infra": "Infraestrutura de servidores",
+  "db": "Banco de dados",
+  "webDev": "Desenvolvimento WEB"
+}

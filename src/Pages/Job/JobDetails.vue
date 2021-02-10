@@ -37,7 +37,7 @@
               <SkillPresentation :skills="job.skills" />
             </v-card>
           </div>
-          <h4 class="h4-bold-alternative">Job Description</h4>
+          <h4 class="h4-bold-alternative">{{ $t('job.details.description') }}</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.description"></div>
           <h4 v-if="job.perks" class="h4-bold-alternative mt-4">{{ $t('job.details.perks') }}</h4>
           <div class="bdy-1 d-block mt-4" v-html="job.perks"></div>
