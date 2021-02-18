@@ -21,6 +21,7 @@
       hide-details
       autofocus
       v-model="techSkills"
+      data-cy="tech-skills"
       @input="e => (techSkills = e)"
       :items="$t('skills.techSkills')"
       multiple
@@ -56,6 +57,7 @@
       hide-selected
       hide-details
       v-model="softSkills"
+      data-cy="soft-skills"
       @input="e => (softSkills = e)"
       :items="$t('skills.softSkills')"
       multiple
@@ -78,6 +80,7 @@
       hide-details
       :label="$t('job.new.languages.inputHint')"
       v-model="languages"
+      data-cy="languages"
       @input="e => (languages = e)"
       :items="$t('skills.languages')"
       multiple

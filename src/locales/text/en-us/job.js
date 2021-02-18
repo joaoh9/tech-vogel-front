@@ -117,6 +117,7 @@ export default {
     selectMaximum: 'Please select a maximum of {max} {skillName}',
     see: 'See Job >',
     edit: 'Edit Job',
+    remove: 'Remove Job',
     list: 'Go to Job List',
   },
 };

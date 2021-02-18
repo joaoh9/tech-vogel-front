@@ -1,6 +1,10 @@
 <template>
   <div class="mx-3" v-if="skills" :key="skills.length">
-    <v-row class="d-flex flex-wrap" v-for="(skillType, i) in Object.keys(skills)" :key="i">
+    <v-row
+      :class="`d-flex ${i == Object.keys(skills).length - 1 ? 'mb-0' : 'mb-3'} flex-wrap`"
+      v-for="(skillType, i) in Object.keys(skills)"
+      :key="i"
+    >
       <h6 class="mr-4 my-2 color-secondary">{{ $t(`enums.skills.${skillType}`) }}</h6>
       <v-row>
         <v-chip
@@ -17,7 +21,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'SkillPresentation',
   props: {
@@ -40,7 +43,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style></style>

@@ -29,7 +29,7 @@
 
       <v-btn
         v-if="$vuetify.breakpoint.smAndUp"
-        dataCy="nav-login"
+        data-cy="nav-login"
         to="/login"
         class="mx-4 py-5"
         color="white"
@@ -41,7 +41,7 @@
       <v-btn
         v-if="$vuetify.breakpoint.smAndUp"
         color="primary"
-        dataCy="nav-new-company"
+        data-cy="nav-signup"
         class="py-5 px-12"
         to="/signup"
       >

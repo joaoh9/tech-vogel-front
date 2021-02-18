@@ -9,7 +9,7 @@
           v-model="user.email"
           :rules="[rule.required(user.email)]"
           autofocus
-          data-cy="login-email"
+          data-cy="email"
           :error-messages="localRules.checkEmail"
         />
         <form-input required :title="$t('common.password.label')" />
@@ -21,7 +21,7 @@
           :type="showPassword ? 'text' : 'password'"
           v-on:keyup.enter="login"
           outlined
-          data-cy="login-password"
+          data-cy="password"
           :error-messages="localRules.checkPassword"
         />
         <div class="d-flex justify-space-between">

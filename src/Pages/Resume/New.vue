@@ -78,12 +78,14 @@
           <div class="d-flex justify-space-between my-6" style="z-index: -1">
             <g-btn
               :label="$t('common.back')"
+              data-cy="cv-back"
               v-if="currentStep >= 0"
               type="secondary"
               @click="currentStep === 0 ? $router.go(-1) : currentStep--"
             />
             <g-btn
               :label="currentStep === 5 ? $t('common.finish') : $t('common.next')"
+              data-cy="cv-next"
               type="primary"
               @click="checkInputsAndFollowUp()"
             />

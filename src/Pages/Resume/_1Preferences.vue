@@ -3,6 +3,7 @@
     <form-input class="mt-6" :title="$t('resume.register.preferences.jobInterests.title')" />
     <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
+        :data-cy="option.value"
         v-model="jobInterests"
         @change="$emit('job-interests', jobInterests)"
         v-for="(option, index) in $t('enums.jobInterests')"
@@ -15,6 +16,7 @@
     <form-input class="mt-6" :title="$t('resume.register.preferences.jobType.title')" />
     <div class="d-flex justify-space-between flex-wrap">
       <v-checkbox
+        :data-cy="option.value"
         v-model="contractType"
         @change="$emit('contract-type', contractType)"
         v-for="(option, index) in $t('enums.contractType')"
@@ -29,7 +31,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Preferences',
   props: {

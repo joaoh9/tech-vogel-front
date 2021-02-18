@@ -10,6 +10,7 @@
     <v-text-field
       autofocus
       :placeholder="$t('resume.register.personalInfo.mainRole.placeholder')"
+      data-cy="main-role"
       v-model="resume.mainRole"
       @input="$emit('main-role', resume.mainRole)"
       outlined
@@ -21,6 +22,7 @@
       <v-col cols="12" md="8">
         <v-text-field
           v-model="resume.location.city"
+          data-cy="location-city"
           @input="$emit('location', resume.location)"
           class="mt-n3"
           outlined
@@ -33,6 +35,7 @@
         <v-text-field
           v-model="resume.location.country"
           @input="$emit('location', resume.location)"
+          data-cy="location-country"
           class="mt-n3"
           outlined
           :placeholder="$t('resume.register.personalInfo.location.country')"
@@ -45,6 +48,7 @@
     </v-row>
     <form-input required :title="$t('resume.register.personalInfo.personalBio.title')" />
     <vue-editor
+      data-cy="personal-bio"
       :editorToolbar="$t('quill.defaultToolbar')"
       v-model="resume.personalBio"
       :rules="[rules.required(resume.personalBio), rules.max(20000, resume.personalBio)]"
@@ -53,6 +57,7 @@
     <form-input class="mt-7" :title="$t('common.links.website.title')" />
     <v-text-field
       :placeholder="$t('common.links.website.placeholder')"
+      data-cy="links-website"
       v-model="resume.links.website"
       @input="$emit('links', resume.links)"
       outlined
@@ -65,6 +70,7 @@
     />
     <v-text-field
       :placeholder="$t('common.links.github.placeholder')"
+      data-cy="links-github"
       v-model="resume.links.github"
       @input="$emit('links', resume.links)"
       outlined
@@ -77,19 +83,11 @@
     />
     <v-text-field
       :placeholder="$t('common.links.linkedin.placeholder')"
+      data-cy="links-linkedin"
       v-model="resume.links.linkedin"
       @input="$emit('links', resume.links)"
       outlined
       :rules="[rules.max(200, resume.links.linkedin)]"
-    />
-
-    <form-input :title="$t('common.links.behance.title')" />
-    <v-text-field
-      :placeholder="$t('common.links.behance.placeholder')"
-      v-model="resume.links.behance"
-      @input="$emit('links', resume.links)"
-      outlined
-      :rules="[rules.max(200, resume.links.behance)]"
     />
     <slot />
   </div>

@@ -22,7 +22,7 @@
               :label="$t('signup.buttons.createCV')"
               @click="updateUserSide('professional')"
               block
-              data-cy="side-pro"
+              data-cy="side-professional"
             />
           </div>
         </div>

@@ -5,6 +5,7 @@
         class="mt-4"
         type="primary"
         :minwidth="300"
+        data-cy="cv-manual"
         @click="$emit('manual-register', 'manual-register')"
         :label="$t('resume.register.start.registerManually.title')"
       />
@@ -13,6 +14,7 @@
         type="outlined"
         color="primary"
         :minwidth="300"
+        data-cy="cv-go-to-dashboard"
         @click="$emit('go-to-dashboard')"
         :label="$t('resume.register.start.goToDashboard')"
       />

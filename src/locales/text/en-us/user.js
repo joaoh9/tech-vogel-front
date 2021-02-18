@@ -88,9 +88,7 @@ export default {
           title: 'Company Name',
         },
         position: 'Your position',
-        myJob: {
-          options: ['This is my current job'],
-        },
+        currentJob: 'This is my current job',
         jobDescription: {
           title: 'Description',
           placeholder: 'What were your biggest accomplishments?',

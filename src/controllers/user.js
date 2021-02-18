@@ -35,8 +35,7 @@ export default class UserController {
   }
 
   async getDashboardInfo() {
-    const userToken = StorageHelper.loadState('userToken');
-    const axios = await Axios.GetInstance(userToken);
+    const axios = await Axios.GetInstance();
 
     const { data } = await axios.get('/v1/users/me/dashboard');
 
@@ -44,8 +43,7 @@ export default class UserController {
   }
 
   async getMyProfilePicture() {
-    const userToken = StorageHelper.loadState('userToken');
-    const axios = await Axios.GetInstance(userToken);
+    const axios = await Axios.GetInstance();
 
     const { data } = await axios.get('/v1/users/me/profile-pic');
 
@@ -114,9 +112,7 @@ export default class UserController {
   }
 
   async update(updates) {
-    const userToken = StorageHelper.loadState('userToken');
-
-    const axios = Axios.GetInstance(userToken);
+    const axios = Axios.GetInstance();
     await axios.put('/v1/users/me', updates);
 
     const { data: newUserData } = await axios.post('/v1/users/me/token');
@@ -128,8 +124,7 @@ export default class UserController {
   }
 
   async getById() {
-    const userToken = StorageHelper.loadState('userToken');
-    const axios = await Axios.GetInstance(userToken);
+    const axios = await Axios.GetInstance();
     const { data } = await axios.get('/v1/users/me');
 
     return data;
@@ -146,8 +141,7 @@ export default class UserController {
   }
 
   async getProfilePicture() {
-    const userToken = StorageHelper.loadState('userToken');
-    const axios = Axios.GetInstance(userToken);
+    const axios = Axios.GetInstance();
 
     try {
       const { data } = await axios.get('/v1/users/me/profile-picture');

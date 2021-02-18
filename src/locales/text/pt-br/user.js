@@ -88,9 +88,7 @@ export default {
           title: 'Nome da empresa em que atuou',
         },
         position: 'Seu cargo',
-        myJob: {
-          options: ['Estou nesse emprego atualmente'],
-        },
+        myJob: 'Estou nesse emprego atualmente',
         jobDescription: {
           title: 'Qual era sua função?',
           placeholder: 'Quais são suas maiores conquistas?',

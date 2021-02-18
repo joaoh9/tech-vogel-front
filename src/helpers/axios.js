@@ -1,7 +1,10 @@
 import axios from 'axios';
+import StorageHelper from 'Helpers/storage';
+
 const MB = 1000000;
+
 export default class Axios {
-  static GetInstance(token = null) {
+  static GetInstance() {
     const contentType = 'application/json;charset=UTF-8';
     const headers = {
       'Content-Type': contentType,
@@ -11,8 +14,10 @@ export default class Axios {
       accept: 'application/json',
     };
 
-    if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+    const userToken = StorageHelper.loadState('userToken');
+
+    if (userToken) {
+      headers['Authorization'] = `Bearer ${userToken}`;
     }
 
     return axios.create({

@@ -4,6 +4,7 @@
     <v-text-field
       autofocus
       v-model="workHistory.companyName"
+      :data-cy="`wh-${item}-company-name`"
       :rules="[rules.max(200, workHistory.companyName)]"
       @input="$emit('update', workHistory)"
       :placeholder="$t('resume.register.workExperience.placeholders.company.title')"
@@ -12,6 +13,7 @@
     <form-input :title="$t('resume.register.workExperience.position')" />
     <v-text-field
       v-model="workHistory.role"
+      :data-cy="`wh-${item}-role`"
       :rules="[rules.max(200, workHistory.role)]"
       @input="$emit('update', workHistory)"
       :placeholder="$t('resume.register.workExperience.placeholders.position')"
@@ -22,6 +24,7 @@
         <form-input :title="$t('common.from')" />
         <v-text-field
           v-model="workHistory.startDate"
+          :data-cy="`wh-${item}-start-date`"
           @input="checkYearRules(workHistory.startDate, 'start-date')"
           :placeholder="$t('common.year')"
           outlined
@@ -32,6 +35,7 @@
         <form-input :title="$t('common.until')" />
         <v-text-field
           v-model="workHistory.endDate"
+          :data-cy="`wh-${item}-emd-date`"
           @input="checkYearRules(workHistory.endDate, 'end-date')"
           :placeholder="$t('common.year')"
           outlined
@@ -43,15 +47,15 @@
     <div class="d-flex justify-space-between">
       <v-checkbox
         v-model="workHistory.currentJob"
+        :data-cy="`wh-${item}-current-job`"
         @change="$emit('update', workHistory)"
-        v-for="(option, index) in $t('resume.register.workExperience.myJob.options')"
-        :label="option"
-        :key="index"
+        :label="$t('resume.register.workExperience.myJob')"
       />
     </div>
     <form-input :title="$t('resume.register.workExperience.jobDescription.title')" />
     <v-textarea
       v-model="workHistory.description"
+      :data-cy="`wh-${item}-description`"
       outlined
       :rules="[rules.max(5000, workHistory.description)]"
     />
@@ -65,6 +69,7 @@ export default {
   name: 'WorkItem',
   props: {
     _workHistory: Object,
+    item: Number,
   },
   mounted() {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);

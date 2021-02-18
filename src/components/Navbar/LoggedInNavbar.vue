@@ -6,14 +6,7 @@
         @click="drawer = true"
         :color="isHome() ? 'bg' : 'dark'"
       />
-      <v-btn
-        class="bdy-2"
-        text
-        color="transparent"
-        tile
-        elevation="0"
-        to="/"
-      >
+      <v-btn class="bdy-2" text color="transparent" tile elevation="0" to="/">
         <v-avatar width="150" tile>
           <v-img contain height="60" width="1" :src="isHome() ? logoHome : logo" />
         </v-avatar>
@@ -24,6 +17,7 @@
           v-for="(item, i) in getPrimaryButtons()"
           :key="i"
           type="primary"
+          :data-cy="item.dataCy"
           :label="item.text"
           @click="item.goTo()"
           class="mr-6"
@@ -143,8 +137,9 @@ export default {
         {
           text: this.isCompany ? this.$t('common.postAJob') : this.$t('common.findAJob'),
           goTo: this.isCompany ? this.goToNewJob : this.goToJobList,
+          dataCy: 'nav-job',
         },
-        { text: this.$t('common.dashboard'), goTo: this.goToDashboard },
+        { text: this.$t('common.dashboard'), goTo: this.goToDashboard, dataCy: 'nav-dashboard' },
       ];
     },
   },

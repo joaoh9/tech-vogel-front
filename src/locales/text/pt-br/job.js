@@ -120,6 +120,7 @@ export default {
     selectMaximum: 'Favor selecionar no máximo {max} {skillName}',
     see: 'Ver vaga >',
     edit: 'Editar vaga',
+    remove: 'Remover vaga',
     list: 'Ver lista de vagas',
   },
 };

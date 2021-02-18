@@ -4,6 +4,7 @@
       <WorkItem
         :key="updatedData"
         :_workHistory="workHistory[i]"
+        :item="i"
         v-on:update="
           e => {
             workHistory[i] = e;
@@ -17,6 +18,7 @@
       <g-btn
         type="outlined"
         color="primary"
+        data-cy="work-experience-add"
         :label="$t('common.addMore')"
         @click="
           workHistory.push({
