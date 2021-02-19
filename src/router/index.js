@@ -15,4 +15,10 @@ routes.push(...companyRoutes);
 routes.push(...jobRoutes);
 routes.push(...userRoutes);
 
-export default new VueRouter({ mode: 'history', routes });
+export default new VueRouter({
+  mode: 'history',
+  routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
+});

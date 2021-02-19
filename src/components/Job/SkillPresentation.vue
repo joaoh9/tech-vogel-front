@@ -1,19 +1,25 @@
 <template>
   <div class="mx-3" v-if="skills" :key="skills.length">
     <v-row
-      :class="`d-flex ${i == Object.keys(skills).length - 1 ? 'mb-0' : 'mb-3'} flex-wrap`"
+      :class="`d-flex ${i == Object.keys(skills).length - 1 ? 'mb-0' : 'mb-0'} flex-wrap`"
       v-for="(skillType, i) in Object.keys(skills)"
       :key="i"
     >
-      <h6 class="mr-4 my-2 color-secondary">{{ $t(`enums.skills.${skillType}`) }}</h6>
-      <v-row>
+      <h6 v-if="skills[skillType].length" class="mr-4 mb-2 color-secondary">
+        {{ $t(`enums.skills.${skillType}`) }}
+      </h6>
+      <v-row v-if="skills[skillType].length">
         <v-chip
-          :class="`mx-2 my-2 align-self-center ${j < skills[skillType] ? 'mb-4' : ''}`"
+          :class="`mx-2 my-2 align-self-center ${j < skills[skillType] ? 'mb-0' : ''}`"
           v-for="(skill, j) in skills[skillType]"
           :style="getStyle(skill, skillType)"
           :key="j"
         >
-          {{ $t(`skills.dictionary.${skillType}.${skill.skillId}`) }}
+          {{
+            skill.skillId === 'blocked'
+              ? 'blocked'
+              : $t(`skills.dictionary.${skillType}.${skill.skillId}`)
+          }}
         </v-chip>
       </v-row>
     </v-row>
@@ -30,7 +36,7 @@ export default {
   methods: {
     getStyle(skill, skillType) {
       const color = this.getColor(skillType);
-      return `background-color: ${color}`;
+      return skill.skillId === 'blocked' ? 'filter: blur(6px); background-color: white' : `background-color: ${color}`;
     },
     getColor(skillType) {
       const map = {

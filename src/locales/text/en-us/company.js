@@ -71,7 +71,7 @@ export default {
         currentAds: 'Current ads',
       },
       candidates: {
-        viewCandidate: 'View skills and CV',
+        viewCandidate: 'View complete skills and CV',
       },
       candidateProfile: {
         copyEmail: 'Copy email',

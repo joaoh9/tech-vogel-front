@@ -70,7 +70,7 @@ export default {
         currentAds: 'Vagas no momento',
       },
       candidates: {
-        viewCandidate: 'Ver habilidades e currículo',
+        viewCandidate: 'Ver habilidades e currículo completo',
       },
       candidateProfile: {
         copyEmail: 'Copiar e-mail',

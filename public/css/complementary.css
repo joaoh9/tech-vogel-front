@@ -36,3 +36,7 @@
   font-weight: 600;
   color: #ff9200;
 }
+
+.blur {
+  filter: blur(6px);
+}

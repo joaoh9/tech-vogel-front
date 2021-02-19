@@ -57,7 +57,7 @@ export default {
       const createdAt = new Date(this.job.createdAt);
       const now = new Date();
 
-      return now - createdAt >= config.dayInMs * 15;
+      return now - createdAt >= config.dayInMs * 4;
     },
     goToJobDetails() {
       this.$router.push({
@@ -66,7 +66,7 @@ export default {
     },
     goToReport() {
       this.$router.push({
-        path: `/report/${this.company.id}/${this.job.id}`,
+        path: `/company/report/${this.job.id}`,
       });
     },
     editJob() {
