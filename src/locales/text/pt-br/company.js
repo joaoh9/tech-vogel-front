@@ -41,8 +41,8 @@ export default {
         managePayment: 'Gerenciar pagamento',
       },
       manageAccountInfo: 'Gerenciar informações da conta',
-      buyReport: 'Comprar Relatório',
-      walletBalance: 'Relatórios comprados',
+      unlockReport: 'Desbloquear Relatório',
+      walletBalance: 'Créditos na carteira',
     },
     planCard: {
       forCompanies: 'Para empresas',
@@ -80,6 +80,9 @@ export default {
         experienceLevel: 'Nível de experiência',
         memberSince: 'Na Tech Vogel desde',
       },
+      buy: 'Comprar relatório',
+      unlock: 'Desbloqueie seu relatório!',
+      paymentProceed: 'Seguir para pagamento',
     },
   },
 };

@@ -12,7 +12,48 @@
           xl
           :label="$t('common.return')"
         />
-        <CompanyCard :company="company" :job="job" v-if="company" :key="loaded.company" />
+        <CompanyCard
+          :company="company"
+          :job="job"
+          v-if="company"
+          :jobsPosted="company.jobsPosted"
+          :key="loaded.company"
+        />
+        <v-dialog v-model="buy" v-if="!job.reportPayedFor">
+          <template v-slot:activator="{ on, attrs }">
+            <g-btn
+              v-on="on"
+              v-bind="attrs"
+              class="mt-4"
+              block
+              :type="company.wallet > 0 ? 'primary' : 'disabled'"
+              :label="$t('company.dashboard.unlockReport')"
+              @click="buyReport"
+            />
+          </template>
+          <div>
+            <DefaultDialog
+              v-if="buy"
+              :key="buy"
+              :title="$t('company.report.unlock')"
+              :btnText="$t('company.report.paymentProceed')"
+              :btnType="$t('job.apply.btnType')"
+              :secBtnText="$t('common.close')"
+              @close="buy = false"
+              v-on:primary-button-click="buyReport"
+              v-on:secondary-button-click="buy = false"
+            />
+          </div>
+        </v-dialog>
+        <PlanCard
+          v-if="!job.reportPayedFor"
+          :border="'border-color: #1a193c !important'"
+          :texts="$t('howItWorks.pricing')"
+          :label="$t('company.report.buy')"
+          @click="goToPagarme()"
+          priceTitle
+          class="mt-4"
+        />
       </v-col>
       <v-col cols="12" lg="8" xl="9" style="max-width: 1000px">
         <div class="color-secondary mx-16">
@@ -33,9 +74,11 @@
           <h4 class="mb-2">{{ $tc('company.report.yourTopMatches', 3) }}</h4>
           <bdy-1>{{ $t('company.report.matchesDisclaimer') }} </bdy-1>
           <CandidateCard
+            :reportPayedFor="job.reportPayedFor"
             v-for="(user, index) in top"
             :userInfo="user"
             :resumeInfo="user"
+            :company="company"
             :key="index"
           />
         </div>
@@ -47,6 +90,10 @@
 <script>
 import CompanyCard from 'Components/Dashboard/CompanyCard';
 import CandidateCard from 'Components/Report/CandidateCard';
+
+import DefaultDialog from 'Components/Dialogs/Default';
+
+import PlanCard from 'Components/Dashboard/PlanCard';
 
 import UserController from 'Controllers/user';
 import JobController from 'Controllers/job';
@@ -62,7 +109,9 @@ export default {
   },
   components: {
     CompanyCard,
+    PlanCard,
     CandidateCard,
+    DefaultDialog,
   },
   data() {
     return {
@@ -74,6 +123,7 @@ export default {
         user: false,
       },
       top: [],
+      buy: false,
     };
   },
   methods: {
@@ -115,6 +165,14 @@ export default {
           description: this.job.applications,
         },
       ];
+    },
+    goToPagarme() {
+      window.open(this.company.pagarmeLink, '_blank');
+    },
+    async buyReport() {
+      const jobController = new JobController();
+
+      await jobController.buyReport(this.jobId);
     },
   },
   watch: {

@@ -19,7 +19,7 @@
       <div class="mb-2">
         <sub-2 color="dark"> {{ $t('common.at') }} {{ data.institutionName }} </sub-2>
       </div>
-      <bdy-1 color="dark">{{ data.description }}</bdy-1>
+      <bdy-1 color="dark" v-html="data.description" />
     </div>
   </div>
 </template>

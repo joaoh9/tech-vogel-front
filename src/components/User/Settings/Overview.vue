@@ -245,7 +245,7 @@ export default {
     },
     async updatePassword() {
       const userController = new UserController();
-      const { email } = await userController.getById();
+      const { email } = await userController.getMe();
 
       try {
         const data = await userController.auth({
