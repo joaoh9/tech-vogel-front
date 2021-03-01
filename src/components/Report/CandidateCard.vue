@@ -46,7 +46,17 @@
             color="secondary"
             type="outlined"
             :label="$t('company.report.candidates.viewCandidate')"
-            @click="reportPayedFor ? goToUserProfile() : (buy = !buy)"
+            @click="buy = !buy"
+            v-if="!reportPayedFor"
+          />
+          <g-btn
+            v-else
+            v-on="on"
+            v-bind="attrs"
+            color="secondary"
+            type="outlined"
+            :label="$t('company.report.candidates.viewCandidate')"
+            :to="`/user/id/${userInfo.id}`"
           />
         </template>
         <div>
@@ -158,9 +168,6 @@ export default {
     },
     goToLink(link) {
       window.open(link, '_blank');
-    },
-    goToUserProfile() {
-      window.open('localhost:5100/user/id/' + this.userInfo.id, '_blank');
     },
   },
 };
