@@ -35,7 +35,7 @@ export default {
       const userController = new UserController();
 
       try {
-        const { name } = await userController.getById();
+        const { name } = await userController.getMe();
         this.user.name = name || '';
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveUser'));

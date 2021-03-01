@@ -1,6 +1,12 @@
 <template>
   <div class="d-flex justify-center container">
-    <v-card width="700" max-height="700" class="d-flex flex-column pa-6" elevation="0">
+    <v-card
+      width="700"
+      max-height="700"
+      class="d-flex flex-column pa-6"
+      color="bg"
+      elevation="0"
+    >
       <v-img class="align-self-center" v-if="img" height="250" width="250" :src="img" />
       <div class="d-flex align-center justify-center flex-column mt-6">
         <h4 class=" h4-bold text-center color-secondary">{{ title }}</h4>

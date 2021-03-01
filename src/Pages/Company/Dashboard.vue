@@ -23,7 +23,7 @@
       <PlanCard
         :border="'border-color: #1a193c !important'"
         :texts="$t('howItWorks.pricing')"
-        :label="$t('company.dashboard.buyReport')"
+        :label="$t('company.report.buy')"
         @click="goToPagarme()"
         priceTitle
         class="mt-4"

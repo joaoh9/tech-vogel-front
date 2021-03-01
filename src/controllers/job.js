@@ -106,6 +106,13 @@ export default class JobController {
     return data;
   }
 
+  async buyReport(jobId) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/v1/reports/${jobId}/buy`);
+
+    return data;
+  }
+
   async getApplicationCount(jobId) {
     const axios = await Axios.GetInstance();
     const { data } = await axios.get(`/v1/jobs/${jobId}/applications/count`);

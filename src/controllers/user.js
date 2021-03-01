@@ -123,9 +123,16 @@ export default class UserController {
     return newUserData;
   }
 
-  async getById() {
+  async getMe() {
     const axios = await Axios.GetInstance();
     const { data } = await axios.get('/v1/users/me');
+
+    return data;
+  }
+
+  async getById(id) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get(`/v1/users/${id}`);
 
     return data;
   }

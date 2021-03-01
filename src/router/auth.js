@@ -246,13 +246,7 @@ function savedUser(to, from, next) {
     });
   }
 
-  if (userInfo.side === 11) {
-    return next();
-  }
-
-  return next({
-    name: 'Company Dashboard',
-  });
+  return next();
 }
 
 export default {

@@ -18,16 +18,14 @@
     </PrimaryHeader>
     <v-container>
       <v-row>
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="4" v-if="user" :key="loaded">
           <UserCard
-            v-if="user"
             :user="user"
-            :key="loading.user"
             :picture="user.profilePicture"
             :role="resume.mainRole"
             :location="resume.location"
           />
-          <FindMe class="mt-6" />
+          <FindMe :links="resume.links" class="mt-6" />
         </v-col>
         <v-col cols="1" md="1"></v-col>
         <v-col cols="11" md="7">
@@ -41,6 +39,14 @@
             :key="i"
             :data="work"
             type="work"
+          />
+          <v-divider class="my-8" />
+          <h5 class="h5-bold color-secondary">{{ $t('resume.education') }}</h5>
+          <UserInformation
+            v-for="(edu, i) in resume.education"
+            :key="i + 'edu'"
+            :data="edu"
+            type="edu"
           />
           <v-divider class="my-8" />
 
@@ -61,13 +67,6 @@
           </div>
 
           <v-divider class="my-10 orange-color" />
-          <h5 class="h5-bold color-secondary">{{ $t('resume.education') }}</h5>
-          <UserInformation
-            v-for="(edu, i) in resume.education"
-            :key="i + 'edu'"
-            :data="edu"
-            type="edu"
-          />
         </v-col>
       </v-row>
     </v-container>
@@ -99,31 +98,33 @@ export default {
     user_: Object,
     editMode: Boolean,
   },
-  mounted() {
+  async mounted() {
     this.userId = this.$route.params.userId;
     if (this.user_) {
       this.user = this.user_;
     } else {
-      this.getUser();
-      this.getUserResume();
+      await this.getUser();
+      await this.getUserResume();
+      this.loaded = true;
     }
   },
   data() {
     return {
       userId: '',
-      user: {},
+      user: {
+        profilePicture: '',
+      },
       resume: {},
-      loading: { user: false },
+      loaded: false,
     };
   },
   methods: {
     async getUser() {
       const userController = new UserController();
-      this.loading.user = true;
       try {
-        this.user = await userController.getByUserId(this.userId);
+        this.user = await userController.getById(this.userId);
       } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveUserData', { userId: this.userId }));
+        this.$toast.error(this.$t('toast.error.retrieveUserData'));
       }
     },
     async getUserResume() {
@@ -131,7 +132,7 @@ export default {
       try {
         this.resume = await resumeController.getByUserId(this.userId);
       } catch (e) {
-        this.$toast.error(this.$t('toast.error.retrieveUserResume', { userId: this.userId }));
+        this.$toast.error(this.$t('toast.error.retrieveUserResume'));
       }
     },
   },
