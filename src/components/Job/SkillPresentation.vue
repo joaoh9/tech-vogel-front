@@ -22,7 +22,7 @@
           }}
         </v-chip>
 
-        <bdy-1 v-if="others"> + {{ others[skillType] }} outras</bdy-1>
+        <bdy-1 v-if="others && others[skillType] > 0"> + {{ others[skillType] }} outras</bdy-1>
       </v-row>
     </v-row>
   </div>

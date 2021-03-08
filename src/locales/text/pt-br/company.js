@@ -23,7 +23,7 @@ export default {
       formInfo: 'Complete as informações adicionais da empresa abaixo.',
       companyInfo: 'Informações da empresa',
       learnMore:
-        'Conte um pouco sobre sua empresa e mostre o por que é show trabalhar nela! Estas informações serão públicas no site e você pode modificar quando desejar.',
+        'Conte um pouco sobre sua empresa e mostre o porque é show trabalhar nela! Estas informações serão públicas no site e você pode modificar quando desejar.',
     },
     dashboard: {
       greeting: 'Olá,',

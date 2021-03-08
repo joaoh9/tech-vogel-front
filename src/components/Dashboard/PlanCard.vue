@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :class="!$vuetify.breakpoint.smAndUp ? 'px-12 py-6 rounded-20' : 'pa-8 rounded-20'"
+    :class="!$vuetify.breakpoint.smAndUp ? 'px-12 py-6 rounded-20' : 'px-6 py-6 rounded-20'"
     color="bg"
     outlined
     :style="border"
