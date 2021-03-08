@@ -10,6 +10,9 @@
             <th>
               <overline>{{ $t('user.skills') }}</overline>
             </th>
+            <th v-if="skillType != 'softSkills'">
+              <overline>{{ $t('company.report.candidateProfile.experienceLevel') }}</overline>
+            </th>
             <!-- <th> -->
             <!-- <overline>{{ $t('user.yearsExperience') }}</overline> -->
             <!-- </th> -->
@@ -21,6 +24,11 @@
             <td>
               <bdy-1 class="text-center mr-4" color="secondary">
                 {{ $t(`skills.dictionary.${skillType}.${item.skillId}`) }}
+              </bdy-1>
+            </td>
+            <td v-if="skillType != 'softSkills'">
+              <bdy-1 class="text-center mr-4" color="secondary">
+                {{ item.experienceLevel }} anos +/-
               </bdy-1>
             </td>
             <!-- <td> -->

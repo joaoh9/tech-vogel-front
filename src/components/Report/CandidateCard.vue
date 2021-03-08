@@ -2,7 +2,7 @@
   <v-card class="border-primary bs-primary pa-4 px-12 mt-10" color="bg">
     <div class="d-flex justify-start flex-wrap align-center">
       <v-avatar
-        :class="reportPayedFor ? '' : 'blur' + 'align-self-center mr-15'"
+        :class="reportPayedFor ? 'align-self-center mr-2' : 'blur align-self-center mr-2'"
         size="90"
         color="cinza-lighten-3"
       >
@@ -10,14 +10,23 @@
       </v-avatar>
 
       <div class="ml-4">
-        <h5 :class="reportPayedFor ? '' : 'blur' + 'h5-bold color-secondary text-capitalize'">
+        <h5
+          :class="
+            reportPayedFor
+              ? 'h5-bold color-secondary text-capitalize'
+              : 'blur h5-bold color-secondary text-capitalize'
+          "
+        >
           {{ userInfo.name }}
         </h5>
         <sub-1 class="mb-2 text-capitalize">{{ resumeInfo.mainRole }}</sub-1>
         <v-chip pill> {{ $n(resumeInfo.match, { style: 'percent' }) }} Match</v-chip>
+        <bdy-1 class="d-flex mt-3" style="filter: blur(4px);">
+          <v-icon class="mr-2"> mdi-email </v-icon> {{ userInfo.email }}
+        </bdy-1>
       </div>
       <div class="">
-        <SkillPresentation class="my-6" :skills="getBestSkills()" />
+        <SkillPresentation class="my-6" :skills="getBestSkills()" :others="getOtherSkillsCount()" />
         <div class="d-flex align-center">
           <div v-for="(item, index) in getIcons()" :key="index">
             <v-btn
@@ -46,17 +55,7 @@
             color="secondary"
             type="outlined"
             :label="$t('company.report.candidates.viewCandidate')"
-            @click="buy = !buy"
-            v-if="!reportPayedFor"
-          />
-          <g-btn
-            v-else
-            v-on="on"
-            v-bind="attrs"
-            color="secondary"
-            type="outlined"
-            :label="$t('company.report.candidates.viewCandidate')"
-            :to="`/user/id/${userInfo.id}`"
+            @click="goToUserProfile()"
           />
         </template>
         <div>
@@ -139,7 +138,10 @@ export default {
       return 'mdi-' + map[icon];
     },
     getImage() {
-      return this.userInfo.profilePicture || '';
+      return (
+        this.userInfo.profilePicture ||
+        'https://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon-263x263.png'
+      );
     },
     getBestSkills() {
       const skills = [ 'techSkills', 'softSkills', 'languages' ];
@@ -147,14 +149,9 @@ export default {
       const getBestSkills = {};
 
       for (const skill of skills) {
-        const section = this.resumeInfo.skills[skill].map(el => {
-          if (el.experienceLevel >= 3 || this.reportPayedFor) {
+        const section = this.resumeInfo.skills[skill].filter((el, i) => {
+          if (i < 3) {
             return el;
-          } else {
-            return {
-              experienceLevel: el.experienceLevel,
-              skillId: 'blocked',
-            };
           }
         });
         if (section.length) {
@@ -162,6 +159,26 @@ export default {
         }
       }
       return getBestSkills;
+    },
+    getOtherSkillsCount() {
+      const skills = [ 'techSkills', 'softSkills', 'languages' ];
+
+      const skillCount = {};
+
+      for (const skill of skills) {
+        skillCount[skill] = this.resumeInfo.skills[skill].length;
+      }
+      return skillCount;
+    },
+    goToUserProfile() {
+      return this.$router.push({
+        name: 'User Profile',
+        params: {
+          userId: this.resumeInfo.id,
+          reportPayedFor: this.reportPayedFor,
+          pagarmeLink: this.company.pagarmeLink,
+        },
+      });
     },
     goToPagarme() {
       window.open(this.company.pagarmeLink, '_blank');

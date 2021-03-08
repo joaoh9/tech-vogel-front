@@ -6,11 +6,12 @@
     @click="$emit('click')"
   >
     <div v-if="user" class="d-flex justify-space-between py-2 mx-12">
-      <h5 class="text-center">{{ $t('common.hi') + name }}</h5>
+      <h5 class="text-center justify-center">{{ $t('common.hi') + name }}</h5>
       <div class="d-flex my-4">
         <v-avatar color="cinza-lighten-3" size="40">
           <v-img v-if="picture" :src="picture" />
         </v-avatar>
+
       </div>
     </div>
     <div v-else>

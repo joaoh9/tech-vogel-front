@@ -86,7 +86,11 @@ export default {
     },
     goToUserProfile() {
       this.$router.push({
-        path: `/user/id/${this.user.id}`,
+        name: 'User Profile',
+        params: {
+          reportPayedFor: true,
+          pagarmeLink: '',
+        },
       });
     },
     goToApplications() {
@@ -109,7 +113,6 @@ export default {
       try {
         this.appliedJobs = await jobController.getCurrentUserAppliedJobsCardInfo();
         this.loaded.jobs = true;
-
       } catch (e) {
         this.$toast.error(this.$t('toast.error.retrieveAppliedJobs'));
       }

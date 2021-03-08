@@ -81,7 +81,7 @@ export default {
         memberSince: 'Na Tech Vogel desde',
       },
       buy: 'Comprar relatório',
-      unlock: 'Desbloqueie seu relatório!',
+      unlock: 'Desbloqueie o relatório completo!',
       paymentProceed: 'Seguir para pagamento',
     },
   },

@@ -128,7 +128,7 @@ export default {
         placeholder: 'https://behance.net/',
       },
       website: {
-        title: 'Seu site pessoal',
+        title: 'Site pessoal',
         placeholder: 'https://',
       },
       webpage: {

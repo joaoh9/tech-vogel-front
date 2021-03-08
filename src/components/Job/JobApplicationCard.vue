@@ -204,22 +204,24 @@ export default {
     },
     getApplicationButtonType() {
       if (this.editMode || this.userApplied) {
-        return 'disabled';
+        return 'secondary';
       }
       const userController = new UserController();
       try {
         const userInfo = userController.decodeUserToken();
-        return userInfo.side >= 20 ? 'disabled' : 'primary';
+        return userInfo.side >= 20 ? 'secondary' : 'primary';
       } catch (e) {
+        this.unloggedUser = true;
         if (e.message == 'Invalid token specified') {
-          this.unloggedUser = true;
           return 'primary';
         }
       }
+      return 'secondary';
     },
     async applyForJob() {
       if (this.unloggedUser) {
-        this.$router.push('/signup');
+        this.$toast.info(this.$t('toast.info.loginToApply'));
+        return this.$router.push('/login');
       }
       const jobController = new JobController();
 

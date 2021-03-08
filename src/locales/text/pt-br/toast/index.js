@@ -55,6 +55,7 @@ export default {
       retrieveProfilePicture: 'Erro ao acessar foto de perfil',
       senior: 'Atenção! Posições para Senior podem resultar em menos candidatos!',
       userAlreadyConfirmed: 'Usuário já confirmado!',
+      loginToApply: 'Você deve estar logado para se aplicar à vaga!',
       // senior: 'Attention! There might not be that many applications for a senior job',
     },
     warning: {

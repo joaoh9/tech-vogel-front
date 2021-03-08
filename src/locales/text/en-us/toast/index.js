@@ -55,6 +55,7 @@ export default {
       senior: 'Attention! You may receive less applications for a senior position!',
       userAlreadyConfirmed: 'User already confirmed!',
       // senior: 'Attention! There might not be that many applications for a senior job',
+      loginToApply: 'You must be logged in to apply!',
     },
     warning: {
       confirmationCode: 'Invalid confirmation code!',

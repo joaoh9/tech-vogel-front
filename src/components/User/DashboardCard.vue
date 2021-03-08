@@ -4,15 +4,19 @@
       <v-img
         height="160"
         width="160"
-        class="mt-10"
+        :class="reportPayedFor ? 'mt-10' : 'blur mt-10'"
         :src="
-          picture.data64 ||
-            'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png'
+          picture
+            ? picture.data64
+            : 'https://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon-263x263.png'
         "
       />
-      <h4 class="h4-bold mt-6 text-center">{{ user.name }}</h4>
-      <sub-1 color="dark">{{ role }}</sub-1>
+      <h4 :class="reportPayedFor ? 'h4-bold mt-6 text-center' : 'blur h4-bold mt-6 text-center'">
+        {{ user.name }}
+      </h4>
+      <sub-1 color="dark text-center">{{ role }}</sub-1>
       <IconText
+        v-if="location"
         class="mt-4 mb-8"
         :text="`${location.city}, ${location.country}`"
         type="bdy-1 color-secondary-lighten-1"
@@ -33,6 +37,7 @@ export default {
     picture: Object,
     role: String,
     location: Object,
+    reportPayedFor: Boolean,
   },
   components: {
     IconText,

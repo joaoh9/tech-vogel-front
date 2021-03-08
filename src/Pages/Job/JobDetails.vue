@@ -102,6 +102,7 @@ export default {
       this.getJobData();
       this.getCompanyData();
     }
+    console.log('applyButton', this.applyButton);
   },
   data() {
     return {

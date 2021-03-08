@@ -19,13 +19,20 @@
     <v-container>
       <v-row>
         <v-col cols="12" md="4" v-if="user" :key="loaded">
-          <UserCard
+          <DashboardCard
+            :reportPayedFor="reportPayedFor"
             :user="user"
             :picture="user.profilePicture"
             :role="resume.mainRole"
             :location="resume.location"
           />
-          <FindMe :links="resume.links" class="mt-6" />
+          <FindMe
+            :pagarmeLink="pagarmeLink"
+            :reportPayedFor="reportPayedFor"
+            :links="resume.links"
+            :email="user.email"
+            class="mt-6"
+          />
         </v-col>
         <v-col cols="1" md="1"></v-col>
         <v-col cols="11" md="7">
@@ -75,7 +82,7 @@
 
 <script>
 import PrimaryHeader from 'Components/Interface/PrimaryHeader';
-import UserCard from 'Components/User/DashboardCard';
+import DashboardCard from 'Components/User/DashboardCard';
 import FindMe from 'Components/User/FindMe';
 import UserInformation from 'Components/User/UserInformation';
 import Skills from 'Components/User/Skills';
@@ -88,7 +95,7 @@ export default {
   name: 'UserProfile',
   components: {
     PrimaryHeader,
-    UserCard,
+    DashboardCard,
     FindMe,
     UserInformation,
     Skills,
@@ -97,6 +104,11 @@ export default {
   props: {
     user_: Object,
     editMode: Boolean,
+    reportPayedFor: {
+      type: Boolean,
+      default: false,
+    },
+    pagarmeLink: String,
   },
   async mounted() {
     this.userId = this.$route.params.userId;

@@ -21,6 +21,8 @@
               : $t(`skills.dictionary.${skillType}.${skill.skillId}`)
           }}
         </v-chip>
+
+        <bdy-1 v-if="others"> + {{ others[skillType] }} outras</bdy-1>
       </v-row>
     </v-row>
   </div>
@@ -32,11 +34,14 @@ export default {
   props: {
     skills: Object,
     skillTitle: String,
+    others: Object,
   },
   methods: {
     getStyle(skill, skillType) {
       const color = this.getColor(skillType);
-      return skill.skillId === 'blocked' ? 'filter: blur(6px); background-color: white' : `background-color: ${color}`;
+      return skill.skillId === 'blocked'
+        ? 'filter: blur(6px); background-color: white'
+        : `background-color: ${color}`;
     },
     getColor(skillType) {
       const map = {
