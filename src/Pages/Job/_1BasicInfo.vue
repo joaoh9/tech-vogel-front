@@ -66,26 +66,11 @@ export default {
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
-  },
-  computed: {
-    title() {
-      if (this.job.title) {
-        return this.job.title;
-      }
-      return '';
-    },
-    experienceLevel() {
-      if (this.job.experienceLevel) {
-        return this.job.experienceLevel;
-      }
-      return '';
-    },
-    contractType() {
-      if (this.job.contractType) {
-        return this.job.contractType;
-      }
-      return '';
-    },
+    if (this.job) {
+      this.title = this.job.title;
+      this.experienceLevel = this.job.experienceLevel;
+      this.contractType = this.job.contractType;
+    }
   },
   data() {
     return {
@@ -93,6 +78,9 @@ export default {
         required: () => true,
         max: () => true,
       },
+      title: '',
+      experienceLevel: '',
+      contractType: '',
     };
   },
   watch: {},
