@@ -175,9 +175,9 @@ export default {
   quill: {
     defaultToolbar: [
       // [{ size: [ 'small', false, 'large', 'huge' ] }],
-      ['bold', 'italic', 'underline'],
-      [{ list: 'ordered' }, { list: 'bullet' }, { list: 'check' }],
-      [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
+      [ 'bold', 'italic', 'underline' ],
+      [ { list: 'ordered' }, { list: 'bullet' }, { list: 'check' } ],
+      [ { align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' } ],
       ['code-block'],
     ],
   },
