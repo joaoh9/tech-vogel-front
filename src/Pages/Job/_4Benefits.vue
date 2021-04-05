@@ -141,12 +141,12 @@ export default {
     },
   },
   watch: {
-    // range() {
-    // this.$emit('salary-range', this.range);
-    // },
-    // perks() {
-    // this.$emit('perks', this.perks);
-    // },
+    range() {
+      this.$emit('salary-range', this.range);
+    },
+    perks() {
+      this.$emit('perks', this.perks);
+    },
   },
 };
 </script>

@@ -64,7 +64,7 @@ export default {
       salaryAndPerks: {
         title: 'Remuneração e benefícios',
         description:
-          'Candidatos potenciais querem saber a recompensa da vaga ofertada para que possam candidatar apenas nas vagas que fazem sentido para eles e evite perda de tempo de ambas partes. Esta informação será visível para os usuários da Tech Vogel.',
+          'Potenciais candidatos querem saber a recompensa da vaga ofertada para que possam se candidatar apenas nas vagas que fazem sentido para eles e evite perda de tempo de ambas partes. Esta informação será visível para os usuários da Tech Vogel.',
       },
       salary: {
         title: 'Remuneração',

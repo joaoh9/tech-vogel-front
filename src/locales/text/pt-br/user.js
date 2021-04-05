@@ -177,7 +177,7 @@ export default {
     langSkills: 'Idiomas',
   },
   user: {
-    findMe: 'Onde entrar me encontrar',
+    findMe: 'Onde me encontrar',
     githubSignup: 'Registrar com Github',
     linkedInSignup: 'Registrar com LinkedIn',
     dashboard: {

@@ -21,7 +21,7 @@
         </h5>
         <sub-1 class="mb-2 text-capitalize">{{ resumeInfo.mainRole }}</sub-1>
         <v-chip pill> {{ $n(resumeInfo.match, { style: 'percent' }) }} Match</v-chip>
-        <bdy-1 class="d-flex mt-3" style="filter: blur(4px);">
+        <bdy-1 class="d-flex mt-3" :style="reportPayedFor ? '' : 'filter: blur(4px);'">
           <v-icon class="mr-2"> mdi-email </v-icon> {{ userInfo.email }}
         </bdy-1>
       </div>
@@ -166,7 +166,10 @@ export default {
       const skillCount = {};
 
       for (const skill of skills) {
-        skillCount[skill] = this.resumeInfo.skills[skill].length;
+        skillCount[skill] =
+          this.resumeInfo.skills[skill].length - 3 < 0
+            ? 0
+            : this.resumeInfo.skills[skill].length - 3;
       }
       return skillCount;
     },

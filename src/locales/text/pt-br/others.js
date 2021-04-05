@@ -4,17 +4,18 @@ export default {
   tv: 'Tech Vogel',
   techVogel: 'Tech Vogel',
   home: {
-    title1: 'Encontre',
+    title1: 'Qualifique',
     title2: '<devs />',
     title3: 'para a sua empresa!',
-    subtitle: 'Alcance suas metas com a ajuda de Devs remotos fits para os requisitos do seu projeto!',
+    subtitle:
+      'Tenha o ranking dos devs mais fits para o seu projeto e agilize seu processo de seleção!',
     timeWasted: 'Sem perda de tempo avaliando centenas de CVs!',
     postForFree: 'Postar de graça',
     startApplying: 'Buscar Vagas',
     fastEasy: 'Rápido, Fácil e Prático',
     withOur: 'Com o nosso',
     report: 'relatório',
-    fittestDevs: 'dos Dev mais fits para o seu projeto, você obtém:',
+    fittestDevs: 'ranqueando os Devs mais adequados para o seu projeto, você obtém:',
     tips: [
       { text: 'Ganho de tempo sem precisar analisar milhares de CVs' },
       { text: 'Os melhores match\'s de Devs para o seu projeto' },
@@ -24,20 +25,23 @@ export default {
     secondaryBtn: 'Procurar vagas de graça',
     helpCard: {
       howItWorks: {
-        title: 'Como um relatório pode me ajudar?',
-        description: 'Nosso relatório é a solução para que sua empresa economize tempo e atinja melhores resultados nas contratações. Apresentando no relatório os 3 Devs mais Fits para o projeto divulgado.',
+        title: 'Como o relatório com ranking pode me ajudar?',
+        description:
+          'Nosso relatório com o ranking dos programadores mais match com seu projeto é a solução para que possa ter maior assertividade em suas contratações tech além de agilizar seu processo para que possa iniciar suas contratações o quanto antes!',
         howDoesWork: 'Como funciona',
-        modalText: `Quando potenciais candidatos registram para a Tech Vogel, é pedido para que cada um descreva as linguagens de programação e frameworks juntamente com o nível e tempo de conhecimento de cada uma.  Os Devs também podem selecionar suas Soft Skills e idiomas.
-        Quando sua empresa cria e abre uma vaga, você também deve selecionar as skills necessárias para o projeto e elencá-las por prioridade.
-        Nosso algoritmo cruza as informações da vaga e do candidato e com 15 dias úteis da vaga rodando em nossa plataforma, sua empresa receberá o relatório com os 3 Devs com maior match para o trabalho! Cada candidato aplica para a vaga por vontade e conta própria.
+        modalText: `Quando potenciais candidatos se registram na Tech Vogel, é pedido que descrevam as linguagens de programação e frameworks juntamente com o nível e tempo de conhecimento de cada. Os Devs também podem selecionar suas Soft Skills e idiomas, além de colocar informações adicionais para agregar em sua seleção de fit cultural. \
+        Quando sua empresa cadastrar uma vaga, também é pedido para selecionar as skills necessárias para o projeto e elencá-las por prioridade. Nosso algoritmo cruzará as informações da vaga e do candidato e, por critério de importância, gerará o ranking com os programadores de maior match com o seu projeto. Não existe cadastro frio, cada candidato aplica a vaga por vontade própria. 
+        
         `,
         btnText: 'Fechar',
       },
       whatsVogel: {
         title: 'O que é um Vogel?',
-        description: 'Vogel é o crédito que você recebe para se candidatar para as vagas que desejar. Você recebe 5 Vogels quando se registra pela primeira vez na plataforma, e recebe 1 Vogel por dia após Log In.',
+        description:
+          'Vogel é o crédito que você recebe para se candidatar para as vagas que desejar. Você recebe 5 Vogels quando se registra pela primeira vez na plataforma, e recebe 1 Vogel por dia após Log In.',
         vogelsLimited: 'Por que Vogels são limitados?',
-        modalText: 'Vogels são limitados porque os profissionais devem selecionar as vagas que desejam aplicar com mais cautela, evitando assim perda de tempo e energia com cadastros que não são fit com as habilidades. Desta forma, ao aplicar para uma vaga que realmente deseja e possui as habilidades necessárias a probabilidade de entrar para o relatório é maior',
+        modalText:
+          'Vogels são limitados porque os profissionais devem selecionar as vagas que desejam aplicar com mais cautela, evitando assim perda de tempo e energia com cadastros que não são fit com as habilidades. Desta forma, ao aplicar para uma vaga que realmente deseja e possui as habilidades necessárias a probabilidade de entrar para o relatório é maior',
         btnText: 'Fechar',
       },
     },
@@ -82,16 +86,16 @@ export default {
       {
         title: 'Colete candidatos',
         description:
-          'Sua vaga ficará rodando em nossa plataforma por 15 dias coletando o máximo de Devs interessados possíveis',
+          'Sua vaga ficará rodando em nossa plataforma coletando Devs interessados. Caso queira atrair mais Devs, copie a URL de sua vaga e divulgue em seu LinkedIn e Instagram também!',
       },
       {
         title: 'Receba o Relatório',
-        description: 'Receba seu relatório com os 3 Devs mais Fits para seu projeto.',
+        description: 'Receba seu relatório com o Ranking dos Devs com maior Match com seu projeto.',
       },
       {
-        title: 'Feche com os melhores Devs!',
+        title: 'Ganhe tempo e foco!',
         description:
-          'Pule para a fase final de seu processo seletivo e contrate os melhores Devs para o avanço de seu projeto! ',
+          'Agilize seu processo seletivo com nosso algoritmo e ganhe tempo e foco para preparar as etapas de teste e entrevista com os Devs que selecionar!',
       },
     ],
     pricing: [

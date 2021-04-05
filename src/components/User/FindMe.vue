@@ -13,7 +13,7 @@
         </div>
         <div class="d-flex align-center flex-column justify-center">
           <div v-for="(item, index) in getIcons()" :key="index">
-            <v-dialog v-model="buy">
+            <v-dialog v-model="buy" v-if="!reportPayedFor">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
                   v-on="on"
@@ -34,8 +34,7 @@
               </template>
               <div>
                 <DefaultDialog
-                  v-if="buy && pagarmeLink"
-                  :key="buy"
+                  v-if="buy && pagarmeLink && !reportPayedFor"
                   :title="$t('company.report.unlock')"
                   :btnText="$t('company.report.paymentProceed')"
                   :btnType="$t('job.apply.btnType')"
@@ -46,6 +45,20 @@
                 />
               </div>
             </v-dialog>
+            <v-btn
+              v-else
+              class="pa-0 text-capitalize"
+              color="secondary"
+              text
+              @click="reportPayedFor ? goToLink(item.link) : (buy = !buy)"
+            >
+              <v-icon class="mr-2">
+                {{ item.icon }}
+              </v-icon>
+              <div class="mr-4">
+                {{ item.text }}
+              </div>
+            </v-btn>
           </div>
         </div>
       </div>
