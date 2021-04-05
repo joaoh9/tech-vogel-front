@@ -97,7 +97,7 @@ export default {
     pricing: [
       { text: 'Poste sua vaga de graça' },
       { text: 'Receba seu relatório em 15 dias úteis' },
-      { text: 'Tenha acesso aos 3 finalistas para sua vaga' },
+      { text: 'Tenha acesso aos finalistas para sua vaga' },
     ],
     forEachReport: 'Por cada Relatório',
     BRL: {
