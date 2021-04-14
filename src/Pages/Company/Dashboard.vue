@@ -1,7 +1,13 @@
 <template>
   <v-row class="container">
     <v-col cols="12" md="4">
-      <UserCard :user="user" v-if="user && company" :key="loaded.user" :loading="loaded.user" :picture="company.logo" />
+      <UserCard
+        :user="user"
+        v-if="user && company"
+        :key="loaded.user"
+        :loading="loaded.user"
+        :picture="company.logo"
+      />
       <g-btn
         to="/jobs/new"
         class="mt-4"
@@ -40,7 +46,14 @@
         />
         <v-skeleton-loader v-if="loadingJobs" type="article, actions" />
         <div v-else v-for="(job, i) in jobs" :key="i">
-          <JobManagerCard :job="job" :company="company" />
+          <JobManagerCard
+            v-on:job-deleted="
+              getCurrentCompanyJobs();
+              getDashboardInfo();
+            "
+            :job="job"
+            :company="company"
+          />
         </div>
       </div>
     </v-col>
@@ -88,13 +101,15 @@ export default {
   methods: {
     async getDashboardInfo() {
       const companyController = new CompanyController();
-
+      this.loaded.company = false;
       try {
         const { company, user, jobsPosted } = await companyController.getDashboardInfo();
         this.company = company;
         this.user = user;
         this.jobsPosted = jobsPosted;
+        this.loaded.company = true;
       } catch (e) {
+        this.loaded.company = true;
         this.$toast.error(this.$t('toast.error.companyInfo'));
       }
     },

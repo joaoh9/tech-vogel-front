@@ -103,6 +103,7 @@ export default {
       try {
         await userController.confirmUser(this.email, this.confirmationKey);
         this.$toast.success(this.$t('toast.success.emailConfirmation'));
+        this.$emit('login');
         this.$router.push('/side-pick');
       } catch (e) {
         this.$toast.error(this.$t('toast.warning.confirmationCode'));

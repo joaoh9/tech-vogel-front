@@ -25,16 +25,41 @@
         <div class="d-flex justify-center flex-column align-center">
           <g-btn type="text" color="primary" :label="$t('job.see')" @click="goToJobDetails" />
           <g-btn type="text" color="primary" :label="$t('job.edit')" @click="editJob" />
+          <g-btn
+            type="text"
+            color="primary"
+            :label="$t('job.remove')"
+            @click="showJobDeleteDialog = true"
+          />
         </div>
       </v-col>
+      <DefaultDialog
+        v-if="showJobDeleteDialog"
+        :key="showJobDeleteDialog"
+        :title="$t('job.delete.title')"
+        :subtitle="$t('job.delete.subtitle')"
+        :btnType="$t('job.delete.btnType')"
+        :btnText="$t('job.delete.btnText')"
+        :secBtnText="$t('common.close')"
+        @close="
+          showJobDeleteDialog = false;
+          apply = false;
+        "
+        v-on:primary-button-click="
+          showJobDeleteDialog = false;
+          deleteJob();
+        "
+        v-on:secondary-button-click="showJobDeleteDialog = false"
+      />
     </v-row>
   </v-card>
 </template>
 
 <script>
 import DateHelper from 'Helpers/date';
-
+import JobController from 'Controllers/job';
 import config from '@config';
+import DefaultDialog from 'Components/Dialogs/Default';
 
 export default {
   name: 'JobManagerCard',
@@ -45,6 +70,14 @@ export default {
     company: {
       type: Object,
     },
+  },
+  components: {
+    DefaultDialog,
+  },
+  data() {
+    return {
+      showJobDeleteDialog: false,
+    };
   },
   methods: {
     editJobVerification() {
@@ -71,6 +104,17 @@ export default {
     },
     editJob() {
       this.$router.push(`/jobs/edit/${this.job.id}`);
+    },
+    async deleteJob() {
+      const jobController = new JobController();
+
+      try {
+        await jobController.remove(this.job.id);
+
+        this.$emit('job-deleted')
+      } catch (e) {
+        this.$toast.warning(e);
+      }
     },
     getMinWidth() {
       if (this.$vuetify.breakpoint.lgAndUp) {
@@ -99,20 +143,20 @@ export default {
     getDaysAgo() {
       const localeFunc = (number, index) => {
         return [
-          [ 'agora mesmo', 'agora' ],
-          [ 'há %s segundos', 'em %s segundos' ],
-          [ 'há um minuto', 'em um minuto' ],
-          [ 'há %s minutos', 'em %s minutos' ],
-          [ 'há uma hora', 'em uma hora' ],
-          [ 'há %s horas', 'em %s horas' ],
-          [ 'há um dia', 'em um dia' ],
-          [ 'há %s dias', 'em %s dias' ],
-          [ 'há uma semana', 'em uma semana' ],
-          [ 'há %s semanas', 'em %s semanas' ],
-          [ 'há um mês', 'em um mês' ],
-          [ 'há %s meses', 'em %s meses' ],
-          [ 'há um ano', 'em um ano' ],
-          [ 'há %s anos', 'em %s anos' ],
+          ['agora mesmo', 'agora'],
+          ['há %s segundos', 'em %s segundos'],
+          ['há um minuto', 'em um minuto'],
+          ['há %s minutos', 'em %s minutos'],
+          ['há uma hora', 'em uma hora'],
+          ['há %s horas', 'em %s horas'],
+          ['há um dia', 'em um dia'],
+          ['há %s dias', 'em %s dias'],
+          ['há uma semana', 'em uma semana'],
+          ['há %s semanas', 'em %s semanas'],
+          ['há um mês', 'em um mês'],
+          ['há %s meses', 'em %s meses'],
+          ['há um ano', 'em um ano'],
+          ['há %s anos', 'em %s anos'],
         ][index];
       };
 

@@ -99,6 +99,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    _job: Object,
   },
   components: {
     BasicInfo,
@@ -113,6 +114,32 @@ export default {
       this.job = await new JobController().getById(this.$route.params.id);
       this.job_ = this.job;
       this.loaded = true;
+    } else if (this._job) {
+      console.log('🚀 ~ file: New.vue ~ line 130 ~ mounted ~ this._job', this._job);
+      this.job_.title = this._job.title || '';
+      this.job_.experienceLevel = this._job.experienceLevel || '';
+      this.job_.contractType = this._job.contractType || '';
+      this.job_.description = this._job.description || '';
+      this.job_.skills = this._job.skills || '';
+      this.job_.perks = this._job.perks || '';
+      this.job_.salary = this._job.salary || '';
+      this.job_.skills = this._job.skills || {
+        techSkills: [],
+        softSkills: [],
+        languages: [],
+      };
+      this.job.title = this._job.title || '';
+      this.job.experienceLevel = this._job.experienceLevel || '';
+      this.job.contractType = this._job.contractType || '';
+      this.job.description = this._job.description || '';
+      this.job.skills = this._job.skills || '';
+      this.job.perks = this._job.perks || '';
+      this.job.salary = this._job.salary || '';
+      this.job.skills = this._job.skills || {
+        techSkills: [],
+        softSkills: [],
+        languages: [],
+      };
     }
     this.getCompanyInfo();
   },
@@ -124,8 +151,8 @@ export default {
       loaded: false,
       job_: {
         title: '',
-        experienceLevel: '',
-        contractType: '',
+        experienceLevel: 'junior',
+        contractType: 'PART_TIME',
         description: '',
         skills: {
           techSkills: [],
@@ -234,7 +261,7 @@ export default {
           this.$t('job.selectAtLeast', {
             min: config.skills[skill].min,
             skillName: this.$t(`enums.skills.${skill}`),
-          }),
+          })
         );
 
         validated = false;
@@ -244,7 +271,7 @@ export default {
           this.$t('job.selectMaximum', {
             max: config.skills[skill].max,
             skillName: this.$t(`enums.skills.${skill}`),
-          }),
+          })
         );
         validated = false;
       }

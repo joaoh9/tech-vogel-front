@@ -76,9 +76,10 @@ export default {
       salaryRange: 'Set salary range',
       perks: {
         title: 'Additional perks',
-        placeholder: 'Working at Criptorocket you can expect to have:\n  - Gym pas\n  - Food stamp\n  - Free Netflix\n  - A pationate team ready to rock ',
+        placeholder:
+          'Working at Criptorocket you can expect to have:\n  - Gym pas\n  - Food stamp\n  - Free Netflix\n  - A pationate team ready to rock ',
       },
-      steppers: [ 'Basic information', 'Role description', 'Skill requirements', 'Salary and perks' ],
+      steppers: ['Basic information', 'Role description', 'Skill requirements', 'Salary and perks'],
     },
 
     details: {
@@ -109,6 +110,13 @@ export default {
     confirmJob: {
       title: 'Review your job ad!',
       subtitle: 'You will only be able to edit it for 24 hours after posting.',
+    },
+    delete: {
+      title: 'Are you sure you want to delete this job?',
+      subtitle:
+        'There is no turning back after you confirm the deletion! All job data will be lost!',
+      btnType: 'error',
+      btnText: 'Confirm deletion',
     },
     posted: 'Posted',
     seeReport: 'See report',

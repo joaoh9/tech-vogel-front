@@ -80,7 +80,7 @@ export default {
         placeholder:
           'Trabalhando na Criptocoin você terá:\n  - Gympass\n  - Vale refeição\n  - Seguro saúde - Vale Coworking \n  - Um time fera para chamar de seu ',
       },
-      steppers: [ 'Informações básicas', 'Descrição', 'Requisitos', 'Salário/benefícios' ],
+      steppers: ['Informações básicas', 'Descrição', 'Requisitos', 'Salário/benefícios'],
     },
 
     details: {
@@ -112,6 +112,12 @@ export default {
       title: 'Revisar as informações da vaga!',
       subtitle:
         'Atenção! Você poderá alterar as informações apenas durante 24h após postar a vaga. Após 24h você poderá apenas excluir a vaga ou deixá-la rodar os 15 dias.',
+    },
+    delete: {
+      title: 'Tem certeza que deseja excluir essa vaga?',
+      subtitle: 'Essa é uma ação sem volta! Todos os dados da vaga serão excluídos permanentemente!',
+      btnType: 'error',
+      btnText: 'Confirmar exclusão',
     },
     posted: 'Postado',
     seeReport: 'Acessar relatório',

@@ -79,8 +79,8 @@ export default {
         max: () => true,
       },
       title: '',
-      experienceLevel: '',
-      contractType: '',
+      experienceLevel: 'junior',
+      contractType: 'PART_TIME',
     };
   },
   watch: {},

@@ -16,9 +16,9 @@
         />
         <g-btn
           @click="runAction()"
-          type="filled"
+          type="outline"
           color="light"
-          textColor="primary"
+          textColor="secondary"
           :label="savedJobId ? $t('common.confirmEdit') : $t('common.postJob')"
         />
       </div>
@@ -64,6 +64,7 @@ import SkillPresentation from 'Components/Job/SkillPresentation';
 import JobApplicationCard from 'Components/Job/JobApplicationCard';
 import DateHelper from 'Helpers/date';
 import PrimaryHeader from 'Components/Interface/PrimaryHeader';
+import StorageHelper from 'Helpers/storage';
 
 export default {
   name: 'JobDescription',
@@ -78,6 +79,7 @@ export default {
     },
     savedJobId: {
       type: String,
+      default: '',
     },
     applyButton: {
       type: Boolean,
@@ -146,13 +148,15 @@ export default {
       const jobController = new JobController();
 
       try {
-        await jobController.save(this.job);
+        const savedJob = await jobController.save({ ...this.job, status: 'waiting-confirmation' });
+        StorageHelper.saveState('jobId', savedJob.id);
         this.$toast.success(this.$t('toast.success.jobSaved'));
+
         this.$router.push({
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.error(this.$t('toast.error.saveJob'));
+        this.$toast.warn(this.$t('toast.error.saveJob'));
       }
     },
     async editJob() {
@@ -165,11 +169,31 @@ export default {
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.error(this.$t('toast.error.saveJob'));
+        this.$toast.warn(this.$t('toast.error.saveJob'));
       }
     },
-    goBackAndEdit() {
-      this.$router.push(`/jobs/edit/${this.savedJobId}`);
+    async goBackAndEdit() {
+      const jobController = new JobController();
+      try {
+        if (this.savedJobId) {
+          const { applications: _, ...updates } = this.job;
+          const savedJob = await jobController.update(this.savedJobId, {
+            ...updates,
+            status: 'waiting-confirmation',
+          });
+
+          this.$router.push(`/jobs/edit/${savedJob.id}`);
+        } else {
+          const savedJob = await jobController.save({
+            ...this.job,
+            status: 'waiting-confirmation',
+          });
+
+          this.$router.push(`/jobs/edit/${savedJob.id}`);
+        }
+      } catch (e) {
+        this.$toast.warning(this.$t('toast.error.saveJob'));
+      }
     },
   },
 };

@@ -87,7 +87,7 @@ export default class JobController {
 
   async remove(jobId) {
     const axios = await Axios.GetInstance();
-    const { data } = await axios.put(`/v1/jobs/${jobId}`);
+    const { data } = await axios.delete(`/v1/jobs/me/${jobId}`);
 
     return data;
   }
