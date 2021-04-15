@@ -148,7 +148,8 @@ export default {
       const jobController = new JobController();
 
       try {
-        const savedJob = await jobController.save({ ...this.job, status: 'waiting-confirmation' });
+        const { applications: _, ...updates } = this.job;
+        const savedJob = await jobController.save({ ...updates, status: 'enabled' });
         StorageHelper.saveState('jobId', savedJob.id);
         this.$toast.success(this.$t('toast.success.jobSaved'));
 
@@ -156,20 +157,21 @@ export default {
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.warn(this.$t('toast.error.saveJob'));
+        this.$toast.warning(this.$t('toast.error.saveJob'));
       }
     },
     async editJob() {
       const jobController = new JobController();
 
       try {
-        await jobController.update(this.savedJobId, this.job);
+        const { applications: _, ...updates } = this.job;
+        await jobController.update(this.savedJobId, { ...updates, status: 'enabled' });
         this.$toast.success(this.$t('toast.success.jobEdit'));
         this.$router.push({
           path: '/company/dashboard',
         });
       } catch (e) {
-        this.$toast.warn(this.$t('toast.error.saveJob'));
+        this.$toast.warning(this.$t('toast.error.saveJob'));
       }
     },
     async goBackAndEdit() {

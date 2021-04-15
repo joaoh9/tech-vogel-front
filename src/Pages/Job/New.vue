@@ -115,7 +115,6 @@ export default {
       this.job_ = this.job;
       this.loaded = true;
     } else if (this._job) {
-      console.log('🚀 ~ file: New.vue ~ line 130 ~ mounted ~ this._job', this._job);
       this.job_.title = this._job.title || '';
       this.job_.experienceLevel = this._job.experienceLevel || '';
       this.job_.contractType = this._job.contractType || '';

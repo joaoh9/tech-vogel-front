@@ -111,7 +111,7 @@ export default {
       try {
         await jobController.remove(this.job.id);
 
-        this.$emit('job-deleted')
+        this.$emit('job-deleted');
       } catch (e) {
         this.$toast.warning(e);
       }
