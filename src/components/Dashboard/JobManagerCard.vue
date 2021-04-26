@@ -90,7 +90,7 @@ export default {
       const createdAt = new Date(this.job.createdAt);
       const now = new Date();
 
-      return now - createdAt >= config.dayInMs * 4;
+      return now - createdAt >= config.dayInMs * 2;
     },
     goToJobDetails() {
       this.$router.push({
