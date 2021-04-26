@@ -63,9 +63,9 @@ export default {
       createdOn: 'Report created on',
       created: 'Report created',
       totalApplicants: 'Total applicants',
-      yourTopMatches: 'Your top %{count} matches',
+      yourTopMatches: 'Your Rank is here! Get to analyse your Devs data! ',
       matchesDisclaimer:
-        'These are the candidates that best match your required skills for the position. You can contact them via email to set up an interview and continue your selection process.',
+        'Those are your candidates, and after you analyze their information you can opt to unblock their contact and GitHub information so you can proceed to your interview and hiring process!',
       yourCompany: {
         title: 'Your company',
         currentAds: 'Current ads',

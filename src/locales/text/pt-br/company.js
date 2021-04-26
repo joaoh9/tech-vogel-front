@@ -62,9 +62,9 @@ export default {
       postedOn: 'Postado em',
       createdOn: 'Relatório criado em',
       totalApplicants: 'Total de candidatos',
-      yourTopMatches: 'Seu top %{count} matches',
+      yourTopMatches: 'Você recebeu o ranking com os dados dos seus Devs!',
       matchesDisclaimer:
-        'Estes são os candidatos que deram maior match com os requisitos e habilidades descritos em sua vaga. Você poderá entrar em contato via e-mail ou mensagem para iniciar o processo de entrevista.',
+        'Estes são os candidatos que se candidataram para sua vaga! Após análise do perfil dos candidatos, caso queira desbloquear o acesso aos dados de contato e Github, realize o investimento e já inicie seu processo de contratação a hora que desejar!',
       yourCompany: {
         title: 'Sua empresa',
         currentAds: 'Vagas no momento',
