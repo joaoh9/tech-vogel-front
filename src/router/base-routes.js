@@ -6,6 +6,7 @@ import AboutUs from 'Components/Static/AboutUs.vue';
 import FAQ from 'Pages/Static/FAQ.vue';
 import Tips from 'Pages/Static/Tips.vue';
 import Pricing from 'Pages/Static/Pricing.vue';
+import Tests from 'Pages/Static/Tests.vue';
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: '/FAQ',
     name: 'FAQ',
     component: FAQ,
+  },
+  {
+    path: '/tests',
+    name: 'Tests',
+    component: Tests,
   },
 ];
 

@@ -8,6 +8,7 @@ export default {
     applyCTA: 'I want to get hired',
     startHiring: 'Start Hiring',
     applyJobs: 'Apply for jobs',
+    tests: 'Tests',
     userTokens: 'Vogels',
     companyTokens: 'Job posts',
     day: 'Day',
