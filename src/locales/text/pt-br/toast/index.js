@@ -36,6 +36,9 @@ export default {
       userNotFound: 'Usuário não encontrado',
       fillOut: 'Favor preencher os campos corretamente',
       update: 'Ocorreu um erro ao atualizar os dados',
+      requests: {
+        404: 'Informação não encontrada no banco de dados!',
+      },
     },
     success: {
       jobApplied: 'Uhuuu! Sucesso na aplicação da vaga!',
