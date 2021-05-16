@@ -28,6 +28,17 @@
   </v-btn>
 
   <v-btn
+    v-else-if="type === 'primary-outlined'"
+    @click="$emit('click')"
+    :large="!xl"
+    outlined
+    color="primary"
+    class="button-text"
+  >
+    {{ label }}
+  </v-btn>
+
+  <v-btn
     :large="!xl"
     :x-large="xl"
     v-else
