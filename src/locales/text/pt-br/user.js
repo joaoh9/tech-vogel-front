@@ -196,6 +196,7 @@ export default {
       doItLater: 'Fazer mais tarde',
       manageAccount: 'Gerenciar conta',
       manageAccountInfo: 'Gerenciar informações da conta',
+      tests: 'Teste suas habilidades',
       tokenExplanation:
         'Você receberá 1 Vogel por cada Log in que fazer na plataforma em dias diferentes. E toda vez que se candidatar a uma vaga e for selecionado para o relatório você utiliza um Vogel. Caso não seja escolhido para integrar o relatório você permanece com seu Vogel.',
     },

@@ -34,6 +34,13 @@
     outlined
     color="primary"
     class="button-text"
+    :to="to"
+    :block="block"
+    :dark="dark"
+    :href="href"
+    :min-width="minwidth"
+    :max-width="maxwidth"
+    :loading="loading"
   >
     {{ label }}
   </v-btn>

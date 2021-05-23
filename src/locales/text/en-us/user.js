@@ -183,6 +183,7 @@ export default {
       doItLater: 'Do it later',
       manageAccount: 'Manage Account',
       manageAccountInfo: 'Manage my account information',
+      tests: 'Test your skills',
       tokenExplanation:
         'You get 1 Vogel for each time you log in on different days. Every time you apply to a position, you spent 1 Vogel.',
     },
