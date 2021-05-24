@@ -5,6 +5,7 @@ import baseRoutes from './base-routes';
 import companyRoutes from './company-routes';
 import jobRoutes from './job-routes';
 import userRoutes from './user-routes';
+import testRoutes from './tests-routes';
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,7 @@ routes.push(...baseRoutes);
 routes.push(...companyRoutes);
 routes.push(...jobRoutes);
 routes.push(...userRoutes);
+routes.push(...testRoutes);
 
 export default new VueRouter({
   mode: 'history',

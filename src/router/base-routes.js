@@ -6,9 +6,6 @@ import AboutUs from 'Components/Static/AboutUs.vue';
 import FAQ from 'Pages/Static/FAQ.vue';
 import Tips from 'Pages/Static/Tips.vue';
 import Pricing from 'Pages/Static/Pricing.vue';
-import Tests from 'Pages/Static/Tests.vue';
-import NewTest from 'Components/Tests/NewTest.vue';
-import RespondTests from 'Pages/Static/RespondTests.vue';
 
 const routes = [
   {
@@ -51,21 +48,6 @@ const routes = [
     path: '/FAQ',
     name: 'FAQ',
     component: FAQ,
-  },
-  {
-    path: '/tests',
-    name: 'Tests',
-    component: Tests,
-  },
-  {
-    path: '/tests/new',
-    name: 'NewTest',
-    component: NewTest,
-  },
-  {
-    path: '/tests/:id',
-    name: 'Fill tests',
-    component: RespondTests,
   },
 ];
 

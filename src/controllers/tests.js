@@ -41,4 +41,21 @@ export default class TagController {
       throw e;
     }
   }
+
+  async getAllByType(type) {}
+
+  async getAllByTagId(tagId) {
+    const axios = await Axios.GetInstance();
+    try {
+      const { data } = await axios.get(`/v1/tests/tags/${tagId}`);
+
+      return data;
+    } catch (e) {
+      for (const error of e.response.data.message.split(', ')) {
+        this.toast.info(i18n.t('toast.info.tests.' + error));
+      }
+
+      throw e;
+    }
+  }
 }

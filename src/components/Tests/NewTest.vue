@@ -12,7 +12,7 @@
           <form-input class="" title="Preencha as opções:"> </form-input
         ></v-col>
         <v-col cols="6" md="3">
-          <form-input class="" title="Pontos pela pergunta"> </form-input
+          <form-input class="" title="Pontuação da resposta"> </form-input
         ></v-col>
       </v-row>
       <div v-for="(question, i) in test.options" :key="i">
@@ -31,9 +31,9 @@
           <v-col cols="1" class="flex-shrink-1 flex-grow-0 ml-2 r-2">
             <v-select
               class=""
-              label="-3 a 3"
+              label="-2 a 3"
               style="flex-wrap: nowrap;"
-              v-model="test.options[i]"
+              v-model="test.options[i].points"
               :items="getItemPoints()"
             />
           </v-col>
@@ -64,6 +64,7 @@
             <form-input class="" title="Tags"> </form-input>
             <v-combobox multiple small-chips outlined :items="tags" v-model="test.tags" />
           </v-col>
+          {{ test.tags }}
         </v-row>
       </div>
     </v-col>
@@ -93,6 +94,7 @@ import TagController from 'Controllers/tags';
 import TestController from 'Controllers/tests';
 import UserController from 'Controllers/user';
 import CompanyController from 'Controllers/company';
+import textHelper from 'Helpers/text';
 
 export default {
   name: 'tests',
@@ -133,7 +135,7 @@ export default {
   },
   methods: {
     getItemPoints() {
-      return [ -3, -2, -1, 0, 1, 2, 3 ];
+      return [ -2, -1, 0, 1, 2, 3 ];
     },
     addQuestion() {
       console.log('add');
@@ -199,6 +201,8 @@ export default {
         this.test.tags.pop();
         this.test.tags.push({
           text: tag,
+          tagId: textHelper.cammelToKebab(tag),
+          type: ['TEST'],
         });
       }
     },
