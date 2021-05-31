@@ -23,9 +23,11 @@
           >
             <p v-html="test.text"></p>
           </v-avatar>
-          <v-radio-group>
-            <v-radio class="mb-4" v-for="(item, i) in test.options" :key="i" :label="item.option">
-            </v-radio>
+          <v-radio-group v-model="answer">
+            <div class="d-flex align-center my-2" v-for="(item, i) in test.options" :key="i">
+              <v-chip> {{ String.fromCharCode(65 + i) }} </v-chip>
+              <v-radio class="ml-2" :label="item.option"> </v-radio>
+            </div>
           </v-radio-group>
         </v-card-text>
         <v-divider class="mt-n4" />
@@ -39,8 +41,8 @@
         </v-card-actions>
         <v-progress-linear :value="timer"></v-progress-linear>
       </v-card>
-      <div class="d-flex justify-space-between">
-        <v-chip class="mt-4 rounded-xl" v-for="(tag, j) in test.tags" :key="j * 10">
+      <div class="d-flex justify-start">
+        <v-chip class="mt-4 rounded-xl mx-4" v-for="(tag, j) in test.tags" :key="j * 42">
           <capt-1 style="font-size: 17px"> {{ tag }}</capt-1>
         </v-chip>
         <div class="d-flex" v-if="test.author.publicName && test.author.name">
@@ -68,6 +70,7 @@ export default {
       tagId: '',
       test: {},
       timer: 0,
+      answer: -1,
     };
   },
   mounted() {
@@ -100,7 +103,23 @@ export default {
       ).toString();
       setTimeout(() => this.getTimeValue(), 1 * 1000);
     },
-    async saveAnswer() {},
+    async saveAnswer() {
+      const testController = new TestController(this.$toast);
+
+      if (this.answer < 0) {
+        this.$toast.info('Por favor selecione uma resposta!');
+        return;
+      }
+
+      const resposta = confirm(`Confirma a opção ${String.fromCharCode(65 + this.answer)}?`);
+
+      if (resposta) {
+        await testController.answer({
+          testId: this.test.id,
+          answerPoint: this.test.options[this.answer].points,
+        });
+      }
+    },
   },
 };
 </script>

@@ -44,6 +44,22 @@ export default class TagController {
 
   async getAllByType(type) {}
 
+  async answer(answers) {
+    const axios = await Axios.GetInstance();
+
+    try {
+      const { data } = await axios.post('/v1/test-answers', answers);
+      this.toast.success('Resposta salva com sucesso!');
+      return data;
+    } catch (e) {
+      for (const error of e.response.data.message.split(', ')) {
+        this.toast.info(i18n.t('toast.info.tests.' + error));
+      }
+
+      throw e;
+    }
+  }
+
   async getAllByTagId(tagId) {
     const axios = await Axios.GetInstance();
     try {

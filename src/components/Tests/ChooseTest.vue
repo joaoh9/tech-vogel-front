@@ -136,7 +136,6 @@ export default {
       return [ -3, -2, -1, 0, 1, 2, 3 ];
     },
     addQuestion() {
-      console.log('add');
       this.test.options.push({
         option: '',
         points: 0,

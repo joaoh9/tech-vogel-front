@@ -91,6 +91,7 @@ export default {
           'UPDATED_AT_REQUIRED',
           'SQ_',
         )}`,
+        ANSWER_POINT_REQUIRED: 'Por favor selecione uma resposta!',
       },
       // senior: 'Attention! There might not be that many applications for a senior job',
     },

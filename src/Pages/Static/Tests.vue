@@ -51,7 +51,7 @@
                   </div>
                 </div>
                 <div class="align-self-center ml-auto">
-                  <g-btn to="/tests/javascript" type="primary-outlined" label="Responder testes"> </g-btn>
+                  <g-btn to="/tests/tag/fácil" type="primary-outlined" label="Responder testes"> </g-btn>
                 </div>
               </div>
             </v-card>

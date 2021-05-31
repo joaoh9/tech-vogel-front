@@ -34,6 +34,5 @@ const config = {
   imageFileFormats: window.serverConfig && window.serverConfig.imageFileFormats,
   dayInMs: 1000 * 60 * 60 * 24,
 };
-// console.log('🚀 ~ file: config.js ~ line 24 ~ config', config);
 
 module.exports = config;
