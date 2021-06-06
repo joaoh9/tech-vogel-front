@@ -135,7 +135,7 @@ export default {
   },
   methods: {
     getItemPoints() {
-      return [ -2, -1, 0, 1, 2, 3 ];
+      return [-2, -1, 0, 1, 2, 3];
     },
     addQuestion() {
       console.log('add');

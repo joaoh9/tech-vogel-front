@@ -3,7 +3,7 @@
     v-if="type === 'disabled'"
     disabled
     :block="block"
-    @click="$emit('click')"
+    @click="$emit('click', $event)"
     :large="!xl"
     :x-large="xl"
     :data-cy="dataCy"
@@ -29,7 +29,7 @@
 
   <v-btn
     v-else-if="type === 'primary-outlined'"
-    @click="$emit('click')"
+    @click="$emit('click', $event)"
     :large="!xl"
     outlined
     color="primary"
@@ -50,7 +50,7 @@
     :x-large="xl"
     v-else
     :datçça-cy="dataCy"
-    @click="$emit('click')"
+    @click="$emit('click', $event)"
     :color="getColor()"
     :outlined="getOutline()"
     :elevation="getElevation()"

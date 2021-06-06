@@ -11,7 +11,7 @@
         </div>
       </template>
       <template v-slot:card-content>
-        <v-dialog v-model="dialog">
+        <v-dialog v-model="dialog" transition="dialog-bottom-transition">
           <template v-slot:activator="{ on, attrs }">
             <div class="d-flex flex-column align-center justify-center">
               <g-btn
@@ -26,34 +26,55 @@
             </div>
           </template>
           <div class="d-flex justify-center">
-            <v-card class="bs-none pa-12" width="1000">
-              <div class="d-flex">
-                <div style="width: 100px; heigth: 100px">
+            <v-card class="bs-none pa-12 bg-color-bg" width="1000">
+              <div class="d-flex justify-end">
+                <v-btn color="secondary" outlined small @click="dialog = false">X</v-btn>
+              </div>
+              <v-card class="bs-none" width="1000" v-for="(test, i) in tests" :key="i">
+                <div class="d-flex">
+                  <div style="width: 100px; heigth: 100px">
+                    <!--
                   <v-img
-                    :src="javascript"
+                    :src="
+                      require(`Public/tagslogo/${test.tagId}.png` ||
+                        `Public/tagslogo/javascript.png`)
+                    "
                     tile
                     height="100"
                     width="100"
                     contain
                     class="ma-0 pa-0"
                   ></v-img>
-                </div>
-                <div class="ml-4 d-flex flex-column">
-                  <h5>Javascript</h5>
-                  <bdy-1>Faça uns testes de javascript!</bdy-1>
-                  <div class="d-flex justify-space-between mt-2">
-                    <v-chip>
-                      <capt-1> Testes cadastrados: <b> 5 </b> </capt-1>
-                    </v-chip>
-                    <v-chip class="ml-4">
-                      <capt-1>Você já respondeu: <b> 2 </b> </capt-1>
-                    </v-chip>
+                   -->
+                  </div>
+                  <div class="ml-4 d-flex flex-column">
+                    <h5>{{ test.text }}</h5>
+                    <bdy-1>Faça uns testes de {{ test.text }}!</bdy-1>
+                    <div class="d-flex justify-space-between mt-2">
+                      <v-chip>
+                        <capt-1>
+                          Testes cadastrados: <b> {{ test.testCount }} </b>
+                        </capt-1>
+                      </v-chip>
+                      <v-chip class="ml-4">
+                        <capt-1
+                          >Você já respondeu: <b> {{ test.userAnswers }} </b>
+                        </capt-1>
+                      </v-chip>
+                    </div>
+                  </div>
+                  <div class="align-self-center ml-auto">
+                    <g-btn
+                      :to="`/tests/tag/${test.tagId}`"
+                      type="primary-outlined"
+                      label="Responder testes"
+                    >
+                    </g-btn>
+                    <v-divider />
                   </div>
                 </div>
-                <div class="align-self-center ml-auto">
-                  <g-btn to="/tests/tag/fácil" type="primary-outlined" label="Responder testes"> </g-btn>
-                </div>
-              </div>
+                <v-divider class="my-6" />
+              </v-card>
             </v-card>
           </div>
         </v-dialog>
@@ -63,17 +84,29 @@
 </template>
 
 <script>
-import Javascript from 'Assets/javascript.png';
+import TestController from 'Controllers/tests';
+
+import tagsLogo from 'Public/tagslogo/javascript.png';
+
 export default {
   name: 'tests',
   data() {
     return {
       dialog: false,
-      javascript: Javascript,
+      tests: [],
+      tagsLogo,
     };
   },
-  mounted() {},
-  methods: {},
+  mounted() {
+    this.getTestsInfo();
+  },
+  methods: {
+    async getTestsInfo() {
+      const testController = new TestController(this.$toast);
+
+      this.tests = await testController.getTestsInfo();
+    },
+  },
   watch: {},
 };
 </script>
@@ -88,4 +121,9 @@ export default {
   height: 180px;
   min-height: 180px !important;
 }
+
+pre {
+  background-color: #d6d6e8 !important
+}
+
 </style>
