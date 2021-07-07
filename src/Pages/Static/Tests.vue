@@ -6,7 +6,7 @@
           <g-card-header
             class="color-secondary align-self-center mb-12 "
             title="Testes"
-            description="Faça um teste para testar suas habilidades ou cadastre um novo teste para que outros programadores testem seus conhecimentos!"
+            description="Faça um teste para testar suas habilidades ou veja seus resultados até o momento!"
           />
         </div>
       </template>
@@ -18,11 +18,11 @@
                 v-bind="attrs"
                 v-on="on"
                 @click="dialog = true"
-                label="Test your habilities"
+                label="Teste suas habilidades"
                 type="primary"
                 class="my-2"
               />
-              <g-btn to="/tests/new" label="Make new test" type="primary-outlined" class="my-2" />
+              <g-btn to="/tests/dashboard" label="Dashboard de testes" type="primary-outlined" class="my-2" />
             </div>
           </template>
           <div class="d-flex justify-center">

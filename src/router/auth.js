@@ -77,6 +77,7 @@ function userDashboard(to, from, next) {
   }
 
   switch (userInfo.side) {
+    case -1:
     case 10:
     case 11:
       return next();
@@ -150,6 +151,7 @@ function companyDashboard(to, from, next) {
       return next({
         name: 'New Company',
       });
+    case -1:
     case 21:
     case 22:
       return next();
@@ -196,6 +198,23 @@ function company(to, from, next) {
   }
 
   if (userInfo.side >= 20 && userInfo.side <= 25) {
+    return next();
+  }
+
+  return next({
+    name: 'User Dashboard',
+  });
+}
+
+function admin(to, from, next) {
+  const userInfo = userController.decodeUserToken();
+  if (!userInfo) {
+    return next({
+      name: 'User Login',
+    });
+  }
+
+  if (userInfo.side < 0) {
     return next();
   }
 
@@ -261,4 +280,5 @@ export default {
   user,
   savedCompany,
   savedUser,
+  admin,
 };

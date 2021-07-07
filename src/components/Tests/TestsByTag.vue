@@ -172,7 +172,6 @@ pre {
   background-color: #d6d6e8 !important;
 }
 
-p > span,
 p > em {
   background-color: #ebebee !important;
   font-size: 1.2em;
