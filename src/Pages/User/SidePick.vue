@@ -44,6 +44,7 @@ export default {
     window.onpopstate = () => {
       history.go(1);
     };
+    this.checkIfAdmin();
   },
   data() {
     return {
@@ -78,6 +79,14 @@ export default {
       this.$router.push({
         path,
       });
+    },
+    checkIfAdmin() {
+      const userController = new UserController();
+      const user = userController.decodeUserToken();
+
+      if (user.side < 0) {
+        return this.$router.push('/user/dashboard');
+      }
     },
   },
 };

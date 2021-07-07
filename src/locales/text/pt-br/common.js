@@ -8,6 +8,7 @@ export default {
     applyCTA: 'Procurar vaga',
     startHiring: 'Comece a contratar',
     applyJobs: 'Procurar vagas',
+    tests: 'Tests',
     userTokens: 'Vogels',
     companyTokens: 'Vagas postadas',
     day: 'Dia',

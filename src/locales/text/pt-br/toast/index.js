@@ -1,3 +1,6 @@
+import HashHelper from 'Helpers/hash';
+const hashHelper = new HashHelper();
+
 export default {
   toast: {
     error: {
@@ -33,6 +36,9 @@ export default {
       userNotFound: 'Usuário não encontrado',
       fillOut: 'Favor preencher os campos corretamente',
       update: 'Ocorreu um erro ao atualizar os dados',
+      requests: {
+        404: 'Informação não encontrada no banco de dados!',
+      },
     },
     success: {
       jobApplied: 'Uhuuu! Sucesso na aplicação da vaga!',
@@ -56,6 +62,37 @@ export default {
       senior: 'Atenção! Posições para Senior podem resultar em menos candidatos!',
       userAlreadyConfirmed: 'Usuário já confirmado!',
       loginToApply: 'Você deve estar logado para se aplicar à vaga!',
+      tests: {
+        QUESTIONS_REQUIRED: 'Você deve escrever a pergunta!',
+        OPTIONS_LENGTH_WRONG: 'Seu teste deve ter de 2 a 10 opções de resposta!',
+        AUTHOR_NAME_REQUIRED: 'É necessário estar logado para registrar um teste!',
+        QUESTION_TOO_BIG: 'A pergunta ultrapassa o limite máximo de 500 caracteres!',
+        TEXT_TOO_BIG: 'Por favor reduza o tamanho da descrição!',
+        EMPTY_OPTION: 'Confira se nao existe uma opção vazia!',
+        OPTIONS_TOO_BIG: 'Suas opções devem ter no máximo 500 caracteres!',
+        OPTION_POINTS_REQUIRED: 'Selecione uma pontuação para todas as opções!',
+        OPTIONS_POINT_WRONG: 'A pontuação selecionada deve estar entre -3 e 3!',
+        DIFFICULTY_WRONG: 'A dificuldade do teste deve estar entre 1 e 10!',
+        TAGS_REQUIRED:
+          'Selecione pelo menos uma tag para conseguimos filtrar seu teste para os profissionais!',
+        AUTHOR_EMAIL_TOO_BIG: `Contacte um admin. Código de erro: ${hashHelper.errorCode(
+          'AUTHOR_EMAIL_TOO_BIG',
+          'SQ_',
+        )}`,
+        AUTHOR_COMPANY_TOO_BIG: `Contacte um admin. Código de erro: ${hashHelper.errorCode(
+          'AUTHOR_COMPANY_TOO_BIG',
+          'SQ_',
+        )}`,
+        CREATED_AT_REQUIRED: `Contacte um admin. Código de erro: ${hashHelper.errorCode(
+          'CREATED_AT_REQUIRED',
+          'SQ_',
+        )}`,
+        UPDATED_AT_REQUIRED: `Contacte um admin. Código de erro: ${hashHelper.errorCode(
+          'UPDATED_AT_REQUIRED',
+          'SQ_',
+        )}`,
+        ANSWER_POINT_REQUIRED: 'Por favor selecione uma resposta!',
+      },
       // senior: 'Attention! There might not be that many applications for a senior job',
     },
     warning: {

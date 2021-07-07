@@ -260,7 +260,7 @@ export default {
           this.$t('job.selectAtLeast', {
             min: config.skills[skill].min,
             skillName: this.$t(`enums.skills.${skill}`),
-          })
+          }),
         );
 
         validated = false;
@@ -270,7 +270,7 @@ export default {
           this.$t('job.selectMaximum', {
             max: config.skills[skill].max,
             skillName: this.$t(`enums.skills.${skill}`),
-          })
+          }),
         );
         validated = false;
       }

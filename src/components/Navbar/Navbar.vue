@@ -99,6 +99,11 @@ export default {
         path: '/how-it-works',
       });
     },
+    goToTests() {
+      this.$router.push({
+        path: '/tests',
+      });
+    },
 
     goToAboutUs() {
       return this.$router.push({
@@ -118,6 +123,7 @@ export default {
         { text: this.$t('common.howItWorks'), goTo: this.goToHowItWorks },
         { text: this.$t('common.pricing'), goTo: this.goToPricing },
         { text: this.$t('common.aboutUs'), goTo: this.goToAboutUs },
+        { text: this.$t('common.tests'), goTo: this.goToTests },
       ];
     },
     getPrimaryButtons() {

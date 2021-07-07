@@ -36,7 +36,7 @@ export default class JobController {
 
     const { data } = await axios.get(`/v1/jobs/company/${companyId}/count`);
 
-    return data.amount;
+    return data.total;
   }
 
   async getCompanyJobs(companyId, { limit = 15, skip = 0 } = {}) {
@@ -109,13 +109,6 @@ export default class JobController {
   async buyReport(jobId) {
     const axios = await Axios.GetInstance();
     const { data } = await axios.get(`/v1/reports/${jobId}/buy`);
-
-    return data;
-  }
-
-  async getApplicationCount(jobId) {
-    const axios = await Axios.GetInstance();
-    const { data } = await axios.get(`/v1/jobs/${jobId}/applications/count`);
 
     return data;
   }

@@ -26,6 +26,13 @@
           color="secondary"
           :label="$t('user.dashboard.manageAccount')"
         />
+        <g-btn
+          block
+          to="/tests"
+          class="mt-4"
+          type="primary-outlined"
+          :label="$t('user.dashboard.tests')"
+        />
       </div>
     </v-col>
     <v-col cols="8">
