@@ -37,7 +37,7 @@ export default {
       fillOut: 'Favor preencher os campos corretamente',
       update: 'Ocorreu um erro ao atualizar os dados',
       requests: {
-        404: 'Informação não encontrada no banco de dados!',
+        '404': 'Informação não encontrada no banco de dados!',
       },
     },
     success: {
