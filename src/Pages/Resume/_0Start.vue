@@ -18,8 +18,17 @@
         @click="$emit('go-to-dashboard')"
         :label="$t('resume.register.start.goToDashboard')"
       />
-      <overline class="mt-10" color="primary">{{ $t('common.comingSoon') }}</overline>
-      <sub-2 color="primary">{{ $t('common.integration') }}</sub-2>
+      <g-btn
+        class="mt-4"
+        type="outlined"
+        color="primary"
+        :minwidth="300"
+        data-cy="cv-github-integration"
+        @click="getRepoInfo()"
+        :label="$t('resume.register.start.linkGithub.title')"
+      />
+      <!-- <overline class="mt-10" color="primary">{{ $t('common.comingSoon') }}</overline> -->
+      <!-- <sub-2 color="primary">{{ $t('common.integration') }}</sub-2> -->
     </div>
     <slot />
   </div>
@@ -47,11 +56,15 @@ export default {
       this.loading = true;
       try {
         await githubOauthController.getRepoInfo();
+
         const githubInfo = await githubOauthController.getUserInfo();
+
         this.$emit('update-profile-picture');
 
         this.loading = false;
+
         this.$toast.success(this.$t('toast.success.githubRetrieve'));
+
         this.$emit('github-info', githubInfo);
       } catch (e) {
         if (e.status === 403) {
@@ -63,10 +76,14 @@ export default {
       }
     },
     goToAuthGithubLink() {
-      window.open(
-        `https://github.com/login/oauth/authorize?client_id=${settings.github.client_id}`,
-        '_blank',
-      );
+      const scopes = [ 'read:user', 'user:email', 'read:org', 'repo' ];
+
+      const url = `https://github.com/login/oauth/authorize?client_id=${
+        settings.github.client_id
+      }&scope=${scopes.join('%20')}`;
+      console.log('🚀 ~ file: _0Start.vue ~ line 91 ~ goToAuthGithubLink ~ url', url);
+
+      window.open(url, '_blank');
     },
   },
 };

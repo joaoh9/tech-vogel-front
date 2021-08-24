@@ -1,5 +1,5 @@
 {
-  "FULL_TIME": "Período integral",
-  "PART_TIME": "Meio período",
-  "HOURLY": "Por hora"
+  "1": "Período integral",
+  "2": "Meio período",
+  "3": "Por hora"
 }

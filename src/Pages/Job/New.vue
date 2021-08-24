@@ -151,7 +151,7 @@ export default {
       job_: {
         title: '',
         experienceLevel: 'junior',
-        contractType: 'PART_TIME',
+        contractType: '2',
         description: '',
         skills: {
           techSkills: [],

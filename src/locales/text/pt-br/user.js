@@ -33,10 +33,10 @@ export default {
         description:
           'Seu currículo na Tech Vogel é a forma como as empresas verão suas informações e como nosso algoritmo vai realizar o match com as vagas aplicadas. Preencha com atenção ;)',
         linkLinkedIn: {
-          title: 'Link da sua conta do LinkedIn',
+          title: 'Link sua conta do LinkedIn',
         },
         linkGithub: {
-          title: 'Link da sua conta do GitHub',
+          title: 'Link sua conta do GitHub',
         },
         registerManually: {
           title: 'Cadastrar currículo',

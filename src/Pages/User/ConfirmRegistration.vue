@@ -62,11 +62,11 @@ export default {
     document.documentElement.scrollTop = 0;
     if (this._email) {
       this.email = this._email;
-    } else if(!this._email) {
+    } else if (!this._email) {
       this.$router.push('/login');
     }
 
-    this.showResendButton = this._showResendButton
+    this.showResendButton = this._showResendButton;
 
     this.rules = new RulesHelper(this.$i18n.messages[this.$i18n.locale]);
   },
@@ -94,6 +94,15 @@ export default {
         this.resendLoad = false;
       } catch (e) {
         this.resendLoad = false;
+        if (e.response.status === 409) {
+          this.$toast.info(this.$t('toast.info.userAlreadyConfirmed'));
+          return this.$router.push({
+            name: 'User Login',
+            params: {
+              email: this.email,
+            },
+          });
+        }
         this.$toast.error(this.$t('signup.resendConfirmationCode.error'));
       }
     },

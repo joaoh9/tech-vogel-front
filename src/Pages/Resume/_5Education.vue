@@ -23,7 +23,7 @@
             courseTitle: '',
             degree: '',
             description: '',
-            institutionName: '',
+            institutionId: '',
             startDate: 0,
             endDate: 0,
           })
@@ -61,7 +61,7 @@ export default {
           courseTitle: '',
           degree: '',
           description: '',
-          institutionName: '',
+          institutionId: '',
           startDate: 0,
           endDate: 0,
         },

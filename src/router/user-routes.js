@@ -1,4 +1,4 @@
-// import GitHubOauth from 'Pages/User/GitHubOauth';
+import GitHubOauth from 'Pages/User/GitHubOauth';
 import RegistrationConfirmed from 'Pages/User/RegistrationConfirmed.vue';
 import UserApplications from 'Pages/User/UserApplications.vue';
 import ConfirmRegistration from 'Pages/User/ConfirmRegistration.vue';
@@ -92,14 +92,13 @@ const routes = [
     props: true,
     // beforeEnter: auth.login,
   },
-  /*
   {
     path: '/github/oauth',
     name: 'GitHub OAuth',
     component: GitHubOauth,
     props: true,
+    beforeEnter: auth.loggedIn,
   },
-  */
   {
     path: '/onboarding',
     name: 'Onbarding',

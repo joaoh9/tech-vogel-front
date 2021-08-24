@@ -26,8 +26,6 @@
 <script>
 import OAuthController from 'Controllers/githubOauth';
 
-import Storage from 'Helpers/storage';
-
 export default {
   name: 'GitHubOAuth',
   methods: {
@@ -35,18 +33,9 @@ export default {
       const oAuthController = new OAuthController();
 
       try {
-        const hasAccessToken = Storage.loadState('access_token');
-
         const data = await oAuthController.confirmAccess(this.$route.query.code);
 
-        Storage.saveState('access_token', data.accessToken);
-        Storage.saveState('github_username', data.username);
         this.$toast.success(this.$t('oAuth.github.accessSuccess'));
-
-        if (hasAccessToken) {
-          this.$toast.success(this.$t('toast.success.closeTab'));
-          return;
-        }
 
         this.$router.push({
           name: 'User Signup',

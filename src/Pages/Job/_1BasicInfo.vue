@@ -80,7 +80,7 @@ export default {
       },
       title: '',
       experienceLevel: 'junior',
-      contractType: 'PART_TIME',
+      contractType: '2',
     };
   },
   watch: {},

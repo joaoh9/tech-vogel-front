@@ -1,5 +1,5 @@
 {
-  "FULL_TIME": "Full-Time",
-  "PART_TIME": "Part-time",
-  "HOURLY": "Hourly"
+  "1": "Full-Time",
+  "2": "Part-time",
+  "3": "Hourly"
 }

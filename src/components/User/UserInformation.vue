@@ -17,7 +17,7 @@
       </div>
       <h6 class="my-2">{{ data.courseTitle }}</h6>
       <div class="mb-2">
-        <sub-2 color="dark"> {{ $t('common.at') }} {{ data.institutionName }} </sub-2>
+        <sub-2 color="dark"> {{ $t('common.at') }} {{ data.institutionId }} </sub-2>
       </div>
       <bdy-1 color="dark" v-html="data.description" />
     </div>

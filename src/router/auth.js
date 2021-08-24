@@ -169,7 +169,7 @@ function loggedIn(to, from, next) {
     return next();
   }
 
-  return next({ name: 'Home' });
+  return next({ name: 'User Login' });
 }
 
 function unlogged(to, from, next) {

@@ -26,11 +26,11 @@
 
     <form-input :title="$t('resume.register.education.institution')" />
     <v-text-field
-      v-model="education.institutionName"
+      v-model="education.institutionId"
       :placeholder="$t('resume.register.education.placeholders.institution')"
       @input="$emit('update', education)"
       outlined
-      :rules="[rules.max(200, education.institutionName)]"
+      :rules="[rules.max(200, education.institutionId)]"
     />
 
     <v-row>
@@ -90,7 +90,7 @@ export default {
         courseTitle: '',
         degree: '',
         description: '',
-        institutionName: '',
+        institutionId: '',
         startDate: 0,
         endDate: 0,
       },
