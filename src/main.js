@@ -7,8 +7,8 @@ import vuetify from './plugins/vuetify';
 import VueMaskDirective from './plugins/v-mask';
 import './plugins/cookies';
 import './plugins/toast';
-
 import router from './router';
+import store from './store';
 
 import '@babel/polyfill';
 
@@ -18,6 +18,7 @@ Vue.config.productionTip = false;
 
 export default new Vue({
   vuetify,
+  store,
   i18n,
   router,
   VueMaskDirective,

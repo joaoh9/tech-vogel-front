@@ -4,6 +4,7 @@
       <WorkItem
         :key="updatedData"
         :_workHistory="workHistory[i]"
+        :working="workHistory[i].working"
         :item="i"
         v-on:update="
           e => {
@@ -28,6 +29,25 @@
             endDate: '',
             description: '',
             currentJob: false,
+            working: true,
+          })
+        "
+      />
+      <g-btn
+        type="outlined"
+        class="ml-2"
+        color="secondary"
+        data-cy="work-experience-add"
+        label="Adicionar tempo de hiato"
+        @click="
+          workHistory.push({
+            companyName: 'hiatus',
+            role: 'hiatus',
+            startDate: '',
+            endDate: '',
+            description: '',
+            currentJob: false,
+            working: false,
           })
         "
       />
@@ -66,6 +86,7 @@ export default {
           endDate: '',
           description: '',
           currentJob: false,
+          working: true,
         },
       ],
       updatedData: false,

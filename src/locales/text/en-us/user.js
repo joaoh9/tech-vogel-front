@@ -46,14 +46,18 @@ export default {
       preferences: {
         title: 'Select your preferences',
         description: 'You’ll be able to edit these or add more information later on.',
-        jobInterests: {
+        companySize: {
           title: 'Which company size fits you best?',
-          options: [ 'Startups', 'Small and medium', 'Large' ],
           placeholder: 'Pick a category',
         },
-        jobType: {
+        contractType: {
           title: 'Which job types are you looking for?',
-          options: [ 'Full time', 'Part time', 'Freelance' ],
+        },
+        jobType: {
+          title: 'How do you prefer working?',
+        },
+        relocationOptions: {
+          title: 'Are you open for relocations?',
         },
       },
       personalInfo: {
@@ -70,6 +74,7 @@ export default {
         location: {
           title: 'Your location',
           city: 'City',
+          state: 'State',
           country: 'Country',
         },
         profilePicture: {

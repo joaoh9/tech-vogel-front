@@ -22,17 +22,18 @@
       autofocus
       v-model="techSkills"
       data-cy="tech-skills"
-      @input="e => (techSkills = e)"
-      :items="$t('skills.techSkills')"
+      :loading="techSkillsLoaded"
+      :items="techSkillsData"
       multiple
     />
-
     <SkillExperienceLevel
       :explanation="techSkills.length > 0"
       :explanationText="$t('resume.register.skills.explanation')"
       :key="`XP-LVL-${techSkills.length}`"
       :items="techSkills"
+      :textMapping="techSkillsMapping"
       skillTitle="techSkills"
+      v-on:xp-level="handleChangeOnXPLevel"
       :experienceLevel="from === 'job' ? $t('enums.priorities') : $t('enums.yearsOfExperience')"
     />
     <form-input
@@ -47,6 +48,7 @@
       :title="$t('job.new.softSkills.title')"
       :description="$t('job.new.softSkills.inputHint', { max: 7 })"
     />
+
     <v-autocomplete
       class="mb-8"
       outlined
@@ -59,7 +61,8 @@
       v-model="softSkills"
       data-cy="soft-skills"
       @input="e => (softSkills = e)"
-      :items="$t('skills.softSkills')"
+      :loading="softSkillsLoaded"
+      :items="softSkillsData"
       multiple
     />
 
@@ -82,13 +85,16 @@
       v-model="languages"
       data-cy="languages"
       @input="e => (languages = e)"
-      :items="$t('skills.languages')"
+      :loading="languagesLoaded"
+      :items="languagesData"
       multiple
     />
 
     <SkillExperienceLevel
       :key="`Languages-${languages.length}`"
       :items="languages"
+      v-on:xp-level="handleChangeOnXPLevel"
+      :textMapping="languagesMapping"
       skillTitle="languages"
       :experienceLevel="$t('enums.languages')"
     />
@@ -97,6 +103,7 @@
 
 <script>
 import SkillExperienceLevel from 'Components/Interface/SkillExperienceLevel';
+import TagsController from 'Controllers/tags';
 
 import config from '@config';
 
@@ -120,38 +127,52 @@ export default {
   mounted() {
     if (this.job && this.job.skills) {
       this.skills = this.job.skills;
-      this.techSkills = this.job.techSkills;
-      this.softSkills = this.job.softSkills;
-      this.languages = this.job.languages;
     }
-    if (this._techSkills) {
-      this.techSkills = this._techSkills;
-      this.skills.techSkills = this._techSkills;
+    if (this._skills) {
+      this.skills = this._skills;
     }
-    if (this._softSkills) {
-      this.softSkills = this._softSkills;
-      this.skills.softSkills = this._softSkills;
-    }
-    if (this._languages) {
-      this.languages = this._languages;
-      this.skills.languages = this._languages;
-    }
+    this.getSkills();
   },
   data() {
     return {
       techSkills: [],
       softSkills: [],
       languages: [],
-      skills: {
-        techSkills: [],
-        softSkills: [],
-        languages: [],
-      },
+      skills: [],
       config: config,
+      techSkillsLoaded: true,
+      softSkillsLoaded: true,
+      languagesLoaded: true,
+      techSkillsData: [],
+      softSkillsData: [],
+      languagesData: [],
+      techSkillsMapping: {},
+      softSkillsMapping: {},
+      languagesMapping: {},
     };
   },
 
   methods: {
+    log(e) {
+      console.log(...e);
+    },
+    async getSkills() {
+      const tagsController = new TagsController();
+      this.techSkillsData = await tagsController.getSkillsTags('TECH');
+      this.techSkillsMapping = await tagsController.getSkillsMapping('TECH');
+
+      this.techSkillsLoaded = false;
+
+      this.softSkillsData = await tagsController.getSkillsTags('SOFT');
+      this.softSkillsMapping = await tagsController.getSkillsMapping('SOFT');
+
+      this.softSkillsLoaded = false;
+
+      this.languagesData = await tagsController.getSkillsTags('LANGUAGE');
+      this.languagesMapping = await tagsController.getSkillsMapping('LANGUAGE');
+
+      this.languagesLoaded = false;
+    },
     validateSkills(skill, skillName) {
       if (skill.length > config.skills[skillName].max) {
         this.$toast.warning(
@@ -164,23 +185,35 @@ export default {
       }
       return true;
     },
-  },
+    handleChangeOnXPLevel(xpLevel, skillId, skillType) {
+      console.log(
+        '🚀 ~ file: SkillsSelection.vue ~ line 191 ~ handleChangeOnXPLevel ~ xpLevel, skillId, skillType',
+        xpLevel,
+        skillId,
+        skillType,
+      );
 
+      const index = this[skillType].findIndex(el => el.skillId === skillId);
+
+      if (index >= 0) {
+        this[skillType][index].experienceLevel = xpLevel;
+      }
+
+      this.$emit(skillType, this[skillType]);
+    },
+  },
   watch: {
-    techSkills() {
-      this.skills.techSkills = this.techSkills;
-      this.validateSkills(this.skills.techSkills, 'techSkills');
-      this.$emit('skills', this.skills);
+    techSkills(e) {
+      // this.validateSkills(this.skills, 'techSkills');
+      this.$emit('techSkills', this.techSkills);
     },
     softSkills() {
-      this.skills.softSkills = this.softSkills;
-      this.validateSkills(this.skills.softSkills, 'softSkills');
-      this.$emit('skills', this.skills);
+      // this.validateSkills(this.skills, 'softSkills');
+      this.$emit('softSkills', this.softSkills);
     },
     languages() {
-      this.skills.languages = this.languages;
-      this.validateSkills(this.skills.languages, 'languages');
-      this.$emit('skills', this.skills);
+      // this.validateSkills(this.skills, 'languages');
+      this.$emit('languages', this.languages);
     },
   },
 };

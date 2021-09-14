@@ -46,14 +46,18 @@ export default {
       preferences: {
         title: 'Selecione suas preferências',
         description: 'Você poderá editar suas informações quando desejar, mesmo após salvar.',
-        jobInterests: {
-          title: 'Você prefere trabalhar em uma empresa de que porte?',
-          options: [ 'Startups', 'Pequena e média', 'Grande' ],
+        companySize: {
+          title: 'Você prefere trabalhar em uma empresa de qual tamanho?',
           placeholder: 'Escolha uma categoria',
         },
-        jobType: {
+        contractType: {
           title: 'Qual tipo de Job você está procurando?',
-          options: [ 'Tempo integral', 'Meio período', 'Prestador(a) de serviços' ],
+        },
+        jobType: {
+          title: 'Como você prefere trabalhar?',
+        },
+        relocationOptions: {
+          title: 'Você está aberto a mudanças?',
         },
       },
       personalInfo: {
@@ -70,6 +74,7 @@ export default {
         location: {
           title: 'Local de residência',
           city: 'Cidade',
+          state: 'Estado',
           country: 'País',
         },
         profilePicture: {
@@ -99,7 +104,7 @@ export default {
         },
         placeholders: {
           company: {
-            title: 'Nome da empresa em que atuou',
+            title: 'Ex: Nubank',
           },
           position: 'Ex: DevOps',
         },

@@ -9,6 +9,7 @@ export default {
     startHiring: 'Comece a contratar',
     applyJobs: 'Procurar vagas',
     tests: 'Tests',
+    save: 'Salvar',
     userTokens: 'Vogels',
     companyTokens: 'Vagas postadas',
     day: 'Dia',

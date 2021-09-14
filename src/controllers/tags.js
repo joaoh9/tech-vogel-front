@@ -7,4 +7,18 @@ export default class TagController {
 
     return data;
   }
+
+  async getSkillsTags(skillType) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get('/v1/tags/input/' + skillType);
+
+    return data;
+  }
+
+  async getSkillsMapping(skillType) {
+    const axios = await Axios.GetInstance();
+    const { data } = await axios.get('/v1/tags/mapping/' + skillType);
+
+    return data;
+  }
 }

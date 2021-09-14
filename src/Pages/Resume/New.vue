@@ -22,10 +22,12 @@
           <div v-bind:style="{ display: currentStep == 1 ? 'block' : 'none' }">
             <Preferences
               :key="dataUpdated"
-              :_jobInterests="resume.jobInterests"
+              :_companySize="resume.companySize"
               :_contractType="resume.contractType"
-              v-on:job-interests="e => (resume.jobInterests = e)"
+              v-on:job-interests="e => (resume.companySize = e)"
               v-on:contract-type="e => (resume.contractType = e)"
+              v-on:job-type="e => (resume.jobType = e)"
+              v-on:relocation-options="e => (resume.relocationOptions = e)"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 2 ? 'block' : 'none' }">
@@ -58,12 +60,12 @@
           </div>
           <div v-bind:style="{ display: currentStep == 4 ? 'block' : 'none' }">
             <Skills
-              :_techSkills="resume.skills.techSkills"
-              :_softSkills="resume.skills.softSkills"
-              :_languages="resume.skills.languages"
+              :_skills="resume.skills"
               :key="dataUpdated"
               from="resume"
-              v-on:skills="e => (resume.skills = e)"
+              v-on:techSkills="e => (techSkills = e)"
+              v-on:softSkills="e => (softSkills = e)"
+              v-on:languages="e => (languages = e)"
             />
           </div>
           <div v-bind:style="{ display: currentStep == 5 ? 'block' : 'none' }">
@@ -84,7 +86,8 @@
               @click="currentStep === 0 ? $router.go(-1) : currentStep--"
             />
             <g-btn
-              :label="currentStep === 5 ? $t('common.finish') : $t('common.next')"
+              :label="$t('common.save')"
+              v-if="currentStep !== 0"
               data-cy="cv-next"
               type="primary"
               @click="checkInputsAndFollowUp()"
@@ -135,19 +138,17 @@ export default {
       profilePicture: {},
       resume: {
         personalBio: '',
-        jobInterests: [],
+        companySize: [],
         contractType: [],
+        jobType: [],
+        relocationOptions: '',
         mainRole: '',
         location: {
           city: '',
           country: '',
         },
         workHistory: [],
-        skills: {
-          techSkills: [],
-          softSkills: [],
-          languages: [],
-        },
+        skills: [],
         education: [
           {
             degree: '',
@@ -166,6 +167,9 @@ export default {
           behance: '',
         },
       },
+      techSkills: [],
+      softSkills: [],
+      languages: [],
       dataUpdated: false,
     };
   },
@@ -222,9 +226,6 @@ export default {
           await userController.update({ profilePicture: this.profilePicture });
         }
         this.$toast.success(this.$t('toast.success.updatedData'));
-        this.$router.push({
-          name: 'User Dashboard',
-        });
       } catch (e) {
         this.$toast.error(this.$t('toast.error.update'));
       }
@@ -243,26 +244,22 @@ export default {
         case 1:
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
-
+          await this.updateResume();
           this.currentStep++;
           break;
 
         case 2:
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
-
-          if (this.validateRules()) {
-            this.currentStep++;
-          } else {
-            this.$toast.warning(this.$t('toast.warning.fillAll'));
-          }
+          await this.updateResume();
+          this.currentStep++;
 
           break;
 
         case 3:
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
-
+          await this.updateResume();
           this.currentStep++;
           break;
 
@@ -270,7 +267,7 @@ export default {
           document.body.scrollTop = 0; // For Safari
           document.documentElement.scrollTop = 0;
 
-          for (const skill in this.resume.skills) {
+          for (const skill of [ 'techSkills', 'softSkills', 'languages' ]) {
             const skillValidated = this.validateSkills(skill);
 
             if (!skillValidated) {
@@ -278,6 +275,7 @@ export default {
             }
           }
 
+          await this.updateResume();
           this.currentStep++;
           break;
 
@@ -292,38 +290,25 @@ export default {
           } else {
             this.$toast.warning(this.$t('toast.warning.fillAll'));
           }
+          await this.updateResume();
 
           break;
       }
     },
     validateSkills(skill) {
-      if (this.resume.skills[skill].length < config.skills[skill].min) {
+      if (this[skill].length < config.skills[skill].min) {
         this.$t('job.selectAtLeast', {
           min: config.skills[skill].min,
           skillName: this.$t(`enums.skills.${skill}`),
         });
       }
-      if (this.resume.skills[skill].length > config.skills[skill].max) {
+      if (this[skill].length > config.skills[skill].max) {
         this.$t('job.selectMaximum', {
           max: config.skills[skill].max,
           skillName: this.$t(`enums.skills.${skill}`),
         });
       }
       return true;
-    },
-    validateRules() {
-      const rules = [
-        this.resume.mainRole,
-        this.resume.location.city,
-        this.resume.location.country,
-        this.resume.personalBio,
-        this.rules.max(200, this.resume.mainRole),
-        this.rules.max(200, this.resume.location.city),
-        this.rules.max(200, this.resume.location.country),
-        this.rules.max(20000, this.resume.personalBio),
-      ];
-
-      return rules.every(rule => rule);
     },
     getPageTitle() {
       return this.$t(
@@ -341,6 +326,17 @@ export default {
       this.$router.push({
         name: 'User Dashboard',
       });
+    },
+  },
+  watch: {
+    techSkills() {
+      this.resume.skills = [ ...this.techSkills, ...this.softSkills, ...this.languages ];
+    },
+    softSkills() {
+      this.resume.skills = [ ...this.techSkills, ...this.softSkills, ...this.languages ];
+    },
+    languages() {
+      this.resume.skills = [ ...this.techSkills, ...this.softSkills, ...this.languages ];
     },
   },
 };

@@ -8,25 +8,21 @@
       :key="i"
       :class="i !== 0 ? 'mt-n6' : ''"
     >
-      <v-col class="d-flex" cols="12" md="4">
-        <v-icon @click="deleteSkills(i)" class="align-self-center mr-2">
-          mdi-close
-        </v-icon>
-        <div class="bdy-1 align-self-center" style="line-height: 100% !important">
-          {{ $t(`skills.dictionary.${skillTitle}.${skill.skillId}`) }}
-        </div>
-      </v-col>
-      <v-col cols="12" md="8" class="mt-n6 mt-sm-0 mb-2 mb-sm-0">
-        <v-radio-group :row="$vuetify.breakpoint.smAndUp" v-model="items[i]['experienceLevel']">
-          <v-radio
-            color="primary"
-            :class="`mx-sm-${experienceLevel.length >= 3 ? '3' : '6'} mx-0 my-1`"
-            v-for="(check, j) in experienceLevel"
-            :key="j"
-            :label="check.text"
-            :value="check.value"
-          />
-        </v-radio-group>
+      <v-col cols="12" md="12" class="mt-n6 mt-sm-0 mb-2 mb-sm-0">
+        <v-slider
+          class="mb-5"
+          color="secondary"
+          track-color="secondary-lighten-3"
+          step="1"
+          :max="5"
+          :min="0"
+          persistent-hint
+          :key="skill.skillId"
+          v-model="xpLevel[skill.skillId]"
+          :label="textMapping[skill.skillId]"
+          :hint="getXPLabel(xpLevel[skill.skillId])"
+          @change="$emit('xp-level', xpLevel[skill.skillId], skill.skillId, skillTitle)"
+        />
       </v-col>
     </v-row>
   </div>
@@ -39,15 +35,50 @@ export default {
     items: Array,
     experienceLevel: Array,
     skillTitle: String,
+    textMapping: Object,
     explanation: {
       type: Boolean,
       default: false,
     },
     explanationText: String,
   },
+  mounted() {
+    if (this.items) {
+      for (const el of this.items) {
+        if (!(el in this.xpLevel)) {
+          this.xpLevel[el.skillId] = el.experienceLevel;
+        }
+      }
+    }
+  },
+  data() {
+    return {
+      xpLevel: {},
+    };
+  },
   methods: {
     deleteSkills(index) {
       this.items.splice(index, 1);
+    },
+    getXPLabel(value) {
+      if (!value) {
+        value = 0;
+      }
+      const map = {
+        0: '1 ano ou menos',
+        1: '1 a 2 anos',
+        2: '2 a 3 anos',
+        3: '3 a 4 anos',
+        4: '4 a 5 anos',
+        5: '5+ anos',
+      };
+
+      return map[value];
+    },
+  },
+  watch: {
+    'xpLevel.length'() {
+      this.$emit('xp-level', this.xpLevel);
     },
   },
 };

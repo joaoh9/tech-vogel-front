@@ -55,7 +55,9 @@ class Rules {
   }
 
   max(max, v) {
-    return v.length <= max || this.localeObj['rules']['greaterThanXCharacters'].replace('X', max);
+    return (
+      (v && v.length <= max) || this.localeObj['rules']['greaterThanXCharacters'].replace('X', max)
+    );
   }
 
   validateLetterOrNumber(letter) {

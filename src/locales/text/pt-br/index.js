@@ -5,7 +5,6 @@ import others from './others';
 import unlogged from './unlogged';
 import user from './user';
 import enums from './enums';
-import skill from './skill';
 import common from './common'
 import toast from './toast/index';
 
@@ -18,6 +17,5 @@ export default {
   ...unlogged,
   ...user,
   ...enums,
-  ...skill,
   ...toast,
 };

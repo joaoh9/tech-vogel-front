@@ -9,6 +9,7 @@ export default {
     startHiring: 'Start Hiring',
     applyJobs: 'Apply for jobs',
     tests: 'Tests',
+    save: 'Save',
     userTokens: 'Vogels',
     companyTokens: 'Job posts',
     day: 'Day',

@@ -6,6 +6,7 @@
       placeholder="Skill"
       v-model="skill.skill"
       @input="updateItem"
+      :loading="loading"
       :items="$t('skills.techSkills')"
     />
     <v-btn-toggle
